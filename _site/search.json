@@ -1,6 +1,16 @@
 [
   
     {
+      "title"       : "My first blog",
+      "category"    : "",
+      "tags"        : "daily",
+      "url"         : "./my-first-blog.html",
+      "date"        : "2021-11-17 00:00:00 +0800",
+      "description" : "My first blog",
+      "content"     : "i am so happy to set a website."
+    } ,
+  
+    {
       "title"       : "Who owns the copyright for an AI generated creative work?",
       "category"    : "opinion",
       "tags"        : "copyright, creativity, neural networks, machine learning, artificial intelligence",

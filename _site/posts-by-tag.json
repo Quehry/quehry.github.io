@@ -55,6 +55,16 @@
     
       
   {
+  "tag" : "daily",
+  "posts" : [
+      
+      "./my-first-blog.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "deep Neural networks",
   "posts" : [
       
