@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-19T01:17:24+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">空天报国,敢为人先</title><link href="http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88.html" rel="alternate" type="text/html" title="空天报国,敢为人先" /><published>2021-11-18T00:00:00+08:00</published><updated>2021-11-18T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88</id><content type="html" xml:base="http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88.html">&lt;p&gt;今天是71期党校的最后一节党课，今天很幸运，徐惠彬校长第一次讲党课。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-25T00:12:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">练习Markdown</title><link href="http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown.html" rel="alternate" type="text/html" title="练习Markdown" /><published>2021-11-24T00:00:00+08:00</published><updated>2021-11-24T00:00:00+08:00</updated><id>http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown</id><content type="html" xml:base="http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown.html">&lt;h1 id=&quot;一级标题&quot;&gt;一级标题&lt;/h1&gt;
+&lt;h2 id=&quot;二级标题&quot;&gt;二级标题&lt;/h2&gt;
+&lt;h3 id=&quot;三级标题&quot;&gt;三级标题&lt;/h3&gt;
+&lt;p&gt;一共有6级标题&lt;/p&gt;
+
+&lt;h1 id=&quot;段落&quot;&gt;段落&lt;/h1&gt;
+&lt;p&gt;用两个空格加回车表示换行&lt;br /&gt;
+当然也可以直接空一行出来表示换行&lt;/p&gt;
+
+&lt;h1 id=&quot;各种文字表示&quot;&gt;各种文字表示&lt;/h1&gt;
+&lt;h2 id=&quot;斜体&quot;&gt;斜体&lt;/h2&gt;
+&lt;p&gt;用两个&lt;em&gt;或者两个_把需要斜体的文字围起来&lt;br /&gt;
+比如：&lt;br /&gt;
+*斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;粗体&quot;&gt;粗体&lt;/h2&gt;
+&lt;p&gt;用两个&lt;strong&gt;或者两个__把需要粗体的文字围起来&lt;br /&gt;
+比如:&lt;br /&gt;
+**粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;粗斜体&quot;&gt;粗斜体&lt;/h2&gt;
+&lt;p&gt;用两个&lt;strong&gt;&lt;em&gt;或者两个___把需要粗体的文字围起来&lt;br /&gt;
+比如:&lt;br /&gt;
+**&lt;/em&gt;粗体&lt;/strong&gt;*&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗体&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;分隔线&quot;&gt;分隔线&lt;/h1&gt;
+&lt;p&gt;你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：&lt;br /&gt;
+***&lt;/p&gt;
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;删除线&quot;&gt;删除线&lt;/h1&gt;
+&lt;p&gt;如果段落上的文字要添加删除线，只需要在文字的两端加上两个波浪线&lt;del&gt;即可
+比如：&lt;br /&gt;
+~~哈哈哈哈&lt;/del&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;下划线&quot;&gt;下划线&lt;/h1&gt;
+&lt;p&gt;下划线可以通过HTML的&amp;lt;u&amp;gt;标签来实现
+比如：&lt;br /&gt;
+&lt;u&gt;下划线&lt;/u&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;脚注&quot;&gt;脚注&lt;/h1&gt;
+&lt;p&gt;脚注是对文本的补充说明   &lt;br /&gt;
+创建脚注格式类似这样 [^RUNOOB]。&lt;br /&gt;
+[^RUNOOB]: 菜鸟教程 – 学的不仅是技术，更是梦想！！&lt;/p&gt;</content><author><name>Quehry</name></author><category term="daily" /><summary type="html">一级标题 二级标题 三级标题 一共有6级标题</summary></entry><entry><title type="html">空天报国,敢为人先</title><link href="http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88.html" rel="alternate" type="text/html" title="空天报国,敢为人先" /><published>2021-11-18T00:00:00+08:00</published><updated>2021-11-18T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88</id><content type="html" xml:base="http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88.html">&lt;p&gt;今天是71期党校的最后一节党课，今天很幸运，徐惠彬校长第一次讲党课。&lt;/p&gt;
 
 &lt;p&gt;以前我对于学校的归属感并不强，但现在我会比较自豪的说出我是北航人。空天报国，敢为人先是北航的口号，虽然我并不是学的航空航天专业，但是我认为这句口号是全北航人适用的。我希望能传承下这份精神与荣誉。前辈们为我们铺垫了很多，我们北航人自带红色基因，尽忠报国是我要向徐校长学习的，我对于国家和学校的归属感第一次这么强烈。&lt;/p&gt;
 
@@ -7867,123 +7916,4 @@ qXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguNDUuMTAw
 
 &lt;p&gt;Notice that since I am keeping an array of the coordinates of only the cells who are alive, I could apply just 3 rules, die of loneliness, die of overpopulation and become alive from reproduction (exactly 3 alive neighbors) because the ones who have 2 or 3 neighbors and are already alive, can remain alive in the next iteration.&lt;/p&gt;
 
-&lt;p&gt;I&amp;nbsp;found it very interesting to implement the Game of Life like this, it was quite a refreshing challenge and I am beginning to feel my coding skills ramping up again.&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="coding" /><category term="python" /><summary type="html">I&amp;nbsp;am lately trying to take on coding again. It had always been a part of my life since my early years when I&amp;nbsp;learned to program a Tandy Color Computer at the age of 8, the good old days.</summary></entry><entry><title type="html">Single Neuron Perceptron</title><link href="http://localhost:4000/single-neuron-perceptron.html" rel="alternate" type="text/html" title="Single Neuron Perceptron" /><published>2021-01-26T03:32:20+08:00</published><updated>2021-01-26T03:32:20+08:00</updated><id>http://localhost:4000/single-neuron-perceptron</id><content type="html" xml:base="http://localhost:4000/single-neuron-perceptron.html">&lt;p&gt;As an entry point to learning python and getting into Machine Learning, I decided to code from scratch the Hello World! of the field, a single neuron perceptron.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-a-perceptron&quot;&gt;What is a perceptron?&lt;/h2&gt;
-
-&lt;p&gt;A perceptron is the basic building block of a neural network, it can be compared to a neuron, And its conception is what detonated the vast field of Artificial Intelligence nowadays.&lt;/p&gt;
-
-&lt;p&gt;Back in the late 1950’s, a young &lt;a href=&quot;https://en.wikipedia.org/wiki/Frank_Rosenblatt&quot;&gt;Frank Rosenblatt&lt;/a&gt; devised a very simple algorithm as a foundation to construct a machine that could learn to perform different tasks.&lt;/p&gt;
-
-&lt;p&gt;In its essence, a perceptron is nothing more than a collection of values and rules for passing information through them, but in its simplicity lies its power.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210125/Perceptron.png&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;Imagine you have a ‘neuron’ and to ‘activate’ it, you pass through several input signals, each signal connects to the neuron through a synapse, once the signal is aggregated in the perceptron, it is then passed on to one or as many outputs as defined. A perceptron is but a neuron and its collection of synapses to get a signal into it and to modify a signal to pass on.&lt;/p&gt;
-
-&lt;p&gt;In more mathematical terms, a perceptron is an array of values (let’s call them weights), and the rules to apply such values to an input signal.&lt;/p&gt;
-
-&lt;p&gt;For instance a perceptron could get 3 different inputs as in the image, lets pretend that the inputs it receives as signal are: $x_1 = 1, \; x_2 = 2\; and \; x_3 = 3$, if it’s weights are $w_1 = 0.5,\; w_2 = 1\; and \; w_3 = -1$ respectively, then what the perceptron will do when the signal is received is to multiply each input value by its corresponding weight, then add them up.&lt;/p&gt;
-
-&lt;p style=&quot;text-align:center&quot;&gt;\(&lt;br /&gt;
-\begin{align}
-\begin{split}
-\left(x_1 * w_1\right) + \left(x_2 * w_2\right) + \left(x_3 * w_3\right)
-\end{split}
-\end{align}
-\)&lt;/p&gt;
-
-&lt;p style=&quot;text-align:center&quot;&gt;\(&lt;br /&gt;
-\begin{align}&lt;br /&gt;
-\begin{split}&lt;br /&gt;
-\left(0.5 * 1\right) + \left(1 * 2\right) + \left(-1 * 3\right) = 0.5 + 2 - 3 = -0.5
-\end{split}&lt;br /&gt;
-\end{align}&lt;br /&gt;
-\)&lt;/p&gt;
-
-&lt;p&gt;Typically when this value is obtained, we need to apply an “activation” function to smooth the output, but let’s say that our activation function is linear, meaning that we keep the value as it is, then that’s it, that is the output of the perceptron, -0.5.&lt;/p&gt;
-
-&lt;p&gt;In a practical application, the output means something, perhaps we want our perceptron to classify a set of data and if the perceptron outputs a negative number, then we know the data is of type A, and if it is a positive number then it is of type B.&lt;/p&gt;
-
-&lt;p&gt;Once we understand this, the magic starts to happen through a process called backpropagation, where we “educate” our tiny one neuron brain to have it learn how to do its job.&lt;/p&gt;
-
-&lt;tweet&gt;The magic starts to happen through a process called backpropagation, where we &quot;educate&quot; our tiny one neuron brain to have it learn how to do its job.&lt;/tweet&gt;
-
-&lt;p&gt;For this we need a set of data that it is already classified, we call this a training set. This data has inputs and their corresponding correct output. So we can tell the little brain when it misses in its prediction, and by doing so, we also adjust the weights a bit in the direction where we know the perceptron committed the mistake hoping that after many iterations like this the weights will be so that most of the predictions will be correct.&lt;/p&gt;
-
-&lt;p&gt;After the model trains successfully we can have it classify data it has never seen before, and we have a fairly high confidence that it will do so correctly.&lt;/p&gt;
-
-&lt;p&gt;The math behind this magical property of the perceptron is called gradient descent, and is just a bit of differential calculus that helps us convert the error the brain is having into tiny nudges of value of the weights towards their optimum. &lt;a href=&quot;https://www.youtube.com/watch?v=aircAruvnKk&amp;amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&quot;&gt;This video series by 3 blue 1 brown explains it wonderfuly.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;My program creates a single neuron neural network tuned to guess if a point is above or below a randomly generated line and generates a visualization based on graphs to see how the neural network is learning through time.&lt;/p&gt;
-
-&lt;p&gt;The neuron has 3 inputs and weights to calculate its output:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;input 1 is the X coordinate of the point,
-Input 2 is the y coordinate of the point,
-Input 3 is the bias and it is always 1
-
-Input 3 or the bias is required for lines that do not cross the origin (0,0)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The Perceptron starts with weights all set to zero and learns by using 1,000 random points per each iteration.&lt;/p&gt;
-
-&lt;p&gt;The output of the perceptron is calculated with the following activation function:
-    if x * weight_x + y weight_y + weight_bias is positive then 1 else 0&lt;/p&gt;
-
-&lt;p&gt;The error for each point is calculated as the expected outcome of the perceptron minus the real outcome therefore there are only 3 possible error values:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Expected&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Calculated&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Error&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;With every point that is learned if the error is not 0 the weights are adjusted according to:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;New_weight = Old_weight + error * input * learning_rate
-for example: New_weight_x = Old_weight_x + error * x * learning rate
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;A very useful parameter in all of neural networks is teh learning rate, which is basically a measure on how tiny our nudge to the weights is going to be.&lt;/p&gt;
-
-&lt;p&gt;In this particular case, I coded the learning_rate to decrease with every iteration as follows:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;learning_rate = 0.01 / (iteration + 1)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;this is important to ensure that once the weights are nearing the optimal values the adjustment in each iteration is subsequently more subtle.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210125/Learning_1000_points_per_iteration.jpg&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;In the end, the perceptron always converges into a solution and finds with great precision the line we are looking for.&lt;/p&gt;
-
-&lt;p&gt;Perceptrons are quite a revelation in that they can resolve equations by learning, however they are very limited. By their nature they can only resolve linear equations, so their problem space is quite narrow.&lt;/p&gt;
-
-&lt;p&gt;Nowadays the neural networks consist of combinations of many perceptrons, in many layers, and other types of “neurons”, like convolution, recurrent, etc. increasing significantly the types of problems they solve.&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="machine learning" /><category term="coding" /><category term="neural networks" /><summary type="html">As an entry point to learning python and getting into Machine Learning, I decided to code from scratch the Hello World! of the field, a single neuron perceptron.</summary></entry></feed>
+&lt;p&gt;I&amp;nbsp;found it very interesting to implement the Game of Life like this, it was quite a refreshing challenge and I am beginning to feel my coding skills ramping up again.&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="coding" /><category term="python" /><summary type="html">I&amp;nbsp;am lately trying to take on coding again. It had always been a part of my life since my early years when I&amp;nbsp;learned to program a Tandy Color Computer at the age of 8, the good old days.</summary></entry></feed>
