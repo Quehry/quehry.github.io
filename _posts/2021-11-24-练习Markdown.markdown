@@ -5,7 +5,7 @@ show_date: true
 title:  练习Markdown
 date:   2021-11-24  
 description: 练习使用
-img:  
+img:  posts/20211124/markdown.jpg 
 tags: [daily]
 author: Quehry
 ---

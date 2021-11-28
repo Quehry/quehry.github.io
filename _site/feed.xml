@@ -1,24 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-25T18:27:21+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">MCQ文献阅读</title><link href="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html" rel="alternate" type="text/html" title="MCQ文献阅读" /><published>2021-11-25T00:00:00+08:00</published><updated>2021-11-25T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html">&lt;h2 id=&quot;整理集合&quot;&gt;整理集合&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-28T22:31:23+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">MCQ文献阅读</title><link href="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html" rel="alternate" type="text/html" title="MCQ文献阅读" /><published>2021-11-25T00:00:00+08:00</published><updated>2021-11-25T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html">&lt;h2 id=&quot;整理集合&quot;&gt;整理集合&lt;/h2&gt;
 &lt;p&gt;多选题自动生成：&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;定义&lt;/li&gt;
-  &lt;li&gt;模型结构&lt;/li&gt;
-  &lt;li&gt;主流的研究关注点&lt;/li&gt;
-  &lt;li&gt;现存的问题&lt;/li&gt;
+  &lt;li&gt;定义&lt;br /&gt;
+输入一篇文章，从这篇文章生成一系列多选题&lt;/li&gt;
+  &lt;li&gt;模型结构&lt;br /&gt;
+待补充&lt;/li&gt;
+  &lt;li&gt;工作流程&lt;br /&gt;
+六大步：
+    &lt;ul&gt;
+      &lt;li&gt;输入文章预处理&lt;/li&gt;
+      &lt;li&gt;选择句子&lt;/li&gt;
+      &lt;li&gt;从句子中选择关键字&lt;/li&gt;
+      &lt;li&gt;生成疑问句&lt;/li&gt;
+      &lt;li&gt;生成误导选项&lt;/li&gt;
+      &lt;li&gt;后期处理&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;主流的研究关注点与现存的问题
+    &lt;ul&gt;
+      &lt;li&gt;目前大多数处理文本都不考虑公式、图片和图标等等信息，文本预处理只提取文本信息，今后MCQG的研究需要关注处理嵌入在文本中的信息的能力。&lt;/li&gt;
+      &lt;li&gt;现有的MCQ生成方法侧重于从单个句子生成问题，然而，文本可能通过多个句子来生成句子，所以今后的研究应该侧重于从多个句子中生成问题。&lt;/li&gt;
+      &lt;li&gt;关键字的选择取决于下游任务或者应用领域，早期的关键字选择依赖于基本的统计和句法信息。最新的研究趋势是使用&lt;strong&gt;机器学习&lt;/strong&gt;或者&lt;strong&gt;语义信息&lt;/strong&gt;作为选择的标准。&lt;/li&gt;
+      &lt;li&gt;误导选项的选择同样与应用领域有关，目前的MCQ生成系统中使用的都是简单的误导选项生成，但在实际情况中，误导选项可以是非常多种类的，可以是不同的命名体，数字大小，多个单词的误导选项等等。作者认为文本的深层语义分析或使用基于神经嵌入的方法可能是复杂误导答案生成的一个可能的方向。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;第一篇关于mcq的综述&quot;&gt;第一篇关于MCQ的综述&lt;/h2&gt;
-&lt;h3 id=&quot;title&quot;&gt;title&lt;/h3&gt;
+&lt;h2 id=&quot;一篇关于mcqg的综述&quot;&gt;一篇关于MCQG的综述&lt;/h2&gt;
+&lt;h3 id=&quot;title&quot;&gt;Title&lt;/h3&gt;
 &lt;p&gt;Automatic Multiple Choice Question Generation From Text: A Survey&lt;/p&gt;
-&lt;h3 id=&quot;author&quot;&gt;author&lt;/h3&gt;
+&lt;h3 id=&quot;author&quot;&gt;Author&lt;/h3&gt;
 &lt;p&gt;Dhawaleswar Rao CH and Sujan Kumar Saha&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;./assets/img/posts/20211125/Dhawaleswar.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;./assets/img/posts/20211125/Sujan.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;abstract&quot;&gt;abstract&lt;/h3&gt;
-&lt;p&gt;介绍了MCQ&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;工作20年前已经开始研究，综述将概括目前常见的多选题自动生成的&lt;strong&gt;工作流&lt;/strong&gt;和&lt;strong&gt;评估系统&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&quot;abstract&quot;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;MCQ&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;工作20年前已经开始研究，综述将概括目前常见的多选题自动生成的&lt;strong&gt;工作流&lt;/strong&gt;和&lt;strong&gt;评估系统&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;h3 id=&quot;1introduction&quot;&gt;1.introduction&lt;/h3&gt;
 &lt;p&gt;介绍了MCQ的重要性，是评估知识学习的工具之一，优点是耗时短但是人工出题需要很多时间，所以通过一段文章自动生成问题是人们关注的重点。&lt;/p&gt;
@@ -45,7 +64,7 @@
 &lt;/table&gt;
 
 &lt;h3 id=&quot;3research-motivation-and-objectives&quot;&gt;3.research motivation and objectives&lt;/h3&gt;
-&lt;p&gt;介绍了MCQ的研究动机。&lt;/p&gt;
+&lt;p&gt;MCQ的研究动机主要来源于人工出题繁琐且耗时间。&lt;/p&gt;
 &lt;h3 id=&quot;4review-methodology&quot;&gt;4.review methodology&lt;/h3&gt;
 &lt;p&gt;作者从大量paper中挑选了86篇文章做来做MCQ的综述。&lt;/p&gt;
 
@@ -209,7 +228,7 @@
       &lt;p&gt;句子结构分析 &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">整理集合 多选题自动生成： 定义 模型结构 主流的研究关注点 现存的问题</summary></entry><entry><title type="html">练习Markdown</title><link href="http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown.html" rel="alternate" type="text/html" title="练习Markdown" /><published>2021-11-24T00:00:00+08:00</published><updated>2021-11-24T00:00:00+08:00</updated><id>http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown</id><content type="html" xml:base="http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown.html">&lt;h1 id=&quot;1标题&quot;&gt;1.标题&lt;/h1&gt;
+&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">整理集合 多选题自动生成： 定义 输入一篇文章，从这篇文章生成一系列多选题 模型结构 待补充 工作流程 六大步： 输入文章预处理 选择句子 从句子中选择关键字 生成疑问句 生成误导选项 后期处理 主流的研究关注点与现存的问题 目前大多数处理文本都不考虑公式、图片和图标等等信息，文本预处理只提取文本信息，今后MCQG的研究需要关注处理嵌入在文本中的信息的能力。 现有的MCQ生成方法侧重于从单个句子生成问题，然而，文本可能通过多个句子来生成句子，所以今后的研究应该侧重于从多个句子中生成问题。 关键字的选择取决于下游任务或者应用领域，早期的关键字选择依赖于基本的统计和句法信息。最新的研究趋势是使用机器学习或者语义信息作为选择的标准。 误导选项的选择同样与应用领域有关，目前的MCQ生成系统中使用的都是简单的误导选项生成，但在实际情况中，误导选项可以是非常多种类的，可以是不同的命名体，数字大小，多个单词的误导选项等等。作者认为文本的深层语义分析或使用基于神经嵌入的方法可能是复杂误导答案生成的一个可能的方向。</summary></entry><entry><title type="html">练习Markdown</title><link href="http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown.html" rel="alternate" type="text/html" title="练习Markdown" /><published>2021-11-24T00:00:00+08:00</published><updated>2021-11-24T00:00:00+08:00</updated><id>http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown</id><content type="html" xml:base="http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown.html">&lt;h1 id=&quot;1标题&quot;&gt;1.标题&lt;/h1&gt;
 &lt;h1 id=&quot;一级标题&quot;&gt;一级标题&lt;/h1&gt;
 &lt;h2 id=&quot;二级标题&quot;&gt;二级标题&lt;/h2&gt;
 &lt;h3 id=&quot;三级标题&quot;&gt;三级标题&lt;/h3&gt;
@@ -477,11 +496,11 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}\]
       &lt;p&gt;我是脚注脚注脚注注脚 &lt;a href=&quot;#fnref:12&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Quehry</name></author><category term="daily" /><summary type="html">1.标题 一级标题 二级标题 三级标题 一共有6级标题</summary></entry><entry><title type="html">空天报国,敢为人先</title><link href="http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88.html" rel="alternate" type="text/html" title="空天报国,敢为人先" /><published>2021-11-18T00:00:00+08:00</published><updated>2021-11-18T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88</id><content type="html" xml:base="http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88.html">&lt;p&gt;今天是71期党校的最后一节党课，今天很幸运，徐惠彬校长第一次讲党课。&lt;/p&gt;
+&lt;/div&gt;</content><author><name>Quehry</name></author><category term="daily" /><summary type="html">1.标题 一级标题 二级标题 三级标题 一共有6级标题</summary></entry><entry><title type="html">空天报国,敢为人先</title><link href="http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88.html" rel="alternate" type="text/html" title="空天报国,敢为人先" /><published>2021-11-18T00:00:00+08:00</published><updated>2021-11-18T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88</id><content type="html" xml:base="http://localhost:4000/%E7%A9%BA%E5%A4%A9%E6%8A%A5%E5%9B%BD%E6%95%A2%E4%B8%BA%E4%BA%BA%E5%85%88.html">&lt;!-- 今天是71期党校的最后一节党课，今天很幸运，徐惠彬校长第一次讲党课。
 
-&lt;p&gt;以前我对于学校的归属感并不强，但现在我会比较自豪的说出我是北航人。空天报国，敢为人先是北航的口号，虽然我并不是学的航空航天专业，但是我认为这句口号是全北航人适用的。我希望能传承下这份精神与荣誉。前辈们为我们铺垫了很多，我们北航人自带红色基因，尽忠报国是我要向徐校长学习的，我对于国家和学校的归属感第一次这么强烈。&lt;/p&gt;
+以前我对于学校的归属感并不强，但现在我会比较自豪的说出我是北航人。空天报国，敢为人先是北航的口号，虽然我并不是学的航空航天专业，但是我认为这句口号是全北航人适用的。我希望能传承下这份精神与荣誉。前辈们为我们铺垫了很多，我们北航人自带红色基因，尽忠报国是我要向徐校长学习的，我对于国家和学校的归属感第一次这么强烈。
 
-&lt;p&gt;记于2021.11.19 1：16，最近各种事儿都忙起来了。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="daily" /><summary type="html">今天是71期党校的最后一节党课，今天很幸运，徐惠彬校长第一次讲党课。</summary></entry><entry><title type="html">My first blog</title><link href="http://localhost:4000/my-first-blog.html" rel="alternate" type="text/html" title="My first blog" /><published>2021-11-17T00:00:00+08:00</published><updated>2021-11-17T00:00:00+08:00</updated><id>http://localhost:4000/my-first-blog</id><content type="html" xml:base="http://localhost:4000/my-first-blog.html">&lt;p&gt;i am so happy to set a website.&lt;/p&gt;</content><author><name>Quehry</name></author><category term="daily" /><summary type="html">i am so happy to set a website.</summary></entry><entry><title type="html">Who owns the copyright for an AI generated creative work?</title><link href="http://localhost:4000/AI-and-intellectual-property.html" rel="alternate" type="text/html" title="Who owns the copyright for an AI generated creative work?" /><published>2021-04-20T00:00:00+08:00</published><updated>2021-04-20T00:00:00+08:00</updated><id>http://localhost:4000/AI-and-intellectual-property</id><content type="html" xml:base="http://localhost:4000/AI-and-intellectual-property.html">&lt;p&gt;Recently I was &lt;a href=&quot;https://www.rollingstone.com/music/music-features/nirvana-kurt-cobain-ai-song-1146444/&quot;&gt;reading an article&lt;/a&gt; about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Winehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.&lt;/p&gt;
+记于2021.11.19 1：16，最近各种事儿都忙起来了。 --&gt;</content><author><name>Quehry</name></author><category term="daily" /><summary type="html">&amp;lt;!– 今天是71期党校的最后一节党课，今天很幸运，徐惠彬校长第一次讲党课。</summary></entry><entry><title type="html">Who owns the copyright for an AI generated creative work?</title><link href="http://localhost:4000/AI-and-intellectual-property.html" rel="alternate" type="text/html" title="Who owns the copyright for an AI generated creative work?" /><published>2021-04-20T00:00:00+08:00</published><updated>2021-04-20T00:00:00+08:00</updated><id>http://localhost:4000/AI-and-intellectual-property</id><content type="html" xml:base="http://localhost:4000/AI-and-intellectual-property.html">&lt;p&gt;Recently I was &lt;a href=&quot;https://www.rollingstone.com/music/music-features/nirvana-kurt-cobain-ai-song-1146444/&quot;&gt;reading an article&lt;/a&gt; about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Winehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/tjzOzuKQhSM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
@@ -8279,4 +8298,71 @@ qXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguNDUuMTAw
   &lt;li&gt;save and load trained model to file&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I will get to it soon…&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="machine learning" /><category term="coding" /><category term="neural networks" /><category term="python" /><summary type="html">It must sound crazy that in this day and age, when we have such a myriad of amazing machine learning libraries and toolkits all open sourced, all quite well documented and easy to use, I decided to create my own ML library from scratch. Let me try to explain; I am in the process of immersing myself into the world of Machine Learning, and to do so, I want to deeply understand the basic concepts and its foundations, and I think that there is no better way to do so than by creating myself all the code for a basic neural network library from scratch. This way I can gain in depth understanding of the math that underpins the ML algorithms.</summary></entry></feed>
+&lt;p&gt;I will get to it soon…&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="machine learning" /><category term="coding" /><category term="neural networks" /><category term="python" /><summary type="html">It must sound crazy that in this day and age, when we have such a myriad of amazing machine learning libraries and toolkits all open sourced, all quite well documented and easy to use, I decided to create my own ML library from scratch. Let me try to explain; I am in the process of immersing myself into the world of Machine Learning, and to do so, I want to deeply understand the basic concepts and its foundations, and I think that there is no better way to do so than by creating myself all the code for a basic neural network library from scratch. This way I can gain in depth understanding of the math that underpins the ML algorithms.</summary></entry><entry><title type="html">Conway’s Game of Life</title><link href="http://localhost:4000/conways-game-of-life.html" rel="alternate" type="text/html" title="Conway’s Game of Life" /><published>2021-02-11T03:32:20+08:00</published><updated>2021-02-11T03:32:20+08:00</updated><id>http://localhost:4000/conways-game-of-life</id><content type="html" xml:base="http://localhost:4000/conways-game-of-life.html">&lt;p&gt;I&amp;nbsp;am lately trying to take on coding again. It had always been a part of my life since my early years when I&amp;nbsp;learned to program a Tandy Color Computer at the age of 8, the good old days.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210210/300px-TRS-80_Color_Computer_3.jpg&quot; alt=&quot;Tandy Color Computer TRS80 III&quot; /&gt;&lt;small&gt;Tandy Color Computer TRS80 III&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;Having already programed in Java, C# and of course BASIC, I&amp;nbsp;thought it would be a great idea to learn Python since I&amp;nbsp;have great interest in data science and machine learning, and those two topics seem to have an avid community within Python coders.&lt;/p&gt;
+
+&lt;p&gt;For one of my starter quick programming tasks, I&amp;nbsp;decided to code Conway&apos;s Game of Life, a very simple cellular automata that basically plays itself.&lt;/p&gt;
+
+&lt;p&gt;The game consists of a grid of n size, and within each block of the grid a cell could either be dead or alive according to these rules:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;If a cell has less than 2 neighbors, meaning contiguous alive cells, the cell will die of loneliness&lt;/li&gt;&lt;li&gt;If a cell has more than 3 neighbors, it will die of overpopulation&lt;/li&gt;&lt;li&gt;If an empty block has exactly 3 contiguous alive neighbors, a new cell will be born in that spot&lt;/li&gt;&lt;li&gt;If an alive cell has 2 or 3 alive neighbors, it continues to live&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210210/GameOfLife.gif&quot; alt=&quot;Conway&apos;s rules for the Game of Life&quot; /&gt;&lt;small&gt;Conway’s rules for the Game of Life&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;To make it more of a challenge I&amp;nbsp;also decided to implement an &lt;em&gt;&quot;sparse&quot; &lt;/em&gt;method of recording the game board, this means that instead of the typical 2d array representing the whole board, I&amp;nbsp;will only record the cells which are alive. Saving a lot of memory space and processing time, while adding some spice to the challenge.&lt;/p&gt;
+
+&lt;p&gt;The trickiest part was figuring out how to calculate which empty blocks had exactly 3 alive neighbors so that a new cell will spring to life there, this is trivial in the case of recording the whole grid, because we just iterate all over the board and find the alive neighbors of ALL&amp;nbsp;the blocks in the grid, but in the case of only keeping the alive cells proved quite a challenge.&lt;/p&gt;
+
+&lt;p&gt;In the end the algorithm ended up as follows:&lt;/p&gt;
+
+&lt;ol&gt;&lt;li&gt;Iterate through all the alive cells and get all of their neighbors&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol start=&quot;2&quot;&gt;&lt;li&gt;Mark all the neighboring blocks as having +1 neighbor each time a particular cell is encountered. This way, for each neighboring alive cell the counter of the particular block will increase, and in the end it will contain the total number of live cells which are contiguous to it.&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;next_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alive_cells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The trick was using a dictionary to keep the record of the blocks that have alive neighbors and the cells who are alive in the current state but have zero alive neighbors (thus will die).&lt;/p&gt;
+
+&lt;p&gt;With the dictionary it became easy just to add cells and increase their neighbor counter each time it was encountered as a neighbor of an alive cell.&lt;/p&gt;
+
+&lt;p&gt;Having the dictionary now filled with all the cells that have alive neighbors and how many they have, it was just a matter of applying the rules of the game:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alive_cells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alive_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alive_cells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice that since I am keeping an array of the coordinates of only the cells who are alive, I could apply just 3 rules, die of loneliness, die of overpopulation and become alive from reproduction (exactly 3 alive neighbors) because the ones who have 2 or 3 neighbors and are already alive, can remain alive in the next iteration.&lt;/p&gt;
+
+&lt;p&gt;I&amp;nbsp;found it very interesting to implement the Game of Life like this, it was quite a refreshing challenge and I am beginning to feel my coding skills ramping up again.&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="coding" /><category term="python" /><summary type="html">I&amp;nbsp;am lately trying to take on coding again. It had always been a part of my life since my early years when I&amp;nbsp;learned to program a Tandy Color Computer at the age of 8, the good old days.</summary></entry></feed>
