@@ -1,0 +1,39 @@
+I"J	<h2 id="文献整理">文献整理</h2>
+<h3 id="要求">要求</h3>
+
+<p><img src="../assets/img/posts/20211130/requirements.jpg" /></p>
+
+<h3 id="搜集到相关文献标题和地址">搜集到相关文献标题和地址</h3>
+<ul>
+  <li><a href="https://arxiv.org/pdf/2010.05384.pdf">A BERT-based Distractor Generation Scheme with Multi-tasking and Negative Answer Training Strategies</a></li>
+  <li><a href="https://arxiv.org/pdf/2010.09598.pdf">Better Distractions: Transformer-based Distractor Generation and Multiple Choice Question Filtering</a></li>
+  <li><a href="https://ojs.aaai.org//index.php/AAAI/article/view/4606">Generating Distractors for Reading Comprehension Questions from Real Examinations</a></li>
+  <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/6522">Co-attention hierarchical network: Generating coherent long distractors for reading comprehension</a></li>
+  <li><a href="https://aclanthology.org/2020.coling-main.189.pdf">Automatic Distractor Generation for Multiple Choice Questions in Standard Tests</a></li>
+  <li><a href="https://aclanthology.org/W18-0533.pdf">Distractor Generation for Multiple Choice Questions Using Learning to Rank</a></li>
+  <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/16559">Knowledge-Driven Distractor Generation for Cloze-style Multiple Choice Questions</a></li>
+</ul>
+
+<h2 id="第一篇">第一篇</h2>
+<h3 id="title">Title</h3>
+<p>A BERT-based Distractor Generation Scheme with Multi-tasking and
+Negative Answer Training Strategies</p>
+<h3 id="abstract">Abstract</h3>
+<p>现有的DG<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>局限在只能生成一个误导选项，我们需要生成多个误导选项，文章中提到他们团队用multi-tasking和negative answer training技巧来生成多个误导选项，模型结果达到了学界顶尖。</p>
+
+<h3 id="introduction">introduction</h3>
+<p>DG效果不好，文章提出了两个提升的空间：</p>
+<ol>
+  <li>DG质量提升：<br />
+ BERT模型来提升误导选项质量</li>
+  <li>多个误导选项生成：</li>
+</ol>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>distractor generation 误导选项生成，简称DG <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET

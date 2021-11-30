@@ -1,0 +1,47 @@
+---
+layout: post
+read_time: true
+show_date: true
+title:  RACE数据集相关文献
+date:   2021-11-30  
+description: 文献整理
+img: posts/20211130/arxiv.jpg 
+tags: [paper]
+author: Quehry
+---
+
+## 文献整理
+### 要求
+
+<img src='../assets/img/posts/20211130/requirements.jpg'>
+
+### 搜集到相关文献标题和地址
+- [A BERT-based Distractor Generation Scheme with Multi-tasking and Negative Answer Training Strategies](https://arxiv.org/pdf/2010.05384.pdf)  
+- [Better Distractions: Transformer-based Distractor Generation and Multiple Choice Question Filtering](https://arxiv.org/pdf/2010.09598.pdf)  
+- [Generating Distractors for Reading Comprehension Questions from Real Examinations](https://ojs.aaai.org//index.php/AAAI/article/view/4606)
+- [Co-attention hierarchical network: Generating coherent long distractors for reading comprehension](https://ojs.aaai.org/index.php/AAAI/article/view/6522) 
+- [Automatic Distractor Generation for Multiple Choice Questions in Standard Tests](https://aclanthology.org/2020.coling-main.189.pdf)  
+- [Distractor Generation for Multiple Choice Questions Using Learning to Rank](https://aclanthology.org/W18-0533.pdf)  
+- [Knowledge-Driven Distractor Generation for Cloze-style Multiple Choice Questions](https://ojs.aaai.org/index.php/AAAI/article/view/16559)  
+
+## 第一篇
+### Title
+A BERT-based Distractor Generation Scheme with Multi-tasking and
+Negative Answer Training Strategies
+### Abstract
+现有的DG[^1]局限在只能生成一个误导选项，我们需要生成多个误导选项，文章中提到他们团队用multi-tasking和negative answer training技巧来生成多个误导选项，模型结果达到了学界顶尖。  
+
+[^1]:distractor generation 误导选项生成，简称DG
+
+### introduction
+DG效果不好，文章提出了两个提升的空间：  
+1. DG质量提升：  
+    BERT模型来提升误导选项质量
+2. 多个误导选项生成：
+    运用了覆盖的方法来选择distractor，而不是选择概率最高但是语义很相近的distractor
+
+### 
+
+
+
+
