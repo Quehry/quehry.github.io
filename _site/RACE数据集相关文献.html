@@ -22,7 +22,7 @@
   "headline": "RACE数据集相关文献",
   "abstract": "文献整理",
     "keywords": "paper",
-    "wordcount": "251",
+    "wordcount": "359",
     "image": ["http://localhost:4000/assets/imgposts/20211130/arxiv.jpg"],
   "datePublished": "2021-11-30 00:00:00 +0800",
   "dateModified": "2021-11-30 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="文献整理">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="251"/>
+<meta data-rh="true" name="twitter:data1" content="359"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211130/arxiv.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -487,8 +487,72 @@ BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次�
 <h3 id="author-1">Author</h3>
 <p>Jeroen Offerijns, Suzan Verberne, Tessa Verhoef</p>
 <h3 id="abstract-1">Abstract</h3>
+<p>运用GPT2模型生成三个误导选项，同时用BERT模型去回答这个问题，只挑选出回答正确的问题。相当于使用了QA作为一个过滤器(QA filtering)。</p>
+<h2 id="method">Method</h2>
+<p>作者使用了Question generation model, distractor generation model和question answer filter，作者将从这三方面介绍，下图是大概的流程图。</p>
 
-<h3 id="introduction-1">Introduction</h3>
+<p><img src="../assets/img/posts/20211130/18.jpg" /></p>
+
+<h3 id="1question-generation">1)question generation</h3>
+<ul>
+  <li>预训练模型：GPT-2</li>
+  <li>数据集：English SQuAD</li>
+  <li>tokenizer：Byte-Pair-Encoding(BPE) tokenizer</li>
+  <li>optimizer:Adam</li>
+  <li>下图展示了QG的输入，黑框内被tokenizer标记为特殊词元</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/19.jpg" /></p>
+
+<h3 id="2distractor-generation">2)distractor generation</h3>
+<ul>
+  <li>预训练模型：GPT-2</li>
+  <li>数据集：RACE</li>
+  <li>tokenizer:BPE<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup></li>
+  <li>使用了repetition penalty技术，保证了尽量不会生成相似的text，并且过滤到那些不好的生成（比如生成了空字符串）</li>
+  <li>输入：经典的C(context)，A(answer),Q(question)，下图展示了输入格式</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/20.jpg" /></p>
+
+<h3 id="3qa-filtering">3)QA filtering</h3>
+<ul>
+  <li>预训练模型：DistilBERT</li>
+  <li>网络结构：CQA<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>输入到distilbert，再连接一个dropout，全连接层和softmax，最后输出一个答案，具体结构如下图</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/21.jpg" /></p>
+
+<h2 id="results">Results</h2>
+<h3 id="1quantitative-evaluation">1)quantitative evaluation</h3>
+<p>下表中展示了和上一篇论文类似的指标,与现有的模型进行了比较：SEQ2SEQ,HSA<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>和CHN<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>。可以看出BLEU明显要比之前模型要好，但是ROUGE没有之前的高。</p>
+
+<p><img src="../assets/img/posts/20211130/22.jpg" /></p>
+
+<h3 id="2question-answering-ability">2)question answering ability</h3>
+<p>用GPT-2模型生成误导选项再输入到QAmodel中，具体结果见下图。</p>
+
+<p><img src="../assets/img/posts/20211130/23.jpg" /></p>
+
+<h3 id="3human-evaluation">3)human evaluation</h3>
+<p>人工评估，从两方面评估distractor生成的好坏：</p>
+<ul>
+  <li><strong>Is the question well-formed and can you understand the meaning?</strong></li>
+  <li><strong>If the question is at least understandable, does the answer make sense in relation to the question?</strong>
+评估过程中，使用了155个没有经过QA筛选和155经过QA筛选的，了解一下QA过滤模型的效果。整体来说QA过滤器还是有一点效果，具体结果如下：</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/24.jpg" /></p>
+
+<h2 id="conclusion-1">conclusion</h2>
+<p>我认为作者使用的DG模型主要有两大特色，一个是使用了GPT2预训练模型，目前使用基于transformer的模型已经成为主流。第二个是使用了QA过滤器来筛选掉回答错误的，有一定提升但不显著。</p>
+
+<h1 id="第三篇">第三篇</h1>
+<h3 id="title-2">Title</h3>
+<p>Generating Distractors for Reading Comprehension Questions from Real Examinations</p>
+<h3 id="author-2">Author</h3>
+<p>Yifan Gao, Lidong Bing, Piji Li,
+Irwin King, Michael R. Lyu</p>
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
@@ -506,6 +570,18 @@ BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次�
     </li>
     <li id="fn:5" role="doc-endnote">
       <p>Answer negative <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>Byte-Pair-Encoding <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>context，question，answer <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>hierarchical encoder-decoder model with static attention <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>hierarchical model enhanced with co-attention <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

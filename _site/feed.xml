@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-04T14:55:32+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h2 id=&quot;文献整理&quot;&gt;文献整理&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-05T20:06:54+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h2 id=&quot;文献整理&quot;&gt;文献整理&lt;/h2&gt;
 &lt;h3 id=&quot;要求&quot;&gt;要求&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/requirements.jpg&quot; /&gt;&lt;/p&gt;
@@ -142,8 +142,72 @@ BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次�
 &lt;h3 id=&quot;author-1&quot;&gt;Author&lt;/h3&gt;
 &lt;p&gt;Jeroen Offerijns, Suzan Verberne, Tessa Verhoef&lt;/p&gt;
 &lt;h3 id=&quot;abstract-1&quot;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;运用GPT2模型生成三个误导选项，同时用BERT模型去回答这个问题，只挑选出回答正确的问题。相当于使用了QA作为一个过滤器(QA filtering)。&lt;/p&gt;
+&lt;h2 id=&quot;method&quot;&gt;Method&lt;/h2&gt;
+&lt;p&gt;作者使用了Question generation model, distractor generation model和question answer filter，作者将从这三方面介绍，下图是大概的流程图。&lt;/p&gt;
 
-&lt;h3 id=&quot;introduction-1&quot;&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/18.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1question-generation&quot;&gt;1)question generation&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;预训练模型：GPT-2&lt;/li&gt;
+  &lt;li&gt;数据集：English SQuAD&lt;/li&gt;
+  &lt;li&gt;tokenizer：Byte-Pair-Encoding(BPE) tokenizer&lt;/li&gt;
+  &lt;li&gt;optimizer:Adam&lt;/li&gt;
+  &lt;li&gt;下图展示了QG的输入，黑框内被tokenizer标记为特殊词元&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/19.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2distractor-generation&quot;&gt;2)distractor generation&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;预训练模型：GPT-2&lt;/li&gt;
+  &lt;li&gt;数据集：RACE&lt;/li&gt;
+  &lt;li&gt;tokenizer:BPE&lt;sup id=&quot;fnref:6&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;使用了repetition penalty技术，保证了尽量不会生成相似的text，并且过滤到那些不好的生成（比如生成了空字符串）&lt;/li&gt;
+  &lt;li&gt;输入：经典的C(context)，A(answer),Q(question)，下图展示了输入格式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/20.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3qa-filtering&quot;&gt;3)QA filtering&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;预训练模型：DistilBERT&lt;/li&gt;
+  &lt;li&gt;网络结构：CQA&lt;sup id=&quot;fnref:7&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:7&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;输入到distilbert，再连接一个dropout，全连接层和softmax，最后输出一个答案，具体结构如下图&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/21.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
+&lt;h3 id=&quot;1quantitative-evaluation&quot;&gt;1)quantitative evaluation&lt;/h3&gt;
+&lt;p&gt;下表中展示了和上一篇论文类似的指标,与现有的模型进行了比较：SEQ2SEQ,HSA&lt;sup id=&quot;fnref:8&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:8&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;和CHN&lt;sup id=&quot;fnref:9&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:9&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;。可以看出BLEU明显要比之前模型要好，但是ROUGE没有之前的高。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/22.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2question-answering-ability&quot;&gt;2)question answering ability&lt;/h3&gt;
+&lt;p&gt;用GPT-2模型生成误导选项再输入到QAmodel中，具体结果见下图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/23.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3human-evaluation&quot;&gt;3)human evaluation&lt;/h3&gt;
+&lt;p&gt;人工评估，从两方面评估distractor生成的好坏：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Is the question well-formed and can you understand the meaning?&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;If the question is at least understandable, does the answer make sense in relation to the question?&lt;/strong&gt;
+评估过程中，使用了155个没有经过QA筛选和155经过QA筛选的，了解一下QA过滤模型的效果。整体来说QA过滤器还是有一点效果，具体结果如下：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/24.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion-1&quot;&gt;conclusion&lt;/h2&gt;
+&lt;p&gt;我认为作者使用的DG模型主要有两大特色，一个是使用了GPT2预训练模型，目前使用基于transformer的模型已经成为主流。第二个是使用了QA过滤器来筛选掉回答错误的，有一定提升但不显著。&lt;/p&gt;
+
+&lt;h1 id=&quot;第三篇&quot;&gt;第三篇&lt;/h1&gt;
+&lt;h3 id=&quot;title-2&quot;&gt;Title&lt;/h3&gt;
+&lt;p&gt;Generating Distractors for Reading Comprehension Questions from Real Examinations&lt;/p&gt;
+&lt;h3 id=&quot;author-2&quot;&gt;Author&lt;/h3&gt;
+&lt;p&gt;Yifan Gao, Lidong Bing, Piji Li,
+Irwin King, Michael R. Lyu&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
@@ -161,6 +225,18 @@ BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次�
     &lt;/li&gt;
     &lt;li id=&quot;fn:5&quot; role=&quot;doc-endnote&quot;&gt;
       &lt;p&gt;Answer negative &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Byte-Pair-Encoding &lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:7&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;context，question，answer &lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:8&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;hierarchical encoder-decoder model with static attention &lt;a href=&quot;#fnref:8&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:9&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;hierarchical model enhanced with co-attention &lt;a href=&quot;#fnref:9&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">文献整理 要求</summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">&lt;h2 id=&quot;课程要求&quot;&gt;课程要求&lt;/h2&gt;
