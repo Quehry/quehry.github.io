@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-07T22:43:56+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h1 id=&quot;目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-07T23:00:24+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h1 id=&quot;目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#文献整理&quot;&gt;文献整理&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#要求&quot;&gt;要求&lt;/a&gt;&lt;/li&gt;
@@ -119,6 +120,13 @@
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#results-and-analysis-结果与分析&quot;&gt;Results and Analysis 结果与分析&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#我的看法-2&quot;&gt;我的看法&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#补充&quot;&gt;补充&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#race数据集简介&quot;&gt;RACE数据集简介&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#bleu&quot;&gt;BLEU&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#rouge&quot;&gt;ROUGE&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -580,6 +588,27 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 
 &lt;h2 id=&quot;我的看法-2&quot;&gt;我的看法&lt;/h2&gt;
 &lt;p&gt;这篇文献是基于上一篇文献的方法进行了两个改进：1.关联了整篇文章和问题，解决方法是使用了Co-attention mechanism。2.让distractor和article语义相关，方法是定义了相关性loss。&lt;/p&gt;
+
+&lt;h1 id=&quot;补充&quot;&gt;补充&lt;/h1&gt;
+&lt;h2 id=&quot;race数据集简介&quot;&gt;RACE数据集简介&lt;/h2&gt;
+&lt;p&gt;RACE数据集是一个来源于中学考试题目的大规模阅读理解数据集，包含了大约 28000 个文章以及近 100000 个问题。它的形式类似于英语考试中的阅读理解（选择题），给定一篇文章，通过阅读并理解文章（Passage），针对提出的问题（Question）从四个选项中选择正确的答案（Answers）。&lt;/p&gt;
+&lt;h2 id=&quot;bleu&quot;&gt;BLEU&lt;/h2&gt;
+&lt;p&gt;BLEU是一个评价指标，最开始用于机器翻译任务，定义如下&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/66.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;它的总体思想就是准确率，假如给定标准译文reference，神经网络生成的句子是candidate，句子长度为n，candidate中有m个单词出现在reference，m/n就是bleu的1-gram的计算公式。BLEU还有许多变种。根据n-gram可以划分成多种评价指标，常见的指标有BLEU-1、BLEU-2、BLEU-3、BLEU-4四种，其中n-gram指的是连续的单词个数为n。&lt;/p&gt;
+
+&lt;h2 id=&quot;rouge&quot;&gt;ROUGE&lt;/h2&gt;
+&lt;p&gt;Rouge(Recall-Oriented Understudy for Gisting Evaluation)，是评估自动文摘以及机器翻译的一组指标。它通过将自动生成的摘要或翻译与一组参考摘要（通常是人工生成的）进行比较计算，得出相应的分值，以衡量自动生成的摘要或翻译与参考摘要之间的“相似度”。它的定义如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/67.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;文献中使用的ROUGE-L是一种变种，L即是LCS(longest common subsequence，最长公共子序列)的首字母，因为Rouge-L使用了最长公共子序列。Rouge-L计算方式如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/68.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中LCS(X, Y)是X和Y的最长公共子序列的长度,m、n分别表示参考摘要和自动摘要的长度（一般就是所含词的个数），R&lt;sub&gt;lcs&lt;/sub&gt;,P&lt;sub&gt;lcs&lt;/sub&gt;分别表示召回率和准确率。最后的F&lt;sub&gt;lcs&lt;/sub&gt;即是我们所说的Rouge-L。&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
