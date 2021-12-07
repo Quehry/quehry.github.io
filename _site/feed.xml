@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-05T20:06:54+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h2 id=&quot;文献整理&quot;&gt;文献整理&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-07T16:04:28+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h2 id=&quot;文献整理&quot;&gt;文献整理&lt;/h2&gt;
 &lt;h3 id=&quot;要求&quot;&gt;要求&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/requirements.jpg&quot; /&gt;&lt;/p&gt;
@@ -208,7 +208,131 @@ BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次�
 &lt;h3 id=&quot;author-2&quot;&gt;Author&lt;/h3&gt;
 &lt;p&gt;Yifan Gao, Lidong Bing, Piji Li,
 Irwin King, Michael R. Lyu&lt;/p&gt;
+&lt;h3 id=&quot;abstract-2&quot;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;上面两篇文献都有提到这篇文章。作者使用了&lt;strong&gt;Hierarchical encoder-decoder framework&lt;/strong&gt; with &lt;strong&gt;static&lt;/strong&gt; and &lt;strong&gt;dynamic&lt;/strong&gt; attention mechanisms来生成有语义信息的误导选项。使用了编码器-解码器结构网络和静态和动态注意力机制。&lt;/p&gt;
+&lt;h2 id=&quot;framework-description-网络结构&quot;&gt;Framework Description 网络结构&lt;/h2&gt;
+&lt;h3 id=&quot;1task-definition&quot;&gt;1)Task Definition&lt;/h3&gt;
+&lt;p&gt;输入：文章，问题和答案。P代表文章，s&lt;sub&gt;1&lt;/sub&gt;,s&lt;sub&gt;2&lt;/sub&gt;,s&lt;sub&gt;3&lt;/sub&gt;…表示不同的句子，q和a分别表示问题和答案，那么我们的任务是生成误导选项$\overline{d}$。&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/25.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2framework-overview&quot;&gt;2)Framework overview&lt;/h3&gt;
+&lt;p&gt;网络结构如下图所示，下面将从各个组成部分分别介绍：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/26.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3hierarchical-encoder&quot;&gt;3)Hierarchical encoder&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;word embedding&lt;/strong&gt;:词嵌入，将每个句子s&lt;sub&gt;i&lt;/sub&gt;中的每个词元变成词向量(w&lt;sub&gt;i,1&lt;/sub&gt;,w&lt;sub&gt;i,2&lt;/sub&gt;,w&lt;sub&gt;i,3&lt;/sub&gt;…)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;word encoder&lt;/strong&gt;:将句子s&lt;sub&gt;i&lt;/sub&gt;的词向量(w&lt;sub&gt;i,1&lt;/sub&gt;,w&lt;sub&gt;i,2&lt;/sub&gt;,w&lt;sub&gt;i,3&lt;/sub&gt;…)作为输入，用&lt;strong&gt;双向LSTM&lt;/strong&gt;作为编码器，获得word-level representation h&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup&gt;e&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/27.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;sentence encoder&lt;/strong&gt;:将word encoder中每个句子正向LSTM的最后一个隐藏状态和反向LSTM的最开始的隐藏状态作为输入到另一个双向LSTM中获得&lt;strong&gt;sentence-level representation&lt;/strong&gt;(u&lt;sub&gt;1&lt;/sub&gt;,u&lt;sub&gt;2&lt;/sub&gt;,u&lt;sub&gt;3&lt;/sub&gt;…)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4static-attention-mechanism&quot;&gt;4)static attention mechanism&lt;/h3&gt;
+&lt;p&gt;目的：生成的误导选项必须和问题Q语义相关，但是和答案A必须语义不相关。我们从(s&lt;sub&gt;1&lt;/sub&gt;,s&lt;sub&gt;2&lt;/sub&gt;,s&lt;sub&gt;3&lt;/sub&gt;…)学习到句子的权重分布(γ&lt;sub&gt;1&lt;/sub&gt;,γ&lt;sub&gt;2&lt;/sub&gt;,γ&lt;sub&gt;3&lt;/sub&gt;…)，然后将问题q和答案a作为query。&lt;/p&gt;
+
+&lt;h3 id=&quot;5encoding-layer&quot;&gt;5)encoding layer&lt;/h3&gt;
+&lt;p&gt;我们希望把问题q，答案a和句子s都变成一样的长度的向量表示，也就是上图中紫色虚线部分。对于q和a，我们用两个独立的双向LSTM来获得(&lt;strong&gt;a&lt;/strong&gt;&lt;sub&gt;1&lt;/sub&gt;,&lt;strong&gt;a&lt;/strong&gt;&lt;sub&gt;2&lt;/sub&gt;…&lt;strong&gt;a&lt;/strong&gt;&lt;sub&gt;k&lt;/sub&gt;)和(&lt;strong&gt;q&lt;/strong&gt;&lt;sub&gt;1&lt;/sub&gt;,&lt;strong&gt;q&lt;/strong&gt;&lt;sub&gt;2&lt;/sub&gt;…&lt;strong&gt;q&lt;/strong&gt;&lt;sub&gt;l&lt;/sub&gt;)，然后用平均池化层平均一下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/28.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;对于句子s，我们不用u而用h：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/29.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6matching-layer&quot;&gt;6)matching layer&lt;/h3&gt;
+&lt;p&gt;目的：加重与问题q有关的句子，减轻与答案a有关的句子。o&lt;sub&gt;i&lt;/sub&gt;表示不同句子的importance score&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/30.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;7nomalization-layer&quot;&gt;7)nomalization layer&lt;/h3&gt;
+&lt;p&gt;目的：有些问题q和一两个句子有关，而有些问题q和很多句子有关，比如summarizing，下面的τ(temperature)就是这个作用&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/31.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/32.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;作者介绍static attention mechanism用了很大篇幅&lt;/p&gt;
+
+&lt;h3 id=&quot;8distractor-decoder&quot;&gt;8)distractor decoder&lt;/h3&gt;
+&lt;p&gt;解码器使用的也是LSTM，但是并没有使用编码器的最后一个隐藏状态作为初始状态，而是定义了一个
+&lt;strong&gt;question-based initializer&lt;/strong&gt;来让生成的误导选项语法和问题q一致&lt;/p&gt;
+
+&lt;h3 id=&quot;9question-based-initializer&quot;&gt;9)question-based initializer&lt;/h3&gt;
+&lt;p&gt;定义了一个question LSTM来编码问题q，使用最后一层的cell state和hidden state作为decoder初始状态，同时输入q&lt;sub&gt;last&lt;/sub&gt;，表示问题q的最后一个词元。&lt;/p&gt;
+
+&lt;h3 id=&quot;10dynamic-hierarchical-attention-mechanism&quot;&gt;10)dynamic hierarchical attention mechanism&lt;/h3&gt;
+&lt;p&gt;常规的注意力机制将一篇文章作为长句子，然后decoder的每一个时间步都与encoder中所有的hidden state进行比较，但是这种方法并不适合目前的模型。原因：首先LSTM不能处理这么长的输入，其次，一些问题只与部分句子有关。&lt;br /&gt;
+目的：每个decoder时间步只关注&lt;strong&gt;重要句子&lt;/strong&gt;，作者将这种注意力机制称为动态注意力机制，因为不同的时间步，word-level和sentence-level 注意力分布都不同。&lt;br /&gt;
+每一个时间步的输入是词元d&lt;sub&gt;t-1&lt;/sub&gt;和上一个隐藏状态h&lt;sub&gt;t-1&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/33.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/34.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;α和β分别表示word-level,sentence-level权重，最后使用之前静态注意力机制获得的γ来调节α和β&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/35.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/36.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;获得上下文变量&lt;strong&gt;c&lt;/strong&gt;&lt;sub&gt;t&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/37.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;获得attention vector $\tilde{h}$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/38.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;11training-and-inference&quot;&gt;11)training and inference&lt;/h3&gt;
+&lt;p&gt;损失函数：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/39.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;生成多个误导选项的方法是束搜索，但是生成的误导选项很相似，作者做了相应的处理方法，但我觉得效果还是很差&lt;/p&gt;
+
+&lt;h2 id=&quot;experimental-setting-实验设置&quot;&gt;experimental setting 实验设置&lt;/h2&gt;
+&lt;h3 id=&quot;1dataset&quot;&gt;1)dataset&lt;/h3&gt;
+&lt;p&gt;RACE数据集，作者做了相应的处理，去掉了很多不合理的和语义不相关的，作者的处理标准是：对于误导选项中的词元，如果它们在文章中出现的次数小于5次，那么将被保留，同时去掉了那些需要在句子中间和句子开始填空的问题。下表展示了处理后的数据集的一些信息：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/40.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2implementation-details-1&quot;&gt;2)implementation details&lt;/h3&gt;
+&lt;p&gt;词表：保留了频率最高的50k个词元，同时使用GloVe作为词嵌入预训练模型。其他的细节都可以在文章中看见，这里不一一列出了，主要是超参数的设置。&lt;/p&gt;
+
+&lt;h3 id=&quot;3baselines-and-ablations&quot;&gt;3)baselines and ablations&lt;/h3&gt;
+&lt;p&gt;与HRED&lt;sup id=&quot;fnref:10&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:10&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt;和seq2seq比较&lt;/p&gt;
+
+&lt;h2 id=&quot;results-and-analysis-结果与分析&quot;&gt;results and analysis 结果与分析&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/41.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;人工评估：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/42.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;大致过程是这样：四个误导选项，分别来自seq2seq，HRED，作者的模型和原本的误导选项，让英语能力很好的人来选择最适合的选项，得出的结果可以发现，作者的模型生成的误导选项拥有最好的误导效果。&lt;/p&gt;
+
+&lt;p&gt;下图直观展示了static attention distribution：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/43.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;我的看法-1&quot;&gt;我的看法&lt;/h2&gt;
+&lt;p&gt;这篇文章应该是第一个提出用处理后的RACE数据集来处理MCQ问题，处理后的RACE数据集在后面也有很多文献用到，这篇文章使用了seq2seq网络结构同时使用了静态和动态注意力机制，对于网络结构和注意力机制的解释非常完全和详细，虽然这篇文章的效果放到现在来看可能不是最好了，但是它提出来的评估标准可能会成为一个通用的标准。它的数据集和训练代码在&lt;a href=&quot;https://github.com/Yifan-Gao/Distractor-Generation-RACE&quot;&gt;github&lt;/a&gt;上也完全开源。&lt;/p&gt;
+
+&lt;h1 id=&quot;第四篇&quot;&gt;第四篇&lt;/h1&gt;
+&lt;h3 id=&quot;title-3&quot;&gt;Title&lt;/h3&gt;
+&lt;p&gt;Co-attention hierarchical network: Generating coherent long distractors for reading comprehension&lt;/p&gt;
+&lt;h3 id=&quot;author-3&quot;&gt;Author&lt;/h3&gt;
+&lt;p&gt;Xiaorui Zhou, Senlin Luo, Yunfang Wu&lt;/p&gt;
+&lt;h3 id=&quot;abstract-3&quot;&gt;Abstract&lt;/h3&gt;
+
+&lt;hr /&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
@@ -237,6 +361,9 @@ Irwin King, Michael R. Lyu&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:9&quot; role=&quot;doc-endnote&quot;&gt;
       &lt;p&gt;hierarchical model enhanced with co-attention &lt;a href=&quot;#fnref:9&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:10&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;hierarchical encoder-decoder &lt;a href=&quot;#fnref:10&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">文献整理 要求</summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">&lt;h2 id=&quot;课程要求&quot;&gt;课程要求&lt;/h2&gt;

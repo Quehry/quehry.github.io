@@ -22,7 +22,7 @@
   "headline": "RACE数据集相关文献",
   "abstract": "文献整理",
     "keywords": "paper",
-    "wordcount": "359",
+    "wordcount": "483",
     "image": ["http://localhost:4000/assets/imgposts/20211130/arxiv.jpg"],
   "datePublished": "2021-11-30 00:00:00 +0800",
   "dateModified": "2021-11-30 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="文献整理">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="359"/>
+<meta data-rh="true" name="twitter:data1" content="483"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211130/arxiv.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -161,7 +161,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </span>
   
@@ -301,7 +301,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </span>
   
@@ -553,6 +553,131 @@ BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次�
 <h3 id="author-2">Author</h3>
 <p>Yifan Gao, Lidong Bing, Piji Li,
 Irwin King, Michael R. Lyu</p>
+<h3 id="abstract-2">Abstract</h3>
+<p>上面两篇文献都有提到这篇文章。作者使用了<strong>Hierarchical encoder-decoder framework</strong> with <strong>static</strong> and <strong>dynamic</strong> attention mechanisms来生成有语义信息的误导选项。使用了编码器-解码器结构网络和静态和动态注意力机制。</p>
+<h2 id="framework-description-网络结构">Framework Description 网络结构</h2>
+<h3 id="1task-definition">1)Task Definition</h3>
+<p>输入：文章，问题和答案。P代表文章，s<sub>1</sub>,s<sub>2</sub>,s<sub>3</sub>…表示不同的句子，q和a分别表示问题和答案，那么我们的任务是生成误导选项$\overline{d}$。</p>
+
+<p><img src="../assets/img/posts/20211130/25.jpg" /></p>
+
+<h3 id="2framework-overview">2)Framework overview</h3>
+<p>网络结构如下图所示，下面将从各个组成部分分别介绍：</p>
+
+<p><img src="../assets/img/posts/20211130/26.jpg" /></p>
+
+<h3 id="3hierarchical-encoder">3)Hierarchical encoder</h3>
+<ul>
+  <li><strong>word embedding</strong>:词嵌入，将每个句子s<sub>i</sub>中的每个词元变成词向量(w<sub>i,1</sub>,w<sub>i,2</sub>,w<sub>i,3</sub>…)</li>
+  <li><strong>word encoder</strong>:将句子s<sub>i</sub>的词向量(w<sub>i,1</sub>,w<sub>i,2</sub>,w<sub>i,3</sub>…)作为输入，用<strong>双向LSTM</strong>作为编码器，获得word-level representation h<sub>i,j</sub><sup>e</sup></li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/27.jpg" /></p>
+
+<ul>
+  <li><strong>sentence encoder</strong>:将word encoder中每个句子正向LSTM的最后一个隐藏状态和反向LSTM的最开始的隐藏状态作为输入到另一个双向LSTM中获得<strong>sentence-level representation</strong>(u<sub>1</sub>,u<sub>2</sub>,u<sub>3</sub>…)</li>
+</ul>
+
+<h3 id="4static-attention-mechanism">4)static attention mechanism</h3>
+<p>目的：生成的误导选项必须和问题Q语义相关，但是和答案A必须语义不相关。我们从(s<sub>1</sub>,s<sub>2</sub>,s<sub>3</sub>…)学习到句子的权重分布(γ<sub>1</sub>,γ<sub>2</sub>,γ<sub>3</sub>…)，然后将问题q和答案a作为query。</p>
+
+<h3 id="5encoding-layer">5)encoding layer</h3>
+<p>我们希望把问题q，答案a和句子s都变成一样的长度的向量表示，也就是上图中紫色虚线部分。对于q和a，我们用两个独立的双向LSTM来获得(<strong>a</strong><sub>1</sub>,<strong>a</strong><sub>2</sub>…<strong>a</strong><sub>k</sub>)和(<strong>q</strong><sub>1</sub>,<strong>q</strong><sub>2</sub>…<strong>q</strong><sub>l</sub>)，然后用平均池化层平均一下：</p>
+
+<p><img src="../assets/img/posts/20211130/28.jpg" /></p>
+
+<p>对于句子s，我们不用u而用h：</p>
+
+<p><img src="../assets/img/posts/20211130/29.jpg" /></p>
+
+<h3 id="6matching-layer">6)matching layer</h3>
+<p>目的：加重与问题q有关的句子，减轻与答案a有关的句子。o<sub>i</sub>表示不同句子的importance score</p>
+
+<p><img src="../assets/img/posts/20211130/30.jpg" /></p>
+
+<h3 id="7nomalization-layer">7)nomalization layer</h3>
+<p>目的：有些问题q和一两个句子有关，而有些问题q和很多句子有关，比如summarizing，下面的τ(temperature)就是这个作用</p>
+
+<p><img src="../assets/img/posts/20211130/31.jpg" /></p>
+
+<p><img src="../assets/img/posts/20211130/32.jpg" /></p>
+
+<p>作者介绍static attention mechanism用了很大篇幅</p>
+
+<h3 id="8distractor-decoder">8)distractor decoder</h3>
+<p>解码器使用的也是LSTM，但是并没有使用编码器的最后一个隐藏状态作为初始状态，而是定义了一个
+<strong>question-based initializer</strong>来让生成的误导选项语法和问题q一致</p>
+
+<h3 id="9question-based-initializer">9)question-based initializer</h3>
+<p>定义了一个question LSTM来编码问题q，使用最后一层的cell state和hidden state作为decoder初始状态，同时输入q<sub>last</sub>，表示问题q的最后一个词元。</p>
+
+<h3 id="10dynamic-hierarchical-attention-mechanism">10)dynamic hierarchical attention mechanism</h3>
+<p>常规的注意力机制将一篇文章作为长句子，然后decoder的每一个时间步都与encoder中所有的hidden state进行比较，但是这种方法并不适合目前的模型。原因：首先LSTM不能处理这么长的输入，其次，一些问题只与部分句子有关。<br />
+目的：每个decoder时间步只关注<strong>重要句子</strong>，作者将这种注意力机制称为动态注意力机制，因为不同的时间步，word-level和sentence-level 注意力分布都不同。<br />
+每一个时间步的输入是词元d<sub>t-1</sub>和上一个隐藏状态h<sub>t-1</sub></p>
+
+<p><img src="../assets/img/posts/20211130/33.jpg" /></p>
+
+<p><img src="../assets/img/posts/20211130/34.jpg" /></p>
+
+<p>α和β分别表示word-level,sentence-level权重，最后使用之前静态注意力机制获得的γ来调节α和β</p>
+
+<p><img src="../assets/img/posts/20211130/35.jpg" /></p>
+
+<p><img src="../assets/img/posts/20211130/36.jpg" /></p>
+
+<p>获得上下文变量<strong>c</strong><sub>t</sub></p>
+
+<p><img src="../assets/img/posts/20211130/37.jpg" /></p>
+
+<p>获得attention vector $\tilde{h}$</p>
+
+<p><img src="../assets/img/posts/20211130/38.jpg" /></p>
+
+<h3 id="11training-and-inference">11)training and inference</h3>
+<p>损失函数：</p>
+
+<p><img src="../assets/img/posts/20211130/39.jpg" /></p>
+
+<p>生成多个误导选项的方法是束搜索，但是生成的误导选项很相似，作者做了相应的处理方法，但我觉得效果还是很差</p>
+
+<h2 id="experimental-setting-实验设置">experimental setting 实验设置</h2>
+<h3 id="1dataset">1)dataset</h3>
+<p>RACE数据集，作者做了相应的处理，去掉了很多不合理的和语义不相关的，作者的处理标准是：对于误导选项中的词元，如果它们在文章中出现的次数小于5次，那么将被保留，同时去掉了那些需要在句子中间和句子开始填空的问题。下表展示了处理后的数据集的一些信息：</p>
+
+<p><img src="../assets/img/posts/20211130/40.jpg" /></p>
+
+<h3 id="2implementation-details-1">2)implementation details</h3>
+<p>词表：保留了频率最高的50k个词元，同时使用GloVe作为词嵌入预训练模型。其他的细节都可以在文章中看见，这里不一一列出了，主要是超参数的设置。</p>
+
+<h3 id="3baselines-and-ablations">3)baselines and ablations</h3>
+<p>与HRED<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>和seq2seq比较</p>
+
+<h2 id="results-and-analysis-结果与分析">results and analysis 结果与分析</h2>
+
+<p><img src="../assets/img/posts/20211130/41.jpg" /></p>
+
+<p>人工评估：</p>
+
+<p><img src="../assets/img/posts/20211130/42.jpg" /></p>
+
+<p>大致过程是这样：四个误导选项，分别来自seq2seq，HRED，作者的模型和原本的误导选项，让英语能力很好的人来选择最适合的选项，得出的结果可以发现，作者的模型生成的误导选项拥有最好的误导效果。</p>
+
+<p>下图直观展示了static attention distribution：</p>
+
+<p><img src="../assets/img/posts/20211130/43.jpg" /></p>
+
+<h2 id="我的看法-1">我的看法</h2>
+<p>这篇文章应该是第一个提出用处理后的RACE数据集来处理MCQ问题，处理后的RACE数据集在后面也有很多文献用到，这篇文章使用了seq2seq网络结构同时使用了静态和动态注意力机制，对于网络结构和注意力机制的解释非常完全和详细，虽然这篇文章的效果放到现在来看可能不是最好了，但是它提出来的评估标准可能会成为一个通用的标准。它的数据集和训练代码在<a href="https://github.com/Yifan-Gao/Distractor-Generation-RACE">github</a>上也完全开源。</p>
+
+<h1 id="第四篇">第四篇</h1>
+<h3 id="title-3">Title</h3>
+<p>Co-attention hierarchical network: Generating coherent long distractors for reading comprehension</p>
+<h3 id="author-3">Author</h3>
+<p>Xiaorui Zhou, Senlin Luo, Yunfang Wu</p>
+<h3 id="abstract-3">Abstract</h3>
+
+<hr />
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
@@ -582,6 +707,9 @@ Irwin King, Michael R. Lyu</p>
     </li>
     <li id="fn:9" role="doc-endnote">
       <p>hierarchical model enhanced with co-attention <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>hierarchical encoder-decoder <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -703,7 +831,7 @@ Irwin King, Michael R. Lyu</p>
     
     <p class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </p>
   

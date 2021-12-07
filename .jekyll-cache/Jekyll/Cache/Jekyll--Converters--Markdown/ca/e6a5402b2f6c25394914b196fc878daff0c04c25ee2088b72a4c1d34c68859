@@ -1,0 +1,269 @@
+I"�?<h2 id="文献整理">文献整理</h2>
+<h3 id="要求">要求</h3>
+
+<p><img src="../assets/img/posts/20211130/requirements.jpg" /></p>
+
+<h3 id="搜集到相关文献标题和地址">搜集到相关文献标题和地址</h3>
+<ul>
+  <li><a href="https://arxiv.org/pdf/2010.05384.pdf">A BERT-based Distractor Generation Scheme with Multi-tasking and Negative Answer Training Strategies</a></li>
+  <li><a href="https://arxiv.org/pdf/2010.09598.pdf">Better Distractions: Transformer-based Distractor Generation and Multiple Choice Question Filtering</a></li>
+  <li><a href="https://ojs.aaai.org//index.php/AAAI/article/view/4606">Generating Distractors for Reading Comprehension Questions from Real Examinations</a></li>
+  <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/6522">Co-attention hierarchical network: Generating coherent long distractors for reading comprehension</a></li>
+  <li><a href="https://aclanthology.org/2020.coling-main.189.pdf">Automatic Distractor Generation for Multiple Choice Questions in Standard Tests</a></li>
+  <li><a href="https://aclanthology.org/W18-0533.pdf">Distractor Generation for Multiple Choice Questions Using Learning to Rank</a></li>
+  <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/16559">Knowledge-Driven Distractor Generation for Cloze-style Multiple Choice Questions</a></li>
+</ul>
+
+<h1 id="第一篇">第一篇</h1>
+<h3 id="title">Title</h3>
+<p>A BERT-based Distractor Generation Scheme with Multi-tasking and
+Negative Answer Training Strategies</p>
+<h3 id="author">Author</h3>
+<p>Ho-Lam Chung, Ying-Hong Chan, Yao-Chung Fan</p>
+<h3 id="abstract">Abstract</h3>
+<p>现有的DG<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>局限在只能生成一个误导选项，我们需要生成多个误导选项，文章中提到他们团队用multi-tasking和negative answer training技巧来生成多个误导选项，模型结果达到了学界顶尖。</p>
+
+<h3 id="introduction">Introduction</h3>
+<p>DG效果不好，文章提出了两个提升的空间：</p>
+<ol>
+  <li>DG质量提升：<br />
+ BERT模型来提升误导选项质量</li>
+  <li>多个误导选项生成：
+ 运用了覆盖的方法来选择distractor，而不是选择概率最高但是语义很相近的distractor</li>
+</ol>
+
+<h2 id="bert-distractor-generation">BERT distractor generation</h2>
+<h3 id="1bert-based-distractor-generationbdg">1)BERT-based distractor generation(BDG)</h3>
+<p>输入：段落P，答案A，问题Q，用C表示这三者concatenate后的结果。<br />
+BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次预测的词元，BDG迭代预测词元，直到预测出特殊词元[S]停止。下面这张图简单介绍了这个过程。</p>
+
+<p><img src="../assets/img/posts/20211130/2.jpg" /></p>
+
+<p>网络结构简单介绍：h<sub>[M]</sub>表示bert输出的隐藏状态，隐藏状态再输入到一个全连接层中用来预测词元。</p>
+
+<p><img src="../assets/img/posts/20211130/3.jpg" /></p>
+
+<h3 id="2multi-task-with-parallel-mlm">2)Multi-task with Parallel MLM</h3>
+<p>MLM全称masked language model，遮蔽语言模型,通过并行BDG和P-MLM来训练模型让模型有更好的效果。</p>
+
+<p><img src="../assets/img/posts/20211130/4.jpg" /></p>
+
+<p>上图中左边的sequential MLM就是之前提到的BDG，BDG模型是一个词接一个词的预测，P-MLM是对所有的masked token进行预测，最后的损失函数是这两者相加<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>，公式如下：</p>
+
+<p><img src="../assets/img/posts/20211130/5.jpg" /></p>
+
+<p><img src="../assets/img/posts/20211130/6.jpg" /></p>
+
+<p><img src="../assets/img/posts/20211130/7.jpg" /></p>
+
+<p>作者如此设计的思路是：BDG可能会忽略整体语义语义信息，但是会过拟合单个词预测。那么并行一个P-MLM可以防止过拟合。</p>
+
+<h3 id="3answer-negative-regularization">3)Answer Negative Regularization</h3>
+<p>目前机器预测的distractor和answer有很高的相似度，下面一张表可以展示相似度。其中PM表示机器，Gold表示人工，作者将这类问题称为answer copying problem。</p>
+
+<p><img src="../assets/img/posts/20211130/8.jpg" /></p>
+
+<p>为了解决这个问题，作者提出了answer negative loss来让机器更多的选择与answer不同的词来表示新的distractor，公式如下：</p>
+
+<p><img src="../assets/img/posts/20211130/9.jpg" /></p>
+
+<p>可以看出BDG的loss替换成了AN的loss，每一项都减去了Answer negative loss。</p>
+
+<h2 id="multiple-distractor-generation">Multiple Distractor Generation</h2>
+<h3 id="1selecting-distractors-by-entropy-maximization">1)Selecting Distractors by Entropy Maximization</h3>
+<p>选择语义不同的distractor set。文章借鉴了MRC<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>的方法，让BDGmodel生成很多distractor组成 $\hat{D}$ = {$\hat{d}$<sub>1</sub>, $\hat{d}$<sub>2</sub>, $\hat{d}$<sub>3</sub>…}，然后找出最好的一组选项，一般情况下由三个误导选项和一个答案组成。选择的一句是最大化下面这个公式：</p>
+
+<p><img src="../assets/img/posts/20211130/10.jpg" /></p>
+
+<h3 id="2bdg-em">2)BDG-EM</h3>
+<p>我们可以通过不同的BDG模型来生成不同的误导选项最后组合，不同的模型区别是有没有answer negative/multi-task training，比如我们有这几个模型:$\hat{D}$,$\hat{D}$<sub>PM</sub>,$\hat{D}$<sub>PM+AN</sub>，它们分别代表含PM<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>和含AN<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup></p>
+
+<p><img src="../assets/img/posts/20211130/11.jpg" /></p>
+
+<h2 id="performance-evaluation">Performance Evaluation</h2>
+<h3 id="1datasets">1)datasets</h3>
+<p>RACE,沿用了<a href="https://ojs.aaai.org//index.php/AAAI/article/view/4606">Gao</a>那篇论文的处理,后面也会梳理那篇论文</p>
+
+<p><img src="../assets/img/posts/20211130/12.jpg" /></p>
+
+<h3 id="2implementation-details">2)implementation details</h3>
+<ul>
+  <li>tokenizer: wordpiece tokenizer</li>
+  <li>framewordk:huggingface trainsformers</li>
+  <li>optimizer:adamW(lr:5e-5)</li>
+  <li>github_url: <a href="https://github.com/voidful/BDG">BDG</a></li>
+</ul>
+
+<h3 id="3compared-methods">3)compared methods</h3>
+<p>比较了不同的distractor generation</p>
+<ul>
+  <li>CO-Att：出自<a href="https://ojs.aaai.org/index.php/AAAI/article/view/6522">Zhou</a></li>
+  <li>DS-Att: 出自<a href="https://ojs.aaai.org//index.php/AAAI/article/view/4606">Gao</a></li>
+  <li>GPT:baseline</li>
+  <li>BDG: 没有应用P-MLM和Answer negative</li>
+  <li>BDG<sub>PM</sub></li>
+  <li>BDG<sub>AN+PM</sub></li>
+</ul>
+
+<h3 id="4token-score-comparison">4)token score comparison</h3>
+<p>BLEU和ROUGE(L)两种判断指标</p>
+
+<p><img src="../assets/img/posts/20211130/13.jpg" /></p>
+
+<p>copying problem的效果</p>
+
+<p><img src="../assets/img/posts/20211130/14.jpg" /></p>
+
+<h3 id="5mcq-model-accuracy-comparison">5)MCQ Model Accuracy Comparison</h3>
+<p>与回答系统相结合，将生成好的选项（一个正确答案三个误导选项）放入MCQ answering model，下面是回答正确率的表格</p>
+
+<p><img src="../assets/img/posts/20211130/15.jpg" /></p>
+
+<p>可以看出作者的模型选项的误导性还是很高的。</p>
+
+<h3 id="6parameter-study-on-γ">6）Parameter Study on γ</h3>
+<p>之前使用P-MLM并行训练时候有个权重参数γ，下表显示了不同γ值的影响，对于只有PM的模型来说，γ=6，对于既有AN和PM来说，γ=7</p>
+
+<p><img src="../assets/img/posts/20211130/16.jpg" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>现存的DG可以分为cloze-style distractor generation和 reading comprehension distractor generation，前者主要是word filling，后者主要看重语义信息，基于两者的设计出了很多模型，目前来看还是考虑语义信息生成的误导选项更好。</p>
+
+<p><img src="../assets/img/posts/20211130/17.jpg" /></p>
+
+<h2 id="我的看法">我的看法</h2>
+<p>文章中的模型提到了三种技术，第一是bert预训练模型使用。第二是P-MLM的并行使用， 它的使用让模型可以考虑段落的语义信息，那么生成的误导选项是sentence-level而不是之前模型所使用的类似word-filling这种word-level。第三是Answer negative loss的使用，它的使用相当于让模型不要考虑与正确答案语义很接近的误导选项，因为目前大多数DG生成多个选项时语义与正确答案都非常接近，这与实际情况不符，同时也起不到误导的作用。  <br />
+同时文章提出了生成多个误导选项时使用不同模型生成的误导选项拼在一起作为选项是一种比较好的解决方法，让一次性生成多个误导选型有了一定的可用性。<br />
+文章的代码开源，可以去<a href="https://github.com/voidful/BDG">github</a>上看训练细节和网络结构细节。</p>
+
+<h1 id="第二篇">第二篇</h1>
+<h3 id="title-1">Title</h3>
+<p>Better Distractions: Transformer-based Distractor Generation and Multiple Choice Question Filtering</p>
+<h3 id="author-1">Author</h3>
+<p>Jeroen Offerijns, Suzan Verberne, Tessa Verhoef</p>
+<h3 id="abstract-1">Abstract</h3>
+<p>运用GPT2模型生成三个误导选项，同时用BERT模型去回答这个问题，只挑选出回答正确的问题。相当于使用了QA作为一个过滤器(QA filtering)。</p>
+<h2 id="method">Method</h2>
+<p>作者使用了Question generation model, distractor generation model和question answer filter，作者将从这三方面介绍，下图是大概的流程图。</p>
+
+<p><img src="../assets/img/posts/20211130/18.jpg" /></p>
+
+<h3 id="1question-generation">1)question generation</h3>
+<ul>
+  <li>预训练模型：GPT-2</li>
+  <li>数据集：English SQuAD</li>
+  <li>tokenizer：Byte-Pair-Encoding(BPE) tokenizer</li>
+  <li>optimizer:Adam</li>
+  <li>下图展示了QG的输入，黑框内被tokenizer标记为特殊词元</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/19.jpg" /></p>
+
+<h3 id="2distractor-generation">2)distractor generation</h3>
+<ul>
+  <li>预训练模型：GPT-2</li>
+  <li>数据集：RACE</li>
+  <li>tokenizer:BPE<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup></li>
+  <li>使用了repetition penalty技术，保证了尽量不会生成相似的text，并且过滤到那些不好的生成（比如生成了空字符串）</li>
+  <li>输入：经典的C(context)，A(answer),Q(question)，下图展示了输入格式</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/20.jpg" /></p>
+
+<h3 id="3qa-filtering">3)QA filtering</h3>
+<ul>
+  <li>预训练模型：DistilBERT</li>
+  <li>网络结构：CQA<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>输入到distilbert，再连接一个dropout，全连接层和softmax，最后输出一个答案，具体结构如下图</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/21.jpg" /></p>
+
+<h2 id="results">Results</h2>
+<h3 id="1quantitative-evaluation">1)quantitative evaluation</h3>
+<p>下表中展示了和上一篇论文类似的指标,与现有的模型进行了比较：SEQ2SEQ,HSA<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>和CHN<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>。可以看出BLEU明显要比之前模型要好，但是ROUGE没有之前的高。</p>
+
+<p><img src="../assets/img/posts/20211130/22.jpg" /></p>
+
+<h3 id="2question-answering-ability">2)question answering ability</h3>
+<p>用GPT-2模型生成误导选项再输入到QAmodel中，具体结果见下图。</p>
+
+<p><img src="../assets/img/posts/20211130/23.jpg" /></p>
+
+<h3 id="3human-evaluation">3)human evaluation</h3>
+<p>人工评估，从两方面评估distractor生成的好坏：</p>
+<ul>
+  <li><strong>Is the question well-formed and can you understand the meaning?</strong></li>
+  <li><strong>If the question is at least understandable, does the answer make sense in relation to the question?</strong>
+评估过程中，使用了155个没有经过QA筛选和155经过QA筛选的，了解一下QA过滤模型的效果。整体来说QA过滤器还是有一点效果，具体结果如下：</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/24.jpg" /></p>
+
+<h2 id="conclusion-1">conclusion</h2>
+<p>我认为作者使用的DG模型主要有两大特色，一个是使用了GPT2预训练模型，目前使用基于transformer的模型已经成为主流。第二个是使用了QA过滤器来筛选掉回答错误的，有一定提升但不显著。</p>
+
+<h1 id="第三篇">第三篇</h1>
+<h3 id="title-2">Title</h3>
+<p>Generating Distractors for Reading Comprehension Questions from Real Examinations</p>
+<h3 id="author-2">Author</h3>
+<p>Yifan Gao, Lidong Bing, Piji Li,
+Irwin King, Michael R. Lyu</p>
+<h3 id="abstract-2">Abstract</h3>
+<p>上面两篇文献都有提到这篇文章。作者使用了<strong>Hierarchical encoder-decoder framework</strong> with <strong>static</strong> and <strong>dynamic</strong> attention mechanisms来生成有语义信息的误导选项。使用了编码器-解码器结构网络和静态和动态注意力机制。</p>
+<h2 id="framework-description-网络结构">Framework Description 网络结构</h2>
+<h3 id="1task-definition">1)Task Definition</h3>
+<p>输入：文章，问题和答案。P代表文章，s<sub>1</sub>,s<sub>2</sub>,s<sub>3</sub>…表示不同的句子，q和a分别表示问题和答案，那么我们的任务是生成误导选项$\overline{d}$。</p>
+
+<p><img src="../assets/img/posts/20211130/25.jpg" /></p>
+
+<h3 id="2framework-overview">2)Framework overview</h3>
+<p>网络结构如下图所示，下面将从各个组成部分分别介绍：</p>
+
+<p><img src="../assets/img/posts/20211130/26.jpg" /></p>
+
+<h3 id="3hierarchical-encoder">3)Hierarchical encoder</h3>
+<ul>
+  <li><strong>word embedding</strong>:词嵌入，将每个句子s<sub>i</sub>中的每个词元变成词向量(w<sub>i,1</sub>,w<sub>i,2</sub>,w<sub>i,3</sub>…)</li>
+  <li><strong>word encoder</strong>:将句子s<sub>i</sub>的词向量(w<sub>i,1</sub>,w<sub>i,2</sub>,w<sub>i,3</sub>…)作为输入，用<strong>双向LSTM</strong>作为编码器，获得word-level representation h<sub>i,j</sub><sup>e</sup></li>
+</ul>
+
+<p><img src="../assets/img/posts/20211130/27.jpg" /></p>
+
+<ul>
+  <li></li>
+</ul>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>distractor generation 误导选项生成，简称DG <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>当我们test时，只需要Sequential MLM decoder来预测。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>multi-choice reading comprehension (MRC) model <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>P-MLM <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>Answer negative <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>Byte-Pair-Encoding <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>context，question，answer <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>hierarchical encoder-decoder model with static attention <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>hierarchical model enhanced with co-attention <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET
