@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-07T22:43:04+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h1 id=&quot;目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-07T22:43:56+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h1 id=&quot;目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#文献整理&quot;&gt;文献整理&lt;/a&gt;
@@ -579,8 +579,9 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/65.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;我的看法-2&quot;&gt;我的看法&lt;/h2&gt;
-&lt;p&gt;这篇文献是基于上一篇文献的方法进行了两个改进：1.关联了整篇文章和问题，解决方法是使用了Co-attention mechanism。2.让distractor和article语义相关，方法是定义了相关性loss。
-—-&lt;/p&gt;
+&lt;p&gt;这篇文献是基于上一篇文献的方法进行了两个改进：1.关联了整篇文章和问题，解决方法是使用了Co-attention mechanism。2.让distractor和article语义相关，方法是定义了相关性loss。&lt;/p&gt;
+
+&lt;hr /&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
