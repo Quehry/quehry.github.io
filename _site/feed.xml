@@ -1,9 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-07T16:04:28+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h2 id=&quot;文献整理&quot;&gt;文献整理&lt;/h2&gt;
-&lt;h3 id=&quot;要求&quot;&gt;要求&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-07T22:43:04+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h1 id=&quot;目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#文献整理&quot;&gt;文献整理&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#要求&quot;&gt;要求&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#搜集到相关文献标题和地址&quot;&gt;搜集到相关文献标题和地址&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#第一篇&quot;&gt;第一篇&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#title&quot;&gt;Title&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#author&quot;&gt;Author&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#bert-distractor-generation&quot;&gt;BERT distractor generation&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1bert-based-distractor-generationbdg&quot;&gt;1)BERT-based distractor generation(BDG)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2multi-task-with-parallel-mlm&quot;&gt;2)Multi-task with Parallel MLM&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#3answer-negative-regularization&quot;&gt;3)Answer Negative Regularization&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#multiple-distractor-generation&quot;&gt;Multiple Distractor Generation&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1selecting-distractors-by-entropy-maximization&quot;&gt;1)Selecting Distractors by Entropy Maximization&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2bdg-em&quot;&gt;2)BDG-EM&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#performance-evaluation&quot;&gt;Performance Evaluation&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1datasets&quot;&gt;1)datasets&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2implementation-details&quot;&gt;2)implementation details&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#3compared-methods&quot;&gt;3)compared methods&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#4token-score-comparison&quot;&gt;4)token score comparison&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#5mcq-model-accuracy-comparison&quot;&gt;5)MCQ Model Accuracy Comparison&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#6parameter-study-on-γ&quot;&gt;6）Parameter Study on γ&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#我的看法&quot;&gt;我的看法&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#第二篇&quot;&gt;第二篇&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#title-1&quot;&gt;Title&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#author-1&quot;&gt;Author&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#abstract-1&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method&quot;&gt;Method&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1question-generation&quot;&gt;1)question generation&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2distractor-generation&quot;&gt;2)distractor generation&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#3qa-filtering&quot;&gt;3)QA filtering&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#results&quot;&gt;Results&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1quantitative-evaluation&quot;&gt;1)quantitative evaluation&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2question-answering-ability&quot;&gt;2)question answering ability&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#3human-evaluation&quot;&gt;3)human evaluation&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;conclusion&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#第三篇&quot;&gt;第三篇&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#title-2&quot;&gt;Title&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#author-2&quot;&gt;Author&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#abstract-2&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#framework-description-网络结构&quot;&gt;Framework Description 网络结构&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1task-definition&quot;&gt;1)Task Definition&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2framework-overview&quot;&gt;2)Framework overview&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#3hierarchical-encoder&quot;&gt;3)Hierarchical encoder&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#4static-attention-mechanism&quot;&gt;4)static attention mechanism&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#5encoding-layer&quot;&gt;5)encoding layer&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#6matching-layer&quot;&gt;6)matching layer&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#7nomalization-layer&quot;&gt;7)nomalization layer&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#8distractor-decoder&quot;&gt;8)distractor decoder&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#9question-based-initializer&quot;&gt;9)question-based initializer&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#10dynamic-hierarchical-attention-mechanism&quot;&gt;10)dynamic hierarchical attention mechanism&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#11training-and-inference&quot;&gt;11)training and inference&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#experimental-setting-实验设置&quot;&gt;experimental setting 实验设置&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1dataset&quot;&gt;1)dataset&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2implementation-details-1&quot;&gt;2)implementation details&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#3baselines-and-ablations&quot;&gt;3)baselines and ablations&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#results-and-analysis-结果与分析&quot;&gt;results and analysis 结果与分析&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#我的看法-1&quot;&gt;我的看法&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#第四篇&quot;&gt;第四篇&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#title-3&quot;&gt;Title&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#author-3&quot;&gt;Author&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#abstract-3&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#proposed-framework-网络结构&quot;&gt;Proposed Framework 网络结构&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1notations-and-task-definition&quot;&gt;1)notations and task definition&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2model-overview&quot;&gt;2)model overview&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#3encoding-article-and-question&quot;&gt;3)encoding article and question&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#4co-attention-between-article-and-question&quot;&gt;4)Co-attention between article and question&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#5merging-sentence-representation&quot;&gt;5)Merging sentence representation&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#6question-initialization&quot;&gt;6)question initialization&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#7hierarchical-attention&quot;&gt;7)hierarchical attention&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#8semantic-similarity-loss&quot;&gt;8)semantic similarity loss&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#experimental-settings&quot;&gt;Experimental Settings&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1dataset-1&quot;&gt;1)dataset&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2baselines-and-evaluation-metrics&quot;&gt;2)baselines and evaluation metrics&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#3implementation-details&quot;&gt;3)implementation details&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#results-and-analysis-结果与分析&quot;&gt;Results and Analysis 结果与分析&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#我的看法-2&quot;&gt;我的看法&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;文献整理&quot;&gt;文献整理&lt;/h1&gt;
+
+&lt;h2 id=&quot;要求&quot;&gt;要求&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/requirements.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;搜集到相关文献标题和地址&quot;&gt;搜集到相关文献标题和地址&lt;/h3&gt;
+&lt;h2 id=&quot;搜集到相关文献标题和地址&quot;&gt;搜集到相关文献标题和地址&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://arxiv.org/pdf/2010.05384.pdf&quot;&gt;A BERT-based Distractor Generation Scheme with Multi-tasking and Negative Answer Training Strategies&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://arxiv.org/pdf/2010.09598.pdf&quot;&gt;Better Distractions: Transformer-based Distractor Generation and Multiple Choice Question Filtering&lt;/a&gt;&lt;/li&gt;
@@ -15,15 +141,15 @@
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;第一篇&quot;&gt;第一篇&lt;/h1&gt;
-&lt;h3 id=&quot;title&quot;&gt;Title&lt;/h3&gt;
+&lt;h2 id=&quot;title&quot;&gt;Title&lt;/h2&gt;
 &lt;p&gt;A BERT-based Distractor Generation Scheme with Multi-tasking and
 Negative Answer Training Strategies&lt;/p&gt;
-&lt;h3 id=&quot;author&quot;&gt;Author&lt;/h3&gt;
+&lt;h2 id=&quot;author&quot;&gt;Author&lt;/h2&gt;
 &lt;p&gt;Ho-Lam Chung, Ying-Hong Chan, Yao-Chung Fan&lt;/p&gt;
-&lt;h3 id=&quot;abstract&quot;&gt;Abstract&lt;/h3&gt;
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;现有的DG&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;局限在只能生成一个误导选项，我们需要生成多个误导选项，文章中提到他们团队用multi-tasking和negative answer training技巧来生成多个误导选项，模型结果达到了学界顶尖。&lt;/p&gt;
 
-&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;DG效果不好，文章提出了两个提升的空间：&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;DG质量提升：&lt;br /&gt;
@@ -137,11 +263,11 @@ BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次�
 文章的代码开源，可以去&lt;a href=&quot;https://github.com/voidful/BDG&quot;&gt;github&lt;/a&gt;上看训练细节和网络结构细节。&lt;/p&gt;
 
 &lt;h1 id=&quot;第二篇&quot;&gt;第二篇&lt;/h1&gt;
-&lt;h3 id=&quot;title-1&quot;&gt;Title&lt;/h3&gt;
+&lt;h2 id=&quot;title-1&quot;&gt;Title&lt;/h2&gt;
 &lt;p&gt;Better Distractions: Transformer-based Distractor Generation and Multiple Choice Question Filtering&lt;/p&gt;
-&lt;h3 id=&quot;author-1&quot;&gt;Author&lt;/h3&gt;
+&lt;h2 id=&quot;author-1&quot;&gt;Author&lt;/h2&gt;
 &lt;p&gt;Jeroen Offerijns, Suzan Verberne, Tessa Verhoef&lt;/p&gt;
-&lt;h3 id=&quot;abstract-1&quot;&gt;Abstract&lt;/h3&gt;
+&lt;h2 id=&quot;abstract-1&quot;&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;运用GPT2模型生成三个误导选项，同时用BERT模型去回答这个问题，只挑选出回答正确的问题。相当于使用了QA作为一个过滤器(QA filtering)。&lt;/p&gt;
 &lt;h2 id=&quot;method&quot;&gt;Method&lt;/h2&gt;
 &lt;p&gt;作者使用了Question generation model, distractor generation model和question answer filter，作者将从这三方面介绍，下图是大概的流程图。&lt;/p&gt;
@@ -203,12 +329,12 @@ BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次�
 &lt;p&gt;我认为作者使用的DG模型主要有两大特色，一个是使用了GPT2预训练模型，目前使用基于transformer的模型已经成为主流。第二个是使用了QA过滤器来筛选掉回答错误的，有一定提升但不显著。&lt;/p&gt;
 
 &lt;h1 id=&quot;第三篇&quot;&gt;第三篇&lt;/h1&gt;
-&lt;h3 id=&quot;title-2&quot;&gt;Title&lt;/h3&gt;
+&lt;h2 id=&quot;title-2&quot;&gt;Title&lt;/h2&gt;
 &lt;p&gt;Generating Distractors for Reading Comprehension Questions from Real Examinations&lt;/p&gt;
-&lt;h3 id=&quot;author-2&quot;&gt;Author&lt;/h3&gt;
+&lt;h2 id=&quot;author-2&quot;&gt;Author&lt;/h2&gt;
 &lt;p&gt;Yifan Gao, Lidong Bing, Piji Li,
 Irwin King, Michael R. Lyu&lt;/p&gt;
-&lt;h3 id=&quot;abstract-2&quot;&gt;Abstract&lt;/h3&gt;
+&lt;h2 id=&quot;abstract-2&quot;&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;上面两篇文献都有提到这篇文章。作者使用了&lt;strong&gt;Hierarchical encoder-decoder framework&lt;/strong&gt; with &lt;strong&gt;static&lt;/strong&gt; and &lt;strong&gt;dynamic&lt;/strong&gt; attention mechanisms来生成有语义信息的误导选项。使用了编码器-解码器结构网络和静态和动态注意力机制。&lt;/p&gt;
 &lt;h2 id=&quot;framework-description-网络结构&quot;&gt;Framework Description 网络结构&lt;/h2&gt;
 &lt;h3 id=&quot;1task-definition&quot;&gt;1)Task Definition&lt;/h3&gt;
@@ -326,13 +452,135 @@ Irwin King, Michael R. Lyu&lt;/p&gt;
 &lt;p&gt;这篇文章应该是第一个提出用处理后的RACE数据集来处理MCQ问题，处理后的RACE数据集在后面也有很多文献用到，这篇文章使用了seq2seq网络结构同时使用了静态和动态注意力机制，对于网络结构和注意力机制的解释非常完全和详细，虽然这篇文章的效果放到现在来看可能不是最好了，但是它提出来的评估标准可能会成为一个通用的标准。它的数据集和训练代码在&lt;a href=&quot;https://github.com/Yifan-Gao/Distractor-Generation-RACE&quot;&gt;github&lt;/a&gt;上也完全开源。&lt;/p&gt;
 
 &lt;h1 id=&quot;第四篇&quot;&gt;第四篇&lt;/h1&gt;
-&lt;h3 id=&quot;title-3&quot;&gt;Title&lt;/h3&gt;
+&lt;h2 id=&quot;title-3&quot;&gt;Title&lt;/h2&gt;
 &lt;p&gt;Co-attention hierarchical network: Generating coherent long distractors for reading comprehension&lt;/p&gt;
-&lt;h3 id=&quot;author-3&quot;&gt;Author&lt;/h3&gt;
+&lt;h2 id=&quot;author-3&quot;&gt;Author&lt;/h2&gt;
 &lt;p&gt;Xiaorui Zhou, Senlin Luo, Yunfang Wu&lt;/p&gt;
-&lt;h3 id=&quot;abstract-3&quot;&gt;Abstract&lt;/h3&gt;
+&lt;h2 id=&quot;abstract-3&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;这篇文献是针对上一篇Gao的文章(seq2seq)所作的改进。本篇文章提出了Gao的模型的两个问题：1.没有建立文章和问题的关系，他的解决方法是使用&lt;strong&gt;co-attention enhanced hierarchical architecture&lt;/strong&gt;来捕获文章和问题之间的关系，让解码器生成更有关联的误导选项。2.没有加重整篇文章和误导选项的关系。作者的解决思路是添加一个额外的语义相关性损失函数，让生成的误导选项与整篇文章更有关联。&lt;/p&gt;
+&lt;h2 id=&quot;proposed-framework-网络结构&quot;&gt;Proposed Framework 网络结构&lt;/h2&gt;
+&lt;h3 id=&quot;1notations-and-task-definition&quot;&gt;1)notations and task definition&lt;/h3&gt;
+&lt;p&gt;article T=(s&lt;sub&gt;1&lt;/sub&gt;,s&lt;sub&gt;2&lt;/sub&gt;…s&lt;sub&gt;k&lt;/sub&gt;)，一篇文章有k个句子s，同时每个句子都有不同的长度l，s&lt;sub&gt;i&lt;/sub&gt;=(w&lt;sub&gt;i,1&lt;/sub&gt;,w&lt;sub&gt;i,2&lt;/sub&gt;…w&lt;sub&gt;i,l&lt;/sub&gt;)，每个文章有m个问题和z个误导选项，Q=(q&lt;sub&gt;1&lt;/sub&gt;,q&lt;sub&gt;2&lt;/sub&gt;…q&lt;sub&gt;m&lt;/sub&gt;),D=(d&lt;sub&gt;1&lt;/sub&gt;,d&lt;sub&gt;2&lt;/sub&gt;…d&lt;sub&gt;z&lt;/sub&gt;),我们的任务是根据输入的T和Q生成D&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/44.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2model-overview&quot;&gt;2)model overview&lt;/h3&gt;
+&lt;p&gt;整体结构如下图所示，下面将从各个部分分别介绍：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/45.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3encoding-article-and-question&quot;&gt;3)encoding article and question&lt;/h3&gt;
+&lt;p&gt;文章和问题的编码器结构&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;hierarchical article encoder&lt;/strong&gt;
+双向LSTM，和上一篇结构很像，很多部分我就简单列个式子。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/46.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;每一句最后的词元来表示整个句子&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/47.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;sentence-level encoder：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/48.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;同样，用最后一个句子来表示整篇文章&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/49.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;用&lt;strong&gt;H&lt;/strong&gt;&lt;sup&gt;*&lt;/sup&gt;来作为sentence-level representation of article,我们有&lt;strong&gt;H&lt;/strong&gt;&lt;sub&gt;:t&lt;/sub&gt;&lt;sup&gt;*&lt;/sup&gt;=h&lt;sub&gt;t&lt;/sub&gt;&lt;sup&gt;s&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;这样，通过使用两个双向LSTM获得word-level encoding和sentence-level encoding&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;question encoder&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/50.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;用&lt;strong&gt;U&lt;/strong&gt;&lt;sup&gt;*&lt;/sup&gt;来作为word-level representations of question, 我们有&lt;strong&gt;U&lt;/strong&gt;&lt;sub&gt;:t&lt;/sub&gt;&lt;sup&gt;*&lt;/sup&gt;=h&lt;sub&gt;t&lt;/sub&gt;&lt;sup&gt;q&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4co-attention-between-article-and-question&quot;&gt;4)Co-attention between article and question&lt;/h3&gt;
+&lt;p&gt;Co-attention mechanism就是使用了两个方向的注意力机制，有从article到question的，也有question到article的。&lt;br /&gt;
+用一个“相似”矩阵S表示H和U的关系：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/51.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;S&lt;sub&gt;i,j&lt;/sub&gt;就表示第i个句子和第j个问题词元的相似性&lt;/p&gt;
+
+&lt;p&gt;我们可以获得两个特殊的矩阵&lt;strong&gt;S&lt;/strong&gt;&lt;sup&gt;&lt;strong&gt;Q&lt;/strong&gt;&lt;/sup&gt;和&lt;strong&gt;S&lt;/strong&gt;&lt;sup&gt;&lt;strong&gt;T&lt;/strong&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/52.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;article-to-question attention&lt;br /&gt;
+$\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup&gt;Q&lt;/sup&gt;U&lt;sub&gt;:,i&lt;/sub&gt;&lt;/li&gt;
+  &lt;li&gt;question-to-article attention&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/53.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最后，将问题的词级表示H，两个方向的注意力结果$\tilde{U}$和$\tilde{H}$结合一下获得G&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/54.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5merging-sentence-representation&quot;&gt;5)Merging sentence representation&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/55.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Z表示final representation of sentence-level hidden states&lt;/p&gt;
+
+&lt;h3 id=&quot;6question-initialization&quot;&gt;6)question initialization&lt;/h3&gt;
+&lt;p&gt;接下来就进入decoder环节，这里的question initialization和上篇文献处理方法相同&lt;/p&gt;
+
+&lt;h3 id=&quot;7hierarchical-attention&quot;&gt;7)hierarchical attention&lt;/h3&gt;
+&lt;p&gt;不同时间步有不同的句子相关，和上篇文献的处理方法动态注意力机制相同。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/56.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/57.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/58.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/59.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;8semantic-similarity-loss&quot;&gt;8)semantic similarity loss&lt;/h3&gt;
+&lt;p&gt;目的：获得文章和误导选项的关系。还记得之前定义的e&lt;sub&gt;T&lt;/sub&gt;吗，它表示整篇文章，那么我们通过下面的公式可以获得distractor representation:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/60.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中S&lt;sub&gt;M&lt;/sub&gt;是decoder最后一个隐藏状态，那么我们通过cos计算相似关系，那么最终的损失函数&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/61.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;experimental-settings&quot;&gt;Experimental Settings&lt;/h2&gt;
+&lt;h3 id=&quot;1dataset-1&quot;&gt;1)dataset&lt;/h3&gt;
+&lt;p&gt;使用了上篇文献处理过的RACE数据集。&lt;/p&gt;
+
+&lt;h3 id=&quot;2baselines-and-evaluation-metrics&quot;&gt;2)baselines and evaluation metrics&lt;/h3&gt;
+&lt;p&gt;与seq2seq，HRED，HCP&lt;sup id=&quot;fnref:11&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:11&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;，HSA&lt;sup id=&quot;fnref:12&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:12&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;12&lt;/a&gt;&lt;/sup&gt;比较。&lt;/p&gt;
+
+&lt;h3 id=&quot;3implementation-details&quot;&gt;3)implementation details&lt;/h3&gt;
+&lt;p&gt;网络超参数设置技巧，不展开了&lt;/p&gt;
+
+&lt;h2 id=&quot;results-and-analysis-结果与分析-1&quot;&gt;Results and Analysis 结果与分析&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/62.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/63.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/64.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;介绍一下上面这张表，这张表是人工评估的结果，从三个维度分析，分别是fluency,coherence,distracting ability。可以看出作者的模型并不是在所有维度都是最好的。&lt;/p&gt;
+
+&lt;p&gt;下图是案例分析：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/65.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;我的看法-2&quot;&gt;我的看法&lt;/h2&gt;
+&lt;p&gt;这篇文献是基于上一篇文献的方法进行了两个改进：1.关联了整篇文章和问题，解决方法是使用了Co-attention mechanism。2.让distractor和article语义相关，方法是定义了相关性loss。
+—-&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
@@ -365,8 +613,14 @@ Irwin King, Michael R. Lyu&lt;/p&gt;
     &lt;li id=&quot;fn:10&quot; role=&quot;doc-endnote&quot;&gt;
       &lt;p&gt;hierarchical encoder-decoder &lt;a href=&quot;#fnref:10&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
+    &lt;li id=&quot;fn:11&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;相当于HRED+copy,是基于HRED的网络结构 &lt;a href=&quot;#fnref:11&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:12&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;就是上篇文献的网络 &lt;a href=&quot;#fnref:12&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">文献整理 要求</summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">&lt;h2 id=&quot;课程要求&quot;&gt;课程要求&lt;/h2&gt;
+&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">目录</summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">&lt;h2 id=&quot;课程要求&quot;&gt;课程要求&lt;/h2&gt;
 &lt;p&gt;学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。&lt;/p&gt;
 
 &lt;h3 id=&quot;随记&quot;&gt;随记&lt;/h3&gt;
