@@ -127,8 +127,7 @@
 <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
 	
-</head>
-
+<head>
   <body>
     <div class="flex-container transparent">
   
@@ -240,6 +239,84 @@
 		<div class="post">
 			
 
+			<a class="post-list-title" href="./Robotics.html">Robotics</a>
+			
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2021-12-13T00:00:00+08:00">December 13, 2021</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+			<div class="post-excerpt">
+				<h1 id="报告">报告</h1><h2 id="报告内容">报告内容</h2><p>用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。</p><h2 id="报告格式">报告格式</h2><ol>  <li>标题，下面有姓名学号电话等等</li>  <li>摘要</li>  <li>正文</li></ol><a class="read-more" href="./Robotics.html"> read more</a>
+			</div>
+		</div>
+	
+		<div class="post">
+			
+
+			<a class="post-list-title" href="./datamining.html">数据挖掘</a>
+			
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2021-12-10T00:00:00+08:00">December 10, 2021</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+			<div class="post-excerpt">
+				<h1 id="总体情况">总体情况</h1><ul> <li>书籍:Python数据挖掘入门与实践</li> <li>github_url:https://github.com/LinXueyuanStdio/PythonDataMining</li> <li>配套代码和笔记，很适合迅速上手</li> <li>这篇博客主要记录一些比较重要的算法</li></ul><h2 id="第一章-开始数据挖掘之旅">第一章 开始数据挖掘之旅</h2><h3 id="11-亲和性分析">1.1 亲和性分析</h3><ul> <li>亲和性分析根据样本个体（物体）之间的<strong>相似度</strong>，确定它们关系的亲疏。</li> <li>例子：商品推荐。</li> <li>我们要找出“如果顾客购买了商品X，那么他们可能愿意购买商品Y”这样的规则。简单粗暴的做法是，找出数据集中所有同时购买的两件商品。找出规则后，还需要判断其优劣，我们挑好的规则用。</li> <li>规则的优劣有多种判断标准，常用的有支持度(support)和置信度(confidence)</li> <li>支持度：数据集中规则应验的次数，统计起来很简单。有时候，还需要对支持度进行规范化，即再除以规则有效前提下的总数量。</li> <li>置信度是衡量规则的准确性如何。</li></ul><h3 id="12-分类">1.2 分类</h3><ul> <li>根据特征分出类别</li> <li>例子：Iris植物分类数据集，通过四个特征分出三个类别</li> <li>特征连续值变成离散值</li> <li>OneR算法：它根据已有数据中，具有相同特征值的个体最可能属于哪个类别进行分类。比如对于某一个特征值来说，属于A的类别有80个，属于B的类别有20个，那么对于这个特征值来说，取值为1代表为A类别，错误率有20％。给出所有特征值，找出错误率最小的特征值作为判断标准。</li></ul><h2 id="第二章-用scikit-learn估计器分类">第二章 用scikit-learn估计器分类</h2><h3 id="21-scikit-learn">2.1 scikit-learn</h3><p>scikit-learn里面已经封装好很多数据挖掘的算法</p><p>现介绍数据挖掘框架的搭建方法：</p><ul> <li>转换器（Transformer）用于数据预处理，数据转换</li> <li>流水线（Pipeline）组合数据挖掘流程，方便再次使用（封装）</li> <li>估计器（Estimator）用于分类，聚类，回归分析（各种算法对象） <ul> <li>所有的估计器都有下面2个函数 <ul> <li>fit() 训练 <ul> <li>用法：estimator.fit(X_train, y_train)，</li> <li>estimator = KNeighborsClassifier() 是scikit-learn算法对象</li> <li>X_train = dataset.data 是numpy数组</li> <li>y_train = dataset.target 是numpy数组</li> </ul> </li> <li>predict() 预测 <ul> <li>用法：estimator.predict(X_test)</li> <li>estimator = KNeighborsClassifier() 是scikit-learn算法对象</li> <li>X_test = dataset.data 是numpy数组</li> </ul> </li> </ul> </li> </ul> </li></ul><h3 id="22-邻近算法knn">2.2 邻近算法KNN</h3><p>邻近算法，或者说K最邻近（KNN，K-NearestNeighbor）分类算法是数据挖掘分类技术中最简单的方法之一。所谓K最近邻，就是K个最近的邻居的意思，说的是每个样本都可以用它最接近的K个邻近值来代表。近邻算法就是将数据集合中每一个记录进行分类的方法。</p><p>例子：分类，Ionosphere数据集</p><h2 id="第三章-用决策树预测获胜球队">第三章 用决策树预测获胜球队</h2><h3 id="31-决策树">3.1 决策树</h3><p>例子：预测NBA球队获胜情况</p><p>决策树是一种树形结构，其中每个内部节点表示一个属性上的测试，每个分支代表一个测试输出，每个叶节点代表一种类别。</p><p>分类树（决策树）是一种十分常用的分类方法。它是一种监督学习，所谓监督学习就是给定一堆样本，每个样本都有一组属性和一个类别，这些类别是事先确定的，那么通过学习得到一个分类器，这个分类器能够对新出现的对象给出正确的分类。这样的机器学习就被称之为监督学习。</p><p>scikit-learn库实现了分类回归树（Classification and Regression Trees，CART）算法并将其作为生成决策树的默认算法，它支持连续型特征和类别型特征。</p><h3 id="32-随机森林">3.2 随机森林</h3><p>随机森林指的是利用多棵树对样本进行训练并预测的一种分类器。</p><p>在机器学习中，随机森林是一个包含多个决策树的分类器， 并且其输出的类别是由个别树输出的类别的众数而定。</p><h2 id="第四章-用亲和性分析方法推荐电影">第四章 用亲和性分析方法推荐电影</h2><h3 id="41-亲和性分析">4.1 亲和性分析</h3><p>亲和性分析就是分析两个样本之间的疏密关系，常用的算法有Apriori，Apriori算法的一大特点是根据最小支持度生成<strong>频繁项集</strong>（frequent itemest），它只从数据集中频繁出现的商品中选取共同出现的商品组成频繁项集。其他亲和性分析算法有Eclat和频繁项集挖掘算法（FP-growth）。</p><h3 id="42-apriori算法">4.2 Apriori算法</h3><p>Apriori算法主要有两个阶段，第一个阶段是根据最小支持度生成频繁项集，第二个阶段是根据最小置信度选择规则，返回规则。</p><p>本章的例子是电影推荐。</p><p>第一个阶段，算法会先生成长度较小的项集，再将这个项集作为超集寻找长度较大的项集。</p><p>第二个阶段是从频繁项集中抽取关联规则。把其中几部电影作为前提，另一部电影作为结论。组成如下形式的规则：如果用户喜欢前提中的所有电影，那么他们也会喜欢结论中的电影。</p><h2 id="第五章-用转换器抽取特征">第五章 用转换器抽取特征</h2><h3 id="51-抽取特征">5.1 抽取特征</h3><p>抽取数据集的特征是重要的一步，在之前的学习中我们都获得了数据集的特征，但很多没有处理的文本特征并不是很明显，比如一段文本等等。特征值可以分为连续特征，序数特征，类别型特征。</p><h3 id="52-特征选择">5.2 特征选择</h3><p>通常特征有很多，但我们只想选择其中一部分。<strong>选用干净的数据，选取更具描述性的特征。</strong>判断特征相关性：书中列举的例子是判断一个人的收入能不能超过五万，利用单变量卡方检验(或者皮尔逊相关系数)判断各个特征的相关性，然后给出了三个最好的特征，分别是年龄，资本收入和资本损失。</p><h3 id="53-创建特征">5.3 创建特征</h3><p>主成分分析算法（Principal Component Analysis，PCA）的目的是找到能用较少信息描述数据集的特征组合。</p><h2 id="第六章-使用朴素贝叶斯进行社会媒体挖掘">第六章 使用朴素贝叶斯进行社会媒体挖掘</h2><h3...<a class="read-more" href="./datamining.html"> read more</a>
+			</div>
+		</div>
+	
+		<div class="post">
+			
+
 			<a class="post-list-title" href="./%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">软件方法</a>
 			
 
@@ -273,84 +350,6 @@
 
 			<div class="post-excerpt">
 				<h2 id="课程要求">课程要求</h2><p>学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。</p><h3 id="随记">随记</h3><ol>  <li>类，对象：    <ul>      <li>给类赋值变成实例/对象</li>      <li>c语言可以构建面向对象所有的结构</li>      <li>对象就是给类声明的一个变量</li>      <li>类集合了属性和方法</li>    </ul>  </li>  <li>面向对象的三大特征：    <ul>      <li>封装（encapsulation）:        <ul>          <li>private, protected, public</li>          <li>可作用于属性和方法</li>          <li>一般是隐藏对象的属性和实现细节，但是提供方法的接口</li>          <li>提供公开的方法</li>          <li>提高了软件开发的效率</li>        </ul>        <p><img src="../assets/img/posts/20211130/1.jpg" /></p>      </li>      <li>继承（inheritance）：        <ul>          <li>子类与父类</li>          <li>子类自动具有父类属性和方法，添加自己特有的属性和方法，并且子类使用父类的方法也可以覆盖/重写父类方法</li>          <li>可以实现代码的复用（当然功能不止于此）</li>        </ul>      </li>      <li>多态（polymorphism）：        <ul>          <li>父类有多个子类</li>          <li>子类覆盖/重写父类方法</li>          <li>相当于是根据实际创建的对象类型动态决定使用哪个方法</li>          <li>所有的子类都可以看成父类的类型，运行时，系统会自动调用各种子类的方法</li>          <li>UML可以画出类之间的关系</li>        </ul>      </li>    </ul>  </li>  <li>java程序设计    <ul>      <li>百分百面向对象        <ul>          <li>不存在类以外代码</li>          <li>只能采用面向对象方法编程</li>          <li>java文件命名规范            <ul>              <li>必须以.java结尾</li>              <li>源文件中如果只有一个类，文件类必须与该类名相同</li>              <li>如果有多个类，且没有public类，文件名可与任一类名相同</li>              <li>有多个类，且有public类，文件名必须与该类名相同</li>              <li>一个JAVA源文件只能有一个public类，一个文件中只能有一个main主函数</li>            </ul>          </li>        </ul>      </li>      <li>静态方法/static，可以直接用类和函数名直接调用，和普通方法的区别是不用new一个示例</li>      <li>多态的实现，先定义抽象的（abstract）父类，然后子类继承父类然后定义父类的抽象方法        <ul>          <li>通过抽象方法固定通用接口</li>          <li>子类通过强制实现抽象方法实现多态</li>        </ul>      </li>    </ul>  </li></ol><a class="read-more" href="./%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html"> read more</a>
-			</div>
-		</div>
-	
-		<div class="post">
-			
-
-			<a class="post-list-title" href="./RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">RACE数据集相关文献</a>
-			
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2021-11-30T00:00:00+08:00">November 30, 2021</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        3 minute read
-      
-    </span>
-  
-  
-  </span>
-
-			<div class="post-excerpt">
-				<h1 id="目录"><strong>目录</strong></h1><ul> <li><a href="#目录"><strong>目录</strong></a></li> <li><a href="#文献整理">文献整理</a> <ul> <li><a href="#要求">要求</a></li> <li><a href="#搜集到相关文献标题和地址">搜集到相关文献标题和地址</a></li> </ul> </li> <li><a href="#第一篇">第一篇</a> <ul> <li><a href="#title">Title</a></li> <li><a href="#author">Author</a></li> <li><a href="#abstract">Abstract</a></li> <li><a href="#introduction">Introduction</a></li> <li><a href="#bert-distractor-generation">BERT distractor generation</a> <ul> <li><a href="#1bert-based-distractor-generationbdg">1)BERT-based distractor generation(BDG)</a></li> <li><a href="#2multi-task-with-parallel-mlm">2)Multi-task with Parallel MLM</a></li> <li><a href="#3answer-negative-regularization">3)Answer Negative Regularization</a></li> </ul> </li> <li><a href="#multiple-distractor-generation">Multiple Distractor Generation</a> <ul> <li><a href="#1selecting-distractors-by-entropy-maximization">1)Selecting Distractors by Entropy Maximization</a></li> <li><a href="#2bdg-em">2)BDG-EM</a></li> </ul> </li> <li><a href="#performance-evaluation">Performance Evaluation</a> <ul> <li><a href="#1datasets">1)datasets</a></li> <li><a href="#2implementation-details">2)implementation details</a></li> <li><a href="#3compared-methods">3)compared methods</a></li> <li><a href="#4token-score-comparison">4)token score comparison</a></li> <li><a href="#5mcq-model-accuracy-comparison">5)MCQ Model Accuracy Comparison</a></li> <li><a href="#6parameter-study-on-γ">6）Parameter Study on γ</a></li> </ul> </li> <li><a href="#conclusion">Conclusion</a></li> <li><a href="#我的看法">我的看法</a></li> </ul> </li> <li><a href="#第二篇">第二篇</a> <ul> <li><a href="#title-1">Title</a></li> <li><a href="#author-1">Author</a></li>...<a class="read-more" href="./RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html"> read more</a>
-			</div>
-		</div>
-	
-		<div class="post">
-			
-
-			<a class="post-list-title" href="./%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">课程总结</a>
-			
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2021-11-28T00:00:00+08:00">November 28, 2021</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        less than 1 minute read
-      
-    </span>
-  
-  
-  </span>
-
-			<div class="post-excerpt">
-				<h2 id="概率统计">概率统计</h2><h3 id="简介">简介</h3><ul>  <li>授课老师：牛薇</li>  <li>授课材料：一份法语讲义，一份习题集（10个EX），上课用的PPT</li>  <li>B站有录播，up主：却道成归</li>  <li>笔记记在侧边栏为大四上A的笔记本最前面</li></ul><h3 id="内容总览">内容总览</h3><p>一半时间概率一半时间统计</p><ol>  <li>概率    <ul>      <li>先从之前学的概率空间讲起，介绍了概率分布（离散or连续），密度函数，期望方差，收敛性。</li>      <li>估计，比如说用平均值估计期望，用频率估计概率等等</li>      <li>估计又分为点估计和区间估计，点估计中介绍了似然函数以及最大似然法来找估计量</li>    </ul>  </li>  <li>统计    <ul>      <li>主要介绍了几种检验方法来检验分布、估计量选择的好坏</li>      <li>包括了参数检验，分布检验，比较检验等等</li>    </ul>  </li>  <li>A4纸</li></ol><p><img src="../assets/img/posts/20211128/1.jpg" /></p><p><img src="../assets/img/posts/20211128/2.jpg" /></p><h2 id="流体力学">流体力学</h2><h3 id="简介-1">简介</h3><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 授课老师：方乐- 授课材料：PPT，TD都是6个，分别对应六大章- B站有录播- 笔记在侧边栏为大四上A的中后部分和大四上B前面</code></pre></div></div><h3 id="内容总览-1">内容总览</h3><p>第一章主要讲了流体的概念和动力学的公式。第二章从能量角度出发，介绍了NS方程（斯托克斯方程），和伯努利原理（压强和流速的关系）。第三章介绍了雷诺数，无量纲分析，雷诺数大的是湍流，雷诺数小的是层流。第四章介绍了边界层，第五章介绍了湍流，系统平均。第六章介绍了涡量。</p><h3 id="a4纸">A4纸</h3><p><img src="../assets/img/posts/20211128/3.jpg" /></p><p><img src="../assets/img/posts/20211128/4.jpg" /></p><h3 id="报告">报告</h3><p>结课之前需要我们写一个报告，什么形式的都可以，我觉得这种方式挺好的，自由发挥，我做的实验，用牛奶和墨水还原了卡门涡街。</p><a class="read-more" href="./%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"> read more</a>
 			</div>
 		</div>
 	

@@ -1,4 +1,153 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-07T23:00:24+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h1 id=&quot;目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-13T11:54:24+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
+&lt;h2 id=&quot;报告内容&quot;&gt;报告内容&lt;/h2&gt;
+&lt;p&gt;用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。&lt;/p&gt;
+&lt;h2 id=&quot;报告格式&quot;&gt;报告格式&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;标题，下面有姓名学号电话等等&lt;/li&gt;
+  &lt;li&gt;摘要&lt;/li&gt;
+  &lt;li&gt;正文&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">报告 报告内容 用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。 报告格式 标题，下面有姓名学号电话等等 摘要 正文</summary></entry><entry><title type="html">数据挖掘</title><link href="http://localhost:4000/datamining.html" rel="alternate" type="text/html" title="数据挖掘" /><published>2021-12-10T00:00:00+08:00</published><updated>2021-12-10T00:00:00+08:00</updated><id>http://localhost:4000/datamining</id><content type="html" xml:base="http://localhost:4000/datamining.html">&lt;h1 id=&quot;总体情况&quot;&gt;总体情况&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;书籍:Python数据挖掘入门与实践&lt;/li&gt;
+  &lt;li&gt;github_url:https://github.com/LinXueyuanStdio/PythonDataMining&lt;/li&gt;
+  &lt;li&gt;配套代码和笔记，很适合迅速上手&lt;/li&gt;
+  &lt;li&gt;这篇博客主要记录一些比较重要的算法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;第一章-开始数据挖掘之旅&quot;&gt;第一章 开始数据挖掘之旅&lt;/h2&gt;
+&lt;h3 id=&quot;11-亲和性分析&quot;&gt;1.1 亲和性分析&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;亲和性分析根据样本个体（物体）之间的&lt;strong&gt;相似度&lt;/strong&gt;，确定它们关系的亲疏。&lt;/li&gt;
+  &lt;li&gt;例子：商品推荐。&lt;/li&gt;
+  &lt;li&gt;我们要找出“如果顾客购买了商品X，那么他们可能愿意购买商品Y”这样的规则。简单粗暴的做法是，找出数据集中所有同时购买的两件商品。找出规则后，还需要判断其优劣，我们挑好的规则用。&lt;/li&gt;
+  &lt;li&gt;规则的优劣有多种判断标准，常用的有支持度(support)和置信度(confidence)&lt;/li&gt;
+  &lt;li&gt;支持度：数据集中规则应验的次数，统计起来很简单。有时候，还需要对支持度进行规范化，即再除以规则有效前提下的总数量。&lt;/li&gt;
+  &lt;li&gt;置信度是衡量规则的准确性如何。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;12-分类&quot;&gt;1.2 分类&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;根据特征分出类别&lt;/li&gt;
+  &lt;li&gt;例子：Iris植物分类数据集，通过四个特征分出三个类别&lt;/li&gt;
+  &lt;li&gt;特征连续值变成离散值&lt;/li&gt;
+  &lt;li&gt;OneR算法：它根据已有数据中，具有相同特征值的个体最可能属于哪个类别进行分类。比如对于某一个特征值来说，属于A的类别有80个，属于B的类别有20个，那么对于这个特征值来说，取值为1代表为A类别，错误率有20％。给出所有特征值，找出错误率最小的特征值作为判断标准。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;第二章-用scikit-learn估计器分类&quot;&gt;第二章 用scikit-learn估计器分类&lt;/h2&gt;
+&lt;h3 id=&quot;21-scikit-learn&quot;&gt;2.1 scikit-learn&lt;/h3&gt;
+&lt;p&gt;scikit-learn里面已经封装好很多数据挖掘的算法&lt;/p&gt;
+
+&lt;p&gt;现介绍数据挖掘框架的搭建方法：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;转换器（Transformer）用于数据预处理，数据转换&lt;/li&gt;
+  &lt;li&gt;流水线（Pipeline）组合数据挖掘流程，方便再次使用（封装）&lt;/li&gt;
+  &lt;li&gt;估计器（Estimator）用于分类，聚类，回归分析（各种算法对象）
+    &lt;ul&gt;
+      &lt;li&gt;所有的估计器都有下面2个函数
+        &lt;ul&gt;
+          &lt;li&gt;fit() 训练
+            &lt;ul&gt;
+              &lt;li&gt;用法：estimator.fit(X_train, y_train)，&lt;/li&gt;
+              &lt;li&gt;estimator = KNeighborsClassifier() 是scikit-learn算法对象&lt;/li&gt;
+              &lt;li&gt;X_train = dataset.data 是numpy数组&lt;/li&gt;
+              &lt;li&gt;y_train = dataset.target 是numpy数组&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;predict() 预测
+            &lt;ul&gt;
+              &lt;li&gt;用法：estimator.predict(X_test)&lt;/li&gt;
+              &lt;li&gt;estimator = KNeighborsClassifier() 是scikit-learn算法对象&lt;/li&gt;
+              &lt;li&gt;X_test = dataset.data 是numpy数组&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-邻近算法knn&quot;&gt;2.2 邻近算法KNN&lt;/h3&gt;
+&lt;p&gt;邻近算法，或者说K最邻近（KNN，K-NearestNeighbor）分类算法是数据挖掘分类技术中最简单的方法之一。所谓K最近邻，就是K个最近的邻居的意思，说的是每个样本都可以用它最接近的K个邻近值来代表。近邻算法就是将数据集合中每一个记录进行分类的方法。&lt;/p&gt;
+
+&lt;p&gt;例子：分类，Ionosphere数据集&lt;/p&gt;
+
+&lt;h2 id=&quot;第三章-用决策树预测获胜球队&quot;&gt;第三章 用决策树预测获胜球队&lt;/h2&gt;
+
+&lt;h3 id=&quot;31-决策树&quot;&gt;3.1 决策树&lt;/h3&gt;
+&lt;p&gt;例子：预测NBA球队获胜情况&lt;/p&gt;
+
+&lt;p&gt;决策树是一种树形结构，其中每个内部节点表示一个属性上的测试，每个分支代表一个测试输出，每个叶节点代表一种类别。&lt;/p&gt;
+
+&lt;p&gt;分类树（决策树）是一种十分常用的分类方法。它是一种监督学习，所谓监督学习就是给定一堆样本，每个样本都有一组属性和一个类别，这些类别是事先确定的，那么通过学习得到一个分类器，这个分类器能够对新出现的对象给出正确的分类。这样的机器学习就被称之为监督学习。&lt;/p&gt;
+
+&lt;p&gt;scikit-learn库实现了分类回归树（Classification and Regression Trees，CART）算法并将其作为生成决策树的默认算法，它支持连续型特征和类别型特征。&lt;/p&gt;
+
+&lt;h3 id=&quot;32-随机森林&quot;&gt;3.2 随机森林&lt;/h3&gt;
+&lt;p&gt;随机森林指的是利用多棵树对样本进行训练并预测的一种分类器。&lt;/p&gt;
+
+&lt;p&gt;在机器学习中，随机森林是一个包含多个决策树的分类器， 并且其输出的类别是由个别树输出的类别的众数而定。&lt;/p&gt;
+
+&lt;h2 id=&quot;第四章-用亲和性分析方法推荐电影&quot;&gt;第四章 用亲和性分析方法推荐电影&lt;/h2&gt;
+&lt;h3 id=&quot;41-亲和性分析&quot;&gt;4.1 亲和性分析&lt;/h3&gt;
+&lt;p&gt;亲和性分析就是分析两个样本之间的疏密关系，常用的算法有Apriori，Apriori算法的一大特点是根据最小支持度生成&lt;strong&gt;频繁项集&lt;/strong&gt;（frequent itemest），它只从数据集中频繁出现的商品中选取共同出现的商品组成频繁项集。其他亲和性分析算法有Eclat和频繁项集挖掘算法（FP-growth）。&lt;/p&gt;
+
+&lt;h3 id=&quot;42-apriori算法&quot;&gt;4.2 Apriori算法&lt;/h3&gt;
+&lt;p&gt;Apriori算法主要有两个阶段，第一个阶段是根据最小支持度生成频繁项集，第二个阶段是根据最小置信度选择规则，返回规则。&lt;/p&gt;
+
+&lt;p&gt;本章的例子是电影推荐。&lt;/p&gt;
+
+&lt;p&gt;第一个阶段，算法会先生成长度较小的项集，再将这个项集作为超集寻找长度较大的项集。&lt;/p&gt;
+
+&lt;p&gt;第二个阶段是从频繁项集中抽取关联规则。把其中几部电影作为前提，另一部电影作为结论。组成如下形式的规则：如果用户喜欢前提中的所有电影，那么他们也会喜欢结论中的电影。&lt;/p&gt;
+
+&lt;h2 id=&quot;第五章-用转换器抽取特征&quot;&gt;第五章 用转换器抽取特征&lt;/h2&gt;
+&lt;h3 id=&quot;51-抽取特征&quot;&gt;5.1 抽取特征&lt;/h3&gt;
+&lt;p&gt;抽取数据集的特征是重要的一步，在之前的学习中我们都获得了数据集的特征，但很多没有处理的文本特征并不是很明显，比如一段文本等等。特征值可以分为连续特征，序数特征，类别型特征。&lt;/p&gt;
+
+&lt;h3 id=&quot;52-特征选择&quot;&gt;5.2 特征选择&lt;/h3&gt;
+&lt;p&gt;通常特征有很多，但我们只想选择其中一部分。&lt;strong&gt;选用干净的数据，选取更具描述性的特征。&lt;/strong&gt;判断特征相关性：书中列举的例子是判断一个人的收入能不能超过五万，利用单变量卡方检验(或者皮尔逊相关系数)判断各个特征的相关性，然后给出了三个最好的特征，分别是年龄，资本收入和资本损失。&lt;/p&gt;
+
+&lt;h3 id=&quot;53-创建特征&quot;&gt;5.3 创建特征&lt;/h3&gt;
+&lt;p&gt;主成分分析算法（Principal Component Analysis，PCA）的目的是找到能用较少信息描述数据集的特征组合。&lt;/p&gt;
+
+&lt;h2 id=&quot;第六章-使用朴素贝叶斯进行社会媒体挖掘&quot;&gt;第六章 使用朴素贝叶斯进行社会媒体挖掘&lt;/h2&gt;
+&lt;h3 id=&quot;61-消歧&quot;&gt;6.1 消歧&lt;/h3&gt;
+&lt;p&gt;本章我们将处理文本，文本通常被称为无结构格式。文本挖掘的一个难点来自于歧义，比如bank一词多义。本章将探讨区别Twitter消息中Python的意思。&lt;/p&gt;
+
+&lt;h3 id=&quot;62-文本转换器&quot;&gt;6.2 文本转换器&lt;/h3&gt;
+&lt;p&gt;Python中处理文本的库NLTK(Natural Language Toolkit)。据作者说很好用，可以作自然语言处理。N元语法是指由连续的词组成的子序列。&lt;/p&gt;
+
+&lt;h3 id=&quot;63-朴素贝叶斯&quot;&gt;6.3 朴素贝叶斯&lt;/h3&gt;
+&lt;p&gt;朴素贝叶斯概率模型是以对贝叶斯统计方法的朴素解释为基础。&lt;/p&gt;
+
+&lt;p&gt;贝叶斯定理公式如下：&lt;/p&gt;
+
+&lt;p&gt;$ P(A|B) = \frac {P(B|A)P(A)}{P(B)} $&lt;/p&gt;
+
+&lt;p&gt;贝叶斯公式可以用它来计算个体属于给定类别的概率。朴素贝叶斯算法假定了各个特征之间相互独立，那么我们计算文档D属于类别C的概率为P(D|C)=P(D1|C)*P(D2|C)…P(Dn|C)。贝叶斯分类器是输入数据来更新贝叶斯的先验概率和后验概率，输入贝叶斯模型后，返回不同类别中概率的最大值。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;举例说明下计算过程，假如数据集中有以下一条用二值特征表示的数据：[1, 0, 0, 1]。&lt;br /&gt;
+训练集中有75%的数据属于类别0，25%属于类别1，且每个特征属于每个类别的似然度如下。&lt;br /&gt;
+类别0：[0.3, 0.4, 0.4, 0.7] &lt;br /&gt;
+类别1：[0.7, 0.3, 0.4, 0.9] &lt;br /&gt;
+拿类别0中特征1的似然度举例子，上面这两行数据可以这样理解：类别0中有30%的数据，特征1的值为1。&lt;br /&gt;
+我们来计算一下这条数据属于类别0的概率。类别为0时，P(C=0) = 0.75。&lt;br /&gt;
+朴素贝叶斯算法用不到P(D)，因此我们不用计算它。我们来看下计算过程。&lt;br /&gt;
+P(D|C=0) = P(D1|C=0) x P(D2|C=0) x P(D3|C=0) x P(D4|C=0)&lt;br /&gt;
+= 0.3 x 0.6 x 0.6 x 0.7 &lt;br /&gt;
+= 0.0756 &lt;br /&gt;
+现在，我们就可以计算该条数据从属于每个类别的概率。需要提醒的是，我们没有计算P(D)，因此，计算结果不是实际的概率。由于两次都不计算P(D)，结果具有可比较性，能够区分出大小就足够了。来看下计算结果。&lt;br /&gt;
+P(C=0|D) = P(C=0) P(D|C=0) &lt;br /&gt;
+= 0.75 * 0.0756 &lt;br /&gt;
+= 0.0567&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;64-f1值&quot;&gt;6.4 F1值&lt;/h3&gt;
+&lt;p&gt;F1值是一种评价指标。F1值是以每个类别为基础进行定义的，包括两大概念：准确率（precision）和召回率（recall）。准确率是指预测结果属于某一类的个体，实际属于该类的比例。召回率是指被正确预测为某个类别的个体数量与数据集中该类别个体总量的比例。F1值是准确率和召回率的调和平均数。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">总体情况 书籍:Python数据挖掘入门与实践 github_url:https://github.com/LinXueyuanStdio/PythonDataMining 配套代码和笔记，很适合迅速上手 这篇博客主要记录一些比较重要的算法</summary></entry><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h1 id=&quot;目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -720,7 +869,7 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">课程要求 学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。</summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">&lt;h2 id=&quot;概率统计&quot;&gt;概率统计&lt;/h2&gt;
+&lt;/ol&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">课程要求 学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。</summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">&lt;h1 id=&quot;概率统计&quot;&gt;概率统计&lt;/h1&gt;
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;授课老师：牛薇&lt;/li&gt;
@@ -752,7 +901,7 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/2.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;流体力学&quot;&gt;流体力学&lt;/h2&gt;
+&lt;h1 id=&quot;流体力学&quot;&gt;流体力学&lt;/h1&gt;
 &lt;h3 id=&quot;简介-1&quot;&gt;简介&lt;/h3&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 授课老师：方乐
 - 授课材料：PPT，TD都是6个，分别对应六大章
@@ -770,7 +919,25 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/4.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;报告&quot;&gt;报告&lt;/h3&gt;
-&lt;p&gt;结课之前需要我们写一个报告，什么形式的都可以，我觉得这种方式挺好的，自由发挥，我做的实验，用牛奶和墨水还原了卡门涡街。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计 简介 授课老师：牛薇 授课材料：一份法语讲义，一份习题集（10个EX），上课用的PPT B站有录播，up主：却道成归 笔记记在侧边栏为大四上A的笔记本最前面</summary></entry><entry><title type="html">MCQ文献阅读</title><link href="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html" rel="alternate" type="text/html" title="MCQ文献阅读" /><published>2021-11-25T00:00:00+08:00</published><updated>2021-11-25T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html">&lt;h2 id=&quot;整理集合&quot;&gt;整理集合&lt;/h2&gt;
+&lt;p&gt;结课之前需要我们写一个报告，什么形式的都可以，我觉得这种方式挺好的，自由发挥，我做的实验，用牛奶和墨水还原了卡门涡街。&lt;/p&gt;
+
+&lt;h1 id=&quot;电磁辐射波&quot;&gt;电磁辐射波&lt;/h1&gt;
+&lt;h3 id=&quot;简介-2&quot;&gt;简介&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 授课老师: José Penuelas(负责前几章教学), Bertrand Vilquin(负责后几章教学), 孙鸣捷老师(负责TD) 
+- 授课形式：线上讲解原理，线下TD
+- 授课材料：PPT，讲义，TD
+- B站有录播
+- 有笔记，侧边栏叫做电磁学(大四上)
+- 考试闭卷，所以没有A4纸 ### 内容总览 首先回顾了之前学的波动物理和电磁学，电磁辐射，顾名思义是要将辐射，讲了波导，腔和光电效应，能级跃迁等等
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;传感器&quot;&gt;传感器&lt;/h1&gt;
+&lt;h3 id=&quot;简介-3&quot;&gt;简介&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 授课老师：徐平
+- 授课形式：线下授课，做实验
+- 授课材料：大学生MOOC
+- 没有考试，没有笔记 ### 内容总览 讲解了传感器的基本原理，构造和常见传感器，每节课都需要在MOOC上做题，也有安排答辩，我和蔡卓江、宋正浩、刘亚林、马卫一一组讲解了机器狗。做实验是指去214玩小车，上面有不少传感器，也有大疆的线上模拟器，还是挺不错的一次动手实验。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计 简介 授课老师：牛薇 授课材料：一份法语讲义，一份习题集（10个EX），上课用的PPT B站有录播，up主：却道成归 笔记记在侧边栏为大四上A的笔记本最前面</summary></entry><entry><title type="html">MCQ文献阅读</title><link href="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html" rel="alternate" type="text/html" title="MCQ文献阅读" /><published>2021-11-25T00:00:00+08:00</published><updated>2021-11-25T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html">&lt;h2 id=&quot;整理集合&quot;&gt;整理集合&lt;/h2&gt;
 &lt;p&gt;多选题自动生成：&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;定义&lt;br /&gt;
@@ -1408,389 +1575,4 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}\]
 
 &lt;p&gt;Of course Amazon’s Alexa neural networks have undergone quite a lot of training to get to the level where they are, the beauty is that once trained, to perform their magic they just need a few mathematical operations.&lt;/p&gt;
 
-&lt;p&gt;As said before, I will continue to write about the basics of neural networks, the next article in the series will dive a bit deeper into the math behind a basic neural network.&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="theory" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html">The omnipresence of technology nowadays has made it commonplace to read news about AI, just a quick glance at today’s headlines, and I get: This Powerful AI Technique Led to Clashes at Google and Fierce Debate in Tech. How A.I.-powered companies dodged the worst damage from COVID AI technology detects ‘ticking time bomb’ arteries AI in Drug Discovery Starts to Live Up to the Hype Pentagon seeks commercial solutions to get its data ready for AI</summary></entry><entry><title type="html">Starting the adventure</title><link href="http://localhost:4000/starting-the-adventure.html" rel="alternate" type="text/html" title="Starting the adventure" /><published>2021-03-24T00:00:00+08:00</published><updated>2021-03-24T00:00:00+08:00</updated><id>http://localhost:4000/starting-the-adventure</id><content type="html" xml:base="http://localhost:4000/starting-the-adventure.html">&lt;p&gt;In the midst of a global pandemic caused by the SARS-COV2 coronavirus; I decided to start blogging. I wanted to blog since a long time, I have always enjoyed writing, but many unknowns and having “no time” for it prevented me from taking it up. Things like: “I don’t really know who my target audience is”, “what would my topic or topics be?”, “I don’t think I am a world-class expert in anything”, and many more kept stopping me from setting up my own blog. Now seemed like a good time as any so with those and tons of other questions in my mind I decided it was time to start.&lt;/p&gt;
-
-&lt;p&gt;Funnily, this is not my first post. The birth of the blog came very natural as a way to “document” my newly established pursuit for getting myself into Machine Learning. This new adventure of mine comprises several things, and if I want to succeed I need to be serious about them all:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;I want to start coding again! I used to code a long time ago, starting when I was 8 years old in a Tandy Color Computer hooked up to my parent’s TV.&lt;/li&gt;
-  &lt;li&gt;Machine Learning is a vast, wide subject, I want to learn the generals, but also to select a few areas to focus on.&lt;/li&gt;
-  &lt;li&gt;Setting up a blog to document my journey and share it:&lt;/li&gt;
-  &lt;li&gt;Establish a learning and blogging routine. If I don’t do this, I am sure this endeavour will die off soon.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;As for the focus areas I will start with:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Neural Networks fundamentals: history, basic architecture and math behind them&lt;/li&gt;
-  &lt;li&gt;Deep Neural Networks&lt;/li&gt;
-  &lt;li&gt;Reinforcement Learning&lt;/li&gt;
-  &lt;li&gt;Current state of the art: what is at the cutting edge now in terms of Deep Neural Networks and Reinforcement Learning?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I selected the above areas to focus on based on my personal interests, I have been fascinated by the developments in reinforcement learning for a long time, in particular &lt;a href=&quot;https://deepmind.com/blog&quot;&gt;Deep Mind’s&lt;/a&gt; awesome &lt;a href=&quot;https://deepmind.com/blog/article/innovations-alphago&quot;&gt;Go&lt;/a&gt;, &lt;a href=&quot;https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-games-chess-shogi-and-go&quot;&gt;Chess&lt;/a&gt; and &lt;a href=&quot;https://deepmind.com/blog/article/AlphaStar-Grandmaster-level-in-StarCraft-II-using-multi-agent-reinforcement-learning&quot;&gt;Starcraft&lt;/a&gt; playing agents. Therefore, I started reading a lot about it and even started a personal project for coding a &lt;a href=&quot;./deep-q-learning-tic-tac-toe.html&quot;&gt;tic-tac-toe learning agent&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;With my limited knowledge I have drafted the following learning path:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Youtube: &lt;a href=&quot;https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw&quot;&gt;Three Blue One Brown’s&lt;/a&gt; videos on &lt;a href=&quot;https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&quot;&gt;Neural Networks&lt;/a&gt;, &lt;a href=&quot;https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr&quot;&gt;Calculus&lt;/a&gt; and &lt;a href=&quot;https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&quot;&gt;Linear Algebra&lt;/a&gt;. I cannot recommend them enough, they are of sufficient depth and use animation superbly to facilitate the understanding of the subjects.&lt;/li&gt;
-  &lt;li&gt;Coursera: &lt;a href=&quot;https://www.coursera.org/learn/machine-learning&quot;&gt;Andrew Ng’s Machine Learning course&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Book: &lt;a href=&quot;https://www.amazon.com/dp/1617294438/ref=cm_sw_em_r_mt_dp_AV4DHT7CVE95D1SR2JJ8&quot;&gt;Deep Learning with Python by Francois Chollet&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Book: &lt;a href=&quot;https://www.amazon.com/dp/0262193981/ref=cm_sw_em_r_mt_dp_10B6J4MDB7QE3YHBQF4X&quot;&gt;Reinforcement Learning: An Introduction, by Richard S. Sutton and Andrew G. Barto&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;As for practical work I decided to start by &lt;a href=&quot;./ML-Library-from-scratch.html&quot;&gt;coding my first models from scratch&lt;/a&gt; (without using libraries such as Tensorflow), to be able to deeply understand the math and logic behind the models, so far it has proven to be priceless.&lt;/p&gt;
-
-&lt;p&gt;For my next project I think I will start to do the basic hand-written digits recognition, which is the Machine Learning Hello World, for this I think I will start to use Tensorflow already.&lt;/p&gt;
-
-&lt;p&gt;I will continue to write about my learning road, what I find interesting and relevant, and to document all my practical exercises, as well as news and the state of the art in the world of AI.&lt;/p&gt;
-
-&lt;p&gt;So far, all I have learned has been so engaging that I am seriously thinking of a career change. I have 17 years of international experience in multinational corporations across various functions, such as Information Services, Sales, Customer Care and New Products Introduction, and sincerely, I am finding more joy in artificial intelligence than anything else I have worked on before. Let’s see where the winds take us.&lt;/p&gt;
-
-&lt;p&gt;Thanks for reading!&lt;/p&gt;
-
-&lt;h3 id=&quot;ps-for-the-geeks-like-me-here-is-a-snippet-on-the-technical-side-of-the-blog&quot;&gt;P.S. For the geeks like me, here is a snippet on the technical side of the blog.&lt;/h3&gt;
-
-&lt;h4 id=&quot;static-website-generator&quot;&gt;Static Website Generator&lt;/h4&gt;
-&lt;p&gt;I researched a lot on this, when I started I didn’t even know I needed a static website generator. I was just sure of one thing, I wanted my blog site to look modern, be easy to update and not to have anything extra or additional content or functionality I did not need.&lt;/p&gt;
-
-&lt;p&gt;There is a myriad of website generators nowadays, after a lengthy search the ones I ended up considering are:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://wordpress.com/&quot;&gt;wordpress&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.wix.com/&quot;&gt;wix&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.squarespace.com/&quot;&gt;squarespace&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ghost.org/&quot;&gt;ghost&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https:webflow.com&quot;&gt;webflow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.netlify.com/&quot;&gt;netlify&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://gohugo.io/&quot;&gt;hugo&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.com/docs/glossary/static-site-generator/&quot;&gt;gatsby&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;jekyll&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I started with the web interfaced generators with included hosting in their offerings:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://wordpress.com/&quot;&gt;wordpress&lt;/a&gt; is the old standard, it is the one CMS I knew from before, and I thought I needed a fully fledged CMS, so I blindly ran towards it. Turns out, it has grown a lot since I remembered, it is now a fully fledged platform for complex websites and ecommerce development, even so I decided to give it a try, I picked a template and &lt;a href=&quot;https://amaynez.wordpress.com/&quot;&gt;created a site&lt;/a&gt;. Even with the most simplistic and basic template I could find, there is a lot going on in the site. Setting it up was not as difficult or cumbersome as others claim, it took me about one hour to have it up and running, it looks good, but a bit crowded for my personal taste, and I found out it serves ads in your site for the readers, that is a big no for me.&lt;/p&gt;
-
-&lt;p&gt;I have tried &lt;a href=&quot;https://www.wix.com/&quot;&gt;wix&lt;/a&gt; and &lt;a href=&quot;https://www.squarespace.com/&quot;&gt;squarespace&lt;/a&gt; before, they are fantastic for quick and easy website generation, but their free offering has ads, so again, a big no for me.&lt;/p&gt;
-
-&lt;p&gt;I discovered &lt;a href=&quot;https://ghost.org/&quot;&gt;ghost&lt;/a&gt; as the platform used by one of the bloggers I follow (&lt;a href=&quot;https://ruder.io/&quot;&gt;Sebastian Ruder&lt;/a&gt;), turns out is a fantastic evolution over wordpress. It runs on the latest technologies, its interface is quite modern, and it is focused on one thing only: publishing. They have a paid hosting service, but the software is open sourced, therefore free to use in any hosting.&lt;/p&gt;
-
-&lt;p&gt;I also tested webflow and even created a &lt;a href=&quot;https://armando-maynez.webflow.io&quot;&gt;mockup&lt;/a&gt; there, the learning curve was quite smooth, and its CMS seems quite robust, but a bit too much for the functionalities I required.&lt;/p&gt;
-
-&lt;p&gt;Next were the generators that don’t have a web interface, but can be easily set up:&lt;/p&gt;
-
-&lt;p&gt;The first I tried was &lt;a href=&quot;https://www.netlify.com/&quot;&gt;netlify&lt;/a&gt;, I also set up a &lt;a href=&quot;https://amaynez.netlify.app/&quot;&gt;test site&lt;/a&gt; in it. Netlify provides free hosting, and to keep your source files it uses GitHub (a repository keeps the source files where it publishes from). It has its own CMS, Netlify CMS, and you have a choice of site generators: Hugo, Gatsby, MiddleMan, Preact CLI, Next.js, Elevently and Nuxt.js, and once you choose there are some templates for each. I did not find the variety of templates enticing enough, and the set up process was much more cumbersome than with wordpress (at least for my knowledge level). I choose Hugo for my test site.&lt;/p&gt;
-
-&lt;p&gt;I also tested &lt;a href=&quot;https://www.gatsbyjs.com/docs/glossary/static-site-generator/&quot;&gt;gatsby&lt;/a&gt; with it’s own Gatsby Cloud hosting service, &lt;a href=&quot;https://amaynez.gatsbyjs.io/&quot;&gt;here is my test site&lt;/a&gt;. They also use GitHub as a base to host the source files to build the website, so you create a repository, and it is connected to it. I found the free template offerings quite limited for what I was looking for.&lt;/p&gt;
-
-&lt;p&gt;Finally it came the turn for &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;jekyll&lt;/a&gt;, although an older, and slower generator (compared to Hugo and Gatsby), it was created by one of the founders of GitHub, so it’s integration with GitHub Pages is quite natural and painless, so much so, that to use them together you don’t even have to install Jekyll in your machine! You have two choices:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;keep it all online, by having one repository in Github keep all the source files, modify or add them online, and having Jekyll build and publish your site to the special &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; repository everytime you change or add a new file to the source repository.&lt;/li&gt;
-  &lt;li&gt;Have a synchronized local copy of the source files for the website, this way you can edit your blog and customize it in your choice of IDE (Integrated Development Environment). Then, when you update any file on your computer, you just “push” the changes to GitHub, and GitHub Pages automatically uses Jekyll to build and publish your site.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I chose the second option, specially because I can manipulate files, like images, in my laptop, and everytime I sync my local repository with GitHub, they are updated and published automatically. Quite convenient.&lt;/p&gt;
-
-&lt;p&gt;After testing with several templates to get the feel for it, I decided to keep Jekyll for my blog for several reasons: the convenience of not having to install anything extra on my computer to build my blog, the integration with GitHub Pages, the ease of use, the future proofing via integration with modern technologies such as react or vue and the vast online community that has produced tons of templates and useful information for issue resolution, customization and added functionality.&lt;/p&gt;
-
-&lt;p&gt;I picked up a template, just forked the repository and started modifying the files to customize it, it was fast and easy, I even took it upon myself to add some functionality to the template (it served as a coding little project) like:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;SEO meta tags&lt;/li&gt;
-  &lt;li&gt;Dark mode (&lt;a href=&quot;https://github.com/the-mvm/the-mvm.github.io/blob/a8d4f781bfbc4107b4842433701d28f5bbf1c520/_config.yml#L10&quot;&gt;configurable in _config.yml file&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;automatic &lt;a href=&quot;http://the-mvm.github.io/sitemap.xml&quot;&gt;sitemap.xml&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;automatic &lt;a href=&quot;http://the-mvm.github.io/archive/&quot;&gt;archive page&lt;/a&gt; with infinite scrolling capability&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://the-mvm.github.io/tag/?tag=Coding&quot;&gt;new page&lt;/a&gt; of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling&lt;/li&gt;
-  &lt;li&gt;click to tweet functionality (just add a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;tweet&amp;gt; &amp;lt;/tweet&amp;gt;&lt;/code&gt; tag in your markdown.&lt;/li&gt;
-  &lt;li&gt;custom and responsive &lt;a href=&quot;https://the-mvm.github.io/404.html&quot;&gt;404 page&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;responsive and automatic Table of Contents (optional per post)&lt;/li&gt;
-  &lt;li&gt;read time per post automatically calculated&lt;/li&gt;
-  &lt;li&gt;responsive post tags and social share icons (sticky or inline)&lt;/li&gt;
-  &lt;li&gt;included linkedin, reddit and bandcamp icons&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;copy link to clipboard&lt;/em&gt; sharing option (and icon)&lt;/li&gt;
-  &lt;li&gt;view on github link button (optional per post)&lt;/li&gt;
-  &lt;li&gt;MathJax support (optional per post)&lt;/li&gt;
-  &lt;li&gt;tag cloud in the home page&lt;/li&gt;
-  &lt;li&gt;‘back to top’ button&lt;/li&gt;
-  &lt;li&gt;comments ‘courtain’ to mask the disqus interface until the user clicks on it (&lt;a href=&quot;https://github.com/the-mvm/the-mvm.github.io/blob/d4a67258912e411b639bf5acd470441c4c219544/_config.yml#L13&quot;&gt;configurable in _config.yml&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/the-mvm/the-mvm.github.io/blob/d4a67258912e411b639bf5acd470441c4c219544/assets/css/main.css#L8&quot;&gt;CSS variables&lt;/a&gt; to make it easy to customize all colors and fonts&lt;/li&gt;
-  &lt;li&gt;added several pygments themes for code syntax highlight &lt;a href=&quot;https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L44&quot;&gt;configurable from the _config.yml file&lt;/a&gt;. See the &lt;a href=&quot;https://github.com/the-mvm/the-mvm.github.io/tree/main/assets/css/highlighter&quot;&gt;highlighter directory&lt;/a&gt; for reference on the options.&lt;/li&gt;
-  &lt;li&gt;responsive footer menu and footer logo (&lt;a href=&quot;https://github.com/the-mvm/the-mvm.github.io/blob/d4a67258912e411b639bf5acd470441c4c219544/_config.yml#L7&quot;&gt;if setup in the config file&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;smoother menu animations&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/template_screenshots/homepage-responsive.jpg&quot; alt=&quot;my new blog&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/template_screenshots/light-toggle.png&quot; alt=&quot;night theme toggle&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As a summary, Hugo and Gatsby might be much faster than Jekyll to build the sites, but their complexity I think makes them useful for a big site with plenty of posts. For a small site like mine, Jekyll provides sufficient functionality and power without the hassle.&lt;/p&gt;
-
-&lt;p&gt;You can use the modified template yourself by &lt;a href=&quot;https://github.com/the-mvm/the-mvm.github.io/fork/&quot;&gt;forking my repository&lt;/a&gt;. Let me know in the comments or feel free to contact me if you are interested in a detailed walkthrough on how to &lt;a href=&quot;https://github.com/the-mvm/the-mvm.github.io#Installation&quot;&gt;set it all up&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;hosting&quot;&gt;Hosting&lt;/h4&gt;
-&lt;p&gt;Since I decided on Jekyll to generate my site, the choice for hosting was quite obvious, &lt;strong&gt;&lt;a href=&quot;https://pages.github.com&quot;&gt;Github Pages&lt;/a&gt;&lt;/strong&gt; is very nicely integrated with it, it is free, and it has no ads! Plus the domain name isn’t too terrible (&lt;a href=&quot;https://the-mvm.github.io&quot;&gt;the-mvm.github.io&lt;/a&gt;).&lt;/p&gt;
-
-&lt;h5 id=&quot;interplanetary-file-system&quot;&gt;Interplanetary File System&lt;/h5&gt;
-&lt;p&gt;To contribute to and test &lt;a href=&quot;https://github.com/ipfs/ipfs#quick-summary&quot;&gt;IPFS&lt;/a&gt; I also set up a &lt;a href=&quot;https://weathered-bread-8229.on.fleek.co/&quot;&gt;mirror&lt;/a&gt; in IPFS by using &lt;a href=&quot;https://fleek.co&quot;&gt;fleek.co&lt;/a&gt;. I must confess that it was more troublesome than I imagined, it was definetively not plug and play because of the paths used to fetch resources. The nature of IPFS makes short absolute paths for website resources (like images, css and javascript files) inoperative; the easiest fix for this is to use relative paths, however the same relative path that works for the root directory (i.e. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/index.html&lt;/code&gt;) does not work for links inside directories (i.e. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/tags/&lt;/code&gt;), and since the site is static, while generating it, one must make the distinction between the different directory levels for the page to be rendered correctly.&lt;/p&gt;
-
-&lt;p&gt;At first I tried a simple (but brute force solution):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-jekyll&quot;&gt;# determine the level of the current file
-{% assign lvl = page.url | append:&apos;X&apos; | split:&apos;/&apos; | size %}
-# create the relative base (i.e. &quot;../&quot;)
-{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
-{% if relativebase == &apos;&apos; %}
-	{% assign relativebase = &apos;./&apos; %}
-{% endif %}
-...
-# Eliminate unecesary double backslashes
-{% capture post_url %}{{ relativebase }}{{ post.url }}{% endcapture %}
-{% assign post_url = post_url | replace: &quot;//&quot;, &quot;/&quot; %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll/liquid&lt;/code&gt; code was executed in every page (or include) that needed to reference a resource hosted in the same server.&lt;/p&gt;
-
-&lt;p&gt;But this fix did not work for the search function, because it relies on a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search.json&lt;/code&gt; file (also generated programmatically to be served as a static file), therefore when generating this file one either use the relative path for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;root&lt;/code&gt; directory or for a nested directory, thus the search results will only link correctly the corresponding pages if the page where the user searched for something is in the corresponding scope.&lt;/p&gt;
-
-&lt;p&gt;So the final solution was to make the whole site flat, meaning to live in a single directory. All pages and posts will live under the root directory, and by doing so, I can control how to address the relative paths for resources.&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="general blogging" /><category term="thoughts" /><category term="life" /><summary type="html">In the midst of a global pandemic caused by the SARS-COV2 coronavirus; I decided to start blogging. I wanted to blog since a long time, I have always enjoyed writing, but many unknowns and having “no time” for it prevented me from taking it up. Things like: “I don’t really know who my target audience is”, “what would my topic or topics be?”, “I don’t think I am a world-class expert in anything”, and many more kept stopping me from setting up my own blog. Now seemed like a good time as any so with those and tons of other questions in my mind I decided it was time to start.</summary></entry><entry><title type="html">Deep Q Learning for Tic Tac Toe</title><link href="http://localhost:4000/deep-q-learning-tic-tac-toe.html" rel="alternate" type="text/html" title="Deep Q Learning for Tic Tac Toe" /><published>2021-03-19T05:14:20+08:00</published><updated>2021-03-19T05:14:20+08:00</updated><id>http://localhost:4000/deep-q-learning-tic-tac-toe</id><content type="html" xml:base="http://localhost:4000/deep-q-learning-tic-tac-toe.html">&lt;center&gt;&lt;img style=&quot;float: left;margin-right: 1em;&quot; src=&quot;./assets/img/posts/20210318/Game_Screen.png&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;&lt;/center&gt;
-
-&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
-&lt;p&gt;After many years of a corporate career (17) diverging from computer science, I have now decided to learn Machine Learning and in the process return to coding (something I have always loved!).&lt;/p&gt;
-
-&lt;p&gt;To fully grasp the essence of ML I decided to start by &lt;a href=&quot;./ML-Library-from-scratch.html&quot;&gt;coding a ML library myself&lt;/a&gt;, so I can fully understand the inner workings, linear algebra and calculus involved in Stochastic Gradient Descent. And on top learn Python (I used to code in C++ 20 years ago).&lt;/p&gt;
-
-&lt;p&gt;I built a general purpose basic ML library that creates a Neural Network (only DENSE layers), saves and loads the weights into a file, does forward propagation and training (optimization of weights and biases) using SGD. I tested the ML library with the XOR problem to make sure it worked fine. You can read the blog post for it &lt;a href=&quot;./ML-Library-from-scratch.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;For the next challenge I am interested in reinforcement learning greatly inspired by Deep Mind’s astonishing feats of having their Alpha Go, Alpha Zero and Alpha Star programs learn (and be amazing at it) Go, Chess, Atari games and lately Starcraft; I set myself to the task of programming a neural network that will learn by itself how to play the ancient game of tic tac toe (or noughts and crosses).&lt;/p&gt;
-
-&lt;p&gt;How hard could it be?&lt;/p&gt;
-
-&lt;p&gt;Of course the first thing to do was to program the game itself, so I chose Python because I am learning it, so it gives me a good practice opportunity, and PyGame for the interface.
-Coding the game was quite straightforward, albeit for the hiccups of being my first PyGame and almost my first Python program ever.
-I created the game quite openly, in such a way that it can be played by two humans, by a human vs. an algorithmic AI, and a human vs. the neural network. And of course the neural network against a choice of 3 AI engines: random, &lt;a href=&quot;https://en.wikipedia.org/wiki/Minimax&quot;&gt;minimax&lt;/a&gt; or hardcoded (an exercise I wanted to do since a long time).&lt;/p&gt;
-
-&lt;p&gt;While training, the visuals of the game can be disabled to make training much faster.
-Now, for the fun part, training the network, I followed Deep Mind’s own DQN recommendations:&lt;/p&gt;
-
-&lt;ul&gt;&lt;li&gt;The network will be an approximation for the Q value function or Bellman equation, meaning that the network will be trained to predict the &quot;value&quot; of each move available in a given game state.&lt;/li&gt;&lt;li&gt;A replay experience memory was implemented. This meant that the neural network will not be trained after each move. Each move will be recorded in a special &quot;memory&quot; alongside with the state of the board and the reward it received for taking such an action (move).&lt;/li&gt;&lt;li&gt;After the memory is sizable enough, batches of random experiences sampled from the replay memory are used for every training round&lt;/li&gt;&lt;li&gt;A secondary neural network (identical to the main one) is used to calculate part of the Q value function (Bellman equation), in particular the future Q values. And then it is updated with the main network&apos;s weights every &lt;em&gt;n&lt;/em&gt; games. This is done so that we are not chasing a moving target.&lt;/li&gt;&lt;/ul&gt;
-
-&lt;h2 id=&quot;designing-the-neural-network&quot;&gt;Designing the neural network&lt;/h2&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Neural_Network_Topology.png&quot; width=&quot;540&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;The Neural Network chosen takes 9 inputs (the current state of the game) and outputs 9 Q values for each of the 9 squares in the board of the game (possible actions). Obviously some squares are illegal moves, hence while training there was a negative reward given to illegal moves hoping that the model would learn not to play illegal moves in a given position.&lt;/p&gt;
-
-&lt;p&gt;I started out with two hidden layers of 36 neurons each, all fully connected and activated via ReLu. The output layer was initially activated using sigmoid to ensure that we get a nice value between 0 and 1 that represents the QValue of a given state action pair.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-many-models&quot;&gt;The many models…&lt;/h2&gt;
-&lt;h3 id=&quot;model-1---the-first-try&quot;&gt;Model 1 - the first try&lt;/h3&gt;
-
-&lt;p&gt;At first the model was trained by playing vs. a “perfect” AI, meaning a &lt;a href=&quot;https://github.com/amaynez/TicTacToe/blob/b429e5637fe5f61e997f04c01422ad0342565640/entities/Game.py#L43&quot;&gt;hard coded algorithm&lt;/a&gt; that never looses and that will win if it is given the chance. After several thousand training rounds, I noticed that the Neural Network was not learning much; so I switched to training vs. a completely random player, so that it will also learn how to win. After training vs. the random player, the Neural Network seems to have made progress and is steadily diminishing the loss function over time.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Loss_function_across_all_episodes.png&quot; width=&quot;540&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;However, the model was still generating many illegal moves, so I decided to modify the reinforcement learning algorithm to punish more the illegal moves. The change consisted in populating with zeros all the corresponding illegal moves for a given position at the target values to train the network. This seemed to work very well for diminishing the illegal moves:&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Loss_function_and_Illegal_moves.png&quot; width=&quot;540&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Nevertheless, the model was still performing quite poorly winning only around 50% of games vs. a completely random player (I expected it to win above 90% of the time). This was after only training 100,000 games, so I decided to keep training and see the results:&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Loss_function_and_Illegal_moves2.png&quot; width=&quot;540&quot; /&gt;
-&lt;small&gt;Wins: 65.46% Losses: 30.32% Ties: 4.23%&lt;/small&gt;&lt;/center&gt;
-
-&lt;p&gt;Note that when training restarts, the loss and illegal moves are still high in the beginning of the training round, and this is caused by the epsilon greedy strategy that prefers exploration (a completely random move) over exploitation, this preference diminishes over time.&lt;/p&gt;
-
-&lt;p&gt;After another round of 100,000 games, I can see that the loss function actually started to diminish, and the win rate ended up at 65%, so with little hope I decided to carry on and do another round of 100,000 games (about 2 hours in an i7 MacBook Pro):&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Loss_function_and_Illegal_moves3.png&quot; width=&quot;540&quot; /&gt;
-&lt;small&gt;Wins: 46.40% Losses: 41.33% Ties: 12.27%&lt;/small&gt;&lt;/center&gt;
-
-&lt;p&gt;As you can see in the chart, the calculated loss not even plateaued, but it seemed to increase a bit over time, which tells me the model is not learning anymore. This was confirmed by the win rate decreasing with respect of the previous round to a meek 46.4% that looks no better than a random player.&lt;/p&gt;
-
-&lt;h3 id=&quot;model-2---linear-activation-for-the-output&quot;&gt;Model 2 - Linear activation for the output&lt;/h3&gt;
-
-&lt;p&gt;After not getting the results I wanted, I decided to change the output activation function to linear, since the output is supposed to be a Q value, and not a probability of an action.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Loss_function_and_Illegal_moves4.png&quot; width=&quot;540&quot; /&gt;&lt;br /&gt;
-&lt;small&gt;Wins: 47.60% Losses: 39% Ties: 13.4%&lt;/small&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Initially I tested with only 1000 games to see if the new activation function was working, the loss function appears to be decreasing, however it reached a plateau around a value of 1, hence still not learning as expected. I came across a &lt;a href=&quot;https://github.com/bckenstler/CLR&quot;&gt;technique by Brad Kenstler, Carl Thome and Jeremy Jordan&lt;/a&gt; called Cyclical Learning Rate, which appears to solve some cases of stagnating loss functions in this type of networks. So I gave it a go using their Triangle 1 model.&lt;/p&gt;
-
-&lt;p&gt;With the cycling learning rate in place, still no luck after a quick 1,000 games training round; so I decided to implement on top a decaying learning rate as per the following formula:&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/lr_formula.jpeg&quot; width=&quot;280&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;The resulting learning rate combining the cycles and decay per epoch is:&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/LR_cycle_decay.png&quot; width=&quot;480&quot; /&gt;
-&lt;small&gt;Learning Rate = 0.1, Decay = 0.0001, Cycle = 2048 epochs,&lt;br /&gt;
-        max Learning Rate factor = 10x&lt;/small&gt;&lt;/center&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;true_epoch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epoch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BATCH_SIZE&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DECAY_RATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;true_epoch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CLR_ON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cyclic_learning_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;true_epoch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;staticmethod&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cyclic_learning_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epoch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;max_lr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX_LR_FACTOR&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cycle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;epoch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LR_STEP_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;epoch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LR_STEP_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cycle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_lr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maximum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DECAY_RATE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;learning&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;decay&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX_LR_FACTOR&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;multiplier&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;determines&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;learning&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LR_STEP_SIZE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cycle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lasts&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;With these many changes, I decided to restart with a fresh set of random weights and biases and try training more (much more) games.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Loss_function_and_Illegal_moves6.png&quot; width=&quot;540&quot; /&gt;
-&lt;small&gt;1,000,000 episodes, 7.5 million epochs with batches of 64 moves each&lt;br /&gt;
-Wins: 52.66% Losses: 36.02% Ties: 11.32%&lt;/small&gt;&lt;/center&gt;
-
-&lt;p&gt;After &lt;strong&gt;24 hours!&lt;/strong&gt;, my computer was able to run 1,000,000 episodes (games played), which represented 7.5 million training epochs of batches of 64 plays (480 million plays learned), the learning rate did decreased (a bit), but is clearly still in a plateau; interestingly, the lower boundary of the loss function plot seems to continue to decrease as the upper bound and the moving average remains constant. This led me to believe that I might have hit a local minimum.
-&lt;a name=&quot;Model3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;model-3---new-network-topology&quot;&gt;Model 3 - new network topology&lt;/h3&gt;
-
-&lt;p&gt;After all the failures I figured I had to rethink the topology of the network and play around with combinations of different networks and learning rates.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Loss_function_and_Illegal_moves7.png&quot; width=&quot;540&quot; /&gt;
-&lt;small&gt;100,000 episodes, 635,000 epochs with batches of 64 moves each&lt;br /&gt;
-&lt;b&gt;Wins: 76.83%&lt;/b&gt; Losses: 17.35% Ties: 5.82%&lt;/small&gt;&lt;/center&gt;
-
-&lt;p&gt;I increased to 200 neurons each hidden layer. In spite of this great improvement the loss function was still in a plateau at around 0.1 (Mean Squared Error). Which, although it is greatly reduced from what we had, still was giving out only 77% win rate vs. a random player, the network was playing tic tac toe as a toddler!&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Game_Screen2.png&quot; width=&quot;240&quot; height=&quot;240&quot; /&gt;
-&lt;small&gt;*I can still beat the network most of the time! (I am playing with the red X)*&lt;/small&gt;&lt;/center&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Loss_function_and_Illegal_moves10.png&quot; width=&quot;540&quot; /&gt;
-&lt;small&gt;100,000 more episodes, 620,000 epochs with batches of 64 moves each&lt;br /&gt;
-&lt;b&gt;Wins: 82.25%&lt;/b&gt; Losses: 13.28% Ties: 4.46%&lt;/small&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;strong&gt;Finally we crossed the 80% mark!&lt;/strong&gt; This is quite an achievement, it seems that the change in network topology is working, although it also looks like the loss function is stagnating at around 0.15.&lt;/p&gt;
-
-&lt;p&gt;After more training rounds and some experimenting with the learning rate and other parameters, I couldn’t improve past the 82.25% win rate.&lt;/p&gt;
-
-&lt;p&gt;These have been the results so far:&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Models1to3.png&quot; width=&quot;540&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;It is quite interesting to learn how the many parameters (hyper-parameters as most authors call them) of a neural network model affect its training performance, I have played with:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;the learning rate&lt;/li&gt;
-  &lt;li&gt;the network topology and activation functions&lt;/li&gt;
-  &lt;li&gt;the cycling and decaying learning rate parameters&lt;/li&gt;
-  &lt;li&gt;the batch size&lt;/li&gt;
-  &lt;li&gt;the target update cycle (when the target network is updated with the weights from the policy network)&lt;/li&gt;
-  &lt;li&gt;the rewards policy&lt;/li&gt;
-  &lt;li&gt;the epsilon greedy strategy&lt;/li&gt;
-  &lt;li&gt;whether to train vs. a random player or an “intelligent” AI.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And so far the most effective change has been the network topology, but being so close but not quite there yet to my goal of 90% win rate vs. a random player, I will still try to optimize further.&lt;/p&gt;
-
-&lt;tweet&gt;Network topology seems to have the biggest impact on a neural network&apos;s learning ability.&lt;/tweet&gt;
-
-&lt;p&gt;&lt;a name=&quot;Model4&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;model-4---implementing-momentum&quot;&gt;Model 4 - implementing momentum&lt;/h3&gt;
-
-&lt;p&gt;I &lt;a href=&quot;https://www.reddit.com/r/MachineLearning/comments/lzvrwp/p_help_with_a_reinforcement_learning_project/&quot;&gt;reached out to the reddit community&lt;/a&gt; and a kind soul pointed out that maybe what I need is to apply momentum to the optimization algorithm. So I did some research and ended up deciding to implement various optimization methods to experiment with:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Stochastic Gradient Descent with Momentum&lt;/li&gt;
-  &lt;li&gt;RMSProp: Root Mean Square Plain Momentum&lt;/li&gt;
-  &lt;li&gt;NAG: Nezterov’s Accelerated Momentum&lt;/li&gt;
-  &lt;li&gt;Adam: Adaptive Moment Estimation&lt;/li&gt;
-  &lt;li&gt;and keep my old vanilla Gradient Descent (vGD) ☺&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a name=&quot;optimization&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://the-mvm.github.io/neural-network-optimization-methods/&quot;&gt;Click here for a detailed explanation and code of all the implemented optimization algorithms.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;So far, I have not been able to get better results with Model 4, I have tried all the momentum optimization algorithms with little to no success.
-&lt;a name=&quot;Model5&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;model-5---implementing-one-hot-encoding-and-changing-topology-again&quot;&gt;Model 5 - implementing one-hot encoding and changing topology (again)&lt;/h3&gt;
-&lt;p&gt;I came across an &lt;a href=&quot;https://github.com/AxiomaticUncertainty/Deep-Q-Learning-for-Tic-Tac-Toe/blob/master/tic_tac_toe.py&quot;&gt;interesting project in Github&lt;/a&gt; that deals exactly with Deep Q Learning, and I noticed that he used “one-hot” encoding for the input as opposed to directly entering the values of the player into the 9 input slots. So I decided to give it a try and at the same time change my topology to match his:&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Neural_Network_Topology3.png&quot; width=&quot;540&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;So, ‘one hot’ encoding is basically changing the input of a single square in the tic tac toe board to three numbers, so that each state is represented with different inputs, thus the network can clearly differentiate the three of them. As the original author puts it, the way I was encoding, having 0 for empty, 1 for X and 2 for O, the network couldn’t easily tell that, for instance, O and X both meant occupied states, because one is two times as far from 0 as the other. With the new encoding, the empty state will be 3 inputs: (1,0,0), the X will be (0,1,0) and the O (0,0,1) as in the diagram.&lt;/p&gt;
-
-&lt;p&gt;Still, no luck even with Model 5, so I am starting to think that there could be a bug in my code.&lt;/p&gt;
-
-&lt;p&gt;To test this hypothesis, I decided to implement the same model using Tensorflow / Keras.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;Model6&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;model-6---tensorflow--keras&quot;&gt;Model 6 - Tensorflow / Keras&lt;/h3&gt;
-&lt;center&gt;&lt;img src=&quot;https://www.kubeflow.org/docs/images/logos/TensorFlow.png&quot; width=&quot;100&quot; height=&quot;100&quot; /&gt;&lt;/center&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyNetwork&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layer&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hidden_layers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyNetwork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-                           &lt;span class=&quot;n&quot;&gt;units&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                           &lt;span class=&quot;n&quot;&gt;activation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;relu&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                           &lt;span class=&quot;n&quot;&gt;input_dim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                           &lt;span class=&quot;n&quot;&gt;kernel_initializer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;random_uniform&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                           &lt;span class=&quot;n&quot;&gt;bias_initializer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;zeros&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyNetwork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;outputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;kernel_initializer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;random_uniform&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;bias_initializer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;zeros&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Adam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LEARNING_RATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-           &lt;span class=&quot;n&quot;&gt;beta_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GAMMA_OPT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-           &lt;span class=&quot;n&quot;&gt;beta_2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BETA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-           &lt;span class=&quot;n&quot;&gt;epsilon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EPSILON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-           &lt;span class=&quot;n&quot;&gt;amsgrad&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyNetwork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;adam&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                           &lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;mean_squared_error&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                           &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;accuracy&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;As you can see I am reusing all of my old code, and just replacing my Neural Net library with Tensorflow/Keras, keeping even my hyper-parameter constants.&lt;/p&gt;
-
-&lt;p&gt;The training function changed to:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;reduce_lr_on_plateau&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ReduceLROnPlateau&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;monitor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;loss&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                         &lt;span class=&quot;n&quot;&gt;factor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                         &lt;span class=&quot;n&quot;&gt;patience&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;history&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyNetwork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;states_to_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                 &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;targets_to_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                 &lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EPOCHS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                 &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BATCH_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                 &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                 &lt;span class=&quot;n&quot;&gt;callbacks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduce_lr_on_plateau&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                                 &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;With Tensorflow implemented, the first thing I noticed, was that I had an error in the calculation of the loss, although this only affected reporting and didn’t change a thing on the training of the network, so the results kept being the same, &lt;strong&gt;the loss function was still stagnating! My code was not the issue.&lt;/strong&gt;
-&lt;a name=&quot;Model7&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;model-7---changing-the-training-schedule&quot;&gt;Model 7 - changing the training schedule&lt;/h3&gt;
-&lt;p&gt;Next I tried to change the way the network was training as per &lt;a href=&quot;https://www.reddit.com/user/elBarto015&quot;&gt;u/elBarto015&lt;/a&gt; &lt;a href=&quot;https://www.reddit.com/r/reinforcementlearning/comments/lzzjar/i_created_an_ai_for_super_hexagon_based_on/gqc8ka6?utm_source=share&amp;amp;utm_medium=web2x&amp;amp;context=3&quot;&gt;advised me on reddit&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The way I was training initially was:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Games begin being simulated and the outcome recorded in the replay memory&lt;/li&gt;
-  &lt;li&gt;Once a sufficient ammount of experiences are recorded (at least equal to the batch size) the Network will train with a random sample of experiences from the replay memory. The ammount of experiences to sample is the batch size.&lt;/li&gt;
-  &lt;li&gt;The games continue to be played between the random player and the network.&lt;/li&gt;
-  &lt;li&gt;Every move from either player generates a new training round, again with a random sample from the replay memory.&lt;/li&gt;
-  &lt;li&gt;This continues until the number of games set up conclude.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/ReplayMemoryBefore.png&quot; width=&quot;540&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;The first change was to train only after every game concludes with the same ammount of data (a batch). This was still not giving any good results.&lt;/p&gt;
-
-&lt;p&gt;The second change was more drastic, it introduced the concept of epochs for every training round, it basically sampled the replay memory for epochs * batch size experiences, for instance if epochs selected were 10, and batch size was 81, then 810 experiences were sampled out of the replay memory. With this sample the network was then trained for 10 epochs randomly using the batch size.&lt;/p&gt;
-
-&lt;p&gt;This meant that I was training now effectively 10 (or the number of epochs selected) times more per game, but in batches of the same size and randomly shuffling the experiences each epoch.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/ReplayMemoryAfter.png&quot; width=&quot;540&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;After still playing around with some hyperparameters I managed to get similar performance as I got before, reaching 83.15% win rate vs. the random player, so I decided to keep training in rounds of 2,000 games each to evaluate performance. With almost every round I could see improvement:&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;./assets/img/posts/20210318/Model7HyperParameters.png&quot; width=&quot;540&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;./assets/img/posts/20210318/Model7.png&quot; width=&quot;480&quot; /&gt;
-&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;As of today, my best result so far is 87.5%, I will leave it rest for a while and keep investigating to find a reason for not being able to reach at least 90%. I read about &lt;a href=&quot;https://medium.com/applied-data-science/how-to-train-ai-agents-to-play-multiplayer-games-using-self-play-deep-reinforcement-learning-247d0b440717&quot;&gt;self play&lt;/a&gt;, and it looks like a viable option to test and a fun coding challenge. However, before embarking in yet another big change I want to ensure I have been thorough with the model and have tested every option correctly.&lt;/p&gt;
-
-&lt;p&gt;I feel the end is near… should I continue to update this post as new events unfold or shall I make it a multi post thread?&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="machine learning" /><category term="artificial intelligence" /><category term="reinforcement learning" /><category term="coding" /><category term="python" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;As said before, I will continue to write about the basics of neural networks, the next article in the series will dive a bit deeper into the math behind a basic neural network.&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="theory" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html">The omnipresence of technology nowadays has made it commonplace to read news about AI, just a quick glance at today’s headlines, and I get: This Powerful AI Technique Led to Clashes at Google and Fierce Debate in Tech. How A.I.-powered companies dodged the worst damage from COVID AI technology detects ‘ticking time bomb’ arteries AI in Drug Discovery Starts to Live Up to the Hype Pentagon seeks commercial solutions to get its data ready for AI</summary></entry></feed>

@@ -127,8 +127,7 @@
 <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
 	
-</head>
-
+<head>
   <body>
     <div class="flex-container transparent">
   
@@ -1078,6 +1077,103 @@
 	</div>
 
 	
+	<div id="note" class="hidden tag-master">
+		<h1>note</h1>
+		<div class="archive">
+			<div class="post-list">
+		    
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./Robotics.html">Robotics</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2021-12-13T00:00:00+08:00">December 13, 2021</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h1 id="报告">报告</h1>
+<h2 id="报告内容">报告内容</h2>
+<p>用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。</p>
+<h2 id="报告格式">报告格式</h2>
+<ol>
+  <li>标题，下面有姓名学号电话等等</li>
+  <li>摘要</li>
+  <li>正文</li>
+</ol>
+<a class="read-more" href="./Robotics.html"> read more</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./datamining.html">数据挖掘</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2021-12-10T00:00:00+08:00">December 10, 2021</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h1 id="总体情况">总体情况</h1> <ul> <li>书籍:Python数据挖掘入门与实践</li> <li>github_url:https://github.com/LinXueyuanStdio/PythonDataMining</li> <li>配套代码和笔记，很适合迅速上手</li> <li>这篇博客主要记录一些比较重要的算法</li> </ul> <h2 id="第一章-开始数据挖掘之旅">第一章 开始数据挖掘之旅</h2> <h3 id="11-亲和性分析">1.1 亲和性分析</h3> <ul> <li>亲和性分析根据样本个体（物体）之间的<strong>相似度</strong>，确定它们关系的亲疏。</li> <li>例子：商品推荐。</li> <li>我们要找出“如果顾客购买了商品X，那么他们可能愿意购买商品Y”这样的规则。简单粗暴的做法是，找出数据集中所有同时购买的两件商品。找出规则后，还需要判断其优劣，我们挑好的规则用。</li> <li>规则的优劣有多种判断标准，常用的有支持度(support)和置信度(confidence)</li> <li>支持度：数据集中规则应验的次数，统计起来很简单。有时候，还需要对支持度进行规范化，即再除以规则有效前提下的总数量。</li> <li>置信度是衡量规则的准确性如何。</li> </ul> <h3 id="12-分类">1.2 分类</h3> <ul> <li>根据特征分出类别</li> <li>例子：Iris植物分类数据集，通过四个特征分出三个类别</li> <li>特征连续值变成离散值</li> <li>OneR算法：它根据已有数据中，具有相同特征值的个体最可能属于哪个类别进行分类。比如对于某一个特征值来说，属于A的类别有80个，属于B的类别有20个，那么对于这个特征值来说，取值为1代表为A类别，错误率有20％。给出所有特征值，找出错误率最小的特征值作为判断标准。</li> </ul> <h2 id="第二章-用scikit-learn估计器分类">第二章 用scikit-learn估计器分类</h2> <h3 id="21-scikit-learn">2.1 scikit-learn</h3> <p>scikit-learn里面已经封装好很多数据挖掘的算法</p> <p>现介绍数据挖掘框架的搭建方法：</p> <ul> <li>转换器（Transformer）用于数据预处理，数据转换</li> <li>流水线（Pipeline）组合数据挖掘流程，方便再次使用（封装）</li> <li>估计器（Estimator）用于分类，聚类，回归分析（各种算法对象） <ul> <li>所有的估计器都有下面2个函数 <ul> <li>fit() 训练 <ul> <li>用法：estimator.fit(X_train, y_train)，</li> <li>estimator = KNeighborsClassifier() 是scikit-learn算法对象</li> <li>X_train = dataset.data 是numpy数组</li> <li>y_train = dataset.target 是numpy数组</li> </ul> </li> <li>predict() 预测 <ul> <li>用法：estimator.predict(X_test)</li> <li>estimator = KNeighborsClassifier() 是scikit-learn算法对象</li> <li>X_test = dataset.data 是numpy数组</li> </ul> </li> </ul> </li> </ul> </li> </ul> <h3 id="22-邻近算法knn">2.2 邻近算法KNN</h3> <p>邻近算法，或者说K最邻近（KNN，K-NearestNeighbor）分类算法是数据挖掘分类技术中最简单的方法之一。所谓K最近邻，就是K个最近的邻居的意思，说的是每个样本都可以用它最接近的K个邻近值来代表。近邻算法就是将数据集合中每一个记录进行分类的方法。</p> <p>例子：分类，Ionosphere数据集</p> <h2 id="第三章-用决策树预测获胜球队">第三章 用决策树预测获胜球队</h2> <h3 id="31-决策树">3.1 决策树</h3> <p>例子：预测NBA球队获胜情况</p> <p>决策树是一种树形结构，其中每个内部节点表示一个属性上的测试，每个分支代表一个测试输出，每个叶节点代表一种类别。</p> <p>分类树（决策树）是一种十分常用的分类方法。它是一种监督学习，所谓监督学习就是给定一堆样本，每个样本都有一组属性和一个类别，这些类别是事先确定的，那么通过学习得到一个分类器，这个分类器能够对新出现的对象给出正确的分类。这样的机器学习就被称之为监督学习。</p> <p>scikit-learn库实现了分类回归树（Classification and...<a class="read-more" href="./datamining.html"> read more</a>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+
+	
 	<div id="optimization" class="hidden tag-master">
 		<h1>optimization</h1>
 		<div class="archive">
@@ -1541,58 +1637,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h2 id="概率统计">概率统计</h2>
-<h3 id="简介">简介</h3>
-<ul>
-  <li>授课老师：牛薇</li>
-  <li>授课材料：一份法语讲义，一份习题集（10个EX），上课用的PPT</li>
-  <li>B站有录播，up主：却道成归</li>
-  <li>笔记记在侧边栏为大四上A的笔记本最前面</li>
-</ul>
-
-<h3 id="内容总览">内容总览</h3>
-<p>一半时间概率一半时间统计</p>
-<ol>
-  <li>概率
-    <ul>
-      <li>先从之前学的概率空间讲起，介绍了概率分布（离散or连续），密度函数，期望方差，收敛性。</li>
-      <li>估计，比如说用平均值估计期望，用频率估计概率等等</li>
-      <li>估计又分为点估计和区间估计，点估计中介绍了似然函数以及最大似然法来找估计量</li>
-    </ul>
-  </li>
-  <li>统计
-    <ul>
-      <li>主要介绍了几种检验方法来检验分布、估计量选择的好坏</li>
-      <li>包括了参数检验，分布检验，比较检验等等</li>
-    </ul>
-  </li>
-  <li>A4纸</li>
-</ol>
-
-<p><img src="../assets/img/posts/20211128/1.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211128/2.jpg" /></p>
-
-<h2 id="流体力学">流体力学</h2>
-<h3 id="简介-1">简介</h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 授课老师：方乐
-- 授课材料：PPT，TD都是6个，分别对应六大章
-- B站有录播
-- 笔记在侧边栏为大四上A的中后部分和大四上B前面
-</code></pre></div></div>
-
-<h3 id="内容总览-1">内容总览</h3>
-<p>第一章主要讲了流体的概念和动力学的公式。第二章从能量角度出发，介绍了NS方程（斯托克斯方程），和伯努利原理（压强和流速的关系）。第三章介绍了雷诺数，无量纲分析，雷诺数大的是湍流，雷诺数小的是层流。第四章介绍了边界层，第五章介绍了湍流，系统平均。第六章介绍了涡量。</p>
-
-<h3 id="a4纸">A4纸</h3>
-
-<p><img src="../assets/img/posts/20211128/3.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211128/4.jpg" /></p>
-
-<h3 id="报告">报告</h3>
-<p>结课之前需要我们写一个报告，什么形式的都可以，我觉得这种方式挺好的，自由发挥，我做的实验，用牛奶和墨水还原了卡门涡街。</p>
-<a class="read-more" href="./%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"> read more</a>
+						<h1 id="概率统计">概率统计</h1> <h3 id="简介">简介</h3> <ul> <li>授课老师：牛薇</li> <li>授课材料：一份法语讲义，一份习题集（10个EX），上课用的PPT</li> <li>B站有录播，up主：却道成归</li> <li>笔记记在侧边栏为大四上A的笔记本最前面</li> </ul> <h3 id="内容总览">内容总览</h3> <p>一半时间概率一半时间统计</p> <ol> <li>概率 <ul> <li>先从之前学的概率空间讲起，介绍了概率分布（离散or连续），密度函数，期望方差，收敛性。</li> <li>估计，比如说用平均值估计期望，用频率估计概率等等</li> <li>估计又分为点估计和区间估计，点估计中介绍了似然函数以及最大似然法来找估计量</li> </ul> </li> <li>统计 <ul> <li>主要介绍了几种检验方法来检验分布、估计量选择的好坏</li> <li>包括了参数检验，分布检验，比较检验等等</li> </ul> </li> <li>A4纸</li> </ol> <p><img src="../assets/img/posts/20211128/1.jpg" /></p> <p><img src="../assets/img/posts/20211128/2.jpg" /></p> <h1 id="流体力学">流体力学</h1> <h3 id="简介-1">简介</h3> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 授课老师：方乐 - 授课材料：PPT，TD都是6个，分别对应六大章 - B站有录播 - 笔记在侧边栏为大四上A的中后部分和大四上B前面 </code></pre></div></div> <h3 id="内容总览-1">内容总览</h3> <p>第一章主要讲了流体的概念和动力学的公式。第二章从能量角度出发，介绍了NS方程（斯托克斯方程），和伯努利原理（压强和流速的关系）。第三章介绍了雷诺数，无量纲分析，雷诺数大的是湍流，雷诺数小的是层流。第四章介绍了边界层，第五章介绍了湍流，系统平均。第六章介绍了涡量。</p> <h3 id="a4纸">A4纸</h3> <p><img src="../assets/img/posts/20211128/3.jpg" /></p> <p><img src="../assets/img/posts/20211128/4.jpg" /></p> <h3 id="报告">报告</h3> <p>结课之前需要我们写一个报告，什么形式的都可以，我觉得这种方式挺好的，自由发挥，我做的实验，用牛奶和墨水还原了卡门涡街。</p> <h1 id="电磁辐射波">电磁辐射波</h1> <h3 id="简介-2">简介</h3> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 授课老师: José Penuelas(负责前几章教学), Bertrand Vilquin(负责后几章教学), 孙鸣捷老师(负责TD) - 授课形式：线上讲解原理，线下TD - 授课材料：PPT，讲义，TD - B站有录播 - 有笔记，侧边栏叫做电磁学(大四上) - 考试闭卷，所以没有A4纸 ### 内容总览 首先回顾了之前学的波动物理和电磁学，电磁辐射，顾名思义是要将辐射，讲了波导，腔和光电效应，能级跃迁等等 </code></pre></div></div> <h1 id="传感器">传感器</h1> <h3 id="简介-3">简介</h3> <div...<a class="read-more" href="./%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"> read more</a>
 					</div>
 				</div>
 			
@@ -1747,6 +1792,9 @@
             
                 
                 <li><a href="./tag.html?tag=neural+networks" class="tag">neural networks <span>(4)</span></a></li>
+            
+                
+                <li><a href="./tag.html?tag=note" class="tag">note <span>(2)</span></a></li>
             
                 
                 <li><a href="./tag.html?tag=optimization" class="tag">optimization <span>(1)</span></a></li>

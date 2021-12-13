@@ -1,0 +1,19 @@
+---
+layout: postwithlatex
+read_time: true
+show_date: true
+title:  Robotics
+date:   2021-12-13  
+description: 《机器人》课程随堂笔记
+img: posts/20211213/1.jpg 
+tags: [note]
+author: Quehry
+---
+
+# 报告
+## 报告内容
+用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。
+## 报告格式
+1. 标题，下面有姓名学号电话等等
+2. 摘要
+3. 正文

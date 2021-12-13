@@ -133,6 +133,18 @@
     
       
   {
+  "tag" : "note",
+  "posts" : [
+      
+      "./Robotics.html",
+      
+      "./datamining.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "optimization",
   "posts" : [
       

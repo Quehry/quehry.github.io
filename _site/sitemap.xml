@@ -3,6 +3,32 @@
   
     
     <url>
+      <loc>http://localhost:4000/Robotics.html</loc>
+      
+        <lastmod>2021-12-13T00:00:00+08:00</lastmod>
+      
+      
+        <changefreq>daily</changefreq>
+      
+      
+        <priority>0.5</priority></url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/datamining.html</loc>
+      
+        <lastmod>2021-12-10T00:00:00+08:00</lastmod>
+      
+      
+        <changefreq>daily</changefreq>
+      
+      
+        <priority>0.5</priority></url>
+    
+  
+    
+    <url>
       <loc>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html</loc>
       
         <lastmod>2021-11-30T00:00:00+08:00</lastmod>
@@ -188,7 +214,7 @@
     <url>
       <loc>http://localhost:4000/404.html</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -203,7 +229,7 @@
     <url>
       <loc>http://localhost:4000/about.html</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -218,7 +244,7 @@
     <url>
       <loc>http://localhost:4000/all-posts.json</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -233,7 +259,7 @@
     <url>
       <loc>http://localhost:4000/archive.html</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -248,7 +274,7 @@
     <url>
       <loc>http://localhost:4000/</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -263,7 +289,7 @@
     <url>
       <loc>http://localhost:4000/ipfs-404.html</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -278,7 +304,7 @@
     <url>
       <loc>http://localhost:4000/posts-by-tag.json</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -293,7 +319,7 @@
     <url>
       <loc>http://localhost:4000/search.json</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -310,7 +336,7 @@
     <url>
       <loc>http://localhost:4000/tag.html</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -325,7 +351,7 @@
     <url>
       <loc>http://localhost:4000/tags.html</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -340,7 +366,7 @@
     <url>
       <loc>http://localhost:4000/feed.xml</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -355,7 +381,7 @@
     <url>
       <loc>http://localhost:4000/page2/</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -370,7 +396,7 @@
     <url>
       <loc>http://localhost:4000/page3/</loc>
       
-        <lastmod>2021-12-07T23:00:24+08:00</lastmod>
+        <lastmod>2021-12-13T11:54:24+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
