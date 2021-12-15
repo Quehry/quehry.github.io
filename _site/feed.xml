@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-13T11:54:24+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-15T09:31:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
 &lt;h2 id=&quot;报告内容&quot;&gt;报告内容&lt;/h2&gt;
 &lt;p&gt;用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。&lt;/p&gt;
 &lt;h2 id=&quot;报告格式&quot;&gt;报告格式&lt;/h2&gt;
@@ -6,7 +6,70 @@
   &lt;li&gt;标题，下面有姓名学号电话等等&lt;/li&gt;
   &lt;li&gt;摘要&lt;/li&gt;
   &lt;li&gt;正文&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">报告 报告内容 用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。 报告格式 标题，下面有姓名学号电话等等 摘要 正文</summary></entry><entry><title type="html">数据挖掘</title><link href="http://localhost:4000/datamining.html" rel="alternate" type="text/html" title="数据挖掘" /><published>2021-12-10T00:00:00+08:00</published><updated>2021-12-10T00:00:00+08:00</updated><id>http://localhost:4000/datamining</id><content type="html" xml:base="http://localhost:4000/datamining.html">&lt;h1 id=&quot;总体情况&quot;&gt;总体情况&lt;/h1&gt;
+&lt;/ol&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">报告 报告内容 用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。 报告格式 标题，下面有姓名学号电话等等 摘要 正文</summary></entry><entry><title type="html">数据挖掘</title><link href="http://localhost:4000/datamining.html" rel="alternate" type="text/html" title="数据挖掘" /><published>2021-12-10T00:00:00+08:00</published><updated>2021-12-10T00:00:00+08:00</updated><id>http://localhost:4000/datamining</id><content type="html" xml:base="http://localhost:4000/datamining.html">&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#总体情况&quot;&gt;总体情况&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#第一章-开始数据挖掘之旅&quot;&gt;第一章 开始数据挖掘之旅&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#11-亲和性分析&quot;&gt;1.1 亲和性分析&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#12-分类&quot;&gt;1.2 分类&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#第二章-用scikit-learn估计器分类&quot;&gt;第二章 用scikit-learn估计器分类&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#21-scikit-learn&quot;&gt;2.1 scikit-learn&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#22-邻近算法knn&quot;&gt;2.2 邻近算法KNN&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#第三章-用决策树预测获胜球队&quot;&gt;第三章 用决策树预测获胜球队&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#31-决策树&quot;&gt;3.1 决策树&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#32-随机森林&quot;&gt;3.2 随机森林&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#第四章-用亲和性分析方法推荐电影&quot;&gt;第四章 用亲和性分析方法推荐电影&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#41-亲和性分析&quot;&gt;4.1 亲和性分析&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#42-apriori算法&quot;&gt;4.2 Apriori算法&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#第五章-用转换器抽取特征&quot;&gt;第五章 用转换器抽取特征&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#51-抽取特征&quot;&gt;5.1 抽取特征&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#52-特征选择&quot;&gt;5.2 特征选择&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#53-创建特征&quot;&gt;5.3 创建特征&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#第六章-使用朴素贝叶斯进行社会媒体挖掘&quot;&gt;第六章 使用朴素贝叶斯进行社会媒体挖掘&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#61-消歧&quot;&gt;6.1 消歧&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#62-文本转换器&quot;&gt;6.2 文本转换器&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#63-朴素贝叶斯&quot;&gt;6.3 朴素贝叶斯&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#64-f1值&quot;&gt;6.4 F1值&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#第九章-作者归属问题&quot;&gt;第九章 作者归属问题&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#91-作者归属&quot;&gt;9.1 作者归属&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#92-支持向量机&quot;&gt;9.2 支持向量机&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#93-基础svm的局限性&quot;&gt;9.3 基础SVM的局限性&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#第十章-新闻语料分类&quot;&gt;第十章 新闻语料分类&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#101-新闻语料聚类&quot;&gt;10.1 新闻语料聚类&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#102-k-means算法&quot;&gt;10.2 K-means算法&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h1 id=&quot;总体情况&quot;&gt;总体情况&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;书籍:Python数据挖掘入门与实践&lt;/li&gt;
   &lt;li&gt;github_url:https://github.com/LinXueyuanStdio/PythonDataMining&lt;/li&gt;
@@ -147,7 +210,37 @@ P(C=0|D) = P(C=0) P(D|C=0) &lt;br /&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;64-f1值&quot;&gt;6.4 F1值&lt;/h3&gt;
-&lt;p&gt;F1值是一种评价指标。F1值是以每个类别为基础进行定义的，包括两大概念：准确率（precision）和召回率（recall）。准确率是指预测结果属于某一类的个体，实际属于该类的比例。召回率是指被正确预测为某个类别的个体数量与数据集中该类别个体总量的比例。F1值是准确率和召回率的调和平均数。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">总体情况 书籍:Python数据挖掘入门与实践 github_url:https://github.com/LinXueyuanStdio/PythonDataMining 配套代码和笔记，很适合迅速上手 这篇博客主要记录一些比较重要的算法</summary></entry><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h1 id=&quot;目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;F1值是一种评价指标。F1值是以每个类别为基础进行定义的，包括两大概念：准确率（precision）和召回率（recall）。准确率是指预测结果属于某一类的个体，实际属于该类的比例。召回率是指被正确预测为某个类别的个体数量与数据集中该类别个体总量的比例。F1值是准确率和召回率的调和平均数。&lt;/p&gt;
+
+&lt;h2 id=&quot;第九章-作者归属问题&quot;&gt;第九章 作者归属问题&lt;/h2&gt;
+&lt;h3 id=&quot;91-作者归属&quot;&gt;9.1 作者归属&lt;/h3&gt;
+&lt;p&gt;作者归属（authorship attribution）是作者分析的一个细分领域，研究目标是从一组可能的作者中找到文档真正的主人。利用功能词进行分类，功能词是指本身含义很少，但是是组成句子必不可少的部分。&lt;/p&gt;
+
+&lt;h3 id=&quot;92-支持向量机&quot;&gt;9.2 支持向量机&lt;/h3&gt;
+&lt;p&gt;支持向量机（SVM）分类算法背后的思想很简单，它是一种二类分类器（扩展后可用来对多个类别进行分类）。假如我们有两个类别的数据，而这两个类别恰好能被一条线分开，线上所有点为一类，线下所有点属于另一类。SVM要做的就是找到这条线，用它来做预测，跟线性回归原理很像。&lt;/p&gt;
+
+&lt;p&gt;下图中有三条线，那么哪一条线的分类效果最好呢？直觉告诉我们从左下到右上的这一条线效果最好，因为每一个点到这条线的距离最远，那么寻找这条线就变成了最优化问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211210/2.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;对于多种类别的分类问题，我们创建多个SVM分类器，其中每个SVM分类器还是二分类。连接多个分类器的方法有很多，比如说我们可以将每个类别创建一对多分类器。把训练数据分为两个类别——属于特定类别的数据和其他所有类别数据。对新数据进行分类时，从这些类别中找出最匹配的。&lt;/p&gt;
+
+&lt;h3 id=&quot;93-基础svm的局限性&quot;&gt;9.3 基础SVM的局限性&lt;/h3&gt;
+&lt;p&gt;最基础的SVM只能区分线性可分的两种类别，如果数据线性不可分，就需要将其置入更高维的空间中，加入更多伪特征直到数据线性可分。寻找最佳分隔线时往往需要计算个体之间的内积。我们把内核函数定义为数据集中两个个体函数的点积。&lt;/p&gt;
+
+&lt;p&gt;常用的内核函数有几种。线性内核最简单，它无外乎两个个体的特征向量的点积、带权重的特征和偏置项。多项式内核提高点积的阶数（比如2）。此外，还有高斯内核（rbf）、Sigmoind内核。&lt;/p&gt;
+
+&lt;h2 id=&quot;第十章-新闻语料分类&quot;&gt;第十章 新闻语料分类&lt;/h2&gt;
+&lt;h3 id=&quot;101-新闻语料聚类&quot;&gt;10.1 新闻语料聚类&lt;/h3&gt;
+&lt;p&gt;之前我们研究的都是监督学习，在已经知道类别的情况下进行分类。本章着眼于无监督学习，聚类。&lt;/p&gt;
+
+&lt;h3 id=&quot;102-k-means算法&quot;&gt;10.2 K-means算法&lt;/h3&gt;
+&lt;p&gt;k-means聚类算法迭代寻找最能够代表数据的聚类质心点。算法开始时使用从训练数据中随机选取的几个数据点作为质心点。k-means中的k表示寻找多少个质心点，同时也是算法将会找到的簇的数量。例如，把k设置为3，数据集所有数据将会被分成3个簇。&lt;/p&gt;
+
+&lt;p&gt;k-means算法分为两个步骤：为每一个数据点分配簇标签，更新各簇的质心点。k-means算法会重复上述两个步骤；每次更新质心点时，所有质心点将会小范围移动。这会
+轻微改变每个数据点在簇内的位置，从而引发下一次迭代时质心点的变动。这个过程会重复执行直到条件不再满足时为止。通常是在迭代一定次数后，或者当质心点的整体移动量很小时，就可以终止算法的运行。有时可以等算法自行终止运行，这表明簇已经相当稳定——数据点所属的簇不再变动，质心点也不再改变时。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211210/3.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html">&lt;h1 id=&quot;目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#目录&quot;&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
