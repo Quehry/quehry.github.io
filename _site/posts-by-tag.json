@@ -136,6 +136,8 @@
   "tag" : "note",
   "posts" : [
       
+      "./Recommender_system.html",
+      
       "./Robotics.html",
       
       "./datamining.html"

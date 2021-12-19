@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-15T09:31:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-17T18:34:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
+&lt;h2 id=&quot;1矩阵分解-matrix-factorization&quot;&gt;1.矩阵分解 Matrix Factorization&lt;/h2&gt;
+&lt;h3 id=&quot;11-the-matrix-factorization-model&quot;&gt;1.1 The Matrix Factorization Model&lt;/h3&gt;
+&lt;p&gt;R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R&lt;sup&gt;mxn&lt;/sup&gt;。P是user latent matrix，P∈R&lt;sup&gt;mxk&lt;/sup&gt;，Q是item latent matrix，Q∈R&lt;sup&gt;nxk&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;矩阵分解就是把R分解成P和Q，那么预测的评分就是：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211216/2.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是上面这个式子没有考虑偏置，我们会有下面这个完整的式子：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211216/3.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;那么&lt;strong&gt;目标函数&lt;/strong&gt;可以定义为：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211216/4.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;右边那一串是正则项，为了避免过拟合&lt;/p&gt;
+
+&lt;p&gt;下面这张图值观的展示了矩阵分解过程：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211216/5.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">推荐系统 1.矩阵分解 Matrix Factorization 1.1 The Matrix Factorization Model R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈Rmxn。P是user latent matrix，P∈Rmxk，Q是item latent matrix，Q∈Rnxk</summary></entry><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
 &lt;h2 id=&quot;报告内容&quot;&gt;报告内容&lt;/h2&gt;
 &lt;p&gt;用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。&lt;/p&gt;
 &lt;h2 id=&quot;报告格式&quot;&gt;报告格式&lt;/h2&gt;
@@ -892,7 +913,8 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
       &lt;p&gt;就是上篇文献的网络 &lt;a href=&quot;#fnref:12&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">目录</summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">&lt;h2 id=&quot;课程要求&quot;&gt;课程要求&lt;/h2&gt;
+&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">目录</summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">&lt;h1 id=&quot;软件方法&quot;&gt;软件方法&lt;/h1&gt;
+&lt;h2 id=&quot;课程要求&quot;&gt;课程要求&lt;/h2&gt;
 &lt;p&gt;学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。&lt;/p&gt;
 
 &lt;h3 id=&quot;随记&quot;&gt;随记&lt;/h3&gt;
@@ -962,7 +984,70 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">课程要求 学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。</summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">&lt;h1 id=&quot;概率统计&quot;&gt;概率统计&lt;/h1&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ppt整理&quot;&gt;PPT整理&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-对象类&quot;&gt;1. 对象，类&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;使用对象之前要先声明和创造&lt;/li&gt;
+  &lt;li&gt;类定义了对象的类型，所有对象都是类的实例，所有的类描述了属性和定义了方法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2面向对象&quot;&gt;2.面向对象&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;封装：保护类的属性和方法,private,default,protected,public&lt;/li&gt;
+  &lt;li&gt;继承：B继承A，重用，修改，添加，A所有的属性都存在于B中，A的方法可以在B中重新定义，B的改动不会影响A&lt;/li&gt;
+  &lt;li&gt;多态：一个对象属于多个类，通过使用不同类中的方法属于不同的类，父类是抽象类，各个子类继承父类并定义方法，调用的时候根据不同子类调用方法。判断类型是否相同instanceof，声明的时候可以这么声明: A a = new B(),其中B是A的子类。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3java&quot;&gt;3.JAVA&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;x = bool ? a : b，表示如果bool为true，执行a，如果为false执行b&lt;/li&gt;
+  &lt;li&gt;for(Point p : this.getVect())表示遍历&lt;/li&gt;
+  &lt;li&gt;exception:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/69.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;try-catch-finally&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;  
+	&lt;span class=&quot;c1&quot;&gt;// 可能会发生异常的程序代码  &lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Type1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  
+	&lt;span class=&quot;c1&quot;&gt;// 捕获并处置try抛出的异常类型Type1  &lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Type2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  
+	 &lt;span class=&quot;c1&quot;&gt;//捕获并处置try抛出的异常类型Type2  &lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;finally&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;  
+	&lt;span class=&quot;c1&quot;&gt;// 无论是否发生异常，都将执行的语句块  &lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;自定义异常：&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NombreNegatifException&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;NombreNegatifException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Vous avez un nombre négatif !&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;文件读写：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;类FileReader,FileWriter,使用里面的方法read()和write(x)和close()&lt;/p&gt;
+
+&lt;p&gt;比如：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/70.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;枚举enum,接口interface,迭代器iterator&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4数据结构&quot;&gt;4.数据结构&lt;/h3&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">软件方法 课程要求 学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。</summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">&lt;h1 id=&quot;概率统计&quot;&gt;概率统计&lt;/h1&gt;
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;授课老师：牛薇&lt;/li&gt;
@@ -1563,109 +1648,4 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}\]
 &lt;tweet&gt;Perhaps a new model for remunerating creative work can be established, one that does not require commercial success to be necessary for artists to make a living.&lt;/tweet&gt;
 
 &lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210420/post8-rembrandt2.jpg&quot; alt=&quot;The next Rembrandt&quot; /&gt;
-&lt;small&gt;&lt;a href=&quot;https://www.jwt.com/en/work/thenextrembrandt&quot;&gt;The Next Rembrandt&lt;/a&gt; is a computer-generated 3-D–printed painting developed by a facial-recognition algorithm that scanned data from 346 known paintings by the Dutch painter in a process lasting 18 months. The portrait is based on 168,263 fragments from Rembrandt’s works.&lt;/small&gt;&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="opinion" /><category term="copyright" /><category term="creativity" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html">Recently I was reading an article about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Winehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.</summary></entry><entry><title type="html">So, what is a neural network?</title><link href="http://localhost:4000/back-to-basics.html" rel="alternate" type="text/html" title="So, what is a neural network?" /><published>2021-04-02T00:00:00+08:00</published><updated>2021-04-02T00:00:00+08:00</updated><id>http://localhost:4000/back-to-basics</id><content type="html" xml:base="http://localhost:4000/back-to-basics.html">&lt;p&gt;The omnipresence of technology nowadays has made it commonplace to read news about AI, just a quick glance at today’s headlines, and I get:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.morningbrew.com/emerging-tech/stories/2021/03/29/one-biggest-advancements-ai-also-sparked-fierce-debate-heres?utm_source=morning_brew&quot;&gt;This Powerful AI Technique Led to Clashes at Google and Fierce Debate in Tech.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://fortune.com/2021/04/02/ai-forecasting-supply-chain-factories-caterpillar-agco/&quot;&gt;How A.I.-powered companies dodged the worst damage from COVID&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.mobihealthnews.com/news/emea/ai-technology-detects-ticking-time-bomb-arteries&quot;&gt;AI technology detects ‘ticking time bomb’ arteries&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.genengnews.com/insights/ai-in-drug-discovery-starts-to-live-up-to-the-hype/&quot;&gt;AI in Drug Discovery Starts to Live Up to the Hype&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.c4isrnet.com/artificial-intelligence/2021/04/02/pentagon-seeks-commercial-solutions-to-get-its-data-ready-for-ai/&quot;&gt;Pentagon seeks commercial solutions to get its data ready for AI&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Topics from business, manufacturing, supply chain, medicine and biotech and even defense are covered in those news headlines, definitively the advancements on the fields of artificial intelligence, in particular machine learning and deep neural networks have permeated into our daily lives and are here to stay. But, do the general population know what are we talking about when we say “an AI”?  I assume most people correctly imagine a computer algorithm or perhaps the more adventurous minds think of a physical machine, an advanced computer entity or even a robot, getting smarter by itself with every use-case we throw at it. And most people will be right, when “an AI” is mentioned it is indeed an algorithm run by a computer, and there is where the boundary of their knowledge lies.&lt;/p&gt;
-
-&lt;p&gt;They say that the best way to learn something is to try to explain it, so in a personal exercise I will try to do an ELI5 (&lt;strong&gt;E&lt;/strong&gt;xplain it &lt;strong&gt;L&lt;/strong&gt;ike &lt;strong&gt;I&lt;/strong&gt; am &lt;strong&gt;5&lt;/strong&gt;) version of what is a neural network.&lt;/p&gt;
-
-&lt;p&gt;Let’s start with a little history, humans have been tinkering with the idea of an intelligent machine for a while now, some even say that the idea of artificial intelligence was conceived by the ancient greeks (&lt;a href=&quot;https://www.thinkautomation.com/bots-and-ai/a-history-of-automation-the-rise-of-robots-and-ai/&quot;&gt;source&lt;/a&gt;), and several attempts at devising “intelligent” machines have been made through history, a notable one was ‘The Analytical Engine’ created by Charles Babbage in 1837:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210402/post7-analytical-engine.jpg&quot; alt=&quot;The Analytical Engine&quot; /&gt;
-&lt;small&gt;The Analytical Engine of Charles Babbage - 1837&lt;/small&gt;&lt;/p&gt;
-
-&lt;p&gt;Then, in the middle of last century by trying to create a model of how our brain works, Neural Networks were born. Around that time, Frank Rosenblatt at Cornell trying to understand the simple decision system present in the eye of a common housefly,  proposed the idea of a &lt;a href=&quot;./single-neuron-perceptron.html&quot;&gt;perceptron&lt;/a&gt;, a very simple system that processes certain inputs with basic math operations and produces an output.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210125/Perceptron.png&quot; alt=&quot;A perceptron&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;To illustrate, let’s say that the brain of the housefly is a perceptron, its inputs are whatever values are produced by the multiple cells in its eyes, when the eye cell detects “something” it’s output will be a 1, and if there is nothing a 0. Then the combination of all those inputs can be processed by the perceptron (the fly brain), and the output is a simple 0 or 1 value. If it is a 1 then the brain is telling the fly to flee and if it is a 0 it means it is safe to stay where it is.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210402/post7-housefly-eye.jpg&quot; alt=&quot;A housefly eye&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We can imagine then that if many of the eye cells of the fly produce 1s, it means that an object is quite near, and therefore the perceptron will calculate a 1, it is time to flee.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210402/post7-fly-vision.jpg&quot; alt=&quot;The fly vision&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The perceptron is just a math operation, one that multiplies certain input values with preset “parameters” (called weights) and adds up the resulting multiplications to generate a value.&lt;/p&gt;
-
-&lt;p&gt;Then the magic spark was ignited, the parameters (weights) of the perceptron could be “learnt” by a process of minimizing the difference between known results of particular observations, and what the perceptron is actually calculating. It is this process of learning what we call &lt;strong&gt;training the neural network&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;tweet&gt;This idea is so powerful that even today it is one of the fundamental building blocks of what we call AI.&lt;/tweet&gt;
-
-&lt;p&gt;From this I will try to explain how this simple concept can have such diverse applications as natural language processing (think Alexa), image recognition like medical diagnosis from a CTR scan, autonomous vehicles, etc.&lt;/p&gt;
-
-&lt;p&gt;A basic neural network is a combination of perceptrons in different arrangements, the perceptron therefore was downgraded from “fly brain” to “network neuron”.
-&lt;img src=&quot;./assets/img/posts/20210402/post7-multilayer-perceptron.png&quot; alt=&quot;A multilayer perceptron&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A neural network has different components, in its basic form it has:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Input&lt;/li&gt;
-  &lt;li&gt;Hidden layers&lt;/li&gt;
-  &lt;li&gt;Output&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210228/nnet_flow.gif&quot; alt=&quot;Neural network components&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;input&quot;&gt;Input&lt;/h3&gt;
-
-&lt;p&gt;The inputs of a neural network are in their essence just numbers, therefore anything that can be converted to a number can become an input. Letters in a text, pixels in an image, frequencies in a sound wave, values from a sensor, etc. are all different things that when converted to a numerical value serve as inputs for the neural network. This is one of the reasons why applications of neural networks are so diverse.&lt;/p&gt;
-
-&lt;p&gt;Inputs can be as many as one need for the task at hand, from maybe 9 inputs to teach a neural network how to play tic-tac-toe to thousands of pixels from a camera for an autonomous vehicle. Since the input of a perceptron needs to be a single value, if for example a color pixel is chosen as input, it most likely will be broken into three different values; its  red, green and blue components, hence each pixel will become 3 different inputs for the neural network.&lt;/p&gt;
-
-&lt;h3 id=&quot;hidden-layers&quot;&gt;Hidden layers&lt;/h3&gt;
-
-&lt;p&gt;A “layer” within a neural network is just a group of perceptrons that all perform the same exact mathematical operation to the inputs and produce an output. The catch is that each of them have different weights (parameters), therefore their output for a given input will be different amongst them. There are many types of layers, the most typical of them being a “dense” layer, which is another word to say that all the inputs are connected to all the neurons (individual perceptrons), and as said before, each of these connections have a weight associated with it, so that the operation that each neuron performs is a simple weighted sum of all the inputs.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210402/post7-dense-layers.png&quot; alt=&quot;post7-dense-layers&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The hidden layer is then typically connected to another dense layer, and their connection means that each output of a neuron from the first layer is treated effectively as an input for the subsequent one, and it is thus connected to every neuron.&lt;/p&gt;
-
-&lt;p&gt;A neural network can have from one to as many layers as one can think, and the number of layers depends solely on the experience we have gathered on the particular problem we would like to solve.&lt;/p&gt;
-
-&lt;p&gt;Another critical parameter of a hidden layer is the number of neurons it has, and again, we need to rely on experience to determine how many neurons are needed for a given problem. I have seen networks that vary from a couple of neurons to the thousands. And of course each hidden layer can have as many neurons as we please, so the number of combinations is vast.&lt;/p&gt;
-
-&lt;p&gt;To the number of layers, their type and how many neurons each have, is what we call the &lt;em&gt;network topology&lt;/em&gt; (including the number of inputs and outputs).&lt;/p&gt;
-
-&lt;h3 id=&quot;output&quot;&gt;Output&lt;/h3&gt;
-
-&lt;p&gt;At the very end of the chain, another layer lies (which behaves just like a hidden layer), but has the peculiarity that it is the final layer, and therefore whatever it calculates will be the output values of the whole network. The number of outputs the network has is a function of the problem we would like to solve. It could be as simple as one output, with its value representing a probability of an action (like in the case of the flee reaction of the housefly), to many outputs, perhaps if our network is trying to distinguish images of animals, one would have an output for each animal species, and the output would represent how much confidence the network has that the particular image belongs to the corresponding species.&lt;/p&gt;
-
-&lt;p&gt;As we said, the neural network is just a collection of individual neurons, doing basic math operations on certain inputs in series of layers that eventually generate an output. This mesh of neurons is then “trained” on certain output values from known cases of the inputs; once it has learned it can then process new inputs, values that it has never seen before with surprisingly accurate results.&lt;/p&gt;
-
-&lt;p&gt;Many of the problems neural networks solve, could be certainly worked out by other algorithms, however, since neural networks are in their core very basic operations, once trained, they are extremely efficient, hence much quicker and economical to produce results.&lt;/p&gt;
-
-&lt;p&gt;There are a few more details on how a simple neural network operate that I purposedly left out to make this explanation as simple as possible. Thinks like biases, the activation functions and the math behind learning, the backpropagation algorithm, I will leave to a more in depth article. I will also write (perhaps in a series) about the more complex topologies combining different types of layers and other building blocks, a part from the perceptron.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210402/post7-alexa.png&quot; alt=&quot;Alexa recognizing speach&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Things like “Alexa”, are a bit more complex, but work on exactly the same principles. Let’s break down for example the case of asking “Alexa” to play a song in spotify. Alexa uses several different neural networks to acomplish this:&lt;/p&gt;
-
-&lt;h4 id=&quot;1-speech-recognition&quot;&gt;1. Speech recognition&lt;/h4&gt;
-
-&lt;p&gt;As a basic input we have our speech: the command &lt;strong&gt;“Alexa, play Van Halen”&lt;/strong&gt;. This might seem quite simple for us humans to process, but for a machine is an incredible difficult feat to be able to understand speech, things like each individual voice timbre, entonation, intention and many more nuances of human spoken language make it so that traditional algorithms have struggled a lot with this. In our simplified example let’s say that we use a neural network to transform our spoken speech into text characters a computer is much more familiarized to learn.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-understanding-what-we-mean-natural-language-understanding&quot;&gt;2. Understanding what we mean (Natural Language Understanding)&lt;/h4&gt;
-
-&lt;p&gt;Once the previous network managed to succesfuly convert our spoken words into text, there comes the even more difficult task of making sense of what we said. Things that we humans take for granted such as context, intonation and non verbal communication, help give our words meaning in a very subtle, but powerful way, a machine will have to do with much less information to correctly understand what we mean. It has to correctly identify the intention of our sentence and the subject or entities of what we mean.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210402/post7-alexa-natural-lang.png&quot; alt=&quot;post7-alexa-natural-lang&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The neural network has to identify that it received a command (by identifying its name), the command (“play music”), and our choice (“Van Halen”). And it does so by means of simple math operations as described before. Of course the network involved is quite complex and has different types of neurons and connection types, but the underlying principles remain.&lt;/p&gt;
-
-&lt;h4 id=&quot;3-replying-to-us&quot;&gt;3. Replying to us&lt;/h4&gt;
-
-&lt;p&gt;Once Alexa understood what we meant, it then proceeds to execute the action of the command it interpreted and it replies to us in turn using natural language. This is accomplished using a technique called speech synthesis, things like pitch, duration and intensity of the words and phonems are selected based on the “meaning” of what Alexa will respond to us: “Playing songs by Van Halen on Spotify” sounding quite naturally. And all is accomplished with neural networks executing many simple math operations.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210402/post7-alexa-steps.png&quot; alt=&quot;post7-alexa-steps&quot; /&gt;
-&lt;small&gt;Although it seems quite complex, the process for AI to understand us can be boiled down to simple math operations&lt;/small&gt;&lt;/p&gt;
-
-&lt;p&gt;Of course Amazon’s Alexa neural networks have undergone quite a lot of training to get to the level where they are, the beauty is that once trained, to perform their magic they just need a few mathematical operations.&lt;/p&gt;
-
-&lt;p&gt;As said before, I will continue to write about the basics of neural networks, the next article in the series will dive a bit deeper into the math behind a basic neural network.&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="theory" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html">The omnipresence of technology nowadays has made it commonplace to read news about AI, just a quick glance at today’s headlines, and I get: This Powerful AI Technique Led to Clashes at Google and Fierce Debate in Tech. How A.I.-powered companies dodged the worst damage from COVID AI technology detects ‘ticking time bomb’ arteries AI in Drug Discovery Starts to Live Up to the Hype Pentagon seeks commercial solutions to get its data ready for AI</summary></entry></feed>
+&lt;small&gt;&lt;a href=&quot;https://www.jwt.com/en/work/thenextrembrandt&quot;&gt;The Next Rembrandt&lt;/a&gt; is a computer-generated 3-D–printed painting developed by a facial-recognition algorithm that scanned data from 346 known paintings by the Dutch painter in a process lasting 18 months. The portrait is based on 168,263 fragments from Rembrandt’s works.&lt;/small&gt;&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="opinion" /><category term="copyright" /><category term="creativity" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html">Recently I was reading an article about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Winehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.</summary></entry></feed>

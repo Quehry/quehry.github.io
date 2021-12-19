@@ -1,6 +1,16 @@
 [
   
     {
+      "title"       : "推荐系统",
+      "category"    : "",
+      "tags"        : "note",
+      "url"         : "./Recommender_system.html",
+      "date"        : "2021-12-16 00:00:00 +0800",
+      "description" : "d2l推荐系统笔记",
+      "content"     : "推荐系统1.矩阵分解 Matrix Factorization1.1 The Matrix Factorization ModelR是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈Rmxn。P是user latent matrix，P∈Rmxk，Q是item latent matrix，Q∈Rnxk矩阵分解就是把R分解成P和Q，那么预测的评分就是：但是上面这个式子没有考虑偏置，我们会有下面这个完整的式子：那么目标函数可以定义为：右边那一串是正则项，为了避免过拟合下面这张图值观的展示了矩阵分解过程："
+    } ,
+  
+    {
       "title"       : "Robotics",
       "category"    : "",
       "tags"        : "note",
@@ -27,7 +37,7 @@
       "url"         : "./%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html",
       "date"        : "2021-11-30 00:00:00 +0800",
       "description" : "课堂记录",
-      "content"     : "课程要求学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。随记 类，对象： 给类赋值变成实例/对象 c语言可以构建面向对象所有的结构 对象就是给类声明的一个变量 类集合了属性和方法 面向对象的三大特征： 封装（encapsulation）: private, protected, public 可作用于属性和方法 一般是隐藏对象的属性和实现细节，但是提供方法的接口 提供公开的方法 提高了软件开发的效率 继承（inheritance）： 子类与父类 子类自动具有父类属性和方法，添加自己特有的属性和方法，并且子类使用父类的方法也可以覆盖/重写父类方法 可以实现代码的复用（当然功能不止于此） 多态（polymorphism）： 父类有多个子类 子类覆盖/重写父类方法 相当于是根据实际创建的对象类型动态决定使用哪个方法 所有的子类都可以看成父类的类型，运行时，系统会自动调用各种子类的方法 UML可以画出类之间的关系 java程序设计 百分百面向对象 不存在类以外代码 只能采用面向对象方法编程 java文件命名规范 必须以.java结尾 源文件中如果只有一个类，文件类必须与该类名相同 如果有多个类，且没有public类，文件名可与任一类名相同 有多个类，且有public类，文件名必须与该类名相同 一个JAVA源文件只能有一个public类，一个文件中只能有一个main主函数 静态方法/static，可以直接用类和函数名直接调用，和普通方法的区别是不用new一个示例 多态的实现，先定义抽象的（abstract）父类，然后子类继承父类然后定义父类的抽象方法 通过抽象方法固定通用接口 子类通过强制实现抽象方法实现多态"
+      "content"     : "软件方法课程要求学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。随记 类，对象： 给类赋值变成实例/对象 c语言可以构建面向对象所有的结构 对象就是给类声明的一个变量 类集合了属性和方法 面向对象的三大特征： 封装（encapsulation）: private, protected, public 可作用于属性和方法 一般是隐藏对象的属性和实现细节，但是提供方法的接口 提供公开的方法 提高了软件开发的效率 继承（inheritance）： 子类与父类 子类自动具有父类属性和方法，添加自己特有的属性和方法，并且子类使用父类的方法也可以覆盖/重写父类方法 可以实现代码的复用（当然功能不止于此） 多态（polymorphism）： 父类有多个子类 子类覆盖/重写父类方法 相当于是根据实际创建的对象类型动态决定使用哪个方法 所有的子类都可以看成父类的类型，运行时，系统会自动调用各种子类的方法 UML可以画出类之间的关系 java程序设计 百分百面向对象 不存在类以外代码 只能采用面向对象方法编程 java文件命名规范 必须以.java结尾 源文件中如果只有一个类，文件类必须与该类名相同 如果有多个类，且没有public类，文件名可与任一类名相同 有多个类，且有public类，文件名必须与该类名相同 一个JAVA源文件只能有一个public类，一个文件中只能有一个main主函数 静态方法/static，可以直接用类和函数名直接调用，和普通方法的区别是不用new一个示例 多态的实现，先定义抽象的（abstract）父类，然后子类继承父类然后定义父类的抽象方法 通过抽象方法固定通用接口 子类通过强制实现抽象方法实现多态 PPT整理1. 对象，类 使用对象之前要先声明和创造 类定义了对象的类型，所有对象都是类的实例，所有的类描述了属性和定义了方法2.面向对象 封装：保护类的属性和方法,private,default,protected,public 继承：B继承A，重用，修改，添加，A所有的属性都存在于B中，A的方法可以在B中重新定义，B的改动不会影响A 多态：一个对象属于多个类，通过使用不同类中的方法属于不同的类，父类是抽象类，各个子类继承父类并定义方法，调用的时候根据不同子类调用方法。判断类型是否相同instanceof，声明的时候可以这么声明: A a = new B(),其中B是A的子类。3.JAVA x = bool ? a : b，表示如果bool为true，执行a，如果为false执行b for(Point p : this.getVect())表示遍历 exception:try-catch-finallytry { // 可能会发生异常的程序代码 } catch (Type1 id1){ // 捕获并处置try抛出的异常类型Type1 } catch (Type2 id2){ //捕获并处置try抛出的异常类型Type2 }finally { // 无论是否发生异常，都将执行的语句块 }自定义异常：class NombreNegatifException extends Exception{ public NombreNegatifException() { System.out.println(\"Vous avez un nombre négatif !\"); } } 文件读写：类FileReader,FileWriter,使用里面的方法read()和write(x)和close()比如： 枚举enum,接口interface,迭代器iterator4.数据结构"
     } ,
   
     {
