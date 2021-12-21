@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-21T20:04:52+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html">&lt;h1 id=&quot;vae&quot;&gt;VAE&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-21T20:14:25+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html">&lt;h1 id=&quot;vae&quot;&gt;VAE&lt;/h1&gt;
 &lt;h2 id=&quot;ae&quot;&gt;AE&lt;/h2&gt;
 &lt;p&gt;Auto-Encoder自动编码器，比如Seq2seq模型。&lt;/p&gt;
 
@@ -65,12 +65,15 @@
 &lt;ul&gt;
   &lt;li&gt;去掉了那些误导选项和文章语义不相关的数据&lt;/li&gt;
   &lt;li&gt;去掉了那些需要&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;world knowledge&lt;/code&gt;生成的选项&lt;/li&gt;
-  &lt;li&gt;github&lt;a href=&quot;https://github.com/Yifan-Gao/Distractor-Generation-RACE&quot;&gt;url&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;github&lt;a href=&quot;https://github.com/Yifan-Gao/Distractor-Generation-RACE&quot;&gt;url&lt;/a&gt;,上面有预处理RACE数据集的代码&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;gao处理后的race数据集统计信息&quot;&gt;Gao处理后的RACE数据集统计信息&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/7.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">自制类RACE数据集 RACE数据集 RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了很多需要推理的问题。</summary></entry><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/7.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gao处理后的数据集格式&quot;&gt;Gao处理后的数据集格式&lt;/h2&gt;
+&lt;p&gt;首先把数据集规整到一个json文件里，分为dev,test,train三个json文件。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">自制类RACE数据集 RACE数据集 RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了很多需要推理的问题。</summary></entry><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
 &lt;h2 id=&quot;lecture-01-overview-of-computer-graphics&quot;&gt;Lecture 01 Overview of Computer Graphics&lt;/h2&gt;
 &lt;h3 id=&quot;什么是好的画面&quot;&gt;什么是好的画面&lt;/h3&gt;
 &lt;p&gt;画面&lt;strong&gt;亮&lt;/strong&gt;&lt;/p&gt;

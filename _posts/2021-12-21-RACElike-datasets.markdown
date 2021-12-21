@@ -44,10 +44,34 @@ RACE-M表示初中题目，RACE-H表示高中题目
 ## Gao他们对于RACE数据集的处理
 - 去掉了那些误导选项和文章语义不相关的数据
 - 去掉了那些需要```world knowledge```生成的选项
-- github[url](https://github.com/Yifan-Gao/Distractor-Generation-RACE)
+- github[url](https://github.com/Yifan-Gao/Distractor-Generation-RACE),上面有预处理RACE数据集的代码
 
 ## Gao处理后的RACE数据集统计信息
 
 <img src='../assets/img/posts/20211221/7.jpg'>
 
+## Gao处理后的数据集格式
 
+### 预处理
+
+首先把数据集规整到一个json文件里，分为dev,test,train三个json文件。
+
+每一行包含以下信息：
+
+article, sent(sentence), question(问题有两种，一种是疑问句，一种是填空), answer_text, answer, id, word_overlap_score, word_overlap_count, article_id, question_id, distractor_id.
+
+那么一个问题会有2-3个误导选项，一篇文章又会有3-4个问题。相比于原本的数据集多了word-overlap指标，word-overlap就是词重叠率，交集比上并集。
+
+### updated
+updated数据集和original数据集格式类似，少了overlap，内容上去掉了一些语义不相关的题目。
+
+### 预处理代码
+利用torchtext框架预处理文本，流程大概如下：
+- 定义Field：声明如何处理数据 定义
+- Dataset：得到数据集，此时数据集里每一个样本是一个 经过 Field声明的预处理 预处理后的 wordlist
+- 建立vocab：在这一步建立词汇表，词向量(word embeddings)
+- 构造迭代器：构造迭代器，用来分批次训练模型
+
+Gao说有去掉一些语义不相关的误导选项，但是在代码中并没有看见这步操作？？
+
+<img src='../assets/img/posts/20211221/8.jpg'>

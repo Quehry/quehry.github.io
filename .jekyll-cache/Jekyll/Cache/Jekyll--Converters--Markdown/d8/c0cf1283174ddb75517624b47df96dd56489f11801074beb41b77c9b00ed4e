@@ -1,0 +1,50 @@
+I"0
+<h1 id="自制类race数据集">自制类RACE数据集</h1>
+<h2 id="race数据集">RACE数据集</h2>
+<p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p>
+
+<ul>
+  <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li>
+  <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li>
+  <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li>
+</ul>
+
+<h2 id="race数据集格式">RACE数据集格式</h2>
+<p>Each passage is a JSON file. The JSON file contains following fields:</p>
+
+<ol>
+  <li>article: A string, which is the passage. 文章</li>
+  <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干</li>
+  <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项</li>
+  <li>answers: A list contains the golden label of each query.四个题目的正确答案</li>
+  <li>id: Each passage has a unique id in this dataset.</li>
+</ol>
+
+<h2 id="race数据集分布">RACE数据集分布</h2>
+
+<p><img src="../assets/img/posts/20211221/3.jpg" /></p>
+
+<p>RACE-M表示初中题目，RACE-H表示高中题目</p>
+
+<h2 id="race数据集中的长度">RACE数据集中的长度</h2>
+
+<p><img src="../assets/img/posts/20211221/4.jpg" /></p>
+
+<h2 id="race数据集中的问题的统计信息">RACE数据集中的问题的统计信息</h2>
+
+<p><img src="../assets/img/posts/20211221/5.jpg" /></p>
+
+<h2 id="gao他们对于race数据集的处理">Gao他们对于RACE数据集的处理</h2>
+<ul>
+  <li>去掉了那些误导选项和文章语义不相关的数据</li>
+  <li>去掉了那些需要<code class="language-plaintext highlighter-rouge">world knowledge</code>生成的选项</li>
+  <li>github<a href="https://github.com/Yifan-Gao/Distractor-Generation-RACE">url</a>,上面有预处理RACE数据集的代码</li>
+</ul>
+
+<h2 id="gao处理后的race数据集统计信息">Gao处理后的RACE数据集统计信息</h2>
+
+<p><img src="../assets/img/posts/20211221/7.jpg" /></p>
+
+<h2 id="gao处理后的数据集格式">Gao处理后的数据集格式</h2>
+<p>首先把数据集规整到一个json文件里，分为dev,test,train三个json文件。</p>
+:ET
