@@ -22,7 +22,7 @@
   "headline": "制作类RACE数据集",
   "abstract": "帮助学长制作RACE数据集",
     "keywords": "work",
-    "wordcount": "101",
+    "wordcount": "108",
     "image": ["http://localhost:4000/assets/imgposts/20211221/2.jpg"],
   "datePublished": "2021-12-21 00:00:00 +0800",
   "dateModified": "2021-12-21 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="帮助学长制作RACE数据集">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="101"/>
+<meta data-rh="true" name="twitter:data1" content="108"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211221/2.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -168,7 +168,7 @@
   </span>
 
         <div class="post-excerpt">
-            <h1 id="自制类race数据集">自制类RACE数据集</h1><h2 id="race数据集">RACE数据集</h2><p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了</p><ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li></ul><h2 id="race数据集格式">RACE数据集格式</h2><p>Each passage is a JSON file. The JSON file contains following fields:</p><ol> <li>article: A string, which is the passage.</li> <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _.</li> <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option.</li> <li>answers: A list contains the golden label of each query.</li> <li>id: Each passage has a unique id...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
+            <h1 id="自制类race数据集">自制类RACE数据集</h1><h2 id="race数据集">RACE数据集</h2><p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p><ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li></ul><h2 id="race数据集格式">RACE数据集格式</h2><p>Each passage is a JSON file. The JSON file contains following fields:</p><ol> <li>article: A string, which is the passage. 文章</li> <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干</li> <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项</li> <li>answers: A list contains the golden label of each query.四个题目的正确答案</li> <li>id: Each passage has...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
         </div>
   </div>
 </section>
@@ -344,7 +344,7 @@
         
         <h1 id="自制类race数据集">自制类RACE数据集</h1>
 <h2 id="race数据集">RACE数据集</h2>
-<p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了</p>
+<p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p>
 
 <ul>
   <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li>
@@ -356,12 +356,27 @@
 <p>Each passage is a JSON file. The JSON file contains following fields:</p>
 
 <ol>
-  <li>article: A string, which is the passage.</li>
-  <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _.</li>
-  <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option.</li>
-  <li>answers: A list contains the golden label of each query.</li>
+  <li>article: A string, which is the passage. 文章</li>
+  <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干</li>
+  <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项</li>
+  <li>answers: A list contains the golden label of each query.四个题目的正确答案</li>
   <li>id: Each passage has a unique id in this dataset.</li>
 </ol>
+
+<h2 id="race数据集分布">RACE数据集分布</h2>
+
+<p><img src="../assets/img/posts/20211221/3.jpg" /></p>
+
+<p>RACE-M表示初中题目，RACE-H表示高中题目</p>
+
+<h2 id="race数据集中的长度">RACE数据集中的长度</h2>
+
+<p><img src="../assets/img/posts/20211221/4.jpg" /></p>
+
+<h2 id="race数据集中的问题的统计信息">RACE数据集中的问题的统计信息</h2>
+
+<p><img src="../assets/img/posts/20211221/5.jpg" /></p>
+
 
         <aside class="sidebar inline" id="post-end">
     

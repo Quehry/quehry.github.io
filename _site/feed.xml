@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-21T15:59:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-21T17:47:32+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
 &lt;h2 id=&quot;lecture-01-overview-of-computer-graphics&quot;&gt;Lecture 01 Overview of Computer Graphics&lt;/h2&gt;
 &lt;h3 id=&quot;什么是好的画面&quot;&gt;什么是好的画面&lt;/h3&gt;
 &lt;p&gt;画面&lt;strong&gt;亮&lt;/strong&gt;&lt;/p&gt;
@@ -13,7 +13,7 @@
 &lt;h3 id=&quot;计算机视觉&quot;&gt;计算机视觉&lt;/h3&gt;
 &lt;p&gt;计算机图形学离不开计算机视觉，但是视觉一般是对图像的处理。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">计算机图形学 Lecture 01 Overview of Computer Graphics 什么是好的画面 画面亮 应用场景 电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。</summary></entry><entry><title type="html">制作类RACE数据集</title><link href="http://localhost:4000/RACElike-datasets.html" rel="alternate" type="text/html" title="制作类RACE数据集" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/RACElike-datasets</id><content type="html" xml:base="http://localhost:4000/RACElike-datasets.html">&lt;h1 id=&quot;自制类race数据集&quot;&gt;自制类RACE数据集&lt;/h1&gt;
 &lt;h2 id=&quot;race数据集&quot;&gt;RACE数据集&lt;/h2&gt;
-&lt;p&gt;RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了&lt;strong&gt;阅读理解&lt;/strong&gt;任务。它的特点是包含了&lt;/p&gt;
+&lt;p&gt;RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了&lt;strong&gt;阅读理解&lt;/strong&gt;任务。它的特点是包含了很多需要推理的问题。&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;原RACE数据集&lt;a href=&quot;http://www.cs.cmu.edu/~glai1/data/race/&quot;&gt;地址&lt;/a&gt;&lt;/li&gt;
@@ -25,12 +25,26 @@
 &lt;p&gt;Each passage is a JSON file. The JSON file contains following fields:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;article: A string, which is the passage.&lt;/li&gt;
-  &lt;li&gt;questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _.&lt;/li&gt;
-  &lt;li&gt;options: A list of the options list. Each options list contains 4 strings, which are the candidate option.&lt;/li&gt;
-  &lt;li&gt;answers: A list contains the golden label of each query.&lt;/li&gt;
+  &lt;li&gt;article: A string, which is the passage. 文章&lt;/li&gt;
+  &lt;li&gt;questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干&lt;/li&gt;
+  &lt;li&gt;options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项&lt;/li&gt;
+  &lt;li&gt;answers: A list contains the golden label of each query.四个题目的正确答案&lt;/li&gt;
   &lt;li&gt;id: Each passage has a unique id in this dataset.&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">自制类RACE数据集 RACE数据集 RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了</summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;race数据集分布&quot;&gt;RACE数据集分布&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/3.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;RACE-M表示初中题目，RACE-H表示高中题目&lt;/p&gt;
+
+&lt;h2 id=&quot;race数据集中的长度&quot;&gt;RACE数据集中的长度&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/4.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;race数据集中的问题的统计信息&quot;&gt;RACE数据集中的问题的统计信息&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/5.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">自制类RACE数据集 RACE数据集 RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了很多需要推理的问题。</summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
 &lt;h2 id=&quot;1矩阵分解-matrix-factorization&quot;&gt;1.矩阵分解 Matrix Factorization&lt;/h2&gt;
 &lt;h3 id=&quot;11-the-matrix-factorization-model&quot;&gt;1.1 The Matrix Factorization Model&lt;/h3&gt;
 &lt;p&gt;R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R&lt;sup&gt;mxn&lt;/sup&gt;。P是user latent matrix，P∈R&lt;sup&gt;mxk&lt;/sup&gt;，Q是item latent matrix，Q∈R&lt;sup&gt;nxk&lt;/sup&gt;&lt;/p&gt;
@@ -945,7 +959,32 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
       &lt;p&gt;就是上篇文献的网络 &lt;a href=&quot;#fnref:12&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">目录</summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">&lt;h1 id=&quot;软件方法&quot;&gt;软件方法&lt;/h1&gt;
+&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">目录</summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#目录&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#软件方法&quot;&gt;软件方法&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#课程要求&quot;&gt;课程要求&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#随记&quot;&gt;随记&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#ppt整理&quot;&gt;PPT整理&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1-对象类&quot;&gt;1. 对象，类&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#2面向对象&quot;&gt;2.面向对象&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#3java&quot;&gt;3.JAVA&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#4数据结构&quot;&gt;4.数据结构&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+&lt;h1 id=&quot;软件方法&quot;&gt;软件方法&lt;/h1&gt;
 &lt;h2 id=&quot;课程要求&quot;&gt;课程要求&lt;/h2&gt;
 &lt;p&gt;学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。&lt;/p&gt;
 
@@ -1341,7 +1380,7 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
  &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;existeFilsDroit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()?&lt;/span&gt;
  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filsDroit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;inferieur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;valeur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filsDroit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;binrech&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()):&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">软件方法 课程要求 学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。</summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">&lt;h1 id=&quot;概率统计&quot;&gt;概率统计&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">目录</summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">&lt;h1 id=&quot;概率统计&quot;&gt;概率统计&lt;/h1&gt;
 
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 &lt;ul&gt;
