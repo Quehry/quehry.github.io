@@ -41,3 +41,13 @@ RACE-M表示初中题目，RACE-H表示高中题目
 
 <img src='../assets/img/posts/20211221/5.jpg'>
 
+## Gao他们对于RACE数据集的处理
+- 去掉了那些误导选项和文章语义不相关的数据
+- 去掉了那些需要```world knowledge```生成的选项
+- github[url](https://github.com/Yifan-Gao/Distractor-Generation-RACE)
+
+## Gao处理后的RACE数据集统计信息
+
+<img src='../assets/img/posts/20211221/7.jpg'>
+
+

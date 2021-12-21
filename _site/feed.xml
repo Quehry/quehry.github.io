@@ -1,17 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-21T17:47:32+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
-&lt;h2 id=&quot;lecture-01-overview-of-computer-graphics&quot;&gt;Lecture 01 Overview of Computer Graphics&lt;/h2&gt;
-&lt;h3 id=&quot;什么是好的画面&quot;&gt;什么是好的画面&lt;/h3&gt;
-&lt;p&gt;画面&lt;strong&gt;亮&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;应用场景&quot;&gt;应用场景&lt;/h3&gt;
-&lt;p&gt;电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-21T20:04:52+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html">&lt;h1 id=&quot;vae&quot;&gt;VAE&lt;/h1&gt;
+&lt;h2 id=&quot;ae&quot;&gt;AE&lt;/h2&gt;
+&lt;p&gt;Auto-Encoder自动编码器，比如Seq2seq模型。&lt;/p&gt;
 
-&lt;p&gt;电影中里程碑：阿凡达，大量应用面部捕捉技术。&lt;/p&gt;
-&lt;h3 id=&quot;rasterization-光栅化&quot;&gt;Rasterization 光栅化&lt;/h3&gt;
-&lt;p&gt;实时，FPS&amp;gt;30&lt;/p&gt;
+&lt;h2 id=&quot;vaevariational-auto-encoder&quot;&gt;VAE(Variational Auto-Encoder)&lt;/h2&gt;
+&lt;p&gt;在实际情况中，我们需要在模型的准确率上与隐含向量服从标准正态分布之间做一个权衡，所谓模型的准确率就是指解码器生成的图片与原图片的相似程度。我们可以让网络自己来做这个决定，非常简单，我们只需要将这两者都做一个loss，然后在将他们求和作为总的loss，这样网络就能够自己选择如何才能够使得这个总的loss下降。另外我们要衡量两种分布的相似程度，如何看过之前一片GAN的数学推导，你就知道会有一个东西叫KL-divergence来衡量两种分布的相似程度，这里我们就是用KL-divergence来表示隐含向量与标准正态分布之间差异的loss，另外一个loss仍然使用生成图片与原图片的均方误差来表示。&lt;/p&gt;
 
-&lt;p&gt;离线, FPS&amp;lt;30&lt;/p&gt;
-&lt;h3 id=&quot;计算机视觉&quot;&gt;计算机视觉&lt;/h3&gt;
-&lt;p&gt;计算机图形学离不开计算机视觉，但是视觉一般是对图像的处理。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">计算机图形学 Lecture 01 Overview of Computer Graphics 什么是好的画面 画面亮 应用场景 电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。</summary></entry><entry><title type="html">制作类RACE数据集</title><link href="http://localhost:4000/RACElike-datasets.html" rel="alternate" type="text/html" title="制作类RACE数据集" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/RACElike-datasets</id><content type="html" xml:base="http://localhost:4000/RACElike-datasets.html">&lt;h1 id=&quot;自制类race数据集&quot;&gt;自制类RACE数据集&lt;/h1&gt;
+&lt;h2 id=&quot;kl消失&quot;&gt;KL消失&lt;/h2&gt;
+&lt;p&gt;KL消失后，VAE就变成了AE
+原因：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;KL项本身太容易被优化&lt;/li&gt;
+  &lt;li&gt;一旦崩塌，Decoder会忽视Z&lt;sub&gt;x&lt;/sub&gt;&lt;/li&gt;
+  &lt;li&gt;Z&lt;sub&gt;x&lt;/sub&gt;的表示学习依赖于Decoder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;解决kl消失的思路&quot;&gt;解决KL消失的思路&lt;/h2&gt;
+&lt;p&gt;…&lt;/p&gt;
+
+&lt;h1 id=&quot;analyze-pretraining-language-model&quot;&gt;Analyze Pretraining Language Model&lt;/h1&gt;
+&lt;h2 id=&quot;perspective-of-knowledge&quot;&gt;Perspective of knowledge&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Syntacitic/Semantic/lexical 句法，语义，词汇&lt;/li&gt;
+  &lt;li&gt;重构语法树&lt;/li&gt;
+  &lt;li&gt;Attention中很多头可能没有用，学到了很多冗余的信息&lt;/li&gt;
+  &lt;li&gt;Analyze Feed Forward Neural Network&lt;/li&gt;
+  &lt;li&gt;浅层词汇信息，深层语义信息&lt;/li&gt;
+  &lt;li&gt;Prompt&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">VAE AE Auto-Encoder自动编码器，比如Seq2seq模型。</summary></entry><entry><title type="html">制作类RACE数据集</title><link href="http://localhost:4000/RACElike-datasets.html" rel="alternate" type="text/html" title="制作类RACE数据集" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/RACElike-datasets</id><content type="html" xml:base="http://localhost:4000/RACElike-datasets.html">&lt;h1 id=&quot;自制类race数据集&quot;&gt;自制类RACE数据集&lt;/h1&gt;
 &lt;h2 id=&quot;race数据集&quot;&gt;RACE数据集&lt;/h2&gt;
 &lt;p&gt;RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了&lt;strong&gt;阅读理解&lt;/strong&gt;任务。它的特点是包含了很多需要推理的问题。&lt;/p&gt;
 
@@ -44,7 +59,31 @@
 
 &lt;h2 id=&quot;race数据集中的问题的统计信息&quot;&gt;RACE数据集中的问题的统计信息&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/5.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">自制类RACE数据集 RACE数据集 RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了很多需要推理的问题。</summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/5.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gao他们对于race数据集的处理&quot;&gt;Gao他们对于RACE数据集的处理&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;去掉了那些误导选项和文章语义不相关的数据&lt;/li&gt;
+  &lt;li&gt;去掉了那些需要&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;world knowledge&lt;/code&gt;生成的选项&lt;/li&gt;
+  &lt;li&gt;github&lt;a href=&quot;https://github.com/Yifan-Gao/Distractor-Generation-RACE&quot;&gt;url&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;gao处理后的race数据集统计信息&quot;&gt;Gao处理后的RACE数据集统计信息&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/7.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">自制类RACE数据集 RACE数据集 RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了很多需要推理的问题。</summary></entry><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
+&lt;h2 id=&quot;lecture-01-overview-of-computer-graphics&quot;&gt;Lecture 01 Overview of Computer Graphics&lt;/h2&gt;
+&lt;h3 id=&quot;什么是好的画面&quot;&gt;什么是好的画面&lt;/h3&gt;
+&lt;p&gt;画面&lt;strong&gt;亮&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;应用场景&quot;&gt;应用场景&lt;/h3&gt;
+&lt;p&gt;电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。&lt;/p&gt;
+
+&lt;p&gt;电影中里程碑：阿凡达，大量应用面部捕捉技术。&lt;/p&gt;
+&lt;h3 id=&quot;rasterization-光栅化&quot;&gt;Rasterization 光栅化&lt;/h3&gt;
+&lt;p&gt;实时，FPS&amp;gt;30&lt;/p&gt;
+
+&lt;p&gt;离线, FPS&amp;lt;30&lt;/p&gt;
+&lt;h3 id=&quot;计算机视觉&quot;&gt;计算机视觉&lt;/h3&gt;
+&lt;p&gt;计算机图形学离不开计算机视觉，但是视觉一般是对图像的处理。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">计算机图形学 Lecture 01 Overview of Computer Graphics 什么是好的画面 画面亮 应用场景 电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。</summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
 &lt;h2 id=&quot;1矩阵分解-matrix-factorization&quot;&gt;1.矩阵分解 Matrix Factorization&lt;/h2&gt;
 &lt;h3 id=&quot;11-the-matrix-factorization-model&quot;&gt;1.1 The Matrix Factorization Model&lt;/h3&gt;
 &lt;p&gt;R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R&lt;sup&gt;mxn&lt;/sup&gt;。P是user latent matrix，P∈R&lt;sup&gt;mxk&lt;/sup&gt;，Q是item latent matrix，Q∈R&lt;sup&gt;nxk&lt;/sup&gt;&lt;/p&gt;
@@ -1724,272 +1763,4 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
       &lt;p&gt;句子结构分析 &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">整理集合 多选题自动生成： 定义 输入一篇文章，从这篇文章生成一系列多选题 模型结构 待补充 工作流程 六大步： 输入文章预处理 选择句子 从句子中选择关键字 生成疑问句 生成误导选项 后期处理 主流的研究关注点与现存的问题 目前大多数处理文本都不考虑公式、图片和图标等等信息，文本预处理只提取文本信息，今后MCQG的研究需要关注处理嵌入在文本中的信息的能力。 现有的MCQ生成方法侧重于从单个句子生成问题，然而，文本可能通过多个句子来生成句子，所以今后的研究应该侧重于从多个句子中生成问题。 关键字的选择取决于下游任务或者应用领域，早期的关键字选择依赖于基本的统计和句法信息。最新的研究趋势是使用机器学习或者语义信息作为选择的标准。 误导选项的选择同样与应用领域有关，目前的MCQ生成系统中使用的都是简单的误导选项生成，但在实际情况中，误导选项可以是非常多种类的，可以是不同的命名体，数字大小，多个单词的误导选项等等。作者认为文本的深层语义分析或使用基于神经嵌入的方法可能是复杂误导答案生成的一个可能的方向。</summary></entry><entry><title type="html">练习Markdown</title><link href="http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown.html" rel="alternate" type="text/html" title="练习Markdown" /><published>2021-11-24T00:00:00+08:00</published><updated>2021-11-24T00:00:00+08:00</updated><id>http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown</id><content type="html" xml:base="http://localhost:4000/%E7%BB%83%E4%B9%A0Markdown.html">&lt;h1 id=&quot;1标题&quot;&gt;1.标题&lt;/h1&gt;
-&lt;h1 id=&quot;一级标题&quot;&gt;一级标题&lt;/h1&gt;
-&lt;h2 id=&quot;二级标题&quot;&gt;二级标题&lt;/h2&gt;
-&lt;h3 id=&quot;三级标题&quot;&gt;三级标题&lt;/h3&gt;
-&lt;p&gt;一共有6级标题&lt;/p&gt;
-
-&lt;h1 id=&quot;2段落及格式&quot;&gt;2.段落及格式&lt;/h1&gt;
-&lt;p&gt;用两个空格加回车表示换行&lt;br /&gt;
-当然也可以直接空一行出来表示换行&lt;/p&gt;
-
-&lt;h2 id=&quot;1各种文字表示&quot;&gt;1)各种文字表示&lt;/h2&gt;
-&lt;h3 id=&quot;斜体&quot;&gt;斜体&lt;/h3&gt;
-&lt;p&gt;用两个&lt;em&gt;或者两个_把需要斜体的文字围起来&lt;br /&gt;
-比如：&lt;br /&gt;
-*斜体&lt;/em&gt;&lt;br /&gt;
-&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;粗体&quot;&gt;粗体&lt;/h3&gt;
-&lt;p&gt;用两个&lt;strong&gt;或者两个__把需要粗体的文字围起来&lt;br /&gt;
-比如:&lt;br /&gt;
-**粗体&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;粗斜体&quot;&gt;粗斜体&lt;/h3&gt;
-&lt;p&gt;用两个&lt;strong&gt;&lt;em&gt;或者两个___把需要粗体的文字围起来&lt;br /&gt;
-比如:&lt;br /&gt;
-**&lt;/em&gt;粗体&lt;/strong&gt;*&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;粗体&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2分隔线&quot;&gt;2)分隔线&lt;/h2&gt;
-&lt;p&gt;你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：&lt;br /&gt;
-***&lt;/p&gt;
-&lt;hr /&gt;
-&lt;hr /&gt;
-&lt;hr /&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;3删除线&quot;&gt;3)删除线&lt;/h2&gt;
-&lt;p&gt;如果段落上的文字要添加删除线，只需要在文字的两端加上两个波浪线&lt;del&gt;即可
-比如：&lt;br /&gt;
-~~哈哈哈哈&lt;/del&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4下划线&quot;&gt;4)下划线&lt;/h2&gt;
-&lt;p&gt;下划线可以通过HTML的&amp;lt;u&amp;gt;标签来实现
-比如：&lt;br /&gt;
-&lt;u&gt;下划线&lt;/u&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;5脚注&quot;&gt;5)脚注&lt;/h2&gt;
-&lt;p&gt;脚注是对文本的补充说明   &lt;br /&gt;
-创建脚注格式类似这样 &lt;sup id=&quot;fnref:12&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:12&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;br /&gt;
-脚注链接与脚注不能紧挨在一起。&lt;br /&gt;
-注脚默认在最后&lt;/p&gt;
-
-&lt;h1 id=&quot;3列表&quot;&gt;3.列表&lt;/h1&gt;
-
-&lt;h2 id=&quot;1无序列表&quot;&gt;1)无序列表&lt;/h2&gt;
-&lt;p&gt;无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记，这些标记后面要添加一个空格，然后再填写内容。&lt;br /&gt;
-比如：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;第一项&lt;/li&gt;
-  &lt;li&gt;第二项&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;第三项&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;第一项&lt;/li&gt;
-  &lt;li&gt;第二项&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;第三项&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;第一项&lt;/li&gt;
-  &lt;li&gt;第二项&lt;/li&gt;
-  &lt;li&gt;第三项&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2有序列表&quot;&gt;2)有序列表&lt;/h2&gt;
-&lt;p&gt;有序列表使用数字并加上 . 号来表示，如：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;第一项&lt;/li&gt;
-  &lt;li&gt;第二项&lt;/li&gt;
-  &lt;li&gt;第三项&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;3列表嵌套&quot;&gt;3)列表嵌套&lt;/h2&gt;
-&lt;p&gt;列表嵌套只需在子列表中的选项前面添加四个空格即可。比如：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;第一项：
-    &lt;ul&gt;
-      &lt;li&gt;第一项嵌套的第一个元素&lt;/li&gt;
-      &lt;li&gt;第一项嵌套的第二个元素&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;第二项：
-    &lt;ul&gt;
-      &lt;li&gt;第二项嵌套的第一个元素&lt;/li&gt;
-      &lt;li&gt;第二项嵌套的第二个元素&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;3区块&quot;&gt;3.区块&lt;/h1&gt;
-
-&lt;h2 id=&quot;1区块引用&quot;&gt;1)区块引用&lt;/h2&gt;
-&lt;p&gt;Markdown 区块引用是在段落开头使用 &amp;gt; 符号 ，然后后面紧跟一个空格符号：&lt;br /&gt;
-比如：&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;区块引用&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;2区块嵌套&quot;&gt;2)区块嵌套&lt;/h2&gt;
-&lt;p&gt;另外区块是可以嵌套的，一个 &amp;gt; 符号是最外层，两个 &amp;gt; 符号是第一层嵌套，以此类推：&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;最外层&lt;/p&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;第一层嵌套&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;3区块中使用列表&quot;&gt;3)区块中使用列表&lt;/h2&gt;
-&lt;p&gt;比如：&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;区块中使用列表&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;第一项&lt;/li&gt;
-    &lt;li&gt;第二项
-      &lt;ul&gt;
-        &lt;li&gt;第一项&lt;/li&gt;
-        &lt;li&gt;第二项&lt;/li&gt;
-        &lt;li&gt;第三项&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;4列表中使用区块&quot;&gt;4)列表中使用区块&lt;/h2&gt;
-&lt;p&gt;如果要在列表项目内放进区块，那么就需要在 &amp;gt; 前添加四个空格的缩进。&lt;br /&gt;
-列表中使用区块实例如下：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;第一项
-    &lt;blockquote&gt;
-      &lt;p&gt;菜鸟教程
-学的不仅是技术更是梦想&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;第二项&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;4使用代码&quot;&gt;4.使用代码&lt;/h1&gt;
-
-&lt;h2 id=&quot;1代码&quot;&gt;1)代码&lt;/h2&gt;
-&lt;p&gt;如果是段落上的一个函数或片段的代码可以用反引号把它包起来(`)，例如：&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;printf()&lt;/code&gt;函数&lt;/p&gt;
-
-&lt;h2 id=&quot;2指定一种语言&quot;&gt;2)指定一种语言&lt;/h2&gt;
-&lt;p&gt;可以用```包裹一段代码，并指定一种语言（也可以不指定）：&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;  
-    &lt;span class=&quot;n&quot;&gt;qhr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qhr&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qhr&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;5使用链接&quot;&gt;5.使用链接&lt;/h1&gt;
-
-&lt;h2 id=&quot;1链接使用方法&quot;&gt;1)链接使用方法&lt;/h2&gt;
-&lt;p&gt;[链接名称](链接地址)或者&lt;链接地址&gt;&lt;/链接地址&gt;&lt;/p&gt;
-
-&lt;p&gt;比如：&lt;/p&gt;
-
-&lt;p&gt;这是一个链接 &lt;a href=&quot;https://www.runoob.com&quot;&gt;菜鸟教程&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2直接使用链接地址&quot;&gt;2)直接使用链接地址&lt;/h2&gt;
-&lt;p&gt;用&amp;lt;&amp;gt;把链接括起来。&lt;br /&gt;
-比如:&lt;a href=&quot;http://www.runoob.com&quot;&gt;http://www.runoob.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;6图片&quot;&gt;6.图片&lt;/h1&gt;
-
-&lt;h2 id=&quot;1使用图片&quot;&gt;1)使用图片&lt;/h2&gt;
-&lt;p&gt;图片的语法格式：![alt 属性文本](图片地址 “可选标题”)&lt;/p&gt;
-
-&lt;h2 id=&quot;2链接图片&quot;&gt;2)链接图片&lt;/h2&gt;
-&lt;p&gt;大概长这样：&lt;br /&gt;
-&amp;lt;img src=”http://static.runoob.com/images/runoob-logo.png” width=”50%”&amp;gt;
-结果：&lt;br /&gt;
-&lt;img src=&quot;http://static.runoob.com/images/runoob-logo.png&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;7表格&quot;&gt;7.表格&lt;/h1&gt;
-
-&lt;h2 id=&quot;1格式&quot;&gt;1)格式&lt;/h2&gt;
-
-&lt;p&gt;Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。&lt;br /&gt;
-比如：&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;表头&lt;/th&gt;
-      &lt;th&gt;表头&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;单元格&lt;/td&gt;
-      &lt;td&gt;单元格&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;单元格&lt;/td&gt;
-      &lt;td&gt;单元格&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;2对齐方法&quot;&gt;2)对齐方法&lt;/h2&gt;
-&lt;p&gt;在---前面加上:表示左对齐，在后面加上:表示右对齐，在两端加上:表示居中&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;左对齐&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;右对齐&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;居中对齐&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;单元格&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;单元格&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;单元格&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;单元格&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;单元格&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;单元格&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h1 id=&quot;8高级技巧&quot;&gt;8.高级技巧&lt;/h1&gt;
-
-&lt;h2 id=&quot;1插入数学公式&quot;&gt;1)插入数学公式&lt;/h2&gt;
-&lt;p&gt;当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 Mathjax 对数学公式进行渲染。比如：&lt;/p&gt;
-
-&lt;p&gt;$$&lt;br /&gt;
-\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
-\mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} &lt;br /&gt;
-\frac{\partial X}{\partial u} &amp;amp;  \frac{\partial Y}{\partial u} &amp;amp; 0 &lt;br /&gt;
-\frac{\partial X}{\partial v} &amp;amp;  \frac{\partial Y}{\partial v} &amp;amp; 0 &lt;br /&gt;
-\end{vmatrix}
-${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}&lt;br /&gt;
-$$&lt;/p&gt;
-
-&lt;p&gt;输出结果为：&lt;/p&gt;
-
-\[\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
-\mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \\
-\frac{\partial X}{\partial u} &amp;amp;  \frac{\partial Y}{\partial u} &amp;amp; 0 \\
-\frac{\partial X}{\partial v} &amp;amp;  \frac{\partial Y}{\partial v} &amp;amp; 0 \\
-\end{vmatrix}
-${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}\]
-
-\[\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t\]
-
-&lt;p&gt;&lt;strong&gt;还没有整明白，用到的时候在看&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;未完待续&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:12&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;我是脚注脚注脚注注脚 &lt;a href=&quot;#fnref:12&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Quehry</name></author><category term="daily" /><summary type="html">1.标题 一级标题 二级标题 三级标题 一共有6级标题</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">整理集合 多选题自动生成： 定义 输入一篇文章，从这篇文章生成一系列多选题 模型结构 待补充 工作流程 六大步： 输入文章预处理 选择句子 从句子中选择关键字 生成疑问句 生成误导选项 后期处理 主流的研究关注点与现存的问题 目前大多数处理文本都不考虑公式、图片和图标等等信息，文本预处理只提取文本信息，今后MCQG的研究需要关注处理嵌入在文本中的信息的能力。 现有的MCQ生成方法侧重于从单个句子生成问题，然而，文本可能通过多个句子来生成句子，所以今后的研究应该侧重于从多个句子中生成问题。 关键字的选择取决于下游任务或者应用领域，早期的关键字选择依赖于基本的统计和句法信息。最新的研究趋势是使用机器学习或者语义信息作为选择的标准。 误导选项的选择同样与应用领域有关，目前的MCQ生成系统中使用的都是简单的误导选项生成，但在实际情况中，误导选项可以是非常多种类的，可以是不同的命名体，数字大小，多个单词的误导选项等等。作者认为文本的深层语义分析或使用基于神经嵌入的方法可能是复杂误导答案生成的一个可能的方向。</summary></entry></feed>

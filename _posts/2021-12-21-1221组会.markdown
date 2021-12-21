@@ -1,0 +1,39 @@
+---
+layout: postwithlatex
+read_time: true
+show_date: true
+title:  组会记录
+date:   2021-12-21  
+description: 组会笔记
+img: posts/20211221/6.jpg 
+tags: [note]
+author: Quehry
+---
+
+# VAE
+## AE
+Auto-Encoder自动编码器，比如Seq2seq模型。
+
+## VAE(Variational Auto-Encoder)
+在实际情况中，我们需要在模型的准确率上与隐含向量服从标准正态分布之间做一个权衡，所谓模型的准确率就是指解码器生成的图片与原图片的相似程度。我们可以让网络自己来做这个决定，非常简单，我们只需要将这两者都做一个loss，然后在将他们求和作为总的loss，这样网络就能够自己选择如何才能够使得这个总的loss下降。另外我们要衡量两种分布的相似程度，如何看过之前一片GAN的数学推导，你就知道会有一个东西叫KL-divergence来衡量两种分布的相似程度，这里我们就是用KL-divergence来表示隐含向量与标准正态分布之间差异的loss，另外一个loss仍然使用生成图片与原图片的均方误差来表示。
+
+
+## KL消失
+KL消失后，VAE就变成了AE
+原因：  
+- KL项本身太容易被优化
+- 一旦崩塌，Decoder会忽视Z<sub>x</sub>
+- Z<sub>x</sub>的表示学习依赖于Decoder
+
+## 解决KL消失的思路
+...
+
+# Analyze Pretraining Language Model
+## Perspective of knowledge 
+- Syntacitic/Semantic/lexical 句法，语义，词汇
+- 重构语法树
+- Attention中很多头可能没有用，学到了很多冗余的信息
+- Analyze Feed Forward Neural Network
+- 浅层词汇信息，深层语义信息
+- Prompt
+

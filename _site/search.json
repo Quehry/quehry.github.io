@@ -7,7 +7,7 @@
       "url"         : "./RACElike-datasets.html",
       "date"        : "2021-12-21 00:00:00 +0800",
       "description" : "帮助学长制作RACE数据集",
-      "content"     : "自制类RACE数据集RACE数据集RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了很多需要推理的问题。 原RACE数据集地址 下载地址url 论文地址：RACE: Large-scale ReAding Comprehension Dataset From ExaminationsRACE数据集格式Each passage is a JSON file. The JSON file contains following fields: article: A string, which is the passage. 文章 questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干 options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项 answers: A list contains the golden label of each query.四个题目的正确答案 id: Each passage has a unique id in this dataset.RACE数据集分布RACE-M表示初中题目，RACE-H表示高中题目RACE数据集中的长度RACE数据集中的问题的统计信息"
+      "content"     : "自制类RACE数据集RACE数据集RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了很多需要推理的问题。 原RACE数据集地址 下载地址url 论文地址：RACE: Large-scale ReAding Comprehension Dataset From ExaminationsRACE数据集格式Each passage is a JSON file. The JSON file contains following fields: article: A string, which is the passage. 文章 questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干 options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项 answers: A list contains the golden label of each query.四个题目的正确答案 id: Each passage has a unique id in this dataset.RACE数据集分布RACE-M表示初中题目，RACE-H表示高中题目RACE数据集中的长度RACE数据集中的问题的统计信息Gao他们对于RACE数据集的处理 去掉了那些误导选项和文章语义不相关的数据 去掉了那些需要world knowledge生成的选项 githuburlGao处理后的RACE数据集统计信息"
     } ,
   
     {
@@ -18,6 +18,16 @@
       "date"        : "2021-12-21 00:00:00 +0800",
       "description" : "Games 101 课程笔记",
       "content"     : "计算机图形学Lecture 01 Overview of Computer Graphics什么是好的画面画面亮应用场景电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。电影中里程碑：阿凡达，大量应用面部捕捉技术。Rasterization 光栅化实时，FPS&gt;30离线, FPS&lt;30计算机视觉计算机图形学离不开计算机视觉，但是视觉一般是对图像的处理。"
+    } ,
+  
+    {
+      "title"       : "组会记录",
+      "category"    : "",
+      "tags"        : "note",
+      "url"         : "./1221%E7%BB%84%E4%BC%9A.html",
+      "date"        : "2021-12-21 00:00:00 +0800",
+      "description" : "组会笔记",
+      "content"     : "VAEAEAuto-Encoder自动编码器，比如Seq2seq模型。VAE(Variational Auto-Encoder)在实际情况中，我们需要在模型的准确率上与隐含向量服从标准正态分布之间做一个权衡，所谓模型的准确率就是指解码器生成的图片与原图片的相似程度。我们可以让网络自己来做这个决定，非常简单，我们只需要将这两者都做一个loss，然后在将他们求和作为总的loss，这样网络就能够自己选择如何才能够使得这个总的loss下降。另外我们要衡量两种分布的相似程度，如何看过之前一片GAN的数学推导，你就知道会有一个东西叫KL-divergence来衡量两种分布的相似程度，这里我们就是用KL-divergence来表示隐含向量与标准正态分布之间差异的loss，另外一个loss仍然使用生成图片与原图片的均方误差来表示。KL消失KL消失后，VAE就变成了AE原因： KL项本身太容易被优化 一旦崩塌，Decoder会忽视Zx Zx的表示学习依赖于Decoder解决KL消失的思路…Analyze Pretraining Language ModelPerspective of knowledge Syntacitic/Semantic/lexical 句法，语义，词汇 重构语法树 Attention中很多头可能没有用，学到了很多冗余的信息 Analyze Feed Forward Neural Network 浅层词汇信息，深层语义信息 Prompt"
     } ,
   
     {

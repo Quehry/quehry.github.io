@@ -1,4 +1,4 @@
-I"><h1 id="自制类race数据集">自制类RACE数据集</h1>
+I"5<h1 id="自制类race数据集">自制类RACE数据集</h1>
 <h2 id="race数据集">RACE数据集</h2>
 <p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p>
 
@@ -32,4 +32,10 @@
 <h2 id="race数据集中的问题的统计信息">RACE数据集中的问题的统计信息</h2>
 
 <p><img src="../assets/img/posts/20211221/5.jpg" /></p>
+
+<h2 id="gao他们对于race数据集的处理">Gao他们对于RACE数据集的处理</h2>
+<ul>
+  <li>去掉了那些误导选项和文章语义不相关的数据</li>
+  <li><code class="language-plaintext highlighter-rouge">www</code></li>
+</ul>
 :ET
