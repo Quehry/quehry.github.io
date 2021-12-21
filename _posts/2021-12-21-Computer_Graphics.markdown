@@ -9,6 +9,7 @@ img: posts/20211221/1.jpg
 tags: [note]
 author: Quehry
 ---
+
 # 计算机图形学
 ## Lecture 01 Overview of Computer Graphics
 ### 什么是好的画面

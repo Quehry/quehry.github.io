@@ -12,11 +12,12 @@ author: Quehry
 
 # 自制类RACE数据集
 ## RACE数据集
-RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了**阅读理解**任务。
+RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了**阅读理解**任务。它的特点是包含了
 
-- 原RACE数据集url:http://www.cs.cmu.edu/~glai1/data/race/
-- 下载地址：http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz
+- 原RACE数据集[地址](http://www.cs.cmu.edu/~glai1/data/race/)
+- 下载地址[url](http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz)
 - 论文地址：[RACE: Large-scale ReAding Comprehension Dataset From Examinations](https://arxiv.org/abs/1704.04683)
+
 ## RACE数据集格式
 Each passage is a JSON file. The JSON file contains following fields:
 

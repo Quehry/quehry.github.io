@@ -1,0 +1,21 @@
+I"�<p>#</p>
+<h2 id="race数据集">RACE数据集</h2>
+<p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了</p>
+
+<ul>
+  <li>原RACE数据集url:http://www.cs.cmu.edu/~glai1/data/race/</li>
+  <li>下载地址：http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz</li>
+  <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a>
+    <h2 id="race数据集格式">RACE数据集格式</h2>
+    <p>Each passage is a JSON file. The JSON file contains following fields:</p>
+  </li>
+</ul>
+
+<ol>
+  <li>article: A string, which is the passage.</li>
+  <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _.</li>
+  <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option.</li>
+  <li>answers: A list contains the golden label of each query.</li>
+  <li>id: Each passage has a unique id in this dataset.</li>
+</ol>
+:ET

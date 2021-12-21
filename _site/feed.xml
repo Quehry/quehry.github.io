@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-17T18:34:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-21T15:34:46+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
+&lt;h2 id=&quot;lecture-01-overview-of-computer-graphics&quot;&gt;Lecture 01 Overview of Computer Graphics&lt;/h2&gt;
+&lt;h3 id=&quot;什么是好的画面&quot;&gt;什么是好的画面&lt;/h3&gt;
+&lt;p&gt;画面&lt;strong&gt;亮&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;应用场景&quot;&gt;应用场景&lt;/h3&gt;
+&lt;p&gt;电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。&lt;/p&gt;
+
+&lt;p&gt;电影中里程碑：阿凡达，大量应用面部捕捉技术。&lt;/p&gt;
+&lt;h3 id=&quot;rasterization-光栅化&quot;&gt;Rasterization 光栅化&lt;/h3&gt;
+&lt;p&gt;实时，FPS&amp;gt;30&lt;/p&gt;
+
+&lt;p&gt;离线, FPS&amp;lt;30&lt;/p&gt;
+&lt;h3 id=&quot;计算机视觉&quot;&gt;计算机视觉&lt;/h3&gt;
+&lt;p&gt;计算机图形学离不开计算机视觉，但是视觉一般是对图像的处理。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">计算机图形学 Lecture 01 Overview of Computer Graphics 什么是好的画面 画面亮 应用场景 电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。</summary></entry><entry><title type="html">制作类RACE数据集</title><link href="http://localhost:4000/RACElike-datasets.html" rel="alternate" type="text/html" title="制作类RACE数据集" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/RACElike-datasets</id><content type="html" xml:base="http://localhost:4000/RACElike-datasets.html">&lt;h1 id=&quot;自制类race数据集&quot;&gt;自制类RACE数据集&lt;/h1&gt;
+&lt;h2 id=&quot;race数据集&quot;&gt;RACE数据集&lt;/h2&gt;
+&lt;p&gt;RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了&lt;strong&gt;阅读理解&lt;/strong&gt;任务。它的特点是包含了&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;原RACE数据集&lt;a href=&quot;http://www.cs.cmu.edu/~glai1/data/race/&quot;&gt;地址&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;下载地址&lt;a href=&quot;http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz&quot;&gt;url&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;论文地址：&lt;a href=&quot;https://arxiv.org/abs/1704.04683&quot;&gt;RACE: Large-scale ReAding Comprehension Dataset From Examinations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;race数据集格式&quot;&gt;RACE数据集格式&lt;/h2&gt;
+&lt;p&gt;Each passage is a JSON file. The JSON file contains following fields:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;article: A string, which is the passage.&lt;/li&gt;
+  &lt;li&gt;questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _.&lt;/li&gt;
+  &lt;li&gt;options: A list of the options list. Each options list contains 4 strings, which are the candidate option.&lt;/li&gt;
+  &lt;li&gt;answers: A list contains the golden label of each query.&lt;/li&gt;
+  &lt;li&gt;id: Each passage has a unique id in this dataset.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">自制类RACE数据集 RACE数据集 RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了</summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
 &lt;h2 id=&quot;1矩阵分解-matrix-factorization&quot;&gt;1.矩阵分解 Matrix Factorization&lt;/h2&gt;
 &lt;h3 id=&quot;11-the-matrix-factorization-model&quot;&gt;1.1 The Matrix Factorization Model&lt;/h3&gt;
 &lt;p&gt;R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R&lt;sup&gt;mxn&lt;/sup&gt;。P是user latent matrix，P∈R&lt;sup&gt;mxk&lt;/sup&gt;，Q是item latent matrix，Q∈R&lt;sup&gt;nxk&lt;/sup&gt;&lt;/p&gt;
@@ -913,141 +945,8 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
       &lt;p&gt;就是上篇文献的网络 &lt;a href=&quot;#fnref:12&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">目录</summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html">&lt;h1 id=&quot;软件方法&quot;&gt;软件方法&lt;/h1&gt;
-&lt;h2 id=&quot;课程要求&quot;&gt;课程要求&lt;/h2&gt;
-&lt;p&gt;学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。&lt;/p&gt;
+&lt;/div&gt;</content><author><name>Quehry</name></author><category term="paper" /><summary type="html">目录</summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">&lt;h1 id=&quot;概率统计&quot;&gt;概率统计&lt;/h1&gt;
 
-&lt;h3 id=&quot;随记&quot;&gt;随记&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;类，对象：
-    &lt;ul&gt;
-      &lt;li&gt;给类赋值变成实例/对象&lt;/li&gt;
-      &lt;li&gt;c语言可以构建面向对象所有的结构&lt;/li&gt;
-      &lt;li&gt;对象就是给类声明的一个变量&lt;/li&gt;
-      &lt;li&gt;类集合了属性和方法&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;面向对象的三大特征：
-    &lt;ul&gt;
-      &lt;li&gt;封装（encapsulation）:
-        &lt;ul&gt;
-          &lt;li&gt;private, protected, public&lt;/li&gt;
-          &lt;li&gt;可作用于属性和方法&lt;/li&gt;
-          &lt;li&gt;一般是隐藏对象的属性和实现细节，但是提供方法的接口&lt;/li&gt;
-          &lt;li&gt;提供公开的方法&lt;/li&gt;
-          &lt;li&gt;提高了软件开发的效率&lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/1.jpg&quot; /&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;继承（inheritance）：
-        &lt;ul&gt;
-          &lt;li&gt;子类与父类&lt;/li&gt;
-          &lt;li&gt;子类自动具有父类属性和方法，添加自己特有的属性和方法，并且子类使用父类的方法也可以覆盖/重写父类方法&lt;/li&gt;
-          &lt;li&gt;可以实现代码的复用（当然功能不止于此）&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;多态（polymorphism）：
-        &lt;ul&gt;
-          &lt;li&gt;父类有多个子类&lt;/li&gt;
-          &lt;li&gt;子类覆盖/重写父类方法&lt;/li&gt;
-          &lt;li&gt;相当于是根据实际创建的对象类型动态决定使用哪个方法&lt;/li&gt;
-          &lt;li&gt;所有的子类都可以看成父类的类型，运行时，系统会自动调用各种子类的方法&lt;/li&gt;
-          &lt;li&gt;UML可以画出类之间的关系&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;java程序设计
-    &lt;ul&gt;
-      &lt;li&gt;百分百面向对象
-        &lt;ul&gt;
-          &lt;li&gt;不存在类以外代码&lt;/li&gt;
-          &lt;li&gt;只能采用面向对象方法编程&lt;/li&gt;
-          &lt;li&gt;java文件命名规范
-            &lt;ul&gt;
-              &lt;li&gt;必须以.java结尾&lt;/li&gt;
-              &lt;li&gt;源文件中如果只有一个类，文件类必须与该类名相同&lt;/li&gt;
-              &lt;li&gt;如果有多个类，且没有public类，文件名可与任一类名相同&lt;/li&gt;
-              &lt;li&gt;有多个类，且有public类，文件名必须与该类名相同&lt;/li&gt;
-              &lt;li&gt;一个JAVA源文件只能有一个public类，一个文件中只能有一个main主函数&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;静态方法/static，可以直接用类和函数名直接调用，和普通方法的区别是不用new一个示例&lt;/li&gt;
-      &lt;li&gt;多态的实现，先定义抽象的（abstract）父类，然后子类继承父类然后定义父类的抽象方法
-        &lt;ul&gt;
-          &lt;li&gt;通过抽象方法固定通用接口&lt;/li&gt;
-          &lt;li&gt;子类通过强制实现抽象方法实现多态&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;ppt整理&quot;&gt;PPT整理&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-对象类&quot;&gt;1. 对象，类&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;使用对象之前要先声明和创造&lt;/li&gt;
-  &lt;li&gt;类定义了对象的类型，所有对象都是类的实例，所有的类描述了属性和定义了方法&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2面向对象&quot;&gt;2.面向对象&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;封装：保护类的属性和方法,private,default,protected,public&lt;/li&gt;
-  &lt;li&gt;继承：B继承A，重用，修改，添加，A所有的属性都存在于B中，A的方法可以在B中重新定义，B的改动不会影响A&lt;/li&gt;
-  &lt;li&gt;多态：一个对象属于多个类，通过使用不同类中的方法属于不同的类，父类是抽象类，各个子类继承父类并定义方法，调用的时候根据不同子类调用方法。判断类型是否相同instanceof，声明的时候可以这么声明: A a = new B(),其中B是A的子类。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3java&quot;&gt;3.JAVA&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;x = bool ? a : b，表示如果bool为true，执行a，如果为false执行b&lt;/li&gt;
-  &lt;li&gt;for(Point p : this.getVect())表示遍历&lt;/li&gt;
-  &lt;li&gt;exception:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/69.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;try-catch-finally&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;  
-	&lt;span class=&quot;c1&quot;&gt;// 可能会发生异常的程序代码  &lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Type1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  
-	&lt;span class=&quot;c1&quot;&gt;// 捕获并处置try抛出的异常类型Type1  &lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Type2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  
-	 &lt;span class=&quot;c1&quot;&gt;//捕获并处置try抛出的异常类型Type2  &lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;finally&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;  
-	&lt;span class=&quot;c1&quot;&gt;// 无论是否发生异常，都将执行的语句块  &lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;自定义异常：&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NombreNegatifException&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;NombreNegatifException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Vous avez un nombre négatif !&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;文件读写：&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;类FileReader,FileWriter,使用里面的方法read()和write(x)和close()&lt;/p&gt;
-
-&lt;p&gt;比如：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211130/70.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;枚举enum,接口interface,迭代器iterator&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;4数据结构&quot;&gt;4.数据结构&lt;/h3&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">软件方法 课程要求 学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。</summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">&lt;h1 id=&quot;概率统计&quot;&gt;概率统计&lt;/h1&gt;
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;授课老师：牛薇&lt;/li&gt;
@@ -1057,7 +956,9 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;内容总览&quot;&gt;内容总览&lt;/h3&gt;
+
 &lt;p&gt;一半时间概率一半时间统计&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;概率
     &lt;ul&gt;
@@ -1080,14 +981,17 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/2.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;流体力学&quot;&gt;流体力学&lt;/h1&gt;
+
 &lt;h3 id=&quot;简介-1&quot;&gt;简介&lt;/h3&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 授课老师：方乐
-- 授课材料：PPT，TD都是6个，分别对应六大章
-- B站有录播
-- 笔记在侧边栏为大四上A的中后部分和大四上B前面
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;授课老师：方乐&lt;/li&gt;
+  &lt;li&gt;授课材料：PPT，TD都是6个，分别对应六大章&lt;/li&gt;
+  &lt;li&gt;B站有录播&lt;/li&gt;
+  &lt;li&gt;笔记在侧边栏为大四上A的中后部分和大四上B前面&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;内容总览-1&quot;&gt;内容总览&lt;/h3&gt;
+
 &lt;p&gt;第一章主要讲了流体的概念和动力学的公式。第二章从能量角度出发，介绍了NS方程（斯托克斯方程），和伯努利原理（压强和流速的关系）。第三章介绍了雷诺数，无量纲分析，雷诺数大的是湍流，雷诺数小的是层流。第四章介绍了边界层，第五章介绍了湍流，系统平均。第六章介绍了涡量。&lt;/p&gt;
 
 &lt;h3 id=&quot;a4纸&quot;&gt;A4纸&lt;/h3&gt;
@@ -1100,22 +1004,62 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 &lt;p&gt;结课之前需要我们写一个报告，什么形式的都可以，我觉得这种方式挺好的，自由发挥，我做的实验，用牛奶和墨水还原了卡门涡街。&lt;/p&gt;
 
 &lt;h1 id=&quot;电磁辐射波&quot;&gt;电磁辐射波&lt;/h1&gt;
+
 &lt;h3 id=&quot;简介-2&quot;&gt;简介&lt;/h3&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 授课老师: José Penuelas(负责前几章教学), Bertrand Vilquin(负责后几章教学), 孙鸣捷老师(负责TD) 
-- 授课形式：线上讲解原理，线下TD
-- 授课材料：PPT，讲义，TD
-- B站有录播
-- 有笔记，侧边栏叫做电磁学(大四上)
-- 考试闭卷，所以没有A4纸 ### 内容总览 首先回顾了之前学的波动物理和电磁学，电磁辐射，顾名思义是要将辐射，讲了波导，腔和光电效应，能级跃迁等等
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;授课老师: José Penuelas(负责前几章教学), Bertrand Vilquin(负责后几章教学), 孙鸣捷老师(负责TD)&lt;/li&gt;
+  &lt;li&gt;授课形式：线上讲解原理，线下TD&lt;/li&gt;
+  &lt;li&gt;授课材料：PPT，讲义，TD&lt;/li&gt;
+  &lt;li&gt;B站有录播&lt;/li&gt;
+  &lt;li&gt;有笔记，侧边栏叫做电磁学(大四上)&lt;/li&gt;
+  &lt;li&gt;考试闭卷，所以没有A4纸&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;内容总览-2&quot;&gt;内容总览&lt;/h3&gt;
+&lt;p&gt;首先回顾了之前学的波动物理和电磁学，电磁辐射，顾名思义是要将辐射，讲了波导，腔和光电效应，能级跃迁等等&lt;/p&gt;
 
 &lt;h1 id=&quot;传感器&quot;&gt;传感器&lt;/h1&gt;
+
 &lt;h3 id=&quot;简介-3&quot;&gt;简介&lt;/h3&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 授课老师：徐平
-- 授课形式：线下授课，做实验
-- 授课材料：大学生MOOC
-- 没有考试，没有笔记 ### 内容总览 讲解了传感器的基本原理，构造和常见传感器，每节课都需要在MOOC上做题，也有安排答辩，我和蔡卓江、宋正浩、刘亚林、马卫一一组讲解了机器狗。做实验是指去214玩小车，上面有不少传感器，也有大疆的线上模拟器，还是挺不错的一次动手实验。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计 简介 授课老师：牛薇 授课材料：一份法语讲义，一份习题集（10个EX），上课用的PPT B站有录播，up主：却道成归 笔记记在侧边栏为大四上A的笔记本最前面</summary></entry><entry><title type="html">MCQ文献阅读</title><link href="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html" rel="alternate" type="text/html" title="MCQ文献阅读" /><published>2021-11-25T00:00:00+08:00</published><updated>2021-11-25T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html">&lt;h2 id=&quot;整理集合&quot;&gt;整理集合&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;授课老师：徐平&lt;/li&gt;
+  &lt;li&gt;授课形式：线下授课，做实验&lt;/li&gt;
+  &lt;li&gt;授课材料：大学生MOOC&lt;/li&gt;
+  &lt;li&gt;没有考试，没有笔记&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;内容总览-3&quot;&gt;内容总览&lt;/h3&gt;
+&lt;p&gt;讲解了传感器的基本原理，构造和常见传感器，每节课都需要在MOOC上做题，也有安排答辩，我和蔡卓江、宋正浩、刘亚林、马卫一一组讲解了机器狗。做实验是指去214玩小车，上面有不少传感器，也有大疆的线上模拟器，还是挺不错的一次动手实验。&lt;/p&gt;
+
+&lt;h1 id=&quot;结构力学&quot;&gt;结构力学&lt;/h1&gt;
+
+&lt;h3 id=&quot;简介-4&quot;&gt;简介&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;授课老师：黄行蓉，Jean-Piere Lainé&lt;/li&gt;
+  &lt;li&gt;授课形式：J-P录制ppt，黄老师线下授课&lt;/li&gt;
+  &lt;li&gt;授课材料：讲义，PPT，TD&lt;/li&gt;
+  &lt;li&gt;B站有录播&lt;/li&gt;
+  &lt;li&gt;笔记：侧边栏结构力学，还有最后第八章记在大四上C前面&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;内容总览-4&quot;&gt;内容总览&lt;/h3&gt;
+&lt;p&gt;结构力学分为了两大部分，弹性力学和材料力学。在弹性力学部分，首先介绍了应力和应力张量的概念，张量可以写成3*3矩阵形式，其中对角线上的元素被称作正应力。第二章介绍了应变，首先介绍了很多种张量，F、H、C、E，然后介绍了形变张量ε。第三章介绍了本构方程（应力应变关系方程）。第四章介绍了能量，包括最小势能和最大余能等等。&lt;/p&gt;
+
+&lt;p&gt;第二部分是材料力学，主题内容和弹性力学类似，但是引进了力螺旋的概念，这个概念在中国授课好像是没有的，它描述了合力和力矩。第一张介绍了内力，在材料力学部分我们主要研究梁这个结构，它包括了中轴线和截面，这部分内容和之前学的理论力学很相似。第二章介绍了应力，可以用内力表示应力，用一些惯性矩、艾力函数连接。第三章介绍了应变和本构方程，第四章介绍了能量部分，主要是三大定理：théorème de ménabréa;théorème de maxwell-betti;théorème de castigliano。&lt;/p&gt;
+
+&lt;h3 id=&quot;a4纸-1&quot;&gt;A4纸&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/5.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/6.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/7.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/8.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/9.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/10.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计</summary></entry><entry><title type="html">MCQ文献阅读</title><link href="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html" rel="alternate" type="text/html" title="MCQ文献阅读" /><published>2021-11-25T00:00:00+08:00</published><updated>2021-11-25T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html">&lt;h2 id=&quot;整理集合&quot;&gt;整理集合&lt;/h2&gt;
 &lt;p&gt;多选题自动生成：&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;定义&lt;br /&gt;
@@ -1617,35 +1561,4 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}\]
 
 以前我对于学校的归属感并不强，但现在我会比较自豪的说出我是北航人。空天报国，敢为人先是北航的口号，虽然我并不是学的航空航天专业，但是我认为这句口号是全北航人适用的。我希望能传承下这份精神与荣誉。前辈们为我们铺垫了很多，我们北航人自带红色基因，尽忠报国是我要向徐校长学习的，我对于国家和学校的归属感第一次这么强烈。
 
-记于2021.11.19 1：16，最近各种事儿都忙起来了。 --&gt;</content><author><name>Quehry</name></author><category term="daily" /><summary type="html">&amp;lt;!– 今天是71期党校的最后一节党课，今天很幸运，徐惠彬校长第一次讲党课。</summary></entry><entry><title type="html">Who owns the copyright for an AI generated creative work?</title><link href="http://localhost:4000/AI-and-intellectual-property.html" rel="alternate" type="text/html" title="Who owns the copyright for an AI generated creative work?" /><published>2021-04-20T00:00:00+08:00</published><updated>2021-04-20T00:00:00+08:00</updated><id>http://localhost:4000/AI-and-intellectual-property</id><content type="html" xml:base="http://localhost:4000/AI-and-intellectual-property.html">&lt;p&gt;Recently I was &lt;a href=&quot;https://www.rollingstone.com/music/music-features/nirvana-kurt-cobain-ai-song-1146444/&quot;&gt;reading an article&lt;/a&gt; about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Winehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/tjzOzuKQhSM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;The project was created by &lt;a href=&quot;https://overthebridge.org&quot;&gt;Over the Bridge&lt;/a&gt;, an organization dedicated to increase awareness on mental health and substance abuse in the music industry, trying to denormalize and remove the glamour around such illnesses within the music community.&lt;/p&gt;
-
-&lt;p&gt;They are using Google’s &lt;a href=&quot;https://magenta.tensorflow.org&quot;&gt;Magenta&lt;/a&gt;, which is a neural network that precisely was conceived to explore the role of machine learning within the creative process. Magenta has been used to create a brand new “Beatles” song or even there was a band that &lt;a href=&quot;https://arstechnica.com/gaming/2019/08/yachts-chain-tripping-is-a-new-landmark-for-ai-music-an-album-that-doesnt-suck/&quot;&gt;used it to write a full album&lt;/a&gt; in 2019.&lt;/p&gt;
-
-&lt;p&gt;So, while reading the article, my immediate thought was: who owns the copyright of these new songs?&lt;/p&gt;
-
-&lt;p&gt;Think about it, imagine one of this new songs becomes a massive hit with millions of youtube views and spotify streams, who can claim the royalties generated?&lt;/p&gt;
-
-&lt;p&gt;At first it seems quite simple, &lt;em&gt;Over the Bridge&lt;/em&gt; should be the ones reaping the benefits, since they are the ones who had the idea, gathered the data and then fed the neural network to get the “work of art”. But in a second thought, didn’t the original artists provide the basis for the work the neural network generated? shouldn’t their state get credit? what about Google whose tool was used, should they get credit too?&lt;/p&gt;
-
-&lt;p&gt;Neural networks have been also used to create poetry, paintings and to write news articles, but how do they do it? A computer program developed for machine learning purposes is an algorithm that “learns” from data to make future decisions. When applied to art, music and literary works, machine learning algorithms are actually learning from some input data to generate a new piece of work, making independent decisions throughout the process to determine what the new work looks like. An important feature of this is that while programmers can set the parameters, the work is actually generated by the neural network itself, in a process akin to the thought processes of humans.&lt;/p&gt;
-
-&lt;p&gt;Now, creative works qualify for copyright protection if they are original, with most definitions of originality requiring a human author. Most jurisdictions, including &lt;a href=&quot;https://www.wipo.int/wipolex/en/details.jsp?id=1319&quot;&gt;Spain&lt;/a&gt; and &lt;a href=&quot;https://dejure.org/gesetze/UrhG/7.html&quot;&gt;Germany&lt;/a&gt;, specifically state that only works created by a human can be protected by &lt;a href=&quot;https://www.wipo.int/copyright/en/&quot;&gt;copyright&lt;/a&gt;. In the United States, for example, &lt;a href=&quot;https://copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf&quot;&gt;the Copyright Office has declared&lt;/a&gt; that it will “register an original work of authorship, provided that the work was created by a human being.”&lt;/p&gt;
-
-&lt;p&gt;So as we currently stand, a human author is required to grant a copyright, which makes sense, there is no point of having a neural network be the beneficiary of royalties of a creative work (no bank would open an account for them anyways, lol).&lt;/p&gt;
-
-&lt;p&gt;I think amendments have to be made to the law to ensure that the person who undertook all the arrangements necessary for the work to be created by the neural network gets the credit but also we need to modify copyright law to ensure the original authors of the body of work used as data input to produce the new piece get their corresponding share of credit. This will get messy if someone uses for example the #1 song of every month in a decade to create the decade song, then there would be as many as 120 different artists to credit.&lt;/p&gt;
-
-&lt;tweet&gt;In a computer generated artistic work, both the person who undertook all the arrangements necessary for its creation as well as the original authors of the data input need to be credited.&lt;/tweet&gt;
-
-&lt;p&gt;There will still be some ambiguity as to who undertook the arrangements necessary, only the one who gathered the data and pressed the button to let the network learn, or does the person who created the neural network’s model also get credit? Shall we go all the way and say that even the programmer of the neural network gets some credit as well?&lt;/p&gt;
-
-&lt;p&gt;There are some countries, in particular the UK where some progress has been made to amend copyright laws to cater for computer generated works of art, but I believe this is one of those fields where technology will surpass our law making capacity and we will live under a grey area for a while, and maybe this is just what we need, by having these works ending up free for use by anyone in the world, perhaps a new model for remunerating creative work can be established, one that does not require commercial success to be necessary for artists to make a living, and thus they can become free to explore their art.&lt;/p&gt;
-
-&lt;tweet&gt;Perhaps a new model for remunerating creative work can be established, one that does not require commercial success to be necessary for artists to make a living.&lt;/tweet&gt;
-
-&lt;p&gt;&lt;img src=&quot;./assets/img/posts/20210420/post8-rembrandt2.jpg&quot; alt=&quot;The next Rembrandt&quot; /&gt;
-&lt;small&gt;&lt;a href=&quot;https://www.jwt.com/en/work/thenextrembrandt&quot;&gt;The Next Rembrandt&lt;/a&gt; is a computer-generated 3-D–printed painting developed by a facial-recognition algorithm that scanned data from 346 known paintings by the Dutch painter in a process lasting 18 months. The portrait is based on 168,263 fragments from Rembrandt’s works.&lt;/small&gt;&lt;/p&gt;</content><author><name>Armando Maynez</name></author><category term="opinion" /><category term="copyright" /><category term="creativity" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html">Recently I was reading an article about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Winehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.</summary></entry></feed>
+记于2021.11.19 1：16，最近各种事儿都忙起来了。 --&gt;</content><author><name>Quehry</name></author><category term="daily" /><summary type="html">&amp;lt;!– 今天是71期党校的最后一节党课，今天很幸运，徐惠彬校长第一次讲党课。</summary></entry></feed>
