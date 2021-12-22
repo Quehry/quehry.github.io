@@ -22,7 +22,7 @@
   "headline": "制作类RACE数据集",
   "abstract": "帮助学长制作RACE数据集",
     "keywords": "work",
-    "wordcount": "116",
+    "wordcount": "145",
     "image": ["http://localhost:4000/assets/imgposts/20211221/2.jpg"],
   "datePublished": "2021-12-21 00:00:00 +0800",
   "dateModified": "2021-12-21 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="帮助学长制作RACE数据集">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="116"/>
+<meta data-rh="true" name="twitter:data1" content="145"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211221/2.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -389,7 +389,32 @@
 <p><img src="../assets/img/posts/20211221/7.jpg" /></p>
 
 <h2 id="gao处理后的数据集格式">Gao处理后的数据集格式</h2>
+
+<h3 id="预处理">预处理</h3>
+
 <p>首先把数据集规整到一个json文件里，分为dev,test,train三个json文件。</p>
+
+<p>每一行包含以下信息：</p>
+
+<p>article, sent(sentence), question(问题有两种，一种是疑问句，一种是填空), answer_text, answer, id, word_overlap_score, word_overlap_count, article_id, question_id, distractor_id.</p>
+
+<p>那么一个问题会有2-3个误导选项，一篇文章又会有3-4个问题。相比于原本的数据集多了word-overlap指标，word-overlap就是词重叠率，交集比上并集。</p>
+
+<h3 id="updated">updated</h3>
+<p>updated数据集和original数据集格式类似，少了overlap，内容上去掉了一些语义不相关的题目。</p>
+
+<h3 id="预处理代码">预处理代码</h3>
+<p>利用torchtext框架预处理文本，流程大概如下：</p>
+<ul>
+  <li>定义Field：声明如何处理数据 定义</li>
+  <li>Dataset：得到数据集，此时数据集里每一个样本是一个 经过 Field声明的预处理 预处理后的 wordlist</li>
+  <li>建立vocab：在这一步建立词汇表，词向量(word embeddings)</li>
+  <li>构造迭代器：构造迭代器，用来分批次训练模型</li>
+</ul>
+
+<p>Gao说有去掉一些语义不相关的误导选项，但是在代码中并没有看见这步操作？？</p>
+
+<p><img src="../assets/img/posts/20211221/8.jpg" /></p>
 
         <aside class="sidebar inline" id="post-end">
     
