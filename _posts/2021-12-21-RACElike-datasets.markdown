@@ -10,8 +10,8 @@ tags: [work]
 author: Quehry
 ---
 
-# 自制类RACE数据集
-## RACE数据集
+# RACE
+## 简介
 RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了**阅读理解**任务。它的特点是包含了很多需要推理的问题。
 
 - 原RACE数据集[地址](http://www.cs.cmu.edu/~glai1/data/race/)
@@ -41,6 +41,7 @@ RACE-M表示初中题目，RACE-H表示高中题目
 
 <img src='../assets/img/posts/20211221/5.jpg'>
 
+# GaoRACE
 ## Gao他们对于RACE数据集的处理
 - 去掉了那些误导选项和文章语义不相关的数据
 - 去掉了那些需要```world knowledge```生成的选项
@@ -75,3 +76,16 @@ updated数据集和original数据集格式类似，少了overlap，内容上去�
 Gao说有去掉一些语义不相关的误导选项，但是在代码中并没有看见这步操作？？
 
 <img src='../assets/img/posts/20211221/8.jpg'>
+
+# 自制数据集
+## 大型题库
+泸江，星火英语...
+## 方法
+Python爬取
+
+# MRC[^1]
+
+[^1]: machine reading comprehension
+
+## 简介
+发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。
