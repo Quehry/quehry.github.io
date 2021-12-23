@@ -1,0 +1,151 @@
+I"V<h1 id="计算机图形学">计算机图形学</h1>
+<h2 id="lecture-01-overview-of-computer-graphics">Lecture 01 Overview of Computer Graphics</h2>
+<h3 id="课程情况">课程情况</h3>
+<ul>
+  <li>授课老师：闫令琪</li>
+  <li>授课形式：网课（B站）</li>
+</ul>
+
+<h3 id="什么是好的画面">什么是好的画面</h3>
+<p>画面<strong>亮</strong></p>
+<h3 id="应用场景">应用场景</h3>
+<p>电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。</p>
+
+<p>电影中里程碑：阿凡达，大量应用面部捕捉技术。</p>
+<h3 id="rasterization-光栅化">Rasterization 光栅化</h3>
+<p>实时，FPS&gt;30</p>
+
+<p>离线, FPS&lt;30</p>
+<h3 id="计算机视觉">计算机视觉</h3>
+<p>计算机图形学离不开计算机视觉，但是视觉一般是对图像的处理。</p>
+
+<h3 id="推荐书籍">推荐书籍</h3>
+<p>Tiger虎书</p>
+
+<h2 id="lecture-02-review-of-linear-algebra">Lecture 02 Review of Linear Algebra</h2>
+<h3 id="图形学依赖学科">图形学依赖学科</h3>
+<p>Optics, Mechanics, Linear algebra, statics, Singal processing, numerical analysis数值分析</p>
+
+<h3 id="向量">向量</h3>
+
+<p>向量的定义</p>
+
+<p><img src="../assets/img/posts/20211221/9.jpg" /></p>
+
+<p>单位向量</p>
+
+<p><img src="../assets/img/posts/20211221/10.jpg" /></p>
+
+<p>向量计算，向量加法</p>
+
+<p><img src="../assets/img/posts/20211221/11.jpg" /></p>
+
+<p>用笛卡尔坐标系表示向量</p>
+
+<p><img src="../assets/img/posts/20211221/12.jpg" /></p>
+
+<p>向量乘法，点乘和叉乘，点乘在笛卡尔坐标系中就是对应元素相乘。</p>
+
+<p>在图形学中，点乘是为了寻找两个向量的夹角(夹角可以判断两个向量方向的接近程度)，或者获得一个向量在另一个向量的投影，还可以获得向量的分解。</p>
+
+<p><img src="../assets/img/posts/20211221/13.jpg" /></p>
+
+<p>叉乘，叉积结果垂直于这两个向量所在的平面，满足右手定则。向量的叉乘可以写成矩阵形式。</p>
+
+<p>在图形学中的应用：判断左右关系，比如a^b&gt;0，说明b在a的左边。还可以判断内外，比如判断一个点是否在一个三角形内。</p>
+
+<p><img src="../assets/img/posts/20211221/14.jpg" /></p>
+
+<p>坐标系的定义，右手坐标系</p>
+
+<p><img src="../assets/img/posts/20211221/15.jpg" /></p>
+
+<h3 id="矩阵">矩阵</h3>
+
+<p>矩阵定义</p>
+
+<p><img src="../assets/img/posts/20211221/16.jpg" /></p>
+
+<p>矩阵乘法</p>
+
+<p><img src="../assets/img/posts/20211221/17.jpg" /></p>
+
+<p>矩阵乘法没有交换律，但是有结合律</p>
+
+<p>矩阵转置，矩阵的逆</p>
+
+<p>向量的点乘和叉乘都可以写成矩阵乘法形式</p>
+
+<p><img src="../assets/img/posts/20211221/18.jpg" /></p>
+
+<h2 id="lecture-03-transformation">Lecture 03 Transformation</h2>
+
+<h3 id="why-transformation-为什么要变换">why transformation 为什么要变换</h3>
+<p>viewing: 3D to 2D projection</p>
+
+<h3 id="2d变换">2D变换</h3>
+<ul>
+  <li>缩放 scale transform</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/19.jpg" /></p>
+
+<ul>
+  <li>非均匀缩放 scale(non-uniform)</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/20.jpg" /></p>
+
+<ul>
+  <li>翻转 reflection matrix</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/21.jpg" /></p>
+
+<ul>
+  <li>切变 shear matrix</li>
+</ul>
+
+<p>竖直方向上没有变化，水平方向上发生了变化</p>
+
+<p><img src="../assets/img/posts/20211221/22.jpg" /></p>
+
+<ul>
+  <li>旋转 Rotate</li>
+</ul>
+
+<p>旋转默认绕零点逆时针旋转</p>
+
+<p><img src="../assets/img/posts/20211221/23.jpg" /></p>
+
+<p>二维旋转矩阵R</p>
+
+<p>上述所有的变化都可以写成x$\prime$=Mx，也就是线性变换</p>
+
+<h3 id="齐次坐标-homogeneous-coordinate">齐次坐标 homogeneous coordinate</h3>
+
+<ul>
+  <li>
+    <p>为什么要引入齐次坐标，因为对于简单的平移操作并不能写成线性变换的形式，但是人们也不想认为平移是一种特殊的变换，所以引入齐次坐标</p>
+  </li>
+  <li>
+    <p>齐次坐标</p>
+  </li>
+</ul>
+
+<p>注意点和向量的表示方法不同</p>
+
+<p><img src="../assets/img/posts/20211221/24.jpg" /></p>
+
+<ul>
+  <li>仿射变换 affine transformations</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/25.jpg" /></p>
+
+<ul>
+  <li>2D Transformations</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/26.jpg" /></p>
+:ET

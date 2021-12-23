@@ -1085,6 +1085,46 @@
 			
 
 				<div class="post">
+					<a class="post-list-title" href="./Machine-Learning.html">机器学习</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2021-12-22T00:00:00+08:00">December 22, 2021</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						
+<a class="read-more" href="./Machine-Learning.html"> read more</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
 					<a class="post-list-title" href="./Computer_Graphics.html">计算机图形学</a>
 					
 
@@ -1187,68 +1227,6 @@
 </ul>
 
 <a class="read-more" href="./1221%E7%BB%84%E4%BC%9A.html"> read more</a>
-					</div>
-				</div>
-			
-			
-
-				<div class="post">
-					<a class="post-list-title" href="./Recommender_system.html">推荐系统</a>
-					
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2021-12-16T00:00:00+08:00">December 16, 2021</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        less than 1 minute read
-      
-    </span>
-  
-  
-  </span>
-
-					<div class="post-excerpt">
-						<h1 id="推荐系统">推荐系统</h1>
-<h2 id="1矩阵分解-matrix-factorization">1.矩阵分解 Matrix Factorization</h2>
-<h3 id="11-the-matrix-factorization-model">1.1 The Matrix Factorization Model</h3>
-<p>R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R<sup>mxn</sup>。P是user latent matrix，P∈R<sup>mxk</sup>，Q是item latent matrix，Q∈R<sup>nxk</sup></p>
-
-<p>矩阵分解就是把R分解成P和Q，那么预测的评分就是：</p>
-
-<p><img src="../assets/img/posts/20211216/2.jpg" /></p>
-
-<p>但是上面这个式子没有考虑偏置，我们会有下面这个完整的式子：</p>
-
-<p><img src="../assets/img/posts/20211216/3.jpg" /></p>
-
-<p>那么<strong>目标函数</strong>可以定义为：</p>
-
-<p><img src="../assets/img/posts/20211216/4.jpg" /></p>
-
-<p>右边那一串是正则项，为了避免过拟合</p>
-
-<p>下面这张图值观的展示了矩阵分解过程：</p>
-
-<p><img src="../assets/img/posts/20211216/5.jpg" /></p>
-
-<a class="read-more" href="./Recommender_system.html"> read more</a>
 					</div>
 				</div>
 			
@@ -1747,7 +1725,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h1 id="自制类race数据集">自制类RACE数据集</h1> <h2 id="race数据集">RACE数据集</h2> <p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p> <ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li> </ul> <h2 id="race数据集格式">RACE数据集格式</h2> <p>Each passage is a JSON file. The JSON file contains following fields:</p> <ol> <li>article: A string, which is the passage. 文章</li> <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干</li> <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项</li> <li>answers: A list contains the golden label...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
+						<h1 id="race">RACE</h1> <h2 id="简介">简介</h2> <p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p> <ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li> </ul> <h2 id="race数据集格式">RACE数据集格式</h2> <p>Each passage is a JSON file. The JSON file contains following fields:</p> <ol> <li>article: A string, which is the passage. 文章</li> <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干</li> <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项</li> <li>answers: A list contains the golden label...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
 					</div>
 				</div>
 			
@@ -1855,7 +1833,7 @@
                 <li><a href="./tag.html?tag=neural+networks" class="tag">neural networks <span>(4)</span></a></li>
             
                 
-                <li><a href="./tag.html?tag=note" class="tag">note <span>(5)</span></a></li>
+                <li><a href="./tag.html?tag=note" class="tag">note <span>(6)</span></a></li>
             
                 
                 <li><a href="./tag.html?tag=optimization" class="tag">optimization <span>(1)</span></a></li>

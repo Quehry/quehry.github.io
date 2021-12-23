@@ -22,7 +22,7 @@
   "headline": "制作类RACE数据集",
   "abstract": "帮助学长制作RACE数据集",
     "keywords": "work",
-    "wordcount": "145",
+    "wordcount": "157",
     "image": ["http://localhost:4000/assets/imgposts/20211221/2.jpg"],
   "datePublished": "2021-12-21 00:00:00 +0800",
   "dateModified": "2021-12-21 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="帮助学长制作RACE数据集">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="145"/>
+<meta data-rh="true" name="twitter:data1" content="157"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211221/2.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -168,7 +168,7 @@
   </span>
 
         <div class="post-excerpt">
-            <h1 id="自制类race数据集">自制类RACE数据集</h1><h2 id="race数据集">RACE数据集</h2><p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p><ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li></ul><h2 id="race数据集格式">RACE数据集格式</h2><p>Each passage is a JSON file. The JSON file contains following fields:</p><ol> <li>article: A string, which is the passage. 文章</li> <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干</li> <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项</li> <li>answers: A list contains the golden label of each query.四个题目的正确答案</li> <li>id: Each passage has...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
+            <h1 id="race">RACE</h1><h2 id="简介">简介</h2><p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p><ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li></ul><h2 id="race数据集格式">RACE数据集格式</h2><p>Each passage is a JSON file. The JSON file contains following fields:</p><ol> <li>article: A string, which is the passage. 文章</li> <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干</li> <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项</li> <li>answers: A list contains the golden label of each query.四个题目的正确答案</li> <li>id: Each passage has...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
         </div>
   </div>
 </section>
@@ -342,8 +342,8 @@
 
         
         
-        <h1 id="自制类race数据集">自制类RACE数据集</h1>
-<h2 id="race数据集">RACE数据集</h2>
+        <h1 id="race">RACE</h1>
+<h2 id="简介">简介</h2>
 <p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p>
 
 <ul>
@@ -377,6 +377,7 @@
 
 <p><img src="../assets/img/posts/20211221/5.jpg" /></p>
 
+<h1 id="gaorace">GaoRACE</h1>
 <h2 id="gao他们对于race数据集的处理">Gao他们对于RACE数据集的处理</h2>
 <ul>
   <li>去掉了那些误导选项和文章语义不相关的数据</li>
@@ -415,6 +416,24 @@
 <p>Gao说有去掉一些语义不相关的误导选项，但是在代码中并没有看见这步操作？？</p>
 
 <p><img src="../assets/img/posts/20211221/8.jpg" /></p>
+
+<h1 id="自制数据集">自制数据集</h1>
+<h2 id="大型题库">大型题库</h2>
+<p>泸江，星火英语…</p>
+<h2 id="方法">方法</h2>
+<p>Python爬取</p>
+
+<h1 id="mrc">MRC<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></h1>
+
+<h2 id="简介-1">简介</h2>
+<p>发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>machine reading comprehension <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
         <aside class="sidebar inline" id="post-end">
     
@@ -488,6 +507,37 @@
           
           
 
+          <a href="./Machine-Learning.html" class="recent-item-img" style="background: url('./assets/img/posts/20211222/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>机器学习</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
           <a href="./RACElike-datasets.html" class="recent-item-img" style="background: url('./assets/img/posts/20211221/2.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>制作类RACE数据集</span>
@@ -553,37 +603,6 @@
           <a href="./1221%E7%BB%84%E4%BC%9A.html" class="recent-item-img" style="background: url('./assets/img/posts/20211221/6.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>组会记录</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        less than 1 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./Recommender_system.html" class="recent-item-img" style="background: url('./assets/img/posts/20211216/1.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>推荐系统</span>
               
 
   <span class = "recent-item-meta">

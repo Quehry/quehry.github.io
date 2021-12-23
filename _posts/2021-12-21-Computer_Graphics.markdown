@@ -89,3 +89,147 @@ Optics, Mechanics, Linear algebra, statics, Singal processing, numerical analysi
 <img src='../assets/img/posts/20211221/18.jpg'>
 
 ## Lecture 03 Transformation
+
+### why transformation 为什么要变换
+viewing: 3D to 2D projection
+
+### 2D变换
+- 缩放 scale transform
+
+<img src='../assets/img/posts/20211221/19.jpg'>
+
+- 非均匀缩放 scale(non-uniform)
+
+<img src='../assets/img/posts/20211221/20.jpg'>
+
+- 翻转 reflection matrix
+
+<img src='../assets/img/posts/20211221/21.jpg'>
+
+- 切变 shear matrix
+
+竖直方向上没有变化，水平方向上发生了变化
+
+<img src='../assets/img/posts/20211221/22.jpg'>
+
+- 旋转 Rotate 
+
+旋转默认绕零点逆时针旋转
+
+<img src='../assets/img/posts/20211221/23.jpg'>
+
+二维旋转矩阵R
+
+上述所有的变化都可以写成x$\prime$=Mx，也就是线性变换
+
+### 齐次坐标 homogeneous coordinate
+
+- 为什么要引入齐次坐标，因为对于简单的平移操作并不能写成线性变换的形式，但是人们也不想认为平移是一种特殊的变换，所以引入齐次坐标
+
+- 齐次坐标
+
+注意点和向量的表示方法不同
+
+<img src='../assets/img/posts/20211221/24.jpg'>
+
+- 仿射变换 affine transformations
+
+<img src='../assets/img/posts/20211221/25.jpg'>
+
+- 2D Transformations
+
+<img src='../assets/img/posts/20211221/26.jpg'>
+
+- 逆变换就是乘以逆矩阵
+
+- 复杂的变换都是简单的变换的组合，变换的组合顺序很重要
+
+- 绕着某一个点（非原点）旋转的分解
+
+<img src='../assets/img/posts/20211221/27.jpg'>
+
+## Lecture 04 Transformation Cont.
+
+### 3D Transformations
+
+- 齐次坐标
+
+对于w不等于1，每一个坐标除以w
+
+<img src='../assets/img/posts/20211221/28.jpg'>
+
+- 正交矩阵
+
+一个矩阵的逆等于矩阵的转置，旋转矩阵就是一个正交矩阵
+
+- 仿射变换（旋转+平移）
+
+仿射变换是先进行旋转再进行平移
+
+<img src='../assets/img/posts/20211221/29.jpg'>
+
+- 矩阵表示（缩放，平移）
+
+<img src='../assets/img/posts/20211221/30.jpg'>
+
+- 旋转
+
+绕着某一个轴旋转
+
+<img src='../assets/img/posts/20211221/31.jpg'>
+
+一般的旋转（分解成三个坐标轴的旋转）
+
+<img src='../assets/img/posts/20211221/32.jpg'>
+
+Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公式
+
+<img src='../assets/img/posts/20211221/33.jpg'>
+
+### view transformation 视图变换
+
+- 观测变换viewing，包括了视图变化和投影变化
+
+- MVP变换(model->view->projection)
+
+<img src='../assets/img/posts/20211221/34.jpg'>
+
+- view transformation(不等于viewing) 视图变换
+
+视图变换是把相机放到标准位置上，located at origin, look at -Z
+
+<img src='../assets/img/posts/20211221/35.jpg'>
+
+利用逆变换，先平移再旋转
+
+<img src='../assets/img/posts/20211221/36.jpg'>
+
+一般把model和view变换统称为view transformation
+
+### projection transformation 投影变换
+- orthographic vs perspectiive projection 
+
+<img src='../assets/img/posts/20211221/37.jpg'>
+
+- orthographic projection 正交投影
+
+<img src='../assets/img/posts/20211221/38.jpg'>
+
+平移，缩放（不考虑旋转）
+
+<img src='../assets/img/posts/20211221/39.jpg'>
+
+- perspective projection 透视投影
+
+满足近大远小
+
+透视投影就是先把物体挤压成立方体，然后对立方体进行正交投影
+
+<img src='../assets/img/posts/20211221/41.jpg'>
+
+<img src='../assets/img/posts/20211221/40.jpg'>
+
+<img src='../assets/img/posts/20211221/42.jpg'>
+
+<img src='../assets/img/posts/20211221/43.jpg'>
+
