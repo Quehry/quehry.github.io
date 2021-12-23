@@ -77,15 +77,40 @@ Gao说有去掉一些语义不相关的误导选项，但是在代码中并没�
 
 <img src='../assets/img/posts/20211221/8.jpg'>
 
-# 自制数据集
-## 大型题库
-泸江，星火英语...
-## 方法
-Python爬取
-
 # MRC[^1]
 
 [^1]: machine reading comprehension
 
 ## 简介
-发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。
+发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。现在对这篇综述简单介绍一下
+
+## Title
+English Machine Reading Comprehension Datasets: A Survey
+
+## Abstract 
+文献收集了60个英语阅读理解数据集，分别从不同维度进行比较，包括size, vocabulary, data source, method of creation, human performance level, first question word。调研发现维基百科是最多的数据来源，同时也发现了缺少很多why,when,where问题。
+
+## Table 一张十分完整的表格
+
+<img src='../assets/img/posts/20211221/44.jpg'>
+
+首先我简单解释以下这个表格，这个表格一个收录了18个Multiple Choice Datasets,也就是说这18个数据集都着眼于多选题。
+- 第一列是数据集的名称。
+- 第二列表示数据集中问题的个数(size)。
+- 第三列表示数据集中文章的来源，其中ER表示education resource, AG表示automatically generated即自动生成,CRW表示crowdsourcing。
+- 第四列表示答案的来源(answer)，其中UG表示user generated。
+- 第五列LB表示leader board available，即是否有排行榜，带*表示排行榜在[网站](https://paperswithcode.com/)上发布。 
+- 第六列表示人在该数据集上的表现。
+- 第七列表示该数据集是否有被解决，也就是说是否有比较好的模型能在该数据集上表现良好。
+- 第八列表示问题第一个单词出现最频繁的是哪个？比如what,how,which这样的单词。
+- 第九列PAD表示是否开源。
+
+## 值得关注的地方
+这么多数据集中，来源于考试题目的有RACE,RACE-C,DREAM,ReClor,这些数据集的收集方法可以借鉴。
+
+
+# 自制数据集
+## 大型题库
+泸江，星火英语...
+## 方法
+Python爬取网页

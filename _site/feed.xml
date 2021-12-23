@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-23T11:46:40+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html"></content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html">&lt;h1 id=&quot;vae&quot;&gt;VAE&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-23T13:31:35+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html"></content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html">&lt;h1 id=&quot;vae&quot;&gt;VAE&lt;/h1&gt;
 &lt;h2 id=&quot;ae&quot;&gt;AE&lt;/h2&gt;
 &lt;p&gt;Auto-Encoder自动编码器，比如Seq2seq模型。&lt;/p&gt;
 
@@ -101,16 +101,42 @@
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/8.jpg&quot; /&gt;&lt;/p&gt;
 
+&lt;h1 id=&quot;mrc&quot;&gt;MRC&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h1&gt;
+
+&lt;h2 id=&quot;简介-1&quot;&gt;简介&lt;/h2&gt;
+&lt;p&gt;发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。现在对这篇综述简单介绍一下&lt;/p&gt;
+
+&lt;h2 id=&quot;title&quot;&gt;Title&lt;/h2&gt;
+&lt;p&gt;English Machine Reading Comprehension Datasets: A Survey&lt;/p&gt;
+
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;文献收集了60个英语阅读理解数据集，分别从不同维度进行比较，包括size, vocabulary, data source, method of creation, human performance level, first question word。调研发现维基百科是最多的数据来源，同时也发现了缺少很多why,when,where问题。&lt;/p&gt;
+
+&lt;h2 id=&quot;table-一张十分完整的表格&quot;&gt;Table 一张十分完整的表格&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/44.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;首先我简单解释以下这个表格，这个表格一个收录了18个Multiple Choice Datasets,也就是说这18个数据集都着眼于多选题。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;第一列是数据集的名称。&lt;/li&gt;
+  &lt;li&gt;第二列表示数据集中问题的个数(size)。&lt;/li&gt;
+  &lt;li&gt;第三列表示数据集中文章的来源，其中ER表示education resource, AG表示automatically generated即自动生成,CRW表示crowdsourcing。&lt;/li&gt;
+  &lt;li&gt;第四列表示答案的来源(answer)，其中UG表示user generated。&lt;/li&gt;
+  &lt;li&gt;第五列LB表示leader board available，即是否有排行榜，带*表示排行榜在&lt;a href=&quot;https://paperswithcode.com/&quot;&gt;网站&lt;/a&gt;上发布。&lt;/li&gt;
+  &lt;li&gt;第六列表示人在该数据集上的表现。&lt;/li&gt;
+  &lt;li&gt;第七列表示该数据集是否有被解决，也就是说是否有比较好的模型能在该数据集上表现良好。&lt;/li&gt;
+  &lt;li&gt;第八列表示问题第一个单词出现最频繁的是哪个？比如what,how,which这样的单词。&lt;/li&gt;
+  &lt;li&gt;第九列PAD表示是否开源。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;值得关注的地方&quot;&gt;值得关注的地方&lt;/h2&gt;
+&lt;p&gt;这么多数据集中，来源于考试题目的有RACE,RACE-C,DREAM,ReClor,这些数据集的收集方法可以借鉴。&lt;/p&gt;
+
 &lt;h1 id=&quot;自制数据集&quot;&gt;自制数据集&lt;/h1&gt;
 &lt;h2 id=&quot;大型题库&quot;&gt;大型题库&lt;/h2&gt;
 &lt;p&gt;泸江，星火英语…&lt;/p&gt;
 &lt;h2 id=&quot;方法&quot;&gt;方法&lt;/h2&gt;
-&lt;p&gt;Python爬取&lt;/p&gt;
-
-&lt;h1 id=&quot;mrc&quot;&gt;MRC&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h1&gt;
-
-&lt;h2 id=&quot;简介-1&quot;&gt;简介&lt;/h2&gt;
-&lt;p&gt;发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。&lt;/p&gt;
+&lt;p&gt;Python爬取网页&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;

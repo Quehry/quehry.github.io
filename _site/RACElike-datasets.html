@@ -22,7 +22,7 @@
   "headline": "制作类RACE数据集",
   "abstract": "帮助学长制作RACE数据集",
     "keywords": "work",
-    "wordcount": "157",
+    "wordcount": "201",
     "image": ["http://localhost:4000/assets/imgposts/20211221/2.jpg"],
   "datePublished": "2021-12-21 00:00:00 +0800",
   "dateModified": "2021-12-21 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="帮助学长制作RACE数据集">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="157"/>
+<meta data-rh="true" name="twitter:data1" content="201"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211221/2.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -160,7 +160,7 @@
     
     <span class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </span>
   
@@ -300,7 +300,7 @@
     
     <span class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </span>
   
@@ -417,16 +417,42 @@
 
 <p><img src="../assets/img/posts/20211221/8.jpg" /></p>
 
+<h1 id="mrc">MRC<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></h1>
+
+<h2 id="简介-1">简介</h2>
+<p>发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。现在对这篇综述简单介绍一下</p>
+
+<h2 id="title">Title</h2>
+<p>English Machine Reading Comprehension Datasets: A Survey</p>
+
+<h2 id="abstract">Abstract</h2>
+<p>文献收集了60个英语阅读理解数据集，分别从不同维度进行比较，包括size, vocabulary, data source, method of creation, human performance level, first question word。调研发现维基百科是最多的数据来源，同时也发现了缺少很多why,when,where问题。</p>
+
+<h2 id="table-一张十分完整的表格">Table 一张十分完整的表格</h2>
+
+<p><img src="../assets/img/posts/20211221/44.jpg" /></p>
+
+<p>首先我简单解释以下这个表格，这个表格一个收录了18个Multiple Choice Datasets,也就是说这18个数据集都着眼于多选题。</p>
+<ul>
+  <li>第一列是数据集的名称。</li>
+  <li>第二列表示数据集中问题的个数(size)。</li>
+  <li>第三列表示数据集中文章的来源，其中ER表示education resource, AG表示automatically generated即自动生成,CRW表示crowdsourcing。</li>
+  <li>第四列表示答案的来源(answer)，其中UG表示user generated。</li>
+  <li>第五列LB表示leader board available，即是否有排行榜，带*表示排行榜在<a href="https://paperswithcode.com/">网站</a>上发布。</li>
+  <li>第六列表示人在该数据集上的表现。</li>
+  <li>第七列表示该数据集是否有被解决，也就是说是否有比较好的模型能在该数据集上表现良好。</li>
+  <li>第八列表示问题第一个单词出现最频繁的是哪个？比如what,how,which这样的单词。</li>
+  <li>第九列PAD表示是否开源。</li>
+</ul>
+
+<h2 id="值得关注的地方">值得关注的地方</h2>
+<p>这么多数据集中，来源于考试题目的有RACE,RACE-C,DREAM,ReClor,这些数据集的收集方法可以借鉴。</p>
+
 <h1 id="自制数据集">自制数据集</h1>
 <h2 id="大型题库">大型题库</h2>
 <p>泸江，星火英语…</p>
 <h2 id="方法">方法</h2>
-<p>Python爬取</p>
-
-<h1 id="mrc">MRC<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></h1>
-
-<h2 id="简介-1">简介</h2>
-<p>发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。</p>
+<p>Python爬取网页</p>
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
@@ -552,7 +578,7 @@
     
     <p class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </p>
   
