@@ -1,4 +1,387 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-23T13:31:35+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html"></content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html">&lt;h1 id=&quot;vae&quot;&gt;VAE&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-24T18:33:20+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#目录&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#第2章-模型评估与选择&quot;&gt;第2章 模型评估与选择&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#20-思维导图&quot;&gt;2.0 思维导图&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-经验误差与过拟合&quot;&gt;2.1 经验误差与过拟合&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-评估方法&quot;&gt;2.2 评估方法&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#221-留出法&quot;&gt;2.2.1 留出法&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#222-交叉验证法&quot;&gt;2.2.2 交叉验证法&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#223-自助法&quot;&gt;2.2.3 自助法&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#23-性能度量&quot;&gt;2.3 性能度量&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#231-错误率与精度&quot;&gt;2.3.1 错误率与精度&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#232-查准率查全率与f1&quot;&gt;2.3.2 查准率、查全率与F1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#233-roc与auc&quot;&gt;2.3.3 ROC与AUC&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#234-代价敏感错误率与代价曲线&quot;&gt;2.3.4 代价敏感错误率与代价曲线&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#24-比较检验&quot;&gt;2.4 比较检验&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#241-假设检验&quot;&gt;2.4.1 假设检验&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#242-交叉验证t检验&quot;&gt;2.4.2 交叉验证t检验&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#243-mcnemar检验&quot;&gt;2.4.3 McNemar检验&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#244-friedman检验与nemenyi后续检验&quot;&gt;2.4.4 Friedman检验与Nemenyi后续检验&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#25-偏差与方差&quot;&gt;2.5 偏差与方差&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h1 id=&quot;第2章-模型评估与选择&quot;&gt;第2章 模型评估与选择&lt;/h1&gt;
+
+&lt;h2 id=&quot;20-思维导图&quot;&gt;2.0 思维导图&lt;/h2&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/16.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;21-经验误差与过拟合&quot;&gt;2.1 经验误差与过拟合&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;定义：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;错误率(error rate)&lt;/strong&gt;: 如果m个样本中有a个样本分类错误，则错误率E=a/m。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;精度(accuracy)&lt;/strong&gt;：精度=1-错误率。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;训练误差&lt;/strong&gt;：学习器在训练集上的误差称为训练误差或者经验误差。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;泛化误差(generalization error)&lt;/strong&gt;：学习器在新样本上的误差称为泛化误差。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;过拟合(overfitting)&lt;/strong&gt;：当学习器把训练样本学得太好了的时候，很可能把训练样本自身的一些特点当作了所有潜在样本都会具有的一般性质，这就会导致泛化性能下降。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;欠拟合(underfitting)&lt;/strong&gt;：对训练样本的一般性质尚未学好。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;22-评估方法&quot;&gt;2.2 评估方法&lt;/h2&gt;
+&lt;p&gt;通常我们可通过实验测试来对学习器的泛化误差进行评估而做出选择，于是我们需要一个&lt;strong&gt;测试集(testing set)&lt;/strong&gt;，然后以测试集上的测试误差作为泛化误差的近似。下面介绍一些常见的处理数据集D的方法(数据集D-&amp;gt;训练集S+测试集T)&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;221-留出法&quot;&gt;2.2.1 留出法&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;留出发(hold-out)直接将数据集D划分为两个互斥的集合，其中一个集合作为训练集S，另一个作为测试集T。在S上训练出模型后，用T来评估其测试误差。&lt;/li&gt;
+  &lt;li&gt;以采样的角度来看待数据集划分的过程，则保留类别比例的采样方式通常称为&lt;strong&gt;分层采样&lt;/strong&gt;。比如1000个样本，50%的正例，50%负例，以7：3划分数据集，那么训练集包含350个正例和350个负例就是分层采样。&lt;/li&gt;
+  &lt;li&gt;在使用留出法评估结果时，一般要采用若干次随即划分、重复进行实验评估后取平均值作为留出法的评估结果。&lt;/li&gt;
+  &lt;li&gt;常用做法时将大约2/3~4/5的样本用于训练。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;222-交叉验证法&quot;&gt;2.2.2 交叉验证法&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;交叉验证法(cross validation)&lt;/strong&gt;先将数据集D划分为k个大小相似的互斥子集，每个子集D&lt;sub&gt;i&lt;/sub&gt;都尽可能保持数据分布的一致性。然后每次用k-1个自己的并集作为训练集，余下的那个子集作为测试集，这样就可以获得k组训练/测试集，从而可进行k次训练和测试，最终返回的是这k个测试结果的均值。&lt;/li&gt;
+  &lt;li&gt;交叉验证也称为k折交叉验证。k的常见取值有10、5、20。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;留一法&lt;/strong&gt;就是k=m，其中数据集D有m个样本。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;223-自助法&quot;&gt;2.2.3 自助法&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;自助法(bootstrapping)&lt;/strong&gt;：给定包含m个样本的数据集D，每次随机从D中挑选一个样本，将其拷贝放入D’, 然后再将该样本放回最初的数据集D中，这个过程重复执行m次后，我们获得了包含m个样本的数据集D’。我们将D’作为训练集，D\D’作为测试集。&lt;/li&gt;
+  &lt;li&gt;不难发现大概有36.8%(m趋于无限大时)的样本再m次采样中始终不被采到。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;$\lim\limits_{m\rightarrow\infty}(1-\frac{1}{m})^m = \frac{1}{e} ≈ 0.368$&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;缺点：自助法产生的数据集改变了初始数据集的分布，这样会引入估计偏差。因此，在初始数据量足够时，留出法和交叉验证法更常用一些。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;23-性能度量&quot;&gt;2.3 性能度量&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;对学习器的泛化性能进行评估，不仅需要有效可行的实验估计方法，还需要有衡量模型泛化能力的评价标准，这就是&lt;strong&gt;性能度量(performance measure)&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;在预测任务中，给定D = {(x&lt;sub&gt;1&lt;/sub&gt;,y&lt;sub&gt;1&lt;/sub&gt;), (x&lt;sub&gt;2&lt;/sub&gt;,y&lt;sub&gt;2&lt;/sub&gt;)…(x&lt;sub&gt;m&lt;/sub&gt;,y&lt;sub&gt;m&lt;/sub&gt;)}, 其中y&lt;sub&gt;i&lt;/sub&gt;是x&lt;sub&gt;i&lt;/sub&gt;的真实标记。学习器f。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;均方误差(mean squared error)&lt;/strong&gt;：回归任务最常用的性能度量是均方误差：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;$E(f;D)=\frac{1}{m}\sum_1^m(f(x_i)-y_i)^2$&lt;/center&gt;
+
+&lt;p&gt;接下来我将介绍&lt;strong&gt;分类任务&lt;/strong&gt;中常用的性能度量&lt;/p&gt;
+
+&lt;h3 id=&quot;231-错误率与精度&quot;&gt;2.3.1 错误率与精度&lt;/h3&gt;
+&lt;p&gt;本章开头提到了错误率和精度，这是分类任务中最常用的两种性能度量，既适用于二分类任务，也适用于多分类任务。&lt;/p&gt;
+
+&lt;h3 id=&quot;232-查准率查全率与f1&quot;&gt;2.3.2 查准率、查全率与F1&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;针对二分类问题，可将样例根据其真实类别与学习器预测类别的组合划分为真正例(true positive)、假正例(false positive)、真反例(true negative)、假反例(false negative)，分别记为TP、FP、TN、FN。&lt;/li&gt;
+  &lt;li&gt;混淆矩阵(confusion matrix)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;真\预&lt;/td&gt;
+      &lt;td&gt;正例&lt;/td&gt;
+      &lt;td&gt;反例&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;正例&lt;/td&gt;
+      &lt;td&gt;TP&lt;/td&gt;
+      &lt;td&gt;FN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;反例&lt;/td&gt;
+      &lt;td&gt;FP&lt;/td&gt;
+      &lt;td&gt;TN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;查准率(precision)，记为P，它表示选择的好瓜中有多少是真正的好瓜&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;$P=\frac{TP}{TP+FP}$&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;查全率(recall)，记为R，它表示好瓜中有多少被选出来了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;$R=\frac{TP}{TP+FN}$&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;一般来说，查准率高时，查全率往往偏低；而查全率高时，查准率往往偏低。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;P-R曲线：在很多情形下，我们可根据学习器的预测结果对样例进行排序，排在前面的是学习器认为最可能是正例的样本，排在最后的则是学习器认为最不可能是正例的样本，按此顺序逐个把样本作为正例进行预测，则每次可以计算出当前的查全率、查准率，也得到了P-R图。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/2.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果一个学习器的P-R曲线被另一个学习器的曲线完全包住，则可断言后者的性能优于前者。如果两者曲线相交，则可以通过比较平衡点(break-even-point)来比较，越大越好。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;F1度量：F1综合考虑了查准率和查全率，是他们的调和平均&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;$F1=\frac{2*P*R}{P+R}$&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;F1的一般形式：有时候我们希望赋予查准率和查重率不同的权重：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;$F_\beta=\frac{(1+\beta^2)*P*R}{\beta^2*P+R}$&lt;/center&gt;
+
+&lt;p&gt;其中β大于1表示查全率有更大影响&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;有时候我们有多个二分类混淆矩阵，我们希望在这n个混淆矩阵上综合考虑查准率和查全率，那么我们有以下的度量&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;宏查准率macro-P，宏查全率macro-R，宏F1：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;$macro-P=\frac{1}{n}\sum_1^nP_i$&lt;/center&gt;
+
+&lt;center&gt;$macro-R=\frac{1}{n}\sum_1^nR_i$&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;微查准率micro-P，微查全率micro-P，微F1：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;对TP、FP、TN、FN进行平均&lt;/p&gt;
+
+&lt;center&gt;$micro-P=\frac{\overline{TP}}{\overline{TP}+\overline{FP}}$&lt;/center&gt;
+
+&lt;center&gt;$micro-P=\frac{\overline{TP}}{\overline{TP}+\overline{FN}}$&lt;/center&gt;
+
+&lt;h3 id=&quot;233-roc与auc&quot;&gt;2.3.3 ROC与AUC&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;很多学习器是为测试样本产生一个实值或概率预测，然后将这个预测值与一个分类阈值进行比较，若大于阈值则分为正类，否则为反类。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ROC曲线是从排序角度来出发研究学习器的泛化性能的工具。ROC的全称是Receiver Operating Characteristic。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;与P-R曲线类似，我们根据学习器的预测结果进行排序，按此顺序逐个把样本作为正例进行预测，计算出真正例率TPR(true positive rate)与假正例率FPR(false positive rate)并以它们分别为横纵坐标画出ROC曲线&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;$TPR=\frac{TP}{TP+FN}$&lt;/center&gt;
+
+&lt;center&gt;$FPR=\frac{FP}{FP+TN}$&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/3.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;同样的，如果一个学习器的ROC曲线被另一个学习器完全包住，则认为后者的性能优于前者。若两个曲线相交，则比较曲线下的面积AUC(area under curve)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;形式化的看，AUC考虑的是样本预测的排序质量，那么我们可以定义一个排序损失l&lt;sub&gt;rank&lt;/sub&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/4.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;AUC=1-l&lt;sub&gt;rank&lt;/sub&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;234-代价敏感错误率与代价曲线&quot;&gt;2.3.4 代价敏感错误率与代价曲线&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;有时候将正例误判断为负例与将负例误判断为正例所带来的后果不一样，我们赋予它们非均等代价&lt;/li&gt;
+  &lt;li&gt;代价矩阵(cost matrix)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;真\预&lt;/td&gt;
+      &lt;td&gt;第0类&lt;/td&gt;
+      &lt;td&gt;第1类&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;第0类&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;cost&lt;sub&gt;01&lt;/sub&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;第1类&lt;/td&gt;
+      &lt;td&gt;cost&lt;sub&gt;10&lt;/sub&gt;&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;其中cost&lt;sub&gt;ij&lt;/sub&gt;表示将第i类样本预测为第j类样本的代价&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;代价敏感错误率&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/5.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在非均等代价下，ROC曲线不能直接反映出学习器的期望总代价，而代价曲线则可达到此目的，横轴是正例概率代价，纵轴是归一化代价&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/6.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/7.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/8.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;24-比较检验&quot;&gt;2.4 比较检验&lt;/h2&gt;
+&lt;p&gt;我们有了实验评估方法与性能度量，是否就可以对学习器的性能进行评估比较了呢？实际上，机器学习中性能比较这件事比大家想象的要复杂很多，我们需要考虑多种因素的影响，下面介绍一些对学习器性能进行比较的方法，本小节默认以错误率作为性能度量。(但我觉得似乎同一个数据集下就可以比较)&lt;/p&gt;
+
+&lt;h3 id=&quot;241-假设检验&quot;&gt;2.4.1 假设检验&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;假设检验中的假设是对学习器泛化错误率分布的某种猜想或者判断，例如“ε=ε&lt;sub&gt;0&lt;/sub&gt;”这样的假设&lt;/li&gt;
+  &lt;li&gt;现实任务中我们并不知道学习器的泛化错误率，我们只能获知其测试错误率$\hat{\epsilon}$，但直观上，两者接近的可能性比较大，因此可根据测试错误率估推出泛化错误率的分布。&lt;/li&gt;
+  &lt;li&gt;泛化错误率为$\epsilon$的学习器被测得测试错误率为$\hat{\epsilon}$的概率：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/9.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;我们发现$\epsilon$符合二项分布&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/10.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;二项检验：我们可以使用&lt;strong&gt;二项检验(binomial test)&lt;/strong&gt;来对“$\epsilon$&amp;lt;0.3”这样的假设进行检验，即在$\alpha$显著度下，$1-\alpha$置信度下判断假设是否成立。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;t检验：我们也可以用t检验(t-test)来检验。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;上面介绍的都是针对单个学习器泛化性能的假设进行检验&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;242-交叉验证t检验&quot;&gt;2.4.2 交叉验证t检验&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;对于两个学习器A和B，若我们使用k折交叉验证法得到的测试错误率分别是$\epsilon_1^A$, $\epsilon_2^A$…$\epsilon_k^A$和$\epsilon_1^B$, $\epsilon_2^B$…$\epsilon_k^B$。其中$\epsilon_i^A$和$\epsilon_i^B$是在相同第i折训练集上得到的结果。则可以用k折交叉验证“成对t检验”来进行比较检验。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;我们这里的基本思想是若两个学习器的性能相同，则它们使用相同的训练测试集得到的错误率应该相同，即$\epsilon_i^A=\epsilon_1^B$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$\Delta_i$ = $\epsilon_i^A$ - $\epsilon_i^B$，然后对$\Delta$进行分析&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;243-mcnemar检验&quot;&gt;2.4.3 McNemar检验&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;对于二分类问题，使用留出法不仅可以估计出学习器A和B的测试错误率，还可获得两学习器分类结果的差别，即两者都正确、都错误…的样本数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/11.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;若我们假设两学习器性能相同，则应有e&lt;sub&gt;01&lt;/sub&gt;=e&lt;sub&gt;10&lt;/sub&gt;，那么变量|e&lt;sub&gt;01&lt;/sub&gt;-e&lt;sub&gt;10&lt;/sub&gt;|应该服从正态分布/卡方分布，然后用McNemar检验&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;244-friedman检验与nemenyi后续检验&quot;&gt;2.4.4 Friedman检验与Nemenyi后续检验&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;交叉验证t检验与McNemar检验都是在一个数据集上比较两个算法的性能，但是很多时候，我们会在一组数据集上比较多个算法。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;当有多个算法参与比较时，一种做法是在每个数据集上本别列出两两比较的结果。另一种方法则是基于算法排列的&lt;strong&gt;Friedman检验&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;假定我们用D&lt;sub&gt;1&lt;/sub&gt;, D&lt;sub&gt;2&lt;/sub&gt;, D&lt;sub&gt;3&lt;/sub&gt;, D&lt;sub&gt;4&lt;/sub&gt;四个数据集对算法A、B、C进行比较。首先，使用留出法或交叉验证法得到每个算法在每个数据集上的测试结果。然后在每个数据集上根据测试性能由好到坏排序，并赋予序值1,2,…若算法的测试性能相同，则平分序值。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/12.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;然后使用Fredman检验来判断这些算法是否性能都相同，若相同，那么它们的平均序值应当相同。r&lt;sub&gt;i&lt;/sub&gt;表示第i个算法的平均序值，那么它的均值和方差应该满足…&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;若“所有算法的性能相同”这个假设被拒绝，则说明算法的性能显著不同，这时需要后续检验(post-hoc test)来进一步区分各算法，常用的有Nemenyi后续检验&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Nemenyi检验计算出平均序值差别的临界值域&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/13.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在表中找到k=3时q&lt;sub&gt;0.05&lt;/sub&gt;=2.344，根据公式计算出临界值域CD=1.657，由表中的平均序值可知A与B算法的差距，以及算法B与C的差距均未超过临界值域，而算法A与C的差距超过临界值域，因此检验结果认为算法A与C的性能显著不同，而算法A与B以及算法B与C的性能没有显著差别。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/14.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;25-偏差与方差&quot;&gt;2.5 偏差与方差&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;对学习算法除了通过实验估计其泛化性能，人们往往还希望了解它“为什么”具有这样的性能。偏差-方差分解是解释学习算法泛化性能的一种重要工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;偏差&lt;/strong&gt;度量了学习算法的期望预测与真实结果的偏离程度，即刻画了学习算法本身的拟合能力&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;方差&lt;/strong&gt;度量了同样大小的训练集的变动所导致的学习性能的变化，即刻画了数据扰动所造成的影响&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;噪声&lt;/strong&gt;则表达了在当前任务上任何学习算法所能达到的期望泛化误差的下界，即刻画了学习问题本身的难度&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一般来说，偏置与方差是有冲突的，也就是偏置大的方差小，偏置小的方差大&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/15.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;hr /&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;注意这里的测试集其实是验证集，我们通常把实际情况中遇到的数据集称为测试集。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">目录</summary></entry><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html">&lt;h1 id=&quot;vae&quot;&gt;VAE&lt;/h1&gt;
 &lt;h2 id=&quot;ae&quot;&gt;AE&lt;/h2&gt;
 &lt;p&gt;Auto-Encoder自动编码器，比如Seq2seq模型。&lt;/p&gt;
 
@@ -26,7 +409,52 @@
   &lt;li&gt;Analyze Feed Forward Neural Network&lt;/li&gt;
   &lt;li&gt;浅层词汇信息，深层语义信息&lt;/li&gt;
   &lt;li&gt;Prompt&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">VAE AE Auto-Encoder自动编码器，比如Seq2seq模型。</summary></entry><entry><title type="html">制作类RACE数据集</title><link href="http://localhost:4000/RACElike-datasets.html" rel="alternate" type="text/html" title="制作类RACE数据集" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/RACElike-datasets</id><content type="html" xml:base="http://localhost:4000/RACElike-datasets.html">&lt;h1 id=&quot;race&quot;&gt;RACE&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">VAE AE Auto-Encoder自动编码器，比如Seq2seq模型。</summary></entry><entry><title type="html">制作类RACE数据集</title><link href="http://localhost:4000/RACElike-datasets.html" rel="alternate" type="text/html" title="制作类RACE数据集" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/RACElike-datasets</id><content type="html" xml:base="http://localhost:4000/RACElike-datasets.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#目录&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#race&quot;&gt;RACE&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#简介&quot;&gt;简介&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#race数据集格式&quot;&gt;RACE数据集格式&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#race数据集分布&quot;&gt;RACE数据集分布&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#race数据集中的长度&quot;&gt;RACE数据集中的长度&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#race数据集中的问题的统计信息&quot;&gt;RACE数据集中的问题的统计信息&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#gaorace&quot;&gt;GaoRACE&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#gao他们对于race数据集的处理&quot;&gt;Gao他们对于RACE数据集的处理&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#gao处理后的race数据集统计信息&quot;&gt;Gao处理后的RACE数据集统计信息&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#gao处理后的数据集格式&quot;&gt;Gao处理后的数据集格式&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#预处理&quot;&gt;预处理&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#updated&quot;&gt;updated&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#预处理代码&quot;&gt;预处理代码&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#mrc-阅读理解数据集&quot;&gt;MRC 阅读理解数据集&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#简介-1&quot;&gt;简介&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#title&quot;&gt;Title&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#table-一张十分完整的表格&quot;&gt;Table 一张十分完整的表格&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#值得关注的地方&quot;&gt;值得关注的地方&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#自制数据集&quot;&gt;自制数据集&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#大型题库&quot;&gt;大型题库&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#方法&quot;&gt;方法&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+&lt;h1 id=&quot;race&quot;&gt;RACE&lt;/h1&gt;
 &lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
 &lt;p&gt;RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了&lt;strong&gt;阅读理解&lt;/strong&gt;任务。它的特点是包含了很多需要推理的问题。&lt;/p&gt;
 
@@ -101,7 +529,7 @@
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/8.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;mrc&quot;&gt;MRC&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;mrc-阅读理解数据集&quot;&gt;MRC 阅读理解数据集&lt;/h1&gt;
 
 &lt;h2 id=&quot;简介-1&quot;&gt;简介&lt;/h2&gt;
 &lt;p&gt;发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。现在对这篇综述简单介绍一下&lt;/p&gt;
@@ -136,14 +564,7 @@
 &lt;h2 id=&quot;大型题库&quot;&gt;大型题库&lt;/h2&gt;
 &lt;p&gt;泸江，星火英语…&lt;/p&gt;
 &lt;h2 id=&quot;方法&quot;&gt;方法&lt;/h2&gt;
-&lt;p&gt;Python爬取网页&lt;/p&gt;
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;machine reading comprehension &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">RACE 简介 RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了阅读理解任务。它的特点是包含了很多需要推理的问题。</summary></entry><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
+&lt;p&gt;Python爬取网页&lt;/p&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">目录</summary></entry><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
 &lt;h2 id=&quot;lecture-01-overview-of-computer-graphics&quot;&gt;Lecture 01 Overview of Computer Graphics&lt;/h2&gt;
 &lt;h3 id=&quot;课程情况&quot;&gt;课程情况&lt;/h3&gt;
 &lt;ul&gt;

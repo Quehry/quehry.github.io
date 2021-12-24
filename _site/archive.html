@@ -263,7 +263,7 @@
     
     <span class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </span>
   
@@ -271,7 +271,7 @@
   </span>
 
 			<div class="post-excerpt">
-				<a class="read-more" href="./Machine-Learning.html"> read more</a>
+				<h1 id="目录">目录</h1><!-- TOC --><ul> <li><a href="#目录">目录</a></li> <li><a href="#第2章-模型评估与选择">第2章 模型评估与选择</a> <ul> <li><a href="#20-思维导图">2.0 思维导图</a></li> <li><a href="#21-经验误差与过拟合">2.1 经验误差与过拟合</a></li> <li><a href="#22-评估方法">2.2 评估方法</a> <ul> <li><a href="#221-留出法">2.2.1 留出法</a></li> <li><a href="#222-交叉验证法">2.2.2 交叉验证法</a></li> <li><a href="#223-自助法">2.2.3 自助法</a></li> </ul> </li> <li><a href="#23-性能度量">2.3 性能度量</a> <ul> <li><a href="#231-错误率与精度">2.3.1 错误率与精度</a></li> <li><a href="#232-查准率查全率与f1">2.3.2 查准率、查全率与F1</a></li> <li><a href="#233-roc与auc">2.3.3 ROC与AUC</a></li> <li><a href="#234-代价敏感错误率与代价曲线">2.3.4 代价敏感错误率与代价曲线</a></li> </ul> </li> <li><a href="#24-比较检验">2.4 比较检验</a> <ul> <li><a href="#241-假设检验">2.4.1 假设检验</a></li> <li><a href="#242-交叉验证t检验">2.4.2 交叉验证t检验</a></li> <li><a href="#243-mcnemar检验">2.4.3 McNemar检验</a></li> <li><a href="#244-friedman检验与nemenyi后续检验">2.4.4 Friedman检验与Nemenyi后续检验</a></li> </ul> </li> <li><a href="#25-偏差与方差">2.5 偏差与方差</a></li> </ul> </li></ul><!-- /TOC --><h1 id="第2章-模型评估与选择">第2章 模型评估与选择</h1><h2 id="20-思维导图">2.0 思维导图</h2><center><img src="../assets/img/posts/20211222/16.jpg" /></center><h2 id="21-经验误差与过拟合">2.1 经验误差与过拟合</h2><p><strong>定义：</strong></p><ul> <li><strong>错误率(error rate)</strong>: 如果m个样本中有a个样本分类错误，则错误率E=a/m。</li> <li><strong>精度(accuracy)</strong>：精度=1-错误率。</li> <li><strong>训练误差</strong>：学习器在训练集上的误差称为训练误差或者经验误差。</li> <li><strong>泛化误差(generalization error)</strong>：学习器在新样本上的误差称为泛化误差。</li> <li><strong>过拟合(overfitting)</strong>：当学习器把训练样本学得太好了的时候，很可能把训练样本自身的一些特点当作了所有潜在样本都会具有的一般性质，这就会导致泛化性能下降。</li> <li><strong>欠拟合(underfitting)</strong>：对训练样本的一般性质尚未学好。</li></ul><h2 id="22-评估方法">2.2 评估方法</h2><p>通常我们可通过实验测试来对学习器的泛化误差进行评估而做出选择，于是我们需要一个<strong>测试集(testing set)</strong>，然后以测试集上的测试误差作为泛化误差的近似。下面介绍一些常见的处理数据集D的方法(数据集D-&gt;训练集S+测试集T)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p><h3 id="221-留出法">2.2.1...<a class="read-more" href="./Machine-Learning.html"> read more</a>
 			</div>
 		</div>
 	
@@ -310,7 +310,7 @@
   </span>
 
 			<div class="post-excerpt">
-				<h1 id="race">RACE</h1><h2 id="简介">简介</h2><p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p><ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li></ul><h2 id="race数据集格式">RACE数据集格式</h2><p>Each passage is a JSON file. The JSON file contains following fields:</p><ol> <li>article: A string, which is the passage. 文章</li> <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干</li> <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项</li> <li>answers: A list contains the golden label of each query.四个题目的正确答案</li> <li>id: Each passage has...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
+				<h1 id="目录">目录</h1><!-- TOC --><ul> <li><a href="#目录">目录</a></li> <li><a href="#race">RACE</a> <ul> <li><a href="#简介">简介</a></li> <li><a href="#race数据集格式">RACE数据集格式</a></li> <li><a href="#race数据集分布">RACE数据集分布</a></li> <li><a href="#race数据集中的长度">RACE数据集中的长度</a></li> <li><a href="#race数据集中的问题的统计信息">RACE数据集中的问题的统计信息</a></li> </ul> </li> <li><a href="#gaorace">GaoRACE</a> <ul> <li><a href="#gao他们对于race数据集的处理">Gao他们对于RACE数据集的处理</a></li> <li><a href="#gao处理后的race数据集统计信息">Gao处理后的RACE数据集统计信息</a></li> <li><a href="#gao处理后的数据集格式">Gao处理后的数据集格式</a> <ul> <li><a href="#预处理">预处理</a></li> <li><a href="#updated">updated</a></li> <li><a href="#预处理代码">预处理代码</a></li> </ul> </li> </ul> </li> <li><a href="#mrc-阅读理解数据集">MRC 阅读理解数据集</a> <ul> <li><a href="#简介-1">简介</a></li> <li><a href="#title">Title</a></li> <li><a href="#abstract">Abstract</a></li> <li><a href="#table-一张十分完整的表格">Table 一张十分完整的表格</a></li> <li><a href="#值得关注的地方">值得关注的地方</a></li> </ul> </li> <li><a href="#自制数据集">自制数据集</a> <ul> <li><a href="#大型题库">大型题库</a></li> <li><a href="#方法">方法</a></li> </ul> </li></ul><!-- /TOC --><h1 id="race">RACE</h1><h2 id="简介">简介</h2><p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p><ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li></ul><h2 id="race数据集格式">RACE数据集格式</h2><p>Each passage is a JSON file. The JSON file contains following fields:</p><ol> <li>article: A string, which is...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
 			</div>
 		</div>
 	

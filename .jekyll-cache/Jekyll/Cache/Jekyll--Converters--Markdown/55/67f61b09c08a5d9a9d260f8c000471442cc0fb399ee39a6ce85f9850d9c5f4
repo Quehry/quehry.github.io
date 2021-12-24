@@ -1,0 +1,224 @@
+I" (<h1 id="目录">目录</h1>
+
+<!-- TOC -->
+
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#第2章-模型评估与选择">第2章 模型评估与选择</a>
+    <ul>
+      <li><a href="#21-经验误差与过拟合">2.1 经验误差与过拟合</a></li>
+      <li><a href="#22-评估方法">2.2 评估方法</a>
+        <ul>
+          <li><a href="#221-留出法">2.2.1 留出法</a></li>
+          <li><a href="#222-交叉验证法">2.2.2 交叉验证法</a></li>
+          <li><a href="#223-自助法">2.2.3 自助法</a></li>
+        </ul>
+      </li>
+      <li><a href="#23-性能度量">2.3 性能度量</a>
+        <ul>
+          <li><a href="#231-错误率与精度">2.3.1 错误率与精度</a></li>
+          <li><a href="#232-查准率查全率与f1">2.3.2 查准率、查全率与F1</a></li>
+          <li><a href="#233-roc与auc">2.3.3 ROC与AUC</a></li>
+          <li><a href="#234-代价敏感错误率与代价曲线">2.3.4 代价敏感错误率与代价曲线</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="第2章-模型评估与选择">第2章 模型评估与选择</h1>
+<h2 id="21-经验误差与过拟合">2.1 经验误差与过拟合</h2>
+<p><strong>定义：</strong></p>
+<ul>
+  <li><strong>错误率(error rate)</strong>: 如果m个样本中有a个样本分类错误，则错误率E=a/m。</li>
+  <li><strong>精度(accuracy)</strong>：精度=1-错误率。</li>
+  <li><strong>训练误差</strong>：学习器在训练集上的误差称为训练误差或者经验误差。</li>
+  <li><strong>泛化误差(generalization error)</strong>：学习器在新样本上的误差称为泛化误差。</li>
+  <li><strong>过拟合(overfitting)</strong>：当学习器把训练样本学得太好了的时候，很可能把训练样本自身的一些特点当作了所有潜在样本都会具有的一般性质，这就会导致泛化性能下降。</li>
+  <li><strong>欠拟合(underfitting)</strong>：对训练样本的一般性质尚未学好。</li>
+</ul>
+
+<h2 id="22-评估方法">2.2 评估方法</h2>
+<p>通常我们可通过实验测试来对学习器的泛化误差进行评估而做出选择，于是我们需要一个<strong>测试集(testing set)</strong>，然后以测试集上的测试误差作为泛化误差的近似。下面介绍一些常见的处理数据集D的方法(数据集D-&gt;训练集S+测试集T)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<h3 id="221-留出法">2.2.1 留出法</h3>
+<ul>
+  <li>留出发(hold-out)直接将数据集D划分为两个互斥的集合，其中一个集合作为训练集S，另一个作为测试集T。在S上训练出模型后，用T来评估其测试误差。</li>
+  <li>以采样的角度来看待数据集划分的过程，则保留类别比例的采样方式通常称为<strong>分层采样</strong>。比如1000个样本，50%的正例，50%负例，以7：3划分数据集，那么训练集包含350个正例和350个负例就是分层采样。</li>
+  <li>在使用留出法评估结果时，一般要采用若干次随即划分、重复进行实验评估后取平均值作为留出法的评估结果。</li>
+  <li>常用做法时将大约2/3~4/5的样本用于训练。</li>
+</ul>
+
+<h3 id="222-交叉验证法">2.2.2 交叉验证法</h3>
+<ul>
+  <li><strong>交叉验证法(cross validation)</strong>先将数据集D划分为k个大小相似的互斥子集，每个子集D<sub>i</sub>都尽可能保持数据分布的一致性。然后每次用k-1个自己的并集作为训练集，余下的那个子集作为测试集，这样就可以获得k组训练/测试集，从而可进行k次训练和测试，最终返回的是这k个测试结果的均值。</li>
+  <li>交叉验证也称为k折交叉验证。k的常见取值有10、5、20。</li>
+  <li><strong>留一法</strong>就是k=m，其中数据集D有m个样本。</li>
+</ul>
+
+<h3 id="223-自助法">2.2.3 自助法</h3>
+<ul>
+  <li><strong>自助法(bootstrapping)</strong>：给定包含m个样本的数据集D，每次随机从D中挑选一个样本，将其拷贝放入D’, 然后再将该样本放回最初的数据集D中，这个过程重复执行m次后，我们获得了包含m个样本的数据集D’。我们将D’作为训练集，D\D’作为测试集。</li>
+  <li>不难发现大概有36.8%(m趋于无限大时)的样本再m次采样中始终不被采到。</li>
+</ul>
+
+<center>$\lim\limits_{m\rightarrow\infty}(1-\frac{1}{m})^m = \frac{1}{e} ≈ 0.368$</center>
+
+<ul>
+  <li>缺点：自助法产生的数据集改变了初始数据集的分布，这样会引入估计偏差。因此，在初始数据量足够时，留出法和交叉验证法更常用一些。</li>
+</ul>
+
+<h2 id="23-性能度量">2.3 性能度量</h2>
+<ul>
+  <li>对学习器的泛化性能进行评估，不仅需要有效可行的实验估计方法，还需要有衡量模型泛化能力的评价标准，这就是<strong>性能度量(performance measure)</strong>。</li>
+  <li>在预测任务中，给定D = {(x<sub>1</sub>,y<sub>1</sub>), (x<sub>2</sub>,y<sub>2</sub>)…(x<sub>m</sub>,y<sub>m</sub>)}, 其中y<sub>i</sub>是x<sub>i</sub>的真实标记。学习器f。</li>
+  <li><strong>均方误差(mean squared error)</strong>：回归任务最常用的性能度量是均方误差：</li>
+</ul>
+
+<center>$E(f;D)=\frac{1}{m}\sum_1^m(f(x_i)-y_i)^2$</center>
+
+<p>接下来我将介绍<strong>分类任务</strong>中常用的性能度量</p>
+
+<h3 id="231-错误率与精度">2.3.1 错误率与精度</h3>
+<p>本章开头提到了错误率和精度，这是分类任务中最常用的两种性能度量，既适用于二分类任务，也适用于多分类任务。</p>
+
+<h3 id="232-查准率查全率与f1">2.3.2 查准率、查全率与F1</h3>
+
+<ul>
+  <li>针对二分类问题，可将样例根据其真实类别与学习器预测类别的组合划分为真正例(true positive)、假正例(false positive)、真反例(true negative)、假反例(false negative)，分别记为TP、FP、TN、FN。</li>
+  <li>混淆矩阵(confusion matrix)</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>真\预</td>
+      <td>正例</td>
+      <td>反例</td>
+    </tr>
+    <tr>
+      <td>正例</td>
+      <td>TP</td>
+      <td>FN</td>
+    </tr>
+    <tr>
+      <td>反例</td>
+      <td>FP</td>
+      <td>TN</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>查准率(precision)，记为P，它表示选择的好瓜中有多少是真正的好瓜</li>
+</ul>
+
+<center>$P=\frac{TP}{TP+FP}$</center>
+
+<ul>
+  <li>查全率(recall)，记为R，它表示好瓜中有多少被选出来了</li>
+</ul>
+
+<center>$R=\frac{TP}{TP+FN}$</center>
+
+<ul>
+  <li>
+    <p>一般来说，查准率高时，查全率往往偏低；而查全率高时，查准率往往偏低。</p>
+  </li>
+  <li>
+    <p>P-R曲线：在很多情形下，我们可根据学习器的预测结果对样例进行排序，排在前面的是学习器认为最可能是正例的样本，排在最后的则是学习器认为最不可能是正例的样本，按此顺序逐个把样本作为正例进行预测，则每次可以计算出当前的查全率、查准率，也得到了P-R图。</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/2.jpg" /></center>
+
+<ul>
+  <li>
+    <p>如果一个学习器的P-R曲线被另一个学习器的曲线完全包住，则可断言后者的性能优于前者。如果两者曲线相交，则可以通过比较平衡点(break-even-point)来比较，越大越好。</p>
+  </li>
+  <li>
+    <p>F1度量：F1综合考虑了查准率和查全率，是他们的调和平均</p>
+  </li>
+</ul>
+
+<center>$F1=\frac{2*P*R}{P+R}$</center>
+
+<ul>
+  <li>F1的一般形式：有时候我们希望赋予查准率和查重率不同的权重：</li>
+</ul>
+
+<center>$F_\beta=\frac{(1+\beta^2)*P*R}{\beta^2*P+R}$</center>
+
+<p>其中β大于1表示查全率有更大影响</p>
+
+<ul>
+  <li>
+    <p>有时候我们有多个二分类混淆矩阵，我们希望在这n个混淆矩阵上综合考虑查准率和查全率，那么我们有以下的度量</p>
+  </li>
+  <li>
+    <p>宏查准率macro-P，宏查全率macro-R，宏F1：</p>
+  </li>
+</ul>
+
+<center>$macro-P=\frac{1}{n}\sum_1^nP_i$</center>
+
+<center>$macro-R=\frac{1}{n}\sum_1^nR_i$</center>
+
+<ul>
+  <li>微查准率micro-P，微查全率micro-P，微F1：</li>
+</ul>
+
+<p>对TP、FP、TN、FN进行平均</p>
+
+<center>$micro-P=\frac{\overline{TP}}{\overline{TP}+\overline{FP}}$</center>
+
+<center>$micro-P=\frac{\overline{TP}}{\overline{TP}+\overline{FN}}$</center>
+
+<h3 id="233-roc与auc">2.3.3 ROC与AUC</h3>
+<ul>
+  <li>
+    <p>很多学习器是为测试样本产生一个实值或概率预测，然后将这个预测值与一个分类阈值进行比较，若大于阈值则分为正类，否则为反类。</p>
+  </li>
+  <li>
+    <p>ROC曲线是从排序角度来出发研究学习器的泛化性能的工具。ROC的全称是Receiver Operating Characteristic。</p>
+  </li>
+  <li>
+    <p>与P-R曲线类似，我们根据学习器的预测结果进行排序，按此顺序逐个把样本作为正例进行预测，计算出真正例率TPR(true positive rate)与假正例率FPR(false positive rate)并以它们分别为横纵坐标画出ROC曲线</p>
+  </li>
+</ul>
+
+<center>$TPR=\frac{TP}{TP+FN}$</center>
+
+<center>$FPR=\frac{FP}{FP+TN}$</center>
+
+<center><img src="../assets/img/posts/20211222/3.jpg" /></center>
+
+<ul>
+  <li>
+    <p>同样的，如果一个学习器的ROC曲线被另一个学习器完全包住，则认为后者的性能优于前者。若两个曲线相交，则比较曲线下的面积AUC(area under curve)</p>
+  </li>
+  <li>
+    <p>形式化的看，AUC考虑的是样本预测的排序质量，那么我们可以定义一个排序损失l<sub>rank</sub></p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/4.jpg" /></center>
+
+<center>AUC=1-l<sub>rank</sub><center>
+
+### 2.3.4 代价敏感错误率与代价曲线
+- 代价矩阵(cost matrix)
+
+
+
+</center></center>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>注意这里的测试集其实是验证集，我们通常把实际情况中遇到的数据集称为测试集。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET

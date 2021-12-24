@@ -22,7 +22,7 @@
   "headline": "制作类RACE数据集",
   "abstract": "帮助学长制作RACE数据集",
     "keywords": "work",
-    "wordcount": "201",
+    "wordcount": "225",
     "image": ["http://localhost:4000/assets/imgposts/20211221/2.jpg"],
   "datePublished": "2021-12-21 00:00:00 +0800",
   "dateModified": "2021-12-21 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="帮助学长制作RACE数据集">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="201"/>
+<meta data-rh="true" name="twitter:data1" content="225"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211221/2.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -168,7 +168,7 @@
   </span>
 
         <div class="post-excerpt">
-            <h1 id="race">RACE</h1><h2 id="简介">简介</h2><p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p><ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li></ul><h2 id="race数据集格式">RACE数据集格式</h2><p>Each passage is a JSON file. The JSON file contains following fields:</p><ol> <li>article: A string, which is the passage. 文章</li> <li>questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _. 四个问题题干</li> <li>options: A list of the options list. Each options list contains 4 strings, which are the candidate option. 四个题目的四个选项</li> <li>answers: A list contains the golden label of each query.四个题目的正确答案</li> <li>id: Each passage has...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
+            <h1 id="目录">目录</h1><!-- TOC --><ul> <li><a href="#目录">目录</a></li> <li><a href="#race">RACE</a> <ul> <li><a href="#简介">简介</a></li> <li><a href="#race数据集格式">RACE数据集格式</a></li> <li><a href="#race数据集分布">RACE数据集分布</a></li> <li><a href="#race数据集中的长度">RACE数据集中的长度</a></li> <li><a href="#race数据集中的问题的统计信息">RACE数据集中的问题的统计信息</a></li> </ul> </li> <li><a href="#gaorace">GaoRACE</a> <ul> <li><a href="#gao他们对于race数据集的处理">Gao他们对于RACE数据集的处理</a></li> <li><a href="#gao处理后的race数据集统计信息">Gao处理后的RACE数据集统计信息</a></li> <li><a href="#gao处理后的数据集格式">Gao处理后的数据集格式</a> <ul> <li><a href="#预处理">预处理</a></li> <li><a href="#updated">updated</a></li> <li><a href="#预处理代码">预处理代码</a></li> </ul> </li> </ul> </li> <li><a href="#mrc-阅读理解数据集">MRC 阅读理解数据集</a> <ul> <li><a href="#简介-1">简介</a></li> <li><a href="#title">Title</a></li> <li><a href="#abstract">Abstract</a></li> <li><a href="#table-一张十分完整的表格">Table 一张十分完整的表格</a></li> <li><a href="#值得关注的地方">值得关注的地方</a></li> </ul> </li> <li><a href="#自制数据集">自制数据集</a> <ul> <li><a href="#大型题库">大型题库</a></li> <li><a href="#方法">方法</a></li> </ul> </li></ul><!-- /TOC --><h1 id="race">RACE</h1><h2 id="简介">简介</h2><p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p><ul> <li>原RACE数据集<a href="http://www.cs.cmu.edu/~glai1/data/race/">地址</a></li> <li>下载地址<a href="http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz">url</a></li> <li>论文地址：<a href="https://arxiv.org/abs/1704.04683">RACE: Large-scale ReAding Comprehension Dataset From Examinations</a></li></ul><h2 id="race数据集格式">RACE数据集格式</h2><p>Each passage is a JSON file. The JSON file contains following fields:</p><ol> <li>article: A string, which is...<a class="read-more" href="./RACElike-datasets.html"> read more</a>
         </div>
   </div>
 </section>
@@ -342,7 +342,52 @@
 
         
         
-        <h1 id="race">RACE</h1>
+        <h1 id="目录">目录</h1>
+<!-- TOC -->
+
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#race">RACE</a>
+    <ul>
+      <li><a href="#简介">简介</a></li>
+      <li><a href="#race数据集格式">RACE数据集格式</a></li>
+      <li><a href="#race数据集分布">RACE数据集分布</a></li>
+      <li><a href="#race数据集中的长度">RACE数据集中的长度</a></li>
+      <li><a href="#race数据集中的问题的统计信息">RACE数据集中的问题的统计信息</a></li>
+    </ul>
+  </li>
+  <li><a href="#gaorace">GaoRACE</a>
+    <ul>
+      <li><a href="#gao他们对于race数据集的处理">Gao他们对于RACE数据集的处理</a></li>
+      <li><a href="#gao处理后的race数据集统计信息">Gao处理后的RACE数据集统计信息</a></li>
+      <li><a href="#gao处理后的数据集格式">Gao处理后的数据集格式</a>
+        <ul>
+          <li><a href="#预处理">预处理</a></li>
+          <li><a href="#updated">updated</a></li>
+          <li><a href="#预处理代码">预处理代码</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#mrc-阅读理解数据集">MRC 阅读理解数据集</a>
+    <ul>
+      <li><a href="#简介-1">简介</a></li>
+      <li><a href="#title">Title</a></li>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#table-一张十分完整的表格">Table 一张十分完整的表格</a></li>
+      <li><a href="#值得关注的地方">值得关注的地方</a></li>
+    </ul>
+  </li>
+  <li><a href="#自制数据集">自制数据集</a>
+    <ul>
+      <li><a href="#大型题库">大型题库</a></li>
+      <li><a href="#方法">方法</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+<h1 id="race">RACE</h1>
 <h2 id="简介">简介</h2>
 <p>RACE数据集包含了中国初高中阅读理解题目，最初发布在2017年，一共含有28k短文和100k个问题，最开始发布的目的是为了<strong>阅读理解</strong>任务。它的特点是包含了很多需要推理的问题。</p>
 
@@ -417,7 +462,7 @@
 
 <p><img src="../assets/img/posts/20211221/8.jpg" /></p>
 
-<h1 id="mrc">MRC<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></h1>
+<h1 id="mrc-阅读理解数据集">MRC 阅读理解数据集</h1>
 
 <h2 id="简介-1">简介</h2>
 <p>发现了一篇很好的综述，里面涵盖了2021年之前用到的所有MRC数据集。现在对这篇综述简单介绍一下</p>
@@ -453,13 +498,6 @@
 <p>泸江，星火英语…</p>
 <h2 id="方法">方法</h2>
 <p>Python爬取网页</p>
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>machine reading comprehension <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
 
         <aside class="sidebar inline" id="post-end">
     
@@ -547,7 +585,7 @@
     
     <p class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </p>
   
@@ -763,6 +801,12 @@
         });
     </script>
 </head>
+
+<style>
+  table {
+  margin: auto;
+  }
+</style>
     <div class="top" title="Top">
       <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z" class=""></path></svg>
     </div>

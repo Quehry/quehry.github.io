@@ -1,0 +1,11 @@
+I"�<h1 id="第2章-模型评估与选择">第2章 模型评估与选择</h1>
+<h2 id="21-经验误差与过拟合">2.1 经验误差与过拟合</h2>
+<p><strong>定义：</strong></p>
+<ul>
+  <li><strong>错误率(error rate)</strong>: 如果m个样本中有a个样本分类错误，则错误率E=a/m。</li>
+  <li><strong>精度(accuracy)</strong>：精度=1-错误率。</li>
+  <li><strong>训练误差</strong>：学习器在训练集上的误差称为训练误差或者经验误差。</li>
+  <li><strong>泛化误差(generalization error)</strong>：学习器在新样本上的误差称为泛化误差。</li>
+  <li><strong>过拟合(overfitting)</strong>：</li>
+</ul>
+:ET

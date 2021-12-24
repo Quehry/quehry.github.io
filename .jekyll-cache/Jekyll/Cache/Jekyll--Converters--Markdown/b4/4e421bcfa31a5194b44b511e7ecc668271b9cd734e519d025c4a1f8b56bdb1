@@ -1,0 +1,23 @@
+I"�<h1 id="第2章-模型评估与选择">第2章 模型评估与选择</h1>
+<h2 id="21-经验误差与过拟合">2.1 经验误差与过拟合</h2>
+<p><strong>定义：</strong></p>
+<ul>
+  <li><strong>错误率(error rate)</strong>: 如果m个样本中有a个样本分类错误，则错误率E=a/m。</li>
+  <li><strong>精度(accuracy)</strong>：精度=1-错误率。</li>
+  <li><strong>训练误差</strong>：学习器在训练集上的误差称为训练误差或者经验误差。</li>
+  <li><strong>泛化误差(generalization error)</strong>：学习器在新样本上的误差称为泛化误差。</li>
+  <li><strong>过拟合(overfitting)</strong>：当学习器把训练样本学得太好了的时候，很可能把训练样本自身的一些特点当作了所有潜在样本都会具有的一般性质，这就会导致泛化性能下降。</li>
+  <li><strong>欠拟合(underfitting)</strong>：对训练样本的一般性质尚未学好。</li>
+</ul>
+
+<h2 id="22-评估方法">2.2 评估方法</h2>
+<p>通常我们可通过实验测试来对学习器的泛化误差进行评估而做出选择，于是我们需要一个<strong>测试集(testing set)</strong>，然后以测试集上的测试误差作为泛化误差的近似。下面介绍一些常见的处理数据集D的方法(数据集D-&gt;训练集S+测试集T)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>注意这里的测试集其实是验证集，我们通常把实际情况中遇到的数据集称为测试集。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET
