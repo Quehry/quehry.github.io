@@ -42,6 +42,24 @@ author: Quehry
         - [1.6.2. Frequency domaine 信号处理频率](#162-frequency-domaine-信号处理频率)
         - [1.6.3. antialiasing 反走样/抗锯齿](#163-antialiasing-反走样抗锯齿)
         - [1.6.4. antialiasing today 目前反走样的方法](#164-antialiasing-today-目前反走样的方法)
+    - [1.7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)](#17-lecture-07-shadingillumination-shading-and-graphics-pipeline)
+        - [1.7.1. Painter's Algorithm 画家算法](#171-painters-algorithm-画家算法)
+        - [1.7.2. Z-buffer 深度缓存](#172-z-buffer-深度缓存)
+        - [1.7.3. 目前为止学到了什么](#173-目前为止学到了什么)
+        - [1.7.4. shading 着色](#174-shading-着色)
+    - [1.8. Shading 2(Shading, Pipeline, Texture Mapping)](#18-shading-2shading-pipeline-texture-mapping)
+        - [1.8.1. Specular Term 高光项](#181-specular-term-高光项)
+        - [1.8.2. Ambient Term 环境项](#182-ambient-term-环境项)
+        - [1.8.3. Shading Frequencies 着色频率](#183-shading-frequencies-着色频率)
+        - [1.8.4. Graphics Pipeline 图像管线/实时渲染管线](#184-graphics-pipeline-图像管线实时渲染管线)
+        - [1.8.5. Texture Mapping 纹理映射](#185-texture-mapping-纹理映射)
+    - [1.9. Lecture 09 Shading 3 (Texture Mapping)](#19-lecture-09-shading-3-texture-mapping)
+        - [1.9.1 Barycentric Coordinates重心坐标系](#191-barycentric-coordinates重心坐标系)
+        - [1.9.2. Interpolate 插值](#192-interpolate-插值)
+        - [1.9.3. Simple Texture Mapping 简单的纹理映射模型](#193-simple-texture-mapping-简单的纹理映射模型)
+        - [1.9.4. Texture Magnification 纹理放大](#194-texture-magnification-纹理放大)
+        - [1.9.5. Point Sampling Textures](#195-point-sampling-textures)
+        - [1.9.6. Mipmap 范围查询](#196-mipmap-范围查询)
 
 <!-- /TOC -->
 
@@ -406,3 +424,138 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/75.jpg'></center>
 
+## 1.7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)
+
+### 1.7.1. Painter's Algorithm 画家算法
+- 首先画出远处的物体，然后再画近处的物体。画近处的物体再覆盖远处的物体。
+- 需要定义深度信息，根据深度信息排序
+
+### 1.7.2. Z-buffer 深度缓存
+- 对每个像素都有最小的z值，除了一个frame buffer储存颜色信息外，还需要z-buffer储存深度信息。
+
+<center><img src='../assets/img/posts/20211221/76.jpg'></center>
+
+<center><img src='../assets/img/posts/20211221/77.jpg'></center>
+
+- 假设每个像素最开始的时候深度为无限远
+
+- 特点是在像素维度进行操作
+
+### 1.7.3. 目前为止学到了什么
+
+<center><img src='../assets/img/posts/20211221/78.jpg'></center>
+
+### 1.7.4. shading 着色
+- 着色：对不同物体应用不同的材质
+
+- 一个简单的着色模型(Blinn-Phong Reflection model)
+
+- 局部着色，不考虑阴影
+
+<center><img src='../assets/img/posts/20211221/79.jpg'></center>
+
+- diffuse reflection 漫反射，一个物体有多亮与接收到多少光的能量有关。点光源的能量随距离缩减。在点光源的光线到达物体表面时被物体接受多少能量又与光线和法线的夹角的cos值有关，也就是说直射时接受的能量最大(相同距离)。漫反射表示不论观测角度在哪，你观测到的亮度应该是一样的。
+
+<center><img src='../assets/img/posts/20211221/80.jpg'></center>
+
+## 1.8. Shading 2(Shading, Pipeline, Texture Mapping)
+### 1.8.1. Specular Term 高光项
+- 着色包括三部分：漫反射，高光，环境光
+- 高光就是观测方向和镜面反射方向相同，即半程向量是否和法向量接近
+
+<center><img src='../assets/img/posts/20211221/81.jpg'></center>
+
+- 通常高光都是白色的
+
+### 1.8.2. Ambient Term 环境项
+- 环境光就是一些其他物体反射的光照亮背光物体
+
+- 这里介绍非常简化的模型
+
+<center><img src='../assets/img/posts/20211221/82.jpg'></center>
+
+- 最终结果
+
+<center><img src='../assets/img/posts/20211221/83.jpg'></center>
+
+### 1.8.3. Shading Frequencies 着色频率
+- 之前介绍的着色是应用在着色点，对应在屏幕空间是如何的呢？
+
+- 第一种：Shading ecah triangle 对每个三角形着色
+
+<center><img src='../assets/img/posts/20211221/84.jpg'></center>
+
+- 第二种：shading each vertex 对顶点着色，然后插值
+
+<center><img src='../assets/img/posts/20211221/85.jpg'></center>
+
+- 第三种：shading each pixel 对每个像素点着色
+
+<center><img src='../assets/img/posts/20211221/86.jpg'></center>
+
+- 如何定义顶点的法向量呢？对周围的面的法向量求平均
+
+<center><img src='../assets/img/posts/20211221/87.jpg'></center>
+
+- 如何定义像素的法向量？
+
+<center><img src='../assets/img/posts/20211221/88.jpg'></center>
+
+### 1.8.4. Graphics Pipeline 图像管线/实时渲染管线
+- 一个实时渲染的流程/流水线
+
+<center><img src='../assets/img/posts/20211221/89.jpg'></center>
+
+- 现代的GPU允许写入顶点着色部分与片段着色部分的代码
+
+### 1.8.5. Texture Mapping 纹理映射
+- 希望在物体的不同位置定义不同的属性，比如漫反射系数等等
+
+- 3维物体的表现都是一个平面
+
+<center><img src='../assets/img/posts/20211221/90.jpg'></center>
+
+- 纹理映射就是对于一个平面定义不同的属性，有一个映射关系
+
+<center><img src='../assets/img/posts/20211221/91.jpg'></center>
+
+- 纹理也有坐标系
+
+<center><img src='../assets/img/posts/20211221/92.jpg'></center>
+
+## 1.9. Lecture 09 Shading 3 (Texture Mapping)
+
+### 1.9.1 Barycentric Coordinates重心坐标系
+
+<center><img src='../assets/img/posts/20211221/93.jpg'></center>
+
+### 1.9.2. Interpolate 插值
+- 重心坐标系插值
+
+<center><img src='../assets/img/posts/20211221/94.jpg'></center>
+
+### 1.9.3. Simple Texture Mapping 简单的纹理映射模型
+
+<center><img src='../assets/img/posts/20211221/95.jpg'></center>
+
+### 1.9.4. Texture Magnification 纹理放大
+
+<center><img src='../assets/img/posts/20211221/96.jpg'></center>
+
+### 1.9.5. Point Sampling Textures 
+- 就是走样问题
+
+<center><img src='../assets/img/posts/20211221/97.jpg'></center>
+
+### 1.9.6. Mipmap 范围查询
+- 生成不同分辨率的图片
+
+<center><img src='../assets/img/posts/20211221/98.jpg'></center>
+
+- 任何一个像素可以映射到纹理区域的一个点，mipmap可以让像素点快速查阅，因为他又很多层，不同的纹理区域的面积对应不同的层
+
+- mipmap也不是最好的方法，只是一种折中的办法
+
+- anisotropic filtering 各向异性过滤
+
+<center><img src='../assets/img/posts/20211221/99.jpg'></center>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-25T12:41:45+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-25T23:53:29+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
 
 &lt;!-- TOC --&gt;
 
@@ -608,6 +608,41 @@
           &lt;li&gt;&lt;a href=&quot;#154-三角形光栅化&quot;&gt;1.5.4. 三角形光栅化&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#16-lecture-06-rasterization-2antialiasing-and-z-buffering&quot;&gt;1.6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#161-sampling-采样原理&quot;&gt;1.6.1 sampling 采样原理&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#162-frequency-domaine-信号处理频率&quot;&gt;1.6.2. Frequency domaine 信号处理频率&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#163-antialiasing-反走样抗锯齿&quot;&gt;1.6.3. antialiasing 反走样/抗锯齿&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#164-antialiasing-today-目前反走样的方法&quot;&gt;1.6.4. antialiasing today 目前反走样的方法&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#17-lecture-07-shadingillumination-shading-and-graphics-pipeline&quot;&gt;1.7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#171-painters-algorithm-画家算法&quot;&gt;1.7.1. Painter’s Algorithm 画家算法&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#172-z-buffer-深度缓存&quot;&gt;1.7.2. Z-buffer 深度缓存&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#173-目前为止学到了什么&quot;&gt;1.7.3. 目前为止学到了什么&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#174-shading-着色&quot;&gt;1.7.4. shading 着色&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#18-shading-2shading-pipeline-texture-mapping&quot;&gt;1.8. Shading 2(Shading, Pipeline, Texture Mapping)&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#181-specular-term-高光项&quot;&gt;1.8.1. Specular Term 高光项&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#182-ambient-term-环境项&quot;&gt;1.8.2. Ambient Term 环境项&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#183-shading-frequencies-着色频率&quot;&gt;1.8.3. Shading Frequencies 着色频率&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#184-graphics-pipeline-图像管线实时渲染管线&quot;&gt;1.8.4. Graphics Pipeline 图像管线/实时渲染管线&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#185-texture-mapping-纹理映射&quot;&gt;1.8.5. Texture Mapping 纹理映射&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#19-lecture-09-shading-3-texture-mapping&quot;&gt;1.9. Lecture 09 Shading 3 (Texture Mapping)&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#191-barycentric-coordinates重心坐标系&quot;&gt;1.9.1 Barycentric Coordinates重心坐标系&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#192-interpolate-插值&quot;&gt;1.9.2. Interpolate 插值&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#193-simple-texture-mapping-简单的纹理映射模型&quot;&gt;1.9.3. Simple Texture Mapping 简单的纹理映射模型&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#194-texture-magnification-纹理放大&quot;&gt;1.9.4. Texture Magnification 纹理放大&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#195-point-sampling-textures&quot;&gt;1.9.5. Point Sampling Textures&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#196-mipmap-范围查询&quot;&gt;1.9.6. Mipmap 范围查询&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -966,7 +1001,7 @@
 &lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/55.jpg&quot; /&gt;&lt;/center&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;sampling 采样&lt;/li&gt;
+  &lt;li&gt;sampling 采样。三角形离散化。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/56.jpg&quot; /&gt;&lt;/center&gt;
@@ -991,7 +1026,303 @@
 
 &lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/61.jpg&quot; /&gt;&lt;/center&gt;
 
-&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/62.jpg&quot; /&gt;&lt;/center&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/62.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;16-lecture-06-rasterization-2antialiasing-and-z-buffering&quot;&gt;1.6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)&lt;/h2&gt;
+
+&lt;h3 id=&quot;161-sampling-采样原理&quot;&gt;1.6.1 sampling 采样原理&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;视频就是对时间进行采样&lt;/li&gt;
+  &lt;li&gt;采样的artifact(瑕疵)：锯齿，摩尔纹，轮胎效应(在时间上采样)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/63.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;反走样采样：可以对原始的图像进行滤波(模糊处理)然后再采样。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/64.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;采样速度跟不上信号变化的速度就会走样(aliasing)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;162-frequency-domaine-信号处理频率&quot;&gt;1.6.2. Frequency domaine 信号处理频率&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;傅里叶变换：所有的周期函数都可以写成不同平吕的正弦函数的组合。傅里叶变换就是频域和时域/空间域的变换&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/66.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;走样的原因(时域)：高频信号欠采样，高频信号和低频信号在某一采样速度下没有差别，就会产生走样&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/65.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/67.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;滤波：抹掉特定的频率。比如高通滤波(过滤到低频信号)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;卷积：图形学上的简化定义，见下图&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/68.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;卷积定律：时域上的卷积等于频域上的乘积&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/69.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;采样：重复频域上的内容&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/70.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;走样在频率上的解释：采样频率小会让频域上发生重叠&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/71.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;163-antialiasing-反走样抗锯齿&quot;&gt;1.6.3. antialiasing 反走样/抗锯齿&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;第一种解决方法：增加采样率，相当于增加了频域上的两个信号的距离&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第二种解决方法：反走样。即先对信号进行滤波再采样&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/72.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;比如对于之前三角形的问题&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/73.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;但是这种反走样的方法比较复杂，有一种更简单的近似方法(对滤波这一步的近似)：supersampling，就是在对每个像素点变成更多的小点&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/74.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;164-antialiasing-today-目前反走样的方法&quot;&gt;1.6.4. antialiasing today 目前反走样的方法&lt;/h3&gt;
+&lt;p&gt;介绍了两种新的抗锯齿的操作：FXAA和TAA。FXAA的做法是把边界找到然后对边界进行处理。&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/75.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;17-lecture-07-shadingillumination-shading-and-graphics-pipeline&quot;&gt;1.7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)&lt;/h2&gt;
+
+&lt;h3 id=&quot;171-painters-algorithm-画家算法&quot;&gt;1.7.1. Painter’s Algorithm 画家算法&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;首先画出远处的物体，然后再画近处的物体。画近处的物体再覆盖远处的物体。&lt;/li&gt;
+  &lt;li&gt;需要定义深度信息，根据深度信息排序&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;172-z-buffer-深度缓存&quot;&gt;1.7.2. Z-buffer 深度缓存&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;对每个像素都有最小的z值，除了一个frame buffer储存颜色信息外，还需要z-buffer储存深度信息。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/76.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/77.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;假设每个像素最开始的时候深度为无限远&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;特点是在像素维度进行操作&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;173-目前为止学到了什么&quot;&gt;1.7.3. 目前为止学到了什么&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/78.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;174-shading-着色&quot;&gt;1.7.4. shading 着色&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;着色：对不同物体应用不同的材质&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一个简单的着色模型(Blinn-Phong Reflection model)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;局部着色，不考虑阴影&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/79.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;diffuse reflection 漫反射，一个物体有多亮与接收到多少光的能量有关。点光源的能量随距离缩减。在点光源的光线到达物体表面时被物体接受多少能量又与光线和法线的夹角的cos值有关，也就是说直射时接受的能量最大(相同距离)。漫反射表示不论观测角度在哪，你观测到的亮度应该是一样的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/80.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;18-shading-2shading-pipeline-texture-mapping&quot;&gt;1.8. Shading 2(Shading, Pipeline, Texture Mapping)&lt;/h2&gt;
+&lt;h3 id=&quot;181-specular-term-高光项&quot;&gt;1.8.1. Specular Term 高光项&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;着色包括三部分：漫反射，高光，环境光&lt;/li&gt;
+  &lt;li&gt;高光就是观测方向和镜面反射方向相同，即半程向量是否和法向量接近&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/81.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;通常高光都是白色的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;182-ambient-term-环境项&quot;&gt;1.8.2. Ambient Term 环境项&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;环境光就是一些其他物体反射的光照亮背光物体&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;这里介绍非常简化的模型&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/82.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;最终结果&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/83.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;183-shading-frequencies-着色频率&quot;&gt;1.8.3. Shading Frequencies 着色频率&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;之前介绍的着色是应用在着色点，对应在屏幕空间是如何的呢？&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第一种：Shading ecah triangle 对每个三角形着色&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/84.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第二种：shading each vertex 对顶点着色，然后插值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/85.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第三种：shading each pixel 对每个像素点着色&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/86.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如何定义顶点的法向量呢？对周围的面的法向量求平均&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/87.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如何定义像素的法向量？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/88.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;184-graphics-pipeline-图像管线实时渲染管线&quot;&gt;1.8.4. Graphics Pipeline 图像管线/实时渲染管线&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;一个实时渲染的流程/流水线&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/89.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;现代的GPU允许写入顶点着色部分与片段着色部分的代码&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;185-texture-mapping-纹理映射&quot;&gt;1.8.5. Texture Mapping 纹理映射&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;希望在物体的不同位置定义不同的属性，比如漫反射系数等等&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3维物体的表现都是一个平面&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/90.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;纹理映射就是对于一个平面定义不同的属性，有一个映射关系&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/91.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;纹理也有坐标系&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/92.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;19-lecture-09-shading-3-texture-mapping&quot;&gt;1.9. Lecture 09 Shading 3 (Texture Mapping)&lt;/h2&gt;
+
+&lt;h3 id=&quot;191-barycentric-coordinates重心坐标系&quot;&gt;1.9.1 Barycentric Coordinates重心坐标系&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/93.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;192-interpolate-插值&quot;&gt;1.9.2. Interpolate 插值&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;重心坐标系插值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/94.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;193-simple-texture-mapping-简单的纹理映射模型&quot;&gt;1.9.3. Simple Texture Mapping 简单的纹理映射模型&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/95.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;194-texture-magnification-纹理放大&quot;&gt;1.9.4. Texture Magnification 纹理放大&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/96.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;195-point-sampling-textures&quot;&gt;1.9.5. Point Sampling Textures&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;就是走样问题&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/97.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;196-mipmap-范围查询&quot;&gt;1.9.6. Mipmap 范围查询&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;生成不同分辨率的图片&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/98.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;任何一个像素可以映射到纹理区域的一个点，mipmap可以让像素点快速查阅，因为他又很多层，不同的纹理区域的面积对应不同的层&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mipmap也不是最好的方法，只是一种折中的办法&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;anisotropic filtering 各向异性过滤&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/99.jpg&quot; /&gt;&lt;/center&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
 &lt;h2 id=&quot;1矩阵分解-matrix-factorization&quot;&gt;1.矩阵分解 Matrix Factorization&lt;/h2&gt;
 &lt;h3 id=&quot;11-the-matrix-factorization-model&quot;&gt;1.1 The Matrix Factorization Model&lt;/h3&gt;
 &lt;p&gt;R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R&lt;sup&gt;mxn&lt;/sup&gt;。P是user latent matrix，P∈R&lt;sup&gt;mxk&lt;/sup&gt;，Q是item latent matrix，Q∈R&lt;sup&gt;nxk&lt;/sup&gt;&lt;/p&gt;

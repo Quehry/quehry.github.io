@@ -22,7 +22,7 @@
   "headline": "计算机图形学",
   "abstract": "Games 101 课程笔记",
     "keywords": "note",
-    "wordcount": "319",
+    "wordcount": "576",
     "image": ["http://localhost:4000/assets/imgposts/20211221/1.jpg"],
   "datePublished": "2021-12-21 00:00:00 +0800",
   "dateModified": "2021-12-21 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="Games 101 课程笔记">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="319"/>
+<meta data-rh="true" name="twitter:data1" content="576"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211221/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -160,7 +160,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </span>
   
@@ -300,7 +300,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </span>
   
@@ -384,6 +384,41 @@
           <li><a href="#152-canonical-cube-to-screen-光栅化">1.5.2. Canonical Cube to Screen 光栅化</a></li>
           <li><a href="#153-different-raster-displays-不同的成像设备">1.5.3. Different Raster Displays 不同的成像设备</a></li>
           <li><a href="#154-三角形光栅化">1.5.4. 三角形光栅化</a></li>
+        </ul>
+      </li>
+      <li><a href="#16-lecture-06-rasterization-2antialiasing-and-z-buffering">1.6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)</a>
+        <ul>
+          <li><a href="#161-sampling-采样原理">1.6.1 sampling 采样原理</a></li>
+          <li><a href="#162-frequency-domaine-信号处理频率">1.6.2. Frequency domaine 信号处理频率</a></li>
+          <li><a href="#163-antialiasing-反走样抗锯齿">1.6.3. antialiasing 反走样/抗锯齿</a></li>
+          <li><a href="#164-antialiasing-today-目前反走样的方法">1.6.4. antialiasing today 目前反走样的方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#17-lecture-07-shadingillumination-shading-and-graphics-pipeline">1.7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)</a>
+        <ul>
+          <li><a href="#171-painters-algorithm-画家算法">1.7.1. Painter’s Algorithm 画家算法</a></li>
+          <li><a href="#172-z-buffer-深度缓存">1.7.2. Z-buffer 深度缓存</a></li>
+          <li><a href="#173-目前为止学到了什么">1.7.3. 目前为止学到了什么</a></li>
+          <li><a href="#174-shading-着色">1.7.4. shading 着色</a></li>
+        </ul>
+      </li>
+      <li><a href="#18-shading-2shading-pipeline-texture-mapping">1.8. Shading 2(Shading, Pipeline, Texture Mapping)</a>
+        <ul>
+          <li><a href="#181-specular-term-高光项">1.8.1. Specular Term 高光项</a></li>
+          <li><a href="#182-ambient-term-环境项">1.8.2. Ambient Term 环境项</a></li>
+          <li><a href="#183-shading-frequencies-着色频率">1.8.3. Shading Frequencies 着色频率</a></li>
+          <li><a href="#184-graphics-pipeline-图像管线实时渲染管线">1.8.4. Graphics Pipeline 图像管线/实时渲染管线</a></li>
+          <li><a href="#185-texture-mapping-纹理映射">1.8.5. Texture Mapping 纹理映射</a></li>
+        </ul>
+      </li>
+      <li><a href="#19-lecture-09-shading-3-texture-mapping">1.9. Lecture 09 Shading 3 (Texture Mapping)</a>
+        <ul>
+          <li><a href="#191-barycentric-coordinates重心坐标系">1.9.1 Barycentric Coordinates重心坐标系</a></li>
+          <li><a href="#192-interpolate-插值">1.9.2. Interpolate 插值</a></li>
+          <li><a href="#193-simple-texture-mapping-简单的纹理映射模型">1.9.3. Simple Texture Mapping 简单的纹理映射模型</a></li>
+          <li><a href="#194-texture-magnification-纹理放大">1.9.4. Texture Magnification 纹理放大</a></li>
+          <li><a href="#195-point-sampling-textures">1.9.5. Point Sampling Textures</a></li>
+          <li><a href="#196-mipmap-范围查询">1.9.6. Mipmap 范围查询</a></li>
         </ul>
       </li>
     </ul>
@@ -744,7 +779,7 @@
 <center><img src="../assets/img/posts/20211221/55.jpg" /></center>
 
 <ul>
-  <li>sampling 采样</li>
+  <li>sampling 采样。三角形离散化。</li>
 </ul>
 
 <center><img src="../assets/img/posts/20211221/56.jpg" /></center>
@@ -771,6 +806,301 @@
 
 <center><img src="../assets/img/posts/20211221/62.jpg" /></center>
 
+<h2 id="16-lecture-06-rasterization-2antialiasing-and-z-buffering">1.6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)</h2>
+
+<h3 id="161-sampling-采样原理">1.6.1 sampling 采样原理</h3>
+<ul>
+  <li>视频就是对时间进行采样</li>
+  <li>采样的artifact(瑕疵)：锯齿，摩尔纹，轮胎效应(在时间上采样)</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/63.jpg" /></center>
+
+<ul>
+  <li>反走样采样：可以对原始的图像进行滤波(模糊处理)然后再采样。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/64.jpg" /></center>
+
+<ul>
+  <li>采样速度跟不上信号变化的速度就会走样(aliasing)</li>
+</ul>
+
+<h3 id="162-frequency-domaine-信号处理频率">1.6.2. Frequency domaine 信号处理频率</h3>
+<ul>
+  <li>傅里叶变换：所有的周期函数都可以写成不同平吕的正弦函数的组合。傅里叶变换就是频域和时域/空间域的变换</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/66.jpg" /></center>
+
+<ul>
+  <li>走样的原因(时域)：高频信号欠采样，高频信号和低频信号在某一采样速度下没有差别，就会产生走样</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/65.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211221/67.jpg" /></center>
+
+<ul>
+  <li>
+    <p>滤波：抹掉特定的频率。比如高通滤波(过滤到低频信号)</p>
+  </li>
+  <li>
+    <p>卷积：图形学上的简化定义，见下图</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/68.jpg" /></center>
+
+<ul>
+  <li>卷积定律：时域上的卷积等于频域上的乘积</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/69.jpg" /></center>
+
+<ul>
+  <li>采样：重复频域上的内容</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/70.jpg" /></center>
+
+<ul>
+  <li>走样在频率上的解释：采样频率小会让频域上发生重叠</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/71.jpg" /></center>
+
+<h3 id="163-antialiasing-反走样抗锯齿">1.6.3. antialiasing 反走样/抗锯齿</h3>
+
+<ul>
+  <li>
+    <p>第一种解决方法：增加采样率，相当于增加了频域上的两个信号的距离</p>
+  </li>
+  <li>
+    <p>第二种解决方法：反走样。即先对信号进行滤波再采样</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/72.jpg" /></center>
+
+<ul>
+  <li>比如对于之前三角形的问题</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/73.jpg" /></center>
+
+<ul>
+  <li>但是这种反走样的方法比较复杂，有一种更简单的近似方法(对滤波这一步的近似)：supersampling，就是在对每个像素点变成更多的小点</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/74.jpg" /></center>
+
+<h3 id="164-antialiasing-today-目前反走样的方法">1.6.4. antialiasing today 目前反走样的方法</h3>
+<p>介绍了两种新的抗锯齿的操作：FXAA和TAA。FXAA的做法是把边界找到然后对边界进行处理。</p>
+
+<center><img src="../assets/img/posts/20211221/75.jpg" /></center>
+
+<h2 id="17-lecture-07-shadingillumination-shading-and-graphics-pipeline">1.7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)</h2>
+
+<h3 id="171-painters-algorithm-画家算法">1.7.1. Painter’s Algorithm 画家算法</h3>
+<ul>
+  <li>首先画出远处的物体，然后再画近处的物体。画近处的物体再覆盖远处的物体。</li>
+  <li>需要定义深度信息，根据深度信息排序</li>
+</ul>
+
+<h3 id="172-z-buffer-深度缓存">1.7.2. Z-buffer 深度缓存</h3>
+<ul>
+  <li>对每个像素都有最小的z值，除了一个frame buffer储存颜色信息外，还需要z-buffer储存深度信息。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/76.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211221/77.jpg" /></center>
+
+<ul>
+  <li>
+    <p>假设每个像素最开始的时候深度为无限远</p>
+  </li>
+  <li>
+    <p>特点是在像素维度进行操作</p>
+  </li>
+</ul>
+
+<h3 id="173-目前为止学到了什么">1.7.3. 目前为止学到了什么</h3>
+
+<center><img src="../assets/img/posts/20211221/78.jpg" /></center>
+
+<h3 id="174-shading-着色">1.7.4. shading 着色</h3>
+<ul>
+  <li>
+    <p>着色：对不同物体应用不同的材质</p>
+  </li>
+  <li>
+    <p>一个简单的着色模型(Blinn-Phong Reflection model)</p>
+  </li>
+  <li>
+    <p>局部着色，不考虑阴影</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/79.jpg" /></center>
+
+<ul>
+  <li>diffuse reflection 漫反射，一个物体有多亮与接收到多少光的能量有关。点光源的能量随距离缩减。在点光源的光线到达物体表面时被物体接受多少能量又与光线和法线的夹角的cos值有关，也就是说直射时接受的能量最大(相同距离)。漫反射表示不论观测角度在哪，你观测到的亮度应该是一样的。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/80.jpg" /></center>
+
+<h2 id="18-shading-2shading-pipeline-texture-mapping">1.8. Shading 2(Shading, Pipeline, Texture Mapping)</h2>
+<h3 id="181-specular-term-高光项">1.8.1. Specular Term 高光项</h3>
+<ul>
+  <li>着色包括三部分：漫反射，高光，环境光</li>
+  <li>高光就是观测方向和镜面反射方向相同，即半程向量是否和法向量接近</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/81.jpg" /></center>
+
+<ul>
+  <li>通常高光都是白色的</li>
+</ul>
+
+<h3 id="182-ambient-term-环境项">1.8.2. Ambient Term 环境项</h3>
+<ul>
+  <li>
+    <p>环境光就是一些其他物体反射的光照亮背光物体</p>
+  </li>
+  <li>
+    <p>这里介绍非常简化的模型</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/82.jpg" /></center>
+
+<ul>
+  <li>最终结果</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/83.jpg" /></center>
+
+<h3 id="183-shading-frequencies-着色频率">1.8.3. Shading Frequencies 着色频率</h3>
+<ul>
+  <li>
+    <p>之前介绍的着色是应用在着色点，对应在屏幕空间是如何的呢？</p>
+  </li>
+  <li>
+    <p>第一种：Shading ecah triangle 对每个三角形着色</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/84.jpg" /></center>
+
+<ul>
+  <li>第二种：shading each vertex 对顶点着色，然后插值</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/85.jpg" /></center>
+
+<ul>
+  <li>第三种：shading each pixel 对每个像素点着色</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/86.jpg" /></center>
+
+<ul>
+  <li>如何定义顶点的法向量呢？对周围的面的法向量求平均</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/87.jpg" /></center>
+
+<ul>
+  <li>如何定义像素的法向量？</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/88.jpg" /></center>
+
+<h3 id="184-graphics-pipeline-图像管线实时渲染管线">1.8.4. Graphics Pipeline 图像管线/实时渲染管线</h3>
+<ul>
+  <li>一个实时渲染的流程/流水线</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/89.jpg" /></center>
+
+<ul>
+  <li>现代的GPU允许写入顶点着色部分与片段着色部分的代码</li>
+</ul>
+
+<h3 id="185-texture-mapping-纹理映射">1.8.5. Texture Mapping 纹理映射</h3>
+<ul>
+  <li>
+    <p>希望在物体的不同位置定义不同的属性，比如漫反射系数等等</p>
+  </li>
+  <li>
+    <p>3维物体的表现都是一个平面</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/90.jpg" /></center>
+
+<ul>
+  <li>纹理映射就是对于一个平面定义不同的属性，有一个映射关系</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/91.jpg" /></center>
+
+<ul>
+  <li>纹理也有坐标系</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/92.jpg" /></center>
+
+<h2 id="19-lecture-09-shading-3-texture-mapping">1.9. Lecture 09 Shading 3 (Texture Mapping)</h2>
+
+<h3 id="191-barycentric-coordinates重心坐标系">1.9.1 Barycentric Coordinates重心坐标系</h3>
+
+<center><img src="../assets/img/posts/20211221/93.jpg" /></center>
+
+<h3 id="192-interpolate-插值">1.9.2. Interpolate 插值</h3>
+<ul>
+  <li>重心坐标系插值</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/94.jpg" /></center>
+
+<h3 id="193-simple-texture-mapping-简单的纹理映射模型">1.9.3. Simple Texture Mapping 简单的纹理映射模型</h3>
+
+<center><img src="../assets/img/posts/20211221/95.jpg" /></center>
+
+<h3 id="194-texture-magnification-纹理放大">1.9.4. Texture Magnification 纹理放大</h3>
+
+<center><img src="../assets/img/posts/20211221/96.jpg" /></center>
+
+<h3 id="195-point-sampling-textures">1.9.5. Point Sampling Textures</h3>
+<ul>
+  <li>就是走样问题</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/97.jpg" /></center>
+
+<h3 id="196-mipmap-范围查询">1.9.6. Mipmap 范围查询</h3>
+<ul>
+  <li>生成不同分辨率的图片</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/98.jpg" /></center>
+
+<ul>
+  <li>
+    <p>任何一个像素可以映射到纹理区域的一个点，mipmap可以让像素点快速查阅，因为他又很多层，不同的纹理区域的面积对应不同的层</p>
+  </li>
+  <li>
+    <p>mipmap也不是最好的方法，只是一种折中的办法</p>
+  </li>
+  <li>
+    <p>anisotropic filtering 各向异性过滤</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/99.jpg" /></center>
 
         <aside class="sidebar inline" id="post-end">
     
@@ -920,7 +1250,7 @@
     
     <p class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </p>
   
