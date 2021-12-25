@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-24T18:33:20+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-25T12:41:45+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
 
 &lt;!-- TOC --&gt;
 
@@ -564,35 +564,85 @@
 &lt;h2 id=&quot;大型题库&quot;&gt;大型题库&lt;/h2&gt;
 &lt;p&gt;泸江，星火英语…&lt;/p&gt;
 &lt;h2 id=&quot;方法&quot;&gt;方法&lt;/h2&gt;
-&lt;p&gt;Python爬取网页&lt;/p&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">目录</summary></entry><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;h1 id=&quot;计算机图形学&quot;&gt;计算机图形学&lt;/h1&gt;
-&lt;h2 id=&quot;lecture-01-overview-of-computer-graphics&quot;&gt;Lecture 01 Overview of Computer Graphics&lt;/h2&gt;
-&lt;h3 id=&quot;课程情况&quot;&gt;课程情况&lt;/h3&gt;
+&lt;p&gt;Python爬取网页&lt;/p&gt;</content><author><name>Quehry</name></author><category term="work" /><summary type="html">目录</summary></entry><entry><title type="html">计算机图形学</title><link href="http://localhost:4000/Computer_Graphics.html" rel="alternate" type="text/html" title="计算机图形学" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/Computer_Graphics</id><content type="html" xml:base="http://localhost:4000/Computer_Graphics.html">&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-计算机图形学&quot;&gt;1. 计算机图形学&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-lecture-01-overview-of-computer-graphics&quot;&gt;1.1. Lecture 01 Overview of Computer Graphics&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#111-课程情况&quot;&gt;1.1.1. 课程情况&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#112-什么是好的画面&quot;&gt;1.1.2. 什么是好的画面&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#113-应用场景&quot;&gt;1.1.3. 应用场景&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#114-rasterization-光栅化&quot;&gt;1.1.4. Rasterization 光栅化&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#115-计算机视觉&quot;&gt;1.1.5. 计算机视觉&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#116-推荐书籍&quot;&gt;1.1.6. 推荐书籍&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-lecture-02-review-of-linear-algebra&quot;&gt;1.2. Lecture 02 Review of Linear Algebra&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#121-图形学依赖学科&quot;&gt;1.2.1. 图形学依赖学科&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#122-向量&quot;&gt;1.2.2. 向量&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#123-矩阵&quot;&gt;1.2.3. 矩阵&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-lecture-03-transformation&quot;&gt;1.3. Lecture 03 Transformation&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#131-why-transformation-为什么要变换&quot;&gt;1.3.1. why transformation 为什么要变换&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#132-d变换&quot;&gt;1.3.2. D变换&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#133-齐次坐标-homogeneous-coordinate&quot;&gt;1.3.3. 齐次坐标 homogeneous coordinate&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#14-lecture-04-transformation-cont&quot;&gt;1.4. Lecture 04 Transformation Cont.&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#141-d-transformations&quot;&gt;1.4.1. D Transformations&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#142-view-transformation-视图变换&quot;&gt;1.4.2. view transformation 视图变换&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#143-projection-transformation-投影变换&quot;&gt;1.4.3. projection transformation 投影变换&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#15-lecture05-rasterization-1triangles&quot;&gt;1.5. Lecture05 Rasterization 1(Triangles)&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#151-perspective-projection-透视投影&quot;&gt;1.5.1. Perspective Projection 透视投影&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#152-canonical-cube-to-screen-光栅化&quot;&gt;1.5.2. Canonical Cube to Screen 光栅化&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#153-different-raster-displays-不同的成像设备&quot;&gt;1.5.3. Different Raster Displays 不同的成像设备&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#154-三角形光栅化&quot;&gt;1.5.4. 三角形光栅化&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h1 id=&quot;1-计算机图形学&quot;&gt;1. 计算机图形学&lt;/h1&gt;
+&lt;h2 id=&quot;11-lecture-01-overview-of-computer-graphics&quot;&gt;1.1. Lecture 01 Overview of Computer Graphics&lt;/h2&gt;
+&lt;h3 id=&quot;111-课程情况&quot;&gt;1.1.1. 课程情况&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;授课老师：闫令琪&lt;/li&gt;
   &lt;li&gt;授课形式：网课（B站）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;什么是好的画面&quot;&gt;什么是好的画面&lt;/h3&gt;
+&lt;h3 id=&quot;112-什么是好的画面&quot;&gt;1.1.2. 什么是好的画面&lt;/h3&gt;
 &lt;p&gt;画面&lt;strong&gt;亮&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;应用场景&quot;&gt;应用场景&lt;/h3&gt;
+&lt;h3 id=&quot;113-应用场景&quot;&gt;1.1.3. 应用场景&lt;/h3&gt;
 &lt;p&gt;电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。&lt;/p&gt;
 
 &lt;p&gt;电影中里程碑：阿凡达，大量应用面部捕捉技术。&lt;/p&gt;
-&lt;h3 id=&quot;rasterization-光栅化&quot;&gt;Rasterization 光栅化&lt;/h3&gt;
+&lt;h3 id=&quot;114-rasterization-光栅化&quot;&gt;1.1.4. Rasterization 光栅化&lt;/h3&gt;
 &lt;p&gt;实时，FPS&amp;gt;30&lt;/p&gt;
 
 &lt;p&gt;离线, FPS&amp;lt;30&lt;/p&gt;
-&lt;h3 id=&quot;计算机视觉&quot;&gt;计算机视觉&lt;/h3&gt;
+&lt;h3 id=&quot;115-计算机视觉&quot;&gt;1.1.5. 计算机视觉&lt;/h3&gt;
 &lt;p&gt;计算机图形学离不开计算机视觉，但是视觉一般是对图像的处理。&lt;/p&gt;
 
-&lt;h3 id=&quot;推荐书籍&quot;&gt;推荐书籍&lt;/h3&gt;
+&lt;h3 id=&quot;116-推荐书籍&quot;&gt;1.1.6. 推荐书籍&lt;/h3&gt;
 &lt;p&gt;Tiger虎书&lt;/p&gt;
 
-&lt;h2 id=&quot;lecture-02-review-of-linear-algebra&quot;&gt;Lecture 02 Review of Linear Algebra&lt;/h2&gt;
-&lt;h3 id=&quot;图形学依赖学科&quot;&gt;图形学依赖学科&lt;/h3&gt;
+&lt;h2 id=&quot;12-lecture-02-review-of-linear-algebra&quot;&gt;1.2. Lecture 02 Review of Linear Algebra&lt;/h2&gt;
+&lt;h3 id=&quot;121-图形学依赖学科&quot;&gt;1.2.1. 图形学依赖学科&lt;/h3&gt;
 &lt;p&gt;Optics, Mechanics, Linear algebra, statics, Singal processing, numerical analysis数值分析&lt;/p&gt;
 
-&lt;h3 id=&quot;向量&quot;&gt;向量&lt;/h3&gt;
+&lt;h3 id=&quot;122-向量&quot;&gt;1.2.2. 向量&lt;/h3&gt;
 
 &lt;p&gt;向量的定义&lt;/p&gt;
 
@@ -626,7 +676,7 @@
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/15.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;矩阵&quot;&gt;矩阵&lt;/h3&gt;
+&lt;h3 id=&quot;123-矩阵&quot;&gt;1.2.3. 矩阵&lt;/h3&gt;
 
 &lt;p&gt;矩阵定义&lt;/p&gt;
 
@@ -644,12 +694,12 @@
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/18.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;lecture-03-transformation&quot;&gt;Lecture 03 Transformation&lt;/h2&gt;
+&lt;h2 id=&quot;13-lecture-03-transformation&quot;&gt;1.3. Lecture 03 Transformation&lt;/h2&gt;
 
-&lt;h3 id=&quot;why-transformation-为什么要变换&quot;&gt;why transformation 为什么要变换&lt;/h3&gt;
+&lt;h3 id=&quot;131-why-transformation-为什么要变换&quot;&gt;1.3.1. why transformation 为什么要变换&lt;/h3&gt;
 &lt;p&gt;viewing: 3D to 2D projection&lt;/p&gt;
 
-&lt;h3 id=&quot;2d变换&quot;&gt;2D变换&lt;/h3&gt;
+&lt;h3 id=&quot;132-d变换&quot;&gt;1.3.2. D变换&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;缩放 scale transform&lt;/li&gt;
 &lt;/ul&gt;
@@ -688,7 +738,7 @@
 
 &lt;p&gt;上述所有的变化都可以写成x$\prime$=Mx，也就是线性变换&lt;/p&gt;
 
-&lt;h3 id=&quot;齐次坐标-homogeneous-coordinate&quot;&gt;齐次坐标 homogeneous coordinate&lt;/h3&gt;
+&lt;h3 id=&quot;133-齐次坐标-homogeneous-coordinate&quot;&gt;1.3.3. 齐次坐标 homogeneous coordinate&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -729,9 +779,9 @@
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/27.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;lecture-04-transformation-cont&quot;&gt;Lecture 04 Transformation Cont.&lt;/h2&gt;
+&lt;h2 id=&quot;14-lecture-04-transformation-cont&quot;&gt;1.4. Lecture 04 Transformation Cont.&lt;/h2&gt;
 
-&lt;h3 id=&quot;3d-transformations&quot;&gt;3D Transformations&lt;/h3&gt;
+&lt;h3 id=&quot;141-d-transformations&quot;&gt;1.4.1. D Transformations&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;齐次坐标&lt;/li&gt;
@@ -777,7 +827,7 @@
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/33.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;view-transformation-视图变换&quot;&gt;view transformation 视图变换&lt;/h3&gt;
+&lt;h3 id=&quot;142-view-transformation-视图变换&quot;&gt;1.4.2. view transformation 视图变换&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -804,7 +854,7 @@
 
 &lt;p&gt;一般把model和view变换统称为view transformation&lt;/p&gt;
 
-&lt;h3 id=&quot;projection-transformation-投影变换&quot;&gt;projection transformation 投影变换&lt;/h3&gt;
+&lt;h3 id=&quot;143-projection-transformation-投影变换&quot;&gt;1.4.3. projection transformation 投影变换&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;orthographic vs perspectiive projection&lt;/li&gt;
 &lt;/ul&gt;
@@ -835,7 +885,113 @@
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/42.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/43.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">计算机图形学 Lecture 01 Overview of Computer Graphics 课程情况 授课老师：闫令琪 授课形式：网课（B站）</summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211221/43.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;15-lecture05-rasterization-1triangles&quot;&gt;1.5. Lecture05 Rasterization 1(Triangles)&lt;/h2&gt;
+
+&lt;h3 id=&quot;151-perspective-projection-透视投影&quot;&gt;1.5.1. Perspective Projection 透视投影&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;首先是对上节课的透视投影的一些补充, 其中l=left, r=right, b=bottom, t=top, n=near, f=far，这些量可以描述视锥Frustum&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/45.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;视锥Frustum的描述还可以用fovY(field of view)垂直视角和aspect ratio宽高比&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/46.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;152-canonical-cube-to-screen-光栅化&quot;&gt;1.5.2. Canonical Cube to Screen 光栅化&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;把物体的数学描述以及与物体相关的颜色信息转换为屏幕上用于对应位置的像素及用于填充像素的颜色，这个过程称为光栅化。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;屏幕是最常见的光栅设备，每一个像素都是一个小方块，像素是最小的单位，一个像素的颜色可以用rgb三种颜色表示&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/47.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;屏幕空间screen space&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/48.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;把之前投影后的小方块变成屏幕空间&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/49.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/50.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;153-different-raster-displays-不同的成像设备&quot;&gt;1.5.3. Different Raster Displays 不同的成像设备&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Oscilloscope 示波器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cathode Ray Tube 阴极射线管成像原理。早期电视屏幕就是这样实现成像，扫描成像。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/51.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Frame Buffer: Memory for a Raster Display 内存中的一块区域存储图像信息。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/52.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;LCD(liquid crystal display)液晶显示器，光的波动性原理。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/53.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;LED发光二极管&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/54.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;154-三角形光栅化&quot;&gt;1.5.4. 三角形光栅化&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;三角形是最基本的多边形，有很多好的性质。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/55.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sampling 采样&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/56.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/57.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;在不同的像素中心，确定是0还是1,表示在三角形里还是外&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/58.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如何判断点和三角形关系，利用叉积，边界上的点自己定义。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/59.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/60.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jaggies锯齿，走样aliasing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/61.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/62.jpg&quot; /&gt;&lt;/center&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
 &lt;h2 id=&quot;1矩阵分解-matrix-factorization&quot;&gt;1.矩阵分解 Matrix Factorization&lt;/h2&gt;
 &lt;h3 id=&quot;11-the-matrix-factorization-model&quot;&gt;1.1 The Matrix Factorization Model&lt;/h3&gt;
 &lt;p&gt;R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R&lt;sup&gt;mxn&lt;/sup&gt;。P是user latent matrix，P∈R&lt;sup&gt;mxk&lt;/sup&gt;，Q是item latent matrix，Q∈R&lt;sup&gt;nxk&lt;/sup&gt;&lt;/p&gt;
