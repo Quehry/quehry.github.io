@@ -33,6 +33,9 @@ author: Quehry
         - [2.4.3 McNemar检验](#243-mcnemar检验)
         - [2.4.4 Friedman检验与Nemenyi后续检验](#244-friedman检验与nemenyi后续检验)
     - [2.5 偏差与方差](#25-偏差与方差)
+- [第3章 线性模型](#第3章-线性模型)
+    - [3.1 基本形式](#31-基本形式)
+    - [3.2 线性回归](#32-线性回归)
 
 <!-- /TOC -->
 
@@ -253,5 +256,63 @@ author: Quehry
 
 <center><img src='../assets/img/posts/20211222/15.jpg'></center>
 
+# 第3章 线性模型
+## 3.1 基本形式
+
+- 给定由d个属性描述的示例$x=(x_1;x_2;...x_d)$，这是一个列向量，其中$x_i$是$x$在第i个属性上的取值。
+- **线性模型(linear model)**试图学得一个通过属性线性组合来进行预测的函数：
+
+<center><img src='../assets/img/posts/20211222/17.jpg'></center>
+
+- 向量形式：
+
+<center>$f(x)=\omega^Tx+b$</center>
+
+其中$\omega=(\omega_1;\omega_2...\omega_d)$
+
+- 当$\omega$和b学得后，模型就得以确定
+
+- 线性模型的优点：形式简单，易于建模，良好的可解释性(comprehensibility)
+
+## 3.2 线性回归
+- 对离散属性的处理：1.若属性值存在“序”的关系，可通过连续化将其转化为连续值，比如高、矮变成1、0；2.若不存在序的关系，可转化为k维向量。
+
+- 均方误差是回归任务中最常用的性能度量，试图让均方误差最小化：
+
+<center><img src='../assets/img/posts/20211222/18.jpg'></center>
+
+- 均方误差有非常好的几何意义，它对应了欧氏距离。基于均方误差最小化来进行模型求解的方法称为**最小二乘法(least square method)**。在线性回归中，最小二乘法就是试图找到一条直线，使得样本到直线上的欧氏距离之和最小
+
+- 首先观察一个属性值的情况。求解$\omega$和$b$使得均方误差最小化的过程，称为线性回归的最小二乘“参数估计”，我们令均方误差分别对$\omega$和$b$求导令其为零，可以得到最优解的**闭式解(closed-form)**,即解析解
+
+<center><img src='../assets/img/posts/20211222/19.jpg'></center>
+
+<center><img src='../assets/img/posts/20211222/20.jpg'></center>
+
+- 更一般的情况是d个属性，称其为“多元线性回归”，同样的步骤，只是$\omega$变成向量形式，自变量写成m*(d+1)的矩阵形式，m对应了m个样本，d+1对应了d个属性和偏置。同样的求导为0然后得出$\hat{\omega}$最优解的闭式解，其中$\hat{\omega}=(\omega;b)$。当$X^TX$为满秩矩阵[^2]或正定矩阵时，有唯一的解：
+
+<center><img src='../assets/img/posts/20211222/21.jpg'></center>
+
+<center><img src='../assets/img/posts/20211222/22.jpg'></center>
+
+<center><img src='../assets/img/posts/20211222/23.jpg'></center>
+
+<center><img src='../assets/img/posts/20211222/24.jpg'></center>
+
+<center><img src='../assets/img/posts/20211222/25.jpg'></center>
+
+- 然而现实任务中往往不是满秩矩阵，例如在许多任务中我们会遇到大量的变量其数目甚至超过样例数。那么我们会求出$\hat{\omega}=(\omega;b)$的多个解，它们都能使均方误差最小化。选择哪一个解作为输出与学习算法的归纳偏好决定，常见的做法是**引入正则化(regularization)**
+
+- **广义线性模型(generalized linear model)**:
+
+<center><img src='../assets/img/posts/20211222/26.jpg'></center>
+
+<center>$g(y)=\omega^Tx+b$</center>
+
+其中g()单调可微，被称为联系函数。比如当g()=ln()时称为对数线性回归
+
+[^2]:满秩矩阵指方阵的秩等于矩阵的行数/列数，满秩矩阵有逆矩阵且对于y=Xb有唯一的解
+
 
 ------------
+
