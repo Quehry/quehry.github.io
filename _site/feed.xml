@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-26T17:48:42+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-26T21:09:47+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
 
 &lt;!-- TOC --&gt;
 
@@ -950,7 +950,38 @@
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#lecture-11-geometry&quot;&gt;Lecture 11 Geometry&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#11-lecture-11-geometry-2curves-and-surfaces&quot;&gt;11. Lecture 11 Geometry 2(Curves and Surfaces)&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#111-显式几何的表示方法&quot;&gt;11.1. 显式几何的表示方法&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1111-point-cloud-点云&quot;&gt;11.1.1. Point Cloud 点云&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1112-polygone-mesh&quot;&gt;11.1.2. Polygone Mesh&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1113-一个例子&quot;&gt;11.1.3. 一个例子&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#112-curves-曲线&quot;&gt;11.2. Curves 曲线&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1121-贝塞尔曲线&quot;&gt;11.2.1. 贝塞尔曲线&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1122-如何画一条贝塞尔曲线&quot;&gt;11.2.2. 如何画一条贝塞尔曲线&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1123-piecewise-bézier-curves-逐段的贝塞尔曲线&quot;&gt;11.2.3. Piecewise Bézier Curves 逐段的贝塞尔曲线&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1124-spline-样条&quot;&gt;11.2.4. Spline 样条&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#113-曲面&quot;&gt;11.3. 曲面&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1131-贝塞尔曲面&quot;&gt;11.3.1. 贝塞尔曲面&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1132-曲面细分&quot;&gt;11.3.2. 曲面细分&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#12-lecture-12-geometry-3&quot;&gt;12. Lecture 12 Geometry 3&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#121-mesh-subdivisionupsampling-网格细分&quot;&gt;12.1. Mesh Subdivision(upsampling) 网格细分&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#122-mesh-simplification-网格简化&quot;&gt;12.2. Mesh Simplification 网格简化&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#123-阴影-shadow-mapping&quot;&gt;12.3. 阴影 Shadow mapping&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- /TOC --&gt;
@@ -1726,7 +1757,188 @@
 
 &lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/106.jpg&quot; /&gt;&lt;/center&gt;
 
-&lt;h1 id=&quot;lecture-11-geometry&quot;&gt;Lecture 11 Geometry&lt;/h1&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
+&lt;h1 id=&quot;11-lecture-11-geometry-2curves-and-surfaces&quot;&gt;11. Lecture 11 Geometry 2(Curves and Surfaces)&lt;/h1&gt;
+&lt;h2 id=&quot;111-显式几何的表示方法&quot;&gt;11.1. 显式几何的表示方法&lt;/h2&gt;
+
+&lt;h3 id=&quot;1111-point-cloud-点云&quot;&gt;11.1.1. Point Cloud 点云&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;点的集合&lt;/li&gt;
+  &lt;li&gt;优点：可以表示任何几何体&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1112-polygone-mesh&quot;&gt;11.1.2. Polygone Mesh&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;使用顶点和图形表示(三角形，正方形)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1113-一个例子&quot;&gt;11.1.3. 一个例子&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/107.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;里面定义了顶点坐标，法线，纹理坐标和哪几个点组成一个三角形&lt;/p&gt;
+
+&lt;h2 id=&quot;112-curves-曲线&quot;&gt;11.2. Curves 曲线&lt;/h2&gt;
+&lt;h3 id=&quot;1121-贝塞尔曲线&quot;&gt;11.2.1. 贝塞尔曲线&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;用一系列控制点定义曲线&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/108.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;曲线不一定要经过控制点&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1122-如何画一条贝塞尔曲线&quot;&gt;11.2.2. 如何画一条贝塞尔曲线&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Casteljau Algorithm：这个算法的核心是画出每个时间t的点的位置(递归)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/109.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;其中$b_0^2$就是时间t的点的位置&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;大致流程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/110.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;代数形式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/111.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;生成的曲线只能在控制点的凸包内&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1123-piecewise-bézier-curves-逐段的贝塞尔曲线&quot;&gt;11.2.3. Piecewise Bézier Curves 逐段的贝塞尔曲线&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;每四个控制点定义一条贝塞尔曲线&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/112.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C0连续(点连续)，C1连续(切线连续)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1124-spline-样条&quot;&gt;11.2.4. Spline 样条&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;样条是用一系列的点画出线条&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/113.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;113-曲面&quot;&gt;11.3. 曲面&lt;/h2&gt;
+&lt;h3 id=&quot;1131-贝塞尔曲面&quot;&gt;11.3.1. 贝塞尔曲面&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;使用贝塞尔曲线生成贝塞尔曲面&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/114.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;竖直方向生成四条曲线，然后对于t来说四个点再作为控制前生成曲线&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/115.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;1132-曲面细分&quot;&gt;11.3.2. 曲面细分&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;使用很多三角形网格来表示曲面&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/116.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h1 id=&quot;12-lecture-12-geometry-3&quot;&gt;12. Lecture 12 Geometry 3&lt;/h1&gt;
+&lt;h2 id=&quot;121-mesh-subdivisionupsampling-网格细分&quot;&gt;12.1. Mesh Subdivision(upsampling) 网格细分&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;引入更多三角形，微调它们的位置&lt;/li&gt;
+  &lt;li&gt;Loop Subdivision：第一步增加三角形的数量，第二部调整三角形的位置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/117.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Loop细分规则：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/118.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;另一种细分规则：Catmull-Clark Subdivision&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;奇异点是这个点的度不是4的点(就是连接的边数不等于4)&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/119.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/120.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;这种细分方法可以用于任何面&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;122-mesh-simplification-网格简化&quot;&gt;12.2. Mesh Simplification 网格简化&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;基本思路是为了减少网格数目但是保持它的基本形状&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一种方法：Collapsing an edge 边坍缩。删除一些点&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;判断标准：quadric error metrics 二次误差度量&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/121.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;实际效果&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/122.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;123-阴影-shadow-mapping&quot;&gt;12.3. 阴影 Shadow mapping&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;光栅化着色的时候是局部的，但是有时候会有问题，比如有东西挡在shading point和光源之间时，所以需要在这种情况下生成阴影&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;光栅化生成阴影的方法叫做shadow mapping&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;shadow mapping 的两步&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第一步：从光源出发，看向shading point，记录能看见的点的深度&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/123.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第二步：从摄像机出发，看向shading point，如果看见的点的深度和光源所看见的深度相同，那么这个点不在阴影内，否则，它在阴影内。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/124.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;具体的例子：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/125.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;问题：走样，阴影分辨率，只能做硬阴影(hard shadow)…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/126.jpg&quot; /&gt;&lt;/center&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
 &lt;h2 id=&quot;1矩阵分解-matrix-factorization&quot;&gt;1.矩阵分解 Matrix Factorization&lt;/h2&gt;
 &lt;h3 id=&quot;11-the-matrix-factorization-model&quot;&gt;1.1 The Matrix Factorization Model&lt;/h3&gt;
 &lt;p&gt;R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R&lt;sup&gt;mxn&lt;/sup&gt;。P是user latent matrix，P∈R&lt;sup&gt;mxk&lt;/sup&gt;，Q是item latent matrix，Q∈R&lt;sup&gt;nxk&lt;/sup&gt;&lt;/p&gt;
@@ -3176,4 +3388,18 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 
 &lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/9.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/10.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211128/10.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;项目管理&quot;&gt;项目管理&lt;/h1&gt;
+
+&lt;h3 id=&quot;简介-5&quot;&gt;简介&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;授课老师：张敏&lt;/li&gt;
+  &lt;li&gt;授课形式：线下授课&lt;/li&gt;
+  &lt;li&gt;授课材料：书(没买)，PPT&lt;/li&gt;
+  &lt;li&gt;B站有录播&lt;/li&gt;
+  &lt;li&gt;开卷考试，没有笔记&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;内容总览-5&quot;&gt;内容总览&lt;/h3&gt;
+&lt;p&gt;是上学期经济管理的一部分展开讲，讲了什么是项目，项目管理系统，基于关键路径的项目管理，项目管理的决策&lt;/p&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计</summary></entry></feed>

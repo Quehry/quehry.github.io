@@ -4,7 +4,7 @@ read_time: true
 show_date: true
 title:  计算机图形学
 date:   2021-12-21  
-description: Games 101 课程笔记
+description: Games 101 introduction to computer graphics 课程笔记
 img: posts/20211221/1.jpg 
 tags: [note]
 author: Quehry
@@ -71,7 +71,23 @@ author: Quehry
         - [10.2.2. 隐式几何](#1022-隐式几何)
         - [10.2.3. 显式几何](#1023-显式几何)
         - [10.2.4. 隐式的表达方式](#1024-隐式的表达方式)
-- [Lecture 11 Geometry](#lecture-11-geometry)
+- [11. Lecture 11 Geometry 2(Curves and Surfaces)](#11-lecture-11-geometry-2curves-and-surfaces)
+    - [11.1. 显式几何的表示方法](#111-显式几何的表示方法)
+        - [11.1.1. Point Cloud 点云](#1111-point-cloud-点云)
+        - [11.1.2. Polygone Mesh](#1112-polygone-mesh)
+        - [11.1.3. 一个例子](#1113-一个例子)
+    - [11.2. Curves 曲线](#112-curves-曲线)
+        - [11.2.1. 贝塞尔曲线](#1121-贝塞尔曲线)
+        - [11.2.2. 如何画一条贝塞尔曲线](#1122-如何画一条贝塞尔曲线)
+        - [11.2.3. Piecewise Bézier Curves 逐段的贝塞尔曲线](#1123-piecewise-bézier-curves-逐段的贝塞尔曲线)
+        - [11.2.4. Spline 样条](#1124-spline-样条)
+    - [11.3. 曲面](#113-曲面)
+        - [11.3.1. 贝塞尔曲面](#1131-贝塞尔曲面)
+        - [11.3.2. 曲面细分](#1132-曲面细分)
+- [12. Lecture 12 Geometry 3](#12-lecture-12-geometry-3)
+    - [12.1. Mesh Subdivision(upsampling) 网格细分](#121-mesh-subdivisionupsampling-网格细分)
+    - [12.2. Mesh Simplification 网格简化](#122-mesh-simplification-网格简化)
+    - [12.3. 阴影 Shadow mapping](#123-阴影-shadow-mapping)
 
 <!-- /TOC -->
 
@@ -634,4 +650,129 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/106.jpg'></center>
 
-# Lecture 11 Geometry 
+# 11. Lecture 11 Geometry 2(Curves and Surfaces)
+## 11.1. 显式几何的表示方法
+
+### 11.1.1. Point Cloud 点云
+- 点的集合
+- 优点：可以表示任何几何体
+
+### 11.1.2. Polygone Mesh 
+- 使用顶点和图形表示(三角形，正方形)
+
+### 11.1.3. 一个例子
+
+<center><img src='../assets/img/posts/20211221/107.jpg'></center>
+
+里面定义了顶点坐标，法线，纹理坐标和哪几个点组成一个三角形
+
+## 11.2. Curves 曲线
+### 11.2.1. 贝塞尔曲线
+- 用一系列控制点定义曲线
+
+<center><img src='../assets/img/posts/20211221/108.jpg'></center>
+
+- 曲线不一定要经过控制点
+
+### 11.2.2. 如何画一条贝塞尔曲线
+- Casteljau Algorithm：这个算法的核心是画出每个时间t的点的位置(递归)
+
+<center><img src='../assets/img/posts/20211221/109.jpg'></center>
+
+其中$b_0^2$就是时间t的点的位置
+
+- 大致流程
+
+<center><img src='../assets/img/posts/20211221/110.jpg'></center>
+
+- 代数形式
+
+<center><img src='../assets/img/posts/20211221/111.jpg'></center>
+
+- 生成的曲线只能在控制点的凸包内
+
+### 11.2.3. Piecewise Bézier Curves 逐段的贝塞尔曲线
+
+- 每四个控制点定义一条贝塞尔曲线
+
+<center><img src='../assets/img/posts/20211221/112.jpg'></center>
+
+- C0连续(点连续)，C1连续(切线连续)
+
+### 11.2.4. Spline 样条
+- 样条是用一系列的点画出线条
+
+<center><img src='../assets/img/posts/20211221/113.jpg'></center>
+
+## 11.3. 曲面
+### 11.3.1. 贝塞尔曲面
+- 使用贝塞尔曲线生成贝塞尔曲面
+
+<center><img src='../assets/img/posts/20211221/114.jpg'></center>
+
+- 竖直方向生成四条曲线，然后对于t来说四个点再作为控制前生成曲线
+
+<center><img src='../assets/img/posts/20211221/115.jpg'></center>
+
+### 11.3.2. 曲面细分
+- 使用很多三角形网格来表示曲面
+
+<center><img src='../assets/img/posts/20211221/116.jpg'></center>
+
+# 12. Lecture 12 Geometry 3 
+## 12.1. Mesh Subdivision(upsampling) 网格细分
+- 引入更多三角形，微调它们的位置
+- Loop Subdivision：第一步增加三角形的数量，第二部调整三角形的位置
+
+<center><img src='../assets/img/posts/20211221/117.jpg'></center>
+
+- Loop细分规则：
+
+<center><img src='../assets/img/posts/20211221/118.jpg'></center>
+
+- 另一种细分规则：Catmull-Clark Subdivision
+
+奇异点是这个点的度不是4的点(就是连接的边数不等于4)
+
+<center><img src='../assets/img/posts/20211221/119.jpg'></center>
+
+<center><img src='../assets/img/posts/20211221/120.jpg'></center>
+
+- 这种细分方法可以用于任何面
+
+## 12.2. Mesh Simplification 网格简化
+- 基本思路是为了减少网格数目但是保持它的基本形状
+
+- 一种方法：Collapsing an edge 边坍缩。删除一些点
+
+- 判断标准：quadric error metrics 二次误差度量
+
+<center><img src='../assets/img/posts/20211221/121.jpg'></center>
+
+- 实际效果
+
+<center><img src='../assets/img/posts/20211221/122.jpg'></center>
+
+## 12.3. 阴影 Shadow mapping
+- 光栅化着色的时候是局部的，但是有时候会有问题，比如有东西挡在shading point和光源之间时，所以需要在这种情况下生成阴影
+
+- 光栅化生成阴影的方法叫做shadow mapping
+
+- shadow mapping 的两步
+
+- 第一步：从光源出发，看向shading point，记录能看见的点的深度
+
+<center><img src='../assets/img/posts/20211221/123.jpg'></center>
+
+- 第二步：从摄像机出发，看向shading point，如果看见的点的深度和光源所看见的深度相同，那么这个点不在阴影内，否则，它在阴影内。
+
+<center><img src='../assets/img/posts/20211221/124.jpg'></center>
+
+- 具体的例子：
+
+<center><img src='../assets/img/posts/20211221/125.jpg'></center>
+
+- 问题：走样，阴影分辨率，只能做硬阴影(hard shadow)...
+
+<center><img src='../assets/img/posts/20211221/126.jpg'></center>
+
