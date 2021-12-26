@@ -355,7 +355,7 @@ author: Quehry
 
 上面有个式子应该有问题，(3.26)应该是
 
-<center>$p(y_i|x_i;\omega,b) = p_1(\hat{x_i};\beta)^{y_i} + p_0(\hat{x_i};\beta)^{1-y_i}$</center>
+<center>$p(y_i|x_i;\omega,b) = p_1(\hat{x_i};\beta)^{y_i}p_0(\hat{x_i};\beta)^{1-y_i}$</center>
 
 因为$\beta$是高阶可导连续凸函数，根据凸优化理论，经典的数值优化算法如**梯度下降法(gradient descent method)**和牛顿法都可以求得最优解
 
