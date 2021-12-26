@@ -60,6 +60,7 @@ author: Quehry
         - [1.9.4. Texture Magnification 纹理放大](#194-texture-magnification-纹理放大)
         - [1.9.5. Point Sampling Textures](#195-point-sampling-textures)
         - [1.9.6. Mipmap 范围查询](#196-mipmap-范围查询)
+    - [1.10. Lecture 10 Geomrtry 1(introduction)](#110-lecture-10-geomrtry-1introduction)
 
 <!-- /TOC -->
 
@@ -559,3 +560,6 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 - anisotropic filtering 各向异性过滤
 
 <center><img src='../assets/img/posts/20211221/99.jpg'></center>
+
+## 1.10. Lecture 10 Geomrtry 1(introduction)
+
