@@ -12,85 +12,95 @@ author: Quehry
 
 <!-- TOC -->
 
-- [1. 计算机图形学](#1-计算机图形学)
-    - [1.1. Lecture 01 Overview of Computer Graphics](#11-lecture-01-overview-of-computer-graphics)
-        - [1.1.1. 课程情况](#111-课程情况)
-        - [1.1.2. 什么是好的画面](#112-什么是好的画面)
-        - [1.1.3. 应用场景](#113-应用场景)
-        - [1.1.4. Rasterization 光栅化](#114-rasterization-光栅化)
-        - [1.1.5. 计算机视觉](#115-计算机视觉)
-        - [1.1.6. 推荐书籍](#116-推荐书籍)
-    - [1.2. Lecture 02 Review of Linear Algebra](#12-lecture-02-review-of-linear-algebra)
-        - [1.2.1. 图形学依赖学科](#121-图形学依赖学科)
-        - [1.2.2. 向量](#122-向量)
-        - [1.2.3. 矩阵](#123-矩阵)
-    - [1.3. Lecture 03 Transformation](#13-lecture-03-transformation)
-        - [1.3.1. why transformation 为什么要变换](#131-why-transformation-为什么要变换)
-        - [1.3.2. D变换](#132-d变换)
-        - [1.3.3. 齐次坐标 homogeneous coordinate](#133-齐次坐标-homogeneous-coordinate)
-    - [1.4. Lecture 04 Transformation Cont.](#14-lecture-04-transformation-cont)
-        - [1.4.1. D Transformations](#141-d-transformations)
-        - [1.4.2. view transformation 视图变换](#142-view-transformation-视图变换)
-        - [1.4.3. projection transformation 投影变换](#143-projection-transformation-投影变换)
-    - [1.5. Lecture05 Rasterization 1(Triangles)](#15-lecture05-rasterization-1triangles)
-        - [1.5.1. Perspective Projection 透视投影](#151-perspective-projection-透视投影)
-        - [1.5.2. Canonical Cube to Screen 光栅化](#152-canonical-cube-to-screen-光栅化)
-        - [1.5.3. Different Raster Displays 不同的成像设备](#153-different-raster-displays-不同的成像设备)
-        - [1.5.4. 三角形光栅化](#154-三角形光栅化)
-    - [1.6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)](#16-lecture-06-rasterization-2antialiasing-and-z-buffering)
-        - [1.6.1 sampling 采样原理](#161-sampling-采样原理)
-        - [1.6.2. Frequency domaine 信号处理频率](#162-frequency-domaine-信号处理频率)
-        - [1.6.3. antialiasing 反走样/抗锯齿](#163-antialiasing-反走样抗锯齿)
-        - [1.6.4. antialiasing today 目前反走样的方法](#164-antialiasing-today-目前反走样的方法)
-    - [1.7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)](#17-lecture-07-shadingillumination-shading-and-graphics-pipeline)
-        - [1.7.1. Painter's Algorithm 画家算法](#171-painters-algorithm-画家算法)
-        - [1.7.2. Z-buffer 深度缓存](#172-z-buffer-深度缓存)
-        - [1.7.3. 目前为止学到了什么](#173-目前为止学到了什么)
-        - [1.7.4. shading 着色](#174-shading-着色)
-    - [1.8. Shading 2(Shading, Pipeline, Texture Mapping)](#18-shading-2shading-pipeline-texture-mapping)
-        - [1.8.1. Specular Term 高光项](#181-specular-term-高光项)
-        - [1.8.2. Ambient Term 环境项](#182-ambient-term-环境项)
-        - [1.8.3. Shading Frequencies 着色频率](#183-shading-frequencies-着色频率)
-        - [1.8.4. Graphics Pipeline 图像管线/实时渲染管线](#184-graphics-pipeline-图像管线实时渲染管线)
-        - [1.8.5. Texture Mapping 纹理映射](#185-texture-mapping-纹理映射)
-    - [1.9. Lecture 09 Shading 3 (Texture Mapping)](#19-lecture-09-shading-3-texture-mapping)
-        - [1.9.1 Barycentric Coordinates重心坐标系](#191-barycentric-coordinates重心坐标系)
-        - [1.9.2. Interpolate 插值](#192-interpolate-插值)
-        - [1.9.3. Simple Texture Mapping 简单的纹理映射模型](#193-simple-texture-mapping-简单的纹理映射模型)
-        - [1.9.4. Texture Magnification 纹理放大](#194-texture-magnification-纹理放大)
-        - [1.9.5. Point Sampling Textures](#195-point-sampling-textures)
-        - [1.9.6. Mipmap 范围查询](#196-mipmap-范围查询)
-    - [1.10. Lecture 10 Geomrtry 1(introduction)](#110-lecture-10-geomrtry-1introduction)
+- [1. Lecture 01 Overview of Computer Graphics](#1-lecture-01-overview-of-computer-graphics)
+    - [1.1. 课程情况](#11-课程情况)
+    - [1.2. 什么是好的画面](#12-什么是好的画面)
+    - [1.3. 应用场景](#13-应用场景)
+    - [1.4. Rasterization 光栅化](#14-rasterization-光栅化)
+    - [1.5. 计算机视觉](#15-计算机视觉)
+    - [1.6. 推荐书籍](#16-推荐书籍)
+- [2. Lecture 02 Review of Linear Algebra](#2-lecture-02-review-of-linear-algebra)
+    - [2.1. 图形学依赖学科](#21-图形学依赖学科)
+    - [2.2. 向量](#22-向量)
+    - [2.3. 矩阵](#23-矩阵)
+- [3. Lecture 03 Transformation](#3-lecture-03-transformation)
+    - [3.1. why transformation 为什么要变换](#31-why-transformation-为什么要变换)
+    - [3.2. D变换](#32-d变换)
+    - [3.3. 齐次坐标 homogeneous coordinate](#33-齐次坐标-homogeneous-coordinate)
+- [4. Lecture 04 Transformation Cont.](#4-lecture-04-transformation-cont)
+    - [4.1. D Transformations](#41-d-transformations)
+    - [4.2. view transformation 视图变换](#42-view-transformation-视图变换)
+    - [4.3. projection transformation 投影变换](#43-projection-transformation-投影变换)
+- [5. Lecture05 Rasterization 1(Triangles)](#5-lecture05-rasterization-1triangles)
+    - [5.1. Perspective Projection 透视投影](#51-perspective-projection-透视投影)
+    - [5.2. Canonical Cube to Screen 光栅化](#52-canonical-cube-to-screen-光栅化)
+    - [5.3. Different Raster Displays 不同的成像设备](#53-different-raster-displays-不同的成像设备)
+    - [5.4. 三角形光栅化](#54-三角形光栅化)
+- [6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)](#6-lecture-06-rasterization-2antialiasing-and-z-buffering)
+    - [6.1. sampling 采样原理](#61-sampling-采样原理)
+    - [6.2. Frequency domaine 信号处理频率](#62-frequency-domaine-信号处理频率)
+    - [6.3. antialiasing 反走样/抗锯齿](#63-antialiasing-反走样抗锯齿)
+    - [6.4. antialiasing today 目前反走样的方法](#64-antialiasing-today-目前反走样的方法)
+- [7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)](#7-lecture-07-shadingillumination-shading-and-graphics-pipeline)
+    - [7.1. Painter's Algorithm 画家算法](#71-painters-algorithm-画家算法)
+    - [7.2. Z-buffer 深度缓存](#72-z-buffer-深度缓存)
+    - [7.3. 目前为止学到了什么](#73-目前为止学到了什么)
+    - [7.4. shading 着色](#74-shading-着色)
+- [8. Shading 2(Shading, Pipeline, Texture Mapping)](#8-shading-2shading-pipeline-texture-mapping)
+    - [8.1. Specular Term 高光项](#81-specular-term-高光项)
+    - [8.2. Ambient Term 环境项](#82-ambient-term-环境项)
+    - [8.3. Shading Frequencies 着色频率](#83-shading-frequencies-着色频率)
+    - [8.4. Graphics Pipeline 图像管线/实时渲染管线](#84-graphics-pipeline-图像管线实时渲染管线)
+    - [8.5. Texture Mapping 纹理映射](#85-texture-mapping-纹理映射)
+- [9. Lecture 09 Shading 3 (Texture Mapping)](#9-lecture-09-shading-3-texture-mapping)
+    - [9.1. Barycentric Coordinates重心坐标系](#91-barycentric-coordinates重心坐标系)
+    - [9.2. Interpolate 插值](#92-interpolate-插值)
+    - [9.3. Simple Texture Mapping 简单的纹理映射模型](#93-simple-texture-mapping-简单的纹理映射模型)
+    - [9.4. Texture Magnification 纹理放大](#94-texture-magnification-纹理放大)
+    - [9.5. Point Sampling Textures](#95-point-sampling-textures)
+    - [9.6. Mipmap 范围查询](#96-mipmap-范围查询)
+- [10. Lecture 10 Geomrtry 1(introduction)](#10-lecture-10-geomrtry-1introduction)
+    - [10.1. 纹理的应用](#101-纹理的应用)
+        - [10.1.1. Environment Map 环境光映射](#1011-environment-map-环境光映射)
+        - [10.1.2. Spherical Environment Map 球形环境光映射](#1012-spherical-environment-map-球形环境光映射)
+        - [10.1.3. 纹理凹凸贴图bump mapping](#1013-纹理凹凸贴图bump-mapping)
+        - [10.1.4. 位移贴图 displacement mapping](#1014-位移贴图-displacement-mapping)
+        - [10.1.5. 三维纹理](#1015-三维纹理)
+    - [10.2. 几何](#102-几何)
+        - [10.2.1. 分类](#1021-分类)
+        - [10.2.2. 隐式几何](#1022-隐式几何)
+        - [10.2.3. 显式几何](#1023-显式几何)
+        - [10.2.4. 隐式的表达方式](#1024-隐式的表达方式)
+- [Lecture 11 Geometry](#lecture-11-geometry)
 
 <!-- /TOC -->
 
-# 1. 计算机图形学
-## 1.1. Lecture 01 Overview of Computer Graphics
-### 1.1.1. 课程情况
+# 1. Lecture 01 Overview of Computer Graphics
+## 1.1. 课程情况
 - 授课老师：闫令琪
 - 授课形式：网课（B站）
 
-### 1.1.2. 什么是好的画面
+## 1.2. 什么是好的画面
 画面**亮**
-### 1.1.3. 应用场景
+## 1.3. 应用场景
 电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。   
 
 电影中里程碑：阿凡达，大量应用面部捕捉技术。
-### 1.1.4. Rasterization 光栅化
+## 1.4. Rasterization 光栅化
 实时，FPS>30
 
 离线, FPS<30
-### 1.1.5. 计算机视觉
+## 1.5. 计算机视觉
 计算机图形学离不开计算机视觉，但是视觉一般是对图像的处理。
 
-### 1.1.6. 推荐书籍
+## 1.6. 推荐书籍
 Tiger虎书
 
-## 1.2. Lecture 02 Review of Linear Algebra
-### 1.2.1. 图形学依赖学科
+# 2. Lecture 02 Review of Linear Algebra
+## 2.1. 图形学依赖学科
 Optics, Mechanics, Linear algebra, statics, Singal processing, numerical analysis数值分析
 
-### 1.2.2. 向量
+## 2.2. 向量
 
 向量的定义
 
@@ -124,7 +134,7 @@ Optics, Mechanics, Linear algebra, statics, Singal processing, numerical analysi
 
 <img src='../assets/img/posts/20211221/15.jpg'>
 
-### 1.2.3. 矩阵
+## 2.3. 矩阵
 
 矩阵定义
 
@@ -142,12 +152,12 @@ Optics, Mechanics, Linear algebra, statics, Singal processing, numerical analysi
 
 <img src='../assets/img/posts/20211221/18.jpg'>
 
-## 1.3. Lecture 03 Transformation
+# 3. Lecture 03 Transformation
 
-### 1.3.1. why transformation 为什么要变换
+## 3.1. why transformation 为什么要变换
 viewing: 3D to 2D projection
 
-### 1.3.2. D变换
+## 3.2. D变换
 - 缩放 scale transform
 
 <img src='../assets/img/posts/20211221/19.jpg'>
@@ -176,7 +186,7 @@ viewing: 3D to 2D projection
 
 上述所有的变化都可以写成x$\prime$=Mx，也就是线性变换
 
-### 1.3.3. 齐次坐标 homogeneous coordinate
+## 3.3. 齐次坐标 homogeneous coordinate
 
 - 为什么要引入齐次坐标，因为对于简单的平移操作并不能写成线性变换的形式，但是人们也不想认为平移是一种特殊的变换，所以引入齐次坐标
 
@@ -202,9 +212,9 @@ viewing: 3D to 2D projection
 
 <img src='../assets/img/posts/20211221/27.jpg'>
 
-## 1.4. Lecture 04 Transformation Cont.
+# 4. Lecture 04 Transformation Cont.
 
-### 1.4.1. D Transformations
+## 4.1. D Transformations
 
 - 齐次坐标
 
@@ -240,7 +250,7 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <img src='../assets/img/posts/20211221/33.jpg'>
 
-### 1.4.2. view transformation 视图变换
+## 4.2. view transformation 视图变换
 
 - 观测变换viewing，包括了视图变化和投影变化
 
@@ -260,7 +270,7 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 一般把model和view变换统称为view transformation
 
-### 1.4.3. projection transformation 投影变换
+## 4.3. projection transformation 投影变换
 - orthographic vs perspectiive projection 
 
 <img src='../assets/img/posts/20211221/37.jpg'>
@@ -287,9 +297,9 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <img src='../assets/img/posts/20211221/43.jpg'>
 
-## 1.5. Lecture05 Rasterization 1(Triangles)
+# 5. Lecture05 Rasterization 1(Triangles)
 
-### 1.5.1. Perspective Projection 透视投影
+## 5.1. Perspective Projection 透视投影
 - 首先是对上节课的透视投影的一些补充, 其中l=left, r=right, b=bottom, t=top, n=near, f=far，这些量可以描述视锥Frustum
 
 <center><img src='../assets/img/posts/20211221/45.jpg'></center>
@@ -298,7 +308,7 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/46.jpg'></center>
 
-### 1.5.2. Canonical Cube to Screen 光栅化
+## 5.2. Canonical Cube to Screen 光栅化
 - 把物体的数学描述以及与物体相关的颜色信息转换为屏幕上用于对应位置的像素及用于填充像素的颜色，这个过程称为光栅化。
 
 - 屏幕是最常见的光栅设备，每一个像素都是一个小方块，像素是最小的单位，一个像素的颜色可以用rgb三种颜色表示
@@ -315,7 +325,7 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/50.jpg'></center>
 
-### 1.5.3. Different Raster Displays 不同的成像设备
+## 5.3. Different Raster Displays 不同的成像设备
 - Oscilloscope 示波器
 
 - Cathode Ray Tube 阴极射线管成像原理。早期电视屏幕就是这样实现成像，扫描成像。
@@ -334,7 +344,7 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/54.jpg'></center>
 
-### 1.5.4. 三角形光栅化
+## 5.4. 三角形光栅化
 - 三角形是最基本的多边形，有很多好的性质。
 
 <center><img src='../assets/img/posts/20211221/55.jpg'></center>
@@ -361,9 +371,9 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/62.jpg'></center>
 
-## 1.6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)
+# 6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)
 
-### 1.6.1 sampling 采样原理
+## 6.1. sampling 采样原理
 - 视频就是对时间进行采样
 - 采样的artifact(瑕疵)：锯齿，摩尔纹，轮胎效应(在时间上采样)
 
@@ -375,7 +385,7 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 - 采样速度跟不上信号变化的速度就会走样(aliasing)
 
-### 1.6.2. Frequency domaine 信号处理频率
+## 6.2. Frequency domaine 信号处理频率
 - 傅里叶变换：所有的周期函数都可以写成不同平吕的正弦函数的组合。傅里叶变换就是频域和时域/空间域的变换
 
 <center><img src='../assets/img/posts/20211221/66.jpg'></center>
@@ -404,7 +414,7 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/71.jpg'></center>
 
-### 1.6.3. antialiasing 反走样/抗锯齿
+## 6.3. antialiasing 反走样/抗锯齿
 
 - 第一种解决方法：增加采样率，相当于增加了频域上的两个信号的距离
 
@@ -420,18 +430,18 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/74.jpg'></center>
 
-### 1.6.4. antialiasing today 目前反走样的方法
+## 6.4. antialiasing today 目前反走样的方法
 介绍了两种新的抗锯齿的操作：FXAA和TAA。FXAA的做法是把边界找到然后对边界进行处理。
 
 <center><img src='../assets/img/posts/20211221/75.jpg'></center>
 
-## 1.7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)
+# 7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)
 
-### 1.7.1. Painter's Algorithm 画家算法
+## 7.1. Painter's Algorithm 画家算法
 - 首先画出远处的物体，然后再画近处的物体。画近处的物体再覆盖远处的物体。
 - 需要定义深度信息，根据深度信息排序
 
-### 1.7.2. Z-buffer 深度缓存
+## 7.2. Z-buffer 深度缓存
 - 对每个像素都有最小的z值，除了一个frame buffer储存颜色信息外，还需要z-buffer储存深度信息。
 
 <center><img src='../assets/img/posts/20211221/76.jpg'></center>
@@ -442,11 +452,11 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 - 特点是在像素维度进行操作
 
-### 1.7.3. 目前为止学到了什么
+## 7.3. 目前为止学到了什么
 
 <center><img src='../assets/img/posts/20211221/78.jpg'></center>
 
-### 1.7.4. shading 着色
+## 7.4. shading 着色
 - 着色：对不同物体应用不同的材质
 
 - 一个简单的着色模型(Blinn-Phong Reflection model)
@@ -459,8 +469,8 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/80.jpg'></center>
 
-## 1.8. Shading 2(Shading, Pipeline, Texture Mapping)
-### 1.8.1. Specular Term 高光项
+# 8. Shading 2(Shading, Pipeline, Texture Mapping)
+## 8.1. Specular Term 高光项
 - 着色包括三部分：漫反射，高光，环境光
 - 高光就是观测方向和镜面反射方向相同，即半程向量是否和法向量接近
 
@@ -468,7 +478,7 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 - 通常高光都是白色的
 
-### 1.8.2. Ambient Term 环境项
+## 8.2. Ambient Term 环境项
 - 环境光就是一些其他物体反射的光照亮背光物体
 
 - 这里介绍非常简化的模型
@@ -479,7 +489,7 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/83.jpg'></center>
 
-### 1.8.3. Shading Frequencies 着色频率
+## 8.3. Shading Frequencies 着色频率
 - 之前介绍的着色是应用在着色点，对应在屏幕空间是如何的呢？
 
 - 第一种：Shading ecah triangle 对每个三角形着色
@@ -502,14 +512,14 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/88.jpg'></center>
 
-### 1.8.4. Graphics Pipeline 图像管线/实时渲染管线
+## 8.4. Graphics Pipeline 图像管线/实时渲染管线
 - 一个实时渲染的流程/流水线
 
 <center><img src='../assets/img/posts/20211221/89.jpg'></center>
 
 - 现代的GPU允许写入顶点着色部分与片段着色部分的代码
 
-### 1.8.5. Texture Mapping 纹理映射
+## 8.5. Texture Mapping 纹理映射
 - 希望在物体的不同位置定义不同的属性，比如漫反射系数等等
 
 - 3维物体的表现都是一个平面
@@ -524,31 +534,31 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/92.jpg'></center>
 
-## 1.9. Lecture 09 Shading 3 (Texture Mapping)
+# 9. Lecture 09 Shading 3 (Texture Mapping)
 
-### 1.9.1 Barycentric Coordinates重心坐标系
+## 9.1. Barycentric Coordinates重心坐标系
 
 <center><img src='../assets/img/posts/20211221/93.jpg'></center>
 
-### 1.9.2. Interpolate 插值
+## 9.2. Interpolate 插值
 - 重心坐标系插值
 
 <center><img src='../assets/img/posts/20211221/94.jpg'></center>
 
-### 1.9.3. Simple Texture Mapping 简单的纹理映射模型
+## 9.3. Simple Texture Mapping 简单的纹理映射模型
 
 <center><img src='../assets/img/posts/20211221/95.jpg'></center>
 
-### 1.9.4. Texture Magnification 纹理放大
+## 9.4. Texture Magnification 纹理放大
 
 <center><img src='../assets/img/posts/20211221/96.jpg'></center>
 
-### 1.9.5. Point Sampling Textures 
+## 9.5. Point Sampling Textures 
 - 就是走样问题
 
 <center><img src='../assets/img/posts/20211221/97.jpg'></center>
 
-### 1.9.6. Mipmap 范围查询
+## 9.6. Mipmap 范围查询
 - 生成不同分辨率的图片
 
 <center><img src='../assets/img/posts/20211221/98.jpg'></center>
@@ -561,5 +571,67 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/99.jpg'></center>
 
-## 1.10. Lecture 10 Geomrtry 1(introduction)
+# 10. Lecture 10 Geomrtry 1(introduction)
+## 10.1. 纹理的应用
+### 10.1.1. Environment Map 环境光映射
+- 纹理可以用来映射环境光
 
+<center><img src='../assets/img/posts/20211221/100.jpg'></center>
+
+- 假设环境光来自无限远
+
+### 10.1.2. Spherical Environment Map 球形环境光映射
+- 将环境光信息存在球上
+
+<center><img src='../assets/img/posts/20211221/101.jpg'></center>
+
+- 但是在边缘部分会有扭曲，解决方法有环境光存在正方体上
+
+### 10.1.3. 纹理凹凸贴图bump mapping
+- 纹理不仅可以表示颜色，还可以应用一个复杂的纹理来定义高度，也就改变了法线的方向
+
+- 凹凸贴图只增加表面细节，不添加新的三角形
+
+### 10.1.4. 位移贴图 displacement mapping
+- 和凹凸贴图很像，但是移动了顶点
+
+<center><img src='../assets/img/posts/20211221/102.jpg'></center>
+
+### 10.1.5. 三维纹理
+- 定义了空间中任意一个点的纹理坐标
+
+- 广泛应用于体积渲染
+
+## 10.2. 几何
+### 10.2.1. 分类
+- 隐式几何
+- 显式几何
+
+### 10.2.2. 隐式几何
+- 不给出点的具体坐标，而是给出点的坐标关系，比如$x^2+y^2+z^2=1$
+- 推广到一般形式, $f(x,y,z)=0$
+- 缺点：不直观，不好采样
+- 优点：可以很容易的判断点在不在几何体内
+
+### 10.2.3. 显式几何
+- 直接给出或者参数映射的方式给出
+
+<center><img src='../assets/img/posts/20211221/103.jpg'></center>
+
+- 优点：采样方便，直观
+- 缺点：不好判断点是否在几何体内还是外
+
+### 10.2.4. 隐式的表达方式
+- 公式定义
+
+<center><img src='../assets/img/posts/20211221/104.jpg'></center>
+
+- 通过几何体的布尔组合，目前有很多建模软件就是这么表示的
+
+<center><img src='../assets/img/posts/20211221/105.jpg'></center>
+
+- 距离函数定义，SDF有向距离场
+
+<center><img src='../assets/img/posts/20211221/106.jpg'></center>
+
+# Lecture 11 Geometry 

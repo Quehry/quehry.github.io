@@ -1,0 +1,839 @@
+I"il<!-- TOC -->
+
+<ul>
+  <li><a href="#1-lecture-01-overview-of-computer-graphics">1. Lecture 01 Overview of Computer Graphics</a>
+    <ul>
+      <li><a href="#11-课程情况">1.1. 课程情况</a></li>
+      <li><a href="#12-什么是好的画面">1.2. 什么是好的画面</a></li>
+      <li><a href="#13-应用场景">1.3. 应用场景</a></li>
+      <li><a href="#14-rasterization-光栅化">1.4. Rasterization 光栅化</a></li>
+      <li><a href="#15-计算机视觉">1.5. 计算机视觉</a></li>
+      <li><a href="#16-推荐书籍">1.6. 推荐书籍</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-lecture-02-review-of-linear-algebra">2. Lecture 02 Review of Linear Algebra</a>
+    <ul>
+      <li><a href="#21-图形学依赖学科">2.1. 图形学依赖学科</a></li>
+      <li><a href="#22-向量">2.2. 向量</a></li>
+      <li><a href="#23-矩阵">2.3. 矩阵</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-lecture-03-transformation">3. Lecture 03 Transformation</a>
+    <ul>
+      <li><a href="#31-why-transformation-为什么要变换">3.1. why transformation 为什么要变换</a></li>
+      <li><a href="#32-d变换">3.2. D变换</a></li>
+      <li><a href="#33-齐次坐标-homogeneous-coordinate">3.3. 齐次坐标 homogeneous coordinate</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-lecture-04-transformation-cont">4. Lecture 04 Transformation Cont.</a>
+    <ul>
+      <li><a href="#41-d-transformations">4.1. D Transformations</a></li>
+      <li><a href="#42-view-transformation-视图变换">4.2. view transformation 视图变换</a></li>
+      <li><a href="#43-projection-transformation-投影变换">4.3. projection transformation 投影变换</a></li>
+    </ul>
+  </li>
+  <li><a href="#5-lecture05-rasterization-1triangles">5. Lecture05 Rasterization 1(Triangles)</a>
+    <ul>
+      <li><a href="#51-perspective-projection-透视投影">5.1. Perspective Projection 透视投影</a></li>
+      <li><a href="#52-canonical-cube-to-screen-光栅化">5.2. Canonical Cube to Screen 光栅化</a></li>
+      <li><a href="#53-different-raster-displays-不同的成像设备">5.3. Different Raster Displays 不同的成像设备</a></li>
+      <li><a href="#54-三角形光栅化">5.4. 三角形光栅化</a></li>
+    </ul>
+  </li>
+  <li><a href="#6-lecture-06-rasterization-2antialiasing-and-z-buffering">6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)</a>
+    <ul>
+      <li><a href="#61-sampling-采样原理">6.1. sampling 采样原理</a></li>
+      <li><a href="#62-frequency-domaine-信号处理频率">6.2. Frequency domaine 信号处理频率</a></li>
+      <li><a href="#63-antialiasing-反走样抗锯齿">6.3. antialiasing 反走样/抗锯齿</a></li>
+      <li><a href="#64-antialiasing-today-目前反走样的方法">6.4. antialiasing today 目前反走样的方法</a></li>
+    </ul>
+  </li>
+  <li><a href="#7-lecture-07-shadingillumination-shading-and-graphics-pipeline">7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)</a>
+    <ul>
+      <li><a href="#71-painters-algorithm-画家算法">7.1. Painter’s Algorithm 画家算法</a></li>
+      <li><a href="#72-z-buffer-深度缓存">7.2. Z-buffer 深度缓存</a></li>
+      <li><a href="#73-目前为止学到了什么">7.3. 目前为止学到了什么</a></li>
+      <li><a href="#74-shading-着色">7.4. shading 着色</a></li>
+    </ul>
+  </li>
+  <li><a href="#8-shading-2shading-pipeline-texture-mapping">8. Shading 2(Shading, Pipeline, Texture Mapping)</a>
+    <ul>
+      <li><a href="#81-specular-term-高光项">8.1. Specular Term 高光项</a></li>
+      <li><a href="#82-ambient-term-环境项">8.2. Ambient Term 环境项</a></li>
+      <li><a href="#83-shading-frequencies-着色频率">8.3. Shading Frequencies 着色频率</a></li>
+      <li><a href="#84-graphics-pipeline-图像管线实时渲染管线">8.4. Graphics Pipeline 图像管线/实时渲染管线</a></li>
+      <li><a href="#85-texture-mapping-纹理映射">8.5. Texture Mapping 纹理映射</a></li>
+    </ul>
+  </li>
+  <li><a href="#9-lecture-09-shading-3-texture-mapping">9. Lecture 09 Shading 3 (Texture Mapping)</a>
+    <ul>
+      <li><a href="#91-barycentric-coordinates重心坐标系">9.1. Barycentric Coordinates重心坐标系</a></li>
+      <li><a href="#92-interpolate-插值">9.2. Interpolate 插值</a></li>
+      <li><a href="#93-simple-texture-mapping-简单的纹理映射模型">9.3. Simple Texture Mapping 简单的纹理映射模型</a></li>
+      <li><a href="#94-texture-magnification-纹理放大">9.4. Texture Magnification 纹理放大</a></li>
+      <li><a href="#95-point-sampling-textures">9.5. Point Sampling Textures</a></li>
+      <li><a href="#96-mipmap-范围查询">9.6. Mipmap 范围查询</a></li>
+    </ul>
+  </li>
+  <li><a href="#10-lecture-10-geomrtry-1introduction">10. Lecture 10 Geomrtry 1(introduction)</a>
+    <ul>
+      <li><a href="#101-纹理的应用">10.1. 纹理的应用</a>
+        <ul>
+          <li><a href="#1011-environment-map-环境光映射">10.1.1. Environment Map 环境光映射</a></li>
+          <li><a href="#1012-spherical-environment-map-球形环境光映射">10.1.2. Spherical Environment Map 球形环境光映射</a></li>
+          <li><a href="#1013-纹理凹凸贴图bump-mapping">10.1.3. 纹理凹凸贴图bump mapping</a></li>
+          <li><a href="#1014-位移贴图-displacement-mapping">10.1.4. 位移贴图 displacement mapping</a></li>
+          <li><a href="#1015-三维纹理">10.1.5. 三维纹理</a></li>
+        </ul>
+      </li>
+      <li><a href="#102-几何">10.2. 几何</a>
+        <ul>
+          <li><a href="#1021-分类">10.2.1. 分类</a></li>
+          <li><a href="#1022-隐式几何">10.2.2. 隐式几何</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-lecture-01-overview-of-computer-graphics">1. Lecture 01 Overview of Computer Graphics</h1>
+<h2 id="11-课程情况">1.1. 课程情况</h2>
+<ul>
+  <li>授课老师：闫令琪</li>
+  <li>授课形式：网课（B站）</li>
+</ul>
+
+<h2 id="12-什么是好的画面">1.2. 什么是好的画面</h2>
+<p>画面<strong>亮</strong></p>
+<h2 id="13-应用场景">1.3. 应用场景</h2>
+<p>电影，游戏，动画，设计，可视化，虚拟现实，增强现实，模拟，GUI图形用户接口。</p>
+
+<p>电影中里程碑：阿凡达，大量应用面部捕捉技术。</p>
+<h2 id="14-rasterization-光栅化">1.4. Rasterization 光栅化</h2>
+<p>实时，FPS&gt;30</p>
+
+<p>离线, FPS&lt;30</p>
+<h2 id="15-计算机视觉">1.5. 计算机视觉</h2>
+<p>计算机图形学离不开计算机视觉，但是视觉一般是对图像的处理。</p>
+
+<h2 id="16-推荐书籍">1.6. 推荐书籍</h2>
+<p>Tiger虎书</p>
+
+<h1 id="2-lecture-02-review-of-linear-algebra">2. Lecture 02 Review of Linear Algebra</h1>
+<h2 id="21-图形学依赖学科">2.1. 图形学依赖学科</h2>
+<p>Optics, Mechanics, Linear algebra, statics, Singal processing, numerical analysis数值分析</p>
+
+<h2 id="22-向量">2.2. 向量</h2>
+
+<p>向量的定义</p>
+
+<p><img src="../assets/img/posts/20211221/9.jpg" /></p>
+
+<p>单位向量</p>
+
+<p><img src="../assets/img/posts/20211221/10.jpg" /></p>
+
+<p>向量计算，向量加法</p>
+
+<p><img src="../assets/img/posts/20211221/11.jpg" /></p>
+
+<p>用笛卡尔坐标系表示向量</p>
+
+<p><img src="../assets/img/posts/20211221/12.jpg" /></p>
+
+<p>向量乘法，点乘和叉乘，点乘在笛卡尔坐标系中就是对应元素相乘。</p>
+
+<p>在图形学中，点乘是为了寻找两个向量的夹角(夹角可以判断两个向量方向的接近程度)，或者获得一个向量在另一个向量的投影，还可以获得向量的分解。</p>
+
+<p><img src="../assets/img/posts/20211221/13.jpg" /></p>
+
+<p>叉乘，叉积结果垂直于这两个向量所在的平面，满足右手定则。向量的叉乘可以写成矩阵形式。</p>
+
+<p>在图形学中的应用：判断左右关系，比如a^b&gt;0，说明b在a的左边。还可以判断内外，比如判断一个点是否在一个三角形内。</p>
+
+<p><img src="../assets/img/posts/20211221/14.jpg" /></p>
+
+<p>坐标系的定义，右手坐标系</p>
+
+<p><img src="../assets/img/posts/20211221/15.jpg" /></p>
+
+<h2 id="23-矩阵">2.3. 矩阵</h2>
+
+<p>矩阵定义</p>
+
+<p><img src="../assets/img/posts/20211221/16.jpg" /></p>
+
+<p>矩阵乘法</p>
+
+<p><img src="../assets/img/posts/20211221/17.jpg" /></p>
+
+<p>矩阵乘法没有交换律，但是有结合律</p>
+
+<p>矩阵转置，矩阵的逆</p>
+
+<p>向量的点乘和叉乘都可以写成矩阵乘法形式</p>
+
+<p><img src="../assets/img/posts/20211221/18.jpg" /></p>
+
+<h1 id="3-lecture-03-transformation">3. Lecture 03 Transformation</h1>
+
+<h2 id="31-why-transformation-为什么要变换">3.1. why transformation 为什么要变换</h2>
+<p>viewing: 3D to 2D projection</p>
+
+<h2 id="32-d变换">3.2. D变换</h2>
+<ul>
+  <li>缩放 scale transform</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/19.jpg" /></p>
+
+<ul>
+  <li>非均匀缩放 scale(non-uniform)</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/20.jpg" /></p>
+
+<ul>
+  <li>翻转 reflection matrix</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/21.jpg" /></p>
+
+<ul>
+  <li>切变 shear matrix</li>
+</ul>
+
+<p>竖直方向上没有变化，水平方向上发生了变化</p>
+
+<p><img src="../assets/img/posts/20211221/22.jpg" /></p>
+
+<ul>
+  <li>旋转 Rotate</li>
+</ul>
+
+<p>旋转默认绕零点逆时针旋转</p>
+
+<p><img src="../assets/img/posts/20211221/23.jpg" /></p>
+
+<p>二维旋转矩阵R</p>
+
+<p>上述所有的变化都可以写成x$\prime$=Mx，也就是线性变换</p>
+
+<h2 id="33-齐次坐标-homogeneous-coordinate">3.3. 齐次坐标 homogeneous coordinate</h2>
+
+<ul>
+  <li>
+    <p>为什么要引入齐次坐标，因为对于简单的平移操作并不能写成线性变换的形式，但是人们也不想认为平移是一种特殊的变换，所以引入齐次坐标</p>
+  </li>
+  <li>
+    <p>齐次坐标</p>
+  </li>
+</ul>
+
+<p>注意点和向量的表示方法不同</p>
+
+<p><img src="../assets/img/posts/20211221/24.jpg" /></p>
+
+<ul>
+  <li>仿射变换 affine transformations</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/25.jpg" /></p>
+
+<ul>
+  <li>2D Transformations</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/26.jpg" /></p>
+
+<ul>
+  <li>
+    <p>逆变换就是乘以逆矩阵</p>
+  </li>
+  <li>
+    <p>复杂的变换都是简单的变换的组合，变换的组合顺序很重要</p>
+  </li>
+  <li>
+    <p>绕着某一个点（非原点）旋转的分解</p>
+  </li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/27.jpg" /></p>
+
+<h1 id="4-lecture-04-transformation-cont">4. Lecture 04 Transformation Cont.</h1>
+
+<h2 id="41-d-transformations">4.1. D Transformations</h2>
+
+<ul>
+  <li>齐次坐标</li>
+</ul>
+
+<p>对于w不等于1，每一个坐标除以w</p>
+
+<p><img src="../assets/img/posts/20211221/28.jpg" /></p>
+
+<ul>
+  <li>正交矩阵</li>
+</ul>
+
+<p>一个矩阵的逆等于矩阵的转置，旋转矩阵就是一个正交矩阵</p>
+
+<ul>
+  <li>仿射变换（旋转+平移）</li>
+</ul>
+
+<p>仿射变换是先进行旋转再进行平移</p>
+
+<p><img src="../assets/img/posts/20211221/29.jpg" /></p>
+
+<ul>
+  <li>矩阵表示（缩放，平移）</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/30.jpg" /></p>
+
+<ul>
+  <li>旋转</li>
+</ul>
+
+<p>绕着某一个轴旋转</p>
+
+<p><img src="../assets/img/posts/20211221/31.jpg" /></p>
+
+<p>一般的旋转（分解成三个坐标轴的旋转）</p>
+
+<p><img src="../assets/img/posts/20211221/32.jpg" /></p>
+
+<p>Rodrigues’ Rotation Formula, 用向量n表示旋转轴，最终推出这个公式</p>
+
+<p><img src="../assets/img/posts/20211221/33.jpg" /></p>
+
+<h2 id="42-view-transformation-视图变换">4.2. view transformation 视图变换</h2>
+
+<ul>
+  <li>
+    <p>观测变换viewing，包括了视图变化和投影变化</p>
+  </li>
+  <li>
+    <p>MVP变换(model-&gt;view-&gt;projection)</p>
+  </li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/34.jpg" /></p>
+
+<ul>
+  <li>view transformation(不等于viewing) 视图变换</li>
+</ul>
+
+<p>视图变换是把相机放到标准位置上，located at origin, look at -Z</p>
+
+<p><img src="../assets/img/posts/20211221/35.jpg" /></p>
+
+<p>利用逆变换，先平移再旋转</p>
+
+<p><img src="../assets/img/posts/20211221/36.jpg" /></p>
+
+<p>一般把model和view变换统称为view transformation</p>
+
+<h2 id="43-projection-transformation-投影变换">4.3. projection transformation 投影变换</h2>
+<ul>
+  <li>orthographic vs perspectiive projection</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/37.jpg" /></p>
+
+<ul>
+  <li>orthographic projection 正交投影</li>
+</ul>
+
+<p><img src="../assets/img/posts/20211221/38.jpg" /></p>
+
+<p>平移，缩放（不考虑旋转）</p>
+
+<p><img src="../assets/img/posts/20211221/39.jpg" /></p>
+
+<ul>
+  <li>perspective projection 透视投影</li>
+</ul>
+
+<p>满足近大远小</p>
+
+<p>透视投影就是先把物体挤压成立方体，然后对立方体进行正交投影</p>
+
+<p><img src="../assets/img/posts/20211221/41.jpg" /></p>
+
+<p><img src="../assets/img/posts/20211221/40.jpg" /></p>
+
+<p><img src="../assets/img/posts/20211221/42.jpg" /></p>
+
+<p><img src="../assets/img/posts/20211221/43.jpg" /></p>
+
+<h1 id="5-lecture05-rasterization-1triangles">5. Lecture05 Rasterization 1(Triangles)</h1>
+
+<h2 id="51-perspective-projection-透视投影">5.1. Perspective Projection 透视投影</h2>
+<ul>
+  <li>首先是对上节课的透视投影的一些补充, 其中l=left, r=right, b=bottom, t=top, n=near, f=far，这些量可以描述视锥Frustum</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/45.jpg" /></center>
+
+<ul>
+  <li>视锥Frustum的描述还可以用fovY(field of view)垂直视角和aspect ratio宽高比</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/46.jpg" /></center>
+
+<h2 id="52-canonical-cube-to-screen-光栅化">5.2. Canonical Cube to Screen 光栅化</h2>
+<ul>
+  <li>
+    <p>把物体的数学描述以及与物体相关的颜色信息转换为屏幕上用于对应位置的像素及用于填充像素的颜色，这个过程称为光栅化。</p>
+  </li>
+  <li>
+    <p>屏幕是最常见的光栅设备，每一个像素都是一个小方块，像素是最小的单位，一个像素的颜色可以用rgb三种颜色表示</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/47.jpg" /></center>
+
+<ul>
+  <li>屏幕空间screen space</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/48.jpg" /></center>
+
+<ul>
+  <li>把之前投影后的小方块变成屏幕空间</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/49.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211221/50.jpg" /></center>
+
+<h2 id="53-different-raster-displays-不同的成像设备">5.3. Different Raster Displays 不同的成像设备</h2>
+<ul>
+  <li>
+    <p>Oscilloscope 示波器</p>
+  </li>
+  <li>
+    <p>Cathode Ray Tube 阴极射线管成像原理。早期电视屏幕就是这样实现成像，扫描成像。</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/51.jpg" /></center>
+
+<ul>
+  <li>Frame Buffer: Memory for a Raster Display 内存中的一块区域存储图像信息。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/52.jpg" /></center>
+
+<ul>
+  <li>LCD(liquid crystal display)液晶显示器，光的波动性原理。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/53.jpg" /></center>
+
+<ul>
+  <li>LED发光二极管</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/54.jpg" /></center>
+
+<h2 id="54-三角形光栅化">5.4. 三角形光栅化</h2>
+<ul>
+  <li>三角形是最基本的多边形，有很多好的性质。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/55.jpg" /></center>
+
+<ul>
+  <li>sampling 采样。三角形离散化。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/56.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211221/57.jpg" /></center>
+
+<p>在不同的像素中心，确定是0还是1,表示在三角形里还是外</p>
+
+<center><img src="../assets/img/posts/20211221/58.jpg" /></center>
+
+<ul>
+  <li>如何判断点和三角形关系，利用叉积，边界上的点自己定义。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/59.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211221/60.jpg" /></center>
+
+<ul>
+  <li>jaggies锯齿，走样aliasing</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/61.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211221/62.jpg" /></center>
+
+<h1 id="6-lecture-06-rasterization-2antialiasing-and-z-buffering">6. Lecture 06 Rasterization 2(Antialiasing and Z-Buffering)</h1>
+
+<h2 id="61-sampling-采样原理">6.1. sampling 采样原理</h2>
+<ul>
+  <li>视频就是对时间进行采样</li>
+  <li>采样的artifact(瑕疵)：锯齿，摩尔纹，轮胎效应(在时间上采样)</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/63.jpg" /></center>
+
+<ul>
+  <li>反走样采样：可以对原始的图像进行滤波(模糊处理)然后再采样。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/64.jpg" /></center>
+
+<ul>
+  <li>采样速度跟不上信号变化的速度就会走样(aliasing)</li>
+</ul>
+
+<h2 id="62-frequency-domaine-信号处理频率">6.2. Frequency domaine 信号处理频率</h2>
+<ul>
+  <li>傅里叶变换：所有的周期函数都可以写成不同平吕的正弦函数的组合。傅里叶变换就是频域和时域/空间域的变换</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/66.jpg" /></center>
+
+<ul>
+  <li>走样的原因(时域)：高频信号欠采样，高频信号和低频信号在某一采样速度下没有差别，就会产生走样</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/65.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211221/67.jpg" /></center>
+
+<ul>
+  <li>
+    <p>滤波：抹掉特定的频率。比如高通滤波(过滤到低频信号)</p>
+  </li>
+  <li>
+    <p>卷积：图形学上的简化定义，见下图</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/68.jpg" /></center>
+
+<ul>
+  <li>卷积定律：时域上的卷积等于频域上的乘积</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/69.jpg" /></center>
+
+<ul>
+  <li>采样：重复频域上的内容</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/70.jpg" /></center>
+
+<ul>
+  <li>走样在频率上的解释：采样频率小会让频域上发生重叠</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/71.jpg" /></center>
+
+<h2 id="63-antialiasing-反走样抗锯齿">6.3. antialiasing 反走样/抗锯齿</h2>
+
+<ul>
+  <li>
+    <p>第一种解决方法：增加采样率，相当于增加了频域上的两个信号的距离</p>
+  </li>
+  <li>
+    <p>第二种解决方法：反走样。即先对信号进行滤波再采样</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/72.jpg" /></center>
+
+<ul>
+  <li>比如对于之前三角形的问题</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/73.jpg" /></center>
+
+<ul>
+  <li>但是这种反走样的方法比较复杂，有一种更简单的近似方法(对滤波这一步的近似)：supersampling，就是在对每个像素点变成更多的小点</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/74.jpg" /></center>
+
+<h2 id="64-antialiasing-today-目前反走样的方法">6.4. antialiasing today 目前反走样的方法</h2>
+<p>介绍了两种新的抗锯齿的操作：FXAA和TAA。FXAA的做法是把边界找到然后对边界进行处理。</p>
+
+<center><img src="../assets/img/posts/20211221/75.jpg" /></center>
+
+<h1 id="7-lecture-07-shadingillumination-shading-and-graphics-pipeline">7. Lecture 07 Shading(Illumination, Shading, and Graphics Pipeline)</h1>
+
+<h2 id="71-painters-algorithm-画家算法">7.1. Painter’s Algorithm 画家算法</h2>
+<ul>
+  <li>首先画出远处的物体，然后再画近处的物体。画近处的物体再覆盖远处的物体。</li>
+  <li>需要定义深度信息，根据深度信息排序</li>
+</ul>
+
+<h2 id="72-z-buffer-深度缓存">7.2. Z-buffer 深度缓存</h2>
+<ul>
+  <li>对每个像素都有最小的z值，除了一个frame buffer储存颜色信息外，还需要z-buffer储存深度信息。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/76.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211221/77.jpg" /></center>
+
+<ul>
+  <li>
+    <p>假设每个像素最开始的时候深度为无限远</p>
+  </li>
+  <li>
+    <p>特点是在像素维度进行操作</p>
+  </li>
+</ul>
+
+<h2 id="73-目前为止学到了什么">7.3. 目前为止学到了什么</h2>
+
+<center><img src="../assets/img/posts/20211221/78.jpg" /></center>
+
+<h2 id="74-shading-着色">7.4. shading 着色</h2>
+<ul>
+  <li>
+    <p>着色：对不同物体应用不同的材质</p>
+  </li>
+  <li>
+    <p>一个简单的着色模型(Blinn-Phong Reflection model)</p>
+  </li>
+  <li>
+    <p>局部着色，不考虑阴影</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/79.jpg" /></center>
+
+<ul>
+  <li>diffuse reflection 漫反射，一个物体有多亮与接收到多少光的能量有关。点光源的能量随距离缩减。在点光源的光线到达物体表面时被物体接受多少能量又与光线和法线的夹角的cos值有关，也就是说直射时接受的能量最大(相同距离)。漫反射表示不论观测角度在哪，你观测到的亮度应该是一样的。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/80.jpg" /></center>
+
+<h1 id="8-shading-2shading-pipeline-texture-mapping">8. Shading 2(Shading, Pipeline, Texture Mapping)</h1>
+<h2 id="81-specular-term-高光项">8.1. Specular Term 高光项</h2>
+<ul>
+  <li>着色包括三部分：漫反射，高光，环境光</li>
+  <li>高光就是观测方向和镜面反射方向相同，即半程向量是否和法向量接近</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/81.jpg" /></center>
+
+<ul>
+  <li>通常高光都是白色的</li>
+</ul>
+
+<h2 id="82-ambient-term-环境项">8.2. Ambient Term 环境项</h2>
+<ul>
+  <li>
+    <p>环境光就是一些其他物体反射的光照亮背光物体</p>
+  </li>
+  <li>
+    <p>这里介绍非常简化的模型</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/82.jpg" /></center>
+
+<ul>
+  <li>最终结果</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/83.jpg" /></center>
+
+<h2 id="83-shading-frequencies-着色频率">8.3. Shading Frequencies 着色频率</h2>
+<ul>
+  <li>
+    <p>之前介绍的着色是应用在着色点，对应在屏幕空间是如何的呢？</p>
+  </li>
+  <li>
+    <p>第一种：Shading ecah triangle 对每个三角形着色</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/84.jpg" /></center>
+
+<ul>
+  <li>第二种：shading each vertex 对顶点着色，然后插值</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/85.jpg" /></center>
+
+<ul>
+  <li>第三种：shading each pixel 对每个像素点着色</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/86.jpg" /></center>
+
+<ul>
+  <li>如何定义顶点的法向量呢？对周围的面的法向量求平均</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/87.jpg" /></center>
+
+<ul>
+  <li>如何定义像素的法向量？</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/88.jpg" /></center>
+
+<h2 id="84-graphics-pipeline-图像管线实时渲染管线">8.4. Graphics Pipeline 图像管线/实时渲染管线</h2>
+<ul>
+  <li>一个实时渲染的流程/流水线</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/89.jpg" /></center>
+
+<ul>
+  <li>现代的GPU允许写入顶点着色部分与片段着色部分的代码</li>
+</ul>
+
+<h2 id="85-texture-mapping-纹理映射">8.5. Texture Mapping 纹理映射</h2>
+<ul>
+  <li>
+    <p>希望在物体的不同位置定义不同的属性，比如漫反射系数等等</p>
+  </li>
+  <li>
+    <p>3维物体的表现都是一个平面</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/90.jpg" /></center>
+
+<ul>
+  <li>纹理映射就是对于一个平面定义不同的属性，有一个映射关系</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/91.jpg" /></center>
+
+<ul>
+  <li>纹理也有坐标系</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/92.jpg" /></center>
+
+<h1 id="9-lecture-09-shading-3-texture-mapping">9. Lecture 09 Shading 3 (Texture Mapping)</h1>
+
+<h2 id="91-barycentric-coordinates重心坐标系">9.1. Barycentric Coordinates重心坐标系</h2>
+
+<center><img src="../assets/img/posts/20211221/93.jpg" /></center>
+
+<h2 id="92-interpolate-插值">9.2. Interpolate 插值</h2>
+<ul>
+  <li>重心坐标系插值</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/94.jpg" /></center>
+
+<h2 id="93-simple-texture-mapping-简单的纹理映射模型">9.3. Simple Texture Mapping 简单的纹理映射模型</h2>
+
+<center><img src="../assets/img/posts/20211221/95.jpg" /></center>
+
+<h2 id="94-texture-magnification-纹理放大">9.4. Texture Magnification 纹理放大</h2>
+
+<center><img src="../assets/img/posts/20211221/96.jpg" /></center>
+
+<h2 id="95-point-sampling-textures">9.5. Point Sampling Textures</h2>
+<ul>
+  <li>就是走样问题</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/97.jpg" /></center>
+
+<h2 id="96-mipmap-范围查询">9.6. Mipmap 范围查询</h2>
+<ul>
+  <li>生成不同分辨率的图片</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/98.jpg" /></center>
+
+<ul>
+  <li>
+    <p>任何一个像素可以映射到纹理区域的一个点，mipmap可以让像素点快速查阅，因为他又很多层，不同的纹理区域的面积对应不同的层</p>
+  </li>
+  <li>
+    <p>mipmap也不是最好的方法，只是一种折中的办法</p>
+  </li>
+  <li>
+    <p>anisotropic filtering 各向异性过滤</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/99.jpg" /></center>
+
+<h1 id="10-lecture-10-geomrtry-1introduction">10. Lecture 10 Geomrtry 1(introduction)</h1>
+<h2 id="101-纹理的应用">10.1. 纹理的应用</h2>
+<h3 id="1011-environment-map-环境光映射">10.1.1. Environment Map 环境光映射</h3>
+<ul>
+  <li>纹理可以用来映射环境光</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/100.jpg" /></center>
+
+<ul>
+  <li>假设环境光来自无限远</li>
+</ul>
+
+<h3 id="1012-spherical-environment-map-球形环境光映射">10.1.2. Spherical Environment Map 球形环境光映射</h3>
+<ul>
+  <li>将环境光信息存在球上</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/101.jpg" /></center>
+
+<ul>
+  <li>但是在边缘部分会有扭曲，解决方法有环境光存在正方体上</li>
+</ul>
+
+<h3 id="1013-纹理凹凸贴图bump-mapping">10.1.3. 纹理凹凸贴图bump mapping</h3>
+<ul>
+  <li>
+    <p>纹理不仅可以表示颜色，还可以应用一个复杂的纹理来定义高度，也就改变了法线的方向</p>
+  </li>
+  <li>
+    <p>凹凸贴图只增加表面细节，不添加新的三角形</p>
+  </li>
+</ul>
+
+<h3 id="1014-位移贴图-displacement-mapping">10.1.4. 位移贴图 displacement mapping</h3>
+<ul>
+  <li>和凹凸贴图很像，但是移动了顶点</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/102.jpg" /></center>
+
+<h3 id="1015-三维纹理">10.1.5. 三维纹理</h3>
+<ul>
+  <li>
+    <p>定义了空间中任意一个点的纹理坐标</p>
+  </li>
+  <li>
+    <p>广泛应用于体积渲染</p>
+  </li>
+</ul>
+
+<h2 id="102-几何">10.2. 几何</h2>
+<h3 id="1021-分类">10.2.1. 分类</h3>
+<ul>
+  <li>隐式几何</li>
+  <li>显式几何</li>
+</ul>
+
+<h3 id="1022-隐式几何">10.2.2. 隐式几何</h3>
+<ul>
+  <li>不给出点的具体坐标，而是给出点的左边关系，比如$x^2+y^2+z^2=1$</li>
+  <li>推广到一般形式, $f(x,y,z)=0$</li>
+</ul>
+
+:ET
