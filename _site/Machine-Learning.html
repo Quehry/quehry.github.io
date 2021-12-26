@@ -22,7 +22,7 @@
   "headline": "机器学习",
   "abstract": "《机器学习》周志华读书笔记",
     "keywords": "note",
-    "wordcount": "254",
+    "wordcount": "288",
     "image": ["http://localhost:4000/assets/imgposts/20211222/1.jpg"],
   "datePublished": "2021-12-22 00:00:00 +0800",
   "dateModified": "2021-12-22 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="《机器学习》周志华读书笔记">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="254"/>
+<meta data-rh="true" name="twitter:data1" content="288"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211222/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -168,7 +168,7 @@
   </span>
 
         <div class="post-excerpt">
-            <h1 id="目录">目录</h1><!-- TOC --><ul> <li><a href="#目录">目录</a></li> <li><a href="#第2章-模型评估与选择">第2章 模型评估与选择</a> <ul> <li><a href="#20-思维导图">2.0 思维导图</a></li> <li><a href="#21-经验误差与过拟合">2.1 经验误差与过拟合</a></li> <li><a href="#22-评估方法">2.2 评估方法</a> <ul> <li><a href="#221-留出法">2.2.1 留出法</a></li> <li><a href="#222-交叉验证法">2.2.2 交叉验证法</a></li> <li><a href="#223-自助法">2.2.3 自助法</a></li> </ul> </li> <li><a href="#23-性能度量">2.3 性能度量</a> <ul> <li><a href="#231-错误率与精度">2.3.1 错误率与精度</a></li> <li><a href="#232-查准率查全率与f1">2.3.2 查准率、查全率与F1</a></li> <li><a href="#233-roc与auc">2.3.3 ROC与AUC</a></li> <li><a href="#234-代价敏感错误率与代价曲线">2.3.4 代价敏感错误率与代价曲线</a></li> </ul> </li> <li><a href="#24-比较检验">2.4 比较检验</a> <ul> <li><a href="#241-假设检验">2.4.1 假设检验</a></li> <li><a href="#242-交叉验证t检验">2.4.2 交叉验证t检验</a></li> <li><a href="#243-mcnemar检验">2.4.3 McNemar检验</a></li> <li><a href="#244-friedman检验与nemenyi后续检验">2.4.4 Friedman检验与Nemenyi后续检验</a></li> </ul> </li> <li><a href="#25-偏差与方差">2.5 偏差与方差</a></li> </ul> </li> <li><a href="#第3章-线性模型">第3章 线性模型</a> <ul> <li><a href="#31-基本形式">3.1 基本形式</a></li> <li><a href="#32-线性回归">3.2 线性回归</a></li> </ul> </li></ul><!-- /TOC --><h1 id="第2章-模型评估与选择">第2章 模型评估与选择</h1><h2 id="20-思维导图">2.0 思维导图</h2><center><img src="../assets/img/posts/20211222/16.jpg" /></center><h2 id="21-经验误差与过拟合">2.1 经验误差与过拟合</h2><p><strong>定义：</strong></p><ul> <li><strong>错误率(error rate)</strong>: 如果m个样本中有a个样本分类错误，则错误率E=a/m。</li> <li><strong>精度(accuracy)</strong>：精度=1-错误率。</li> <li><strong>训练误差</strong>：学习器在训练集上的误差称为训练误差或者经验误差。</li> <li><strong>泛化误差(generalization...<a class="read-more" href="./Machine-Learning.html"> read more</a>
+            <h1 id="目录">目录</h1><!-- TOC --><ul> <li><a href="#目录">目录</a></li> <li><a href="#第2章-模型评估与选择">第2章 模型评估与选择</a> <ul> <li><a href="#20-思维导图">2.0 思维导图</a></li> <li><a href="#21-经验误差与过拟合">2.1 经验误差与过拟合</a></li> <li><a href="#22-评估方法">2.2 评估方法</a> <ul> <li><a href="#221-留出法">2.2.1 留出法</a></li> <li><a href="#222-交叉验证法">2.2.2 交叉验证法</a></li> <li><a href="#223-自助法">2.2.3 自助法</a></li> </ul> </li> <li><a href="#23-性能度量">2.3 性能度量</a> <ul> <li><a href="#231-错误率与精度">2.3.1 错误率与精度</a></li> <li><a href="#232-查准率查全率与f1">2.3.2 查准率、查全率与F1</a></li> <li><a href="#233-roc与auc">2.3.3 ROC与AUC</a></li> <li><a href="#234-代价敏感错误率与代价曲线">2.3.4 代价敏感错误率与代价曲线</a></li> </ul> </li> <li><a href="#24-比较检验">2.4 比较检验</a> <ul> <li><a href="#241-假设检验">2.4.1 假设检验</a></li> <li><a href="#242-交叉验证t检验">2.4.2 交叉验证t检验</a></li> <li><a href="#243-mcnemar检验">2.4.3 McNemar检验</a></li> <li><a href="#244-friedman检验与nemenyi后续检验">2.4.4 Friedman检验与Nemenyi后续检验</a></li> </ul> </li> <li><a href="#25-偏差与方差">2.5 偏差与方差</a></li> </ul> </li> <li><a href="#第3章-线性模型">第3章 线性模型</a> <ul> <li><a href="#31-基本形式">3.1 基本形式</a></li> <li><a href="#32-线性回归">3.2 线性回归</a></li> <li><a href="#33-对数几率回归">3.3 对数几率回归</a></li> <li><a href="#34-线性判别分析">3.4 线性判别分析</a></li> </ul> </li></ul><!-- /TOC --><h1 id="第2章-模型评估与选择">第2章 模型评估与选择</h1><h2 id="20-思维导图">2.0 思维导图</h2><center><img src="../assets/img/posts/20211222/16.jpg" /></center><h2 id="21-经验误差与过拟合">2.1 经验误差与过拟合</h2><p><strong>定义：</strong></p><ul>...<a class="read-more" href="./Machine-Learning.html"> read more</a>
         </div>
   </div>
 </section>
@@ -382,6 +382,8 @@
     <ul>
       <li><a href="#31-基本形式">3.1 基本形式</a></li>
       <li><a href="#32-线性回归">3.2 线性回归</a></li>
+      <li><a href="#33-对数几率回归">3.3 对数几率回归</a></li>
+      <li><a href="#34-线性判别分析">3.4 线性判别分析</a></li>
     </ul>
   </li>
 </ul>
@@ -728,8 +730,12 @@
 <h2 id="31-基本形式">3.1 基本形式</h2>
 
 <ul>
-  <li>给定由d个属性描述的示例$x=(x_1;x_2;…x_d)$，这是一个列向量，其中$x_i$是$x$在第i个属性上的取值。</li>
-  <li><strong>线性模型(linear model)</strong>试图学得一个通过属性线性组合来进行预测的函数：</li>
+  <li>
+    <p>给定由d个属性描述的示例$x=(x_1;x_2;…x_d)$，这是一个列向量，其中$x_i$是$x$在第i个属性上的取值。</p>
+  </li>
+  <li>
+    <p><strong>线性模型(linear model)</strong>试图学得一个通过属性线性组合来进行预测的函数：</p>
+  </li>
 </ul>
 
 <center><img src="../assets/img/posts/20211222/17.jpg" /></center>
@@ -805,6 +811,69 @@
 
 <p>其中g()单调可微，被称为联系函数。比如当g()=ln()时称为对数线性回归</p>
 
+<h2 id="33-对数几率回归">3.3 对数几率回归</h2>
+<ul>
+  <li>
+    <p>上一节讨论的是线性回归进行回归学习。那么如果我们要做的是分类任务应该怎么改变？我们只需要找到一个单调可微函数将分类任务的真实标记y与线性回归模型的预测值联系起来。</p>
+  </li>
+  <li>
+    <p>考虑二分类问题，那么我们可以用单位阶跃函数/Heaviside函数联系y与z，其中y是真是标记，z是预测值，$z=\omega^Tx+b$</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/27.jpg" /></center>
+
+<ul>
+  <li>
+    <p>但是它有个问题就是不连续，所以我们希望找到能在一定程度上近似它的替代函数。</p>
+  </li>
+  <li>
+    <p><strong>对数几率函数(logistic function)</strong>就是一个替代函数：</p>
+  </li>
+</ul>
+
+<center>$y=\frac{1}{1+e^{-z}}$</center>
+
+<center><img src="../assets/img/posts/20211222/28.jpg" /></center>
+
+<ul>
+  <li>那么这个式子可以转化为：可以把y视为样本x作为正例的可能性，则1-y是其反例的可能性，两者的比值称为几率(odds)：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/29.jpg" /></center>
+
+<ul>
+  <li>若将y视为类后验概率估计。则式子可以重写为：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/30.jpg" /></center>
+
+<ul>
+  <li>接下来我们可以通过<strong>极大似然法(maximum likelihood method)</strong>来估计$\omega$和$b$。给定数据集，对数似然函数<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>为：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/31.jpg" /></center>
+
+<p>即每个样本属于其真实标记的概率越大越好。</p>
+
+<ul>
+  <li>推导过程：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/32.jpg" /></center>
+
+<p>上面有个式子应该有问题，(3.26)应该是</p>
+
+<center>$p(y_i|x_i;\omega,b) = p_1(\hat{x_i};\beta)^{y_i} + p_0(\hat{x_i};\beta)^{1-y_i}$</center>
+
+<p>因为$\beta$是高阶可导连续凸函数，根据凸优化理论，经典的数值优化算法如<strong>梯度下降法(gradient descent method)</strong>和牛顿法都可以求得最优解</p>
+
+<h2 id="34-线性判别分析">3.4 线性判别分析</h2>
+
+<ul>
+  <li>线性判别分析(Linear Discriminant Analysis，简称LDA)是一种经典的线性学习方法。</li>
+</ul>
+
 <hr />
 
 <div class="footnotes" role="doc-endnotes">
@@ -814,6 +883,9 @@
     </li>
     <li id="fn:2" role="doc-endnote">
       <p>满秩矩阵指方阵的秩等于矩阵的行数/列数，满秩矩阵有逆矩阵且对于y=Xb有唯一的解 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>统计学中，似然函数是一种关于统计模型参数的函数。给定输出x时，关于参数θ的似然函数L(θ|x)（在数值上）等于给定参数θ后变量X的概率：L(θ|x)=P(X=x|θ)。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

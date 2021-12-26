@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-26T13:02:57+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-26T13:44:38+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
 
 &lt;!-- TOC --&gt;
 
@@ -38,6 +38,8 @@
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#31-基本形式&quot;&gt;3.1 基本形式&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#32-线性回归&quot;&gt;3.2 线性回归&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#33-对数几率回归&quot;&gt;3.3 对数几率回归&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#34-线性判别分析&quot;&gt;3.4 线性判别分析&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -384,8 +386,12 @@
 &lt;h2 id=&quot;31-基本形式&quot;&gt;3.1 基本形式&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;给定由d个属性描述的示例$x=(x_1;x_2;…x_d)$，这是一个列向量，其中$x_i$是$x$在第i个属性上的取值。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;线性模型(linear model)&lt;/strong&gt;试图学得一个通过属性线性组合来进行预测的函数：&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;给定由d个属性描述的示例$x=(x_1;x_2;…x_d)$，这是一个列向量，其中$x_i$是$x$在第i个属性上的取值。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;线性模型(linear model)&lt;/strong&gt;试图学得一个通过属性线性组合来进行预测的函数：&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/17.jpg&quot; /&gt;&lt;/center&gt;
@@ -461,6 +467,69 @@
 
 &lt;p&gt;其中g()单调可微，被称为联系函数。比如当g()=ln()时称为对数线性回归&lt;/p&gt;
 
+&lt;h2 id=&quot;33-对数几率回归&quot;&gt;3.3 对数几率回归&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;上一节讨论的是线性回归进行回归学习。那么如果我们要做的是分类任务应该怎么改变？我们只需要找到一个单调可微函数将分类任务的真实标记y与线性回归模型的预测值联系起来。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;考虑二分类问题，那么我们可以用单位阶跃函数/Heaviside函数联系y与z，其中y是真是标记，z是预测值，$z=\omega^Tx+b$&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/27.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;但是它有个问题就是不连续，所以我们希望找到能在一定程度上近似它的替代函数。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;对数几率函数(logistic function)&lt;/strong&gt;就是一个替代函数：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;$y=\frac{1}{1+e^{-z}}$&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/28.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;那么这个式子可以转化为：可以把y视为样本x作为正例的可能性，则1-y是其反例的可能性，两者的比值称为几率(odds)：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/29.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;若将y视为类后验概率估计。则式子可以重写为：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/30.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;接下来我们可以通过&lt;strong&gt;极大似然法(maximum likelihood method)&lt;/strong&gt;来估计$\omega$和$b$。给定数据集，对数似然函数&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;为：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/31.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;即每个样本属于其真实标记的概率越大越好。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;推导过程：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/32.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;上面有个式子应该有问题，(3.26)应该是&lt;/p&gt;
+
+&lt;center&gt;$p(y_i|x_i;\omega,b) = p_1(\hat{x_i};\beta)^{y_i} + p_0(\hat{x_i};\beta)^{1-y_i}$&lt;/center&gt;
+
+&lt;p&gt;因为$\beta$是高阶可导连续凸函数，根据凸优化理论，经典的数值优化算法如&lt;strong&gt;梯度下降法(gradient descent method)&lt;/strong&gt;和牛顿法都可以求得最优解&lt;/p&gt;
+
+&lt;h2 id=&quot;34-线性判别分析&quot;&gt;3.4 线性判别分析&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;线性判别分析(Linear Discriminant Analysis，简称LDA)是一种经典的线性学习方法。&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;hr /&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
@@ -470,6 +539,9 @@
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
       &lt;p&gt;满秩矩阵指方阵的秩等于矩阵的行数/列数，满秩矩阵有逆矩阵且对于y=Xb有唯一的解 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;统计学中，似然函数是一种关于统计模型参数的函数。给定输出x时，关于参数θ的似然函数L(θ|x)（在数值上）等于给定参数θ后变量X的概率：L(θ|x)=P(X=x|θ)。 &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">目录</summary></entry><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html">&lt;h1 id=&quot;vae&quot;&gt;VAE&lt;/h1&gt;
