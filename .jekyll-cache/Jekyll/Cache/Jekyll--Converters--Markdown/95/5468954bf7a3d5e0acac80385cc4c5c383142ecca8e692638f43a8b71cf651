@@ -1,5 +1,0 @@
-I"�<h1 id="推荐系统">推荐系统</h1>
-<h2 id="1矩阵分解-matrix-factorization">1.矩阵分解 Matrix Factorization</h2>
-<h3 id="11-the-matrix-factorization-model">1.1 The Matrix Factorization Model</h3>
-<p>R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R<sup>mxn</sup>。P是user latent matrix，P∈R<sup>mxk</sup>，Q是item latent matrix，Q∈R<sup>nxk</sup></p>
-:ET

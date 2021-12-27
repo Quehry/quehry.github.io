@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-26T21:09:47+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-27T11:15:23+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
 
 &lt;!-- TOC --&gt;
 
@@ -1938,9 +1938,55 @@
   &lt;li&gt;问题：走样，阴影分辨率，只能做硬阴影(hard shadow)…&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/126.jpg&quot; /&gt;&lt;/center&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;h1 id=&quot;推荐系统&quot;&gt;推荐系统&lt;/h1&gt;
-&lt;h2 id=&quot;1矩阵分解-matrix-factorization&quot;&gt;1.矩阵分解 Matrix Factorization&lt;/h2&gt;
-&lt;h3 id=&quot;11-the-matrix-factorization-model&quot;&gt;1.1 The Matrix Factorization Model&lt;/h3&gt;
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/126.jpg&quot; /&gt;&lt;/center&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-推荐系统总览&quot;&gt;1. 推荐系统总览&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-协同过滤-collaborative-filtering&quot;&gt;1.1. 协同过滤 Collaborative Filtering&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-显式反馈和隐式反馈&quot;&gt;1.2. 显式反馈和隐式反馈&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-推荐任务&quot;&gt;1.3. 推荐任务&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-矩阵分解-matrix-factorization&quot;&gt;2. 矩阵分解 Matrix Factorization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-autorec&quot;&gt;3. AutoRec&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#31-overview&quot;&gt;3.1. overview&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#32-formula&quot;&gt;3.2. formula&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-personalized-ranking-for-recommender-system&quot;&gt;4. Personalized Ranking for Recommender System&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#41-overview&quot;&gt;4.1. overview&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#42-bayesian-personalized-ranking-loss-贝叶斯损失&quot;&gt;4.2. Bayesian Personalized Ranking loss 贝叶斯损失&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#43-hinge-loss&quot;&gt;4.3. Hinge Loss&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;1-推荐系统总览&quot;&gt;1. 推荐系统总览&lt;/h2&gt;
+&lt;h3 id=&quot;11-协同过滤-collaborative-filtering&quot;&gt;1.1. 协同过滤 Collaborative Filtering&lt;/h3&gt;
+&lt;p&gt;协同过滤最早出现在1992年Tapestry system，“人们相互协作，相互帮助，执行过滤程序，以处理大量的电子邮件和张贴到新闻组的信息。”现在协同过滤的概念更加广泛，从广义上讲，它是利用涉及多个用户、代理和数据源之间协作的技术来过滤&lt;strong&gt;信息或模式&lt;/strong&gt;的过程。&lt;/p&gt;
+
+&lt;p&gt;协同过滤模型可以分为:1.memory-based CF; 2.model-based CF. 其中Memory-based CF又可以分为item-based和user-based CF。model-based CF有矩阵分解模型。&lt;/p&gt;
+
+&lt;p&gt;总的来说，协同过滤就是利用用户-物品的数据来预测和推荐。&lt;/p&gt;
+
+&lt;h3 id=&quot;12-显式反馈和隐式反馈&quot;&gt;1.2. 显式反馈和隐式反馈&lt;/h3&gt;
+&lt;p&gt;为了学习用户的偏好，系统需要收集用户的反馈feedback。反馈可以分为显式和隐式。&lt;/p&gt;
+
+&lt;p&gt;显式反馈就是需要用户主动提供兴趣偏好。比如点赞、点踩。&lt;/p&gt;
+
+&lt;p&gt;隐式反馈则是间接反映用户的喜好，比如购物历史记录，浏览记录，观看记录甚至是鼠标移动。&lt;/p&gt;
+
+&lt;h3 id=&quot;13-推荐任务&quot;&gt;1.3. 推荐任务&lt;/h3&gt;
+&lt;p&gt;电影推荐、新闻推荐、评分预测rating prediction task、top-n reommendation。如果使用了时间戳信息，那么我们构建了sequence-aware recommendation。针对新用户推荐新物品称为cold-start recommendation冷启动推荐。&lt;/p&gt;
+
+&lt;h2 id=&quot;2-矩阵分解-matrix-factorization&quot;&gt;2. 矩阵分解 Matrix Factorization&lt;/h2&gt;
+&lt;p&gt;The Matrix Factorization Model矩阵分解模型&lt;/p&gt;
+
 &lt;p&gt;R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R&lt;sup&gt;mxn&lt;/sup&gt;。P是user latent matrix，P∈R&lt;sup&gt;mxk&lt;/sup&gt;，Q是item latent matrix，Q∈R&lt;sup&gt;nxk&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;矩阵分解就是把R分解成P和Q，那么预测的评分就是：&lt;/p&gt;
@@ -1959,7 +2005,59 @@
 
 &lt;p&gt;下面这张图值观的展示了矩阵分解过程：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211216/5.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html">推荐系统 1.矩阵分解 Matrix Factorization 1.1 The Matrix Factorization Model R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈Rmxn。P是user latent matrix，P∈Rmxk，Q是item latent matrix，Q∈Rnxk</summary></entry><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/20211216/5.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-autorec&quot;&gt;3. AutoRec&lt;/h2&gt;
+&lt;h3 id=&quot;31-overview&quot;&gt;3.1. overview&lt;/h3&gt;
+&lt;p&gt;使用autoencoder预测评分，上小节介绍的矩阵分解模型是线性模型，它不能捕捉复杂的非线性关系，比如用户的偏好。这一小节介绍一个非线性协同过滤神经网络模型AutoRec。&lt;/p&gt;
+
+&lt;p&gt;AutoRec是基于自编码器的结构，自编码器是一种特殊的神经网络架构，他的输入和输出的架构是相同的，自编码器通过无监督学习来训练获取输入数据在较低维度的表达，在神经网络的后段，这些低纬度的信息再次被重构回高维的数据表达。&lt;/p&gt;
+
+&lt;p&gt;所以AutoRec的架构也是输入层，隐藏层和重构输出层。它的目的是输入一个只有部分兴趣矩阵，输出一个完整的兴趣矩阵。&lt;/p&gt;
+
+&lt;p&gt;AutoRec可以分为user-based 和 item-based&lt;/p&gt;
+
+&lt;h3 id=&quot;32-formula&quot;&gt;3.2. formula&lt;/h3&gt;
+&lt;p&gt;针对item-based：&lt;/p&gt;
+
+&lt;p&gt;$R_{*i}$表示兴趣矩阵的第i列，不知道的项填为0。那么神经网络的构架可以定义为：&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/6.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;h()表示最终的输出，输出一个完整的兴趣矩阵，那么误差定义为：&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/7.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;4-personalized-ranking-for-recommender-system&quot;&gt;4. Personalized Ranking for Recommender System&lt;/h2&gt;
+&lt;h3 id=&quot;41-overview&quot;&gt;4.1. overview&lt;/h3&gt;
+&lt;p&gt;在上一节中，我们用到了显式反馈，同时模型只在能观察到的评分上训练。那么这种模型有两个缺点：第一个是很多的反馈并不是显式的。第二个是没有观察到的评分被完全忽略了。&lt;/p&gt;
+
+&lt;p&gt;个性化推荐可以分为:1.pointwise;2.pairwise;3.listwise。Pointwise表示每次预测单个偏好，pairwise则是预测出一系列的偏好然后进行排序，listwise则是预测所有的item并进行排序。&lt;/p&gt;
+
+&lt;h3 id=&quot;42-bayesian-personalized-ranking-loss-贝叶斯损失&quot;&gt;4.2. Bayesian Personalized Ranking loss 贝叶斯损失&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;贝叶斯损失是一种pairwise个性化推荐损失。它被广泛应用于多种推荐系统中。它假设用户相对于无观察项，更加喜欢positive item&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;训练集格式是(u, i, j)表示用户u喜欢i超过j，BPR希望最大化下面这个后验概率：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/8.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;其中$\Theta$表示推荐系统的参数，$&amp;gt;_u$表示用户u对所有item的排序。&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/9.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;43-hinge-loss&quot;&gt;4.3. Hinge Loss&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;数学表达式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/10.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;其中m表示安全系数，它的目的是让不喜欢的项离喜欢的项更远。它和贝叶斯都是为了优化positive sample和negative sample之间的距离。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
 &lt;h2 id=&quot;报告内容&quot;&gt;报告内容&lt;/h2&gt;
 &lt;p&gt;用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。&lt;/p&gt;
 &lt;h2 id=&quot;报告格式&quot;&gt;报告格式&lt;/h2&gt;
