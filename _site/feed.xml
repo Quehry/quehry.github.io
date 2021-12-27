@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-27T11:15:23+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-27T17:58:06+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
 
 &lt;!-- TOC --&gt;
 
@@ -982,6 +982,49 @@
       &lt;li&gt;&lt;a href=&quot;#123-阴影-shadow-mapping&quot;&gt;12.3. 阴影 Shadow mapping&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#13-lecture-13-ray-tracing-1&quot;&gt;13. Lecture 13 Ray Tracing 1&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#131-why-ray-tracing&quot;&gt;13.1. Why ray tracing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#132-light-rays&quot;&gt;13.2. Light Rays&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#133-ray-casting-光线投射&quot;&gt;13.3. Ray Casting 光线投射&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#134-recursive-ray-tracing-递归光线追踪&quot;&gt;13.4. Recursive Ray Tracing 递归光线追踪&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#135-ray-surface-interaction-光线和表面相交&quot;&gt;13.5. Ray-Surface interaction 光线和表面相交&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1351-ray-equation&quot;&gt;13.5.1. Ray Equation&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1352-与圆相交的交点&quot;&gt;13.5.2. 与圆相交的交点&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1353-intersection-with-implicit-surface&quot;&gt;13.5.3. intersection with implicit surface&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1354-intersection-with-triangle-mesh&quot;&gt;13.5.4. intersection with triangle mesh&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1355-accelerating-ray-surface-intersection&quot;&gt;13.5.5. accelerating ray-surface intersection&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#14-lecture-14-ray-tracing-2&quot;&gt;14. Lecture 14 Ray Tracing 2&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#141-uniform-spatial-partitions-grids&quot;&gt;14.1. Uniform Spatial Partitions (Grids)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#142-spatial-partitions-空间划分&quot;&gt;14.2. Spatial Partitions 空间划分&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1421-一些划分示例&quot;&gt;14.2.1. 一些划分示例&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1422-kd-tree&quot;&gt;14.2.2. KD-Tree&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#143-object-partitions-物体划分&quot;&gt;14.3. Object Partitions 物体划分&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1431-bounding-volume-hierarchybvh&quot;&gt;14.3.1. Bounding Volume Hierarchy(BVH)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1432-building-bvh&quot;&gt;14.3.2. Building BVH&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1433-与空间划分的对比&quot;&gt;14.3.3. 与空间划分的对比&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#144-whitted-style&quot;&gt;14.4. Whitted style&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#145-radiometry-辐射度量学&quot;&gt;14.5. Radiometry 辐射度量学&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1451-一些物理量&quot;&gt;14.5.1. 一些物理量&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1452-radiant-energy-and-flux&quot;&gt;14.5.2. Radiant Energy and Flux&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1453-radiant-intensity&quot;&gt;14.5.3. Radiant Intensity&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- /TOC --&gt;
@@ -1938,7 +1981,234 @@
   &lt;li&gt;问题：走样，阴影分辨率，只能做硬阴影(hard shadow)…&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/126.jpg&quot; /&gt;&lt;/center&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;!-- TOC --&gt;
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/126.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h1 id=&quot;13-lecture-13-ray-tracing-1&quot;&gt;13. Lecture 13 Ray Tracing 1&lt;/h1&gt;
+&lt;h2 id=&quot;131-why-ray-tracing&quot;&gt;13.1. Why ray tracing&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;光栅化的缺点：无法表示全局的光照、毛玻璃效果无法很好表示、阴影处理不算好&lt;/li&gt;
+  &lt;li&gt;光纤追踪很精准但是比较慢，经常做离线(电影制作)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;132-light-rays&quot;&gt;13.2. Light Rays&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;光线沿直线传播&lt;/li&gt;
+  &lt;li&gt;光线不会交叉&lt;/li&gt;
+  &lt;li&gt;光线是不断折回然后打到人眼&lt;/li&gt;
+  &lt;li&gt;光路可逆性&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;133-ray-casting-光线投射&quot;&gt;13.3. Ray Casting 光线投射&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;从眼睛到像素点出发，到虚拟世界，再到光源(Local)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/127.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;从眼睛到像素点到虚拟世界的线叫做eye ray&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;134-recursive-ray-tracing-递归光线追踪&quot;&gt;13.4. Recursive Ray Tracing 递归光线追踪&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;如果在shading point 处可以折射，能量损失，则继续折射然后对每个点都算着色值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/128.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对每个点都要计算是否处在阴影中&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;135-ray-surface-interaction-光线和表面相交&quot;&gt;13.5. Ray-Surface interaction 光线和表面相交&lt;/h2&gt;
+&lt;h3 id=&quot;1351-ray-equation&quot;&gt;13.5.1. Ray Equation&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/129.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;1352-与圆相交的交点&quot;&gt;13.5.2. 与圆相交的交点&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/130.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一个交点就是相切，两个交点就是相交&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1353-intersection-with-implicit-surface&quot;&gt;13.5.3. intersection with implicit surface&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;与隐式表面相交&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/131.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;1354-intersection-with-triangle-mesh&quot;&gt;13.5.4. intersection with triangle mesh&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;也就是与显式表面(三角形网格)相交&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第一种想法就是光线与每个三角形进行计算，但这样计算量太大&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第二种想法是光线与三角形所在的平面相交，然后判断交点是不是在三角形内&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/132.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如何定义平面？一个点+法线&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/133.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;然后将光线方程带入平面方程中，就可以得出光线与平面的交点&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如何简化判断交点与三角形的位置关系？MT算法：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/134.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;这个算法的核心就是利用重心坐标系：解出重心坐标后，如果它们都为正，那么点在三角形内&lt;/p&gt;
+
+&lt;h3 id=&quot;1355-accelerating-ray-surface-intersection&quot;&gt;13.5.5. accelerating ray-surface intersection&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;加速交点(一般指与三角形网格的交点)计算过程&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;bounding volume 包围盒&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/135.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;引入包围盒的思路是：如果光线与包围盒都不相交，那么肯定不会与里面的几何体有交点&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;包围盒由三个对面的交集&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/136.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;轴对齐包围盒(就是对面与坐标轴平行)axis-aligned bounding box&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;先考虑二维的情况Ray intersection with aabb&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/137.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;找到最大的时间和最小的时间&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;三维：对于三组对面，计算$t_{min}$和$t_{max}$，然后找到$t_{enter}$和$t_{exit}$。那么我们就知道了进入的时间和出去的时间，如果进去的时间小于出去的时间，那么光线进入了aabb，表示光线在盒子里呆过一段时间&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/138.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;还要要保证进入的时间和出去的时间都要大于0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;14-lecture-14-ray-tracing-2&quot;&gt;14. Lecture 14 Ray Tracing 2&lt;/h1&gt;
+&lt;h2 id=&quot;141-uniform-spatial-partitions-grids&quot;&gt;14.1. Uniform Spatial Partitions (Grids)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;继续上节课的加速计算话题&lt;/li&gt;
+  &lt;li&gt;一种加速方法：生成grid&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/139.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;找到aabb后，创建网格，存储aabb内几何体&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;然后光线沿着这些小格子相交&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/140.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;142-spatial-partitions-空间划分&quot;&gt;14.2. Spatial Partitions 空间划分&lt;/h2&gt;
+&lt;h3 id=&quot;1421-一些划分示例&quot;&gt;14.2.1. 一些划分示例&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/141.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;八叉树Oct-Tree，KD-Tree，BSP-Tree&lt;/p&gt;
+
+&lt;h3 id=&quot;1422-kd-tree&quot;&gt;14.2.2. KD-Tree&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/142.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;每次划分都沿着坐标轴移动，对于中间的结点都有子节点，只存储叶子结点的数据&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;缺点：一个物体可能存在在多个叶子节点里&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;143-object-partitions-物体划分&quot;&gt;14.3. Object Partitions 物体划分&lt;/h2&gt;
+&lt;h3 id=&quot;1431-bounding-volume-hierarchybvh&quot;&gt;14.3.1. Bounding Volume Hierarchy(BVH)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;这种方法是目前图形学中使用较多的方法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/143.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;沿着物体不断细分出bbox&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;bvh的缺点：两部分bbox可能相交&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1432-building-bvh&quot;&gt;14.3.2. Building BVH&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;如何划分结点？选择一个维度进行划分，每次找最长的结点进行细分，细分的结点在中位数，当结点处图形较少，则停止&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/144.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;1433-与空间划分的对比&quot;&gt;14.3.3. 与空间划分的对比&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/145.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;144-whitted-style&quot;&gt;14.4. Whitted style&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;到目前为止，已经讲了国内光线追踪会讲的内容。也就是讲完了Whitted style光线追踪&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;145-radiometry-辐射度量学&quot;&gt;14.5. Radiometry 辐射度量学&lt;/h2&gt;
+&lt;h3 id=&quot;1451-一些物理量&quot;&gt;14.5.1. 一些物理量&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;new terms: radiant flux, intensity, irradiance, radiance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1452-radiant-energy-and-flux&quot;&gt;14.5.2. Radiant Energy and Flux&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;randiant flux就是单位时间能量/功率&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/146.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;1453-radiant-intensity&quot;&gt;14.5.3. Radiant Intensity&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;辐射强度就是单位立体角(solid angle)的功率&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/147.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;那么立体角是什么呢？立体角就是二维空间的角在三维空间的沿伸，就是球面面积除以半径的平方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/148.jpg&quot; /&gt;&lt;/center&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;!-- TOC --&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#1-推荐系统总览&quot;&gt;1. 推荐系统总览&lt;/a&gt;

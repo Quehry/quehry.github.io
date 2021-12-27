@@ -22,7 +22,7 @@
   "headline": "计算机图形学",
   "abstract": "Games 101 introduction to computer graphics 课程笔记",
     "keywords": "note",
-    "wordcount": "826",
+    "wordcount": "1075",
     "image": ["http://localhost:4000/assets/imgposts/20211221/1.jpg"],
   "datePublished": "2021-12-21 00:00:00 +0800",
   "dateModified": "2021-12-21 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="Games 101 introduction to computer graphics 课程笔记">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="826"/>
+<meta data-rh="true" name="twitter:data1" content="1075"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211221/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -160,7 +160,7 @@
     
     <span class="page_meta-readtime">
       
-        4 minute read
+        5 minute read
       
     </span>
   
@@ -300,7 +300,7 @@
     
     <span class="page_meta-readtime">
       
-        4 minute read
+        5 minute read
       
     </span>
   
@@ -470,6 +470,49 @@
       <li><a href="#121-mesh-subdivisionupsampling-网格细分">12.1. Mesh Subdivision(upsampling) 网格细分</a></li>
       <li><a href="#122-mesh-simplification-网格简化">12.2. Mesh Simplification 网格简化</a></li>
       <li><a href="#123-阴影-shadow-mapping">12.3. 阴影 Shadow mapping</a></li>
+    </ul>
+  </li>
+  <li><a href="#13-lecture-13-ray-tracing-1">13. Lecture 13 Ray Tracing 1</a>
+    <ul>
+      <li><a href="#131-why-ray-tracing">13.1. Why ray tracing</a></li>
+      <li><a href="#132-light-rays">13.2. Light Rays</a></li>
+      <li><a href="#133-ray-casting-光线投射">13.3. Ray Casting 光线投射</a></li>
+      <li><a href="#134-recursive-ray-tracing-递归光线追踪">13.4. Recursive Ray Tracing 递归光线追踪</a></li>
+      <li><a href="#135-ray-surface-interaction-光线和表面相交">13.5. Ray-Surface interaction 光线和表面相交</a>
+        <ul>
+          <li><a href="#1351-ray-equation">13.5.1. Ray Equation</a></li>
+          <li><a href="#1352-与圆相交的交点">13.5.2. 与圆相交的交点</a></li>
+          <li><a href="#1353-intersection-with-implicit-surface">13.5.3. intersection with implicit surface</a></li>
+          <li><a href="#1354-intersection-with-triangle-mesh">13.5.4. intersection with triangle mesh</a></li>
+          <li><a href="#1355-accelerating-ray-surface-intersection">13.5.5. accelerating ray-surface intersection</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#14-lecture-14-ray-tracing-2">14. Lecture 14 Ray Tracing 2</a>
+    <ul>
+      <li><a href="#141-uniform-spatial-partitions-grids">14.1. Uniform Spatial Partitions (Grids)</a></li>
+      <li><a href="#142-spatial-partitions-空间划分">14.2. Spatial Partitions 空间划分</a>
+        <ul>
+          <li><a href="#1421-一些划分示例">14.2.1. 一些划分示例</a></li>
+          <li><a href="#1422-kd-tree">14.2.2. KD-Tree</a></li>
+        </ul>
+      </li>
+      <li><a href="#143-object-partitions-物体划分">14.3. Object Partitions 物体划分</a>
+        <ul>
+          <li><a href="#1431-bounding-volume-hierarchybvh">14.3.1. Bounding Volume Hierarchy(BVH)</a></li>
+          <li><a href="#1432-building-bvh">14.3.2. Building BVH</a></li>
+          <li><a href="#1433-与空间划分的对比">14.3.3. 与空间划分的对比</a></li>
+        </ul>
+      </li>
+      <li><a href="#144-whitted-style">14.4. Whitted style</a></li>
+      <li><a href="#145-radiometry-辐射度量学">14.5. Radiometry 辐射度量学</a>
+        <ul>
+          <li><a href="#1451-一些物理量">14.5.1. 一些物理量</a></li>
+          <li><a href="#1452-radiant-energy-and-flux">14.5.2. Radiant Energy and Flux</a></li>
+          <li><a href="#1453-radiant-intensity">14.5.3. Radiant Intensity</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -1430,6 +1473,233 @@
 
 <center><img src="../assets/img/posts/20211221/126.jpg" /></center>
 
+<h1 id="13-lecture-13-ray-tracing-1">13. Lecture 13 Ray Tracing 1</h1>
+<h2 id="131-why-ray-tracing">13.1. Why ray tracing</h2>
+<ul>
+  <li>光栅化的缺点：无法表示全局的光照、毛玻璃效果无法很好表示、阴影处理不算好</li>
+  <li>光纤追踪很精准但是比较慢，经常做离线(电影制作)</li>
+</ul>
+
+<h2 id="132-light-rays">13.2. Light Rays</h2>
+<ul>
+  <li>光线沿直线传播</li>
+  <li>光线不会交叉</li>
+  <li>光线是不断折回然后打到人眼</li>
+  <li>光路可逆性</li>
+</ul>
+
+<h2 id="133-ray-casting-光线投射">13.3. Ray Casting 光线投射</h2>
+<ul>
+  <li>从眼睛到像素点出发，到虚拟世界，再到光源(Local)</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/127.jpg" /></center>
+
+<ul>
+  <li>从眼睛到像素点到虚拟世界的线叫做eye ray</li>
+</ul>
+
+<h2 id="134-recursive-ray-tracing-递归光线追踪">13.4. Recursive Ray Tracing 递归光线追踪</h2>
+<ul>
+  <li>如果在shading point 处可以折射，能量损失，则继续折射然后对每个点都算着色值</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/128.jpg" /></center>
+
+<ul>
+  <li>对每个点都要计算是否处在阴影中</li>
+</ul>
+
+<h2 id="135-ray-surface-interaction-光线和表面相交">13.5. Ray-Surface interaction 光线和表面相交</h2>
+<h3 id="1351-ray-equation">13.5.1. Ray Equation</h3>
+
+<center><img src="../assets/img/posts/20211221/129.jpg" /></center>
+
+<h3 id="1352-与圆相交的交点">13.5.2. 与圆相交的交点</h3>
+
+<center><img src="../assets/img/posts/20211221/130.jpg" /></center>
+
+<ul>
+  <li>一个交点就是相切，两个交点就是相交</li>
+</ul>
+
+<h3 id="1353-intersection-with-implicit-surface">13.5.3. intersection with implicit surface</h3>
+<ul>
+  <li>与隐式表面相交</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/131.jpg" /></center>
+
+<h3 id="1354-intersection-with-triangle-mesh">13.5.4. intersection with triangle mesh</h3>
+<ul>
+  <li>
+    <p>也就是与显式表面(三角形网格)相交</p>
+  </li>
+  <li>
+    <p>第一种想法就是光线与每个三角形进行计算，但这样计算量太大</p>
+  </li>
+  <li>
+    <p>第二种想法是光线与三角形所在的平面相交，然后判断交点是不是在三角形内</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/132.jpg" /></center>
+
+<ul>
+  <li>如何定义平面？一个点+法线</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/133.jpg" /></center>
+
+<ul>
+  <li>
+    <p>然后将光线方程带入平面方程中，就可以得出光线与平面的交点</p>
+  </li>
+  <li>
+    <p>如何简化判断交点与三角形的位置关系？MT算法：</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/134.jpg" /></center>
+
+<p>这个算法的核心就是利用重心坐标系：解出重心坐标后，如果它们都为正，那么点在三角形内</p>
+
+<h3 id="1355-accelerating-ray-surface-intersection">13.5.5. accelerating ray-surface intersection</h3>
+<ul>
+  <li>
+    <p>加速交点(一般指与三角形网格的交点)计算过程</p>
+  </li>
+  <li>
+    <p>bounding volume 包围盒</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/135.jpg" /></center>
+
+<p>引入包围盒的思路是：如果光线与包围盒都不相交，那么肯定不会与里面的几何体有交点</p>
+
+<ul>
+  <li>包围盒由三个对面的交集</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/136.jpg" /></center>
+
+<p>轴对齐包围盒(就是对面与坐标轴平行)axis-aligned bounding box</p>
+
+<ul>
+  <li>先考虑二维的情况Ray intersection with aabb</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/137.jpg" /></center>
+
+<p>找到最大的时间和最小的时间</p>
+
+<ul>
+  <li>三维：对于三组对面，计算$t_{min}$和$t_{max}$，然后找到$t_{enter}$和$t_{exit}$。那么我们就知道了进入的时间和出去的时间，如果进去的时间小于出去的时间，那么光线进入了aabb，表示光线在盒子里呆过一段时间</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/138.jpg" /></center>
+
+<ul>
+  <li>还要要保证进入的时间和出去的时间都要大于0</li>
+</ul>
+
+<h1 id="14-lecture-14-ray-tracing-2">14. Lecture 14 Ray Tracing 2</h1>
+<h2 id="141-uniform-spatial-partitions-grids">14.1. Uniform Spatial Partitions (Grids)</h2>
+<ul>
+  <li>继续上节课的加速计算话题</li>
+  <li>一种加速方法：生成grid</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/139.jpg" /></center>
+
+<p>找到aabb后，创建网格，存储aabb内几何体</p>
+
+<ul>
+  <li>然后光线沿着这些小格子相交</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/140.jpg" /></center>
+
+<h2 id="142-spatial-partitions-空间划分">14.2. Spatial Partitions 空间划分</h2>
+<h3 id="1421-一些划分示例">14.2.1. 一些划分示例</h3>
+
+<center><img src="../assets/img/posts/20211221/141.jpg" /></center>
+
+<p>八叉树Oct-Tree，KD-Tree，BSP-Tree</p>
+
+<h3 id="1422-kd-tree">14.2.2. KD-Tree</h3>
+
+<center><img src="../assets/img/posts/20211221/142.jpg" /></center>
+
+<ul>
+  <li>
+    <p>每次划分都沿着坐标轴移动，对于中间的结点都有子节点，只存储叶子结点的数据</p>
+  </li>
+  <li>
+    <p>缺点：一个物体可能存在在多个叶子节点里</p>
+  </li>
+</ul>
+
+<h2 id="143-object-partitions-物体划分">14.3. Object Partitions 物体划分</h2>
+<h3 id="1431-bounding-volume-hierarchybvh">14.3.1. Bounding Volume Hierarchy(BVH)</h3>
+<ul>
+  <li>这种方法是目前图形学中使用较多的方法</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/143.jpg" /></center>
+
+<ul>
+  <li>
+    <p>沿着物体不断细分出bbox</p>
+  </li>
+  <li>
+    <p>bvh的缺点：两部分bbox可能相交</p>
+  </li>
+</ul>
+
+<h3 id="1432-building-bvh">14.3.2. Building BVH</h3>
+<ul>
+  <li>如何划分结点？选择一个维度进行划分，每次找最长的结点进行细分，细分的结点在中位数，当结点处图形较少，则停止</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/144.jpg" /></center>
+
+<h3 id="1433-与空间划分的对比">14.3.3. 与空间划分的对比</h3>
+
+<center><img src="../assets/img/posts/20211221/145.jpg" /></center>
+
+<h2 id="144-whitted-style">14.4. Whitted style</h2>
+<ul>
+  <li>到目前为止，已经讲了国内光线追踪会讲的内容。也就是讲完了Whitted style光线追踪</li>
+</ul>
+
+<h2 id="145-radiometry-辐射度量学">14.5. Radiometry 辐射度量学</h2>
+<h3 id="1451-一些物理量">14.5.1. 一些物理量</h3>
+<ul>
+  <li>new terms: radiant flux, intensity, irradiance, radiance</li>
+</ul>
+
+<h3 id="1452-radiant-energy-and-flux">14.5.2. Radiant Energy and Flux</h3>
+<ul>
+  <li>randiant flux就是单位时间能量/功率</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/146.jpg" /></center>
+
+<h3 id="1453-radiant-intensity">14.5.3. Radiant Intensity</h3>
+<ul>
+  <li>辐射强度就是单位立体角(solid angle)的功率</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/147.jpg" /></center>
+
+<ul>
+  <li>那么立体角是什么呢？立体角就是二维空间的角在三维空间的沿伸，就是球面面积除以半径的平方</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211221/148.jpg" /></center>
+
 
         <aside class="sidebar inline" id="post-end">
     
@@ -1579,7 +1849,7 @@
     
     <p class="page_meta-readtime">
       
-        4 minute read
+        5 minute read
       
     </p>
   
