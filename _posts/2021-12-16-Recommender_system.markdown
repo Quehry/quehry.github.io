@@ -24,6 +24,9 @@ author: Quehry
     - [4.1. overview](#41-overview)
     - [4.2. Bayesian Personalized Ranking loss 贝叶斯损失](#42-bayesian-personalized-ranking-loss-贝叶斯损失)
     - [4.3. Hinge Loss](#43-hinge-loss)
+- [5. Neural Collaborative Filtering for Personalized Ranking 使用协同过滤网络个性化排序](#5-neural-collaborative-filtering-for-personalized-ranking-使用协同过滤网络个性化排序)
+    - [5.1. The NeuMF model](#51-the-neumf-model)
+    - [5.2. Evaluator](#52-evaluator)
 
 <!-- /TOC -->
 
@@ -113,3 +116,40 @@ h()表示最终的输出，输出一个完整的兴趣矩阵，那么误差定�
 <center><img src='../assets/img/posts/20211216/10.jpg'></center>
 
 其中m表示安全系数，它的目的是让不喜欢的项离喜欢的项更远。它和贝叶斯都是为了优化positive sample和negative sample之间的距离。
+
+## 5. Neural Collaborative Filtering for Personalized Ranking 使用协同过滤网络个性化排序
+本小节重新将目光聚集到隐式反馈中，介绍协同过滤推荐系统NeuMF。NeuMF利用隐式反馈，它由两个子结构组成，分别是generalized matrix factorization(GMF)和MLP。不同于评分的预测如AutoRec，它将生成一系列的推荐
+
+### 5.1. The NeuMF model
+NeuMF的网络结构由两部分组成。
+
+- 一部分是GMF，也就是matrix factorization的类似形式，输入用户向量$p_u$和物品向量$q_i$，返回x
+
+<center><img src='../assets/img/posts/20211216/12.jpg'></center>
+
+- 另一部分是MLP，输入和GMF一样，但是用不同的字母表示，具体公式如下：
+
+<center><img src='../assets/img/posts/20211216/13.jpg'></center>
+
+- 最后对这两个子结构concatenate一下，就是最终的输出
+
+<center><img src='../assets/img/posts/20211216/14.jpg'></center>
+
+- 大体的网络结构如下
+
+<center><img src='../assets/img/posts/20211216/11.jpg'></center>
+
+### 5.2. Evaluator 
+有两个性能度量指标
+
+- hit rate at given cutting off l，记作Hit@l
+
+<center><img src='../assets/img/posts/20211216/15.jpg'></center>
+
+这个式子的主题思路是判断推荐的物品是否在top l中，m表示用户的数量，$rank_{u,g_u}$表示对于用户u和物品$g_u$的排名，1表示指标函数
+
+- AUC，即ROC曲线下的面积，也是模型泛化能力的一个指标
+
+<center><img src='../assets/img/posts/20211216/16.jpg'></center>
+
+其中$S_u$表示模型对于u的推荐物品集，I表示item set，AUC越大越好

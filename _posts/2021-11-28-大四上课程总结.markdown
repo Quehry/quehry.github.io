@@ -120,3 +120,66 @@ author: Quehry
 ### 内容总览
 是上学期经济管理的一部分展开讲，讲了什么是项目，项目管理系统，基于关键路径的项目管理，项目管理的决策
 
+# 工程热力学
+
+### 简介
+- 授课老师：Guillaume Merle
+- 授课形式：看课本，付小尧定期答疑
+- 授课材料：课本、PPT
+- 闭卷考试，不能带A4纸，有三次小测
+- 纯英文授课
+
+### 报告Pre
+- 报告题目：SABRE发动机效率分析
+
+### 内容总览
+一共学习了课本上第1、2、3、4、5、6、7、9、10、11、12章内容，其中第一章介绍热力学基本单位和概念，第二章介绍能量转移的形式是功和热，顺便引出热力学第一定律，第三章介绍纯物质的相和相变，第四章介绍封闭系统的能量变化，即质量不变体积可变的系统，第五章介绍开放系统的质量变化，即体积可变质量不变，第六章介绍热机的效率基本概念，第七章介绍熵的概念以及热力学第二定律，到这为止都是之前热力学学过的东西，第九章介绍了内燃机的工作原理，包括了很多个不同的循环，比如otto、diesel、brayton循环。第十章介绍了热电机的原理和ranking循环。第十一章介绍了冰箱和热泵的基本原理。第十二章是用到的数学表达式的推理。
+
+# Presse
+### 简介
+- 法语课程
+- 授课老师:Vanessa
+- 授课形式：线下授课
+- 授课材料：讲义
+- 闭卷考试
+- 期间写过几次PE
+
+### 内容总览
+- Règle de la classe
+- Vingt ans qui ont déjà tout changé: 11 septembre(effodrement des Tours Jumelles), l'incendie de la cathédrale Notre-Dame de Paris, les confinements en France et dans le monde, la mort de Michael Jackson, l'accident nucléaire de Fukushima 
+- Le 11 Septembre apparaît comme la matrice du XXIe siècle
+- les personnalités les plus marquantes des 20 dernières années: Barack Obama, Donald Trump, Oussama Ben Laden, Emmanuel Macron, Angela Merkel... François Hollande
+- les chanteurs: Johnny Hallydat, Céline Dion, Stromae
+- le confinement en France: haltères, machine à pain, graines de tomates...
+- des solutions pour prospérer et progresser: Cité flottante, Télétravail, Agriculture spatiale, le train intelligent
+- la voiture autonome ne tient pas encore la route: sensible, risque
+- le tourisme spatial, bonne ou mauvaise idée: huit, Elon Musk
+- l'agence spatiale européenne recrute une nouvelle promotion, Feriez-vous un bon astronaute
+- les Français et Internet
+- la 5G vous inquiète-t-elle?
+- la 5G, amie ou ennemie?
+- Sept innovations contre le handicap: le gant qui traduit la langue des signes, les lunettes qui parlent aux malvoyants
+- Jeux vidéo
+- Bientôt de l'e-sport aux Jeux Olympiques
+
+# Audiovisual 
+# 简介
+- 法语课程
+- 授课老师：Fabien
+- 授课形式：瞩目线上
+- 授课材料：讲义
+- 闭卷考试
+
+### 内容总览
+- Séance 1 - les étudiants français sous la Covid-19
+- Séance 2 - Afghanistan: partir ou rester
+- Séance 3 - Réalité Virtuelle: une méthode d'emphaie
+- Séance 4 - Utiliser des produits ménagers bio
+- Séance 5 - Pandémies et environnement
+- Séance 6 - Les transports du futur
+- Séance 7 - Le tourisme spatial
+- Séance 8 - Robots de guerre
+- Séance 9 - Le bilan de la COP 26
+- Séance 10 - Révolution du vin
+- Séance 11 – Rouler au whisky
+- Séance 12 — Un champion de la pâtisserie
