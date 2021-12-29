@@ -113,6 +113,20 @@ author: Quehry
         - [14.5.1. 一些物理量](#1451-一些物理量)
         - [14.5.2. Radiant Energy and Flux](#1452-radiant-energy-and-flux)
         - [14.5.3. Radiant Intensity](#1453-radiant-intensity)
+- [15. Lecture 15 Ray Tracing](#15-lecture-15-ray-tracing)
+    - [15.1. Radiometry cont. 辐射度量学](#151-radiometry-cont-辐射度量学)
+        - [15.1.1. 继续上节课的内容](#1511-继续上节课的内容)
+        - [15.1.2. Irradiance](#1512-irradiance)
+        - [15.1.3. Radiance](#1513-radiance)
+    - [15.2. Bidirectional Reflectance Distribution Function (BRDF)](#152-bidirectional-reflectance-distribution-function-brdf)
+    - [15.3. Rendering Equation 渲染方程](#153-rendering-equation-渲染方程)
+        - [15.3.1. 如何理解渲染方程](#1531-如何理解渲染方程)
+- [16. Lecture 16 Ray Tracing 4](#16-lecture-16-ray-tracing-4)
+    - [16.1. Monte Carlo Integration 蒙特卡洛积分](#161-monte-carlo-integration-蒙特卡洛积分)
+    - [16.2. Path Tracing 路径追踪](#162-path-tracing-路径追踪)
+        - [16.2.1. 解渲染方程](#1621-解渲染方程)
+        - [16.2.2. 最终的代码](#1622-最终的代码)
+    - [16.3. 路径追踪](#163-路径追踪)
 
 <!-- /TOC -->
 
@@ -958,3 +972,135 @@ Rodrigues' Rotation Formula, 用向量n表示旋转轴，最终推出这个公�
 
 <center><img src='../assets/img/posts/20211221/148.jpg'></center>
 
+# 15. Lecture 15 Ray Tracing
+## 15.1. Radiometry cont. 辐射度量学
+### 15.1.1. 继续上节课的内容
+
+- 微分立体角，就是球坐标系上对$\theta$和$\phi$的微分
+
+<center><img src='../assets/img/posts/20211221/149.jpg'></center>
+
+### 15.1.2. Irradiance
+- 单位面积的功率
+
+<center><img src='../assets/img/posts/20211221/150.jpg'></center>
+
+- 面积是投影的面积
+
+### 15.1.3. Radiance 
+- randiance就是单位投影面积单位立体角的功率
+
+<center><img src='../assets/img/posts/20211221/151.jpg'></center>
+
+- irradiance和radiance的区别：irradiance是某一个面积上接受的能量，而radiance是某一个面积某一个角度上接受的能量
+
+<center><img src='../assets/img/posts/20211221/152.jpg'></center>
+
+## 15.2. Bidirectional Reflectance Distribution Function (BRDF)
+- 双向反射分布方程BRDF是描述光线传播的方程
+
+- 某一个方向$\omega_i$的光线打到某一个表面然后被吸收同时从另一个方向$\omega_r$反射出去
+
+<center><img src='../assets/img/posts/20211221/153.jpg'></center>
+
+- 反射方程
+
+<center><img src='../assets/img/posts/20211221/154.jpg'></center>
+
+- 观察某一个物体的反射光线不止从光源有光线，还有其他物体反射的光
+
+- 渲染方程Rendering Equation
+
+<center><img src='../assets/img/posts/20211221/155.jpg'></center>
+
+- 渲染方程两部分组成，一部分是自身发光，另一部分是接受的光线的反射光线(半球上每个方向)
+
+## 15.3. Rendering Equation 渲染方程
+
+### 15.3.1. 如何理解渲染方程
+- 反射的光线由两个个部分组成：自身的emission和从各个方向的反射光
+
+- 如何考虑物体反射的光？把物体看作一个光源，也就是看作一个递归的过程
+
+<center><img src='../assets/img/posts/20211221/156.jpg'></center>
+
+- 通过数学式子简化渲染方程：
+
+<center><img src='../assets/img/posts/20211221/157.jpg'></center>
+
+- 然后通过逆矩阵可以解出L
+
+<center><img src='../assets/img/posts/20211221/158.jpg'></center>
+
+- 光线弹射一次叫做直接光照、弹射两次及以上叫做间接光照
+
+- 那么就可以发现与光栅化的区别
+
+<center><img src='../assets/img/posts/20211221/159.jpg'></center>
+
+- 在多次弹射后场景会趋于一个固定的亮度
+
+# 16. Lecture 16 Ray Tracing 4
+## 16.1. Monte Carlo Integration 蒙特卡洛积分
+- 有些函数不太好用解析式写出来
+- 蒙特卡洛积分就是数值积分的方法
+
+<center><img src='../assets/img/posts/20211221/160.jpg'></center>
+
+- 就是采样值除以采样密度
+
+<center><img src='../assets/img/posts/20211221/161.jpg'></center>
+
+## 16.2. Path Tracing 路径追踪
+- 与whitted sytle的区别：whitted sytle没有考虑全局光照
+
+### 16.2.1. 解渲染方程
+- 考虑一个简单的模型，只有直接光照
+
+<center><img src='../assets/img/posts/20211221/162.jpg'></center>
+
+- 每一个$\omega_i$都看作采样，那么可以应用蒙特卡洛积分
+
+<center><img src='../assets/img/posts/20211221/163.jpg'></center>
+
+- 应用全局光照，将物体反射面也看做光源，做一个递归
+
+<center><img src='../assets/img/posts/20211221/164.jpg'></center>
+
+- 但是这样会出现一个问题，那就是爆炸，如果我取多个X，那么弹射很多次后就会爆炸
+
+- 解决方法，对每个点只取一个方向，也就是N=1，所以它叫做路径追踪
+
+- 这样噪声会比较大，但是从每个像素点有多个路径，所以还是可以接受
+
+- 第二个问题是递归不会停止？解决方法：俄罗斯轮盘赌，即在某一个程度停止递归
+
+<center><img src='../assets/img/posts/20211221/165.jpg'></center>
+
+- 那么我们可以设定一个概率P来决定每个点是否打出一条光线，同时保证期望不变
+
+<center><img src='../assets/img/posts/20211221/166.jpg'></center>
+
+- 到目前为止已经是一个正确的path tracing的渲染方法，但是这样效率比较低
+
+- 效率低的原因：每个点打到或者打不到光源是随机的，也就是说浪费了很多光线
+
+<center><img src='../assets/img/posts/20211221/167.jpg'></center>
+
+- 可以在光源上采样，这样没有光线会浪费，渲染方程就需要写成在光源上采样
+
+<center><img src='../assets/img/posts/20211221/168.jpg'></center>
+
+- 那么我们就可以将渲染方程分为两部分，一部分是光源直接光照，方法使用上面提到的在光源上采样，另一部分是间接光照，保持不变
+
+### 16.2.2. 最终的代码
+
+<center><img src='../assets/img/posts/20211221/169.jpg'></center>
+
+- 但还有一个小问题，就是中间有物体遮挡，需要添加一个判断
+
+<center><img src='../assets/img/posts/20211221/170.jpg'></center>
+
+## 16.3. 路径追踪
+- 在之前，ray tracing主要指whitted-style ray tracing
+- 但现在，只要设计了光线传播方法，就是ray tracing，路径追踪只是其中的一个方法
