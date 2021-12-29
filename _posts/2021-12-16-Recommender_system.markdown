@@ -27,6 +27,7 @@ author: Quehry
 - [5. Neural Collaborative Filtering for Personalized Ranking 使用协同过滤网络个性化排序](#5-neural-collaborative-filtering-for-personalized-ranking-使用协同过滤网络个性化排序)
     - [5.1. The NeuMF model](#51-the-neumf-model)
     - [5.2. Evaluator](#52-evaluator)
+    - [5.3. 代码](#53-代码)
 
 <!-- /TOC -->
 
@@ -118,7 +119,7 @@ h()表示最终的输出，输出一个完整的兴趣矩阵，那么误差定�
 其中m表示安全系数，它的目的是让不喜欢的项离喜欢的项更远。它和贝叶斯都是为了优化positive sample和negative sample之间的距离。
 
 ## 5. Neural Collaborative Filtering for Personalized Ranking 使用协同过滤网络个性化排序
-本小节重新将目光聚集到隐式反馈中，介绍协同过滤推荐系统NeuMF。NeuMF利用隐式反馈，它由两个子结构组成，分别是generalized matrix factorization(GMF)和MLP。不同于评分的预测如AutoRec，它将生成一系列的推荐
+本小节重新将目光聚集到隐式反馈中，介绍协同过滤推荐系统NeuMF。NeuMF利用隐式反馈，它由两个子结构组成，分别是generalized matrix factorization(GMF)和MLP。不同于评分的预测如AutoRec，它将生成一系列的推荐，它根据用户是否看过这场电影来区分为正例和反例
 
 ### 5.1. The NeuMF model
 NeuMF的网络结构由两部分组成。
@@ -153,3 +154,8 @@ NeuMF的网络结构由两部分组成。
 <center><img src='../assets/img/posts/20211216/16.jpg'></center>
 
 其中$S_u$表示模型对于u的推荐物品集，I表示item set，AUC越大越好
+
+### 5.3. 代码
+网络结构就是上面介绍的那样，net的输出是用户和物品匹配出的一个推荐值(我的想法)。在进行训练的时候，会给出正例物品(即用户有过评分的物品)和反例物品(用户没有评分，也就是没有看过)分别与用户得到一个推荐值，然后利用上一小节介绍的贝叶斯损失来优化(让评分过的物品有更高的推荐值)，然后最终我们希望返回一系列的推荐物品，这些推荐物品都是没有负例物品，然后根据推荐值进行排序。性能指标是hit或者auc。hit的思想是让真实评分的物品在推荐列表中。
+
+
