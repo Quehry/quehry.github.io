@@ -22,7 +22,7 @@
   "headline": "机器学习",
   "abstract": "《机器学习》周志华读书笔记",
     "keywords": "note",
-    "wordcount": "348",
+    "wordcount": "405",
     "image": ["http://localhost:4000/assets/imgposts/20211222/1.jpg"],
   "datePublished": "2021-12-22 00:00:00 +0800",
   "dateModified": "2021-12-22 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="《机器学习》周志华读书笔记">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="348"/>
+<meta data-rh="true" name="twitter:data1" content="405"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211222/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -160,7 +160,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </span>
   
@@ -300,7 +300,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </span>
   
@@ -388,6 +388,19 @@
       <li><a href="#35-线性判别分析">3.5. 线性判别分析</a></li>
       <li><a href="#36-多分类学习">3.6. 多分类学习</a></li>
       <li><a href="#37-类别不平衡问题">3.7. 类别不平衡问题</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-第4章-决策树">4. 第4章 决策树</a>
+    <ul>
+      <li><a href="#41-思维导图">4.1. 思维导图</a></li>
+      <li><a href="#42-基本流程">4.2. 基本流程</a></li>
+      <li><a href="#43-划分选择">4.3. 划分选择</a>
+        <ul>
+          <li><a href="#431-信息增益">4.3.1. 信息增益</a></li>
+          <li><a href="#432-增益率">4.3.2. 增益率</a></li>
+          <li><a href="#433-基尼指数">4.3.3. 基尼指数</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -993,6 +1006,93 @@
   <li>需注意的是，过采样法不能简单地对初始正例样本进行重复来样，否则会招致严重的过拟合；过采样法的代表性算法SMOTE是通过对训练集里的正例进行插值来产生额外的正例.另一方面，欠采样法若随机丢弃反例可能丢失一些重要信息;欠采样法的代表性算法EasyEnsemble则是利用集成学习机制，将反例划分为若干个集合供不同学习器使用，这样对每个学习器来看都进行了欠采样，但在全局来看却不会丢失重要信息。</li>
 </ul>
 
+<h1 id="4-第4章-决策树">4. 第4章 决策树</h1>
+<h2 id="41-思维导图">4.1. 思维导图</h2>
+
+<h2 id="42-基本流程">4.2. 基本流程</h2>
+<ul>
+  <li>决策树是基于树结构来进行决策，其中包含一个根结点，多个内部结点和多个叶结点</li>
+  <li>叶结点对应决策结果，其他每个结点都对应一个属性测试</li>
+  <li>每个结点包含的样本集合根据属性测试被划分到子结点中，那么根结点包含样本全集</li>
+  <li>决策树学习的目的是为了产生一棵泛化能力强的决策树</li>
+  <li>决策树的生成是一个递归过程，下面这张图展示了递归的过程：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/43.jpg" /></center>
+
+<p>对于每个结点，首先判断该结点的样本集是否属于同一个类别C，如果是，则将该结点标记为C类叶结点。再判断该结点的样本集的属性值是否完全相同(或者是否为空集)，如果是，则将该结点标记为D类叶结点，其中D类是这些样本中最多的类别。如果该结点即不是<strong>同属于一个类别</strong>也不是<strong>属性值取值相同</strong>，那么则需要继续划分，选择一个最优的划分属性$a_*$,创建新的分支，对于每个分支结点首先判断是否为空，如果为空则判定为E类叶结点，其中E类是父结点中类别最多的类。如果子结点不为空则递归。</p>
+
+<h2 id="43-划分选择">4.3. 划分选择</h2>
+<p>可以发现生成决策树最关键的步骤就是选择最优划分属性，我们希望决策树的分支结点所包含的样本尽可能属于同一类别，即结点的<strong>纯度</strong>越来越高。我们有很多指标来确定选择哪一个属性作为最优划分选择，下面将分别介绍：</p>
+
+<h3 id="431-信息增益">4.3.1. 信息增益</h3>
+<ul>
+  <li><strong>信息熵(information entropy)</strong>是度量样本集合纯度最常用的一种指标。下面是信息熵的定义公式：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/44.jpg" /></center>
+
+<p>  其中$p_k$表示第k类样本在样本集D中所占比例，信息熵越小表示D的纯度越高。</p>
+
+<ul>
+  <li>假设离散属性a有V个可能的取值${a^1,a^2…a^V}$,那么我们可以计算出在使用a作为划分属性前后的信息熵差别，也就是<strong>信息增益(information gain)</strong>：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/45.jpg" /></center>
+
+<p>  对每一个子结点$D^v$都赋予权重同时相加。</p>
+
+<ul>
+  <li>
+    <p>著名的ID3决策树学习算法就是以信息增益作为准则来选择划分属性，我们希望找到信息增益最大的属性。</p>
+  </li>
+  <li>
+    <p>书上使用信息增益划分的例子：</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/46.jpg" /></center>
+
+<h3 id="432-增益率">4.3.2. 增益率</h3>
+<ul>
+  <li>
+    <p>信息增益对可取值数目较多的属性有所偏好，比如我们使用编号这一属性来划分，每一个编号都只有一个样本，那么信息增益肯定增大了，但是决策树的泛化能力显然下降了。</p>
+  </li>
+  <li>
+    <p><strong>增益率(gain ratio)</strong>，我们通过对信息增益除以IV来平衡属性数目带来的影响，增益率的定义如下：</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/47.jpg" /></center>
+
+<p>  IV(intrinsic value)的定义如下：</p>
+
+<center><img src="../assets/img/posts/20211222/48.jpg" /></center>
+
+<p>  IV是属性a的固有值，属性a可取的数值数目越多，那么IV就越大</p>
+
+<ul>
+  <li>但是增益率也有问题，那就是对于可取值数目较少的属性有偏好，所以著名的C4.5决策树算法并不是直接使用增益率，而是先从候选划分属性中找出信息增益高于平均水平的属性，然后再从中选择增益率最高的属性</li>
+</ul>
+
+<h3 id="433-基尼指数">4.3.3. 基尼指数</h3>
+<ul>
+  <li>CART决策树使用基尼指数来选择划分属性</li>
+  <li>数据集D的纯度定义如下</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/49.jpg" /></center>
+
+<p>  直观来说，Gini反映了从数据集随便抽取两个样本，它们类别不一致概率</p>
+
+<ul>
+  <li><strong>基尼指数</strong>定义如下：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/50.jpg" /></center>
+
+<p>  很明显，我们希望基尼指数越小越好，所以我们选择基尼指数最小的属性最为最优划分属性。</p>
+
 <hr />
 
 <div class="footnotes" role="doc-endnotes">
@@ -1101,7 +1201,7 @@
     
     <p class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </p>
   
@@ -1163,7 +1263,7 @@
     
     <p class="page_meta-readtime">
       
-        5 minute read
+        6 minute read
       
     </p>
   

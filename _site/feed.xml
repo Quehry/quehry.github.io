@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-27T17:58:06+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-29T23:44:10+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
 
 &lt;!-- TOC --&gt;
 
@@ -44,6 +44,19 @@
       &lt;li&gt;&lt;a href=&quot;#35-线性判别分析&quot;&gt;3.5. 线性判别分析&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#36-多分类学习&quot;&gt;3.6. 多分类学习&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#37-类别不平衡问题&quot;&gt;3.7. 类别不平衡问题&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-第4章-决策树&quot;&gt;4. 第4章 决策树&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#41-思维导图&quot;&gt;4.1. 思维导图&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#42-基本流程&quot;&gt;4.2. 基本流程&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#43-划分选择&quot;&gt;4.3. 划分选择&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#431-信息增益&quot;&gt;4.3.1. 信息增益&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#432-增益率&quot;&gt;4.3.2. 增益率&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#433-基尼指数&quot;&gt;4.3.3. 基尼指数&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -649,6 +662,93 @@
   &lt;li&gt;需注意的是，过采样法不能简单地对初始正例样本进行重复来样，否则会招致严重的过拟合；过采样法的代表性算法SMOTE是通过对训练集里的正例进行插值来产生额外的正例.另一方面，欠采样法若随机丢弃反例可能丢失一些重要信息;欠采样法的代表性算法EasyEnsemble则是利用集成学习机制，将反例划分为若干个集合供不同学习器使用，这样对每个学习器来看都进行了欠采样，但在全局来看却不会丢失重要信息。&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h1 id=&quot;4-第4章-决策树&quot;&gt;4. 第4章 决策树&lt;/h1&gt;
+&lt;h2 id=&quot;41-思维导图&quot;&gt;4.1. 思维导图&lt;/h2&gt;
+
+&lt;h2 id=&quot;42-基本流程&quot;&gt;4.2. 基本流程&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;决策树是基于树结构来进行决策，其中包含一个根结点，多个内部结点和多个叶结点&lt;/li&gt;
+  &lt;li&gt;叶结点对应决策结果，其他每个结点都对应一个属性测试&lt;/li&gt;
+  &lt;li&gt;每个结点包含的样本集合根据属性测试被划分到子结点中，那么根结点包含样本全集&lt;/li&gt;
+  &lt;li&gt;决策树学习的目的是为了产生一棵泛化能力强的决策树&lt;/li&gt;
+  &lt;li&gt;决策树的生成是一个递归过程，下面这张图展示了递归的过程：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/43.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;对于每个结点，首先判断该结点的样本集是否属于同一个类别C，如果是，则将该结点标记为C类叶结点。再判断该结点的样本集的属性值是否完全相同(或者是否为空集)，如果是，则将该结点标记为D类叶结点，其中D类是这些样本中最多的类别。如果该结点即不是&lt;strong&gt;同属于一个类别&lt;/strong&gt;也不是&lt;strong&gt;属性值取值相同&lt;/strong&gt;，那么则需要继续划分，选择一个最优的划分属性$a_*$,创建新的分支，对于每个分支结点首先判断是否为空，如果为空则判定为E类叶结点，其中E类是父结点中类别最多的类。如果子结点不为空则递归。&lt;/p&gt;
+
+&lt;h2 id=&quot;43-划分选择&quot;&gt;4.3. 划分选择&lt;/h2&gt;
+&lt;p&gt;可以发现生成决策树最关键的步骤就是选择最优划分属性，我们希望决策树的分支结点所包含的样本尽可能属于同一类别，即结点的&lt;strong&gt;纯度&lt;/strong&gt;越来越高。我们有很多指标来确定选择哪一个属性作为最优划分选择，下面将分别介绍：&lt;/p&gt;
+
+&lt;h3 id=&quot;431-信息增益&quot;&gt;4.3.1. 信息增益&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;信息熵(information entropy)&lt;/strong&gt;是度量样本集合纯度最常用的一种指标。下面是信息熵的定义公式：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/44.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;  其中$p_k$表示第k类样本在样本集D中所占比例，信息熵越小表示D的纯度越高。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;假设离散属性a有V个可能的取值${a^1,a^2…a^V}$,那么我们可以计算出在使用a作为划分属性前后的信息熵差别，也就是&lt;strong&gt;信息增益(information gain)&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/45.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;  对每一个子结点$D^v$都赋予权重同时相加。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;著名的ID3决策树学习算法就是以信息增益作为准则来选择划分属性，我们希望找到信息增益最大的属性。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;书上使用信息增益划分的例子：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/46.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;432-增益率&quot;&gt;4.3.2. 增益率&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;信息增益对可取值数目较多的属性有所偏好，比如我们使用编号这一属性来划分，每一个编号都只有一个样本，那么信息增益肯定增大了，但是决策树的泛化能力显然下降了。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;增益率(gain ratio)&lt;/strong&gt;，我们通过对信息增益除以IV来平衡属性数目带来的影响，增益率的定义如下：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/47.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;  IV(intrinsic value)的定义如下：&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/48.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;  IV是属性a的固有值，属性a可取的数值数目越多，那么IV就越大&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;但是增益率也有问题，那就是对于可取值数目较少的属性有偏好，所以著名的C4.5决策树算法并不是直接使用增益率，而是先从候选划分属性中找出信息增益高于平均水平的属性，然后再从中选择增益率最高的属性&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;433-基尼指数&quot;&gt;4.3.3. 基尼指数&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;CART决策树使用基尼指数来选择划分属性&lt;/li&gt;
+  &lt;li&gt;数据集D的纯度定义如下&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/49.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;  直观来说，Gini反映了从数据集随便抽取两个样本，它们类别不一致概率&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;基尼指数&lt;/strong&gt;定义如下：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211222/50.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;  很明显，我们希望基尼指数越小越好，所以我们选择基尼指数最小的属性最为最优划分属性。&lt;/p&gt;
+
 &lt;hr /&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
@@ -1023,6 +1123,35 @@
           &lt;li&gt;&lt;a href=&quot;#1453-radiant-intensity&quot;&gt;14.5.3. Radiant Intensity&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#15-lecture-15-ray-tracing&quot;&gt;15. Lecture 15 Ray Tracing&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#151-radiometry-cont-辐射度量学&quot;&gt;15.1. Radiometry cont. 辐射度量学&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1511-继续上节课的内容&quot;&gt;15.1.1. 继续上节课的内容&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1512-irradiance&quot;&gt;15.1.2. Irradiance&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1513-radiance&quot;&gt;15.1.3. Radiance&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#152-bidirectional-reflectance-distribution-function-brdf&quot;&gt;15.2. Bidirectional Reflectance Distribution Function (BRDF)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#153-rendering-equation-渲染方程&quot;&gt;15.3. Rendering Equation 渲染方程&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1531-如何理解渲染方程&quot;&gt;15.3.1. 如何理解渲染方程&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#16-lecture-16-ray-tracing-4&quot;&gt;16. Lecture 16 Ray Tracing 4&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#161-monte-carlo-integration-蒙特卡洛积分&quot;&gt;16.1. Monte Carlo Integration 蒙特卡洛积分&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#162-path-tracing-路径追踪&quot;&gt;16.2. Path Tracing 路径追踪&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#1621-解渲染方程&quot;&gt;16.2.1. 解渲染方程&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#1622-最终的代码&quot;&gt;16.2.2. 最终的代码&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#163-路径追踪&quot;&gt;16.3. 路径追踪&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -2208,7 +2337,214 @@
   &lt;li&gt;那么立体角是什么呢？立体角就是二维空间的角在三维空间的沿伸，就是球面面积除以半径的平方&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/148.jpg&quot; /&gt;&lt;/center&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;!-- TOC --&gt;
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/148.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h1 id=&quot;15-lecture-15-ray-tracing&quot;&gt;15. Lecture 15 Ray Tracing&lt;/h1&gt;
+&lt;h2 id=&quot;151-radiometry-cont-辐射度量学&quot;&gt;15.1. Radiometry cont. 辐射度量学&lt;/h2&gt;
+&lt;h3 id=&quot;1511-继续上节课的内容&quot;&gt;15.1.1. 继续上节课的内容&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;微分立体角，就是球坐标系上对$\theta$和$\phi$的微分&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/149.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;1512-irradiance&quot;&gt;15.1.2. Irradiance&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;单位面积的功率&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/150.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;面积是投影的面积&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1513-radiance&quot;&gt;15.1.3. Radiance&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;randiance就是单位投影面积单位立体角的功率&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/151.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;irradiance和radiance的区别：irradiance是某一个面积上接受的能量，而radiance是某一个面积某一个角度上接受的能量&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/152.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;152-bidirectional-reflectance-distribution-function-brdf&quot;&gt;15.2. Bidirectional Reflectance Distribution Function (BRDF)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;双向反射分布方程BRDF是描述光线传播的方程&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;某一个方向$\omega_i$的光线打到某一个表面然后被吸收同时从另一个方向$\omega_r$反射出去&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/153.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;反射方程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/154.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;观察某一个物体的反射光线不止从光源有光线，还有其他物体反射的光&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;渲染方程Rendering Equation&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/155.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;渲染方程两部分组成，一部分是自身发光，另一部分是接受的光线的反射光线(半球上每个方向)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;153-rendering-equation-渲染方程&quot;&gt;15.3. Rendering Equation 渲染方程&lt;/h2&gt;
+
+&lt;h3 id=&quot;1531-如何理解渲染方程&quot;&gt;15.3.1. 如何理解渲染方程&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;反射的光线由两个个部分组成：自身的emission和从各个方向的反射光&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如何考虑物体反射的光？把物体看作一个光源，也就是看作一个递归的过程&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/156.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;通过数学式子简化渲染方程：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/157.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;然后通过逆矩阵可以解出L&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/158.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;光线弹射一次叫做直接光照、弹射两次及以上叫做间接光照&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;那么就可以发现与光栅化的区别&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/159.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在多次弹射后场景会趋于一个固定的亮度&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;16-lecture-16-ray-tracing-4&quot;&gt;16. Lecture 16 Ray Tracing 4&lt;/h1&gt;
+&lt;h2 id=&quot;161-monte-carlo-integration-蒙特卡洛积分&quot;&gt;16.1. Monte Carlo Integration 蒙特卡洛积分&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;有些函数不太好用解析式写出来&lt;/li&gt;
+  &lt;li&gt;蒙特卡洛积分就是数值积分的方法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/160.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;就是采样值除以采样密度&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/161.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;162-path-tracing-路径追踪&quot;&gt;16.2. Path Tracing 路径追踪&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;与whitted sytle的区别：whitted sytle没有考虑全局光照&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1621-解渲染方程&quot;&gt;16.2.1. 解渲染方程&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;考虑一个简单的模型，只有直接光照&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/162.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;每一个$\omega_i$都看作采样，那么可以应用蒙特卡洛积分&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/163.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;应用全局光照，将物体反射面也看做光源，做一个递归&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/164.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;但是这样会出现一个问题，那就是爆炸，如果我取多个X，那么弹射很多次后就会爆炸&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;解决方法，对每个点只取一个方向，也就是N=1，所以它叫做路径追踪&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;这样噪声会比较大，但是从每个像素点有多个路径，所以还是可以接受&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第二个问题是递归不会停止？解决方法：俄罗斯轮盘赌，即在某一个程度停止递归&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/165.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;那么我们可以设定一个概率P来决定每个点是否打出一条光线，同时保证期望不变&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/166.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;到目前为止已经是一个正确的path tracing的渲染方法，但是这样效率比较低&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;效率低的原因：每个点打到或者打不到光源是随机的，也就是说浪费了很多光线&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/167.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;可以在光源上采样，这样没有光线会浪费，渲染方程就需要写成在光源上采样&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/168.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;那么我们就可以将渲染方程分为两部分，一部分是光源直接光照，方法使用上面提到的在光源上采样，另一部分是间接光照，保持不变&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1622-最终的代码&quot;&gt;16.2.2. 最终的代码&lt;/h3&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/169.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;但还有一个小问题，就是中间有物体遮挡，需要添加一个判断&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211221/170.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;163-路径追踪&quot;&gt;16.3. 路径追踪&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;在之前，ray tracing主要指whitted-style ray tracing&lt;/li&gt;
+  &lt;li&gt;但现在，只要设计了光线传播方法，就是ray tracing，路径追踪只是其中的一个方法&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html">&lt;!-- TOC --&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#1-推荐系统总览&quot;&gt;1. 推荐系统总览&lt;/a&gt;
@@ -2230,6 +2566,13 @@
       &lt;li&gt;&lt;a href=&quot;#41-overview&quot;&gt;4.1. overview&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#42-bayesian-personalized-ranking-loss-贝叶斯损失&quot;&gt;4.2. Bayesian Personalized Ranking loss 贝叶斯损失&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#43-hinge-loss&quot;&gt;4.3. Hinge Loss&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-neural-collaborative-filtering-for-personalized-ranking-使用协同过滤网络个性化排序&quot;&gt;5. Neural Collaborative Filtering for Personalized Ranking 使用协同过滤网络个性化排序&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#51-the-neumf-model&quot;&gt;5.1. The NeuMF model&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#52-evaluator&quot;&gt;5.2. Evaluator&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#53-代码&quot;&gt;5.3. 代码&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -2327,7 +2670,59 @@
 
 &lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/10.jpg&quot; /&gt;&lt;/center&gt;
 
-&lt;p&gt;其中m表示安全系数，它的目的是让不喜欢的项离喜欢的项更远。它和贝叶斯都是为了优化positive sample和negative sample之间的距离。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
+&lt;p&gt;其中m表示安全系数，它的目的是让不喜欢的项离喜欢的项更远。它和贝叶斯都是为了优化positive sample和negative sample之间的距离。&lt;/p&gt;
+
+&lt;h2 id=&quot;5-neural-collaborative-filtering-for-personalized-ranking-使用协同过滤网络个性化排序&quot;&gt;5. Neural Collaborative Filtering for Personalized Ranking 使用协同过滤网络个性化排序&lt;/h2&gt;
+&lt;p&gt;本小节重新将目光聚集到隐式反馈中，介绍协同过滤推荐系统NeuMF。NeuMF利用隐式反馈，它由两个子结构组成，分别是generalized matrix factorization(GMF)和MLP。不同于评分的预测如AutoRec，它将生成一系列的推荐，它根据用户是否看过这场电影来区分为正例和反例&lt;/p&gt;
+
+&lt;h3 id=&quot;51-the-neumf-model&quot;&gt;5.1. The NeuMF model&lt;/h3&gt;
+&lt;p&gt;NeuMF的网络结构由两部分组成。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一部分是GMF，也就是matrix factorization的类似形式，输入用户向量$p_u$和物品向量$q_i$，返回x&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/12.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;另一部分是MLP，输入和GMF一样，但是用不同的字母表示，具体公式如下：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/13.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;最后对这两个子结构concatenate一下，就是最终的输出&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/14.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;大体的网络结构如下&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/11.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;52-evaluator&quot;&gt;5.2. Evaluator&lt;/h3&gt;
+&lt;p&gt;有两个性能度量指标&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;hit rate at given cutting off l，记作Hit@l&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/15.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;这个式子的主题思路是判断推荐的物品是否在top l中，m表示用户的数量，$rank_{u,g_u}$表示对于用户u和物品$g_u$的排名，1表示指标函数&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;AUC，即ROC曲线下的面积，也是模型泛化能力的一个指标&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/16.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;其中$S_u$表示模型对于u的推荐物品集，I表示item set，AUC越大越好&lt;/p&gt;
+
+&lt;h3 id=&quot;53-代码&quot;&gt;5.3. 代码&lt;/h3&gt;
+&lt;p&gt;网络结构就是上面介绍的那样，net的输出是用户和物品匹配出的一个推荐值(我的想法)。在进行训练的时候，会给出正例物品(即用户有过评分的物品)和反例物品(用户没有评分，也就是没有看过)分别与用户得到一个推荐值，然后利用上一小节介绍的贝叶斯损失来优化(让评分过的物品有更高的推荐值)，然后最终我们希望返回一系列的推荐物品，这些推荐物品都是没有负例物品，然后根据推荐值进行排序。性能指标是hit或者auc。hit的思想是让真实评分的物品在推荐列表中。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
 &lt;h2 id=&quot;报告内容&quot;&gt;报告内容&lt;/h2&gt;
 &lt;p&gt;用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。&lt;/p&gt;
 &lt;h2 id=&quot;报告格式&quot;&gt;报告格式&lt;/h2&gt;
@@ -3770,4 +4165,80 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;内容总览-5&quot;&gt;内容总览&lt;/h3&gt;
-&lt;p&gt;是上学期经济管理的一部分展开讲，讲了什么是项目，项目管理系统，基于关键路径的项目管理，项目管理的决策&lt;/p&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计</summary></entry></feed>
+&lt;p&gt;是上学期经济管理的一部分展开讲，讲了什么是项目，项目管理系统，基于关键路径的项目管理，项目管理的决策&lt;/p&gt;
+
+&lt;h1 id=&quot;工程热力学&quot;&gt;工程热力学&lt;/h1&gt;
+
+&lt;h3 id=&quot;简介-6&quot;&gt;简介&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;授课老师：Guillaume Merle&lt;/li&gt;
+  &lt;li&gt;授课形式：看课本，付小尧定期答疑&lt;/li&gt;
+  &lt;li&gt;授课材料：课本、PPT&lt;/li&gt;
+  &lt;li&gt;闭卷考试，不能带A4纸，有三次小测&lt;/li&gt;
+  &lt;li&gt;纯英文授课&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;报告pre&quot;&gt;报告Pre&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;报告题目：SABRE发动机效率分析&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;内容总览-6&quot;&gt;内容总览&lt;/h3&gt;
+&lt;p&gt;一共学习了课本上第1、2、3、4、5、6、7、9、10、11、12章内容，其中第一章介绍热力学基本单位和概念，第二章介绍能量转移的形式是功和热，顺便引出热力学第一定律，第三章介绍纯物质的相和相变，第四章介绍封闭系统的能量变化，即质量不变体积可变的系统，第五章介绍开放系统的质量变化，即体积可变质量不变，第六章介绍热机的效率基本概念，第七章介绍熵的概念以及热力学第二定律，到这为止都是之前热力学学过的东西，第九章介绍了内燃机的工作原理，包括了很多个不同的循环，比如otto、diesel、brayton循环。第十章介绍了热电机的原理和ranking循环。第十一章介绍了冰箱和热泵的基本原理。第十二章是用到的数学表达式的推理。&lt;/p&gt;
+
+&lt;h1 id=&quot;presse&quot;&gt;Presse&lt;/h1&gt;
+&lt;h3 id=&quot;简介-7&quot;&gt;简介&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;法语课程&lt;/li&gt;
+  &lt;li&gt;授课老师:Vanessa&lt;/li&gt;
+  &lt;li&gt;授课形式：线下授课&lt;/li&gt;
+  &lt;li&gt;授课材料：讲义&lt;/li&gt;
+  &lt;li&gt;闭卷考试&lt;/li&gt;
+  &lt;li&gt;期间写过几次PE&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;内容总览-7&quot;&gt;内容总览&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Règle de la classe&lt;/li&gt;
+  &lt;li&gt;Vingt ans qui ont déjà tout changé: 11 septembre(effodrement des Tours Jumelles), l’incendie de la cathédrale Notre-Dame de Paris, les confinements en France et dans le monde, la mort de Michael Jackson, l’accident nucléaire de Fukushima&lt;/li&gt;
+  &lt;li&gt;Le 11 Septembre apparaît comme la matrice du XXIe siècle&lt;/li&gt;
+  &lt;li&gt;les personnalités les plus marquantes des 20 dernières années: Barack Obama, Donald Trump, Oussama Ben Laden, Emmanuel Macron, Angela Merkel… François Hollande&lt;/li&gt;
+  &lt;li&gt;les chanteurs: Johnny Hallydat, Céline Dion, Stromae&lt;/li&gt;
+  &lt;li&gt;le confinement en France: haltères, machine à pain, graines de tomates…&lt;/li&gt;
+  &lt;li&gt;des solutions pour prospérer et progresser: Cité flottante, Télétravail, Agriculture spatiale, le train intelligent&lt;/li&gt;
+  &lt;li&gt;la voiture autonome ne tient pas encore la route: sensible, risque&lt;/li&gt;
+  &lt;li&gt;le tourisme spatial, bonne ou mauvaise idée: huit, Elon Musk&lt;/li&gt;
+  &lt;li&gt;l’agence spatiale européenne recrute une nouvelle promotion, Feriez-vous un bon astronaute&lt;/li&gt;
+  &lt;li&gt;les Français et Internet&lt;/li&gt;
+  &lt;li&gt;la 5G vous inquiète-t-elle?&lt;/li&gt;
+  &lt;li&gt;la 5G, amie ou ennemie?&lt;/li&gt;
+  &lt;li&gt;Sept innovations contre le handicap: le gant qui traduit la langue des signes, les lunettes qui parlent aux malvoyants&lt;/li&gt;
+  &lt;li&gt;Jeux vidéo&lt;/li&gt;
+  &lt;li&gt;Bientôt de l’e-sport aux Jeux Olympiques&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;audiovisual&quot;&gt;Audiovisual&lt;/h1&gt;
+&lt;h1 id=&quot;简介-8&quot;&gt;简介&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;法语课程&lt;/li&gt;
+  &lt;li&gt;授课老师：Fabien&lt;/li&gt;
+  &lt;li&gt;授课形式：瞩目线上&lt;/li&gt;
+  &lt;li&gt;授课材料：讲义&lt;/li&gt;
+  &lt;li&gt;闭卷考试&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;内容总览-8&quot;&gt;内容总览&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Séance 1 - les étudiants français sous la Covid-19&lt;/li&gt;
+  &lt;li&gt;Séance 2 - Afghanistan: partir ou rester&lt;/li&gt;
+  &lt;li&gt;Séance 3 - Réalité Virtuelle: une méthode d’emphaie&lt;/li&gt;
+  &lt;li&gt;Séance 4 - Utiliser des produits ménagers bio&lt;/li&gt;
+  &lt;li&gt;Séance 5 - Pandémies et environnement&lt;/li&gt;
+  &lt;li&gt;Séance 6 - Les transports du futur&lt;/li&gt;
+  &lt;li&gt;Séance 7 - Le tourisme spatial&lt;/li&gt;
+  &lt;li&gt;Séance 8 - Robots de guerre&lt;/li&gt;
+  &lt;li&gt;Séance 9 - Le bilan de la COP 26&lt;/li&gt;
+  &lt;li&gt;Séance 10 - Révolution du vin&lt;/li&gt;
+  &lt;li&gt;Séance 11 – Rouler au whisky&lt;/li&gt;
+  &lt;li&gt;Séance 12 — Un champion de la pâtisserie&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计</summary></entry></feed>

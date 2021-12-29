@@ -22,7 +22,7 @@
   "headline": "推荐系统",
   "abstract": "d2l推荐系统笔记",
     "keywords": "note",
-    "wordcount": "129",
+    "wordcount": "184",
     "image": ["http://localhost:4000/assets/imgposts/20211216/1.jpg"],
   "datePublished": "2021-12-16 00:00:00 +0800",
   "dateModified": "2021-12-16 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="d2l推荐系统笔记">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="129"/>
+<meta data-rh="true" name="twitter:data1" content="184"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211216/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -168,7 +168,7 @@
   </span>
 
         <div class="post-excerpt">
-            <!-- TOC --><ul> <li><a href="#1-推荐系统总览">1. 推荐系统总览</a> <ul> <li><a href="#11-协同过滤-collaborative-filtering">1.1. 协同过滤 Collaborative Filtering</a></li> <li><a href="#12-显式反馈和隐式反馈">1.2. 显式反馈和隐式反馈</a></li> <li><a href="#13-推荐任务">1.3. 推荐任务</a></li> </ul> </li> <li><a href="#2-矩阵分解-matrix-factorization">2. 矩阵分解 Matrix Factorization</a></li> <li><a href="#3-autorec">3. AutoRec</a> <ul> <li><a href="#31-overview">3.1. overview</a></li> <li><a href="#32-formula">3.2. formula</a></li> </ul> </li> <li><a href="#4-personalized-ranking-for-recommender-system">4. Personalized Ranking for Recommender System</a> <ul> <li><a href="#41-overview">4.1. overview</a></li> <li><a href="#42-bayesian-personalized-ranking-loss-贝叶斯损失">4.2. Bayesian Personalized Ranking loss 贝叶斯损失</a></li> <li><a href="#43-hinge-loss">4.3. Hinge Loss</a></li> </ul> </li></ul><!-- /TOC --><h2 id="1-推荐系统总览">1. 推荐系统总览</h2><h3 id="11-协同过滤-collaborative-filtering">1.1. 协同过滤 Collaborative Filtering</h3><p>协同过滤最早出现在1992年Tapestry system，“人们相互协作，相互帮助，执行过滤程序，以处理大量的电子邮件和张贴到新闻组的信息。”现在协同过滤的概念更加广泛，从广义上讲，它是利用涉及多个用户、代理和数据源之间协作的技术来过滤<strong>信息或模式</strong>的过程。</p><p>协同过滤模型可以分为:1.memory-based CF; 2.model-based CF. 其中Memory-based CF又可以分为item-based和user-based CF。model-based CF有矩阵分解模型。</p><p>总的来说，协同过滤就是利用用户-物品的数据来预测和推荐。</p><h3 id="12-显式反馈和隐式反馈">1.2. 显式反馈和隐式反馈</h3><p>为了学习用户的偏好，系统需要收集用户的反馈feedback。反馈可以分为显式和隐式。</p><p>显式反馈就是需要用户主动提供兴趣偏好。比如点赞、点踩。</p><p>隐式反馈则是间接反映用户的喜好，比如购物历史记录，浏览记录，观看记录甚至是鼠标移动。</p><h3 id="13-推荐任务">1.3. 推荐任务</h3><p>电影推荐、新闻推荐、评分预测rating prediction task、top-n reommendation。如果使用了时间戳信息，那么我们构建了sequence-aware recommendation。针对新用户推荐新物品称为cold-start recommendation冷启动推荐。</p><h2 id="2-矩阵分解-matrix-factorization">2. 矩阵分解 Matrix Factorization</h2><p>The Matrix Factorization Model矩阵分解模型</p><p>R是user-item矩阵，行数是用户数量，列数是物品数量,那么R∈R<sup>mxn</sup>。P是user latent matrix，P∈R<sup>mxk</sup>，Q是item latent matrix，Q∈R<sup>nxk</sup></p><p>矩阵分解就是把R分解成P和Q，那么预测的评分就是：</p><p><img src="../assets/img/posts/20211216/2.jpg" /></p><p>但是上面这个式子没有考虑偏置，我们会有下面这个完整的式子：</p><p><img src="../assets/img/posts/20211216/3.jpg"...<a class="read-more" href="./Recommender_system.html"> read more</a>
+            <!-- TOC --><ul> <li><a href="#1-推荐系统总览">1. 推荐系统总览</a> <ul> <li><a href="#11-协同过滤-collaborative-filtering">1.1. 协同过滤 Collaborative Filtering</a></li> <li><a href="#12-显式反馈和隐式反馈">1.2. 显式反馈和隐式反馈</a></li> <li><a href="#13-推荐任务">1.3. 推荐任务</a></li> </ul> </li> <li><a href="#2-矩阵分解-matrix-factorization">2. 矩阵分解 Matrix Factorization</a></li> <li><a href="#3-autorec">3. AutoRec</a> <ul> <li><a href="#31-overview">3.1. overview</a></li> <li><a href="#32-formula">3.2. formula</a></li> </ul> </li> <li><a href="#4-personalized-ranking-for-recommender-system">4. Personalized Ranking for Recommender System</a> <ul> <li><a href="#41-overview">4.1. overview</a></li> <li><a href="#42-bayesian-personalized-ranking-loss-贝叶斯损失">4.2. Bayesian Personalized Ranking loss 贝叶斯损失</a></li> <li><a href="#43-hinge-loss">4.3. Hinge Loss</a></li> </ul> </li> <li><a href="#5-neural-collaborative-filtering-for-personalized-ranking-使用协同过滤网络个性化排序">5. Neural Collaborative Filtering for Personalized Ranking 使用协同过滤网络个性化排序</a> <ul> <li><a href="#51-the-neumf-model">5.1. The NeuMF model</a></li> <li><a href="#52-evaluator">5.2. Evaluator</a></li> <li><a href="#53-代码">5.3. 代码</a></li> </ul> </li></ul><!-- /TOC --><h2 id="1-推荐系统总览">1. 推荐系统总览</h2><h3 id="11-协同过滤-collaborative-filtering">1.1. 协同过滤 Collaborative Filtering</h3><p>协同过滤最早出现在1992年Tapestry system，“人们相互协作，相互帮助，执行过滤程序，以处理大量的电子邮件和张贴到新闻组的信息。”现在协同过滤的概念更加广泛，从广义上讲，它是利用涉及多个用户、代理和数据源之间协作的技术来过滤<strong>信息或模式</strong>的过程。</p><p>协同过滤模型可以分为:1.memory-based CF; 2.model-based CF. 其中Memory-based CF又可以分为item-based和user-based CF。model-based CF有矩阵分解模型。</p><p>总的来说，协同过滤就是利用用户-物品的数据来预测和推荐。</p><h3...<a class="read-more" href="./Recommender_system.html"> read more</a>
         </div>
   </div>
 </section>
@@ -366,6 +366,13 @@
       <li><a href="#43-hinge-loss">4.3. Hinge Loss</a></li>
     </ul>
   </li>
+  <li><a href="#5-neural-collaborative-filtering-for-personalized-ranking-使用协同过滤网络个性化排序">5. Neural Collaborative Filtering for Personalized Ranking 使用协同过滤网络个性化排序</a>
+    <ul>
+      <li><a href="#51-the-neumf-model">5.1. The NeuMF model</a></li>
+      <li><a href="#52-evaluator">5.2. Evaluator</a></li>
+      <li><a href="#53-代码">5.3. 代码</a></li>
+    </ul>
+  </li>
 </ul>
 
 <!-- /TOC -->
@@ -462,6 +469,59 @@
 <center><img src="../assets/img/posts/20211216/10.jpg" /></center>
 
 <p>其中m表示安全系数，它的目的是让不喜欢的项离喜欢的项更远。它和贝叶斯都是为了优化positive sample和negative sample之间的距离。</p>
+
+<h2 id="5-neural-collaborative-filtering-for-personalized-ranking-使用协同过滤网络个性化排序">5. Neural Collaborative Filtering for Personalized Ranking 使用协同过滤网络个性化排序</h2>
+<p>本小节重新将目光聚集到隐式反馈中，介绍协同过滤推荐系统NeuMF。NeuMF利用隐式反馈，它由两个子结构组成，分别是generalized matrix factorization(GMF)和MLP。不同于评分的预测如AutoRec，它将生成一系列的推荐，它根据用户是否看过这场电影来区分为正例和反例</p>
+
+<h3 id="51-the-neumf-model">5.1. The NeuMF model</h3>
+<p>NeuMF的网络结构由两部分组成。</p>
+
+<ul>
+  <li>一部分是GMF，也就是matrix factorization的类似形式，输入用户向量$p_u$和物品向量$q_i$，返回x</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211216/12.jpg" /></center>
+
+<ul>
+  <li>另一部分是MLP，输入和GMF一样，但是用不同的字母表示，具体公式如下：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211216/13.jpg" /></center>
+
+<ul>
+  <li>最后对这两个子结构concatenate一下，就是最终的输出</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211216/14.jpg" /></center>
+
+<ul>
+  <li>大体的网络结构如下</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211216/11.jpg" /></center>
+
+<h3 id="52-evaluator">5.2. Evaluator</h3>
+<p>有两个性能度量指标</p>
+
+<ul>
+  <li>hit rate at given cutting off l，记作Hit@l</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211216/15.jpg" /></center>
+
+<p>这个式子的主题思路是判断推荐的物品是否在top l中，m表示用户的数量，$rank_{u,g_u}$表示对于用户u和物品$g_u$的排名，1表示指标函数</p>
+
+<ul>
+  <li>AUC，即ROC曲线下的面积，也是模型泛化能力的一个指标</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211216/16.jpg" /></center>
+
+<p>其中$S_u$表示模型对于u的推荐物品集，I表示item set，AUC越大越好</p>
+
+<h3 id="53-代码">5.3. 代码</h3>
+<p>网络结构就是上面介绍的那样，net的输出是用户和物品匹配出的一个推荐值(我的想法)。在进行训练的时候，会给出正例物品(即用户有过评分的物品)和反例物品(用户没有评分，也就是没有看过)分别与用户得到一个推荐值，然后利用上一小节介绍的贝叶斯损失来优化(让评分过的物品有更高的推荐值)，然后最终我们希望返回一系列的推荐物品，这些推荐物品都是没有负例物品，然后根据推荐值进行排序。性能指标是hit或者auc。hit的思想是让真实评分的物品在推荐列表中。</p>
+
 
         <aside class="sidebar inline" id="post-end">
     
@@ -611,7 +671,7 @@
     
     <p class="page_meta-readtime">
       
-        7 minute read
+        8 minute read
       
     </p>
   
