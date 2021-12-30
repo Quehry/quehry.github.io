@@ -1,0 +1,910 @@
+I"n�<h1 id="目录">目录</h1>
+
+<!-- TOC -->
+
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#1-第1章-绪论">1. 第1章 绪论</a></li>
+  <li><a href="#2-第2章-模型评估与选择">2. 第2章 模型评估与选择</a>
+    <ul>
+      <li><a href="#21-思维导图">2.1. 思维导图</a></li>
+      <li><a href="#22-经验误差与过拟合">2.2. 经验误差与过拟合</a></li>
+      <li><a href="#23-评估方法">2.3. 评估方法</a>
+        <ul>
+          <li><a href="#231-留出法">2.3.1. 留出法</a></li>
+          <li><a href="#232-交叉验证法">2.3.2. 交叉验证法</a></li>
+          <li><a href="#233-自助法">2.3.3. 自助法</a></li>
+        </ul>
+      </li>
+      <li><a href="#24-性能度量">2.4. 性能度量</a>
+        <ul>
+          <li><a href="#241-错误率与精度">2.4.1. 错误率与精度</a></li>
+          <li><a href="#242-查准率查全率与f1">2.4.2. 查准率、查全率与F1</a></li>
+          <li><a href="#243-roc与auc">2.4.3. ROC与AUC</a></li>
+          <li><a href="#244-代价敏感错误率与代价曲线">2.4.4. 代价敏感错误率与代价曲线</a></li>
+        </ul>
+      </li>
+      <li><a href="#25-比较检验">2.5. 比较检验</a>
+        <ul>
+          <li><a href="#251-假设检验">2.5.1. 假设检验</a></li>
+          <li><a href="#252-交叉验证t检验">2.5.2. 交叉验证t检验</a></li>
+          <li><a href="#253-mcnemar检验">2.5.3. McNemar检验</a></li>
+          <li><a href="#254-friedman检验与nemenyi后续检验">2.5.4. Friedman检验与Nemenyi后续检验</a></li>
+        </ul>
+      </li>
+      <li><a href="#26-偏差与方差">2.6. 偏差与方差</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-第3章-线性模型">3. 第3章 线性模型</a>
+    <ul>
+      <li><a href="#31-思维导图">3.1. 思维导图</a></li>
+      <li><a href="#32-基本形式">3.2. 基本形式</a></li>
+      <li><a href="#33-线性回归">3.3. 线性回归</a></li>
+      <li><a href="#34-对数几率回归">3.4. 对数几率回归</a></li>
+      <li><a href="#35-线性判别分析">3.5. 线性判别分析</a></li>
+      <li><a href="#36-多分类学习">3.6. 多分类学习</a></li>
+      <li><a href="#37-类别不平衡问题">3.7. 类别不平衡问题</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-第4章-决策树">4. 第4章 决策树</a>
+    <ul>
+      <li><a href="#41-思维导图">4.1. 思维导图</a></li>
+      <li><a href="#42-基本流程">4.2. 基本流程</a></li>
+      <li><a href="#43-划分选择">4.3. 划分选择</a>
+        <ul>
+          <li><a href="#431-信息增益">4.3.1. 信息增益</a></li>
+          <li><a href="#432-增益率">4.3.2. 增益率</a></li>
+          <li><a href="#433-基尼指数">4.3.3. 基尼指数</a></li>
+        </ul>
+      </li>
+      <li><a href="#44-剪枝处理">4.4. 剪枝处理</a>
+        <ul>
+          <li><a href="#441-预剪枝">4.4.1. 预剪枝</a></li>
+          <li><a href="#442-后剪枝">4.4.2. 后剪枝</a></li>
+        </ul>
+      </li>
+      <li><a href="#45-连续与缺失值">4.5. 连续与缺失值</a>
+        <ul>
+          <li><a href="#451-连续值处理">4.5.1. 连续值处理</a></li>
+          <li><a href="#452-缺失值处理">4.5.2. 缺失值处理</a></li>
+        </ul>
+      </li>
+      <li><a href="#46-多变量决策树">4.6. 多变量决策树</a></li>
+      <li><a href="#47-阅读材料">4.7. 阅读材料</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-第1章-绪论">1. 第1章 绪论</h1>
+
+<h1 id="2-第2章-模型评估与选择">2. 第2章 模型评估与选择</h1>
+
+<h2 id="21-思维导图">2.1. 思维导图</h2>
+
+<center><img src="../assets/img/posts/20211222/16.jpg" /></center>
+
+<h2 id="22-经验误差与过拟合">2.2. 经验误差与过拟合</h2>
+<p><strong>定义：</strong></p>
+<ul>
+  <li><strong>错误率(error rate)</strong>: 如果m个样本中有a个样本分类错误，则错误率E=a/m。</li>
+  <li><strong>精度(accuracy)</strong>：精度=1-错误率。</li>
+  <li><strong>训练误差</strong>：学习器在训练集上的误差称为训练误差或者经验误差。</li>
+  <li><strong>泛化误差(generalization error)</strong>：学习器在新样本上的误差称为泛化误差。</li>
+  <li><strong>过拟合(overfitting)</strong>：当学习器把训练样本学得太好了的时候，很可能把训练样本自身的一些特点当作了所有潜在样本都会具有的一般性质，这就会导致泛化性能下降。</li>
+  <li><strong>欠拟合(underfitting)</strong>：对训练样本的一般性质尚未学好。</li>
+</ul>
+
+<h2 id="23-评估方法">2.3. 评估方法</h2>
+<p>通常我们可通过实验测试来对学习器的泛化误差进行评估而做出选择，于是我们需要一个<strong>测试集(testing set)</strong>，然后以测试集上的测试误差作为泛化误差的近似。下面介绍一些常见的处理数据集D的方法(数据集D-&gt;训练集S+测试集T)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<h3 id="231-留出法">2.3.1. 留出法</h3>
+<ul>
+  <li>留出发(hold-out)直接将数据集D划分为两个互斥的集合，其中一个集合作为训练集S，另一个作为测试集T。在S上训练出模型后，用T来评估其测试误差。</li>
+  <li>以采样的角度来看待数据集划分的过程，则保留类别比例的采样方式通常称为<strong>分层采样</strong>。比如1000个样本，50%的正例，50%负例，以7：3划分数据集，那么训练集包含350个正例和350个负例就是分层采样。</li>
+  <li>在使用留出法评估结果时，一般要采用若干次随即划分、重复进行实验评估后取平均值作为留出法的评估结果。</li>
+  <li>常用做法时将大约2/3~4/5的样本用于训练。</li>
+</ul>
+
+<h3 id="232-交叉验证法">2.3.2. 交叉验证法</h3>
+<ul>
+  <li><strong>交叉验证法(cross validation)</strong>先将数据集D划分为k个大小相似的互斥子集，每个子集D<sub>i</sub>都尽可能保持数据分布的一致性。然后每次用k-1个自己的并集作为训练集，余下的那个子集作为测试集，这样就可以获得k组训练/测试集，从而可进行k次训练和测试，最终返回的是这k个测试结果的均值。</li>
+  <li>交叉验证也称为k折交叉验证。k的常见取值有10、5、20。</li>
+  <li><strong>留一法</strong>就是k=m，其中数据集D有m个样本。</li>
+</ul>
+
+<h3 id="233-自助法">2.3.3. 自助法</h3>
+<ul>
+  <li><strong>自助法(bootstrapping)</strong>：给定包含m个样本的数据集D，每次随机从D中挑选一个样本，将其拷贝放入D’, 然后再将该样本放回最初的数据集D中，这个过程重复执行m次后，我们获得了包含m个样本的数据集D’。我们将D’作为训练集，D\D’作为测试集。</li>
+  <li>不难发现大概有36.8%(m趋于无限大时)的样本再m次采样中始终不被采到。</li>
+</ul>
+
+<center>$\lim\limits_{m\rightarrow\infty}(1-\frac{1}{m})^m = \frac{1}{e} ≈ 0.368$</center>
+
+<ul>
+  <li>缺点：自助法产生的数据集改变了初始数据集的分布，这样会引入估计偏差。因此，在初始数据量足够时，留出法和交叉验证法更常用一些。</li>
+</ul>
+
+<h2 id="24-性能度量">2.4. 性能度量</h2>
+<ul>
+  <li>对学习器的泛化性能进行评估，不仅需要有效可行的实验估计方法，还需要有衡量模型泛化能力的评价标准，这就是<strong>性能度量(performance measure)</strong>。</li>
+  <li>在预测任务中，给定D = {(x<sub>1</sub>,y<sub>1</sub>), (x<sub>2</sub>,y<sub>2</sub>)…(x<sub>m</sub>,y<sub>m</sub>)}, 其中y<sub>i</sub>是x<sub>i</sub>的真实标记。学习器f。</li>
+  <li><strong>均方误差(mean squared error)</strong>：回归任务最常用的性能度量是均方误差：</li>
+</ul>
+
+<center>$E(f;D)=\frac{1}{m}\sum_1^m(f(x_i)-y_i)^2$</center>
+
+<p>接下来我将介绍<strong>分类任务</strong>中常用的性能度量</p>
+
+<h3 id="241-错误率与精度">2.4.1. 错误率与精度</h3>
+<p>本章开头提到了错误率和精度，这是分类任务中最常用的两种性能度量，既适用于二分类任务，也适用于多分类任务。</p>
+
+<h3 id="242-查准率查全率与f1">2.4.2. 查准率、查全率与F1</h3>
+
+<ul>
+  <li>针对二分类问题，可将样例根据其真实类别与学习器预测类别的组合划分为真正例(true positive)、假正例(false positive)、真反例(true negative)、假反例(false negative)，分别记为TP、FP、TN、FN。</li>
+  <li>混淆矩阵(confusion matrix)</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>真\预</td>
+      <td>正例</td>
+      <td>反例</td>
+    </tr>
+    <tr>
+      <td>正例</td>
+      <td>TP</td>
+      <td>FN</td>
+    </tr>
+    <tr>
+      <td>反例</td>
+      <td>FP</td>
+      <td>TN</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>查准率(precision)，记为P，它表示选择的好瓜中有多少是真正的好瓜</li>
+</ul>
+
+<center>$P=\frac{TP}{TP+FP}$</center>
+
+<ul>
+  <li>查全率(recall)，记为R，它表示好瓜中有多少被选出来了</li>
+</ul>
+
+<center>$R=\frac{TP}{TP+FN}$</center>
+
+<ul>
+  <li>
+    <p>一般来说，查准率高时，查全率往往偏低；而查全率高时，查准率往往偏低。</p>
+  </li>
+  <li>
+    <p>P-R曲线：在很多情形下，我们可根据学习器的预测结果对样例进行排序，排在前面的是学习器认为最可能是正例的样本，排在最后的则是学习器认为最不可能是正例的样本，按此顺序逐个把样本作为正例进行预测，则每次可以计算出当前的查全率、查准率，也得到了P-R图。</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/2.jpg" /></center>
+
+<ul>
+  <li>
+    <p>如果一个学习器的P-R曲线被另一个学习器的曲线完全包住，则可断言后者的性能优于前者。如果两者曲线相交，则可以通过比较平衡点(break-even-point)来比较，越大越好。</p>
+  </li>
+  <li>
+    <p>F1度量：F1综合考虑了查准率和查全率，是他们的调和平均</p>
+  </li>
+</ul>
+
+<center>$F1=\frac{2*P*R}{P+R}$</center>
+
+<ul>
+  <li>F1的一般形式：有时候我们希望赋予查准率和查重率不同的权重：</li>
+</ul>
+
+<center>$F_\beta=\frac{(1+\beta^2)*P*R}{\beta^2*P+R}$</center>
+
+<p>其中β大于1表示查全率有更大影响</p>
+
+<ul>
+  <li>
+    <p>有时候我们有多个二分类混淆矩阵，我们希望在这n个混淆矩阵上综合考虑查准率和查全率，那么我们有以下的度量</p>
+  </li>
+  <li>
+    <p>宏查准率macro-P，宏查全率macro-R，宏F1：</p>
+  </li>
+</ul>
+
+<center>$macro-P=\frac{1}{n}\sum_1^nP_i$</center>
+
+<center>$macro-R=\frac{1}{n}\sum_1^nR_i$</center>
+
+<ul>
+  <li>微查准率micro-P，微查全率micro-P，微F1：</li>
+</ul>
+
+<p>对TP、FP、TN、FN进行平均</p>
+
+<center>$micro-P=\frac{\overline{TP}}{\overline{TP}+\overline{FP}}$</center>
+
+<center>$micro-P=\frac{\overline{TP}}{\overline{TP}+\overline{FN}}$</center>
+
+<h3 id="243-roc与auc">2.4.3. ROC与AUC</h3>
+<ul>
+  <li>
+    <p>很多学习器是为测试样本产生一个实值或概率预测，然后将这个预测值与一个分类阈值进行比较，若大于阈值则分为正类，否则为反类。</p>
+  </li>
+  <li>
+    <p>ROC曲线是从排序角度来出发研究学习器的泛化性能的工具。ROC的全称是Receiver Operating Characteristic。</p>
+  </li>
+  <li>
+    <p>与P-R曲线类似，我们根据学习器的预测结果进行排序，按此顺序逐个把样本作为正例进行预测，计算出真正例率TPR(true positive rate)与假正例率FPR(false positive rate)并以它们分别为横纵坐标画出ROC曲线</p>
+  </li>
+</ul>
+
+<center>$TPR=\frac{TP}{TP+FN}$</center>
+
+<center>$FPR=\frac{FP}{FP+TN}$</center>
+
+<center><img src="../assets/img/posts/20211222/3.jpg" /></center>
+
+<ul>
+  <li>
+    <p>同样的，如果一个学习器的ROC曲线被另一个学习器完全包住，则认为后者的性能优于前者。若两个曲线相交，则比较曲线下的面积AUC(area under curve)</p>
+  </li>
+  <li>
+    <p>形式化的看，AUC考虑的是样本预测的排序质量，那么我们可以定义一个排序损失l<sub>rank</sub></p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/4.jpg" /></center>
+
+<center>AUC=1-l<sub>rank</sub></center>
+
+<h3 id="244-代价敏感错误率与代价曲线">2.4.4. 代价敏感错误率与代价曲线</h3>
+<ul>
+  <li>有时候将正例误判断为负例与将负例误判断为正例所带来的后果不一样，我们赋予它们非均等代价</li>
+  <li>代价矩阵(cost matrix)</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>真\预</td>
+      <td>第0类</td>
+      <td>第1类</td>
+    </tr>
+    <tr>
+      <td>第0类</td>
+      <td>0</td>
+      <td>cost<sub>01</sub></td>
+    </tr>
+    <tr>
+      <td>第1类</td>
+      <td>cost<sub>10</sub></td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>其中cost<sub>ij</sub>表示将第i类样本预测为第j类样本的代价</p>
+
+<ul>
+  <li>代价敏感错误率</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/5.jpg" /></center>
+
+<ul>
+  <li>在非均等代价下，ROC曲线不能直接反映出学习器的期望总代价，而代价曲线则可达到此目的，横轴是正例概率代价，纵轴是归一化代价</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/6.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/7.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/8.jpg" /></center>
+
+<h2 id="25-比较检验">2.5. 比较检验</h2>
+<p>我们有了实验评估方法与性能度量，是否就可以对学习器的性能进行评估比较了呢？实际上，机器学习中性能比较这件事比大家想象的要复杂很多，我们需要考虑多种因素的影响，下面介绍一些对学习器性能进行比较的方法，本小节默认以错误率作为性能度量。(但我觉得似乎同一个数据集下就可以比较)</p>
+
+<h3 id="251-假设检验">2.5.1. 假设检验</h3>
+<ul>
+  <li>假设检验中的假设是对学习器泛化错误率分布的某种猜想或者判断，例如“ε=ε<sub>0</sub>”这样的假设</li>
+  <li>现实任务中我们并不知道学习器的泛化错误率，我们只能获知其测试错误率$\hat{\epsilon}$，但直观上，两者接近的可能性比较大，因此可根据测试错误率估推出泛化错误率的分布。</li>
+  <li>泛化错误率为$\epsilon$的学习器被测得测试错误率为$\hat{\epsilon}$的概率：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/9.jpg" /></center>
+
+<ul>
+  <li>我们发现$\epsilon$符合二项分布</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/10.jpg" /></center>
+
+<ul>
+  <li>
+    <p>二项检验：我们可以使用<strong>二项检验(binomial test)</strong>来对“$\epsilon$&lt;0.3”这样的假设进行检验，即在$\alpha$显著度下，$1-\alpha$置信度下判断假设是否成立。</p>
+  </li>
+  <li>
+    <p>t检验：我们也可以用t检验(t-test)来检验。</p>
+  </li>
+  <li>
+    <p>上面介绍的都是针对单个学习器泛化性能的假设进行检验</p>
+  </li>
+</ul>
+
+<h3 id="252-交叉验证t检验">2.5.2. 交叉验证t检验</h3>
+
+<ul>
+  <li>
+    <p>对于两个学习器A和B，若我们使用k折交叉验证法得到的测试错误率分别是$\epsilon_1^A$, $\epsilon_2^A$…$\epsilon_k^A$和$\epsilon_1^B$, $\epsilon_2^B$…$\epsilon_k^B$。其中$\epsilon_i^A$和$\epsilon_i^B$是在相同第i折训练集上得到的结果。则可以用k折交叉验证“成对t检验”来进行比较检验。</p>
+  </li>
+  <li>
+    <p>我们这里的基本思想是若两个学习器的性能相同，则它们使用相同的训练测试集得到的错误率应该相同，即$\epsilon_i^A=\epsilon_1^B$</p>
+  </li>
+  <li>
+    <p>$\Delta_i$ = $\epsilon_i^A$ - $\epsilon_i^B$，然后对$\Delta$进行分析</p>
+  </li>
+</ul>
+
+<h3 id="253-mcnemar检验">2.5.3. McNemar检验</h3>
+<ul>
+  <li>对于二分类问题，使用留出法不仅可以估计出学习器A和B的测试错误率，还可获得两学习器分类结果的差别，即两者都正确、都错误…的样本数</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/11.jpg" /></center>
+
+<ul>
+  <li>若我们假设两学习器性能相同，则应有e<sub>01</sub>=e<sub>10</sub>，那么变量|e<sub>01</sub>-e<sub>10</sub>|应该服从正态分布/卡方分布，然后用McNemar检验</li>
+</ul>
+
+<h3 id="254-friedman检验与nemenyi后续检验">2.5.4. Friedman检验与Nemenyi后续检验</h3>
+
+<ul>
+  <li>
+    <p>交叉验证t检验与McNemar检验都是在一个数据集上比较两个算法的性能，但是很多时候，我们会在一组数据集上比较多个算法。</p>
+  </li>
+  <li>
+    <p>当有多个算法参与比较时，一种做法是在每个数据集上本别列出两两比较的结果。另一种方法则是基于算法排列的<strong>Friedman检验</strong></p>
+  </li>
+  <li>
+    <p>假定我们用D<sub>1</sub>, D<sub>2</sub>, D<sub>3</sub>, D<sub>4</sub>四个数据集对算法A、B、C进行比较。首先，使用留出法或交叉验证法得到每个算法在每个数据集上的测试结果。然后在每个数据集上根据测试性能由好到坏排序，并赋予序值1,2,…若算法的测试性能相同，则平分序值。</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/12.jpg" /></center>
+
+<ul>
+  <li>
+    <p>然后使用Fredman检验来判断这些算法是否性能都相同，若相同，那么它们的平均序值应当相同。r<sub>i</sub>表示第i个算法的平均序值，那么它的均值和方差应该满足…</p>
+  </li>
+  <li>
+    <p>若“所有算法的性能相同”这个假设被拒绝，则说明算法的性能显著不同，这时需要后续检验(post-hoc test)来进一步区分各算法，常用的有Nemenyi后续检验</p>
+  </li>
+  <li>
+    <p>Nemenyi检验计算出平均序值差别的临界值域</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/13.jpg" /></center>
+
+<ul>
+  <li>在表中找到k=3时q<sub>0.05</sub>=2.344，根据公式计算出临界值域CD=1.657，由表中的平均序值可知A与B算法的差距，以及算法B与C的差距均未超过临界值域，而算法A与C的差距超过临界值域，因此检验结果认为算法A与C的性能显著不同，而算法A与B以及算法B与C的性能没有显著差别。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/14.jpg" /></center>
+
+<h2 id="26-偏差与方差">2.6. 偏差与方差</h2>
+
+<ul>
+  <li>
+    <p>对学习算法除了通过实验估计其泛化性能，人们往往还希望了解它“为什么”具有这样的性能。偏差-方差分解是解释学习算法泛化性能的一种重要工具</p>
+  </li>
+  <li><strong>偏差</strong>度量了学习算法的期望预测与真实结果的偏离程度，即刻画了学习算法本身的拟合能力</li>
+  <li><strong>方差</strong>度量了同样大小的训练集的变动所导致的学习性能的变化，即刻画了数据扰动所造成的影响</li>
+  <li>
+    <p><strong>噪声</strong>则表达了在当前任务上任何学习算法所能达到的期望泛化误差的下界，即刻画了学习问题本身的难度</p>
+  </li>
+  <li>一般来说，偏置与方差是有冲突的，也就是偏置大的方差小，偏置小的方差大</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/15.jpg" /></center>
+
+<h1 id="3-第3章-线性模型">3. 第3章 线性模型</h1>
+<h2 id="31-思维导图">3.1. 思维导图</h2>
+
+<center><img src="../assets/img/posts/20211222/42.jpg" /></center>
+
+<h2 id="32-基本形式">3.2. 基本形式</h2>
+
+<ul>
+  <li>
+    <p>给定由d个属性描述的示例$x=(x_1;x_2;…x_d)$，这是一个列向量，其中$x_i$是$x$在第i个属性上的取值。</p>
+  </li>
+  <li>
+    <p><strong>线性模型(linear model)</strong>试图学得一个通过属性线性组合来进行预测的函数：</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/17.jpg" /></center>
+
+<ul>
+  <li>向量形式：</li>
+</ul>
+
+<center>$f(x)=\omega^Tx+b$</center>
+
+<p>其中$\omega=(\omega_1;\omega_2…\omega_d)$</p>
+
+<ul>
+  <li>
+    <p>当$\omega$和b学得后，模型就得以确定</p>
+  </li>
+  <li>
+    <p>线性模型的优点：形式简单，易于建模，良好的可解释性(comprehensibility)</p>
+  </li>
+</ul>
+
+<h2 id="33-线性回归">3.3. 线性回归</h2>
+<ul>
+  <li>
+    <p>对离散属性的处理：1.若属性值存在“序”的关系，可通过连续化将其转化为连续值，比如高、矮变成1、0；2.若不存在序的关系，可转化为k维向量。</p>
+  </li>
+  <li>
+    <p>均方误差是回归任务中最常用的性能度量，试图让均方误差最小化：</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/18.jpg" /></center>
+
+<ul>
+  <li>
+    <p>均方误差有非常好的几何意义，它对应了欧氏距离。基于均方误差最小化来进行模型求解的方法称为<strong>最小二乘法(least square method)</strong>。在线性回归中，最小二乘法就是试图找到一条直线，使得样本到直线上的欧氏距离之和最小</p>
+  </li>
+  <li>
+    <p>首先观察一个属性值的情况。求解$\omega$和$b$使得均方误差最小化的过程，称为线性回归的最小二乘“参数估计”，我们令均方误差分别对$\omega$和$b$求导令其为零，可以得到最优解的<strong>闭式解(closed-form)</strong>,即解析解</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/19.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/20.jpg" /></center>
+
+<ul>
+  <li>更一般的情况是d个属性，称其为“多元线性回归”，同样的步骤，只是$\omega$变成向量形式，自变量写成m*(d+1)的矩阵形式，m对应了m个样本，d+1对应了d个属性和偏置。同样的求导为0然后得出$\hat{\omega}$最优解的闭式解，其中$\hat{\omega}=(\omega;b)$。当$X^TX$为满秩矩阵<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>或正定矩阵时，有唯一的解：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/21.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/22.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/23.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/24.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/25.jpg" /></center>
+
+<ul>
+  <li>
+    <p>然而现实任务中往往不是满秩矩阵，例如在许多任务中我们会遇到大量的变量其数目甚至超过样例数。那么我们会求出$\hat{\omega}=(\omega;b)$的多个解，它们都能使均方误差最小化。选择哪一个解作为输出与学习算法的归纳偏好决定，常见的做法是<strong>引入正则化(regularization)</strong></p>
+  </li>
+  <li>
+    <p><strong>广义线性模型(generalized linear model)</strong>:</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/26.jpg" /></center>
+
+<center>$g(y)=\omega^Tx+b$</center>
+
+<p>其中g()单调可微，被称为联系函数。比如当g()=ln()时称为对数线性回归</p>
+
+<h2 id="34-对数几率回归">3.4. 对数几率回归</h2>
+<ul>
+  <li>
+    <p>上一节讨论的是线性回归进行回归学习。那么如果我们要做的是分类任务应该怎么改变？我们只需要找到一个单调可微函数将分类任务的真实标记y与线性回归模型的预测值联系起来。</p>
+  </li>
+  <li>
+    <p>考虑二分类问题，那么我们可以用单位阶跃函数/Heaviside函数联系y与z，其中y是真是标记，z是预测值，$z=\omega^Tx+b$</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/27.jpg" /></center>
+
+<ul>
+  <li>
+    <p>但是它有个问题就是不连续，所以我们希望找到能在一定程度上近似它的替代函数。</p>
+  </li>
+  <li>
+    <p><strong>对数几率函数(logistic function)</strong>就是一个替代函数：</p>
+  </li>
+</ul>
+
+<center>$y=\frac{1}{1+e^{-z}}$</center>
+
+<center><img src="../assets/img/posts/20211222/28.jpg" /></center>
+
+<ul>
+  <li>那么这个式子可以转化为：可以把y视为样本x作为正例的可能性，则1-y是其反例的可能性，两者的比值称为几率(odds)：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/29.jpg" /></center>
+
+<ul>
+  <li>若将y视为类后验概率估计。则式子可以重写为：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/30.jpg" /></center>
+
+<ul>
+  <li>接下来我们可以通过<strong>极大似然法(maximum likelihood method)</strong>来估计$\omega$和$b$。给定数据集，对数似然函数<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>为：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/31.jpg" /></center>
+
+<p>即每个样本属于其真实标记的概率越大越好。</p>
+
+<ul>
+  <li>推导过程：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/32.jpg" /></center>
+
+<p>上面有个式子应该有问题，(3.26)应该是</p>
+
+<center>$p(y_i|x_i;\omega,b) = p_1(\hat{x_i};\beta)^{y_i}p_0(\hat{x_i};\beta)^{1-y_i}$</center>
+
+<p>因为$\beta$是高阶可导连续凸函数，根据凸优化理论，经典的数值优化算法如<strong>梯度下降法(gradient descent method)</strong>和牛顿法都可以求得最优解</p>
+
+<h2 id="35-线性判别分析">3.5. 线性判别分析</h2>
+
+<ul>
+  <li>
+    <p>线性判别分析(Linear Discriminant Analysis，简称LDA)是一种经典的线性学习方法。</p>
+  </li>
+  <li>
+    <p>LDA的思想非常朴素: 给定训练样例集，设法将样例投影到一条直线上，使得同类样例的投影点尽可能接近、异类样例的投影点尽可能远离;在对新样本进行分类时，将其投影到同样的这条直线上，再根据投影点的位置来确定样本的类别。</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/33.jpg" /></center>
+
+<ul>
+  <li>令$X_i$、$\mu_i$、$\Sigma_i$分别表示第i类示例的集合、均值向量<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>、协方差矩阵<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>。</li>
+</ul>
+
+<ul>
+  <li>欲使同类样例的投影点尽可能接近，可以让同类样例投影点的协方差尽可能小，即$\omega^T\Sigma_0\omega+\omega^T\Sigma_1\omega$尽可能小;而欲使异类样例的投影点尽可能远离，可以让类中心之间的距离尽可能大，即$||\omega^T\mu_0-\omega^T\mu_1||$尽可能大:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/34.jpg" /></center>
+
+<ul>
+  <li>剩余推导过程：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/35.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/36.jpg" /></center>
+
+<ul>
+  <li>值得一提的是，LDA可从贝时斯决策理论的角度来阐释，并可证明，当两类数据同先验、满足高斯分布且协方差相等时，LDA可达到最优分类。</li>
+</ul>
+
+<h2 id="36-多分类学习">3.6. 多分类学习</h2>
+<ul>
+  <li>
+    <p>现实中常遇到多分类学习任务，有些二分类学习方法可直接推广到多分类，但在更多情形下，我们是基于一些基本策略，利用二分类学习器来解决多分类问题。</p>
+  </li>
+  <li>
+    <p>不失一般性，考虑N个类别$C_1$、$C_2$…$C_N$，多分类学习的基本思路是”<strong>拆解法</strong>”，即将多分类任务拆为若干个二分类任务求解。具体来说，先对问题进行拆分，然后为拆出的每个二分类任务训练一个分类器;在测试时，对这些分类器的预测结果进行集成以获得最终的多分类结果。</p>
+  </li>
+  <li>
+    <p>这里我们着重介绍如何拆分，最经典的拆分策略有三种：一对一(One vs One)、一对其余(One vs Rest)、多对多(Many vs Many)</p>
+  </li>
+  <li>
+    <p>一对一：将这N个类别两两配对，从而产生 N(N-1)/2个二分类任务。在测试阶段，新样本将同时提交给所有分类器，于是我们将得到N(N-1)/2个分类结果，最终结果可通过投票产生:即把被预测得最
+多的类别作为最终分类结果。</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/37.jpg" /></center>
+
+<ul>
+  <li>一对其余：OvR则是每次将一个类的样例作为正例，所有其他类的样例作为反例来训练N个分类器。在测试时若仅有一个分类器预测为正类，则对应的类别标记作为最终分类结果。若有多个分类器预测为正类，则通常考虑各分类器的预测置信度，选择置信度最大的类别标记作为分类结果。</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/38.jpg" /></center>
+
+<ul>
+  <li>
+    <p>多对多MvM是每次将若干个类作为正类，若干个其他类作为反类。这里我们介绍一种最常用的MvM技术：<strong>纠错输出码(ECOC)</strong></p>
+  </li>
+  <li>
+    <p>ECOC是将编码的思想引入类别拆分，主要分为两步：</p>
+  </li>
+</ul>
+
+<p>  1.编码： 对N个类别做M次划分，每次划分将一部分类别划为正类，一部分划为反类，从而形成一个二分类训练集;这样一共产生M个训练集，可训练出M个分类器</p>
+
+<p>  2.解码：:M个分类器分别对测试样本进行预测，这些预测标记组成一个编码.将这个预测编码与每个类别各自的编码进行比较，返回其中距离最小的类别作为最终预测结果。</p>
+
+<ul>
+  <li>类别划分通过<strong>编码矩阵</strong>指定。编码矩阵有多种形式，常见的有二元码和三元码，前者将每个类别分别指定为正类和反类，后者在正、反类之外，还可指定“停用类”</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/39.jpg" /></center>
+
+<h2 id="37-类别不平衡问题">3.7. 类别不平衡问题</h2>
+
+<ul>
+  <li>
+    <p>前面介绍的分类学习方法都有一个共同的基本假设：即不同类别的训练样例数目相当。如果不同类别的样例数差别很大，会对学习过程造成困扰。</p>
+  </li>
+  <li>
+    <p><strong>类别不平衡(class-imbalance)</strong>就是指分类任务中不同类别的训练样例数目差别很大的情况。</p>
+  </li>
+  <li>
+    <p><strong>再缩放(rescaling)</strong>是类别不平衡中的一个基本策略：比如在最简单的二分类问题中，我们假设y大于0.5为正例，y小于0.5为负例，但是在类别不平衡时，我们可以改变阈值来达到再平衡：</p>
+  </li>
+</ul>
+
+<p>  将</p>
+
+<center><img src="../assets/img/posts/20211222/40.jpg" /></center>
+
+<p>  变成</p>
+
+<center><img src="../assets/img/posts/20211222/41.jpg" /></center>
+
+<ul>
+  <li>现有的解决类别不平衡的技术大体上有三类做法(这里我们均假设正例样本少):</li>
+</ul>
+
+<p>  1.第一类是直接对训练集里的反类样例进行”欠采样” (undersampling)，即去除一些反例使得正、反例数日接近，然后再进行学习;</p>
+
+<p>  2.第二类是对训练集里的正类样例进行”过采样” (oversampling)，即增加一些正例使得正、反例数目接近，然后再进行学习;</p>
+
+<p>  3.第三类则是直接基于原始训练集进行学习，但在用训练好的分类器进行预测时，将上面的公式(改变阈值)嵌入到其决策过程中，称为”阔值移动” (threshold-moving)</p>
+
+<ul>
+  <li>需注意的是，过采样法不能简单地对初始正例样本进行重复来样，否则会招致严重的过拟合；过采样法的代表性算法SMOTE是通过对训练集里的正例进行插值来产生额外的正例.另一方面，欠采样法若随机丢弃反例可能丢失一些重要信息;欠采样法的代表性算法EasyEnsemble则是利用集成学习机制，将反例划分为若干个集合供不同学习器使用，这样对每个学习器来看都进行了欠采样，但在全局来看却不会丢失重要信息。</li>
+</ul>
+
+<h1 id="4-第4章-决策树">4. 第4章 决策树</h1>
+<h2 id="41-思维导图">4.1. 思维导图</h2>
+
+<h2 id="42-基本流程">4.2. 基本流程</h2>
+<ul>
+  <li>决策树是基于树结构来进行决策，其中包含一个根结点，多个内部结点和多个叶结点</li>
+  <li>叶结点对应决策结果，其他每个结点都对应一个属性测试</li>
+  <li>每个结点包含的样本集合根据属性测试被划分到子结点中，那么根结点包含样本全集</li>
+  <li>决策树学习的目的是为了产生一棵泛化能力强的决策树</li>
+  <li>决策树的生成是一个递归过程，下面这张图展示了递归的过程：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/43.jpg" /></center>
+
+<p>对于每个结点，首先判断该结点的样本集是否属于同一个类别C，如果是，则将该结点标记为C类叶结点。再判断该结点的样本集的属性值是否完全相同(或者是否为空集)，如果是，则将该结点标记为D类叶结点，其中D类是这些样本中最多的类别。如果该结点即不是<strong>同属于一个类别</strong>也不是<strong>属性值取值相同</strong>，那么则需要继续划分，选择一个最优的划分属性$a_*$,创建新的分支，对于每个分支结点首先判断是否为空，如果为空则判定为E类叶结点，其中E类是父结点中类别最多的类。如果子结点不为空则递归。</p>
+
+<h2 id="43-划分选择">4.3. 划分选择</h2>
+<p>可以发现生成决策树最关键的步骤就是选择最优划分属性，我们希望决策树的分支结点所包含的样本尽可能属于同一类别，即结点的<strong>纯度</strong>越来越高。我们有很多指标来确定选择哪一个属性作为最优划分选择，下面将分别介绍：</p>
+
+<h3 id="431-信息增益">4.3.1. 信息增益</h3>
+<ul>
+  <li><strong>信息熵(information entropy)</strong>是度量样本集合纯度最常用的一种指标。下面是信息熵的定义公式：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/44.jpg" /></center>
+
+<p>  其中$p_k$表示第k类样本在样本集D中所占比例，信息熵越小表示D的纯度越高。</p>
+
+<ul>
+  <li>假设离散属性a有V个可能的取值${a^1,a^2…a^V}$,那么我们可以计算出在使用a作为划分属性前后的信息熵差别，也就是<strong>信息增益(information gain)</strong>：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/45.jpg" /></center>
+
+<p>  对每一个子结点$D^v$都赋予权重同时相加。</p>
+
+<ul>
+  <li>
+    <p>著名的ID3决策树学习算法就是以信息增益作为准则来选择划分属性，我们希望找到信息增益最大的属性。</p>
+  </li>
+  <li>
+    <p>书上使用信息增益划分的例子：</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/46.jpg" /></center>
+
+<h3 id="432-增益率">4.3.2. 增益率</h3>
+<ul>
+  <li>
+    <p>信息增益对可取值数目较多的属性有所偏好，比如我们使用编号这一属性来划分，每一个编号都只有一个样本，那么信息增益肯定增大了，但是决策树的泛化能力显然下降了。</p>
+  </li>
+  <li>
+    <p><strong>增益率(gain ratio)</strong>，我们通过对信息增益除以IV来平衡属性数目带来的影响，增益率的定义如下：</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/47.jpg" /></center>
+
+<p>  IV(intrinsic value)的定义如下：</p>
+
+<center><img src="../assets/img/posts/20211222/48.jpg" /></center>
+
+<p>  IV是属性a的固有值，属性a可取的数值数目越多，那么IV就越大</p>
+
+<ul>
+  <li>但是增益率也有问题，那就是对于可取值数目较少的属性有偏好，所以著名的C4.5决策树算法并不是直接使用增益率，而是先从候选划分属性中找出信息增益高于平均水平的属性，然后再从中选择增益率最高的属性</li>
+</ul>
+
+<h3 id="433-基尼指数">4.3.3. 基尼指数</h3>
+<ul>
+  <li>CART决策树使用基尼指数来选择划分属性</li>
+  <li>数据集D的纯度定义如下</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/49.jpg" /></center>
+
+<p>  直观来说，Gini反映了从数据集随便抽取两个样本，它们类别不一致概率</p>
+
+<ul>
+  <li><strong>基尼指数</strong>定义如下：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/50.jpg" /></center>
+
+<p>  很明显，我们希望基尼指数越小越好，所以我们选择基尼指数最小的属性最为最优划分属性。</p>
+
+<h2 id="44-剪枝处理">4.4. 剪枝处理</h2>
+<ul>
+  <li>不难发现，上面对于属性的划分很容易过拟合，所以针对过拟合现象，决策树选择<strong>剪枝(pruning)</strong>来对付过拟合</li>
+  <li>剪枝就是去掉一些分支来降低过拟合的风险，剪枝可以分为预剪枝和后剪枝</li>
+  <li><strong>预剪枝(prepruning)</strong>:在决策树生成的过程中，对每个结点在划分前进行估计，若当前结点的划分不能带来决策树泛化性能的提升，则停止划分</li>
+  <li><strong>后剪枝(postpruning)</strong>:从训练集生成了一棵完整的决策树，然后自底向上地对非叶结点进行考察，若将该结点对应的子树替换为叶结点能带来决策树泛化性能的提升，则将该子树替换为叶结点。</li>
+</ul>
+
+<h3 id="441-预剪枝">4.4.1. 预剪枝</h3>
+<ul>
+  <li>如何判断决策树泛化性能？可以使用留出法预留一部分数据用作验证集进行性能评估，性能度量可以用之前介绍的那些，本小节使用精度作为性能度量</li>
+  <li>预剪枝生成的决策树：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/51.jpg" /></center>
+
+<ul>
+  <li>可以发现预剪枝显著减少了分支的数量，这样可以减少决策树的训练时间开销。但是这样也有一个问题，就是有些分支的当前划分虽然不能提升泛化性能，但是后续划分却有可能导致性能显著提高，这样就带来了欠拟合的风险</li>
+</ul>
+
+<h3 id="442-后剪枝">4.4.2. 后剪枝</h3>
+<ul>
+  <li>首先生成决策树，然后对每个结点进行评估是否需要剪枝</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/52.jpg" /></center>
+
+<ul>
+  <li>虽然后剪枝决策树的欠拟合风险小，泛化性能也往往优于预剪枝决策树，但是后剪枝的时间开销大</li>
+</ul>
+
+<h2 id="45-连续与缺失值">4.5. 连续与缺失值</h2>
+<h3 id="451-连续值处理">4.5.1. 连续值处理</h3>
+<ul>
+  <li>到目前为止仅讨论了基于离散属性来生成决策树，但是现实学习任务中通常会遇到连续属性</li>
+  <li>很明显连续属性不能根据连续属性的可取值来对结点进行划分，我们需要用到<strong>连续属性离散化</strong>的技术，最简单的策略是<strong>二分法</strong></li>
+  <li>给定样本集D和和连续属性a，假定a在D上出现了n个不同的取值，将这些值从小到大排序，然后每次选择每两个数的中位数t作为划分点，那么连续值就可以当作离散值来处理了，分出的子样本集分别记作$D_t^+$和$D_t^-$</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/53.jpg" /></center>
+
+<ul>
+  <li>划分结果：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/54.jpg" /></center>
+
+<ul>
+  <li>需要注意的是：<strong>连续属性在划分后并不会被丢失，后续划分仍然可以使用</strong></li>
+</ul>
+
+<h3 id="452-缺失值处理">4.5.2. 缺失值处理</h3>
+<ul>
+  <li>在实际数据中一般都有很多缺失值，所以我们需要考虑如何对含有缺失值的数据进行学习</li>
+  <li>给几个定义：$\tilde{D}$表示D中属性a上没有缺失值的样本子集，假设属性值a可取值{$a^1$,$a^2$…$a^V$}, $\tilde{D}^v$表示$\tilde{D}$中属性值a取值为$a^v$的子集，$\tilde{D}_k$表示样本子集，我们为每个样本赋予权重$\omega_x$(决策树开始阶段，根结点中权重初始化为1)并定义：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/55.jpg" /></center>
+
+<ul>
+  <li>
+    <p>直观地看，对属性a，$\rho$表示无缺失值样本所占比例，$\tilde{p}_k$表示无缺失样本中第k类样本所占的比例，$\tilde{r}_v$表示无缺失值样本在属性上取值为$a^v$所占的比例</p>
+  </li>
+  <li>
+    <p>那么我们可以将信息增益的公式推广为</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/56.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/57.jpg" /></center>
+
+<ul>
+  <li>
+    <p>那么对于那些在该属性上缺失的值如何处理呢？分两种情况：，若样本$x$在划分属性$a$上的取值己知, 则将$x$划入与其取值对应的子结点，且样本权值在于结点中保持为$\omega_x$, 若样本$x$在划分属性$a$上的取值未知，则将$x$同时划入所有子结点, 且样本权值在与属性值$a^v$对应的子结点中调整为$\tilde{r}_v*\omega_x$，直观地看，这就是让同一个样本以不同的概率划入到不同的子结点中去。</p>
+  </li>
+  <li>
+    <p>C4.5就是使用了上述的解决方法</p>
+  </li>
+</ul>
+
+<h2 id="46-多变量决策树">4.6. 多变量决策树</h2>
+<ul>
+  <li>若我们把每个属性视为坐标空间中的一个坐标轴，则d个属性描述的样本就对应了d维空间中的一个数据点，对样本分类则意味着在这个坐标空间中寻找不同类样本之间的分类边界，决策树生成的分类边界有个明显的特点：<strong>轴平行</strong>，即它的分类边界由若干个与坐标轴平行的分段组成</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/58.jpg" /></center>
+
+<ul>
+  <li>这样的决策树由于要进行大量的属性测试，预测时间开销会很大，所以我们希望使用如下图红线所示的斜划分。<strong>多变量决策树</strong>就是能实现这样斜划分甚至更复杂划分的决策树</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/59.jpg" /></center>
+
+<ul>
+  <li>以实现斜划分的决策树为例，非叶结点不再是仅对某一个属性，而是对属性的线性组合进行测试</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/60.jpg" /></center>
+
+<h2 id="47-阅读材料">4.7. 阅读材料</h2>
+<ul>
+  <li>多变量决策树算法主要有OC1，还有一些算法试图在决策树的叶结点上嵌入神经网络，比如感知机树在每个叶结点上训练一个感知机</li>
+</ul>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>注意这里的测试集其实是验证集，我们通常把实际情况中遇到的数据集称为测试集。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>满秩矩阵指方阵的秩等于矩阵的行数/列数，满秩矩阵有逆矩阵且对于y=Xb有唯一的解 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>统计学中，似然函数是一种关于统计模型参数的函数。给定输出x时，关于参数θ的似然函数L(θ|x)（在数值上）等于给定参数θ后变量X的概率：L(θ|x)=P(X=x|θ)。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>随机变量的期望组成的向量称为期望向量或者均值向量 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>协方差矩阵的每个元素是各个向量元素之间的协方差。协方差就是Covariance <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET

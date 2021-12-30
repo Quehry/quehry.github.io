@@ -22,7 +22,7 @@
   "headline": "机器学习",
   "abstract": "《机器学习》周志华读书笔记",
     "keywords": "note",
-    "wordcount": "405",
+    "wordcount": "483",
     "image": ["http://localhost:4000/assets/imgposts/20211222/1.jpg"],
   "datePublished": "2021-12-22 00:00:00 +0800",
   "dateModified": "2021-12-22 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="《机器学习》周志华读书笔记">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="405"/>
+<meta data-rh="true" name="twitter:data1" content="483"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211222/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -392,7 +392,12 @@
   </li>
   <li><a href="#4-第4章-决策树">4. 第4章 决策树</a>
     <ul>
-      <li><a href="#41-思维导图">4.1. 思维导图</a></li>
+      <li><a href="#41-思维导图">4.1. 思维导图</a>
+        <ul>
+          <li><a href="#411-章节导图">4.1.1. 章节导图</a></li>
+          <li><a href="#412-如何生成一棵决策树">4.1.2. 如何生成一棵决策树</a></li>
+        </ul>
+      </li>
       <li><a href="#42-基本流程">4.2. 基本流程</a></li>
       <li><a href="#43-划分选择">4.3. 划分选择</a>
         <ul>
@@ -401,6 +406,20 @@
           <li><a href="#433-基尼指数">4.3.3. 基尼指数</a></li>
         </ul>
       </li>
+      <li><a href="#44-剪枝处理">4.4. 剪枝处理</a>
+        <ul>
+          <li><a href="#441-预剪枝">4.4.1. 预剪枝</a></li>
+          <li><a href="#442-后剪枝">4.4.2. 后剪枝</a></li>
+        </ul>
+      </li>
+      <li><a href="#45-连续与缺失值">4.5. 连续与缺失值</a>
+        <ul>
+          <li><a href="#451-连续值处理">4.5.1. 连续值处理</a></li>
+          <li><a href="#452-缺失值处理">4.5.2. 缺失值处理</a></li>
+        </ul>
+      </li>
+      <li><a href="#46-多变量决策树">4.6. 多变量决策树</a></li>
+      <li><a href="#47-阅读材料">4.7. 阅读材料</a></li>
     </ul>
   </li>
 </ul>
@@ -634,7 +653,11 @@
 
 <center><img src="../assets/img/posts/20211222/6.jpg" /></center>
 
+<p> </p>
+
 <center><img src="../assets/img/posts/20211222/7.jpg" /></center>
+
+<p> </p>
 
 <center><img src="../assets/img/posts/20211222/8.jpg" /></center>
 
@@ -803,6 +826,8 @@
 
 <center><img src="../assets/img/posts/20211222/19.jpg" /></center>
 
+<p> </p>
+
 <center><img src="../assets/img/posts/20211222/20.jpg" /></center>
 
 <ul>
@@ -811,11 +836,19 @@
 
 <center><img src="../assets/img/posts/20211222/21.jpg" /></center>
 
+<p> </p>
+
 <center><img src="../assets/img/posts/20211222/22.jpg" /></center>
+
+<p> </p>
 
 <center><img src="../assets/img/posts/20211222/23.jpg" /></center>
 
+<p> </p>
+
 <center><img src="../assets/img/posts/20211222/24.jpg" /></center>
+
+<p> </p>
 
 <center><img src="../assets/img/posts/20211222/25.jpg" /></center>
 
@@ -920,6 +953,8 @@
 
 <center><img src="../assets/img/posts/20211222/35.jpg" /></center>
 
+<p> </p>
+
 <center><img src="../assets/img/posts/20211222/36.jpg" /></center>
 
 <ul>
@@ -1008,6 +1043,13 @@
 
 <h1 id="4-第4章-决策树">4. 第4章 决策树</h1>
 <h2 id="41-思维导图">4.1. 思维导图</h2>
+<h3 id="411-章节导图">4.1.1. 章节导图</h3>
+
+<center><img src="../assets/img/posts/20211222/61.jpg" /></center>
+
+<h3 id="412-如何生成一棵决策树">4.1.2. 如何生成一棵决策树</h3>
+
+<center><img src="../assets/img/posts/20211222/62.jpg" /></center>
 
 <h2 id="42-基本流程">4.2. 基本流程</h2>
 <ul>
@@ -1092,6 +1134,118 @@
 <center><img src="../assets/img/posts/20211222/50.jpg" /></center>
 
 <p>  很明显，我们希望基尼指数越小越好，所以我们选择基尼指数最小的属性最为最优划分属性。</p>
+
+<h2 id="44-剪枝处理">4.4. 剪枝处理</h2>
+<ul>
+  <li>不难发现，上面对于属性的划分很容易过拟合，所以针对过拟合现象，决策树选择<strong>剪枝(pruning)</strong>来对付过拟合</li>
+  <li>剪枝就是去掉一些分支来降低过拟合的风险，剪枝可以分为预剪枝和后剪枝</li>
+  <li><strong>预剪枝(prepruning)</strong>:在决策树生成的过程中，对每个结点在划分前进行估计，若当前结点的划分不能带来决策树泛化性能的提升，则停止划分</li>
+  <li><strong>后剪枝(postpruning)</strong>:从训练集生成了一棵完整的决策树，然后自底向上地对非叶结点进行考察，若将该结点对应的子树替换为叶结点能带来决策树泛化性能的提升，则将该子树替换为叶结点。</li>
+</ul>
+
+<h3 id="441-预剪枝">4.4.1. 预剪枝</h3>
+<ul>
+  <li>如何判断决策树泛化性能？可以使用留出法预留一部分数据用作验证集进行性能评估，性能度量可以用之前介绍的那些，本小节使用精度作为性能度量</li>
+  <li>预剪枝生成的决策树：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/51.jpg" /></center>
+
+<ul>
+  <li>可以发现预剪枝显著减少了分支的数量，这样可以减少决策树的训练时间开销。但是这样也有一个问题，就是有些分支的当前划分虽然不能提升泛化性能，但是后续划分却有可能导致性能显著提高，这样就带来了欠拟合的风险</li>
+</ul>
+
+<h3 id="442-后剪枝">4.4.2. 后剪枝</h3>
+<ul>
+  <li>首先生成决策树，然后对每个结点进行评估是否需要剪枝</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/52.jpg" /></center>
+
+<ul>
+  <li>虽然后剪枝决策树的欠拟合风险小，泛化性能也往往优于预剪枝决策树，但是后剪枝的时间开销大</li>
+</ul>
+
+<h2 id="45-连续与缺失值">4.5. 连续与缺失值</h2>
+<h3 id="451-连续值处理">4.5.1. 连续值处理</h3>
+<ul>
+  <li>到目前为止仅讨论了基于离散属性来生成决策树，但是现实学习任务中通常会遇到连续属性</li>
+  <li>很明显连续属性不能根据连续属性的可取值来对结点进行划分，我们需要用到<strong>连续属性离散化</strong>的技术，最简单的策略是<strong>二分法</strong></li>
+  <li>给定样本集D和和连续属性a，假定a在D上出现了n个不同的取值，将这些值从小到大排序，然后每次选择每两个数的中位数t作为划分点，那么连续值就可以当作离散值来处理了，分出的子样本集分别记作$D_t^+$和$D_t^-$</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/53.jpg" /></center>
+
+<ul>
+  <li>划分结果：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/54.jpg" /></center>
+
+<ul>
+  <li>需要注意的是：<strong>连续属性在划分后并不会被丢失，后续划分仍然可以使用</strong></li>
+</ul>
+
+<h3 id="452-缺失值处理">4.5.2. 缺失值处理</h3>
+<ul>
+  <li>在实际数据中一般都有很多缺失值，所以我们需要考虑如何对含有缺失值的数据进行学习</li>
+  <li>给几个定义：$\tilde{D}$表示D中属性a上没有缺失值的样本子集，假设属性值a可取值{$a^1$,$a^2$…$a^V$}, $\tilde{D}^v$表示$\tilde{D}$中属性值a取值为$a^v$的子集，$\tilde{D}_k$表示样本子集，我们为每个样本赋予权重$\omega_x$(决策树开始阶段，根结点中权重初始化为1)并定义：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/55.jpg" /></center>
+
+<ul>
+  <li>
+    <p>直观地看，对属性a，$\rho$表示无缺失值样本所占比例，$\tilde{p}_k$表示无缺失样本中第k类样本所占的比例，$\tilde{r}_v$表示无缺失值样本在属性上取值为$a^v$所占的比例</p>
+  </li>
+  <li>
+    <p>那么我们可以将信息增益的公式推广为</p>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/56.jpg" /></center>
+
+<p> </p>
+
+<center><img src="../assets/img/posts/20211222/57.jpg" /></center>
+
+<ul>
+  <li>
+    <p>那么对于那些在该属性上缺失的值如何处理呢？分两种情况：，若样本$x$在划分属性$a$上的取值己知, 则将$x$划入与其取值对应的子结点，且样本权值在于结点中保持为$\omega_x$, 若样本$x$在划分属性$a$上的取值未知，则将$x$同时划入所有子结点, 且样本权值在与属性值$a^v$对应的子结点中调整为$\tilde{r}_v*\omega_x$，直观地看，这就是让同一个样本以不同的概率划入到不同的子结点中去。</p>
+  </li>
+  <li>
+    <p>C4.5就是使用了上述的解决方法</p>
+  </li>
+</ul>
+
+<h2 id="46-多变量决策树">4.6. 多变量决策树</h2>
+<ul>
+  <li>若我们把每个属性视为坐标空间中的一个坐标轴，则d个属性描述的样本就对应了d维空间中的一个数据点，对样本分类则意味着在这个坐标空间中寻找不同类样本之间的分类边界，决策树生成的分类边界有个明显的特点：<strong>轴平行</strong>，即它的分类边界由若干个与坐标轴平行的分段组成</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/58.jpg" /></center>
+
+<ul>
+  <li>这样的决策树由于要进行大量的属性测试，预测时间开销会很大，所以我们希望使用如下图红线所示的斜划分。<strong>多变量决策树</strong>就是能实现这样斜划分甚至更复杂划分的决策树</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/59.jpg" /></center>
+
+<ul>
+  <li>以实现斜划分的决策树为例，非叶结点不再是仅对某一个属性，而是对属性的线性组合进行测试</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/60.jpg" /></center>
+
+<h2 id="47-阅读材料">4.7. 阅读材料</h2>
+<ul>
+  <li>
+    <p>多变量决策树算法主要有OC1，还有一些算法试图在决策树的叶结点上嵌入神经网络，比如感知机树在每个叶结点上训练一个感知机</p>
+  </li>
+  <li>
+    <p>有些决策树学习算法可进行<strong>“增量学习”(incrementallearning)</strong>，即在接收到新样本后可对己学得的模型进行调整，而不用完全重新学习。主要机制是通过调整分支路径上的划分属性次序来对树进行部分重构，代表性算法ID4、ID5R、ITI等。增量学习可有效地降低每次接收到新样本后的训练时间开销，但多步增量学习后的模型会与基于全部数据训练而得的模型有较大差别。</p>
+  </li>
+</ul>
 
 <hr />
 
