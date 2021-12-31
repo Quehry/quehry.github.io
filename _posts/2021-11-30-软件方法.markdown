@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: postwithlatex
 read_time: true
 show_date: true
 title:  软件方法
@@ -21,6 +21,7 @@ author: Quehry
         - [2.面向对象](#2面向对象)
         - [3.JAVA](#3java)
         - [4.数据结构](#4数据结构)
+        - [5. 常用数据结构方法](#5-常用数据结构方法)
 
 <!-- /TOC -->
 # 软件方法
@@ -66,9 +67,16 @@ author: Quehry
             - 有多个类，且有public类，文件名必须与该类名相同
             - 一个JAVA源文件只能有一个public类，一个文件中只能有一个main主函数
     - 静态方法/static，可以直接用类和函数名直接调用，和普通方法的区别是不用new一个示例
+        - static 方法可以直接调用，abstract方法存在的类肯定是抽象类
+        - 抽象方法不定义具体内容
     - 多态的实现，先定义抽象的（abstract）父类，然后子类继承父类然后定义父类的抽象方法
         - 通过抽象方法固定通用接口
         - 子类通过强制实现抽象方法实现多态
+        - 抽象父类可以定义属性和构造函数
+        - 抽象父类不能实例化，只能通过向上转型的方法定义
+        - 抽象父类可以向下转型成子类
+        - 父类的方法一般是抽象方法，不定义具体内容，留给子类定义，父类出现的抽象方法子类必须全部定义
+        - 多态的主要特点就是父类的方法全部是抽象的
 
 ## PPT整理
 
@@ -140,9 +148,9 @@ public enum Jour
 
 class EssaiJour 
 {
-    public static void main(String[] arg) 
+    public static void main(String[] args) 
     {
-        Jour jour = Jour.valueOf(arg[0]);
+        Jour jour = Jour.valueOf(args[0]);
         if (jour == Jour.SAMEDI) System.out.print("fin de semaine : ");
         switch(jour) 
         {
@@ -284,7 +292,7 @@ public class TestHash
         if (annuaire.containsKey("Danielle")) 
         {
             String num = annuaire.get("Danielle");
-            System.out.println(« Danielle : "+num");
+            System.out.println(Danielle : "+num");
         }
         else 
         {
@@ -292,16 +300,17 @@ public class TestHash
         }
     }
 }
+```
 
 - 树状结构tree
 
 一般包含结点，结点的度(该结点下有多少子树的数目)，树的度
 
 不同的遍历方法：
-    - 前序遍历，首先结点，然后左子树，右子树
-    - 中序遍历，左子树，结点，右子树
-    - 后序遍历，左子树，右子树，结点
-    - 层序遍历，从上到下，从左到右
+>前序遍历，首先结点，然后左子树，右子树  
+>中序遍历，左子树，结点，右子树  
+>后序遍历，左子树，右子树，结点  
+>层序遍历，从上到下，从左到右  
 
 ```java
 class Arbre 
@@ -385,3 +394,20 @@ public boolean binrech() {
  (filsDroit.inferieur(valeur) && filsDroit.binrech()):true));
 } 
 ```
+
+### 5. 常用数据结构方法
+
+二维数组array[][]的定义和访问
+
+|数据结构|vector\<String\>|ArrayList\<String\>|LinkedList\<String\>|HashMap\<String,int\>|
+|添加|add(i, str)|add(i,str)|add(i,str)|put(str,i)|
+|查找|get(i)|get(i)|get(i)|get(str)|
+|索引|indexOf(str)|indexOf(str)|indexOf(str)||
+|删除|remove(i)/remove(str)|remove(i/str)|remove(i/str)|remove(i)|
+|清除|clear()|clear()|clear()||
+|查看大小|size()|size()|size()|size()|
+|迭代器|iterator()|iterator()|iterator()||
+|变成数组||toArray()|toArray()||
+
+hashmap还可以返回键值对entryset()，也可以判断是否含有key和value，containsKey(),containsValue()
+
