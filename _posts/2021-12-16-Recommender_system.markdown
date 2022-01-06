@@ -28,6 +28,9 @@ author: Quehry
     - [5.1. The NeuMF model](#51-the-neumf-model)
     - [5.2. Evaluator](#52-evaluator)
     - [5.3. 代码](#53-代码)
+- [6. Sequence-Aware Recommender Systems](#6-sequence-aware-recommender-systems)
+    - [6.1. Model Architectures](#61-model-architectures)
+    - [6.2. Negative Sampling 负采样](#62-negative-sampling-负采样)
 
 <!-- /TOC -->
 
@@ -158,4 +161,12 @@ NeuMF的网络结构由两部分组成。
 ### 5.3. 代码
 网络结构就是上面介绍的那样，net的输出是用户和物品匹配出的一个推荐值(我的想法)。在进行训练的时候，会给出正例物品(即用户有过评分的物品)和反例物品(用户没有评分，也就是没有看过)分别与用户得到一个推荐值，然后利用上一小节介绍的贝叶斯损失来优化(让评分过的物品有更高的推荐值)，然后最终我们希望返回一系列的推荐物品，这些推荐物品都是没有负例物品，然后根据推荐值进行排序。性能指标是hit或者auc。hit的思想是让真实评分的物品在推荐列表中。
 
+## 6. Sequence-Aware Recommender Systems
+之前的模型都没有考虑时序信息，这小节的Caser模型将会考虑用户的时序信息。
+### 6.1. Model Architectures
+模型的输入$E^{(u,t)}$表示用户u的近期L个评价的物品，Caser模型有横向和纵向的卷积层，输入矩阵分别与卷积层作用后，结果concatenate变成$z$，$z$再和用户的一般信息结合，也就是$z$和$p_u$concatenate最终输出$\hat{y}_{uit}$，其中$p_u$表示用户u的item信息
 
+<center><img src='../assets/img/posts/20211216/17.jpg'></center>
+
+### 6.2. Negative Sampling 负采样
+我们需要对数据集进行重新处理，比如一个人喜欢9部电影，同时我们的L=5，那么我们将最近的一部电影留出来作为test，其余的都作为训练集，可以划分出3个训练集。同时我们也需要进行负采样(采样没有评分的item)

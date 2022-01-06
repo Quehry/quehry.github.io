@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-31T12:40:01+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-07T00:11:01+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
 
 &lt;!-- TOC --&gt;
 
@@ -2729,6 +2729,12 @@
       &lt;li&gt;&lt;a href=&quot;#53-代码&quot;&gt;5.3. 代码&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-sequence-aware-recommender-systems&quot;&gt;6. Sequence-Aware Recommender Systems&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#61-model-architectures&quot;&gt;6.1. Model Architectures&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#62-negative-sampling-负采样&quot;&gt;6.2. Negative Sampling 负采样&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- /TOC --&gt;
@@ -2876,7 +2882,17 @@
 &lt;p&gt;其中$S_u$表示模型对于u的推荐物品集，I表示item set，AUC越大越好&lt;/p&gt;
 
 &lt;h3 id=&quot;53-代码&quot;&gt;5.3. 代码&lt;/h3&gt;
-&lt;p&gt;网络结构就是上面介绍的那样，net的输出是用户和物品匹配出的一个推荐值(我的想法)。在进行训练的时候，会给出正例物品(即用户有过评分的物品)和反例物品(用户没有评分，也就是没有看过)分别与用户得到一个推荐值，然后利用上一小节介绍的贝叶斯损失来优化(让评分过的物品有更高的推荐值)，然后最终我们希望返回一系列的推荐物品，这些推荐物品都是没有负例物品，然后根据推荐值进行排序。性能指标是hit或者auc。hit的思想是让真实评分的物品在推荐列表中。&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
+&lt;p&gt;网络结构就是上面介绍的那样，net的输出是用户和物品匹配出的一个推荐值(我的想法)。在进行训练的时候，会给出正例物品(即用户有过评分的物品)和反例物品(用户没有评分，也就是没有看过)分别与用户得到一个推荐值，然后利用上一小节介绍的贝叶斯损失来优化(让评分过的物品有更高的推荐值)，然后最终我们希望返回一系列的推荐物品，这些推荐物品都是没有负例物品，然后根据推荐值进行排序。性能指标是hit或者auc。hit的思想是让真实评分的物品在推荐列表中。&lt;/p&gt;
+
+&lt;h2 id=&quot;6-sequence-aware-recommender-systems&quot;&gt;6. Sequence-Aware Recommender Systems&lt;/h2&gt;
+&lt;p&gt;之前的模型都没有考虑时序信息，这小节的Caser模型将会考虑用户的时序信息。&lt;/p&gt;
+&lt;h3 id=&quot;61-model-architectures&quot;&gt;6.1. Model Architectures&lt;/h3&gt;
+&lt;p&gt;模型的输入$E^{(u,t)}$表示用户u的近期L个评价的物品，Caser模型有横向和纵向的卷积层，输入矩阵分别与卷积层作用后，结果concatenate变成$z$，$z$再和用户的一般信息结合，也就是$z$和$p_u$concatenate最终输出$\hat{y}_{uit}$，其中$p_u$表示用户u的item信息&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/17.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;62-negative-sampling-负采样&quot;&gt;6.2. Negative Sampling 负采样&lt;/h3&gt;
+&lt;p&gt;我们需要对数据集进行重新处理，比如一个人喜欢9部电影，同时我们的L=5，那么我们将最近的一部电影留出来作为test，其余的都作为训练集，可以划分出3个训练集。同时我们也需要进行负采样(采样没有评分的item)&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
 &lt;h2 id=&quot;报告内容&quot;&gt;报告内容&lt;/h2&gt;
 &lt;p&gt;用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。&lt;/p&gt;
 &lt;h2 id=&quot;报告格式&quot;&gt;报告格式&lt;/h2&gt;
@@ -4281,7 +4297,50 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 &lt;/table&gt;
 
 &lt;p&gt;hashmap还可以返回键值对entryset()，也可以判断是否含有key和value，containsKey(),containsValue()&lt;/p&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">目录</summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html">&lt;h1 id=&quot;概率统计&quot;&gt;概率统计&lt;/h1&gt;
+&lt;!-- TOC --&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#概率统计&quot;&gt;概率统计&lt;/a&gt;
+      - &lt;a href=&quot;#简介&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览&quot;&gt;内容总览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#流体力学&quot;&gt;流体力学&lt;/a&gt;
+      - &lt;a href=&quot;#简介-1&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-1&quot;&gt;内容总览&lt;/a&gt;
+      - &lt;a href=&quot;#a4纸&quot;&gt;A4纸&lt;/a&gt;
+      - &lt;a href=&quot;#报告&quot;&gt;报告&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#电磁辐射波&quot;&gt;电磁辐射波&lt;/a&gt;
+      - &lt;a href=&quot;#简介-2&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-2&quot;&gt;内容总览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#传感器&quot;&gt;传感器&lt;/a&gt;
+      - &lt;a href=&quot;#简介-3&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-3&quot;&gt;内容总览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#结构力学&quot;&gt;结构力学&lt;/a&gt;
+      - &lt;a href=&quot;#简介-4&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-4&quot;&gt;内容总览&lt;/a&gt;
+      - &lt;a href=&quot;#a4纸-1&quot;&gt;A4纸&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#项目管理&quot;&gt;项目管理&lt;/a&gt;
+      - &lt;a href=&quot;#简介-5&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-5&quot;&gt;内容总览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#工程热力学&quot;&gt;工程热力学&lt;/a&gt;
+      - &lt;a href=&quot;#简介-6&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#报告pre&quot;&gt;报告Pre&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-6&quot;&gt;内容总览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#presse&quot;&gt;Presse&lt;/a&gt;
+      - &lt;a href=&quot;#简介-7&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-7&quot;&gt;内容总览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#audiovisual&quot;&gt;Audiovisual&lt;/a&gt;
+      - &lt;a href=&quot;#简介-8&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-8&quot;&gt;内容总览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#软件方法&quot;&gt;软件方法&lt;/a&gt;
+      - &lt;a href=&quot;#简介-9&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-9&quot;&gt;内容总览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#机器人&quot;&gt;机器人&lt;/a&gt;
+      - &lt;a href=&quot;#简介-10&quot;&gt;简介&lt;/a&gt;
+      - &lt;a href=&quot;#内容总览-10&quot;&gt;内容总览&lt;/a&gt;
+      - &lt;a href=&quot;#报告-1&quot;&gt;报告&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;授课老师：牛薇&lt;/li&gt;
@@ -4461,7 +4520,7 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;audiovisual&quot;&gt;Audiovisual&lt;/h1&gt;
-&lt;h1 id=&quot;简介-8&quot;&gt;简介&lt;/h1&gt;
+&lt;h3 id=&quot;简介-8&quot;&gt;简介&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;法语课程&lt;/li&gt;
   &lt;li&gt;授课老师：Fabien&lt;/li&gt;
@@ -4484,4 +4543,32 @@ $\tilde{U}$&lt;sub&gt;:j&lt;/sub&gt; = $\sum$ S&lt;sub&gt;i,j&lt;/sub&gt;&lt;sup
   &lt;li&gt;Séance 10 - Révolution du vin&lt;/li&gt;
   &lt;li&gt;Séance 11 – Rouler au whisky&lt;/li&gt;
   &lt;li&gt;Séance 12 — Un champion de la pâtisserie&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计</summary></entry></feed>
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;软件方法&quot;&gt;软件方法&lt;/h1&gt;
+&lt;h3 id=&quot;简介-9&quot;&gt;简介&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;授课老师：于雷， Olivier Roux&lt;/li&gt;
+  &lt;li&gt;授课形式：OR线上授课，于雷助教，有报告和TP&lt;/li&gt;
+  &lt;li&gt;授课材料：PPT，TP&lt;/li&gt;
+  &lt;li&gt;闭卷考试，手写代码&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;内容总览-9&quot;&gt;内容总览&lt;/h3&gt;
+&lt;p&gt;在另一份博客里有具体整理，主要是介绍面向对象的开发方法，同时用java来展示如何进行面向对象的编程&lt;/p&gt;
+
+&lt;h1 id=&quot;机器人&quot;&gt;机器人&lt;/h1&gt;
+&lt;h3 id=&quot;简介-10&quot;&gt;简介&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;授课老师：严亮&lt;/li&gt;
+  &lt;li&gt;授课形式：线下授课&lt;/li&gt;
+  &lt;li&gt;授课材料：PPT&lt;/li&gt;
+  &lt;li&gt;无考试，有大作业(报告)&lt;/li&gt;
+  &lt;li&gt;英文授课&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;内容总览-10&quot;&gt;内容总览&lt;/h3&gt;
+&lt;p&gt;只有四节课，介绍了自由度，动力学，逆动力学，速度和力&lt;/p&gt;
+
+&lt;h3 id=&quot;报告-1&quot;&gt;报告&lt;/h3&gt;
+&lt;p&gt;用solidworks设计一个三自由度的机械臂，并附上运动学分析&lt;/p&gt;</content><author><name>Quehry</name></author><category term="school" /><summary type="html">概率统计</summary></entry></feed>
