@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-07T00:11:01+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-07T09:35:38+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html">&lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
 
 &lt;!-- TOC --&gt;
 
@@ -2735,6 +2735,12 @@
       &lt;li&gt;&lt;a href=&quot;#62-negative-sampling-负采样&quot;&gt;6.2. Negative Sampling 负采样&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-feature-rich-recommender-systems&quot;&gt;7. Feature-Rich Recommender Systems&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-factorization-machines&quot;&gt;8. Factorization Machines&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#81-2-way-factorization-machines&quot;&gt;8.1. 2-Way Factorization Machines&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- /TOC --&gt;
@@ -2892,7 +2898,15 @@
 &lt;center&gt;&lt;img src=&quot;../assets/img/posts/20211216/17.jpg&quot; /&gt;&lt;/center&gt;
 
 &lt;h3 id=&quot;62-negative-sampling-负采样&quot;&gt;6.2. Negative Sampling 负采样&lt;/h3&gt;
-&lt;p&gt;我们需要对数据集进行重新处理，比如一个人喜欢9部电影，同时我们的L=5，那么我们将最近的一部电影留出来作为test，其余的都作为训练集，可以划分出3个训练集。同时我们也需要进行负采样(采样没有评分的item)&lt;/p&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
+&lt;p&gt;我们需要对数据集进行重新处理，比如一个人喜欢9部电影，同时我们的L=5，那么我们将最近的一部电影留出来作为test，其余的都作为训练集，可以划分出3个训练集。同时我们也需要进行负采样(采样没有评分的item)&lt;/p&gt;
+
+&lt;h2 id=&quot;7-feature-rich-recommender-systems&quot;&gt;7. Feature-Rich Recommender Systems&lt;/h2&gt;
+&lt;p&gt;之前的模型大都用到了用户物品的交互矩阵，但是很少有用到一些额外的信息，比如物品的特征，用户的简介，发生交互的背景等等…利用这些信息可以获得用户的兴趣特征。本节提出了一个新的任务CTR(click-through rate)，也就是点击率任务，对象可以是广告、电影等等。&lt;/p&gt;
+
+&lt;h2 id=&quot;8-factorization-machines&quot;&gt;8. Factorization Machines&lt;/h2&gt;
+&lt;p&gt;Factorization machines(FM)是一个监督算法，可用于分类，回归和排名任务。它有两个优点：1.它能处理稀疏的数据；2.它能减少时间复杂度和线性复杂度&lt;/p&gt;
+
+&lt;h3 id=&quot;81-2-way-factorization-machines&quot;&gt;8.1. 2-Way Factorization Machines&lt;/h3&gt;</content><author><name>Quehry</name></author><category term="note" /><summary type="html"></summary></entry><entry><title type="html">Robotics</title><link href="http://localhost:4000/Robotics.html" rel="alternate" type="text/html" title="Robotics" /><published>2021-12-13T00:00:00+08:00</published><updated>2021-12-13T00:00:00+08:00</updated><id>http://localhost:4000/Robotics</id><content type="html" xml:base="http://localhost:4000/Robotics.html">&lt;h1 id=&quot;报告&quot;&gt;报告&lt;/h1&gt;
 &lt;h2 id=&quot;报告内容&quot;&gt;报告内容&lt;/h2&gt;
 &lt;p&gt;用solidworks设计一个至少三个自由度的机械臂，并且描述它的动能，移动能力等等。提交的是截图，源文件等等。&lt;/p&gt;
 &lt;h2 id=&quot;报告格式&quot;&gt;报告格式&lt;/h2&gt;

@@ -31,6 +31,9 @@ author: Quehry
 - [6. Sequence-Aware Recommender Systems](#6-sequence-aware-recommender-systems)
     - [6.1. Model Architectures](#61-model-architectures)
     - [6.2. Negative Sampling 负采样](#62-negative-sampling-负采样)
+- [7. Feature-Rich Recommender Systems](#7-feature-rich-recommender-systems)
+- [8. Factorization Machines](#8-factorization-machines)
+    - [8.1. 2-Way Factorization Machines](#81-2-way-factorization-machines)
 
 <!-- /TOC -->
 
@@ -170,3 +173,11 @@ NeuMF的网络结构由两部分组成。
 
 ### 6.2. Negative Sampling 负采样
 我们需要对数据集进行重新处理，比如一个人喜欢9部电影，同时我们的L=5，那么我们将最近的一部电影留出来作为test，其余的都作为训练集，可以划分出3个训练集。同时我们也需要进行负采样(采样没有评分的item)
+
+## 7. Feature-Rich Recommender Systems
+之前的模型大都用到了用户物品的交互矩阵，但是很少有用到一些额外的信息，比如物品的特征，用户的简介，发生交互的背景等等...利用这些信息可以获得用户的兴趣特征。本节提出了一个新的任务CTR(click-through rate)，也就是点击率任务，对象可以是广告、电影等等。
+
+## 8. Factorization Machines
+Factorization machines(FM)是一个监督算法，可用于分类，回归和排名任务。它有两个优点：1.它能处理稀疏的数据；2.它能减少时间复杂度和线性复杂度
+
+### 8.1. 2-Way Factorization Machines

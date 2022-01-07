@@ -22,7 +22,7 @@
   "headline": "推荐系统",
   "abstract": "d2l推荐系统笔记",
     "keywords": "note",
-    "wordcount": "209",
+    "wordcount": "235",
     "image": ["http://localhost:4000/assets/imgposts/20211216/1.jpg"],
   "datePublished": "2021-12-16 00:00:00 +0800",
   "dateModified": "2021-12-16 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="d2l推荐系统笔记">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="209"/>
+<meta data-rh="true" name="twitter:data1" content="235"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211216/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -379,6 +379,12 @@
       <li><a href="#62-negative-sampling-负采样">6.2. Negative Sampling 负采样</a></li>
     </ul>
   </li>
+  <li><a href="#7-feature-rich-recommender-systems">7. Feature-Rich Recommender Systems</a></li>
+  <li><a href="#8-factorization-machines">8. Factorization Machines</a>
+    <ul>
+      <li><a href="#81-2-way-factorization-machines">8.1. 2-Way Factorization Machines</a></li>
+    </ul>
+  </li>
 </ul>
 
 <!-- /TOC -->
@@ -537,6 +543,14 @@
 
 <h3 id="62-negative-sampling-负采样">6.2. Negative Sampling 负采样</h3>
 <p>我们需要对数据集进行重新处理，比如一个人喜欢9部电影，同时我们的L=5，那么我们将最近的一部电影留出来作为test，其余的都作为训练集，可以划分出3个训练集。同时我们也需要进行负采样(采样没有评分的item)</p>
+
+<h2 id="7-feature-rich-recommender-systems">7. Feature-Rich Recommender Systems</h2>
+<p>之前的模型大都用到了用户物品的交互矩阵，但是很少有用到一些额外的信息，比如物品的特征，用户的简介，发生交互的背景等等…利用这些信息可以获得用户的兴趣特征。本节提出了一个新的任务CTR(click-through rate)，也就是点击率任务，对象可以是广告、电影等等。</p>
+
+<h2 id="8-factorization-machines">8. Factorization Machines</h2>
+<p>Factorization machines(FM)是一个监督算法，可用于分类，回归和排名任务。它有两个优点：1.它能处理稀疏的数据；2.它能减少时间复杂度和线性复杂度</p>
+
+<h3 id="81-2-way-factorization-machines">8.1. 2-Way Factorization Machines</h3>
 
         <aside class="sidebar inline" id="post-end">
     
