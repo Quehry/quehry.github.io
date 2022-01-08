@@ -32,8 +32,11 @@ author: Quehry
     - [6.1. Model Architectures](#61-model-architectures)
     - [6.2. Negative Sampling 负采样](#62-negative-sampling-负采样)
 - [7. Feature-Rich Recommender Systems](#7-feature-rich-recommender-systems)
-- [8. Factorization Machines](#8-factorization-machines)
+- [8. Factorization Machines 因子分解机](#8-factorization-machines-因子分解机)
     - [8.1. 2-Way Factorization Machines](#81-2-way-factorization-machines)
+    - [8.2. An Efficient Optimization Citerion](#82-an-efficient-optimization-citerion)
+- [9. Deep Factorization Machines 深度因子分解机DeeoFM](#9-deep-factorization-machines-深度因子分解机deeofm)
+    - [9.1. Model Architectures 模型架构](#91-model-architectures-模型架构)
 
 <!-- /TOC -->
 
@@ -177,7 +180,24 @@ NeuMF的网络结构由两部分组成。
 ## 7. Feature-Rich Recommender Systems
 之前的模型大都用到了用户物品的交互矩阵，但是很少有用到一些额外的信息，比如物品的特征，用户的简介，发生交互的背景等等...利用这些信息可以获得用户的兴趣特征。本节提出了一个新的任务CTR(click-through rate)，也就是点击率任务，对象可以是广告、电影等等。
 
-## 8. Factorization Machines
+## 8. Factorization Machines 因子分解机
 Factorization machines(FM)是一个监督算法，可用于分类，回归和排名任务。它有两个优点：1.它能处理稀疏的数据；2.它能减少时间复杂度和线性复杂度
 
 ### 8.1. 2-Way Factorization Machines
+$x$表示样本的特征值，而$y$表示它的标签值，即click/non-click。第二项表示线性项，第三项表示矩阵分解项
+
+<center><img src='../assets/img/posts/20211216/18.jpg'></center>
+
+### 8.2. An Efficient Optimization Citerion
+上面式子的第三项时间复杂度太高，我们可以简化一下
+
+<center><img src='../assets/img/posts/20211216/19.jpg'></center>
+
+## 9. Deep Factorization Machines 深度因子分解机DeeoFM
+上小节提到的因子分解机用到的都是线性模型(单线性和双线性)，这种模型在真实数据表现并不好。这里我们就可以结合因子分解机和深度神经网络，比如我们这小节即将介绍的DeepFM。
+
+### 9.1. Model Architectures 模型架构
+DeepFM由两部分组成，FM component和deep component，FM部分和上小节提到的2-way FM做法一样，主要是处理低纬度特征，而deep部分用到的MLP来处理高维度和非线性。这两部分使用相同的输入/嵌入层然后它们的结果整合成最终的预测。模型结构如下图：
+
+<center><img src='../assets/img/posts/20211216/20.jpg'></center>
+
