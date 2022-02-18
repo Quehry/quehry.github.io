@@ -22,7 +22,7 @@
   "headline": "推荐系统",
   "abstract": "d2l推荐系统笔记",
     "keywords": "note",
-    "wordcount": "235",
+    "wordcount": "272",
     "image": ["http://localhost:4000/assets/imgposts/20211216/1.jpg"],
   "datePublished": "2021-12-16 00:00:00 +0800",
   "dateModified": "2021-12-16 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="d2l推荐系统笔记">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="235"/>
+<meta data-rh="true" name="twitter:data1" content="272"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211216/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -380,9 +380,15 @@
     </ul>
   </li>
   <li><a href="#7-feature-rich-recommender-systems">7. Feature-Rich Recommender Systems</a></li>
-  <li><a href="#8-factorization-machines">8. Factorization Machines</a>
+  <li><a href="#8-factorization-machines-因子分解机">8. Factorization Machines 因子分解机</a>
     <ul>
       <li><a href="#81-2-way-factorization-machines">8.1. 2-Way Factorization Machines</a></li>
+      <li><a href="#82-an-efficient-optimization-citerion">8.2. An Efficient Optimization Citerion</a></li>
+    </ul>
+  </li>
+  <li><a href="#9-deep-factorization-machines-深度因子分解机deeofm">9. Deep Factorization Machines 深度因子分解机DeeoFM</a>
+    <ul>
+      <li><a href="#91-model-architectures-模型架构">9.1. Model Architectures 模型架构</a></li>
     </ul>
   </li>
 </ul>
@@ -547,10 +553,27 @@
 <h2 id="7-feature-rich-recommender-systems">7. Feature-Rich Recommender Systems</h2>
 <p>之前的模型大都用到了用户物品的交互矩阵，但是很少有用到一些额外的信息，比如物品的特征，用户的简介，发生交互的背景等等…利用这些信息可以获得用户的兴趣特征。本节提出了一个新的任务CTR(click-through rate)，也就是点击率任务，对象可以是广告、电影等等。</p>
 
-<h2 id="8-factorization-machines">8. Factorization Machines</h2>
+<h2 id="8-factorization-machines-因子分解机">8. Factorization Machines 因子分解机</h2>
 <p>Factorization machines(FM)是一个监督算法，可用于分类，回归和排名任务。它有两个优点：1.它能处理稀疏的数据；2.它能减少时间复杂度和线性复杂度</p>
 
 <h3 id="81-2-way-factorization-machines">8.1. 2-Way Factorization Machines</h3>
+<p>$x$表示样本的特征值，而$y$表示它的标签值，即click/non-click。第二项表示线性项，第三项表示矩阵分解项</p>
+
+<center><img src="../assets/img/posts/20211216/18.jpg" /></center>
+
+<h3 id="82-an-efficient-optimization-citerion">8.2. An Efficient Optimization Citerion</h3>
+<p>上面式子的第三项时间复杂度太高，我们可以简化一下</p>
+
+<center><img src="../assets/img/posts/20211216/19.jpg" /></center>
+
+<h2 id="9-deep-factorization-machines-深度因子分解机deeofm">9. Deep Factorization Machines 深度因子分解机DeeoFM</h2>
+<p>上小节提到的因子分解机用到的都是线性模型(单线性和双线性)，这种模型在真实数据表现并不好。这里我们就可以结合因子分解机和深度神经网络，比如我们这小节即将介绍的DeepFM。</p>
+
+<h3 id="91-model-architectures-模型架构">9.1. Model Architectures 模型架构</h3>
+<p>DeepFM由两部分组成，FM component和deep component，FM部分和上小节提到的2-way FM做法一样，主要是处理低纬度特征，而deep部分用到的MLP来处理高维度和非线性。这两部分使用相同的输入/嵌入层然后它们的结果整合成最终的预测。模型结构如下图：</p>
+
+<center><img src="../assets/img/posts/20211216/20.jpg" /></center>
+
 
         <aside class="sidebar inline" id="post-end">
     
