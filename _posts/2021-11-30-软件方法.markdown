@@ -26,23 +26,22 @@ author: Quehry
 <!-- /TOC -->
 # 软件方法
 ## 课程要求
-学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象具体怎么实现。
+学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象的编程具体怎么实现。
 
 ### 随记
 1. 类，对象：  
-    - 给类赋值变成实例/对象  
-    - c语言可以构建面向对象所有的结构  
-    - 对象就是给类声明的一个变量  
+    - 对象是类的一个实例 
+    - c语言可以构建面向对象所有的结构    
     - 类集合了属性和方法
 2. 面向对象的三大特征：  
     - 封装（encapsulation）:
         - private, protected, public
-        - 可作用于属性和方法
+        - 可作用于属性和方法，一般构造方法和成员方法都是public, 属性都是private
         - 一般是隐藏对象的属性和实现细节，但是提供方法的接口
         - 提供公开的方法
         - 提高了软件开发的效率
 
-        <img src='../assets/img/posts/20211130/1.jpg'>
+        <center><img src='../assets/img/posts/20211130/1.jpg'></center>
 
     - 继承（inheritance）：  
         - 子类与父类
@@ -78,21 +77,88 @@ author: Quehry
         - 父类的方法一般是抽象方法，不定义具体内容，留给子类定义，父类出现的抽象方法子类必须全部定义
         - 多态的主要特点就是父类的方法全部是抽象的
 
+4. 多态例子
+
+```java
+public class Test {
+    public static void main(String[] args) {
+      show(new Cat());  // 以 Cat 对象调用 show 方法
+      show(new Dog());  // 以 Dog 对象调用 show 方法
+                
+      Animal a = new Cat();  // 向上转型  
+      a.eat();               // 调用的是 Cat 的 eat
+      Cat c = (Cat)a;        // 向下转型  
+      c.work();        // 调用的是 Cat 的 work
+  }  
+            
+    public static void show(Animal a)  {
+        a.eat();  
+        // 类型判断
+        if (a instanceof Cat)  {  // 猫做的事情 
+            Cat c = (Cat)a; // 向下转型
+            c.work();  
+        } 
+        else if (a instanceof Dog) { // 狗做的事情 
+            Dog c = (Dog)a;  
+            c.work();  
+        }  
+    }  
+}
+ 
+abstract class Animal {  
+    abstract void eat();  
+}  
+  
+class Cat extends Animal {  
+    public void eat() {  
+        System.out.println("吃鱼");  
+    }  
+    public void work() {  
+        System.out.println("抓老鼠");  
+    }  
+}  
+  
+class Dog extends Animal {  
+    public void eat() {  
+        System.out.println("吃骨头");  
+    }  
+    public void work() {  
+        System.out.println("看家");  
+    }  
+}
+```
+
 ## PPT整理
 
 ### 1. 对象，类
-- 使用对象之前要先声明和创造
+- 使用对象之前要先声明和创建
 - 类定义了对象的类型，所有对象都是类的实例，所有的类描述了属性和定义了方法
 
 ### 2.面向对象
-- 封装：保护类的属性和方法,private,default,protected,public
-- 继承：B继承A，重用，修改，添加，A所有的属性都存在于B中，A的方法可以在B中重新定义，B的改动不会影响A
-- 多态：一个对象属于多个类，通过使用不同类中的方法属于不同的类，父类是抽象类，各个子类继承父类并定义方法，调用的时候根据不同子类调用方法。判断类型是否相同instanceof，声明的时候可以这么声明: A a = new B(),其中B是A的子类。
+- 面向对象的编程有4个特点
+- **封装**：保护类的属性和方法, 类里面的属性的数据是private的, public的方法定义了对象的接口。权限修饰符: private, default, protected, public。
+- **继承**：B继承A，重用，修改，添加，A所有的属性都存在于B中，A的方法可以在B中重新定义，B方法的改动不会影响A
+- **多态**：一个对象属于多个类，通过使用不同类中的方法属于不同的类，父类是抽象类，各个子类继承父类并定义方法，调用的时候根据不同子类调用方法。判断类型是否相同instanceof，声明的时候可以这么声明: A a = new B(),其中B是A的子类, 这种声明方法叫做向上转型。向下转型: B b = (B) a
+- **动态链接**: 通过PPT上的例子，我感觉和继承很像，这部分需要更深入了解才能明白。
 
 ### 3.JAVA
+- main的格式:
+
+<center><img src='../assets/img/posts/20211130/71.jpg'></center>
+
+- 数据类型: int, float, double, char, string, boolean, byte, long, short, JAVA里面也有这些数据类型的类：
+
+<center><img src='../assets/img/posts/20211130/72.jpg'></center>
+
+其中Characte应该为Character
+
+- JAVA关键字this, super
+
 - x = bool ? a : b，表示如果bool为true，执行a，如果为false执行b
+
 - for(Point p : this.getVect())表示遍历
-- exception:
+
+- exception 异常:
 
 <img src='../assets/img/posts/20211130/69.jpg'>
 
@@ -120,6 +186,7 @@ finally
 ```
 
 自定义异常：
+
 ```java
 class NombreNegatifException extends Exception
 {
@@ -127,6 +194,16 @@ class NombreNegatifException extends Exception
     {
     System.out.println("Vous avez un nombre négatif !");
     } 
+}
+```
+
+在类的方法中抛出新的异常：
+
+```java
+public int Count() throws Exception{
+    if (...){
+        throw new Exception("...");
+    }
 }
 ```
 
@@ -138,7 +215,7 @@ class NombreNegatifException extends Exception
 
 <img src='../assets/img/posts/20211130/70.jpg'>
 
-- 枚举enum，举例说明
+- 枚举类型enum，举例说明
 
 ```java
 public enum Jour 
@@ -166,7 +243,7 @@ class EssaiJour
 }
 ```
 
-- 接口interface,迭代器iterator
+- 接口interface, **迭代器**iterator
 
 举例：
 
@@ -214,9 +291,9 @@ class Main
 - 二维数组,举例说明：
 
 ```java
-String tab[][]={ {"a", "e", "i", "o", "u"}, {"1", "2", "3", "4"} };
+String[][] tab={ {"a", "e", "i", "o", "u"}, {"1", "2", "3", "4"} };
 int i = 0, j = 0;
-for(String sousTab[] : tab) 
+for(String[] sousTab : tab) 
 {
     j = 0;
     for(String str : sousTab) 
@@ -227,6 +304,8 @@ for(String sousTab[] : tab)
     i++;
 }
 ```
+
+声明数组：数组类型加变量名
 
 或者
 
@@ -276,7 +355,7 @@ public class Liste<T>
 
 这是一个链表的简写，每一层包含了上一个元素，这一个元素，下一个元素
 
-- 哈希表，通过简历KV关系查找，相比于之前的顺序访问或者其他指数访问要快。
+- 哈希表，通过建立KV关系查找，相比于之前的顺序访问或者其他指数访问要快。
 
 ```java
 import java.util.HashMap;
@@ -380,18 +459,16 @@ public boolean superieur(char x)
 {
 // vrai si x est supérieur à tous les éléments de l’arbre
     if (feuille()) return (x>=valeur);
-    else return (((this.existeFilsGauche())? 
-    (this.filsGauche).superieur(x):true) & 
-    ((this.existeFilsDroit())? 
-    (this.filsDroit).superieur(x):true));
+    else return 
+    (((this.existeFilsGauche())? (this.filsGauche).superieur(x):true) & 
+     ((this.existeFilsDroit())? (this.filsDroit).superieur(x):true));
 } 
 public boolean inferieur(char x) {//similaire a superieur ... }
 public boolean binrech() {
- if (feuille()) return true;
- else return( (existeFilsGauche()?
- (filsGauche.superieur(valeur) && filsGauche.binrech()):true) 
- & (existeFilsDroit()?
- (filsDroit.inferieur(valeur) && filsDroit.binrech()):true));
+    if (feuille()) return true;
+    else return
+    ((existeFilsGauche()?(filsGauche.superieur(valeur) && filsGauche.binrech()):true) & 
+     (existeFilsDroit()?(filsDroit.inferieur(valeur) && filsDroit.binrech()):true));
 } 
 ```
 
@@ -402,12 +479,12 @@ public boolean binrech() {
 |数据结构|vector\<String\>|ArrayList\<String\>|LinkedList\<String\>|HashMap\<String,int\>|
 |添加|add(i, str)|add(i,str)|add(i,str)|put(str,i)|
 |查找|get(i)|get(i)|get(i)|get(str)|
-|索引|indexOf(str)|indexOf(str)|indexOf(str)||
+|索引|indexOf(str)|indexOf(str)|indexOf(str)|
 |删除|remove(i)/remove(str)|remove(i/str)|remove(i/str)|remove(i)|
-|清除|clear()|clear()|clear()||
+|清除|clear()|clear()|clear()|
 |查看大小|size()|size()|size()|size()|
-|迭代器|iterator()|iterator()|iterator()||
-|变成数组||toArray()|toArray()||
+|迭代器|iterator()|iterator()|iterator()|
+|变成数组||toArray()|toArray()|
 
 hashmap还可以返回键值对entryset()，也可以判断是否含有key和value，containsKey(),containsValue()
 
