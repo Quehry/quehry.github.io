@@ -136,6 +136,8 @@
   "tag" : "note",
   "posts" : [
       
+      "./C-Language.html",
+      
       "./Machine-Learning.html",
       
       "./Computer_Graphics.html",

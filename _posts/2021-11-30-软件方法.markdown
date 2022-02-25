@@ -488,3 +488,4 @@ public boolean binrech() {
 
 hashmap还可以返回键值对entryset()，也可以判断是否含有key和value，containsKey(),containsValue()
 
+Hashmap创建的时候需要继承

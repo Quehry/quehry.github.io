@@ -466,7 +466,7 @@
 <h3 id="233-自助法">2.3.3. 自助法</h3>
 <ul>
   <li><strong>自助法(bootstrapping)</strong>：给定包含m个样本的数据集D，每次随机从D中挑选一个样本，将其拷贝放入D’, 然后再将该样本放回最初的数据集D中，这个过程重复执行m次后，我们获得了包含m个样本的数据集D’。我们将D’作为训练集，D\D’作为测试集。</li>
-  <li>不难发现大概有36.8%(m趋于无限大时)的样本再m次采样中始终不被采到。</li>
+  <li>不难发现大概有36.8%(m趋于无限大时)的样本在m次采样中始终不被采到。</li>
 </ul>
 
 <center>$\lim\limits_{m\rightarrow\infty}(1-\frac{1}{m})^m = \frac{1}{e} ≈ 0.368$</center>
@@ -763,7 +763,7 @@
   <li>
     <p><strong>噪声</strong>则表达了在当前任务上任何学习算法所能达到的期望泛化误差的下界，即刻画了学习问题本身的难度</p>
   </li>
-  <li>一般来说，偏置与方差是有冲突的，也就是偏置大的方差小，偏置小的方差大</li>
+  <li>一般来说，偏差与方差是有冲突的，也就是偏差大的方差小，偏差小的方差大</li>
 </ul>
 
 <center><img src="../assets/img/posts/20211222/15.jpg" /></center>
@@ -806,7 +806,7 @@
 <h2 id="33-线性回归">3.3. 线性回归</h2>
 <ul>
   <li>
-    <p>对离散属性的处理：1.若属性值存在“序”的关系，可通过连续化将其转化为连续值，比如高、矮变成1、0；2.若不存在序的关系，可转化为k维向量。</p>
+    <p>对离散属性的处理，若属性值存在“序”的关系，可通过连续化将其转化为连续值，比如高、矮变成1、0；2.若不存在序的关系，可转化为k维向量。</p>
   </li>
   <li>
     <p>均方误差是回归任务中最常用的性能度量，试图让均方误差最小化：</p>
@@ -1211,7 +1211,7 @@
 
 <ul>
   <li>
-    <p>那么对于那些在该属性上缺失的值如何处理呢？分两种情况：，若样本$x$在划分属性$a$上的取值己知, 则将$x$划入与其取值对应的子结点，且样本权值在于结点中保持为$\omega_x$, 若样本$x$在划分属性$a$上的取值未知，则将$x$同时划入所有子结点, 且样本权值在与属性值$a^v$对应的子结点中调整为$\tilde{r}_v*\omega_x$，直观地看，这就是让同一个样本以不同的概率划入到不同的子结点中去。</p>
+    <p>那么对于那些在该属性上缺失的值如何处理呢？分两种情况：若样本$x$在划分属性$a$上的取值己知, 则将$x$划入与其取值对应的子结点，且样本权值在于结点中保持为$\omega_x$, 若样本$x$在划分属性$a$上的取值未知，则将$x$同时划入所有子结点, 且样本权值在与属性值$a^v$对应的子结点中调整为$\tilde{r}_v*\omega_x$，直观地看，这就是让同一个样本以不同的概率划入到不同的子结点中去。</p>
   </li>
   <li>
     <p>C4.5就是使用了上述的解决方法</p>
@@ -1341,6 +1341,37 @@
           
           
 
+          <a href="./C-Language.html" class="recent-item-img" style="background: url('./assets/img/posts/20220225/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>C语言程序设计</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
           <a href="./Machine-Learning.html" class="recent-item-img" style="background: url('./assets/img/posts/20211222/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>机器学习</span>
@@ -1418,37 +1449,6 @@
     <p class="page_meta-readtime">
       
         6 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./1221%E7%BB%84%E4%BC%9A.html" class="recent-item-img" style="background: url('./assets/img/posts/20211221/6.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>组会记录</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        less than 1 minute read
       
     </p>
   

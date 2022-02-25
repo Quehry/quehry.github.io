@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-23T22:45:09+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html"><![CDATA[<h1 id="目录">目录</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-26T00:29:20+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
+
+<h1 id="1-第一章-c语言快速入门">1. 第一章 C语言快速入门</h1>
+
+<h2 id="11-信息在计算机中的表示">1.1. 信息在计算机中的表示</h2>
+
+<h3 id="111-用0和1表示各种信息">1.1.1. 用0和1表示各种信息</h3>
+<ul>
+  <li>计算机中的所有信息都是用0、1表示</li>
+  <li>二进制数的一位，称为一个比特(bit), 简写b</li>
+  <li>八个二进制位称为一个字节(byte), 简写B</li>
+  <li>1KB, 1MB, 1GB, 1TB</li>
+  <li>ASCII编码方案：用8个连续的0或1来表示一个字母数字和标点符号，一共有256种不同的组合</li>
+</ul>
+
+<h3 id="112-十进制到二进制的互相转换">1.1.2. 十进制到二进制的互相转换</h3>
+<ul>
+  <li>十进制数是数的十进制表示形式的简称</li>
+  <li>短除法，每次除以进制，余数就是这个进制的最小位数</li>
+</ul>
+
+<h3 id="113-k进制小数">1.1.3. K进制小数</h3>
+<ul>
+  <li>K进制小数和整数的定义类似，只不过变成了K的负次方，比如小数后的第一位是$K^{-1}$</li>
+</ul>
+
+<h3 id="114-十六进制数到二进制数的相互转换">1.1.4. 十六进制数到二进制数的相互转换</h3>
+
+<center><img src="assets/img/posts/20220225/2.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[网课记录]]></summary></entry><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html"><![CDATA[<h1 id="目录">目录</h1>
 
 <!-- TOC -->
 
@@ -122,7 +150,7 @@
 <h3 id="233-自助法">2.3.3. 自助法</h3>
 <ul>
   <li><strong>自助法(bootstrapping)</strong>：给定包含m个样本的数据集D，每次随机从D中挑选一个样本，将其拷贝放入D’, 然后再将该样本放回最初的数据集D中，这个过程重复执行m次后，我们获得了包含m个样本的数据集D’。我们将D’作为训练集，D\D’作为测试集。</li>
-  <li>不难发现大概有36.8%(m趋于无限大时)的样本再m次采样中始终不被采到。</li>
+  <li>不难发现大概有36.8%(m趋于无限大时)的样本在m次采样中始终不被采到。</li>
 </ul>
 
 <center>$\lim\limits_{m\rightarrow\infty}(1-\frac{1}{m})^m = \frac{1}{e} ≈ 0.368$</center>
@@ -419,7 +447,7 @@
   <li>
     <p><strong>噪声</strong>则表达了在当前任务上任何学习算法所能达到的期望泛化误差的下界，即刻画了学习问题本身的难度</p>
   </li>
-  <li>一般来说，偏置与方差是有冲突的，也就是偏置大的方差小，偏置小的方差大</li>
+  <li>一般来说，偏差与方差是有冲突的，也就是偏差大的方差小，偏差小的方差大</li>
 </ul>
 
 <center><img src="../assets/img/posts/20211222/15.jpg" /></center>
@@ -462,7 +490,7 @@
 <h2 id="33-线性回归">3.3. 线性回归</h2>
 <ul>
   <li>
-    <p>对离散属性的处理：1.若属性值存在“序”的关系，可通过连续化将其转化为连续值，比如高、矮变成1、0；2.若不存在序的关系，可转化为k维向量。</p>
+    <p>对离散属性的处理，若属性值存在“序”的关系，可通过连续化将其转化为连续值，比如高、矮变成1、0；2.若不存在序的关系，可转化为k维向量。</p>
   </li>
   <li>
     <p>均方误差是回归任务中最常用的性能度量，试图让均方误差最小化：</p>
@@ -867,7 +895,7 @@
 
 <ul>
   <li>
-    <p>那么对于那些在该属性上缺失的值如何处理呢？分两种情况：，若样本$x$在划分属性$a$上的取值己知, 则将$x$划入与其取值对应的子结点，且样本权值在于结点中保持为$\omega_x$, 若样本$x$在划分属性$a$上的取值未知，则将$x$同时划入所有子结点, 且样本权值在与属性值$a^v$对应的子结点中调整为$\tilde{r}_v*\omega_x$，直观地看，这就是让同一个样本以不同的概率划入到不同的子结点中去。</p>
+    <p>那么对于那些在该属性上缺失的值如何处理呢？分两种情况：若样本$x$在划分属性$a$上的取值己知, 则将$x$划入与其取值对应的子结点，且样本权值在于结点中保持为$\omega_x$, 若样本$x$在划分属性$a$上的取值未知，则将$x$同时划入所有子结点, 且样本权值在与属性值$a^v$对应的子结点中调整为$\tilde{r}_v*\omega_x$，直观地看，这就是让同一个样本以不同的概率划入到不同的子结点中去。</p>
   </li>
   <li>
     <p>C4.5就是使用了上述的解决方法</p>
@@ -4415,314 +4443,6 @@ $\tilde{U}$<sub>:j</sub> = $\sum$ S<sub>i,j</sub><sup>Q</sup>U<sub>:,i</sub></li
   </tbody>
 </table>
 
-<p>hashmap还可以返回键值对entryset()，也可以判断是否含有key和value，containsKey(),containsValue()</p>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[课堂记录]]></summary></entry><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2021-11-28T00:00:00+08:00</published><updated>2021-11-28T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"><![CDATA[<!-- TOC -->
+<p>hashmap还可以返回键值对entryset()，也可以判断是否含有key和value，containsKey(),containsValue()</p>
 
-<ul>
-  <li><a href="#概率统计">概率统计</a>
-    <ul>
-      <li><a href="#简介">简介</a></li>
-      <li><a href="#内容总览">内容总览</a></li>
-    </ul>
-  </li>
-  <li><a href="#流体力学">流体力学</a>
-    <ul>
-      <li><a href="#简介-1">简介</a></li>
-      <li><a href="#内容总览-1">内容总览</a></li>
-      <li><a href="#a4纸">A4纸</a></li>
-      <li><a href="#报告">报告</a></li>
-    </ul>
-  </li>
-  <li><a href="#电磁辐射波">电磁辐射波</a>
-    <ul>
-      <li><a href="#简介-2">简介</a></li>
-      <li><a href="#内容总览-2">内容总览</a></li>
-    </ul>
-  </li>
-  <li><a href="#传感器">传感器</a>
-    <ul>
-      <li><a href="#简介-3">简介</a></li>
-      <li><a href="#内容总览-3">内容总览</a></li>
-    </ul>
-  </li>
-  <li><a href="#结构力学">结构力学</a>
-    <ul>
-      <li><a href="#简介-4">简介</a></li>
-      <li><a href="#内容总览-4">内容总览</a></li>
-      <li><a href="#a4纸-1">A4纸</a></li>
-    </ul>
-  </li>
-  <li><a href="#项目管理">项目管理</a>
-    <ul>
-      <li><a href="#简介-5">简介</a></li>
-      <li><a href="#内容总览-5">内容总览</a></li>
-    </ul>
-  </li>
-  <li><a href="#工程热力学">工程热力学</a>
-    <ul>
-      <li><a href="#简介-6">简介</a></li>
-      <li><a href="#报告pre">报告Pre</a></li>
-      <li><a href="#内容总览-6">内容总览</a></li>
-    </ul>
-  </li>
-  <li><a href="#presse">Presse</a>
-    <ul>
-      <li><a href="#简介-7">简介</a></li>
-      <li><a href="#内容总览-7">内容总览</a></li>
-    </ul>
-  </li>
-  <li><a href="#audiovisual">Audiovisual</a>
-    <ul>
-      <li><a href="#简介-8">简介</a></li>
-      <li><a href="#内容总览-8">内容总览</a></li>
-    </ul>
-  </li>
-  <li><a href="#软件方法">软件方法</a>
-    <ul>
-      <li><a href="#简介-9">简介</a></li>
-      <li><a href="#内容总览-9">内容总览</a></li>
-    </ul>
-  </li>
-  <li><a href="#机器人">机器人</a>
-    <ul>
-      <li><a href="#简介-10">简介</a></li>
-      <li><a href="#内容总览-10">内容总览</a></li>
-      <li><a href="#报告-1">报告</a></li>
-    </ul>
-  </li>
-</ul>
-
-<!-- /TOC -->
-
-<h1 id="概率统计">概率统计</h1>
-
-<h2 id="简介">简介</h2>
-<ul>
-  <li>授课老师：牛薇</li>
-  <li>授课材料：一份法语讲义，一份习题集（10个EX），上课用的PPT</li>
-  <li>B站有录播，up主：却道成归</li>
-  <li>笔记记在侧边栏为大四上A的笔记本最前面</li>
-</ul>
-
-<h2 id="内容总览">内容总览</h2>
-
-<p>一半时间概率一半时间统计</p>
-
-<ol>
-  <li>概率
-    <ul>
-      <li>先从之前学的概率空间讲起，介绍了概率分布（离散or连续），密度函数，期望方差，收敛性。</li>
-      <li>估计，比如说用平均值估计期望，用频率估计概率等等</li>
-      <li>估计又分为点估计和区间估计，点估计中介绍了似然函数以及最大似然法来找估计量</li>
-    </ul>
-  </li>
-  <li>统计
-    <ul>
-      <li>主要介绍了几种检验方法来检验分布、估计量选择的好坏</li>
-      <li>包括了参数检验，分布检验，比较检验等等</li>
-    </ul>
-  </li>
-  <li>A4纸</li>
-</ol>
-
-<p><img src="../assets/img/posts/20211128/1.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211128/2.jpg" /></p>
-
-<h1 id="流体力学">流体力学</h1>
-
-<h2 id="简介-1">简介</h2>
-<ul>
-  <li>授课老师：方乐</li>
-  <li>授课材料：PPT，TD都是6个，分别对应六大章</li>
-  <li>B站有录播</li>
-  <li>笔记在侧边栏为大四上A的中后部分和大四上B前面</li>
-</ul>
-
-<h2 id="内容总览-1">内容总览</h2>
-
-<p>第一章主要讲了流体的概念和动力学的公式。第二章从能量角度出发，介绍了NS方程（斯托克斯方程），和伯努利原理（压强和流速的关系）。第三章介绍了雷诺数，无量纲分析，雷诺数大的是湍流，雷诺数小的是层流。第四章介绍了边界层，第五章介绍了湍流，系统平均。第六章介绍了涡量。</p>
-
-<h2 id="a4纸">A4纸</h2>
-
-<p><img src="../assets/img/posts/20211128/3.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211128/4.jpg" /></p>
-
-<h2 id="报告">报告</h2>
-<p>结课之前需要我们写一个报告，什么形式的都可以，我觉得这种方式挺好的，自由发挥，我做的实验，用牛奶和墨水还原了卡门涡街。</p>
-
-<h1 id="电磁辐射波">电磁辐射波</h1>
-
-<h2 id="简介-2">简介</h2>
-<ul>
-  <li>授课老师: José Penuelas(负责前几章教学), Bertrand Vilquin(负责后几章教学), 孙鸣捷老师(负责TD)</li>
-  <li>授课形式：线上讲解原理，线下TD</li>
-  <li>授课材料：PPT，讲义，TD</li>
-  <li>B站有录播</li>
-  <li>有笔记，侧边栏叫做电磁学(大四上)</li>
-  <li>考试闭卷，所以没有A4纸</li>
-</ul>
-
-<h2 id="内容总览-2">内容总览</h2>
-<p>首先回顾了之前学的波动物理和电磁学，电磁辐射，顾名思义是要将辐射，讲了波导，腔和光电效应，能级跃迁等等</p>
-
-<h1 id="传感器">传感器</h1>
-
-<h2 id="简介-3">简介</h2>
-<ul>
-  <li>授课老师：徐平</li>
-  <li>授课形式：线下授课，做实验</li>
-  <li>授课材料：大学生MOOC</li>
-  <li>没有考试，没有笔记</li>
-</ul>
-
-<h2 id="内容总览-3">内容总览</h2>
-<p>讲解了传感器的基本原理，构造和常见传感器，每节课都需要在MOOC上做题，也有安排答辩，我和蔡卓江、宋正浩、刘亚林、马卫一一组讲解了机器狗。做实验是指去214玩小车，上面有不少传感器，也有大疆的线上模拟器，还是挺不错的一次动手实验。</p>
-
-<h1 id="结构力学">结构力学</h1>
-
-<h2 id="简介-4">简介</h2>
-<ul>
-  <li>授课老师：黄行蓉，Jean-Piere Lainé</li>
-  <li>授课形式：J-P录制ppt，黄老师线下授课</li>
-  <li>授课材料：讲义，PPT，TD</li>
-  <li>B站有录播</li>
-  <li>笔记：侧边栏结构力学，还有最后第八章记在大四上C前面</li>
-</ul>
-
-<h2 id="内容总览-4">内容总览</h2>
-<p>结构力学分为了两大部分，弹性力学和材料力学。在弹性力学部分，首先介绍了应力和应力张量的概念，张量可以写成3*3矩阵形式，其中对角线上的元素被称作正应力。第二章介绍了应变，首先介绍了很多种张量，F、H、C、E，然后介绍了形变张量ε。第三章介绍了本构方程（应力应变关系方程）。第四章介绍了能量，包括最小势能和最大余能等等。</p>
-
-<p>第二部分是材料力学，主题内容和弹性力学类似，但是引进了力螺旋的概念，这个概念在中国授课好像是没有的，它描述了合力和力矩。第一张介绍了内力，在材料力学部分我们主要研究梁这个结构，它包括了中轴线和截面，这部分内容和之前学的理论力学很相似。第二章介绍了应力，可以用内力表示应力，用一些惯性矩、艾力函数连接。第三章介绍了应变和本构方程，第四章介绍了能量部分，主要是三大定理：théorème de ménabréa;théorème de maxwell-betti;théorème de castigliano。</p>
-
-<h2 id="a4纸-1">A4纸</h2>
-
-<p><img src="../assets/img/posts/20211128/5.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211128/6.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211128/7.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211128/8.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211128/9.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211128/10.jpg" /></p>
-
-<h1 id="项目管理">项目管理</h1>
-
-<h2 id="简介-5">简介</h2>
-<ul>
-  <li>授课老师：张敏</li>
-  <li>授课形式：线下授课</li>
-  <li>授课材料：书(没买)，PPT</li>
-  <li>B站有录播</li>
-  <li>开卷考试，没有笔记</li>
-</ul>
-
-<h2 id="内容总览-5">内容总览</h2>
-<p>是上学期经济管理的一部分展开讲，讲了什么是项目，项目管理系统，基于关键路径的项目管理，项目管理的决策</p>
-
-<h1 id="工程热力学">工程热力学</h1>
-
-<h2 id="简介-6">简介</h2>
-<ul>
-  <li>授课老师：Guillaume Merle</li>
-  <li>授课形式：看课本，付小尧定期答疑</li>
-  <li>授课材料：课本、PPT</li>
-  <li>闭卷考试，不能带A4纸，有三次小测</li>
-  <li>纯英文授课</li>
-</ul>
-
-<h2 id="报告pre">报告Pre</h2>
-<ul>
-  <li>报告题目：SABRE发动机效率分析</li>
-</ul>
-
-<h2 id="内容总览-6">内容总览</h2>
-<p>一共学习了课本上第1、2、3、4、5、6、7、9、10、11、12章内容，其中第一章介绍热力学基本单位和概念，第二章介绍能量转移的形式是功和热，顺便引出热力学第一定律，第三章介绍纯物质的相和相变，第四章介绍封闭系统的能量变化，即质量不变体积可变的系统，第五章介绍开放系统的质量变化，即体积可变质量不变，第六章介绍热机的效率基本概念，第七章介绍熵的概念以及热力学第二定律，到这为止都是之前热力学学过的东西，第九章介绍了内燃机的工作原理，包括了很多个不同的循环，比如otto、diesel、brayton循环。第十章介绍了热电机的原理和ranking循环。第十一章介绍了冰箱和热泵的基本原理。第十二章是用到的数学表达式的推理。</p>
-
-<h1 id="presse">Presse</h1>
-<h2 id="简介-7">简介</h2>
-<ul>
-  <li>法语课程</li>
-  <li>授课老师:Vanessa</li>
-  <li>授课形式：线下授课</li>
-  <li>授课材料：讲义</li>
-  <li>闭卷考试</li>
-  <li>期间写过几次PE</li>
-</ul>
-
-<h2 id="内容总览-7">内容总览</h2>
-<ul>
-  <li>Règle de la classe</li>
-  <li>Vingt ans qui ont déjà tout changé: 11 septembre(effodrement des Tours Jumelles), l’incendie de la cathédrale Notre-Dame de Paris, les confinements en France et dans le monde, la mort de Michael Jackson, l’accident nucléaire de Fukushima</li>
-  <li>Le 11 Septembre apparaît comme la matrice du XXIe siècle</li>
-  <li>les personnalités les plus marquantes des 20 dernières années: Barack Obama, Donald Trump, Oussama Ben Laden, Emmanuel Macron, Angela Merkel… François Hollande</li>
-  <li>les chanteurs: Johnny Hallydat, Céline Dion, Stromae</li>
-  <li>le confinement en France: haltères, machine à pain, graines de tomates…</li>
-  <li>des solutions pour prospérer et progresser: Cité flottante, Télétravail, Agriculture spatiale, le train intelligent</li>
-  <li>la voiture autonome ne tient pas encore la route: sensible, risque</li>
-  <li>le tourisme spatial, bonne ou mauvaise idée: huit, Elon Musk</li>
-  <li>l’agence spatiale européenne recrute une nouvelle promotion, Feriez-vous un bon astronaute</li>
-  <li>les Français et Internet</li>
-  <li>la 5G vous inquiète-t-elle?</li>
-  <li>la 5G, amie ou ennemie?</li>
-  <li>Sept innovations contre le handicap: le gant qui traduit la langue des signes, les lunettes qui parlent aux malvoyants</li>
-  <li>Jeux vidéo</li>
-  <li>Bientôt de l’e-sport aux Jeux Olympiques</li>
-</ul>
-
-<h1 id="audiovisual">Audiovisual</h1>
-<h2 id="简介-8">简介</h2>
-<ul>
-  <li>法语课程</li>
-  <li>授课老师：Fabien</li>
-  <li>授课形式：瞩目线上</li>
-  <li>授课材料：讲义</li>
-  <li>闭卷考试</li>
-</ul>
-
-<h2 id="内容总览-8">内容总览</h2>
-<ul>
-  <li>Séance 1 - les étudiants français sous la Covid-19</li>
-  <li>Séance 2 - Afghanistan: partir ou rester</li>
-  <li>Séance 3 - Réalité Virtuelle: une méthode d’emphaie</li>
-  <li>Séance 4 - Utiliser des produits ménagers bio</li>
-  <li>Séance 5 - Pandémies et environnement</li>
-  <li>Séance 6 - Les transports du futur</li>
-  <li>Séance 7 - Le tourisme spatial</li>
-  <li>Séance 8 - Robots de guerre</li>
-  <li>Séance 9 - Le bilan de la COP 26</li>
-  <li>Séance 10 - Révolution du vin</li>
-  <li>Séance 11 – Rouler au whisky</li>
-  <li>Séance 12 — Un champion de la pâtisserie</li>
-</ul>
-
-<h1 id="软件方法">软件方法</h1>
-<h2 id="简介-9">简介</h2>
-<ul>
-  <li>授课老师：于雷， Olivier Roux</li>
-  <li>授课形式：OR线上授课，于雷助教，有报告和TP</li>
-  <li>授课材料：PPT，TP</li>
-  <li>闭卷考试，手写代码</li>
-</ul>
-
-<h2 id="内容总览-9">内容总览</h2>
-<p>在另一份博客里有具体整理，主要是介绍面向对象的开发方法，同时用java来展示如何进行面向对象的编程</p>
-
-<h1 id="机器人">机器人</h1>
-<h2 id="简介-10">简介</h2>
-<ul>
-  <li>授课老师：严亮</li>
-  <li>授课形式：线下授课</li>
-  <li>授课材料：PPT</li>
-  <li>无考试，有大作业(报告)</li>
-  <li>英文授课</li>
-</ul>
-
-<h2 id="内容总览-10">内容总览</h2>
-<p>只有四节课，介绍了自由度，动力学，逆动力学，速度和力</p>
-
-<h2 id="报告-1">报告</h2>
-<p>用solidworks设计一个三自由度的机械臂，并附上运动学分析</p>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[记录课程和课程笔记]]></summary></entry></feed>
+<p>Hashmap创建的时候需要继承</p>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[课堂记录]]></summary></entry></feed>
