@@ -22,6 +22,7 @@ author: Quehry
         - [3.JAVA](#3java)
         - [4.数据结构](#4数据结构)
         - [5. 常用数据结构方法](#5-常用数据结构方法)
+    - [TP整理](#tp整理)
 
 <!-- /TOC -->
 # 软件方法
@@ -489,3 +490,53 @@ public boolean binrech() {
 hashmap还可以返回键值对entryset()，也可以判断是否含有key和value，containsKey(),containsValue()
 
 Hashmap创建的时候需要继承
+
+## TP整理
+1. 定义构造函数时也需要声明权限修饰符，构造函数不需要返回值，调用的时候直接在声明一个对象的时候调用
+2. 访问成员变量的时候用.
+3. 方法中除了构造函数都需要权限修饰符和返回类型名
+4. 在类中调用成员变量可以直接调用
+5. 字符串之间用+连接
+6. 当一个类中有main函数时，一般这么定义: public static void main(String[] a){}
+7. 在定义类的时候不要有()
+8. 向量的创建和声明: Vector<T> mesObjectsG = new Vector<T>();
+9. 打印的使用: System.out.println()
+10. 成员函数在类的开头只是声明，并没有创建，所以在方法中创建
+11. for循环的使用: for(Point p : seg.getVecP())
+12. Vector.add(), 向量的添加
+13. Vector.get(i), i从0开始, 向量的访问
+14. Vector.size()返回int值，是vector的大小
+15. TP1中为了让图形可视化，每个类都需要extends ObjectGraphique
+16. 什么时候需要在类定义方法时new一个对象: 当这个对象来自其他类同时改变这个对象会对新创建的类产生影响，所以一般还是new一个对象比较好
+17. 基本的数据类型: int, string, float, boolean不需要new, 声明的时候也不需要构造函数
+18. 继承的时候可以用super()来调用继承类的构造函数
+19. 异常的抛出: 在定义类中的方法的时候，需要抛出的方法需要在创建时添加一句throws Exception, 调用的时候使用throw new Exception("...")
+20. 也可以throws IOException这样已经定义好的抛出类型
+21. 文件读入: Reader reader = new FileReader(textname.txt)
+22. 逐行读入: BufferedReader in = new BufferedReader(reader); String line = in.readline()
+23. 分词器: StringTokenizer st = new StringTokenlizer(line, DeleteChar); 然后就可以像迭代器一样调用, if(st.hasMoreTokens()){st.nextToken()}
+24. 文件写入: Writer writer = new FileWriter(newtextname); writer.write("...")
+25. 将链表中所有的单词写入一个文件: for (object k : this){writer.write(k+"\n");writer.flush()} 写入完毕后, writer.close()
+26. 哈希表判断key是否在哈希表中: HashMap.containsKey(...), 返回值为布尔类型
+27. 哈希表中添加元素: HashMap.put(key, value) 
+28. 哈希表可以返回键值对，键对和值对，调用HashMap.entrySet()、HashMap.ketSet()、HashMap.valueSet()
+29. 通过键来访问哈希表中的值: HashMap.get(key)
+30. EntrySet同样可以通过getKey()和getValue()来访问键值
+31. 在创建一个新类时，对于类的名字可以这么取: Arbre<T>, 这样就表示Arbre类中的数据类型是T
+32. java中的空是null，小写
+33. 记住二叉树高度是怎么写的
+34. 记住二叉树前序中序后序遍历是如何写的
+35. 在进行没有变量x时怎么计算数的结果: 先用迭代访问出左值和右值，然后根据根结点的符号决定进行什么运算
+36. Integer.parseInt(String a)的作用是将整数的string表示转化为Integer
+37. 对于含变量x的二叉树如何在输入x的值的情况下算出结果: 首先遍历左子树，如果左子树的左边有x，那么将输入的值赋给这个结点的x，然后迭代回来计算左结点的值，具体的可以看网站截图
+38. java中final关键字是保证了变量无法修改，只能访问
+39. 字符串的比较用.equals()
+40. Vector.contains(...)可以判断一个值是否在这个向量里
+
+<center><img src='../assets/img/posts/20211130/73.jpg'></center>
+
+
+
+
+
+

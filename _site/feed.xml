@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-27T23:50:36+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-01T22:54:56+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
 
 <!-- TOC -->
 
@@ -131,6 +131,46 @@
           <li><a href="#646-右移运算符">6.4.6. 右移运算符»</a></li>
         </ul>
       </li>
+    </ul>
+  </li>
+  <li><a href="#7-第七章-字符串">7. 第七章 字符串</a>
+    <ul>
+      <li><a href="#71-字符串的形式和存储">7.1. 字符串的形式和存储</a></li>
+      <li><a href="#72-输入字符串">7.2. 输入字符串</a></li>
+      <li><a href="#73-字符串库函数">7.3. 字符串库函数</a></li>
+    </ul>
+  </li>
+  <li><a href="#8-第八章-指针一">8. 第八章 指针(一)</a>
+    <ul>
+      <li><a href="#81-指针的基本概念和用法">8.1. 指针的基本概念和用法</a></li>
+      <li><a href="#82-指针的意义和相互赋值">8.2. 指针的意义和相互赋值</a></li>
+      <li><a href="#83-指针的运算">8.3. 指针的运算</a></li>
+      <li><a href="#84-指针作为函数参数">8.4. 指针作为函数参数</a></li>
+      <li><a href="#85-指针和数组">8.5. 指针和数组</a></li>
+    </ul>
+  </li>
+  <li><a href="#9-第九章-指针二">9. 第九章 指针(二)</a>
+    <ul>
+      <li><a href="#91-指针和二维数组指向指针的指针">9.1. 指针和二维数组、指向指针的指针</a></li>
+      <li><a href="#92-指针和字符串">9.2. 指针和字符串</a></li>
+      <li><a href="#93-字符串库函数">9.3. 字符串库函数</a></li>
+      <li><a href="#94-void指针和内存操作函数">9.4. void指针和内存操作函数</a></li>
+      <li><a href="#95-函数指针">9.5. 函数指针</a></li>
+    </ul>
+  </li>
+  <li><a href="#10-第十章-程序结构和简单算法">10. 第十章 程序结构和简单算法</a>
+    <ul>
+      <li><a href="#101-结构">10.1. 结构</a></li>
+      <li><a href="#102-全局变量局部变量静态变量">10.2. 全局变量、局部变量、静态变量</a></li>
+      <li><a href="#103-变量的作用域和生存周期">10.3. 变量的作用域和生存周期</a></li>
+      <li><a href="#104-选择排序和插入排序">10.4. 选择排序和插入排序</a>
+        <ul>
+          <li><a href="#1041-选择排序">10.4.1. 选择排序</a></li>
+          <li><a href="#1042-插入排序">10.4.2. 插入排序</a></li>
+        </ul>
+      </li>
+      <li><a href="#105-冒泡排序">10.5. 冒泡排序</a></li>
+      <li><a href="#106-程序或算法的时间复杂度">10.6. 程序或算法的时间复杂度</a></li>
     </ul>
   </li>
 </ul>
@@ -585,7 +625,309 @@
 <ul>
   <li>右移时，移出最右边的位就被丢弃</li>
   <li>对于有符号数，在右移时，符号位将一起移动，并且大多数C++编译器规定，如果圆符号位为1，则右移时高位就补充1，原符号位为0，则右移时高位就补充0</li>
-</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[网课记录]]></summary></entry><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html"><![CDATA[<h1 id="目录">目录</h1>
+</ul>
+
+<h1 id="7-第七章-字符串">7. 第七章 字符串</h1>
+
+<h2 id="71-字符串的形式和存储">7.1. 字符串的形式和存储</h2>
+<ul>
+  <li>字符串常量占据内存的字节数等于字符串中字符数目加1，多出来的是结尾字符’\0’</li>
+  <li>空串”“也是合法的字符串常量</li>
+  <li>包含’\0’字符的一维char数组，就是一个字符串，其中存放的字符串即为’\0’前面的字符组成</li>
+  <li>可以给一维数组这么赋值: char title[] = “Prison Break”</li>
+  <li>‘\0’可以视为字符数组结束标志</li>
+</ul>
+
+<h2 id="72-输入字符串">7.2. 输入字符串</h2>
+<ul>
+  <li>用scanf也可以将字符串读入字符数组</li>
+  <li>scanf会自动添加结尾’\0’</li>
+  <li>scanf读入到空格为止</li>
+  <li>scanf(“%s”, line) 不用取地址符</li>
+  <li>读入一行到字符串组: cin.getline(char buf[], int bufsize), 读入一行，自动添加’\0’, 回车换行符不会写入buf, 但是会从输入流中去掉</li>
+  <li>也可以用gets(char buf[])来读入一行到字符数组，回车换行符不会写入buf，但是会从输入流中去掉，可能导致数组越界</li>
+</ul>
+
+<h2 id="73-字符串库函数">7.3. 字符串库函数</h2>
+<ul>
+  <li>使用字符串库函数需要 #include &lt;cstring&gt;</li>
+  <li>形参为char []类型，则实参可以是char数组或字符串常量</li>
+  <li>字符串拷贝 strcpy(char[] dest, char[] src) 拷贝src到dest</li>
+  <li>字符串比较大小 int strcmp(char[] s1, char[] s2) 是根据字符的ASCII码值进行比较，大写字母比小写字母小</li>
+  <li>求字符串长度 int strlen(char[] s)</li>
+  <li>字符串拼接 strcat(char[] s1, char[] s2) 将s2拼接到s1后面</li>
+  <li>字符串转成大写 strupr(char [])</li>
+  <li>字符串转成小写 strlwr(char [])</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/23.jpg" /></center>
+
+<h1 id="8-第八章-指针一">8. 第八章 指针(一)</h1>
+
+<h2 id="81-指针的基本概念和用法">8.1. 指针的基本概念和用法</h2>
+<ul>
+  <li>指针也称作指针变量，大小为4个字节(或8个字节)的变量，其内容代表一个内存地址</li>
+  <li>通过指针，能够对该指针指向的内存区域进行读写</li>
+  <li>指针的定义: 类型名 * 指针变量名</li>
+  <li>比如: int * p = (int *) 40000</li>
+  <li>p指向地址40000，地址p就是地址40000</li>
+  <li>* p就代表地址40000开始处的若干个字节的内容</li>
+  <li>我们可以通过指针访问其指向的内存空间</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/24.jpg" /></center>
+
+<ul>
+  <li>指针定义总结</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/25.jpg" /></center>
+
+<ul>
+  <li>指针用法，一般是让指针指向一个变量的地址</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/26.jpg" /></center>
+
+<h2 id="82-指针的意义和相互赋值">8.2. 指针的意义和相互赋值</h2>
+<ul>
+  <li>有了指针，就有了<strong>自由访问内存空间</strong>的手段</li>
+  <li>不同类型的指针，如果不经过强制类型转换，不能直接互相赋值</li>
+</ul>
+
+<h2 id="83-指针的运算">8.3. 指针的运算</h2>
+<ul>
+  <li>两个同类型的指针变量，可以比较大小</li>
+  <li>两个同类型的指针变量，可以相减</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/27.jpg" /></center>
+
+<ul>
+  <li>指针变量加减一个整数的结果是指针</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/28.jpg" /></center>
+
+<ul>
+  <li>指针变量可以自增自减</li>
+  <li>指针可以用下标运算符[]进行运算</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/29.jpg" /></center>
+
+<h2 id="84-指针作为函数参数">8.4. 指针作为函数参数</h2>
+<ul>
+  <li>地址0不能访问，指向地址0的指针就是空指针</li>
+  <li>可以用NULL关键字对任何类型的指针进行赋值，NULL实际上就是整数0.值为NULL的指针就是空指针</li>
+  <li>指针可以作为条件表达式使用，如果指针的值为NULL，则相当于为假，值不为NULL，就相当于为真</li>
+</ul>
+
+<h2 id="85-指针和数组">8.5. 指针和数组</h2>
+<ul>
+  <li>数组的名字是一个指针常量，指向数组的起始地址</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/30.jpg" /></center>
+
+<ul>
+  <li>作为函数形参时， T *p与 T p[] 等价</li>
+</ul>
+
+<h1 id="9-第九章-指针二">9. 第九章 指针(二)</h1>
+
+<h2 id="91-指针和二维数组指向指针的指针">9.1. 指针和二维数组、指向指针的指针</h2>
+
+<center><img src="assets/img/posts/20220225/31.jpg" /></center>
+
+<ul>
+  <li>二维数组的每一行都是一维数组，也就是指针</li>
+  <li>指向指针的指针:</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/32.jpg" /></center>
+
+<h2 id="92-指针和字符串">9.2. 指针和字符串</h2>
+<ul>
+  <li>字符串常量的类型就是char *</li>
+  <li>字符数组名的类型也是char *</li>
+</ul>
+
+<h2 id="93-字符串库函数">9.3. 字符串库函数</h2>
+
+<ul>
+  <li>字符串操作库函数</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/33.jpg" /></center>
+
+<center><img src="assets/img/posts/20220225/34.jpg" /></center>
+
+<ul>
+  <li>这些字符串操作库函数都需要include&lt;cstring&gt;</li>
+</ul>
+
+<h2 id="94-void指针和内存操作函数">9.4. void指针和内存操作函数</h2>
+<ul>
+  <li>void指针: void * p</li>
+  <li>可以用任何类型的指针对void指针进行赋值或初始化</li>
+  <li>对于void指针，*p没有定义，++p、–p，p += n、p+n、p-n均无定义</li>
+  <li>内存操作库函数memset</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/35.jpg" /></center>
+
+<ul>
+  <li>内存操作库函数memcpy</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/36.jpg" /></center>
+
+<h2 id="95-函数指针">9.5. 函数指针</h2>
+<ul>
+  <li>程序运行期间，每个函数都会占用一段连续的内存空间。而函数名就是该函数所占内存区域的起始地址(也称入口地址)</li>
+  <li>我们可以将函数的入口地址赋给一个指针变量，使该指针变量指向该函数，然后通过指针变量就可以调用这个函数，这种指向函数的指针变量称为函数指针</li>
+  <li>定义形式:</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/37.jpg" /></center>
+
+<ul>
+  <li>使用方法:</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/38.jpg" /></center>
+
+<ul>
+  <li>函数指针和qsort库函数</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/39.jpg" /></center>
+
+<center><img src="assets/img/posts/20220225/40.jpg" /></center>
+
+<ul>
+  <li>pfcompare是比较函数</li>
+</ul>
+
+<h1 id="10-第十章-程序结构和简单算法">10. 第十章 程序结构和简单算法</h1>
+
+<h2 id="101-结构">10.1. 结构</h2>
+<ul>
+  <li>在现实问题中，常常需要用一组不同类型的数据来描述一个事物</li>
+  <li>C++允许程序员自己定义新的数据类型。因此针对“学生”这种事物，可以定义一种新名为Student的数据类型，一个student类型的变量就能描述一个学生的全部信息，同理，还可以定义数据类型worker来表示工人</li>
+  <li>结构(struct): 用struct关键字来定义一个结构，也就定义了一个新的数据类型</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/41.jpg" /></center>
+
+<ul>
+  <li>student即成为自定义的类型的名字，可以用来定义变量</li>
+  <li>两个同类型的结构变量，可以相互赋值，结构变量之间不能用比较运算符进行计算</li>
+  <li>一般来说，一个结构变量所占的内存空间的大小就是结构中所有成员变量大小之和</li>
+  <li>一个结构的成员变量可以是任何类型的，包括可以是另一个结构类型</li>
+  <li>结构的成员变量可以是指向本结构类型的变量的指针</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/42.jpg" /></center>
+
+<ul>
+  <li>访问结构变量的成员变量: 一个结构变量的成员变量完全可以和一个普通变量一样来使用，也可以取得其地址</li>
+  <li>结构变量名.成员变量名</li>
+  <li>结构变量可以在定义时进行初始化:(使用花括号和逗号)</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/43.jpg" /></center>
+
+<ul>
+  <li>结构数组也可以定义，就是把结构体名字看作变量类型使用</li>
+  <li>指向结构变量的指针，通过指针访问其指向的结构变量的成员变量</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/44.jpg" /></center>
+
+<h2 id="102-全局变量局部变量静态变量">10.2. 全局变量、局部变量、静态变量</h2>
+<ul>
+  <li>定义在函数内部的变量叫<strong>局部变量</strong>(函数的形参也是局部变量)</li>
+  <li>定义在所有函数的外面的变量叫做<strong>全局变量</strong></li>
+  <li>全局变量在所有函数中均可以使用，局部变量只能在定义它的内部函数中使用</li>
+  <li><strong>静态变量</strong>: 全局变量都是静态变量，局部变量定义时如果前面加了static关键字，则该变量也成为静态变量</li>
+  <li>静态变量在整个程序运行期间都是固定不变的</li>
+  <li>局部变量在函数每次调用时地址都可能不同</li>
+  <li>如果未明确初始化，则静态变量会被自动初始化为全0，局部非静态变量的值则随机</li>
+  <li>静态变量只初始化一次，也就是下次调用函数的时候不进行初始化</li>
+</ul>
+
+<h2 id="103-变量的作用域和生存周期">10.3. 变量的作用域和生存周期</h2>
+<ul>
+  <li>变量名、函数名、类型名统称为标识符</li>
+  <li>一个标识符能够起作用的范围，叫做该标识符的作用域</li>
+  <li>使用标识符的语句，必须出现在它们的声明或者定义之后</li>
+  <li>在单文件的程序中，结构、函数和全局变量的作用域是其定义所在的整个文件</li>
+  <li>函数的形参的作用域是整个函数</li>
+  <li>局部变量的作用域，是从定义它的语句开始，到包含它的最内层的那一对大括号{}的右大括号为止</li>
+  <li>for循环里定义的循环控制变量，其作用域是整个for循环</li>
+  <li>同名标识符的作用域，可能一个被另一个包含，则在小的作用域里，作用域大的那个标识符被屏蔽，不起作用</li>
+  <li>所谓变量的生存期，值的是在此期间，变量占有内存空间，其占有的内存空间只能归它使用，不会用来存放别的东西</li>
+  <li>而变量的生存期终止，就意味着该变量不再占有内存空间，它原来占有的内存空间，随时可能被派作他用</li>
+  <li>全局变量的生存期，从程序被装入内存开始，到整个程序结束</li>
+  <li>静态局部变量的生存期，从定义它的语句第一次被执行开始，直到程序结束</li>
+  <li>函数形参的生存期从函数执行开始，到函数返回时结束，非静态局部变量的生存期，从执行到定义它的语句开始，一旦程序执行了它的作用域之外，其生存期即告终止</li>
+</ul>
+
+<h2 id="104-选择排序和插入排序">10.4. 选择排序和插入排序</h2>
+
+<h3 id="1041-选择排序">10.4.1. 选择排序</h3>
+<ul>
+  <li>排序问题: 编程接收键盘输入的若干个整数，排序后从小到大输出，先输入一个整数n，表明有n个整数需要排序，接下来再输入待排序的n个整数</li>
+  <li>选择排序:</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/45.jpg" /></center>
+
+<center><img src="assets/img/posts/20220225/46.jpg" /></center>
+
+<ul>
+  <li>选择最小的整数，与第i位的整数更换位置</li>
+</ul>
+
+<h3 id="1042-插入排序">10.4.2. 插入排序</h3>
+
+<center><img src="assets/img/posts/20220225/47.jpg" /></center>
+
+<center><img src="assets/img/posts/20220225/48.jpg" /></center>
+
+<ul>
+  <li>插入排序就是将数组分为有序和无序，每次让无序最左边的元素与有序分别比较，插入到合适的位置</li>
+</ul>
+
+<h2 id="105-冒泡排序">10.5. 冒泡排序</h2>
+
+<center><img src="assets/img/posts/20220225/49.jpg" /></center>
+
+<center><img src="assets/img/posts/20220225/50.jpg" /></center>
+
+<ul>
+  <li>冒泡排序同样是将数组分为有序和无序两组，无序在左边，有序在右边，每次将无序部分两两比较，较大的在右边</li>
+  <li>上面三种简单排序算法，都要做$n^2$量级次数的比较，其中n是元素个数</li>
+  <li>而比较好的排序算法，如快速排序，归并排序等，只需要做$n*log_2n$量级次数的比较</li>
+</ul>
+
+<h2 id="106-程序或算法的时间复杂度">10.6. 程序或算法的时间复杂度</h2>
+<ul>
+  <li>一个程序或算法的时间效率，也称为时间复杂度，有时简称复杂度</li>
+  <li>复杂度常用大的字母O和小写字母n来表示，比如O(n), n代表问题的规模</li>
+  <li>复杂度也有平均复杂度和最坏复杂度两种，两种可能一致，也可能不一致</li>
+  <li>如果复杂度是多个n的函数之和，则只关心随n的增长增长得最快的那个函数</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/51.jpg" /></center>
+
+<ul>
+  <li>一些例子</li>
+</ul>
+
+<center><img src="assets/img/posts/20220225/52.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[网课记录]]></summary></entry><entry><title type="html">机器学习</title><link href="http://localhost:4000/Machine-Learning.html" rel="alternate" type="text/html" title="机器学习" /><published>2021-12-22T00:00:00+08:00</published><updated>2021-12-22T00:00:00+08:00</updated><id>http://localhost:4000/Machine-Learning</id><content type="html" xml:base="http://localhost:4000/Machine-Learning.html"><![CDATA[<h1 id="目录">目录</h1>
 
 <!-- TOC -->
 
@@ -1618,16 +1960,45 @@
 <h2 id="55-其他常见神经网络">5.5. 其他常见神经网络</h2>
 
 <h3 id="551-rbf网络">5.5.1. RBF网络</h3>
+<ul>
+  <li>RBF(Radial Basis Function, 径向基函数)网络是一种单隐层前馈神经网络，它使用径向基函数作为隐层神经元激活函数，而输出层则是对隐层神经元输出的线性组合</li>
+  <li>具有足够多隐层神经元的RBF网络能以任意精度逼近任意连续函数</li>
+</ul>
 
 <h3 id="552-art网络">5.5.2. ART网络</h3>
+<ul>
+  <li>竞争型学习(competitive learning)是神经网络中一种常用的无监督学习策略，在使用该策略时，网络的输出神经元相互竞争，每一时刻仅有一个竞争获胜的神经元被激活，其他神经元的状态被抑制。这种机制亦称胜者通吃(winner-take-all)原则</li>
+  <li>ART(Adaptive Resonance Theory，自适应谐振理论)网络是竞争型学习的重要代表。该网络由比较层、识别层、识别阔值和重置模块构成。其中，比较层负责接受输入样本，并将其传递给识别层神经元。识别层每个神经元对应一个模式类，神经元数目可在训练过程中动态增长以增加新的模式类</li>
+</ul>
 
 <h3 id="553-som网络">5.5.3. SOM网络</h3>
+<ul>
+  <li>SOM(Self-Organizing Map，自组织映射)网络是一种竞争学习型的无监督神经网络，它能将高维输入数据映射到低维空间(通常为二维) ，同时保持输入数据在高维空间的拓扑结构，即将高维空间中相似的样本点映射到网络输出层中的邻近神经元</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/74.jpg" /></center>
 
 <h3 id="554-级联相关网络">5.5.4. 级联相关网络</h3>
+<ul>
+  <li>一般的神经网络模型通常假定网络结构是事先固定的，训练的目的是利用训练样本来确定合适的连接权、阈值等参数。与此不同，结构自适网络则将网络结构也当作学习的目标之一，并希望能在训练过程中找到最符合数据特点的网络结构-级联相关(Cascade-Correlation)网络是结构自适应网络的重要代表</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/75.jpg" /></center>
 
 <h3 id="555-elman网络">5.5.5. Elman网络</h3>
+<ul>
+  <li>与前馈神经网络不同<strong>递归神经网络(recurrent neural networks)</strong>允许网络中出现环形结构，从而可让一些神经元的输出反馈回来作为输入信号。这样的结构与信息反馈过程，使得网络在t时刻的输出状态不仅与t时刻的输入有关，还与t-1时刻的网络状态有关，从而能处理与时间有关的动态变化</li>
+  <li>Elman网络是最常用的递归神经网络之一，其结构如图所示，它的结构与多层前馈网络很相似，但隐层神经元的输出被反馈回来，与下一时刻输入层神经元提供的信号一起，作为隐层神经元在下一时刻的输入。隐层神经元通常采用Sigmoid激活函数，而网络的训练则常通过推广的BP算法进行</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/76.jpg" /></center>
 
 <h3 id="556-boltzmann机">5.5.6. Boltzmann机</h3>
+<ul>
+  <li>神经网络中有一类模型是为网络状态定义一个能量(energy)，能量最小化时网络达到理想状态，而网络的训练就是在最小化这个能量函数。Boltzmann机就是一种基于能量的模型(energy-based model)，常见结构如图所示，其神经元分为两层:显层与隐层。显层用于表示数据的输入与输出，隐层则被理解为数据的内在表达</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/77.jpg" /></center>
 
 <h2 id="56-深度学习">5.6. 深度学习</h2>
 <ul>
@@ -4578,6 +4949,7 @@ $\tilde{U}$<sub>:j</sub> = $\sum$ S<sub>i,j</sub><sup>Q</sup>U<sub>:,i</sub></li
           <li><a href="#5-常用数据结构方法">5. 常用数据结构方法</a></li>
         </ul>
       </li>
+      <li><a href="#tp整理">TP整理</a></li>
     </ul>
   </li>
 </ul>
@@ -5152,4 +5524,50 @@ $\tilde{U}$<sub>:j</sub> = $\sum$ S<sub>i,j</sub><sup>Q</sup>U<sub>:,i</sub></li
 
 <p>hashmap还可以返回键值对entryset()，也可以判断是否含有key和value，containsKey(),containsValue()</p>
 
-<p>Hashmap创建的时候需要继承</p>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[课堂记录]]></summary></entry></feed>
+<p>Hashmap创建的时候需要继承</p>
+
+<h2 id="tp整理">TP整理</h2>
+<ol>
+  <li>定义构造函数时也需要声明权限修饰符，构造函数不需要返回值，调用的时候直接在声明一个对象的时候调用</li>
+  <li>访问成员变量的时候用.</li>
+  <li>方法中除了构造函数都需要权限修饰符和返回类型名</li>
+  <li>在类中调用成员变量可以直接调用</li>
+  <li>字符串之间用+连接</li>
+  <li>当一个类中有main函数时，一般这么定义: public static void main(String[] a){}</li>
+  <li>在定义类的时候不要有()</li>
+  <li>向量的创建和声明: Vector<T> mesObjectsG = new Vector<T>();</T></T></li>
+  <li>打印的使用: System.out.println()</li>
+  <li>成员函数在类的开头只是声明，并没有创建，所以在方法中创建</li>
+  <li>for循环的使用: for(Point p : seg.getVecP())</li>
+  <li>Vector.add(), 向量的添加</li>
+  <li>Vector.get(i), i从0开始, 向量的访问</li>
+  <li>Vector.size()返回int值，是vector的大小</li>
+  <li>TP1中为了让图形可视化，每个类都需要extends ObjectGraphique</li>
+  <li>什么时候需要在类定义方法时new一个对象: 当这个对象来自其他类同时改变这个对象会对新创建的类产生影响，所以一般还是new一个对象比较好</li>
+  <li>基本的数据类型: int, string, float, boolean不需要new, 声明的时候也不需要构造函数</li>
+  <li>继承的时候可以用super()来调用继承类的构造函数</li>
+  <li>异常的抛出: 在定义类中的方法的时候，需要抛出的方法需要在创建时添加一句throws Exception, 调用的时候使用throw new Exception(“…”)</li>
+  <li>也可以throws IOException这样已经定义好的抛出类型</li>
+  <li>文件读入: Reader reader = new FileReader(textname.txt)</li>
+  <li>逐行读入: BufferedReader in = new BufferedReader(reader); String line = in.readline()</li>
+  <li>分词器: StringTokenizer st = new StringTokenlizer(line, DeleteChar); 然后就可以像迭代器一样调用, if(st.hasMoreTokens()){st.nextToken()}</li>
+  <li>文件写入: Writer writer = new FileWriter(newtextname); writer.write(“…”)</li>
+  <li>将链表中所有的单词写入一个文件: for (object k : this){writer.write(k+”\n”);writer.flush()} 写入完毕后, writer.close()</li>
+  <li>哈希表判断key是否在哈希表中: HashMap.containsKey(…), 返回值为布尔类型</li>
+  <li>哈希表中添加元素: HashMap.put(key, value)</li>
+  <li>哈希表可以返回键值对，键对和值对，调用HashMap.entrySet()、HashMap.ketSet()、HashMap.valueSet()</li>
+  <li>通过键来访问哈希表中的值: HashMap.get(key)</li>
+  <li>EntrySet同样可以通过getKey()和getValue()来访问键值</li>
+  <li>在创建一个新类时，对于类的名字可以这么取: Arbre<T>, 这样就表示Arbre类中的数据类型是T</T></li>
+  <li>java中的空是null，小写</li>
+  <li>记住二叉树高度是怎么写的</li>
+  <li>记住二叉树前序中序后序遍历是如何写的</li>
+  <li>在进行没有变量x时怎么计算数的结果: 先用迭代访问出左值和右值，然后根据根结点的符号决定进行什么运算</li>
+  <li>Integer.parseInt(String a)的作用是将整数的string表示转化为Integer</li>
+  <li>对于含变量x的二叉树如何在输入x的值的情况下算出结果: 首先遍历左子树，如果左子树的左边有x，那么将输入的值赋给这个结点的x，然后迭代回来计算左结点的值，具体的可以看网站截图</li>
+  <li>java中final关键字是保证了变量无法修改，只能访问</li>
+  <li>字符串的比较用.equals()</li>
+  <li>Vector.contains(…)可以判断一个值是否在这个向量里</li>
+</ol>
+
+<center><img src="../assets/img/posts/20211130/73.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[课堂记录]]></summary></entry></feed>

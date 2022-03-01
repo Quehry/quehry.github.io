@@ -22,7 +22,7 @@
   "headline": "机器学习",
   "abstract": "《机器学习》周志华读书笔记",
     "keywords": "note",
-    "wordcount": "598",
+    "wordcount": "618",
     "image": ["http://localhost:4000/assets/imgposts/20211222/1.jpg"],
   "datePublished": "2021-12-22 00:00:00 +0800",
   "dateModified": "2021-12-22 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="《机器学习》周志华读书笔记">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="598"/>
+<meta data-rh="true" name="twitter:data1" content="618"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20211222/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -160,7 +160,7 @@
     
     <span class="page_meta-readtime">
       
-        2 minute read
+        3 minute read
       
     </span>
   
@@ -300,7 +300,7 @@
     
     <span class="page_meta-readtime">
       
-        2 minute read
+        3 minute read
       
     </span>
   
@@ -1375,16 +1375,45 @@
 <h2 id="55-其他常见神经网络">5.5. 其他常见神经网络</h2>
 
 <h3 id="551-rbf网络">5.5.1. RBF网络</h3>
+<ul>
+  <li>RBF(Radial Basis Function, 径向基函数)网络是一种单隐层前馈神经网络，它使用径向基函数作为隐层神经元激活函数，而输出层则是对隐层神经元输出的线性组合</li>
+  <li>具有足够多隐层神经元的RBF网络能以任意精度逼近任意连续函数</li>
+</ul>
 
 <h3 id="552-art网络">5.5.2. ART网络</h3>
+<ul>
+  <li>竞争型学习(competitive learning)是神经网络中一种常用的无监督学习策略，在使用该策略时，网络的输出神经元相互竞争，每一时刻仅有一个竞争获胜的神经元被激活，其他神经元的状态被抑制。这种机制亦称胜者通吃(winner-take-all)原则</li>
+  <li>ART(Adaptive Resonance Theory，自适应谐振理论)网络是竞争型学习的重要代表。该网络由比较层、识别层、识别阔值和重置模块构成。其中，比较层负责接受输入样本，并将其传递给识别层神经元。识别层每个神经元对应一个模式类，神经元数目可在训练过程中动态增长以增加新的模式类</li>
+</ul>
 
 <h3 id="553-som网络">5.5.3. SOM网络</h3>
+<ul>
+  <li>SOM(Self-Organizing Map，自组织映射)网络是一种竞争学习型的无监督神经网络，它能将高维输入数据映射到低维空间(通常为二维) ，同时保持输入数据在高维空间的拓扑结构，即将高维空间中相似的样本点映射到网络输出层中的邻近神经元</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/74.jpg" /></center>
 
 <h3 id="554-级联相关网络">5.5.4. 级联相关网络</h3>
+<ul>
+  <li>一般的神经网络模型通常假定网络结构是事先固定的，训练的目的是利用训练样本来确定合适的连接权、阈值等参数。与此不同，结构自适网络则将网络结构也当作学习的目标之一，并希望能在训练过程中找到最符合数据特点的网络结构-级联相关(Cascade-Correlation)网络是结构自适应网络的重要代表</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/75.jpg" /></center>
 
 <h3 id="555-elman网络">5.5.5. Elman网络</h3>
+<ul>
+  <li>与前馈神经网络不同<strong>递归神经网络(recurrent neural networks)</strong>允许网络中出现环形结构，从而可让一些神经元的输出反馈回来作为输入信号。这样的结构与信息反馈过程，使得网络在t时刻的输出状态不仅与t时刻的输入有关，还与t-1时刻的网络状态有关，从而能处理与时间有关的动态变化</li>
+  <li>Elman网络是最常用的递归神经网络之一，其结构如图所示，它的结构与多层前馈网络很相似，但隐层神经元的输出被反馈回来，与下一时刻输入层神经元提供的信号一起，作为隐层神经元在下一时刻的输入。隐层神经元通常采用Sigmoid激活函数，而网络的训练则常通过推广的BP算法进行</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/76.jpg" /></center>
 
 <h3 id="556-boltzmann机">5.5.6. Boltzmann机</h3>
+<ul>
+  <li>神经网络中有一类模型是为网络状态定义一个能量(energy)，能量最小化时网络达到理想状态，而网络的训练就是在最小化这个能量函数。Boltzmann机就是一种基于能量的模型(energy-based model)，常见结构如图所示，其神经元分为两层:显层与隐层。显层用于表示数据的输入与输出，隐层则被理解为数据的内在表达</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/77.jpg" /></center>
 
 <h2 id="56-深度学习">5.6. 深度学习</h2>
 <ul>
@@ -1503,7 +1532,7 @@
     
     <p class="page_meta-readtime">
       
-        3 minute read
+        5 minute read
       
     </p>
   
@@ -1534,7 +1563,7 @@
     
     <p class="page_meta-readtime">
       
-        2 minute read
+        3 minute read
       
     </p>
   
