@@ -109,6 +109,28 @@ author: Quehry
         - [10.4.2. 插入排序](#1042-插入排序)
     - [10.5. 冒泡排序](#105-冒泡排序)
     - [10.6. 程序或算法的时间复杂度](#106-程序或算法的时间复杂度)
+- [11. 第十一章 文件读写](#11-第十一章-文件读写)
+    - [11.1. 文件读写概述](#111-文件读写概述)
+        - [11.1.1. 打开文件的函数](#1111-打开文件的函数)
+    - [11.2. 文本文件读写](#112-文本文件读写)
+        - [11.2.1. 文本文件读写](#1121-文本文件读写)
+        - [11.2.1. 文本文件读写(另一种函数)](#1121-文本文件读写另一种函数)
+    - [11.3. 二进制文件读写概述](#113-二进制文件读写概述)
+        - [11.3.1. 文件的读写指针](#1131-文件的读写指针)
+        - [11.3.2. 二进制文件读写](#1132-二进制文件读写)
+    - [11.4. 创建和读取二进制文件](#114-创建和读取二进制文件)
+    - [11.5. 修改二进制文件](#115-修改二进制文件)
+    - [11.6. 文件拷贝程序](#116-文件拷贝程序)
+- [12. C++的STL](#12-c的stl)
+    - [12.1. STL排序算法sort](#121-stl排序算法sort)
+    - [12.2. STL二分查找算法](#122-stl二分查找算法)
+        - [12.2.1. 用binary_search进行二分查找](#1221-用binary_search进行二分查找)
+        - [12.2.2. 用lower_bound二分查找下界](#1222-用lower_bound二分查找下界)
+        - [12.2.3. 用upper_bound二分查找上界](#1223-用upper_bound二分查找上界)
+    - [12.3. multiset](#123-multiset)
+    - [12.4. set](#124-set)
+    - [12.5. multimap](#125-multimap)
+    - [12.6. map](#126-map)
 
 <!-- /TOC -->
 
@@ -679,4 +701,214 @@ author: Quehry
 - 一些例子
 
 <center><img src='assets/img/posts/20220225/52.jpg'></center>
+
+# 11. 第十一章 文件读写
+
+## 11.1. 文件读写概述
+- 二进制文件: 本质上所有文件都是0、1串，因此都是二进制文件。但是一般将内容不是文字，记事本打开看是乱码的文件，称为二进制文件
+- 文本文件: 内容是文字，用记事本打开能看到文字的文件
+- 文件读写相关函数在头文件cstdio中声明: #include \<cstdio\>
+- fopen函数打开文件，返回FILE * 指针，指向和文件相关的一个FILE变量，FILE是一个struct
+- 文件读写结束后，一定要fclose关闭文件，否则可能导致数据没被保存，或者无法打开其他文件
+- 一些读写函数都需要FILE *指针进行
+
+<center><img src='assets/img/posts/20220225/53.jpg'></center>
+
+### 11.1.1. 打开文件的函数
+
+<center><img src='assets/img/posts/20220225/54.jpg'></center>
+
+- 打开文件的模式
+
+<center><img src='assets/img/posts/20220225/55.jpg'></center>
+
+- 二进制打开和文本打开的区别:
+
+<center><img src='assets/img/posts/20220225/56.jpg'></center>
+
+- 主要是二进制打开的话会有换行符的区别，最好还是用二进制打开
+
+<center><img src='assets/img/posts/20220225/57.jpg'></center>
+
+- 文件名的绝对路径和相对路径: 
+
+<center><img src='assets/img/posts/20220225/58.jpg'></center>
+
+## 11.2. 文本文件读写
+
+### 11.2.1. 文本文件读写
+
+<center><img src='assets/img/posts/20220225/59.jpg'></center>
+
+- 我们希望写一个文件读写程序:
+
+<center><img src='assets/img/posts/20220225/60.jpg'></center>
+
+### 11.2.1. 文本文件读写(另一种函数)
+- fgets是读取一行 
+
+<center><img src='assets/img/posts/20220225/61.jpg'></center>
+
+- 读取整个文本文件并输出
+
+<center><img src='assets/img/posts/20220225/62.jpg'></center>
+
+- fputs是输出一行
+
+<center><img src='assets/img/posts/20220225/63.jpg'></center>
+
+## 11.3. 二进制文件读写概述
+
+### 11.3.1. 文件的读写指针
+
+<center><img src='assets/img/posts/20220225/64.jpg'></center>
+
+- 这都是C语言读写的规则
+
+<center><img src='assets/img/posts/20220225/65.jpg'></center>
+
+- fseek的作用是将读写指针定位到距离origin位置offset字节处
+
+### 11.3.2. 二进制文件读写
+- 用fread进行二进制读文件
+
+<center><img src='assets/img/posts/20220225/66.jpg'></center>
+
+- 用fgetc进行二进制读文件
+
+<center><img src='assets/img/posts/20220225/67.jpg'></center>
+
+- fgetc是用来读取一个字节
+
+- 用fwrite二进制写文件
+
+<center><img src='assets/img/posts/20220225/68.jpg'></center>
+
+- 用fputc二进制写文件
+
+<center><img src='assets/img/posts/20220225/69.jpg'></center>
+
+## 11.4. 创建和读取二进制文件
+- 用二进制文件存学生信息比用文本方式存的好处: 可能节约空间、便于快速读取、改单个学生信息
+
+## 11.5. 修改二进制文件
+- 用r+b打开文件既读又写时，如果做了读操作，则做写操作之前一定要用fssek重新定位文件读写指针
+
+## 11.6. 文件拷贝程序
+- 文件拷贝程序mycopy示例
+
+<center><img src='assets/img/posts/20220225/70.jpg'></center>
+
+<center><img src='assets/img/posts/20220225/71.jpg'></center>
+
+<center><img src='assets/img/posts/20220225/72.jpg'></center>
+
+# 12. C++的STL
+
+## 12.1. STL排序算法sort
+- STL: standard template library 标准模板库
+- 包含一些常用的算法如排序查找，还有常用的数据结构如可变长数组、链表、字典等
+- 要使用其中的算法，需要#include \<algorithm\>
+- 用sort进行排序(用法一)
+
+<center><img src='assets/img/posts/20220225/73.jpg'></center>
+
+- 用sort进行排序(用法二)
+
+<center><img src='assets/img/posts/20220225/74.jpg'></center>
+
+- 用sort进行排序(用法三)，用自定义的排序规则对任何类型T的数组进行排序
+
+<center><img src='assets/img/posts/20220225/75.jpg'></center>
+
+- 几个自定义排序规则例子
+
+<center><img src='assets/img/posts/20220225/76.jpg'></center>
+
+<center><img src='assets/img/posts/20220225/77.jpg'></center>
+
+## 12.2. STL二分查找算法
+
+### 12.2.1. 用binary_search进行二分查找
+- 用法一: 
+
+<center><img src='assets/img/posts/20220225/78.jpg'></center>
+
+- 用法二:
+
+<center><img src='assets/img/posts/20220225/79.jpg'></center>
+
+### 12.2.2. 用lower_bound二分查找下界
+- 用法一: 
+
+<center><img src='assets/img/posts/20220225/80.jpg'></center>
+
+- 用法二:
+
+<center><img src='assets/img/posts/20220225/81.jpg'></center>
+
+### 12.2.3. 用upper_bound二分查找上界
+- 用法一: 
+
+<center><img src='assets/img/posts/20220225/82.jpg'></center>
+
+- 用法二:
+
+<center><img src='assets/img/posts/20220225/83.jpg'></center>
+
+## 12.3. multiset
+- STL中的平衡二叉树数据结构
+- 有时需要在大量增加、删除数据的同时，还要进行大量数据的查找
+- 可以使用平衡二叉树数据结构存放数据，体现在STL中，就是以下四种排序容器: multiset、set、multimap、map
+- multiset的用法:
+
+<center><img src='assets/img/posts/20220225/84.jpg'></center>
+
+- multiset上的迭代器
+
+<center><img src='assets/img/posts/20220225/85.jpg'></center>
+
+<center><img src='assets/img/posts/20220225/86.jpg'></center>
+
+- 自定义排序规则的multiset用法: 
+
+<center><img src='assets/img/posts/20220225/87.jpg'></center>
+
+<center><img src='assets/img/posts/20220225/88.jpg'></center>
+
+## 12.4. set
+- set和multiset的区别在于容器里面不能有重复元素
+- set插入元素可能不成功
+- pair模板的用法
+
+<center><img src='assets/img/posts/20220225/89.jpg'></center>
+
+- set的例子
+
+<center><img src='assets/img/posts/20220225/90.jpg'></center>
+
+<center><img src='assets/img/posts/20220225/91.jpg'></center>
+
+## 12.5. multimap
+- multimap容器里面的元素，都是pair形式的
+
+<center><img src='assets/img/posts/20220225/92.jpg'></center>
+
+- multimap的应用
+
+<center><img src='assets/img/posts/20220225/93.jpg'></center>
+
+- 代码实现细节
+
+<center><img src='assets/img/posts/20220225/94.jpg'></center>
+
+<center><img src='assets/img/posts/20220225/95.jpg'></center>
+
+<center><img src='assets/img/posts/20220225/96.jpg'></center>
+
+<center><img src='assets/img/posts/20220225/97.jpg'></center>
+
+## 12.6. map
+- map和multimap的区别: 不能有关键字重复的元素, 可以使用[], 下标为关键字, 返回值为first和关键字相同的元素的second
+- 插入元素可能失败
 
