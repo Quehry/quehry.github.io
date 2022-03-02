@@ -532,6 +532,10 @@ Hashmap创建的时候需要继承
 38. java中final关键字是保证了变量无法修改，只能访问
 39. 字符串的比较用.equals()
 40. Vector.contains(...)可以判断一个值是否在这个向量里
+41. String.charAt(i), 可以将字符串第i个字符赋给char
+42. instanceOf用来判断一个对象是不是一个类的实例: if (a instanceOf A)
+43. 多态的一种应用是: 抽象父类，子类继承抽象父类
+ 
 
 <center><img src='../assets/img/posts/20211130/73.jpg'></center>
 
