@@ -499,7 +499,7 @@ Hashmap创建的时候需要继承
 5. 字符串之间用+连接
 6. 当一个类中有main函数时，一般这么定义: public static void main(String[] a){}
 7. 在定义类的时候不要有()
-8. 向量的创建和声明: Vector<T> mesObjectsG = new Vector<T>();
+8. 向量的创建和声明: Vector\<T\> mesObjectsG = new Vector\<T\>();
 9. 打印的使用: System.out.println()
 10. 成员函数在类的开头只是声明，并没有创建，所以在方法中创建
 11. for循环的使用: for(Point p : seg.getVecP())
@@ -519,15 +519,15 @@ Hashmap创建的时候需要继承
 25. 将链表中所有的单词写入一个文件: for (object k : this){writer.write(k+"\n");writer.flush()} 写入完毕后, writer.close()
 26. 哈希表判断key是否在哈希表中: HashMap.containsKey(...), 返回值为布尔类型
 27. 哈希表中添加元素: HashMap.put(key, value) 
-28. 哈希表可以返回键值对，键对和值对，调用HashMap.entrySet()、HashMap.ketSet()、HashMap.valueSet()
+28. 哈希表可以返回键值对，键对和值对，调用HashMap.entrySet()、HashMap.keySet()、HashMap.valueSet()
 29. 通过键来访问哈希表中的值: HashMap.get(key)
 30. EntrySet同样可以通过getKey()和getValue()来访问键值
-31. 在创建一个新类时，对于类的名字可以这么取: Arbre<T>, 这样就表示Arbre类中的数据类型是T
+31. 在创建一个新类时，对于类的名字可以这么取: Arbre\<T\>, 这样就表示Arbre类中的数据类型是T
 32. java中的空是null，小写
 33. 记住二叉树高度是怎么写的
 34. 记住二叉树前序中序后序遍历是如何写的
 35. 在进行没有变量x时怎么计算数的结果: 先用迭代访问出左值和右值，然后根据根结点的符号决定进行什么运算
-36. Integer.parseInt(String a)的作用是将整数的string表示转化为Integer
+36. Integer.parseInt(String a)的作用是将整数的String表示转化为Integer
 37. 对于含变量x的二叉树如何在输入x的值的情况下算出结果: 首先遍历左子树，如果左子树的左边有x，那么将输入的值赋给这个结点的x，然后迭代回来计算左结点的值，具体的可以看网站截图
 38. java中final关键字是保证了变量无法修改，只能访问
 39. 字符串的比较用.equals()

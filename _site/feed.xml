@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-02T10:53:15+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-03T15:19:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
 
 <!-- TOC -->
 
@@ -5593,9 +5593,9 @@ $\tilde{U}$<sub>:j</sub> = $\sum$ S<sub>i,j</sub><sup>Q</sup>U<sub>:,i</sub></li
   <li>二维数组,举例说明：</li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span><span class="o">[][]</span> <span class="n">tab</span><span class="o">={</span> <span class="o">{</span><span class="s">"a"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">,</span> <span class="s">"i"</span><span class="o">,</span> <span class="s">"o"</span><span class="o">,</span> <span class="s">"u"</span><span class="o">},</span> <span class="o">{</span><span class="s">"1"</span><span class="o">,</span> <span class="s">"2"</span><span class="o">,</span> <span class="s">"3"</span><span class="o">,</span> <span class="s">"4"</span><span class="o">}</span> <span class="o">};</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">tab</span><span class="o">[][]={</span> <span class="o">{</span><span class="s">"a"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">,</span> <span class="s">"i"</span><span class="o">,</span> <span class="s">"o"</span><span class="o">,</span> <span class="s">"u"</span><span class="o">},</span> <span class="o">{</span><span class="s">"1"</span><span class="o">,</span> <span class="s">"2"</span><span class="o">,</span> <span class="s">"3"</span><span class="o">,</span> <span class="s">"4"</span><span class="o">}</span> <span class="o">};</span>
 <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-<span class="k">for</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">sousTab</span> <span class="o">:</span> <span class="n">tab</span><span class="o">)</span> 
+<span class="k">for</span><span class="o">(</span><span class="nc">String</span> <span class="n">sousTab</span><span class="o">[]</span> <span class="o">:</span> <span class="n">tab</span><span class="o">)</span> 
 <span class="o">{</span>
     <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
     <span class="k">for</span><span class="o">(</span><span class="nc">String</span> <span class="n">str</span> <span class="o">:</span> <span class="n">sousTab</span><span class="o">)</span> 
@@ -5611,8 +5611,8 @@ $\tilde{U}$<sub>:j</sub> = $\sum$ S<sub>i,j</sub><sup>Q</sup>U<sub>:,i</sub></li
 
 <p>或者</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">tabEntiers</span> <span class="o">;</span>
-<span class="n">tabEntiers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">40</span><span class="o">]</span> <span class="o">;</span> 
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">tabEntiers</span><span class="o">[];</span>
+<span class="n">tabEntiers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">40</span><span class="o">];</span> 
 <span class="c1">// création effective du tableau précédent</span>
 </code></pre></div></div>
 
@@ -5862,7 +5862,7 @@ $\tilde{U}$<sub>:j</sub> = $\sum$ S<sub>i,j</sub><sup>Q</sup>U<sub>:,i</sub></li
   <li>字符串之间用+连接</li>
   <li>当一个类中有main函数时，一般这么定义: public static void main(String[] a){}</li>
   <li>在定义类的时候不要有()</li>
-  <li>向量的创建和声明: Vector<T> mesObjectsG = new Vector<T>();</T></T></li>
+  <li>向量的创建和声明: Vector&lt;T&gt; mesObjectsG = new Vector&lt;T&gt;();</li>
   <li>打印的使用: System.out.println()</li>
   <li>成员函数在类的开头只是声明，并没有创建，所以在方法中创建</li>
   <li>for循环的使用: for(Point p : seg.getVecP())</li>
@@ -5882,19 +5882,22 @@ $\tilde{U}$<sub>:j</sub> = $\sum$ S<sub>i,j</sub><sup>Q</sup>U<sub>:,i</sub></li
   <li>将链表中所有的单词写入一个文件: for (object k : this){writer.write(k+”\n”);writer.flush()} 写入完毕后, writer.close()</li>
   <li>哈希表判断key是否在哈希表中: HashMap.containsKey(…), 返回值为布尔类型</li>
   <li>哈希表中添加元素: HashMap.put(key, value)</li>
-  <li>哈希表可以返回键值对，键对和值对，调用HashMap.entrySet()、HashMap.ketSet()、HashMap.valueSet()</li>
+  <li>哈希表可以返回键值对，键对和值对，调用HashMap.entrySet()、HashMap.keySet()、HashMap.valueSet()</li>
   <li>通过键来访问哈希表中的值: HashMap.get(key)</li>
   <li>EntrySet同样可以通过getKey()和getValue()来访问键值</li>
-  <li>在创建一个新类时，对于类的名字可以这么取: Arbre<T>, 这样就表示Arbre类中的数据类型是T</T></li>
+  <li>在创建一个新类时，对于类的名字可以这么取: Arbre&lt;T&gt;, 这样就表示Arbre类中的数据类型是T</li>
   <li>java中的空是null，小写</li>
   <li>记住二叉树高度是怎么写的</li>
   <li>记住二叉树前序中序后序遍历是如何写的</li>
   <li>在进行没有变量x时怎么计算数的结果: 先用迭代访问出左值和右值，然后根据根结点的符号决定进行什么运算</li>
-  <li>Integer.parseInt(String a)的作用是将整数的string表示转化为Integer</li>
+  <li>Integer.parseInt(String a)的作用是将整数的String表示转化为Integer</li>
   <li>对于含变量x的二叉树如何在输入x的值的情况下算出结果: 首先遍历左子树，如果左子树的左边有x，那么将输入的值赋给这个结点的x，然后迭代回来计算左结点的值，具体的可以看网站截图</li>
   <li>java中final关键字是保证了变量无法修改，只能访问</li>
   <li>字符串的比较用.equals()</li>
   <li>Vector.contains(…)可以判断一个值是否在这个向量里</li>
+  <li>String.charAt(i), 可以将字符串第i个字符赋给char</li>
+  <li>instanceOf用来判断一个对象是不是一个类的实例: if (a instanceOf A)</li>
+  <li>多态的一种应用是: 抽象父类，子类继承抽象父类</li>
 </ol>
 
 <center><img src="../assets/img/posts/20211130/73.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[课堂记录]]></summary></entry></feed>
