@@ -311,8 +311,8 @@ for(String sousTab[] : tab)
 或者
 
 ```java
-int[] tabEntiers ;
-tabEntiers = new int[40] ; 
+int tabEntiers[];
+tabEntiers = new int[40]; 
 // création effective du tableau précédent
 ```
 
