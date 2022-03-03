@@ -292,9 +292,9 @@ class Main
 - 二维数组,举例说明：
 
 ```java
-String[][] tab={ {"a", "e", "i", "o", "u"}, {"1", "2", "3", "4"} };
+String tab[][]={ {"a", "e", "i", "o", "u"}, {"1", "2", "3", "4"} };
 int i = 0, j = 0;
-for(String[] sousTab : tab) 
+for(String sousTab[] : tab) 
 {
     j = 0;
     for(String str : sousTab) 
