@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-03T15:19:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-20T17:59:19+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
 
 <!-- TOC -->
 
@@ -1354,6 +1354,17 @@
       <li><a href="#56-深度学习">5.6. 深度学习</a></li>
     </ul>
   </li>
+  <li><a href="#6-第6章-支持向量机">6. 第6章 支持向量机</a>
+    <ul>
+      <li><a href="#60-思维导图">6.0. 思维导图</a></li>
+      <li><a href="#61-间隔与支持向量">6.1. 间隔与支持向量</a></li>
+      <li><a href="#62-对偶问题">6.2. 对偶问题</a></li>
+      <li><a href="#63-核函数">6.3. 核函数</a></li>
+      <li><a href="#64-软间隔与正则化">6.4. 软间隔与正则化</a></li>
+      <li><a href="#65-支持向量回归">6.5. 支持向量回归</a></li>
+      <li><a href="#66-核方法">6.6. 核方法</a></li>
+    </ul>
+  </li>
 </ul>
 
 <!-- /TOC -->
@@ -2336,6 +2347,345 @@
   <li>神经网络是一种难以解释的黑箱模型</li>
 </ul>
 
+<h1 id="6-第6章-支持向量机">6. 第6章 支持向量机</h1>
+
+<h2 id="60-思维导图">6.0. 思维导图</h2>
+
+<center><img src="../assets/img/posts/20211222/134.jpg" /></center>
+
+<h2 id="61-间隔与支持向量">6.1. 间隔与支持向量</h2>
+<ul>
+  <li>给定训练样本集$D={(x_1, y_1),(x_2, y_2),…,(x_m, y_m)}$, 其中$y_i\in${$-1, +1$}, 也就是一个传统的分类问题。分类学习最基本的想法就是基于训练集D在样本空间中找到一个划分超平面，将不同类别的样本分开，但能将训练样本分开的划分超平面可能有很多，如下图</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/78.jpg" /></center>
+
+<ul>
+  <li>直观上看，应该去找位于两类训练样本正中间的划分超平面，因为该划分超平面对训练样本局部扰动的容忍性最好</li>
+  <li>在样本空间中，划分超平面可通过如下线性方程来描述: $\omega^Tx+b=0$, 其中$\omega$为法向量, 决定了超平面的方向, b为位移项, 决定了超平面与原点的距离, 显然划分超平面可被法向量$\omega$和b确定</li>
+  <li>样本空间中任意点x到超平面的距离可写为</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/79.jpg" /></center>
+
+<ul>
+  <li>假设超平面能将训练样本正确分类, 即对($x_i, y_i$)$\in$D, 我们有以下结果:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/80.jpg" /></center>
+
+<ul>
+  <li><strong>支持向量</strong>: 距离超平面最近的几个训练样本点使得上述条件等号成立，它们就被称为支持向量(support vector), 两个异类支持向量到超平面的距离之和为<strong>间隔</strong>$\gamma$</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/81.jpg" /></center>
+
+<ul>
+  <li>图示:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/82.jpg" /></center>
+
+<ul>
+  <li>欲找到具有最大间隔的划分超平面，也就是找到能满足约束的最大的$\gamma$</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/83.jpg" /></center>
+
+<ul>
+  <li>为了最大化间隔，仅需最大化||$\omega$||$^{-1}$, 这等价于最小化||$\omega$||$^{2}$, 于是上述式子可重写为:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/84.jpg" /></center>
+
+<ul>
+  <li>这就是支持向量机(Support Vector Machine, SVM)的基本型</li>
+</ul>
+
+<h2 id="62-对偶问题">6.2. 对偶问题</h2>
+<ul>
+  <li>我们注意到SVM的基本型本身是一个凸二次规划问题<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>, 能直接用现成的优化计算包求解，但我们可以有更高效的方法</li>
+</ul>
+
+<ul>
+  <li>对上述式子使用拉格朗日乘子法<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>可得到其对偶问题，则该问题的拉格朗日函数可写为</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/91.jpg" /></center>
+
+<ul>
+  <li>其中$\alpha$=($\alpha_1$;$\alpha_2$…;$\alpha_m$), 令L($\omega$, b, $\alpha$)对$\omega$和b的偏导为零可得</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/92.jpg" /></center>
+
+<ul>
+  <li>将这两个条件带入之前的拉格朗日函数中，即可将$\omega$和b消去，得到以下的对偶问题:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/93.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211222/94.jpg" /></center>
+
+<ul>
+  <li>从对偶问题中解出的$\alpha_i$是拉格朗日乘子，它恰对应着训练样本($x_i$, $y_i$), 在主问题中有不等式约束，因此上述过程需满足<strong>KTT条件</strong>, 即要求:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/96.jpg" /></center>
+
+<ul>
+  <li>解出$\alpha$后，求出$\omega$与b即可得到模型:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/95.jpg" /></center>
+
+<ul>
+  <li>于是, 对任意训练样本($x_i$, $y_i$), 总有$\alpha_i=0$或者$y_if(x_i)=1$。若$\alpha_i=0$，则该样本将不会在最终的模型的求和中出现，也就不会对f(x)有任何影响;若$\alpha_i&gt;0$, 则必有$y_if(x_i)=1$，所对应的样本点位于最大间隔边界上，是一个支持向量。这显示出支持向量机的一个重要性质:训练完成后, 大部分的训练样本都不需保留，最终模型仅与支持向量有关</li>
+  <li>那么如何求解对偶问题解出$\alpha_i$呢？这是一个二次规划问题, 可使用通用的二次规划算法求解，然而，该问题的规模正比于训练样本数，这会在实际任务中造成很大的开销，为了避开这个障碍，人们通过利用问题本身的特性，提出了很多高效算法, SMO是其中一个著名的代表</li>
+  <li>SMO的基本思路是先固定$\alpha_i$之外的所有参数，然后求$\alpha_i$上的极值，由于存在约束$\sum_1^m\alpha_iy_i=0$,若固定$\alpha_i$之外的其他变量，则$\alpha_i$可由其他变量导出，于是SMO每次选择两个变量$\alpha_i$和$\alpha_j$，并固定其他参数。这样，在参数初始化后，SMO不断执行如下两个步骤直至收敛
+    <ul>
+      <li>选取一对需更新的变量$\alpha_i$和$\alpha_j$</li>
+      <li>固定$\alpha_i$和$\alpha_j$以外的参数，求解获得更新后的$\alpha_i$和$\alpha_j$</li>
+    </ul>
+  </li>
+  <li>如何确定偏移项b呢？注意到对任意支持向量($x_s$, $y_s$)都有$y_sf(x_s)=1$:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/97.jpg" /></center>
+
+<ul>
+  <li>其中S为所有支持向量的下标集，理论上可以选取任意支持向量来求出b，但现实任务中常采用一种更鲁棒的做法: 使用所有支持向量求解的平均值</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/98.jpg" /></center>
+
+<h2 id="63-核函数">6.3. 核函数</h2>
+<ul>
+  <li>在本章前面的讨论中，我们假设训练样本是线性可分的，然而在现实任务中，原始样本空间内也许并不存在一个能正确划分两类样本的超平面，例如异或问题就不是线性可分的</li>
+  <li>对这样的问题，可将样本从原始空间映射到一个更高维的特征空间，使得样本在这个特征空间内线性可分，例如将异或问题的原始二维空间映射到一个合适的三维空间，就能找到一个合适的划分超平面。如果原始空间是有限维，即属性数有限，那么一定存在一个高维特征空间使样本可分</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/99.jpg" /></center>
+
+<ul>
+  <li>令$\phi(x)$表示将x映射后的特征向量，于是在特征空间中划分超平面所对应的模型可表示为</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/100.jpg" /></center>
+
+<ul>
+  <li>其中$\omega$和b是模型参数，我们有以下二次规划:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/101.jpg" /></center>
+
+<ul>
+  <li>其对偶问题是:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/102.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211222/103.jpg" /></center>
+
+<ul>
+  <li>我们观察到在对偶问题中涉及到计算$\phi(x_i)^T\phi(x_j)$, 这是样本$x_i$与$x_j$映射到特征空间之后的内积。由于特征空间维数可能很高，甚至是无穷维，因此直接计算$\phi(x_i)^T\phi(x_j)$通常是困难的，为了避开这个障碍，可以设想这样一个函数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/104.jpg" /></center>
+
+<ul>
+  <li>即$x_i$与$x_j$在特征空间的内积等于它们在原始样本空间中通过函数$\kappa(·,·)$计算的结果, 有了这样的函数，我们就不必直接去计算高维甚至无穷维特征空间中的内积，于是式子可重写为</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/105.jpg" /></center>
+
+<ul>
+  <li>求解后可得到:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/106.jpg" /></center>
+
+<ul>
+  <li>上面式子显示出模型最优解可通过训练样本的核函数展开，这一展式亦称<strong>支持向量展式</strong></li>
+  <li>显然，若已知合适映射$\phi(·)$的具体形式，则可写出核函数$\kappa(·,·)$，但在现实任务中我们通常不知道$\phi(·)$是什么形式，那么合适的核函数是否一定存在呢？什么样的函数能做核函数呢？我们有以下定理:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/107.jpg" /></center>
+
+<ul>
+  <li>核函数选择成为支持向量机的最大变数，若核函数选择不合适，则意味着将样本映射到一个不合适的特征空间，很可能导致性能不佳</li>
+  <li>常用核函数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/108.jpg" /></center>
+
+<ul>
+  <li>此外，还可通过函数组合得到:
+    <ul>
+      <li>两个核函数的线性组合</li>
+      <li>两个核函数的直积</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20211222/109.jpg" /></center>
+
+    <ul>
+      <li>若$\kappa_1$为核函数，则对任意函数g(x):</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20211222/110.jpg" /></center>
+
+    <p>也是核函数</p>
+  </li>
+</ul>
+
+<h2 id="64-软间隔与正则化">6.4. 软间隔与正则化</h2>
+<ul>
+  <li>在前面的讨论中，我们一直假定训练样本在样本空间或特征空间中是线性可分的，即存在一个超平面能将不同类的样本完全划分开。然而，在现实任务中往往很难确定合适的核函数使得训练样本在特征空间中线性可分</li>
+  <li>缓解该问题的一个方法是允许支持向量机在一些样本上出错，为此，要引入软间隔(soft margin)的概念</li>
+  <li>具体来说，前面介绍的支持向量机形式都是要求所有样本均满足约束，即所有样本必须划分正确，这称为硬间隔，而软间隔则允许某些样本不满足约束</li>
+  <li>优化目标可写为:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/111.jpg" /></center>
+
+<ul>
+  <li>其中C&gt;0是一个常数，$l_{0/1}$是0/1损失函数</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/112.jpg" /></center>
+
+<ul>
+  <li>显然，当C无穷大时，上面式子迫使所有样本均满足约束，当C取有限值时，式子允许一些样本不满足约束</li>
+  <li>然而0/1损失函数非凸、非连续，数学性质不太好，于是人们通常用其他一些函数来替代它，下面给出三个常用的替代损失函数：</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/113.jpg" /></center>
+
+<ul>
+  <li>若采用hinge损失，则式子变成:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/114.jpg" /></center>
+
+<ul>
+  <li>引入松弛变量$\xi_i$≥0，可将式子重写为</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/115.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211222/116.jpg" /></center>
+
+<ul>
+  <li>这就是常用的软间隔支持向量机，可以看出每个样本都有一个对应的松弛变量，用以表征样本不满足约束的程度</li>
+  <li>这仍是一个二次规划的问题，于是，通过拉格朗日乘子法可得到拉格朗日函数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/117.jpg" /></center>
+
+<ul>
+  <li>其中$\alpha_i≥0$, $\mu_i≥0$是拉格朗日乘子</li>
+  <li>偏导为0后可得到对偶问题:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/118.jpg" /></center>
+
+<ul>
+  <li>KTT条件:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/119.jpg" /></center>
+
+<ul>
+  <li>可以发现软间隔支持向量机的最终模型仅与支持向量有关</li>
+  <li>我们还可以把0/1损失函数替换成别的替代损失函数以得到其他学习模型，这些模型的性质与所用的替代函数直接相关，但它们具有一个共性: 优化目标中的第一项用来描述划分超平面的间隔大小，另一项用来描述训练集上的误差</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/120.jpg" /></center>
+
+<ul>
+  <li>其中$\Omega(f)$称为“结构风险”(structural risk)，用于描述模型f的某些性质;第二项$\sum_i^ml(f(x_i),y_i)$称为“经验风险”(empirical risk)，用于描述模型与训练数据的契合程度; C用于对二者进行折中。从经验风险最小化的角度来看，$\Omega(f)$表述了我们希望获得具有何种性质的模型(例如希望获得复杂度较小的模型)，这为引入领域知识和用户意图提供了途径; 另一方面，该信息有助于削减假设空间，从而降低了最小化训练误差的过拟合风险。从这个角度来说，上面的公式为“正则化”(regularization)问题，$\Omega(f)$称为正则化项，C则称为正则化常数。$L_p$范数(norm)是常用的正则化项，其中$L_2$范数$||\omega||_2$倾向于$\omega$的分量取值尽量均衡，即非零分量个数尽量稠密，而$L_0$范数$||\omega||_0$和$L_1$范数$||\omega||_1$则倾向于$\omega$的分量尽量稀疏，即非零分量个数尽量少</li>
+</ul>
+
+<h2 id="65-支持向量回归">6.5. 支持向量回归</h2>
+<ul>
+  <li>现在我们来考虑回归问题，给定训练样本$D={(x_1, y_1), (x_2, y_2), …, (x_m, y_m))}，希望学得一个形如$f(x)=\omega^Tx+b$的回归模型，使得f(x)与y尽可能接近。</li>
+  <li>传统回归模型通常直接基于输出f(x)与真实输出y之间的差别来计算损失，当且仅当f(x)与y完全相同时，损失才为0。与此不同，支持向量回归(Support Vector Regression, 简称SVR)假设我们能容忍f(x)与y之间最多有$\epsilon$的偏差，如下图所示，若样本落入此间隔带，则被认为预测正确</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/121.jpg" /></center>
+
+<ul>
+  <li>于是SVR问题可形式化为:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/122.jpg" /></center>
+
+<ul>
+  <li>其中C为正则化常数，$l_{\epsilon}$是$\epsilon$-不敏感损失函数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/123.jpg" /></center>
+
+<ul>
+  <li>引入松弛变量$\xi_i$和$\hat{\xi_i}$，可将上述式子重写为:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/124.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211222/125.jpg" /></center>
+
+<ul>
+  <li>类似地，通过引入拉格朗日乘子可得到拉格朗日函数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/126.jpg" /></center>
+
+<ul>
+  <li>偏导为零得到对偶问题:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/127.jpg" /></center>
+
+<ul>
+  <li>KTT条件:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/128.jpg" /></center>
+
+<ul>
+  <li>将上述条件代入，SVR的解形如:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/129.jpg" /></center>
+
+<ul>
+  <li>能使式子中$(\hat{\alpha}_i-\alpha_i)≠0$的样本即为SVR的支持向量，它们必落在$\epsilon$-间隔带之外</li>
+  <li>由KTT条件可看出，对每个样本($x_i, y_i$)都有$(C-\alpha_i)\xi_i=0$且$\alpha_i(f(x_i)-y_i-\epsilon-\xi_i)=0$，于是在得到$\alpha_i$后，若0&lt;$\alpha_i$&lt;C, 则必有$\xi_i=0$,进而有:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/130.jpg" /></center>
+
+<ul>
+  <li>理论上说，可任意选取满足的$\alpha_i$来得到b，但是实践中常采用一种更鲁棒的方法: 选取多个满足0&lt;$\alpha_i$&lt;C的样本通过上述公式求解b后取平均值</li>
+  <li>若考虑特征映射，则:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/131.jpg" /></center>
+
+<center><img src="../assets/img/posts/20211222/132.jpg" /></center>
+
+<h2 id="66-核方法">6.6. 核方法</h2>
+<ul>
+  <li>若不考虑偏移项b，则无论SVM还是SVR，学得的模型总能表示成核函数的线性组合。不仅如此，事实上我们有下面这个称为“表示定理”(representer theorem)的更一般的结论</li>
+</ul>
+
+<center><img src="../assets/img/posts/20211222/133.jpg" /></center>
+
+<ul>
+  <li>人们发展出一系列基于核函数的学习方法，统称为核方法，最常见的是通过引入核函数来将线性学习器拓展为非线性学习器</li>
+  <li>支持向量机是针对二分类任务设计的，对多分类任务要进行专门的推广</li>
+</ul>
+
 <hr />
 
 <div class="footnotes" role="doc-endnotes">
@@ -2354,6 +2704,12 @@
     </li>
     <li id="fn:5" role="doc-endnote">
       <p>协方差矩阵的每个元素是各个向量元素之间的协方差。协方差就是Covariance <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>二次规划(Quadratic Programming)是一种典型的优化问题，在此类问题中，目标函数是变量的二次函数，而约束条件是变量的线性不等式，假定变量个数为d，约束条件的个数为m，则标准的二次规划问题形如: <center><img src="../assets/img/posts/20211222/85.jpg" /></center> 其中x为d维向量，Q为实对称矩阵，A为实矩阵，若Q为半正定矩阵，则目标函数为凸函数，相应的二次规划是凸二次优化问题。半正定矩阵即满足: A是n阶方阵，如果对任何非零向量X，都有X’AX≥0，其中X’表示X的转置，就称A为半正定矩阵。正定矩阵定义类似，只是把大于等于变成大于。此时若约束条件Ax≤b定义的可行域不为空，且目标函数在此可行域有下界，则该问题将有全局最小值。若Q为正定矩阵，则该问题有唯一全局最小值 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>拉格朗日乘子法是一种寻找多元函数在一组约束下的极值的方法，通过引入拉格朗日乘子, 可将d个变量与k个约束条件的最优化问题转化为具有d+k个变量的无约束优化问题求解。首先考虑等式约束的优化问题，假定x为d维向量，欲寻找x的某个取值$x^*$, 使目标函数f(x)最小且同时满足g(x)=0的约束，从几何角度看，该问题的目标是在由方程g(x)=0确定的d-1维曲面上寻找能使目标函数f(x)最小化的点，此时不难得到如下结论: 1.对于约束曲面上的任意点x, 该点的梯度▽g(x)正交于约束曲面; 2.在最优点$x^*$，目标函数在该点的梯度▽f($x^*$)正交于约束曲面<center><img src="../assets/img/posts/20211222/86.jpg" /></center> 由此可知，在最优点$x^*$，存在$\lambda$≠0使得<center><img src="../assets/img/posts/20211222/87.jpg" /></center>$\lambda$称为拉格朗日算子，定义拉格朗日函数<center><img src="../assets/img/posts/20211222/88.jpg" /></center>现在考虑不等式约束g(x)≤0,如图所示<center><img src="../assets/img/posts/20211222/89.jpg" /></center> 此时最优点$x^*$或在g(x)&lt;0的区域中，或在边界g(x)=0上。对于g(x)&lt;0的情形，约束g(x)≤0不起作用，可直接通过条件▽f(x)=0来获得最优点，这相当于将$\lambda$置零，g(x)=0的情形类似于上面等式约束的分析。因此，在约束g(x)≤0下最小化f(x)，可转化为在如下约束下最小化拉格朗日函数: <center><img src="../assets/img/posts/20211222/90.jpg" /></center>上述约束条件称为KTT条件。一个优化问题可以从两个角度来考察，即主问题和对偶问题，主问题就是没有引入拉格朗日乘子的原始目标函数，对偶问题就是加上了拉格朗日乘子的目标函数，这个目标函数是原始目标函数的最优值的一个下界，所以我们希望找到最好的下界，也就是最大的下界，所以对偶函数是寻找最大值 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[《机器学习》周志华读书笔记]]></summary></entry><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html"><![CDATA[<h1 id="vae">VAE</h1>
