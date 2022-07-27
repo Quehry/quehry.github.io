@@ -1,4 +1,373 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-11T23:18:28+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-27T16:52:35+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">课程总结</title><link href="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8B%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="课程总结" /><published>2022-04-29T00:00:00+08:00</published><updated>2022-04-29T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8B%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E5%A4%A7%E5%9B%9B%E4%B8%8B%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"><![CDATA[<!-- TOC -->
+
+<ul>
+  <li><a href="#introduction-to-corporate-finance">Introduction to corporate finance</a>
+    <ul>
+      <li><a href="#课程简介">课程简介</a></li>
+      <li><a href="#课程内容">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#工业科学">工业科学</a>
+    <ul>
+      <li><a href="#课程简介-1">课程简介</a></li>
+      <li><a href="#课程内容-1">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#量子力学">量子力学</a>
+    <ul>
+      <li><a href="#课程简介-2">课程简介</a></li>
+      <li><a href="#课程内容-2">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#统计物理">统计物理</a>
+    <ul>
+      <li><a href="#课程简介-3">课程简介</a></li>
+      <li><a href="#课程内容-3">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#信号处理">信号处理</a>
+    <ul>
+      <li><a href="#课程简介-4">课程简介</a></li>
+      <li><a href="#课程内容-4">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#结构力学2">结构力学2</a>
+    <ul>
+      <li><a href="#课程简介-5">课程简介</a></li>
+      <li><a href="#课程内容-5">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#传热学heat-transfert">传热学(Heat Transfert)</a>
+    <ul>
+      <li><a href="#课程简介-6">课程简介</a></li>
+      <li><a href="#课程内容-6">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#过程工程process-engin">过程工程(Process Engin)</a>
+    <ul>
+      <li><a href="#课程简介-7">课程简介</a></li>
+      <li><a href="#课程内容-7">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#press">Press</a>
+    <ul>
+      <li><a href="#课程简介-8">课程简介</a></li>
+      <li><a href="#课程内容-8">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#audiovisuel">Audiovisuel</a>
+    <ul>
+      <li><a href="#课程简介-9">课程简介</a></li>
+      <li><a href="#课程内容-9">课程内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#毕业设计">毕业设计</a>
+    <ul>
+      <li><a href="#毕设内容">毕设内容</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="introduction-to-corporate-finance">Introduction to corporate finance</h1>
+
+<h2 id="课程简介">课程简介</h2>
+<ul>
+  <li>授课老师: Danielle Levi-Feunteun</li>
+  <li>授课形式: 线上</li>
+  <li>授课材料: 电子讲义</li>
+  <li>考核形式: 每节课都有作业需要提交，算平时分，最后还有一个开卷的考试</li>
+</ul>
+
+<h2 id="课程内容">课程内容</h2>
+<p>围绕着财报进行简单的介绍</p>
+
+<h1 id="工业科学">工业科学</h1>
+
+<h2 id="课程简介-1">课程简介</h2>
+<ul>
+  <li>授课老师: 付小尧</li>
+  <li>授课形式: 工业科学由两部分组成，实验和正课，都在线下完成</li>
+  <li>授课材料: 实验课有电子讲义，正课有讲义和TD</li>
+  <li>考核形式: 实验和正课都有线下考试，各占五十</li>
+</ul>
+
+<h2 id="课程内容-1">课程内容</h2>
+<p>实验一共有8节课，都在二号楼上，实验围绕PID控制原理展开，我影响比较深的有停车场栏杆控制、云台、装乒乓球、给羽毛球拍上弦</p>
+
+<p>正课讲了一点二进制、逻辑电路</p>
+
+<h1 id="量子力学">量子力学</h1>
+
+<h2 id="课程简介-2">课程简介</h2>
+<ul>
+  <li>授课老师: 付小尧</li>
+  <li>授课形式: 线下授课</li>
+  <li>授课材料: 电子讲义和TD</li>
+  <li>考核形式: 线上考试</li>
+</ul>
+
+<h2 id="课程内容-2">课程内容</h2>
+<p>一共有8章，第一章介绍了光电效应、黑体，第二章介绍了薛定谔方程，后面的忘了</p>
+
+<h1 id="统计物理">统计物理</h1>
+
+<h2 id="课程简介-3">课程简介</h2>
+<ul>
+  <li>授课老师: Philippe Ribiere</li>
+  <li>授课形式: 线下授课</li>
+  <li>授课材料: 电子讲义和TD</li>
+  <li>考核形式: 大作业(统计物理与人工智能的关系)</li>
+</ul>
+
+<h2 id="课程内容-3">课程内容</h2>
+<p>一共四章，对量子力学里用到的统计知识进行了补充，统计物理根据对物质微观结构及微观粒子相互作用的认识，用概率统计的方法，对由大量粒子组成的宏观物体的物理性质及宏观规律作出微观解释的理论物理学分支。</p>
+
+<h1 id="信号处理">信号处理</h1>
+
+<h2 id="课程简介-4">课程简介</h2>
+<ul>
+  <li>授课老师: Antoine Roueff</li>
+  <li>授课形式: 线上授课</li>
+  <li>授课材料: 电子讲义、TD、TP(Matlab)</li>
+  <li>考核形式: 线上考试</li>
+</ul>
+
+<h2 id="课程内容-4">课程内容</h2>
+<p>没咋听</p>
+
+<h1 id="结构力学2">结构力学2</h1>
+
+<h2 id="课程简介-5">课程简介</h2>
+<ul>
+  <li>授课老师:  Olivier Bareille、黄行蓉</li>
+  <li>授课形式: 线上授课</li>
+  <li>授课材料: 电子讲义和TD</li>
+  <li>考核形式: 大作业(做题)</li>
+</ul>
+
+<h2 id="课程内容-5">课程内容</h2>
+<p>Olivier讲正课，黄老师讲TD，由于疫情原因，最终在家完成大作业</p>
+
+<h1 id="传热学heat-transfert">传热学(Heat Transfert)</h1>
+
+<h2 id="课程简介-6">课程简介</h2>
+<ul>
+  <li>授课老师: Nelson IBASETA、张堇</li>
+  <li>授课形式: 线上授课</li>
+  <li>授课材料: 电子讲义和TD</li>
+  <li>考核形式: 线上考试</li>
+</ul>
+
+<h2 id="课程内容-6">课程内容</h2>
+<p>Nelson讲正课，张老师讲TD，主要介绍了三种传热方式，分别是热传导，热对流和热辐射</p>
+
+<h1 id="过程工程process-engin">过程工程(Process Engin)</h1>
+
+<h2 id="课程简介-7">课程简介</h2>
+<ul>
+  <li>授课老师: Dominique Pareau、唐宏哲</li>
+  <li>授课形式: 线上授课</li>
+  <li>授课材料: 电子讲义和TD</li>
+  <li>考核形式: 两个大作业，Dominique的是做题，唐老师的是设计一个蒸馏的方案</li>
+</ul>
+
+<h2 id="课程内容-7">课程内容</h2>
+<p>Dominique主要讲了工业流程中各组分的物料守恒和能量守恒，唐宏哲主要讲了蒸馏</p>
+
+<h1 id="press">Press</h1>
+
+<h2 id="课程简介-8">课程简介</h2>
+<ul>
+  <li>授课老师: Vanessa</li>
+  <li>授课形式: 线下和线上授课</li>
+  <li>授课材料: 电子讲义</li>
+  <li>考核形式: 大作业</li>
+</ul>
+
+<h2 id="课程内容-8">课程内容</h2>
+<p>法语课</p>
+
+<h1 id="audiovisuel">Audiovisuel</h1>
+
+<h2 id="课程简介-9">课程简介</h2>
+<ul>
+  <li>授课老师: Fabien</li>
+  <li>授课形式: 线下和线上授课</li>
+  <li>授课材料: 电子讲义</li>
+  <li>考核形式: 大作业</li>
+</ul>
+
+<h2 id="课程内容-9">课程内容</h2>
+<p>法语课</p>
+
+<h1 id="毕业设计">毕业设计</h1>
+
+<h2 id="毕设内容">毕设内容</h2>
+<p>大四最重要的一门课，我的毕设是设计了一个成绩预测模型，包含了风险学科预测和成绩区间预测，主要用了一些机器学习的算法和数据处理的知识，写论文花了一周时间，剩下的就是不停的答辩</p>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[记录大四下课程和课程笔记]]></summary></entry><entry><title type="html">毕设记录</title><link href="http://localhost:4000/Graduation-Project.html" rel="alternate" type="text/html" title="毕设记录" /><published>2022-04-20T00:00:00+08:00</published><updated>2022-04-20T00:00:00+08:00</updated><id>http://localhost:4000/Graduation-Project</id><content type="html" xml:base="http://localhost:4000/Graduation-Project.html"><![CDATA[<h1 id="1-数据预处理">1. 数据预处理</h1>
+
+<h2 id="11-使用mysql对原始数据进行处理">1.1. 使用MySQL对原始数据进行处理</h2>
+<ul>
+  <li>目标: 生成每行为一个学生，第一列为学号，第二列到最后一列都是课程名称</li>
+  <li>第一步: 创建表格
+    <ol>
+      <li>首先遇到的问题是创建列名时有MySQL关键字，所以对KCMC两端加上了反引号</li>
+      <li>使用Group_concat时有内容长度限制，需要使用以下代码来暂时增大限制:
+        <pre><code class="language-cmd">  SET GLOBAL group_concat_max_len = 4294967295;
+  SET SESSION group_concat_max_len = 4294967295;
+</code></pre>
+      </li>
+      <li>列名长度硬性要求: 不能超过64个字符，所以我采用了将英文翻译为中文的方法减少长度，有以下几门学科名称做过修改:
+        <ul>
+          <li>UPDATE grade_original SET KCMC = ‘网格生成方法及软件简介’ WHERE KCMC=’An Introduction to Mesh Generation Methods &amp; Software for Scientific Computing’</li>
+          <li>UPDATE grade_original SET KCMC = ‘经典论文鉴赏:电磁学顶级论文精选’ WHERE KCMC=’Appreciation of Classical Papers: The Selected Top Papers in Electromagnetism’</li>
+          <li>UPDATE grade_original SET KCMC = ‘动脉硬化的脆弱性评估:从体内成像到生物力学’ WHERE KCMC=’Atherosclerosis Vulnerability Assessment: From In Vivo Imaging To Biomechanics’</li>
+          <li>UPDATE grade_original SET KCMC = ‘计算机建模和仿真基础:方法、技术和应用’ WHERE KCMC=’Basics of Computer-Based Modelling and Simulation: Methodologies, Technologies and Applications’</li>
+          <li>UPDATE grade_original SET KCMC = ‘当代中国外交政策及其全球治理途径’ WHERE KCMC=’Contemporary Chinese Foreign Policy and Its Global Governance Approach’</li>
+          <li>UPDATE grade_original SET KCMC = ‘灵活的中英文语言:成功的必要条件’ WHERE KCMC=’Elastic Language in Chinese and English: Essential for Successful’</li>
+          <li>UPDATE grade_original SET KCMC = ‘自然界中的功能结构材料:从保护到传感’ WHERE KCMC=’Functional Structural Materials in Nature: From Protection to Sensing’</li>
+          <li>UPDATE grade_original SET KCMC = ‘国际商法-在中国经商的法律环境’ WHERE KCMC=’International Business Law - The Legal Environment of Doing Business in China’</li>
+          <li>UPDATE grade_original SET KCMC = ‘航空航天工程疲劳与损伤容限导论’ WHERE KCMC=’Introduction to Fatigue and Damage Tolerance in Aerospace Engineering’</li>
+          <li>UPDATE grade_original SET KCMC = ‘模型检查定时系统导论:理论与实践’ WHERE KCMC=’Introduction to Model-Checking Timed Systems: Theory and Practice’</li>
+          <li>UPDATE grade_original SET KCMC = ‘功能薄膜磁控溅射的研究现状与发展趋势’ WHERE KCMC=’Magnetron Sputtering of Functional Thin Films: Present Status and Trends’</li>
+          <li>UPDATE grade_original SET KCMC = ‘材料表征热分析原理及应用’ WHERE KCMC=’Principles and Applications of Thermal Analysis for Materials Characterization’</li>
+          <li>UPDATE grade_original SET KCMC = ‘从英语学习到口译翻译能力的发展:原则与策略’ WHERE KCMC=’Progression from English Study to Interpreting and Translation Competence: Principles and Strategies’</li>
+          <li>一共十三门课名有做修改</li>
+        </ul>
+      </li>
+      <li>MySQL对列数有硬性要求: 其中InnoDB引擎要求不超过1024，其余引擎不超过4096，但是我的列数一共有1425，所以我改用了MyISAM引擎</li>
+      <li>MySQL命令行代码:</li>
+    </ol>
+
+    <pre><code class="language-cmd">  SELECT
+  CONCAT(
+      'CREATE TABLE grade_student (', GROUP_CONCAT(DISTINCT CONCAT('\`', KCMC, '\`', ' FLOAT', CHAR(10))
+      SEPARATOR ','),
+      ')', 'ENGINE=MyISAM DEFAULT CHARSET=gbk;')
+  FROM
+      grade_original
+
+  INTO @sql;
+
+  PREPARE stmt_name FROM @sql;
+  EXECUTE stmt_name;
+</code></pre>
+  </li>
+  <li>目前完成: 列名创建出来，XH一行填满，但是成绩没有填</li>
+  <li>先放着，后面有时间再试试，先用python</li>
+</ul>
+
+<h2 id="12-利用python的pandas库对数据进行预处理">1.2 利用Python的pandas库对数据进行预处理</h2>
+<ul>
+  <li>首先实现了从原始的data_original转变成data_student_0: 里面数据格式如下: 每行代表一名学生，第一列为学号，第二列至最后一列列名是学科名称，数值是成绩</li>
+  <li>然后实现了去除大家都有的学科，把参加课程设为1，未参加课程设为0，生成data_student_1.csv文件，用来进行聚类</li>
+  <li>聚类算法: kmeans，选了4个簇，生成的结果总体上来说非常不错，但是我希望计算一下性能度量(<strong>待办</strong>)
+    <ul>
+      <li>更细化来说，首先我可以手动针对学生选课来确定学院，最好是通过大三或者大四的课程来确定，以免有人中途转系等等</li>
+    </ul>
+  </li>
+  <li>聚类后生成了data_student_2.csv，里面新增了XY列，0代表国通，1代表计院，2代表航院，3代表中法</li>
+  <li>然后需要针对学年进行进一步细分: 目前聚类后的结果分布如下</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220420/2.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="record" /><summary type="html"><![CDATA[毕设流程记录]]></summary></entry><entry><title type="html">算法基础</title><link href="http://localhost:4000/Algorithms.html" rel="alternate" type="text/html" title="算法基础" /><published>2022-04-13T00:00:00+08:00</published><updated>2022-04-13T00:00:00+08:00</updated><id>http://localhost:4000/Algorithms</id><content type="html" xml:base="http://localhost:4000/Algorithms.html"><![CDATA[<h1 id="目录">目录</h1>
+
+<h1 id="1-第一周-枚举">1. 第一周 枚举</h1>
+
+<h2 id="11-完美立方">1.1. 完美立方</h2>
+<ul>
+  <li>枚举: 基于逐个尝试答案的一种问题求解策略</li>
+  <li>例如: 求小于N的最小素数</li>
+  <li>完美立方:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/1.jpg" /></center>
+
+<ul>
+  <li>解题思路:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/2.jpg" /></center>
+
+<h2 id="12-生理周期">1.2. 生理周期</h2>
+<ul>
+  <li>题干:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/3.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/4.jpg" /></center>
+
+<ul>
+  <li>解题思路:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/5.jpg" /></center>
+
+<h2 id="13-称硬币">1.3. 称硬币</h2>
+<ul>
+  <li>题干:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/6.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/7.jpg" /></center>
+
+<ul>
+  <li>解题思路</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/8.jpg" /></center>
+
+<h2 id="14-熄灯问题">1.4. 熄灯问题</h2>
+<ul>
+  <li>题干:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/9.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/10.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/11.jpg" /></center>
+
+<ul>
+  <li>解题思路:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/12.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/13.jpg" /></center>
+
+<p>局部的思想，化繁为简</p>
+
+<ul>
+  <li>可以用0-31的十进制数来表示第一列的数据，因为其二进制数刚好对应开关的状态</li>
+</ul>
+
+<h1 id="2-第二周-递归">2. 第二周 递归</h1>
+<h2 id="21-求阶乘">2.1. 求阶乘</h2>
+<ul>
+  <li>递归的基本概念: 一个函数调用其自身就是递归</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/14.jpg" /></center>
+
+<ul>
+  <li>递归和普通函数调用一样是通过栈实现</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/15.jpg" /></center>
+
+<ul>
+  <li>递归的作用
+    <ul>
+      <li>替代多重循环</li>
+      <li>解决本来就是递归形式定义的问题</li>
+      <li>将问题分解为规模更小的问题进行求解: 比如n！变成n * (n-1)</li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[郭炜老师算法网课记录]]></summary></entry><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
 
 <!-- TOC -->
 
@@ -2992,35 +3361,7 @@
       <p>它是建立在极大似然原理的基础上的一个统计方法，极大似然原理的直观想法是，一个随机试验如有若干个可能的结果A，B，C，…，若在一次试验中，结果A出现了，那么可以认为实验条件对A的出现有利，也即出现的概率P(A)较大。极大似然原理的直观想法我们用下面例子说明。设甲箱中有99个白球，1个黑球；乙箱中有1个白球．99个黑球。现随机取出一箱，再从抽取的一箱中随机取出一球，结果是黑球，这一黑球从乙箱抽取的概率比从甲箱抽取的概率大得多，这时我们自然更多地相信这个黑球是取自乙箱的。一般说来，事件A发生的概率与某一未知参数$\theta$有关，$\theta$取值不同，则事件A发生的概率$P(A|\theta)$也不同，当我们在一次试验中事件A发生了，则认为此时的$\theta$值应是t的一切可能取值中使$P(A|\theta)$达到最大的那一个，极大似然估计法就是要选取这样的t值作为参数t的估计值，使所选取的样本在被选的总体中出现的可能性为最大 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[《机器学习》周志华读书笔记]]></summary></entry><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html"><![CDATA[<h1 id="vae">VAE</h1>
-<h2 id="ae">AE</h2>
-<p>Auto-Encoder自动编码器，比如Seq2seq模型。</p>
-
-<h2 id="vaevariational-auto-encoder">VAE(Variational Auto-Encoder)</h2>
-<p>在实际情况中，我们需要在模型的准确率上与隐含向量服从标准正态分布之间做一个权衡，所谓模型的准确率就是指解码器生成的图片与原图片的相似程度。我们可以让网络自己来做这个决定，非常简单，我们只需要将这两者都做一个loss，然后在将他们求和作为总的loss，这样网络就能够自己选择如何才能够使得这个总的loss下降。另外我们要衡量两种分布的相似程度，如何看过之前一片GAN的数学推导，你就知道会有一个东西叫KL-divergence来衡量两种分布的相似程度，这里我们就是用KL-divergence来表示隐含向量与标准正态分布之间差异的loss，另外一个loss仍然使用生成图片与原图片的均方误差来表示。</p>
-
-<h2 id="kl消失">KL消失</h2>
-<p>KL消失后，VAE就变成了AE
-原因：</p>
-<ul>
-  <li>KL项本身太容易被优化</li>
-  <li>一旦崩塌，Decoder会忽视Z<sub>x</sub></li>
-  <li>Z<sub>x</sub>的表示学习依赖于Decoder</li>
-</ul>
-
-<h2 id="解决kl消失的思路">解决KL消失的思路</h2>
-<p>…</p>
-
-<h1 id="analyze-pretraining-language-model">Analyze Pretraining Language Model</h1>
-<h2 id="perspective-of-knowledge">Perspective of knowledge</h2>
-<ul>
-  <li>Syntacitic/Semantic/lexical 句法，语义，词汇</li>
-  <li>重构语法树</li>
-  <li>Attention中很多头可能没有用，学到了很多冗余的信息</li>
-  <li>Analyze Feed Forward Neural Network</li>
-  <li>浅层词汇信息，深层语义信息</li>
-  <li>Prompt</li>
-</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[组会笔记]]></summary></entry><entry><title type="html">制作类RACE数据集</title><link href="http://localhost:4000/RACElike-datasets.html" rel="alternate" type="text/html" title="制作类RACE数据集" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/RACElike-datasets</id><content type="html" xml:base="http://localhost:4000/RACElike-datasets.html"><![CDATA[<h1 id="目录">目录</h1>
+</div>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[《机器学习》周志华读书笔记]]></summary></entry><entry><title type="html">制作类RACE数据集</title><link href="http://localhost:4000/RACElike-datasets.html" rel="alternate" type="text/html" title="制作类RACE数据集" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/RACElike-datasets</id><content type="html" xml:base="http://localhost:4000/RACElike-datasets.html"><![CDATA[<h1 id="目录">目录</h1>
 <!-- TOC -->
 
 <ul>
@@ -4767,7 +5108,35 @@
 <ul>
   <li>在之前，ray tracing主要指whitted-style ray tracing</li>
   <li>但现在，只要设计了光线传播方法，就是ray tracing，路径追踪只是其中的一个方法</li>
-</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[Games 101 introduction to computer graphics 课程笔记]]></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html"><![CDATA[<!-- TOC -->
+</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[Games 101 introduction to computer graphics 课程笔记]]></summary></entry><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html"><![CDATA[<h1 id="vae">VAE</h1>
+<h2 id="ae">AE</h2>
+<p>Auto-Encoder自动编码器，比如Seq2seq模型。</p>
+
+<h2 id="vaevariational-auto-encoder">VAE(Variational Auto-Encoder)</h2>
+<p>在实际情况中，我们需要在模型的准确率上与隐含向量服从标准正态分布之间做一个权衡，所谓模型的准确率就是指解码器生成的图片与原图片的相似程度。我们可以让网络自己来做这个决定，非常简单，我们只需要将这两者都做一个loss，然后在将他们求和作为总的loss，这样网络就能够自己选择如何才能够使得这个总的loss下降。另外我们要衡量两种分布的相似程度，如何看过之前一片GAN的数学推导，你就知道会有一个东西叫KL-divergence来衡量两种分布的相似程度，这里我们就是用KL-divergence来表示隐含向量与标准正态分布之间差异的loss，另外一个loss仍然使用生成图片与原图片的均方误差来表示。</p>
+
+<h2 id="kl消失">KL消失</h2>
+<p>KL消失后，VAE就变成了AE
+原因：</p>
+<ul>
+  <li>KL项本身太容易被优化</li>
+  <li>一旦崩塌，Decoder会忽视Z<sub>x</sub></li>
+  <li>Z<sub>x</sub>的表示学习依赖于Decoder</li>
+</ul>
+
+<h2 id="解决kl消失的思路">解决KL消失的思路</h2>
+<p>…</p>
+
+<h1 id="analyze-pretraining-language-model">Analyze Pretraining Language Model</h1>
+<h2 id="perspective-of-knowledge">Perspective of knowledge</h2>
+<ul>
+  <li>Syntacitic/Semantic/lexical 句法，语义，词汇</li>
+  <li>重构语法树</li>
+  <li>Attention中很多头可能没有用，学到了很多冗余的信息</li>
+  <li>Analyze Feed Forward Neural Network</li>
+  <li>浅层词汇信息，深层语义信息</li>
+  <li>Prompt</li>
+</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[组会笔记]]></summary></entry><entry><title type="html">推荐系统</title><link href="http://localhost:4000/Recommender_system.html" rel="alternate" type="text/html" title="推荐系统" /><published>2021-12-16T00:00:00+08:00</published><updated>2021-12-16T00:00:00+08:00</updated><id>http://localhost:4000/Recommender_system</id><content type="html" xml:base="http://localhost:4000/Recommender_system.html"><![CDATA[<!-- TOC -->
 
 <ul>
   <li><a href="#1-推荐系统总览">1. 推荐系统总览</a>
@@ -5005,1535 +5374,4 @@
   <li>标题，下面有姓名学号电话等等</li>
   <li>摘要</li>
   <li>正文</li>
-</ol>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[《机器人》课程随堂笔记]]></summary></entry><entry><title type="html">数据挖掘</title><link href="http://localhost:4000/datamining.html" rel="alternate" type="text/html" title="数据挖掘" /><published>2021-12-10T00:00:00+08:00</published><updated>2021-12-10T00:00:00+08:00</updated><id>http://localhost:4000/datamining</id><content type="html" xml:base="http://localhost:4000/datamining.html"><![CDATA[<!-- TOC -->
-
-<ul>
-  <li><a href="#总体情况">总体情况</a>
-    <ul>
-      <li><a href="#第一章-开始数据挖掘之旅">第一章 开始数据挖掘之旅</a>
-        <ul>
-          <li><a href="#11-亲和性分析">1.1 亲和性分析</a></li>
-          <li><a href="#12-分类">1.2 分类</a></li>
-        </ul>
-      </li>
-      <li><a href="#第二章-用scikit-learn估计器分类">第二章 用scikit-learn估计器分类</a>
-        <ul>
-          <li><a href="#21-scikit-learn">2.1 scikit-learn</a></li>
-          <li><a href="#22-邻近算法knn">2.2 邻近算法KNN</a></li>
-        </ul>
-      </li>
-      <li><a href="#第三章-用决策树预测获胜球队">第三章 用决策树预测获胜球队</a>
-        <ul>
-          <li><a href="#31-决策树">3.1 决策树</a></li>
-          <li><a href="#32-随机森林">3.2 随机森林</a></li>
-        </ul>
-      </li>
-      <li><a href="#第四章-用亲和性分析方法推荐电影">第四章 用亲和性分析方法推荐电影</a>
-        <ul>
-          <li><a href="#41-亲和性分析">4.1 亲和性分析</a></li>
-          <li><a href="#42-apriori算法">4.2 Apriori算法</a></li>
-        </ul>
-      </li>
-      <li><a href="#第五章-用转换器抽取特征">第五章 用转换器抽取特征</a>
-        <ul>
-          <li><a href="#51-抽取特征">5.1 抽取特征</a></li>
-          <li><a href="#52-特征选择">5.2 特征选择</a></li>
-          <li><a href="#53-创建特征">5.3 创建特征</a></li>
-        </ul>
-      </li>
-      <li><a href="#第六章-使用朴素贝叶斯进行社会媒体挖掘">第六章 使用朴素贝叶斯进行社会媒体挖掘</a>
-        <ul>
-          <li><a href="#61-消歧">6.1 消歧</a></li>
-          <li><a href="#62-文本转换器">6.2 文本转换器</a></li>
-          <li><a href="#63-朴素贝叶斯">6.3 朴素贝叶斯</a></li>
-          <li><a href="#64-f1值">6.4 F1值</a></li>
-        </ul>
-      </li>
-      <li><a href="#第九章-作者归属问题">第九章 作者归属问题</a>
-        <ul>
-          <li><a href="#91-作者归属">9.1 作者归属</a></li>
-          <li><a href="#92-支持向量机">9.2 支持向量机</a></li>
-          <li><a href="#93-基础svm的局限性">9.3 基础SVM的局限性</a></li>
-        </ul>
-      </li>
-      <li><a href="#第十章-新闻语料分类">第十章 新闻语料分类</a>
-        <ul>
-          <li><a href="#101-新闻语料聚类">10.1 新闻语料聚类</a></li>
-          <li><a href="#102-k-means算法">10.2 K-means算法</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<!-- /TOC -->
-
-<h1 id="总体情况">总体情况</h1>
-<ul>
-  <li>书籍:Python数据挖掘入门与实践</li>
-  <li>github_url:https://github.com/LinXueyuanStdio/PythonDataMining</li>
-  <li>配套代码和笔记，很适合迅速上手</li>
-  <li>这篇博客主要记录一些比较重要的算法</li>
-</ul>
-
-<h2 id="第一章-开始数据挖掘之旅">第一章 开始数据挖掘之旅</h2>
-<h3 id="11-亲和性分析">1.1 亲和性分析</h3>
-<ul>
-  <li>亲和性分析根据样本个体（物体）之间的<strong>相似度</strong>，确定它们关系的亲疏。</li>
-  <li>例子：商品推荐。</li>
-  <li>我们要找出“如果顾客购买了商品X，那么他们可能愿意购买商品Y”这样的规则。简单粗暴的做法是，找出数据集中所有同时购买的两件商品。找出规则后，还需要判断其优劣，我们挑好的规则用。</li>
-  <li>规则的优劣有多种判断标准，常用的有支持度(support)和置信度(confidence)</li>
-  <li>支持度：数据集中规则应验的次数，统计起来很简单。有时候，还需要对支持度进行规范化，即再除以规则有效前提下的总数量。</li>
-  <li>置信度是衡量规则的准确性如何。</li>
-</ul>
-
-<h3 id="12-分类">1.2 分类</h3>
-<ul>
-  <li>根据特征分出类别</li>
-  <li>例子：Iris植物分类数据集，通过四个特征分出三个类别</li>
-  <li>特征连续值变成离散值</li>
-  <li>OneR算法：它根据已有数据中，具有相同特征值的个体最可能属于哪个类别进行分类。比如对于某一个特征值来说，属于A的类别有80个，属于B的类别有20个，那么对于这个特征值来说，取值为1代表为A类别，错误率有20％。给出所有特征值，找出错误率最小的特征值作为判断标准。</li>
-</ul>
-
-<h2 id="第二章-用scikit-learn估计器分类">第二章 用scikit-learn估计器分类</h2>
-<h3 id="21-scikit-learn">2.1 scikit-learn</h3>
-<p>scikit-learn里面已经封装好很多数据挖掘的算法</p>
-
-<p>现介绍数据挖掘框架的搭建方法：</p>
-
-<ul>
-  <li>转换器（Transformer）用于数据预处理，数据转换</li>
-  <li>流水线（Pipeline）组合数据挖掘流程，方便再次使用（封装）</li>
-  <li>估计器（Estimator）用于分类，聚类，回归分析（各种算法对象）
-    <ul>
-      <li>所有的估计器都有下面2个函数
-        <ul>
-          <li>fit() 训练
-            <ul>
-              <li>用法：estimator.fit(X_train, y_train)，</li>
-              <li>estimator = KNeighborsClassifier() 是scikit-learn算法对象</li>
-              <li>X_train = dataset.data 是numpy数组</li>
-              <li>y_train = dataset.target 是numpy数组</li>
-            </ul>
-          </li>
-          <li>predict() 预测
-            <ul>
-              <li>用法：estimator.predict(X_test)</li>
-              <li>estimator = KNeighborsClassifier() 是scikit-learn算法对象</li>
-              <li>X_test = dataset.data 是numpy数组</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="22-邻近算法knn">2.2 邻近算法KNN</h3>
-<p>邻近算法，或者说K最邻近（KNN，K-NearestNeighbor）分类算法是数据挖掘分类技术中最简单的方法之一。所谓K最近邻，就是K个最近的邻居的意思，说的是每个样本都可以用它最接近的K个邻近值来代表。近邻算法就是将数据集合中每一个记录进行分类的方法。</p>
-
-<p>例子：分类，Ionosphere数据集</p>
-
-<h2 id="第三章-用决策树预测获胜球队">第三章 用决策树预测获胜球队</h2>
-
-<h3 id="31-决策树">3.1 决策树</h3>
-<p>例子：预测NBA球队获胜情况</p>
-
-<p>决策树是一种树形结构，其中每个内部节点表示一个属性上的测试，每个分支代表一个测试输出，每个叶节点代表一种类别。</p>
-
-<p>分类树（决策树）是一种十分常用的分类方法。它是一种监督学习，所谓监督学习就是给定一堆样本，每个样本都有一组属性和一个类别，这些类别是事先确定的，那么通过学习得到一个分类器，这个分类器能够对新出现的对象给出正确的分类。这样的机器学习就被称之为监督学习。</p>
-
-<p>scikit-learn库实现了分类回归树（Classification and Regression Trees，CART）算法并将其作为生成决策树的默认算法，它支持连续型特征和类别型特征。</p>
-
-<h3 id="32-随机森林">3.2 随机森林</h3>
-<p>随机森林指的是利用多棵树对样本进行训练并预测的一种分类器。</p>
-
-<p>在机器学习中，随机森林是一个包含多个决策树的分类器， 并且其输出的类别是由个别树输出的类别的众数而定。</p>
-
-<h2 id="第四章-用亲和性分析方法推荐电影">第四章 用亲和性分析方法推荐电影</h2>
-<h3 id="41-亲和性分析">4.1 亲和性分析</h3>
-<p>亲和性分析就是分析两个样本之间的疏密关系，常用的算法有Apriori，Apriori算法的一大特点是根据最小支持度生成<strong>频繁项集</strong>（frequent itemest），它只从数据集中频繁出现的商品中选取共同出现的商品组成频繁项集。其他亲和性分析算法有Eclat和频繁项集挖掘算法（FP-growth）。</p>
-
-<h3 id="42-apriori算法">4.2 Apriori算法</h3>
-<p>Apriori算法主要有两个阶段，第一个阶段是根据最小支持度生成频繁项集，第二个阶段是根据最小置信度选择规则，返回规则。</p>
-
-<p>本章的例子是电影推荐。</p>
-
-<p>第一个阶段，算法会先生成长度较小的项集，再将这个项集作为超集寻找长度较大的项集。</p>
-
-<p>第二个阶段是从频繁项集中抽取关联规则。把其中几部电影作为前提，另一部电影作为结论。组成如下形式的规则：如果用户喜欢前提中的所有电影，那么他们也会喜欢结论中的电影。</p>
-
-<h2 id="第五章-用转换器抽取特征">第五章 用转换器抽取特征</h2>
-<h3 id="51-抽取特征">5.1 抽取特征</h3>
-<p>抽取数据集的特征是重要的一步，在之前的学习中我们都获得了数据集的特征，但很多没有处理的文本特征并不是很明显，比如一段文本等等。特征值可以分为连续特征，序数特征，类别型特征。</p>
-
-<h3 id="52-特征选择">5.2 特征选择</h3>
-<p>通常特征有很多，但我们只想选择其中一部分。<strong>选用干净的数据，选取更具描述性的特征。</strong>判断特征相关性：书中列举的例子是判断一个人的收入能不能超过五万，利用单变量卡方检验(或者皮尔逊相关系数)判断各个特征的相关性，然后给出了三个最好的特征，分别是年龄，资本收入和资本损失。</p>
-
-<h3 id="53-创建特征">5.3 创建特征</h3>
-<p>主成分分析算法（Principal Component Analysis，PCA）的目的是找到能用较少信息描述数据集的特征组合。</p>
-
-<h2 id="第六章-使用朴素贝叶斯进行社会媒体挖掘">第六章 使用朴素贝叶斯进行社会媒体挖掘</h2>
-<h3 id="61-消歧">6.1 消歧</h3>
-<p>本章我们将处理文本，文本通常被称为无结构格式。文本挖掘的一个难点来自于歧义，比如bank一词多义。本章将探讨区别Twitter消息中Python的意思。</p>
-
-<h3 id="62-文本转换器">6.2 文本转换器</h3>
-<p>Python中处理文本的库NLTK(Natural Language Toolkit)。据作者说很好用，可以作自然语言处理。N元语法是指由连续的词组成的子序列。</p>
-
-<h3 id="63-朴素贝叶斯">6.3 朴素贝叶斯</h3>
-<p>朴素贝叶斯概率模型是以对贝叶斯统计方法的朴素解释为基础。</p>
-
-<p>贝叶斯定理公式如下：</p>
-
-<p>$ P(A|B) = \frac {P(B|A)P(A)}{P(B)} $</p>
-
-<p>贝叶斯公式可以用它来计算个体属于给定类别的概率。朴素贝叶斯算法假定了各个特征之间相互独立，那么我们计算文档D属于类别C的概率为P(D|C)=P(D1|C)*P(D2|C)…P(Dn|C)。贝叶斯分类器是输入数据来更新贝叶斯的先验概率和后验概率，输入贝叶斯模型后，返回不同类别中概率的最大值。</p>
-
-<p>示例：</p>
-
-<blockquote>
-  <p>举例说明下计算过程，假如数据集中有以下一条用二值特征表示的数据：[1, 0, 0, 1]。<br />
-训练集中有75%的数据属于类别0，25%属于类别1，且每个特征属于每个类别的似然度如下。<br />
-类别0：[0.3, 0.4, 0.4, 0.7] <br />
-类别1：[0.7, 0.3, 0.4, 0.9] <br />
-拿类别0中特征1的似然度举例子，上面这两行数据可以这样理解：类别0中有30%的数据，特征1的值为1。<br />
-我们来计算一下这条数据属于类别0的概率。类别为0时，P(C=0) = 0.75。<br />
-朴素贝叶斯算法用不到P(D)，因此我们不用计算它。我们来看下计算过程。<br />
-P(D|C=0) = P(D1|C=0) x P(D2|C=0) x P(D3|C=0) x P(D4|C=0)<br />
-= 0.3 x 0.6 x 0.6 x 0.7 <br />
-= 0.0756 <br />
-现在，我们就可以计算该条数据从属于每个类别的概率。需要提醒的是，我们没有计算P(D)，因此，计算结果不是实际的概率。由于两次都不计算P(D)，结果具有可比较性，能够区分出大小就足够了。来看下计算结果。<br />
-P(C=0|D) = P(C=0) P(D|C=0) <br />
-= 0.75 * 0.0756 <br />
-= 0.0567</p>
-</blockquote>
-
-<h3 id="64-f1值">6.4 F1值</h3>
-<p>F1值是一种评价指标。F1值是以每个类别为基础进行定义的，包括两大概念：准确率（precision）和召回率（recall）。准确率是指预测结果属于某一类的个体，实际属于该类的比例。召回率是指被正确预测为某个类别的个体数量与数据集中该类别个体总量的比例。F1值是准确率和召回率的调和平均数。</p>
-
-<h2 id="第九章-作者归属问题">第九章 作者归属问题</h2>
-<h3 id="91-作者归属">9.1 作者归属</h3>
-<p>作者归属（authorship attribution）是作者分析的一个细分领域，研究目标是从一组可能的作者中找到文档真正的主人。利用功能词进行分类，功能词是指本身含义很少，但是是组成句子必不可少的部分。</p>
-
-<h3 id="92-支持向量机">9.2 支持向量机</h3>
-<p>支持向量机（SVM）分类算法背后的思想很简单，它是一种二类分类器（扩展后可用来对多个类别进行分类）。假如我们有两个类别的数据，而这两个类别恰好能被一条线分开，线上所有点为一类，线下所有点属于另一类。SVM要做的就是找到这条线，用它来做预测，跟线性回归原理很像。</p>
-
-<p>下图中有三条线，那么哪一条线的分类效果最好呢？直觉告诉我们从左下到右上的这一条线效果最好，因为每一个点到这条线的距离最远，那么寻找这条线就变成了最优化问题。</p>
-
-<p><img src="../assets/img/posts/20211210/2.jpg" /></p>
-
-<p>对于多种类别的分类问题，我们创建多个SVM分类器，其中每个SVM分类器还是二分类。连接多个分类器的方法有很多，比如说我们可以将每个类别创建一对多分类器。把训练数据分为两个类别——属于特定类别的数据和其他所有类别数据。对新数据进行分类时，从这些类别中找出最匹配的。</p>
-
-<h3 id="93-基础svm的局限性">9.3 基础SVM的局限性</h3>
-<p>最基础的SVM只能区分线性可分的两种类别，如果数据线性不可分，就需要将其置入更高维的空间中，加入更多伪特征直到数据线性可分。寻找最佳分隔线时往往需要计算个体之间的内积。我们把内核函数定义为数据集中两个个体函数的点积。</p>
-
-<p>常用的内核函数有几种。线性内核最简单，它无外乎两个个体的特征向量的点积、带权重的特征和偏置项。多项式内核提高点积的阶数（比如2）。此外，还有高斯内核（rbf）、Sigmoind内核。</p>
-
-<h2 id="第十章-新闻语料分类">第十章 新闻语料分类</h2>
-<h3 id="101-新闻语料聚类">10.1 新闻语料聚类</h3>
-<p>之前我们研究的都是监督学习，在已经知道类别的情况下进行分类。本章着眼于无监督学习，聚类。</p>
-
-<h3 id="102-k-means算法">10.2 K-means算法</h3>
-<p>k-means聚类算法迭代寻找最能够代表数据的聚类质心点。算法开始时使用从训练数据中随机选取的几个数据点作为质心点。k-means中的k表示寻找多少个质心点，同时也是算法将会找到的簇的数量。例如，把k设置为3，数据集所有数据将会被分成3个簇。</p>
-
-<p>k-means算法分为两个步骤：为每一个数据点分配簇标签，更新各簇的质心点。k-means算法会重复上述两个步骤；每次更新质心点时，所有质心点将会小范围移动。这会
-轻微改变每个数据点在簇内的位置，从而引发下一次迭代时质心点的变动。这个过程会重复执行直到条件不再满足时为止。通常是在迭代一定次数后，或者当质心点的整体移动量很小时，就可以终止算法的运行。有时可以等算法自行终止运行，这表明簇已经相当稳定——数据点所属的簇不再变动，质心点也不再改变时。</p>
-
-<p><img src="../assets/img/posts/20211210/3.jpg" /></p>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[《Python数据挖掘入门与实践》笔记]]></summary></entry><entry><title type="html">RACE数据集相关文献</title><link href="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html" rel="alternate" type="text/html" title="RACE数据集相关文献" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE</id><content type="html" xml:base="http://localhost:4000/RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html"><![CDATA[<h1 id="目录"><strong>目录</strong></h1>
-
-<ul>
-  <li><a href="#目录"><strong>目录</strong></a></li>
-  <li><a href="#文献整理">文献整理</a>
-    <ul>
-      <li><a href="#要求">要求</a></li>
-      <li><a href="#搜集到相关文献标题和地址">搜集到相关文献标题和地址</a></li>
-    </ul>
-  </li>
-  <li><a href="#第一篇">第一篇</a>
-    <ul>
-      <li><a href="#title">Title</a></li>
-      <li><a href="#author">Author</a></li>
-      <li><a href="#abstract">Abstract</a></li>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#bert-distractor-generation">BERT distractor generation</a>
-        <ul>
-          <li><a href="#1bert-based-distractor-generationbdg">1)BERT-based distractor generation(BDG)</a></li>
-          <li><a href="#2multi-task-with-parallel-mlm">2)Multi-task with Parallel MLM</a></li>
-          <li><a href="#3answer-negative-regularization">3)Answer Negative Regularization</a></li>
-        </ul>
-      </li>
-      <li><a href="#multiple-distractor-generation">Multiple Distractor Generation</a>
-        <ul>
-          <li><a href="#1selecting-distractors-by-entropy-maximization">1)Selecting Distractors by Entropy Maximization</a></li>
-          <li><a href="#2bdg-em">2)BDG-EM</a></li>
-        </ul>
-      </li>
-      <li><a href="#performance-evaluation">Performance Evaluation</a>
-        <ul>
-          <li><a href="#1datasets">1)datasets</a></li>
-          <li><a href="#2implementation-details">2)implementation details</a></li>
-          <li><a href="#3compared-methods">3)compared methods</a></li>
-          <li><a href="#4token-score-comparison">4)token score comparison</a></li>
-          <li><a href="#5mcq-model-accuracy-comparison">5)MCQ Model Accuracy Comparison</a></li>
-          <li><a href="#6parameter-study-on-γ">6）Parameter Study on γ</a></li>
-        </ul>
-      </li>
-      <li><a href="#conclusion">Conclusion</a></li>
-      <li><a href="#我的看法">我的看法</a></li>
-    </ul>
-  </li>
-  <li><a href="#第二篇">第二篇</a>
-    <ul>
-      <li><a href="#title-1">Title</a></li>
-      <li><a href="#author-1">Author</a></li>
-      <li><a href="#abstract-1">Abstract</a></li>
-      <li><a href="#method">Method</a>
-        <ul>
-          <li><a href="#1question-generation">1)question generation</a></li>
-          <li><a href="#2distractor-generation">2)distractor generation</a></li>
-          <li><a href="#3qa-filtering">3)QA filtering</a></li>
-        </ul>
-      </li>
-      <li><a href="#results">Results</a>
-        <ul>
-          <li><a href="#1quantitative-evaluation">1)quantitative evaluation</a></li>
-          <li><a href="#2question-answering-ability">2)question answering ability</a></li>
-          <li><a href="#3human-evaluation">3)human evaluation</a></li>
-        </ul>
-      </li>
-      <li><a href="#conclusion">conclusion</a></li>
-    </ul>
-  </li>
-  <li><a href="#第三篇">第三篇</a>
-    <ul>
-      <li><a href="#title-2">Title</a></li>
-      <li><a href="#author-2">Author</a></li>
-      <li><a href="#abstract-2">Abstract</a></li>
-      <li><a href="#framework-description-网络结构">Framework Description 网络结构</a>
-        <ul>
-          <li><a href="#1task-definition">1)Task Definition</a></li>
-          <li><a href="#2framework-overview">2)Framework overview</a></li>
-          <li><a href="#3hierarchical-encoder">3)Hierarchical encoder</a></li>
-          <li><a href="#4static-attention-mechanism">4)static attention mechanism</a></li>
-          <li><a href="#5encoding-layer">5)encoding layer</a></li>
-          <li><a href="#6matching-layer">6)matching layer</a></li>
-          <li><a href="#7nomalization-layer">7)nomalization layer</a></li>
-          <li><a href="#8distractor-decoder">8)distractor decoder</a></li>
-          <li><a href="#9question-based-initializer">9)question-based initializer</a></li>
-          <li><a href="#10dynamic-hierarchical-attention-mechanism">10)dynamic hierarchical attention mechanism</a></li>
-          <li><a href="#11training-and-inference">11)training and inference</a></li>
-        </ul>
-      </li>
-      <li><a href="#experimental-setting-实验设置">experimental setting 实验设置</a>
-        <ul>
-          <li><a href="#1dataset">1)dataset</a></li>
-          <li><a href="#2implementation-details-1">2)implementation details</a></li>
-          <li><a href="#3baselines-and-ablations">3)baselines and ablations</a></li>
-        </ul>
-      </li>
-      <li><a href="#results-and-analysis-结果与分析">results and analysis 结果与分析</a></li>
-      <li><a href="#我的看法-1">我的看法</a></li>
-    </ul>
-  </li>
-  <li><a href="#第四篇">第四篇</a>
-    <ul>
-      <li><a href="#title-3">Title</a></li>
-      <li><a href="#author-3">Author</a></li>
-      <li><a href="#abstract-3">Abstract</a></li>
-      <li><a href="#proposed-framework-网络结构">Proposed Framework 网络结构</a>
-        <ul>
-          <li><a href="#1notations-and-task-definition">1)notations and task definition</a></li>
-          <li><a href="#2model-overview">2)model overview</a></li>
-          <li><a href="#3encoding-article-and-question">3)encoding article and question</a></li>
-          <li><a href="#4co-attention-between-article-and-question">4)Co-attention between article and question</a></li>
-          <li><a href="#5merging-sentence-representation">5)Merging sentence representation</a></li>
-          <li><a href="#6question-initialization">6)question initialization</a></li>
-          <li><a href="#7hierarchical-attention">7)hierarchical attention</a></li>
-          <li><a href="#8semantic-similarity-loss">8)semantic similarity loss</a></li>
-        </ul>
-      </li>
-      <li><a href="#experimental-settings">Experimental Settings</a>
-        <ul>
-          <li><a href="#1dataset-1">1)dataset</a></li>
-          <li><a href="#2baselines-and-evaluation-metrics">2)baselines and evaluation metrics</a></li>
-          <li><a href="#3implementation-details">3)implementation details</a></li>
-        </ul>
-      </li>
-      <li><a href="#results-and-analysis-结果与分析">Results and Analysis 结果与分析</a></li>
-      <li><a href="#我的看法-2">我的看法</a></li>
-    </ul>
-  </li>
-  <li><a href="#补充">补充</a>
-    <ul>
-      <li><a href="#race数据集简介">RACE数据集简介</a></li>
-      <li><a href="#bleu">BLEU</a></li>
-      <li><a href="#rouge">ROUGE</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="文献整理">文献整理</h1>
-
-<h2 id="要求">要求</h2>
-
-<p><img src="../assets/img/posts/20211130/requirements.jpg" /></p>
-
-<h2 id="搜集到相关文献标题和地址">搜集到相关文献标题和地址</h2>
-<ul>
-  <li><a href="https://arxiv.org/pdf/2010.05384.pdf">A BERT-based Distractor Generation Scheme with Multi-tasking and Negative Answer Training Strategies</a></li>
-  <li><a href="https://arxiv.org/pdf/2010.09598.pdf">Better Distractions: Transformer-based Distractor Generation and Multiple Choice Question Filtering</a></li>
-  <li><a href="https://ojs.aaai.org//index.php/AAAI/article/view/4606">Generating Distractors for Reading Comprehension Questions from Real Examinations</a></li>
-  <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/6522">Co-attention hierarchical network: Generating coherent long distractors for reading comprehension</a></li>
-  <li><a href="https://aclanthology.org/2020.coling-main.189.pdf">Automatic Distractor Generation for Multiple Choice Questions in Standard Tests</a></li>
-  <li><a href="https://aclanthology.org/W18-0533.pdf">Distractor Generation for Multiple Choice Questions Using Learning to Rank</a></li>
-  <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/16559">Knowledge-Driven Distractor Generation for Cloze-style Multiple Choice Questions</a></li>
-</ul>
-
-<h1 id="第一篇">第一篇</h1>
-<h2 id="title">Title</h2>
-<p>A BERT-based Distractor Generation Scheme with Multi-tasking and
-Negative Answer Training Strategies</p>
-<h2 id="author">Author</h2>
-<p>Ho-Lam Chung, Ying-Hong Chan, Yao-Chung Fan</p>
-<h2 id="abstract">Abstract</h2>
-<p>现有的DG<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>局限在只能生成一个误导选项，我们需要生成多个误导选项，文章中提到他们团队用multi-tasking和negative answer training技巧来生成多个误导选项，模型结果达到了学界顶尖。</p>
-
-<h2 id="introduction">Introduction</h2>
-<p>DG效果不好，文章提出了两个提升的空间：</p>
-<ol>
-  <li>DG质量提升：<br />
- BERT模型来提升误导选项质量</li>
-  <li>多个误导选项生成：
- 运用了覆盖的方法来选择distractor，而不是选择概率最高但是语义很相近的distractor</li>
-</ol>
-
-<h2 id="bert-distractor-generation">BERT distractor generation</h2>
-<h3 id="1bert-based-distractor-generationbdg">1)BERT-based distractor generation(BDG)</h3>
-<p>输入：段落P，答案A，问题Q，用C表示这三者concatenate后的结果。<br />
-BDG模型是一个自回归模型，在预测阶段，每次输入C和上一次预测的词元，BDG迭代预测词元，直到预测出特殊词元[S]停止。下面这张图简单介绍了这个过程。</p>
-
-<p><img src="../assets/img/posts/20211130/2.jpg" /></p>
-
-<p>网络结构简单介绍：h<sub>[M]</sub>表示bert输出的隐藏状态，隐藏状态再输入到一个全连接层中用来预测词元。</p>
-
-<p><img src="../assets/img/posts/20211130/3.jpg" /></p>
-
-<h3 id="2multi-task-with-parallel-mlm">2)Multi-task with Parallel MLM</h3>
-<p>MLM全称masked language model，遮蔽语言模型,通过并行BDG和P-MLM来训练模型让模型有更好的效果。</p>
-
-<p><img src="../assets/img/posts/20211130/4.jpg" /></p>
-
-<p>上图中左边的sequential MLM就是之前提到的BDG，BDG模型是一个词接一个词的预测，P-MLM是对所有的masked token进行预测，最后的损失函数是这两者相加<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>，公式如下：</p>
-
-<p><img src="../assets/img/posts/20211130/5.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/6.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/7.jpg" /></p>
-
-<p>作者如此设计的思路是：BDG可能会忽略整体语义语义信息，但是会过拟合单个词预测。那么并行一个P-MLM可以防止过拟合。</p>
-
-<h3 id="3answer-negative-regularization">3)Answer Negative Regularization</h3>
-<p>目前机器预测的distractor和answer有很高的相似度，下面一张表可以展示相似度。其中PM表示机器，Gold表示人工，作者将这类问题称为answer copying problem。</p>
-
-<p><img src="../assets/img/posts/20211130/8.jpg" /></p>
-
-<p>为了解决这个问题，作者提出了answer negative loss来让机器更多的选择与answer不同的词来表示新的distractor，公式如下：</p>
-
-<p><img src="../assets/img/posts/20211130/9.jpg" /></p>
-
-<p>可以看出BDG的loss替换成了AN的loss，每一项都减去了Answer negative loss。</p>
-
-<h2 id="multiple-distractor-generation">Multiple Distractor Generation</h2>
-<h3 id="1selecting-distractors-by-entropy-maximization">1)Selecting Distractors by Entropy Maximization</h3>
-<p>选择语义不同的distractor set。文章借鉴了MRC<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>的方法，让BDGmodel生成很多distractor组成 $\hat{D}$ = {$\hat{d}$<sub>1</sub>, $\hat{d}$<sub>2</sub>, $\hat{d}$<sub>3</sub>…}，然后找出最好的一组选项，一般情况下由三个误导选项和一个答案组成。选择的一句是最大化下面这个公式：</p>
-
-<p><img src="../assets/img/posts/20211130/10.jpg" /></p>
-
-<h3 id="2bdg-em">2)BDG-EM</h3>
-<p>我们可以通过不同的BDG模型来生成不同的误导选项最后组合，不同的模型区别是有没有answer negative/multi-task training，比如我们有这几个模型:$\hat{D}$,$\hat{D}$<sub>PM</sub>,$\hat{D}$<sub>PM+AN</sub>，它们分别代表含PM<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>和含AN<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup></p>
-
-<p><img src="../assets/img/posts/20211130/11.jpg" /></p>
-
-<h2 id="performance-evaluation">Performance Evaluation</h2>
-<h3 id="1datasets">1)datasets</h3>
-<p>RACE,沿用了<a href="https://ojs.aaai.org//index.php/AAAI/article/view/4606">Gao</a>那篇论文的处理,后面也会梳理那篇论文</p>
-
-<p><img src="../assets/img/posts/20211130/12.jpg" /></p>
-
-<h3 id="2implementation-details">2)implementation details</h3>
-<ul>
-  <li>tokenizer: wordpiece tokenizer</li>
-  <li>framewordk:huggingface trainsformers</li>
-  <li>optimizer:adamW(lr:5e-5)</li>
-  <li>github_url: <a href="https://github.com/voidful/BDG">BDG</a></li>
-</ul>
-
-<h3 id="3compared-methods">3)compared methods</h3>
-<p>比较了不同的distractor generation</p>
-<ul>
-  <li>CO-Att：出自<a href="https://ojs.aaai.org/index.php/AAAI/article/view/6522">Zhou</a></li>
-  <li>DS-Att: 出自<a href="https://ojs.aaai.org//index.php/AAAI/article/view/4606">Gao</a></li>
-  <li>GPT:baseline</li>
-  <li>BDG: 没有应用P-MLM和Answer negative</li>
-  <li>BDG<sub>PM</sub></li>
-  <li>BDG<sub>AN+PM</sub></li>
-</ul>
-
-<h3 id="4token-score-comparison">4)token score comparison</h3>
-<p>BLEU和ROUGE(L)两种判断指标</p>
-
-<p><img src="../assets/img/posts/20211130/13.jpg" /></p>
-
-<p>copying problem的效果</p>
-
-<p><img src="../assets/img/posts/20211130/14.jpg" /></p>
-
-<h3 id="5mcq-model-accuracy-comparison">5)MCQ Model Accuracy Comparison</h3>
-<p>与回答系统相结合，将生成好的选项（一个正确答案三个误导选项）放入MCQ answering model，下面是回答正确率的表格</p>
-
-<p><img src="../assets/img/posts/20211130/15.jpg" /></p>
-
-<p>可以看出作者的模型选项的误导性还是很高的。</p>
-
-<h3 id="6parameter-study-on-γ">6）Parameter Study on γ</h3>
-<p>之前使用P-MLM并行训练时候有个权重参数γ，下表显示了不同γ值的影响，对于只有PM的模型来说，γ=6，对于既有AN和PM来说，γ=7</p>
-
-<p><img src="../assets/img/posts/20211130/16.jpg" /></p>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>现存的DG可以分为cloze-style distractor generation和 reading comprehension distractor generation，前者主要是word filling，后者主要看重语义信息，基于两者的设计出了很多模型，目前来看还是考虑语义信息生成的误导选项更好。</p>
-
-<p><img src="../assets/img/posts/20211130/17.jpg" /></p>
-
-<h2 id="我的看法">我的看法</h2>
-<p>文章中的模型提到了三种技术，第一是bert预训练模型使用。第二是P-MLM的并行使用， 它的使用让模型可以考虑段落的语义信息，那么生成的误导选项是sentence-level而不是之前模型所使用的类似word-filling这种word-level。第三是Answer negative loss的使用，它的使用相当于让模型不要考虑与正确答案语义很接近的误导选项，因为目前大多数DG生成多个选项时语义与正确答案都非常接近，这与实际情况不符，同时也起不到误导的作用。  <br />
-同时文章提出了生成多个误导选项时使用不同模型生成的误导选项拼在一起作为选项是一种比较好的解决方法，让一次性生成多个误导选型有了一定的可用性。<br />
-文章的代码开源，可以去<a href="https://github.com/voidful/BDG">github</a>上看训练细节和网络结构细节。</p>
-
-<h1 id="第二篇">第二篇</h1>
-<h2 id="title-1">Title</h2>
-<p>Better Distractions: Transformer-based Distractor Generation and Multiple Choice Question Filtering</p>
-<h2 id="author-1">Author</h2>
-<p>Jeroen Offerijns, Suzan Verberne, Tessa Verhoef</p>
-<h2 id="abstract-1">Abstract</h2>
-<p>运用GPT2模型生成三个误导选项，同时用BERT模型去回答这个问题，只挑选出回答正确的问题。相当于使用了QA作为一个过滤器(QA filtering)。</p>
-<h2 id="method">Method</h2>
-<p>作者使用了Question generation model, distractor generation model和question answer filter，作者将从这三方面介绍，下图是大概的流程图。</p>
-
-<p><img src="../assets/img/posts/20211130/18.jpg" /></p>
-
-<h3 id="1question-generation">1)question generation</h3>
-<ul>
-  <li>预训练模型：GPT-2</li>
-  <li>数据集：English SQuAD</li>
-  <li>tokenizer：Byte-Pair-Encoding(BPE) tokenizer</li>
-  <li>optimizer:Adam</li>
-  <li>下图展示了QG的输入，黑框内被tokenizer标记为特殊词元</li>
-</ul>
-
-<p><img src="../assets/img/posts/20211130/19.jpg" /></p>
-
-<h3 id="2distractor-generation">2)distractor generation</h3>
-<ul>
-  <li>预训练模型：GPT-2</li>
-  <li>数据集：RACE</li>
-  <li>tokenizer:BPE<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup></li>
-  <li>使用了repetition penalty技术，保证了尽量不会生成相似的text，并且过滤到那些不好的生成（比如生成了空字符串）</li>
-  <li>输入：经典的C(context)，A(answer),Q(question)，下图展示了输入格式</li>
-</ul>
-
-<p><img src="../assets/img/posts/20211130/20.jpg" /></p>
-
-<h3 id="3qa-filtering">3)QA filtering</h3>
-<ul>
-  <li>预训练模型：DistilBERT</li>
-  <li>网络结构：CQA<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>输入到distilbert，再连接一个dropout，全连接层和softmax，最后输出一个答案，具体结构如下图</li>
-</ul>
-
-<p><img src="../assets/img/posts/20211130/21.jpg" /></p>
-
-<h2 id="results">Results</h2>
-<h3 id="1quantitative-evaluation">1)quantitative evaluation</h3>
-<p>下表中展示了和上一篇论文类似的指标,与现有的模型进行了比较：SEQ2SEQ,HSA<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>和CHN<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>。可以看出BLEU明显要比之前模型要好，但是ROUGE没有之前的高。</p>
-
-<p><img src="../assets/img/posts/20211130/22.jpg" /></p>
-
-<h3 id="2question-answering-ability">2)question answering ability</h3>
-<p>用GPT-2模型生成误导选项再输入到QAmodel中，具体结果见下图。</p>
-
-<p><img src="../assets/img/posts/20211130/23.jpg" /></p>
-
-<h3 id="3human-evaluation">3)human evaluation</h3>
-<p>人工评估，从两方面评估distractor生成的好坏：</p>
-<ul>
-  <li><strong>Is the question well-formed and can you understand the meaning?</strong></li>
-  <li><strong>If the question is at least understandable, does the answer make sense in relation to the question?</strong>
-评估过程中，使用了155个没有经过QA筛选和155经过QA筛选的，了解一下QA过滤模型的效果。整体来说QA过滤器还是有一点效果，具体结果如下：</li>
-</ul>
-
-<p><img src="../assets/img/posts/20211130/24.jpg" /></p>
-
-<h2 id="conclusion-1">conclusion</h2>
-<p>我认为作者使用的DG模型主要有两大特色，一个是使用了GPT2预训练模型，目前使用基于transformer的模型已经成为主流。第二个是使用了QA过滤器来筛选掉回答错误的，有一定提升但不显著。</p>
-
-<h1 id="第三篇">第三篇</h1>
-<h2 id="title-2">Title</h2>
-<p>Generating Distractors for Reading Comprehension Questions from Real Examinations</p>
-<h2 id="author-2">Author</h2>
-<p>Yifan Gao, Lidong Bing, Piji Li,
-Irwin King, Michael R. Lyu</p>
-<h2 id="abstract-2">Abstract</h2>
-<p>上面两篇文献都有提到这篇文章。作者使用了<strong>Hierarchical encoder-decoder framework</strong> with <strong>static</strong> and <strong>dynamic</strong> attention mechanisms来生成有语义信息的误导选项。使用了编码器-解码器结构网络和静态和动态注意力机制。</p>
-<h2 id="framework-description-网络结构">Framework Description 网络结构</h2>
-<h3 id="1task-definition">1)Task Definition</h3>
-<p>输入：文章，问题和答案。P代表文章，s<sub>1</sub>,s<sub>2</sub>,s<sub>3</sub>…表示不同的句子，q和a分别表示问题和答案，那么我们的任务是生成误导选项$\overline{d}$。</p>
-
-<p><img src="../assets/img/posts/20211130/25.jpg" /></p>
-
-<h3 id="2framework-overview">2)Framework overview</h3>
-<p>网络结构如下图所示，下面将从各个组成部分分别介绍：</p>
-
-<p><img src="../assets/img/posts/20211130/26.jpg" /></p>
-
-<h3 id="3hierarchical-encoder">3)Hierarchical encoder</h3>
-<ul>
-  <li><strong>word embedding</strong>:词嵌入，将每个句子s<sub>i</sub>中的每个词元变成词向量(w<sub>i,1</sub>,w<sub>i,2</sub>,w<sub>i,3</sub>…)</li>
-  <li><strong>word encoder</strong>:将句子s<sub>i</sub>的词向量(w<sub>i,1</sub>,w<sub>i,2</sub>,w<sub>i,3</sub>…)作为输入，用<strong>双向LSTM</strong>作为编码器，获得word-level representation h<sub>i,j</sub><sup>e</sup></li>
-</ul>
-
-<p><img src="../assets/img/posts/20211130/27.jpg" /></p>
-
-<ul>
-  <li><strong>sentence encoder</strong>:将word encoder中每个句子正向LSTM的最后一个隐藏状态和反向LSTM的最开始的隐藏状态作为输入到另一个双向LSTM中获得<strong>sentence-level representation</strong>(u<sub>1</sub>,u<sub>2</sub>,u<sub>3</sub>…)</li>
-</ul>
-
-<h3 id="4static-attention-mechanism">4)static attention mechanism</h3>
-<p>目的：生成的误导选项必须和问题Q语义相关，但是和答案A必须语义不相关。我们从(s<sub>1</sub>,s<sub>2</sub>,s<sub>3</sub>…)学习到句子的权重分布(γ<sub>1</sub>,γ<sub>2</sub>,γ<sub>3</sub>…)，然后将问题q和答案a作为query。</p>
-
-<h3 id="5encoding-layer">5)encoding layer</h3>
-<p>我们希望把问题q，答案a和句子s都变成一样的长度的向量表示，也就是上图中紫色虚线部分。对于q和a，我们用两个独立的双向LSTM来获得(<strong>a</strong><sub>1</sub>,<strong>a</strong><sub>2</sub>…<strong>a</strong><sub>k</sub>)和(<strong>q</strong><sub>1</sub>,<strong>q</strong><sub>2</sub>…<strong>q</strong><sub>l</sub>)，然后用平均池化层平均一下：</p>
-
-<p><img src="../assets/img/posts/20211130/28.jpg" /></p>
-
-<p>对于句子s，我们不用u而用h：</p>
-
-<p><img src="../assets/img/posts/20211130/29.jpg" /></p>
-
-<h3 id="6matching-layer">6)matching layer</h3>
-<p>目的：加重与问题q有关的句子，减轻与答案a有关的句子。o<sub>i</sub>表示不同句子的importance score</p>
-
-<p><img src="../assets/img/posts/20211130/30.jpg" /></p>
-
-<h3 id="7nomalization-layer">7)nomalization layer</h3>
-<p>目的：有些问题q和一两个句子有关，而有些问题q和很多句子有关，比如summarizing，下面的τ(temperature)就是这个作用</p>
-
-<p><img src="../assets/img/posts/20211130/31.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/32.jpg" /></p>
-
-<p>作者介绍static attention mechanism用了很大篇幅</p>
-
-<h3 id="8distractor-decoder">8)distractor decoder</h3>
-<p>解码器使用的也是LSTM，但是并没有使用编码器的最后一个隐藏状态作为初始状态，而是定义了一个
-<strong>question-based initializer</strong>来让生成的误导选项语法和问题q一致</p>
-
-<h3 id="9question-based-initializer">9)question-based initializer</h3>
-<p>定义了一个question LSTM来编码问题q，使用最后一层的cell state和hidden state作为decoder初始状态，同时输入q<sub>last</sub>，表示问题q的最后一个词元。</p>
-
-<h3 id="10dynamic-hierarchical-attention-mechanism">10)dynamic hierarchical attention mechanism</h3>
-<p>常规的注意力机制将一篇文章作为长句子，然后decoder的每一个时间步都与encoder中所有的hidden state进行比较，但是这种方法并不适合目前的模型。原因：首先LSTM不能处理这么长的输入，其次，一些问题只与部分句子有关。<br />
-目的：每个decoder时间步只关注<strong>重要句子</strong>，作者将这种注意力机制称为动态注意力机制，因为不同的时间步，word-level和sentence-level 注意力分布都不同。<br />
-每一个时间步的输入是词元d<sub>t-1</sub>和上一个隐藏状态h<sub>t-1</sub></p>
-
-<p><img src="../assets/img/posts/20211130/33.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/34.jpg" /></p>
-
-<p>α和β分别表示word-level,sentence-level权重，最后使用之前静态注意力机制获得的γ来调节α和β</p>
-
-<p><img src="../assets/img/posts/20211130/35.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/36.jpg" /></p>
-
-<p>获得上下文变量<strong>c</strong><sub>t</sub></p>
-
-<p><img src="../assets/img/posts/20211130/37.jpg" /></p>
-
-<p>获得attention vector $\tilde{h}$</p>
-
-<p><img src="../assets/img/posts/20211130/38.jpg" /></p>
-
-<h3 id="11training-and-inference">11)training and inference</h3>
-<p>损失函数：</p>
-
-<p><img src="../assets/img/posts/20211130/39.jpg" /></p>
-
-<p>生成多个误导选项的方法是束搜索，但是生成的误导选项很相似，作者做了相应的处理方法，但我觉得效果还是很差</p>
-
-<h2 id="experimental-setting-实验设置">experimental setting 实验设置</h2>
-<h3 id="1dataset">1)dataset</h3>
-<p>RACE数据集，作者做了相应的处理，去掉了很多不合理的和语义不相关的，作者的处理标准是：对于误导选项中的词元，如果它们在文章中出现的次数小于5次，那么将被保留，同时去掉了那些需要在句子中间和句子开始填空的问题。下表展示了处理后的数据集的一些信息：</p>
-
-<p><img src="../assets/img/posts/20211130/40.jpg" /></p>
-
-<h3 id="2implementation-details-1">2)implementation details</h3>
-<p>词表：保留了频率最高的50k个词元，同时使用GloVe作为词嵌入预训练模型。其他的细节都可以在文章中看见，这里不一一列出了，主要是超参数的设置。</p>
-
-<h3 id="3baselines-and-ablations">3)baselines and ablations</h3>
-<p>与HRED<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>和seq2seq比较</p>
-
-<h2 id="results-and-analysis-结果与分析">results and analysis 结果与分析</h2>
-
-<p><img src="../assets/img/posts/20211130/41.jpg" /></p>
-
-<p>人工评估：</p>
-
-<p><img src="../assets/img/posts/20211130/42.jpg" /></p>
-
-<p>大致过程是这样：四个误导选项，分别来自seq2seq，HRED，作者的模型和原本的误导选项，让英语能力很好的人来选择最适合的选项，得出的结果可以发现，作者的模型生成的误导选项拥有最好的误导效果。</p>
-
-<p>下图直观展示了static attention distribution：</p>
-
-<p><img src="../assets/img/posts/20211130/43.jpg" /></p>
-
-<h2 id="我的看法-1">我的看法</h2>
-<p>这篇文章应该是第一个提出用处理后的RACE数据集来处理MCQ问题，处理后的RACE数据集在后面也有很多文献用到，这篇文章使用了seq2seq网络结构同时使用了静态和动态注意力机制，对于网络结构和注意力机制的解释非常完全和详细，虽然这篇文章的效果放到现在来看可能不是最好了，但是它提出来的评估标准可能会成为一个通用的标准。它的数据集和训练代码在<a href="https://github.com/Yifan-Gao/Distractor-Generation-RACE">github</a>上也完全开源。</p>
-
-<h1 id="第四篇">第四篇</h1>
-<h2 id="title-3">Title</h2>
-<p>Co-attention hierarchical network: Generating coherent long distractors for reading comprehension</p>
-<h2 id="author-3">Author</h2>
-<p>Xiaorui Zhou, Senlin Luo, Yunfang Wu</p>
-<h2 id="abstract-3">Abstract</h2>
-<p>这篇文献是针对上一篇Gao的文章(seq2seq)所作的改进。本篇文章提出了Gao的模型的两个问题：1.没有建立文章和问题的关系，他的解决方法是使用<strong>co-attention enhanced hierarchical architecture</strong>来捕获文章和问题之间的关系，让解码器生成更有关联的误导选项。2.没有加重整篇文章和误导选项的关系。作者的解决思路是添加一个额外的语义相关性损失函数，让生成的误导选项与整篇文章更有关联。</p>
-<h2 id="proposed-framework-网络结构">Proposed Framework 网络结构</h2>
-<h3 id="1notations-and-task-definition">1)notations and task definition</h3>
-<p>article T=(s<sub>1</sub>,s<sub>2</sub>…s<sub>k</sub>)，一篇文章有k个句子s，同时每个句子都有不同的长度l，s<sub>i</sub>=(w<sub>i,1</sub>,w<sub>i,2</sub>…w<sub>i,l</sub>)，每个文章有m个问题和z个误导选项，Q=(q<sub>1</sub>,q<sub>2</sub>…q<sub>m</sub>),D=(d<sub>1</sub>,d<sub>2</sub>…d<sub>z</sub>),我们的任务是根据输入的T和Q生成D</p>
-
-<p><img src="../assets/img/posts/20211130/44.jpg" /></p>
-
-<h3 id="2model-overview">2)model overview</h3>
-<p>整体结构如下图所示，下面将从各个部分分别介绍：</p>
-
-<p><img src="../assets/img/posts/20211130/45.jpg" /></p>
-
-<h3 id="3encoding-article-and-question">3)encoding article and question</h3>
-<p>文章和问题的编码器结构</p>
-<ul>
-  <li><strong>hierarchical article encoder</strong>
-双向LSTM，和上一篇结构很像，很多部分我就简单列个式子。</li>
-</ul>
-
-<p><img src="../assets/img/posts/20211130/46.jpg" /></p>
-
-<p>每一句最后的词元来表示整个句子</p>
-
-<p><img src="../assets/img/posts/20211130/47.jpg" /></p>
-
-<p>sentence-level encoder：</p>
-
-<p><img src="../assets/img/posts/20211130/48.jpg" /></p>
-
-<p>同样，用最后一个句子来表示整篇文章</p>
-
-<p><img src="../assets/img/posts/20211130/49.jpg" /></p>
-
-<p>用<strong>H</strong><sup>*</sup>来作为sentence-level representation of article,我们有<strong>H</strong><sub>:t</sub><sup>*</sup>=h<sub>t</sub><sup>s</sup></p>
-
-<p>这样，通过使用两个双向LSTM获得word-level encoding和sentence-level encoding</p>
-<ul>
-  <li><strong>question encoder</strong></li>
-</ul>
-
-<p><img src="../assets/img/posts/20211130/50.jpg" /></p>
-
-<p>用<strong>U</strong><sup>*</sup>来作为word-level representations of question, 我们有<strong>U</strong><sub>:t</sub><sup>*</sup>=h<sub>t</sub><sup>q</sup></p>
-
-<h3 id="4co-attention-between-article-and-question">4)Co-attention between article and question</h3>
-<p>Co-attention mechanism就是使用了两个方向的注意力机制，有从article到question的，也有question到article的。<br />
-用一个“相似”矩阵S表示H和U的关系：</p>
-
-<p><img src="../assets/img/posts/20211130/51.jpg" /></p>
-
-<p>S<sub>i,j</sub>就表示第i个句子和第j个问题词元的相似性</p>
-
-<p>我们可以获得两个特殊的矩阵<strong>S</strong><sup><strong>Q</strong></sup>和<strong>S</strong><sup><strong>T</strong></sup></p>
-
-<p><img src="../assets/img/posts/20211130/52.jpg" /></p>
-
-<ul>
-  <li>article-to-question attention<br />
-$\tilde{U}$<sub>:j</sub> = $\sum$ S<sub>i,j</sub><sup>Q</sup>U<sub>:,i</sub></li>
-  <li>question-to-article attention</li>
-</ul>
-
-<p><img src="../assets/img/posts/20211130/53.jpg" /></p>
-
-<p>最后，将问题的词级表示H，两个方向的注意力结果$\tilde{U}$和$\tilde{H}$结合一下获得G</p>
-
-<p><img src="../assets/img/posts/20211130/54.jpg" /></p>
-
-<h3 id="5merging-sentence-representation">5)Merging sentence representation</h3>
-
-<p><img src="../assets/img/posts/20211130/55.jpg" /></p>
-
-<p>Z表示final representation of sentence-level hidden states</p>
-
-<h3 id="6question-initialization">6)question initialization</h3>
-<p>接下来就进入decoder环节，这里的question initialization和上篇文献处理方法相同</p>
-
-<h3 id="7hierarchical-attention">7)hierarchical attention</h3>
-<p>不同时间步有不同的句子相关，和上篇文献的处理方法动态注意力机制相同。</p>
-
-<p><img src="../assets/img/posts/20211130/56.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/57.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/58.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/59.jpg" /></p>
-
-<h3 id="8semantic-similarity-loss">8)semantic similarity loss</h3>
-<p>目的：获得文章和误导选项的关系。还记得之前定义的e<sub>T</sub>吗，它表示整篇文章，那么我们通过下面的公式可以获得distractor representation:</p>
-
-<p><img src="../assets/img/posts/20211130/60.jpg" /></p>
-
-<p>其中S<sub>M</sub>是decoder最后一个隐藏状态，那么我们通过cos计算相似关系，那么最终的损失函数</p>
-
-<p><img src="../assets/img/posts/20211130/61.jpg" /></p>
-
-<h2 id="experimental-settings">Experimental Settings</h2>
-<h3 id="1dataset-1">1)dataset</h3>
-<p>使用了上篇文献处理过的RACE数据集。</p>
-
-<h3 id="2baselines-and-evaluation-metrics">2)baselines and evaluation metrics</h3>
-<p>与seq2seq，HRED，HCP<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup>，HSA<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>比较。</p>
-
-<h3 id="3implementation-details">3)implementation details</h3>
-<p>网络超参数设置技巧，不展开了</p>
-
-<h2 id="results-and-analysis-结果与分析-1">Results and Analysis 结果与分析</h2>
-
-<p><img src="../assets/img/posts/20211130/62.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/63.jpg" /></p>
-
-<p><img src="../assets/img/posts/20211130/64.jpg" /></p>
-
-<p>介绍一下上面这张表，这张表是人工评估的结果，从三个维度分析，分别是fluency,coherence,distracting ability。可以看出作者的模型并不是在所有维度都是最好的。</p>
-
-<p>下图是案例分析：</p>
-
-<p><img src="../assets/img/posts/20211130/65.jpg" /></p>
-
-<h2 id="我的看法-2">我的看法</h2>
-<p>这篇文献是基于上一篇文献的方法进行了两个改进：1.关联了整篇文章和问题，解决方法是使用了Co-attention mechanism。2.让distractor和article语义相关，方法是定义了相关性loss。</p>
-
-<h1 id="补充">补充</h1>
-<h2 id="race数据集简介">RACE数据集简介</h2>
-<p>RACE数据集是一个来源于中学考试题目的大规模阅读理解数据集，包含了大约 28000 个文章以及近 100000 个问题。它的形式类似于英语考试中的阅读理解（选择题），给定一篇文章，通过阅读并理解文章（Passage），针对提出的问题（Question）从四个选项中选择正确的答案（Answers）。</p>
-<h2 id="bleu">BLEU</h2>
-<p>BLEU是一个评价指标，最开始用于机器翻译任务，定义如下</p>
-
-<p><img src="../assets/img/posts/20211130/66.jpg" /></p>
-
-<p>它的总体思想就是准确率，假如给定标准译文reference，神经网络生成的句子是candidate，句子长度为n，candidate中有m个单词出现在reference，m/n就是bleu的1-gram的计算公式。BLEU还有许多变种。根据n-gram可以划分成多种评价指标，常见的指标有BLEU-1、BLEU-2、BLEU-3、BLEU-4四种，其中n-gram指的是连续的单词个数为n。</p>
-
-<h2 id="rouge">ROUGE</h2>
-<p>Rouge(Recall-Oriented Understudy for Gisting Evaluation)，是评估自动文摘以及机器翻译的一组指标。它通过将自动生成的摘要或翻译与一组参考摘要（通常是人工生成的）进行比较计算，得出相应的分值，以衡量自动生成的摘要或翻译与参考摘要之间的“相似度”。它的定义如下：</p>
-
-<p><img src="../assets/img/posts/20211130/67.jpg" /></p>
-
-<p>文献中使用的ROUGE-L是一种变种，L即是LCS(longest common subsequence，最长公共子序列)的首字母，因为Rouge-L使用了最长公共子序列。Rouge-L计算方式如下图：</p>
-
-<p><img src="../assets/img/posts/20211130/68.jpg" /></p>
-
-<p>其中LCS(X, Y)是X和Y的最长公共子序列的长度,m、n分别表示参考摘要和自动摘要的长度（一般就是所含词的个数），R<sub>lcs</sub>,P<sub>lcs</sub>分别表示召回率和准确率。最后的F<sub>lcs</sub>即是我们所说的Rouge-L。</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>distractor generation 误导选项生成，简称DG <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2" role="doc-endnote">
-      <p>当我们test时，只需要Sequential MLM decoder来预测。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3" role="doc-endnote">
-      <p>multi-choice reading comprehension (MRC) model <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:4" role="doc-endnote">
-      <p>P-MLM <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:5" role="doc-endnote">
-      <p>Answer negative <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:6" role="doc-endnote">
-      <p>Byte-Pair-Encoding <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:7" role="doc-endnote">
-      <p>context，question，answer <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:8" role="doc-endnote">
-      <p>hierarchical encoder-decoder model with static attention <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:9" role="doc-endnote">
-      <p>hierarchical model enhanced with co-attention <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:10" role="doc-endnote">
-      <p>hierarchical encoder-decoder <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:11" role="doc-endnote">
-      <p>相当于HRED+copy,是基于HRED的网络结构 <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:12" role="doc-endnote">
-      <p>就是上篇文献的网络 <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name>Quehry</name></author><category term="paper" /><summary type="html"><![CDATA[文献整理]]></summary></entry><entry><title type="html">软件方法</title><link href="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="软件方法" /><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><id>http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95.html"><![CDATA[<h1 id="目录">目录</h1>
-<!-- TOC -->
-
-<ul>
-  <li><a href="#目录">目录</a></li>
-  <li><a href="#软件方法">软件方法</a>
-    <ul>
-      <li><a href="#课程要求">课程要求</a>
-        <ul>
-          <li><a href="#随记">随记</a></li>
-        </ul>
-      </li>
-      <li><a href="#ppt整理">PPT整理</a>
-        <ul>
-          <li><a href="#1-对象类">1. 对象，类</a></li>
-          <li><a href="#2面向对象">2.面向对象</a></li>
-          <li><a href="#3java">3.JAVA</a></li>
-          <li><a href="#4数据结构">4.数据结构</a></li>
-          <li><a href="#5-常用数据结构方法">5. 常用数据结构方法</a></li>
-        </ul>
-      </li>
-      <li><a href="#tp整理">TP整理</a></li>
-    </ul>
-  </li>
-</ul>
-
-<!-- /TOC -->
-<h1 id="软件方法">软件方法</h1>
-<h2 id="课程要求">课程要求</h2>
-<p>学习面向对象这种软件开发方法（目前概念越来越广），通过java来了解面向对象的编程具体怎么实现。</p>
-
-<h3 id="随记">随记</h3>
-<ol>
-  <li>类，对象：
-    <ul>
-      <li>对象是类的一个实例</li>
-      <li>c语言可以构建面向对象所有的结构</li>
-      <li>类集合了属性和方法</li>
-    </ul>
-  </li>
-  <li>面向对象的三大特征：
-    <ul>
-      <li>封装（encapsulation）:
-        <ul>
-          <li>private, protected, public</li>
-          <li>可作用于属性和方法，一般构造方法和成员方法都是public, 属性都是private</li>
-          <li>一般是隐藏对象的属性和实现细节，但是提供方法的接口</li>
-          <li>提供公开的方法</li>
-          <li>提高了软件开发的效率</li>
-        </ul>
-
-        <center><img src="../assets/img/posts/20211130/1.jpg" /></center>
-      </li>
-      <li>继承（inheritance）：
-        <ul>
-          <li>子类与父类</li>
-          <li>子类自动具有父类属性和方法，添加自己特有的属性和方法，并且子类使用父类的方法也可以覆盖/重写父类方法</li>
-          <li>可以实现代码的复用（当然功能不止于此）</li>
-        </ul>
-      </li>
-      <li>多态（polymorphism）：
-        <ul>
-          <li>父类有多个子类</li>
-          <li>子类覆盖/重写父类方法</li>
-          <li>相当于是根据实际创建的对象类型动态决定使用哪个方法</li>
-          <li>所有的子类都可以看成父类的类型，运行时，系统会自动调用各种子类的方法</li>
-          <li>UML可以画出类之间的关系</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>java程序设计
-    <ul>
-      <li>百分百面向对象
-        <ul>
-          <li>不存在类以外代码</li>
-          <li>只能采用面向对象方法编程</li>
-          <li>java文件命名规范
-            <ul>
-              <li>必须以.java结尾</li>
-              <li>源文件中如果只有一个类，文件类必须与该类名相同</li>
-              <li>如果有多个类，且没有public类，文件名可与任一类名相同</li>
-              <li>有多个类，且有public类，文件名必须与该类名相同</li>
-              <li>一个JAVA源文件只能有一个public类，一个文件中只能有一个main主函数</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>静态方法/static，可以直接用类和函数名直接调用，和普通方法的区别是不用new一个示例
-        <ul>
-          <li>static 方法可以直接调用，abstract方法存在的类肯定是抽象类</li>
-          <li>抽象方法不定义具体内容</li>
-        </ul>
-      </li>
-      <li>多态的实现，先定义抽象的（abstract）父类，然后子类继承父类然后定义父类的抽象方法
-        <ul>
-          <li>通过抽象方法固定通用接口</li>
-          <li>子类通过强制实现抽象方法实现多态</li>
-          <li>抽象父类可以定义属性和构造函数</li>
-          <li>抽象父类不能实例化，只能通过向上转型的方法定义</li>
-          <li>抽象父类可以向下转型成子类</li>
-          <li>父类的方法一般是抽象方法，不定义具体内容，留给子类定义，父类出现的抽象方法子类必须全部定义</li>
-          <li>多态的主要特点就是父类的方法全部是抽象的</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>多态例子</li>
-</ol>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">show</span><span class="o">(</span><span class="k">new</span> <span class="nc">Cat</span><span class="o">());</span>  <span class="c1">// 以 Cat 对象调用 show 方法</span>
-      <span class="n">show</span><span class="o">(</span><span class="k">new</span> <span class="nc">Dog</span><span class="o">());</span>  <span class="c1">// 以 Dog 对象调用 show 方法</span>
-                
-      <span class="nc">Animal</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Cat</span><span class="o">();</span>  <span class="c1">// 向上转型  </span>
-      <span class="n">a</span><span class="o">.</span><span class="na">eat</span><span class="o">();</span>               <span class="c1">// 调用的是 Cat 的 eat</span>
-      <span class="nc">Cat</span> <span class="n">c</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Cat</span><span class="o">)</span><span class="n">a</span><span class="o">;</span>        <span class="c1">// 向下转型  </span>
-      <span class="n">c</span><span class="o">.</span><span class="na">work</span><span class="o">();</span>        <span class="c1">// 调用的是 Cat 的 work</span>
-  <span class="o">}</span>  
-            
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">show</span><span class="o">(</span><span class="nc">Animal</span> <span class="n">a</span><span class="o">)</span>  <span class="o">{</span>
-        <span class="n">a</span><span class="o">.</span><span class="na">eat</span><span class="o">();</span>  
-        <span class="c1">// 类型判断</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="k">instanceof</span> <span class="nc">Cat</span><span class="o">)</span>  <span class="o">{</span>  <span class="c1">// 猫做的事情 </span>
-            <span class="nc">Cat</span> <span class="n">c</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Cat</span><span class="o">)</span><span class="n">a</span><span class="o">;</span> <span class="c1">// 向下转型</span>
-            <span class="n">c</span><span class="o">.</span><span class="na">work</span><span class="o">();</span>  
-        <span class="o">}</span> 
-        <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">a</span> <span class="k">instanceof</span> <span class="nc">Dog</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 狗做的事情 </span>
-            <span class="nc">Dog</span> <span class="n">c</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Dog</span><span class="o">)</span><span class="n">a</span><span class="o">;</span>  
-            <span class="n">c</span><span class="o">.</span><span class="na">work</span><span class="o">();</span>  
-        <span class="o">}</span>  
-    <span class="o">}</span>  
-<span class="o">}</span>
- 
-<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>  
-    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">();</span>  
-<span class="o">}</span>  
-  
-<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>  
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">{</span>  
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"吃鱼"</span><span class="o">);</span>  
-    <span class="o">}</span>  
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">work</span><span class="o">()</span> <span class="o">{</span>  
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"抓老鼠"</span><span class="o">);</span>  
-    <span class="o">}</span>  
-<span class="o">}</span>  
-  
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>  
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">{</span>  
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"吃骨头"</span><span class="o">);</span>  
-    <span class="o">}</span>  
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">work</span><span class="o">()</span> <span class="o">{</span>  
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"看家"</span><span class="o">);</span>  
-    <span class="o">}</span>  
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h2 id="ppt整理">PPT整理</h2>
-
-<h3 id="1-对象类">1. 对象，类</h3>
-<ul>
-  <li>使用对象之前要先声明和创建</li>
-  <li>类定义了对象的类型，所有对象都是类的实例，所有的类描述了属性和定义了方法</li>
-</ul>
-
-<h3 id="2面向对象">2.面向对象</h3>
-<ul>
-  <li>面向对象的编程有4个特点</li>
-  <li><strong>封装</strong>：保护类的属性和方法, 类里面的属性的数据是private的, public的方法定义了对象的接口。权限修饰符: private, default, protected, public。</li>
-  <li><strong>继承</strong>：B继承A，重用，修改，添加，A所有的属性都存在于B中，A的方法可以在B中重新定义，B方法的改动不会影响A</li>
-  <li><strong>多态</strong>：一个对象属于多个类，通过使用不同类中的方法属于不同的类，父类是抽象类，各个子类继承父类并定义方法，调用的时候根据不同子类调用方法。判断类型是否相同instanceof，声明的时候可以这么声明: A a = new B(),其中B是A的子类, 这种声明方法叫做向上转型。向下转型: B b = (B) a</li>
-  <li><strong>动态链接</strong>: 通过PPT上的例子，我感觉和继承很像，这部分需要更深入了解才能明白。</li>
-</ul>
-
-<h3 id="3java">3.JAVA</h3>
-<ul>
-  <li>main的格式:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20211130/71.jpg" /></center>
-
-<ul>
-  <li>数据类型: int, float, double, char, string, boolean, byte, long, short, JAVA里面也有这些数据类型的类：</li>
-</ul>
-
-<center><img src="../assets/img/posts/20211130/72.jpg" /></center>
-
-<p>其中Characte应该为Character</p>
-
-<ul>
-  <li>
-    <p>JAVA关键字this, super</p>
-  </li>
-  <li>
-    <p>x = bool ? a : b，表示如果bool为true，执行a，如果为false执行b</p>
-  </li>
-  <li>
-    <p>for(Point p : this.getVect())表示遍历</p>
-  </li>
-  <li>
-    <p>exception 异常:</p>
-  </li>
-</ul>
-
-<p><img src="../assets/img/posts/20211130/69.jpg" /></p>
-
-<p>还有异常的抛出throws</p>
-
-<p>try-catch-finally</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> 
-<span class="o">{</span>  
-	    <span class="c1">// 可能会发生异常的程序代码  </span>
-<span class="o">}</span> 
-<span class="k">catch</span> <span class="o">(</span><span class="nc">Type1</span> <span class="n">id1</span><span class="o">)</span>
-<span class="o">{</span>  
-	    <span class="c1">// 捕获并处置try抛出的异常类型Type1  </span>
-<span class="o">}</span> 
-<span class="k">catch</span> <span class="o">(</span><span class="nc">Type2</span> <span class="n">id2</span><span class="o">)</span>
-<span class="o">{</span>  
-	    <span class="c1">//捕获并处置try抛出的异常类型Type2  </span>
-<span class="o">}</span>
-<span class="k">finally</span> 
-<span class="o">{</span>  
-	    <span class="c1">// 无论是否发生异常，都将执行的语句块  </span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>自定义异常：</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">NombreNegatifException</span> <span class="kd">extends</span> <span class="nc">Exception</span>
-<span class="o">{</span>
-    <span class="kd">public</span> <span class="nf">NombreNegatifException</span><span class="o">()</span>
-    <span class="o">{</span>
-    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Vous avez un nombre négatif !"</span><span class="o">);</span>
-    <span class="o">}</span> 
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>在类的方法中抛出新的异常：</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">Count</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span><span class="o">{</span>
-    <span class="k">if</span> <span class="o">(...){</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="o">(</span><span class="s">"..."</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>文件读写：</li>
-</ul>
-
-<p>类FileReader,FileWriter,使用里面的方法read()和write(x)和close()</p>
-
-<p>比如：</p>
-
-<p><img src="../assets/img/posts/20211130/70.jpg" /></p>
-
-<ul>
-  <li>枚举类型enum，举例说明</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="nc">Jour</span> 
-<span class="o">{</span>
-    <span class="no">LUNDI</span><span class="o">,</span> <span class="no">MARDI</span><span class="o">,</span> <span class="no">MERCREDI</span><span class="o">,</span> <span class="no">JEUDI</span><span class="o">,</span> <span class="no">VENDREDI</span><span class="o">,</span> <span class="no">SAMEDI</span><span class="o">,</span> <span class="no">DIMANCHE</span><span class="o">;</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">EssaiJour</span> 
-<span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> 
-    <span class="o">{</span>
-        <span class="nc">Jour</span> <span class="n">jour</span> <span class="o">=</span> <span class="nc">Jour</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">jour</span> <span class="o">==</span> <span class="nc">Jour</span><span class="o">.</span><span class="na">SAMEDI</span><span class="o">)</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"fin de semaine : "</span><span class="o">);</span>
-        <span class="k">switch</span><span class="o">(</span><span class="n">jour</span><span class="o">)</span> 
-        <span class="o">{</span>
-            <span class="k">case</span> <span class="no">SAMEDI</span> <span class="o">:</span>
-            <span class="k">case</span> <span class="no">DIMANCHE</span> <span class="o">:</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"se reposer"</span><span class="o">);</span>
-            <span class="k">break</span><span class="o">;</span>
-            <span class="k">default</span> <span class="o">:</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"travailler"</span><span class="o">);</span>
-            <span class="k">break</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>接口interface, <strong>迭代器</strong>iterator</li>
-</ul>
-
-<p>举例：</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Main</span> 
-<span class="o">{</span>
-    <span class="nd">@FunctionalInterface</span>
-    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">maFonction</span> 
-    <span class="o">{</span>
-        <span class="nc">Integer</span> <span class="nf">appliquer</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">p</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Vector</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="nf">transforme</span><span class="o">(</span><span class="nc">Vector</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">v</span><span class="o">,</span> <span class="n">maFonction</span> <span class="n">function</span><span class="o">)</span> 
-    <span class="o">{</span>
-        <span class="nc">Vector</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">nouveauVect</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Vector</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;();</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> 
-        <span class="o">{</span>
-        <span class="n">nouveauVect</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">function</span><span class="o">.</span><span class="na">appliquer</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)));</span>
-        <span class="o">}</span>
-        <span class="n">nouveauVect</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
-        <span class="k">return</span> <span class="n">nouveauVect</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> 
-    <span class="o">{</span>
-        <span class="nc">Vector</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">vi</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Vector</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;(</span><span class="mi">4</span><span class="o">);</span>
-        <span class="n">vi</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="n">vi</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span> <span class="n">vi</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">83</span><span class="o">);</span> <span class="n">vi</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">18</span><span class="o">);</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Les valeurs du vecteur initial : "</span><span class="o">);</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">vi</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">)+</span><span class="s">" "</span><span class="o">);</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">vi</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">)+</span><span class="s">" "</span><span class="o">);</span> 
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">vi</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">2</span><span class="o">)+</span><span class="s">" "</span><span class="o">);</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">vi</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
-        <span class="n">vi</span> <span class="o">=</span> <span class="n">transforme</span><span class="o">(</span><span class="n">vi</span><span class="o">,</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">s</span> <span class="o">*</span> <span class="mi">2</span><span class="o">));</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Les valeurs du vecteur modifié : "</span><span class="o">);</span>
-        <span class="nc">Iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">vi</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
-        <span class="k">while</span> <span class="o">(</span><span class="n">iter</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span>
-        <span class="o">{</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">iter</span><span class="o">.</span><span class="na">next</span><span class="o">()</span> <span class="o">+</span> <span class="s">""</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h3 id="4数据结构">4.数据结构</h3>
-<ul>
-  <li>数据结构一般含有以下功能：创建，插入，寻找，删除，排序</li>
-  <li>二维数组,举例说明：</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">tab</span><span class="o">[][]={</span> <span class="o">{</span><span class="s">"a"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">,</span> <span class="s">"i"</span><span class="o">,</span> <span class="s">"o"</span><span class="o">,</span> <span class="s">"u"</span><span class="o">},</span> <span class="o">{</span><span class="s">"1"</span><span class="o">,</span> <span class="s">"2"</span><span class="o">,</span> <span class="s">"3"</span><span class="o">,</span> <span class="s">"4"</span><span class="o">}</span> <span class="o">};</span>
-<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-<span class="k">for</span><span class="o">(</span><span class="nc">String</span> <span class="n">sousTab</span><span class="o">[]</span> <span class="o">:</span> <span class="n">tab</span><span class="o">)</span> 
-<span class="o">{</span>
-    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">for</span><span class="o">(</span><span class="nc">String</span> <span class="n">str</span> <span class="o">:</span> <span class="n">sousTab</span><span class="o">)</span> 
-    <span class="o">{</span> 
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Valeur du tableau à l'indice ["</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">"]["</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="s">"]: "</span> <span class="o">+</span> <span class="n">tab</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]);</span>
-        <span class="n">j</span><span class="o">++;</span>
-    <span class="o">}</span>
-    <span class="n">i</span><span class="o">++;</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>声明数组：数组类型加变量名</p>
-
-<p>或者</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">tabEntiers</span><span class="o">[];</span>
-<span class="n">tabEntiers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">40</span><span class="o">];</span> 
-<span class="c1">// création effective du tableau précédent</span>
-</code></pre></div></div>
-
-<ul>
-  <li>列表，包含ArrayList, LinkedList</li>
-</ul>
-
-<p>ArrayList是实现了基于动态数组的数据结构，LinkedList基于链表的数据结构。对于随机访问get和set，ArrayList优于LinkedList，因为ArrayList可以随机定位，而LinkedList要移动指针一步一步的移动到节点处。（参考数组与链表来思考）。对于新增和删除操作add和remove，LinedList比较占优势，只需要对指针进行修改即可，而ArrayList要移动数据来填补被删除的对象的空间。</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liste</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> 
-<span class="o">{</span>
-    <span class="kd">protected</span> <span class="no">T</span> <span class="n">valeur</span><span class="o">;</span> 
-    <span class="kd">protected</span> <span class="nc">Liste</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">succ</span><span class="o">;</span>
-    <span class="kd">protected</span> <span class="nc">Liste</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">pred</span><span class="o">;</span>
-    
-    <span class="kd">public</span> <span class="no">T</span> <span class="nf">valeur</span><span class="o">()</span>
-    <span class="o">{</span> 
-        <span class="k">return</span> <span class="n">valeur</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changerValeur</span><span class="o">(</span><span class="no">T</span> <span class="n">x</span><span class="o">)</span>
-    <span class="o">{</span> 
-        <span class="n">valeur</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span> 
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nc">Liste</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">succ</span><span class="o">()</span>
-    <span class="o">{</span> 
-        <span class="k">return</span> <span class="n">succ</span><span class="o">;</span> 
-    <span class="o">}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changerSucc</span><span class="o">(</span><span class="nc">Liste</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">y</span><span class="o">)</span>
-    <span class="o">{</span> 
-        <span class="n">succ</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span> 
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changerPred</span><span class="o">(</span><span class="nc">Liste</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">y</span><span class="o">)</span>
-    <span class="o">{</span> 
-        <span class="n">pred</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span> 
-    <span class="o">}</span>
-<span class="o">}</span> 
-</code></pre></div></div>
-
-<p>这是一个链表的简写，每一层包含了上一个元素，这一个元素，下一个元素</p>
-
-<ul>
-  <li>哈希表，通过建立KV关系查找，相比于之前的顺序访问或者其他指数访问要快。</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestHash</span> 
-<span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> 
-    <span class="o">{</span>
-        <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">annuaire</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;();</span>
-        <span class="c1">// ajout des valeurs</span>
-        <span class="n">annuaire</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"Alfred"</span><span class="o">,</span><span class="s">"2399020806"</span><span class="o">);</span>
-        <span class="n">annuaire</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"Daniel"</span><span class="o">,</span> <span class="s">"2186000000"</span><span class="o">);</span>
-        <span class="c1">// obtention d'un numéro</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">annuaire</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="s">"Danielle"</span><span class="o">))</span> 
-        <span class="o">{</span>
-            <span class="nc">String</span> <span class="n">num</span> <span class="o">=</span> <span class="n">annuaire</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"Danielle"</span><span class="o">);</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Danielle</span> <span class="o">:</span> <span class="s">"+num"</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">else</span> 
-        <span class="o">{</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"pas trouve"</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>树状结构tree</li>
-</ul>
-
-<p>一般包含结点，结点的度(该结点下有多少子树的数目)，树的度</p>
-
-<p>不同的遍历方法：</p>
-<blockquote>
-  <p>前序遍历，首先结点，然后左子树，右子树<br />
-中序遍历，左子树，结点，右子树<br />
-后序遍历，左子树，右子树，结点<br />
-层序遍历，从上到下，从左到右</p>
-</blockquote>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Arbre</span> 
-<span class="o">{</span>
-    <span class="kd">protected</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">valeur</span><span class="o">;</span>
-    <span class="kd">protected</span> <span class="nc">Arbre</span> <span class="n">filsGauche</span><span class="o">,</span> <span class="n">filsDroit</span><span class="o">;</span> 
-    <span class="kd">public</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">valeur</span><span class="o">()</span> 
-    <span class="o">{</span> 
-        <span class="k">return</span> <span class="n">valeur</span><span class="o">;</span> 
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">existeFilsGauche</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">filsGauche</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="o">}</span> 
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">existeFilsDroit</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">filsDroit</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="o">}</span>
-    <span class="kd">public</span> <span class="nc">Arbre</span> <span class="nf">filsGauche</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">filsGauche</span><span class="o">;</span> <span class="o">}</span>
-    <span class="kd">public</span> <span class="nc">Arbre</span> <span class="nf">filsDroit</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">filsDroit</span><span class="o">;</span> <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">affecterValeur</span><span class="o">(&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span> <span class="n">valeur</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span> <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">affecterFilsGauche</span><span class="o">(</span><span class="nc">Arbre</span> <span class="n">g</span><span class="o">)</span> <span class="o">{</span> <span class="n">filsGauche</span> <span class="o">=</span> <span class="n">g</span><span class="o">;</span> <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">affecterFilsDroit</span><span class="o">(</span><span class="nc">Arbre</span> <span class="n">d</span><span class="o">)</span> <span class="o">{</span> <span class="n">filsDroit</span> <span class="o">=</span> <span class="n">d</span><span class="o">;}</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">feuille</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="o">(</span><span class="n">filsDroit</span><span class="o">==</span><span class="kc">null</span> <span class="o">&amp;&amp;</span> 
-    <span class="n">filsGauche</span><span class="o">==</span><span class="kc">null</span><span class="o">);</span> 
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kt">int</span> <span class="nf">hauteur</span><span class="o">()</span> 
-<span class="o">{</span>
-    <span class="kt">int</span> <span class="n">g</span> <span class="o">=</span> <span class="n">existeFilsGauche</span><span class="o">()</span> <span class="o">?</span> <span class="n">filsGauche</span><span class="o">.</span><span class="na">hauteur</span><span class="o">()</span> <span class="o">:</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">existeFilsDroit</span><span class="o">()</span> <span class="o">?</span> <span class="n">filsDroit</span><span class="o">.</span><span class="na">hauteur</span><span class="o">()</span> <span class="o">:</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">return</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">g</span><span class="o">,</span><span class="n">d</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">;</span>
-<span class="o">}</span>
-<span class="c1">// Constructeurs</span>
-<span class="kd">public</span> <span class="nf">Arbre</span><span class="o">(</span><span class="no">T</span> <span class="n">val</span><span class="o">)</span> 
-<span class="o">{</span>
-    <span class="n">valeur</span> <span class="o">=</span> <span class="n">val</span><span class="o">;</span>
-    <span class="n">filsGauche</span> <span class="o">=</span> <span class="n">filsDroit</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-<span class="o">}</span>
-<span class="kd">public</span> <span class="nf">Arbre</span><span class="o">(</span><span class="no">T</span> <span class="n">val</span><span class="o">,</span> <span class="nc">Arbre</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">g</span><span class="o">,</span> <span class="nc">Arbre</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">d</span><span class="o">)</span> 
-<span class="o">{</span>
-    <span class="n">valeur</span> <span class="o">=</span> <span class="n">val</span><span class="o">;</span>
-    <span class="n">filsGauche</span> <span class="o">=</span> <span class="n">g</span><span class="o">;</span> <span class="n">filsDroit</span> <span class="o">=</span> <span class="n">d</span><span class="o">;</span>
-<span class="o">}</span>
-
-<span class="c1">// Affichage</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">afficherPrefixe</span><span class="o">()</span> 
-<span class="o">{</span>
-    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">valeur</span><span class="o">+</span><span class="s">"\t"</span><span class="o">);</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">existeFilsGauche</span><span class="o">())</span> <span class="n">filsGauche</span><span class="o">.</span><span class="na">afficherPrefixe</span><span class="o">();</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">existeFilsDroit</span><span class="o">())</span> <span class="n">filsDroit</span><span class="o">.</span><span class="na">afficherPrefixe</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">afficherInfixe</span><span class="o">()</span> 
-<span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">existeFilsGauche</span><span class="o">())</span> <span class="n">filsGauche</span><span class="o">.</span><span class="na">afficherInfixe</span><span class="o">();</span>
-    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">valeur</span><span class="o">+</span><span class="s">"\t"</span><span class="o">);</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">existeFilsDroit</span><span class="o">())</span><span class="n">filsDroit</span><span class="o">.</span><span class="na">afficherInfixe</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">afficherPostfixe</span><span class="o">()</span> 
-<span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">existeFilsGauche</span><span class="o">())</span> <span class="n">filsGauche</span><span class="o">.</span><span class="na">afficherPostfixe</span><span class="o">();</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">existeFilsDroit</span><span class="o">())</span><span class="n">filsDroit</span><span class="o">.</span><span class="na">afficherPostfixe</span><span class="o">();</span>
-    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">valeur</span><span class="o">+</span><span class="s">"\t"</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>二叉排序树是指左子树小于结点小于右子树，而且结点值不重复。判断是否为二叉排序树：</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">superieur</span><span class="o">(</span><span class="kt">char</span> <span class="n">x</span><span class="o">)</span> 
-<span class="o">{</span>
-<span class="c1">// vrai si x est supérieur à tous les éléments de l’arbre</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">feuille</span><span class="o">())</span> <span class="k">return</span> <span class="o">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">valeur</span><span class="o">);</span>
-    <span class="k">else</span> <span class="nf">return</span> 
-    <span class="o">(((</span><span class="k">this</span><span class="o">.</span><span class="na">existeFilsGauche</span><span class="o">())?</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">filsGauche</span><span class="o">).</span><span class="na">superieur</span><span class="o">(</span><span class="n">x</span><span class="o">):</span><span class="kc">true</span><span class="o">)</span> <span class="o">&amp;</span> 
-     <span class="o">((</span><span class="k">this</span><span class="o">.</span><span class="na">existeFilsDroit</span><span class="o">())?</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">filsDroit</span><span class="o">).</span><span class="na">superieur</span><span class="o">(</span><span class="n">x</span><span class="o">):</span><span class="kc">true</span><span class="o">));</span>
-<span class="o">}</span> 
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">inferieur</span><span class="o">(</span><span class="kt">char</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span><span class="c1">//similaire a superieur ... }</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">binrech</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">feuille</span><span class="o">())</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="k">else</span> <span class="nf">return</span>
-    <span class="o">((</span><span class="n">existeFilsGauche</span><span class="o">()?(</span><span class="n">filsGauche</span><span class="o">.</span><span class="na">superieur</span><span class="o">(</span><span class="n">valeur</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">filsGauche</span><span class="o">.</span><span class="na">binrech</span><span class="o">()):</span><span class="kc">true</span><span class="o">)</span> <span class="o">&amp;</span> 
-     <span class="o">(</span><span class="n">existeFilsDroit</span><span class="o">()?(</span><span class="n">filsDroit</span><span class="o">.</span><span class="na">inferieur</span><span class="o">(</span><span class="n">valeur</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">filsDroit</span><span class="o">.</span><span class="na">binrech</span><span class="o">()):</span><span class="kc">true</span><span class="o">));</span>
-<span class="o">}</span> 
-</code></pre></div></div>
-
-<h3 id="5-常用数据结构方法">5. 常用数据结构方法</h3>
-
-<p>二维数组array[][]的定义和访问</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>数据结构</td>
-      <td>vector&lt;String&gt;</td>
-      <td>ArrayList&lt;String&gt;</td>
-      <td>LinkedList&lt;String&gt;</td>
-      <td>HashMap&lt;String,int&gt;</td>
-    </tr>
-    <tr>
-      <td>添加</td>
-      <td>add(i, str)</td>
-      <td>add(i,str)</td>
-      <td>add(i,str)</td>
-      <td>put(str,i)</td>
-    </tr>
-    <tr>
-      <td>查找</td>
-      <td>get(i)</td>
-      <td>get(i)</td>
-      <td>get(i)</td>
-      <td>get(str)</td>
-    </tr>
-    <tr>
-      <td>索引</td>
-      <td>indexOf(str)</td>
-      <td>indexOf(str)</td>
-      <td>indexOf(str)</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>删除</td>
-      <td>remove(i)/remove(str)</td>
-      <td>remove(i/str)</td>
-      <td>remove(i/str)</td>
-      <td>remove(i)</td>
-    </tr>
-    <tr>
-      <td>清除</td>
-      <td>clear()</td>
-      <td>clear()</td>
-      <td>clear()</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>查看大小</td>
-      <td>size()</td>
-      <td>size()</td>
-      <td>size()</td>
-      <td>size()</td>
-    </tr>
-    <tr>
-      <td>迭代器</td>
-      <td>iterator()</td>
-      <td>iterator()</td>
-      <td>iterator()</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>变成数组</td>
-      <td> </td>
-      <td>toArray()</td>
-      <td>toArray()</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>hashmap还可以返回键值对entryset()，也可以判断是否含有key和value，containsKey(),containsValue()</p>
-
-<p>Hashmap创建的时候需要继承</p>
-
-<h2 id="tp整理">TP整理</h2>
-<ol>
-  <li>定义构造函数时也需要声明权限修饰符，构造函数不需要返回值，调用的时候直接在声明一个对象的时候调用</li>
-  <li>访问成员变量的时候用.</li>
-  <li>方法中除了构造函数都需要权限修饰符和返回类型名</li>
-  <li>在类中调用成员变量可以直接调用</li>
-  <li>字符串之间用+连接</li>
-  <li>当一个类中有main函数时，一般这么定义: public static void main(String[] a){}</li>
-  <li>在定义类的时候不要有()</li>
-  <li>向量的创建和声明: Vector&lt;T&gt; mesObjectsG = new Vector&lt;T&gt;();</li>
-  <li>打印的使用: System.out.println()</li>
-  <li>成员函数在类的开头只是声明，并没有创建，所以在方法中创建</li>
-  <li>for循环的使用: for(Point p : seg.getVecP())</li>
-  <li>Vector.add(), 向量的添加</li>
-  <li>Vector.get(i), i从0开始, 向量的访问</li>
-  <li>Vector.size()返回int值，是vector的大小</li>
-  <li>TP1中为了让图形可视化，每个类都需要extends ObjectGraphique</li>
-  <li>什么时候需要在类定义方法时new一个对象: 当这个对象来自其他类同时改变这个对象会对新创建的类产生影响，所以一般还是new一个对象比较好</li>
-  <li>基本的数据类型: int, string, float, boolean不需要new, 声明的时候也不需要构造函数</li>
-  <li>继承的时候可以用super()来调用继承类的构造函数</li>
-  <li>异常的抛出: 在定义类中的方法的时候，需要抛出的方法需要在创建时添加一句throws Exception, 调用的时候使用throw new Exception(“…”)</li>
-  <li>也可以throws IOException这样已经定义好的抛出类型</li>
-  <li>文件读入: Reader reader = new FileReader(textname.txt)</li>
-  <li>逐行读入: BufferedReader in = new BufferedReader(reader); String line = in.readline()</li>
-  <li>分词器: StringTokenizer st = new StringTokenlizer(line, DeleteChar); 然后就可以像迭代器一样调用, if(st.hasMoreTokens()){st.nextToken()}</li>
-  <li>文件写入: Writer writer = new FileWriter(newtextname); writer.write(“…”)</li>
-  <li>将链表中所有的单词写入一个文件: for (object k : this){writer.write(k+”\n”);writer.flush()} 写入完毕后, writer.close()</li>
-  <li>哈希表判断key是否在哈希表中: HashMap.containsKey(…), 返回值为布尔类型</li>
-  <li>哈希表中添加元素: HashMap.put(key, value)</li>
-  <li>哈希表可以返回键值对，键对和值对，调用HashMap.entrySet()、HashMap.keySet()、HashMap.valueSet()</li>
-  <li>通过键来访问哈希表中的值: HashMap.get(key)</li>
-  <li>EntrySet同样可以通过getKey()和getValue()来访问键值</li>
-  <li>在创建一个新类时，对于类的名字可以这么取: Arbre&lt;T&gt;, 这样就表示Arbre类中的数据类型是T</li>
-  <li>java中的空是null，小写</li>
-  <li>记住二叉树高度是怎么写的</li>
-  <li>记住二叉树前序中序后序遍历是如何写的</li>
-  <li>在进行没有变量x时怎么计算数的结果: 先用迭代访问出左值和右值，然后根据根结点的符号决定进行什么运算</li>
-  <li>Integer.parseInt(String a)的作用是将整数的String表示转化为Integer</li>
-  <li>对于含变量x的二叉树如何在输入x的值的情况下算出结果: 首先遍历左子树，如果左子树的左边有x，那么将输入的值赋给这个结点的x，然后迭代回来计算左结点的值，具体的可以看网站截图</li>
-  <li>java中final关键字是保证了变量无法修改，只能访问</li>
-  <li>字符串的比较用.equals()</li>
-  <li>Vector.contains(…)可以判断一个值是否在这个向量里</li>
-  <li>String.charAt(i), 可以将字符串第i个字符赋给char</li>
-  <li>instanceOf用来判断一个对象是不是一个类的实例: if (a instanceOf A)</li>
-  <li>多态的一种应用是: 抽象父类，子类继承抽象父类</li>
-</ol>
-
-<center><img src="../assets/img/posts/20211130/73.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[课堂记录]]></summary></entry></feed>
+</ol>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[《机器人》课程随堂笔记]]></summary></entry></feed>

@@ -1,6 +1,36 @@
 [
   
     {
+      "title"       : "课程总结",
+      "category"    : "",
+      "tags"        : "school",
+      "url"         : "./%E5%A4%A7%E5%9B%9B%E4%B8%8B%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html",
+      "date"        : "2022-04-29 00:00:00 +0800",
+      "description" : "记录大四下课程和课程笔记",
+      "content"     : "Introduction to corporate finance 课程简介 课程内容 工业科学 课程简介 课程内容 量子力学 课程简介 课程内容 统计物理 课程简介 课程内容 信号处理 课程简介 课程内容 结构力学2 课程简介 课程内容 传热学(Heat Transfert) 课程简介 课程内容 过程工程(Process Engin) 课程简介 课程内容 Press 课程简介 课程内容 Audiovisuel 课程简介 课程内容 毕业设计 毕设内容 Introduction to corporate finance课程简介 授课老师: Danielle Levi-Feunteun 授课形式: 线上 授课材料: 电子讲义 考核形式: 每节课都有作业需要提交，算平时分，最后还有一个开卷的考试课程内容围绕着财报进行简单的介绍工业科学课程简介 授课老师: 付小尧 授课形式: 工业科学由两部分组成，实验和正课，都在线下完成 授课材料: 实验课有电子讲义，正课有讲义和TD 考核形式: 实验和正课都有线下考试，各占五十课程内容实验一共有8节课，都在二号楼上，实验围绕PID控制原理展开，我影响比较深的有停车场栏杆控制、云台、装乒乓球、给羽毛球拍上弦正课讲了一点二进制、逻辑电路量子力学课程简介 授课老师: 付小尧 授课形式: 线下授课 授课材料: 电子讲义和TD 考核形式: 线上考试课程内容一共有8章，第一章介绍了光电效应、黑体，第二章介绍了薛定谔方程，后面的忘了统计物理课程简介 授课老师: Philippe Ribiere 授课形式: 线下授课 授课材料: 电子讲义和TD 考核形式: 大作业(统计物理与人工智能的关系)课程内容一共四章，对量子力学里用到的统计知识进行了补充，统计物理根据对物质微观结构及微观粒子相互作用的认识，用概率统计的方法，对由大量粒子组成的宏观物体的物理性质及宏观规律作出微观解释的理论物理学分支。信号处理课程简介 授课老师: Antoine Roueff 授课形式: 线上授课 授课材料: 电子讲义、TD、TP(Matlab) 考核形式: 线上考试课程内容没咋听结构力学2课程简介 授课老师: Olivier Bareille、黄行蓉 授课形式: 线上授课 授课材料: 电子讲义和TD 考核形式: 大作业(做题)课程内容Olivier讲正课，黄老师讲TD，由于疫情原因，最终在家完成大作业传热学(Heat Transfert)课程简介 授课老师: Nelson IBASETA、张堇 授课形式: 线上授课 授课材料: 电子讲义和TD 考核形式: 线上考试课程内容Nelson讲正课，张老师讲TD，主要介绍了三种传热方式，分别是热传导，热对流和热辐射过程工程(Process Engin)课程简介 授课老师: Dominique Pareau、唐宏哲 授课形式: 线上授课 授课材料: 电子讲义和TD 考核形式: 两个大作业，Dominique的是做题，唐老师的是设计一个蒸馏的方案课程内容Dominique主要讲了工业流程中各组分的物料守恒和能量守恒，唐宏哲主要讲了蒸馏Press课程简介 授课老师: Vanessa 授课形式: 线下和线上授课 授课材料: 电子讲义 考核形式: 大作业课程内容法语课Audiovisuel课程简介 授课老师: Fabien 授课形式: 线下和线上授课 授课材料: 电子讲义 考核形式: 大作业课程内容法语课毕业设计毕设内容大四最重要的一门课，我的毕设是设计了一个成绩预测模型，包含了风险学科预测和成绩区间预测，主要用了一些机器学习的算法和数据处理的知识，写论文花了一周时间，剩下的就是不停的答辩"
+    } ,
+  
+    {
+      "title"       : "毕设记录",
+      "category"    : "",
+      "tags"        : "record",
+      "url"         : "./Graduation-Project.html",
+      "date"        : "2022-04-20 00:00:00 +0800",
+      "description" : "毕设流程记录",
+      "content"     : "1. 数据预处理1.1. 使用MySQL对原始数据进行处理 目标: 生成每行为一个学生，第一列为学号，第二列到最后一列都是课程名称 第一步: 创建表格 首先遇到的问题是创建列名时有MySQL关键字，所以对KCMC两端加上了反引号 使用Group_concat时有内容长度限制，需要使用以下代码来暂时增大限制: SET GLOBAL group_concat_max_len = 4294967295; SET SESSION group_concat_max_len = 4294967295; 列名长度硬性要求: 不能超过64个字符，所以我采用了将英文翻译为中文的方法减少长度，有以下几门学科名称做过修改: UPDATE grade_original SET KCMC = ‘网格生成方法及软件简介’ WHERE KCMC=’An Introduction to Mesh Generation Methods &amp; Software for Scientific Computing’ UPDATE grade_original SET KCMC = ‘经典论文鉴赏:电磁学顶级论文精选’ WHERE KCMC=’Appreciation of Classical Papers: The Selected Top Papers in Electromagnetism’ UPDATE grade_original SET KCMC = ‘动脉硬化的脆弱性评估:从体内成像到生物力学’ WHERE KCMC=’Atherosclerosis Vulnerability Assessment: From In Vivo Imaging To Biomechanics’ UPDATE grade_original SET KCMC = ‘计算机建模和仿真基础:方法、技术和应用’ WHERE KCMC=’Basics of Computer-Based Modelling and Simulation: Methodologies, Technologies and Applications’ UPDATE grade_original SET KCMC = ‘当代中国外交政策及其全球治理途径’ WHERE KCMC=’Contemporary Chinese Foreign Policy and Its Global Governance Approach’ UPDATE grade_original SET KCMC = ‘灵活的中英文语言:成功的必要条件’ WHERE KCMC=’Elastic Language in Chinese and English: Essential for Successful’ UPDATE grade_original SET KCMC = ‘自然界中的功能结构材料:从保护到传感’ WHERE KCMC=’Functional Structural Materials in Nature: From Protection to Sensing’ UPDATE grade_original SET KCMC = ‘国际商法-在中国经商的法律环境’ WHERE KCMC=’International Business Law - The Legal Environment of Doing Business in China’ UPDATE grade_original SET KCMC = ‘航空航天工程疲劳与损伤容限导论’ WHERE KCMC=’Introduction to Fatigue and Damage Tolerance in Aerospace Engineering’ UPDATE grade_original SET KCMC = ‘模型检查定时系统导论:理论与实践’ WHERE KCMC=’Introduction to Model-Checking Timed Systems: Theory and Practice’ UPDATE grade_original SET KCMC = ‘功能薄膜磁控溅射的研究现状与发展趋势’ WHERE KCMC=’Magnetron Sputtering of Functional Thin Films: Present Status and Trends’ UPDATE grade_original SET KCMC = ‘材料表征热分析原理及应用’ WHERE KCMC=’Principles and Applications of Thermal Analysis for Materials Characterization’ UPDATE grade_original SET KCMC = ‘从英语学习到口译翻译能力的发展:原则与策略’ WHERE KCMC=’Progression from English Study to Interpreting and Translation Competence: Principles and Strategies’ 一共十三门课名有做修改 MySQL对列数有硬性要求: 其中InnoDB引擎要求不超过1024，其余引擎不超过4096，但是我的列数一共有1425，所以我改用了MyISAM引擎 MySQL命令行代码: SELECT CONCAT( 'CREATE TABLE grade_student (', GROUP_CONCAT(DISTINCT CONCAT('\\`', KCMC, '\\`', ' FLOAT', CHAR(10)) SEPARATOR ','), ')', 'ENGINE=MyISAM DEFAULT CHARSET=gbk;') FROM grade_original INTO @sql; PREPARE stmt_name FROM @sql; EXECUTE stmt_name; 目前完成: 列名创建出来，XH一行填满，但是成绩没有填 先放着，后面有时间再试试，先用python1.2 利用Python的pandas库对数据进行预处理 首先实现了从原始的data_original转变成data_student_0: 里面数据格式如下: 每行代表一名学生，第一列为学号，第二列至最后一列列名是学科名称，数值是成绩 然后实现了去除大家都有的学科，把参加课程设为1，未参加课程设为0，生成data_student_1.csv文件，用来进行聚类 聚类算法: kmeans，选了4个簇，生成的结果总体上来说非常不错，但是我希望计算一下性能度量(待办) 更细化来说，首先我可以手动针对学生选课来确定学院，最好是通过大三或者大四的课程来确定，以免有人中途转系等等 聚类后生成了data_student_2.csv，里面新增了XY列，0代表国通，1代表计院，2代表航院，3代表中法 然后需要针对学年进行进一步细分: 目前聚类后的结果分布如下"
+    } ,
+  
+    {
+      "title"       : "算法基础",
+      "category"    : "",
+      "tags"        : "note",
+      "url"         : "./Algorithms.html",
+      "date"        : "2022-04-13 00:00:00 +0800",
+      "description" : "郭炜老师算法网课记录",
+      "content"     : "目录1. 第一周 枚举1.1. 完美立方 枚举: 基于逐个尝试答案的一种问题求解策略 例如: 求小于N的最小素数 完美立方: 解题思路:1.2. 生理周期 题干: 解题思路:1.3. 称硬币 题干: 解题思路1.4. 熄灯问题 题干: 解题思路:局部的思想，化繁为简 可以用0-31的十进制数来表示第一列的数据，因为其二进制数刚好对应开关的状态2. 第二周 递归2.1. 求阶乘 递归的基本概念: 一个函数调用其自身就是递归 递归和普通函数调用一样是通过栈实现 递归的作用 替代多重循环 解决本来就是递归形式定义的问题 将问题分解为规模更小的问题进行求解: 比如n！变成n * (n-1)"
+    } ,
+  
+    {
       "title"       : "C语言程序设计",
       "category"    : "",
       "tags"        : "note",
