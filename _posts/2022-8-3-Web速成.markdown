@@ -1,0 +1,46 @@
+---
+layout: postwithlatex
+read_time: true
+show_date: true
+title:  Web速成
+date:   2022-8-3
+description: 速成HTML、CSS、JS
+img: posts/20220803/1.jpg 
+tags: [note]
+author: Quehry
+---
+
+# 1. HTML学习
+
+<center><img src='../assets/img/posts/20220803/2.jpg'></center>
+<br>
+
+<center><img src='../assets/img/posts/20220803/3.jpg'></center>
+<br>
+
+<center><img src='../assets/img/posts/20220803/4.jpg'></center>
+
+# 2. CSS学习
+
+<center><img src='../assets/img/posts/20220803/5.jpg'></center>
+<br>
+
+<center><img src='../assets/img/posts/20220803/6.jpg'></center>
+<br>
+
+<center><img src='../assets/img/posts/20220803/7.jpg'></center>
+<br>
+
+<center><img src='../assets/img/posts/20220803/8.jpg'></center>
+<br>
+
+<center><img src='../assets/img/posts/20220803/9.jpg'></center>
+<br>
+
+# 3. JS学习
+<center><img src='../assets/img/posts/20220803/10.jpg'></center>
+<br>
+
+<center><img src='../assets/img/posts/20220803/11.jpg'></center>
+<br>
+
