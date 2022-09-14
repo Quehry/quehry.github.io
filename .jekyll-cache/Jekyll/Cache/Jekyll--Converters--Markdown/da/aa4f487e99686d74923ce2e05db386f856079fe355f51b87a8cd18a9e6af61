@@ -1,0 +1,389 @@
+I"�a<!-- TOC -->
+
+<ul>
+  <li><a href="#1-预备知识">1. 预备知识</a></li>
+  <li><a href="#2-线性神经网络">2. 线性神经网络</a></li>
+  <li><a href="#3-多层感知机">3. 多层感知机</a></li>
+  <li><a href="#5-卷积神经网络">5. 卷积神经网络</a></li>
+  <li><a href="#7-循环神经网络">7. 循环神经网络</a></li>
+  <li><a href="#8-现代循环神经网络">8. 现代循环神经网络</a></li>
+  <li><a href="#9-注意力机制">9. 注意力机制</a></li>
+  <li><a href="#13-自然语言处理-预训练">13. 自然语言处理: 预训练</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-预备知识">1. 预备知识</h1>
+<p>这一章主要介绍了深度学习的一些前置知识，这里对比较重要的点做备注</p>
+<ul>
+  <li>张量(Tensor)包含了一维张量(向量)和二维张量(矩阵)</li>
+  <li>torch中A*B是哈达玛积，表示矩阵元素按元素相乘</li>
+  <li>torch.dot()是点积</li>
+  <li>torch.cat(…, dim=0)表示在行上延伸，比如(3, 4)和(3, 4)变成(6, 4)</li>
+  <li>A.sum(axis=0)表示把每一列的数据都相加，比如(5, 4)变成(4)</li>
+  <li>范数是norm，L1范数为每个元素的绝对值相加，L2范数为元素的平方和开根号，torch中默认L2范数，一般也是L2范数用的最多</li>
+  <li>梯度: 连接多元函数的所有偏导数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/2.jpg" /></center>
+
+<ul>
+  <li>梯度是一个向量</li>
+  <li>常用的梯度计算公式:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/3.jpg" /></center>
+
+<ul>
+  <li>torch中自动求导的步骤:
+    <ul>
+      <li>第一步 为x分配内存空间: x.requires_grad_(True)</li>
+      <li>第二步 链式反向传播，希望求哪个函数的梯度，就对那个函数反向传播，比如y.backward()</li>
+      <li>第三步 求x的梯度，x.grad，如果我们需要重新求梯度，需要清零梯度，x.grad.zero_()</li>
+      <li>注意torch中只能对标量输出求梯度，所以常见操作是sum</li>
+    </ul>
+  </li>
+  <li>标量对向量的偏导是向量，向量对向量的偏导是矩阵</li>
+  <li>贝叶斯公式: P(A|B)P(B)=P(B|A)P(A)</li>
+</ul>
+
+<h1 id="2-线性神经网络">2. 线性神经网络</h1>
+<p>本章主要介绍了线性回归网络和softmax回归网络，接下来是一些笔记</p>
+<ul>
+  <li>随机梯度下降和梯度下降的区别: 梯度下降一般而言是针对所有的样本而言，而随机梯度下降是针对单个样本而言，同样地，小批量随机梯度下降是针对一个批量的样本而言</li>
+  <li>可以调整但是在训练过程中不更新的参数叫做超参数</li>
+  <li>极大似然法: $\theta$是需要估计的值，在写似然函数时只需要把$\theta$看成参数，最大化似然函数即$\theta$的估计值</li>
+  <li>每个输入与每个输出相连的层成为全连接层</li>
+  <li>with torch.no_grad()的作用是让输出结果之后不构建计算图</li>
+  <li>本章的训练过程: 计算y的预测值-&gt;计算损失函数-&gt;累加loss并反向传播(记得每个批量在梯度更新前需要清零梯度并反向传播loss)-&gt;更新参数</li>
+  <li>训练过程中重要的组成部分: 数据迭代器、损失函数、优化器(updater/trainer)、网络(记得初始化参数)</li>
+  <li>softmax为分类服务，softmax本质上是将输出规范成概率数值，方便选取预测概率最大的类作为预测类:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/4.jpg" /></center>
+
+<ul>
+  <li>分类的标签可以用独热编码定义</li>
+  <li>网络模型用nn.sequential()定义</li>
+  <li>softmax回归的损失函数可以用极大似然法推出，普通的极大似然法是最大化似然函数，但是在这里我们加上-log就变成了最小化损失函数</li>
+  <li>softmax回归的损失函数是交叉熵损失:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/5.jpg" /></center>
+
+<h1 id="3-多层感知机">3. 多层感知机</h1>
+<p>本小节主要介绍了多层感知机的实现以及面对各种问题的解决方法，比如解决过拟合的权重衰退(weight decay)和暂退法(dropout)，解决梯度爆炸与消失的Xavier初始化。</p>
+<ul>
+  <li>激活函数的作用是将线性网络变成非线性，常见的有ReLU、Sigmoid、tanh</li>
+  <li>ReLU: max(x, 0)</li>
+  <li>Sigmoid: $\frac{1}{1+e^{-x}}$</li>
+  <li>tanh: $\frac{1-e^{-2x}}{1+e^{-2x}}$</li>
+  <li>在torch中可以用@来简单表示矩阵乘法</li>
+  <li>用nn.Sequential()来实例化网络时，nn.ReLU()单独算一层</li>
+  <li>过拟合问题可以用正则化技术解决，比如权重衰退</li>
+  <li>权重衰退就是L2正则化，它在计算损失函数时增加了权重的惩罚项，比如L($\omega$, b)+$\frac{\lambda}{2}$||$\omega$||，其中$\lambda$是超参数</li>
+  <li>torch框架中把权重衰退放在优化器的实例化中(torch.optim)，只需要将weight_decay的超参数输入即可</li>
+  <li>暂退法(Dropout): 在前向传播中，计算每一内部层的同时注入噪音，就好像在训练过程中丢弃了一些神经元</li>
+  <li>中间层活性值:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/6.jpg" /></center>
+
+<ul>
+  <li>只有在训练过程中才有权重衰退和暂退法</li>
+  <li>在torch中简单实现dropout的方法: 在构建net时将nn.Dropout(dropout)加入nn.Sequential()，其中dropout作为丢弃概率输入Dropout中</li>
+  <li>网络架构顺序: linear-&gt;relu-&gt;dropout</li>
+  <li>torch中实现tensor对tensor求梯度的方法是在backward()里面加入torch.ones_like()</li>
+  <li>不正常的参数初始化可能会导致梯度爆炸和梯度消失</li>
+  <li>Xavier初始化是解决梯度爆炸和消失的好手段</li>
+</ul>
+
+<h1 id="5-卷积神经网络">5. 卷积神经网络</h1>
+<p>这章主要介绍了CNN的基础知识，包括卷积计算以及汇聚层和简单的卷积神经网络LeNet</p>
+<ul>
+  <li>卷积运算即互相关运算，卷积核函数沿着输入矩阵滑动计算，一般的卷积层除了核运算外，还需要加上偏置</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/7.jpg" /></center>
+
+<ul>
+  <li>二维卷积层的输入格式: (批量大小, 通道数, 高, 宽)，卷积层又被称为特征映射(feature map)</li>
+  <li>感受野(Receptive Field)的定义是卷积神经网络每一层输出的特征图上的像素点在输入图片上映射的区域大小，也就是一个像素点对应的上一层图像的区域大小</li>
+  <li>填充(padding)与步幅(stride):
+    <ul>
+      <li>填充的作用是在输入图像的边界填充元素(通常为0)，添加$p_h$行与$p_w$列，基本是一半在左一半在右</li>
+      <li>一般在定义卷积层nn.Convd()时可以加上填充与步幅</li>
+      <li>步幅包括垂直步幅$S_h$与水平步幅$S_w$</li>
+      <li>在经过卷积层后，二维图像变成了$[(n_h - k_h + p_h + 1)/S_h, (n_w - k_w + p_w + 1)/S_w]$</li>
+    </ul>
+  </li>
+  <li>多通道输入，只需把各通道输出结果加起来即可</li>
+  <li>多通道输出，为每个输出通道创建一个卷积核函数$(c_i, k_h, k_w)$，假设输入通道个数$c_i$，输出通道个数为$c_o$，那么卷积核形状为$(c_o, c_i, k_h, k_w)$</li>
+  <li>torch.stack(): 沿一个新维度对输入张量进行连接</li>
+  <li>汇聚层(pooling)包括最大汇聚层和平均汇聚层，汇聚层是直接返回输入图像的一个小窗口的最大值或者平均值</li>
+  <li>汇聚层没有可学习的参数</li>
+  <li>汇聚层同样有填充与步幅，默认情况下步幅与窗口大小相同，nn.MaxPool2d()</li>
+  <li>每个卷积块的基本单元是: 卷积层-&gt;激活函数-&gt;汇聚层</li>
+  <li>nn.Conv2d(1, 6, kernel_size=5)其中1表示输入通道数，6表示输出通道数</li>
+  <li>在CNN的最后都需要连接全连接层来变成预测类别</li>
+  <li>在训练过程中如果想好好利用GPU，那么需要将网络的参数与数据集数据传入GPU，具体方法是net.to(device)、X,y.to(device)</li>
+</ul>
+
+<h1 id="7-循环神经网络">7. 循环神经网络</h1>
+<p>这小节主要介绍了文本数据集如何制作，RNN的网络结构与实现</p>
+<ul>
+  <li>序列数据就是与时间相关的数据</li>
+  <li>马尔可夫模型: 用定时间跨度的观测序列预测$x_t$</li>
+  <li>$P(x_1,…,x_T)=\prod_{t=1}^TP(x_t|x_{t-1},…,x_{t-\tau})$</li>
+  <li>一些名词: 文本序列、词元(token)、词表(vocabulary)、语料(corpus)</li>
+  <li>文本预处理过程: 读取数据集成列表-&gt;将列表词元化，变成包含多行的词元列表-&gt;构建词表(词表将词元与数字对应)</li>
+  <li>文本预处理中的词元可以是单词，也可以是字符，这里采用字符</li>
+  <li>语言模型(language model)的目标是估计联合概率$P(x_1,…,x_T)$</li>
+  <li>涉及一个、两个、三个变量的概率公式分别被称为一元语法、二元语法、三元语法</li>
+  <li>zip()的作用是将可迭代对象打包成一个个元组，然后返回元组组成的列表</li>
+  <li>构建文本序列数据集的两种方法:
+    <ul>
+      <li>随机采样: 随机选取，特征是原始序列，标签是原始序列右移一位</li>
+      <li>顺序分区: 保证每个批量中子序列再原语料中相邻</li>
+    </ul>
+  </li>
+  <li>相比与马尔可夫模型，隐变量模型更能体现过往序列的影响:
+  $P(x_t|x_{t-1},…,x_1)=P(x_t|h_{t-1})$</li>
+  <li>RNN的示意图以及推导公式:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/8.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220905/9.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220905/10.jpg" /></center>
+
+<ul>
+  <li>循环神经网络中循环的是H(Hidden state)</li>
+  <li>度量语言模型的质量的性能度量是困惑度(perplexity): 一个序列中n个词元的交叉熵损失来衡量语言模型的质量</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/11.jpg" /></center>
+
+<ul>
+  <li>最好的情况下，困惑度为1，最差的情况下，困惑度为无穷大</li>
+  <li>独热编码将(批量大小, 时间步数)转变成(批量大小, 时间步数, 词表大小)，但为了方便计算，最终转变成(时间步数, 批量大小, 词表大小)</li>
+  <li>梯度裁剪的作用是保证梯度不会爆炸</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/12.jpg" /></center>
+
+<ul>
+  <li>RNN的网络结构与之前差别不大，只是在更新梯度前需要进行梯度裁剪</li>
+  <li>隐藏状态形状: (隐藏层个数, 批量大小, 隐层参数个数)</li>
+  <li>nn.RNN()返回的Y为隐层参数个数，需要再加上全连接层</li>
+</ul>
+
+<h1 id="8-现代循环神经网络">8. 现代循环神经网络</h1>
+<p>这一章介绍了拥有记忆单元的LSTM模型，以及后续新的NLP任务机器翻译，介绍了数据集处理过程和编码器解码器结构的网络seq2seq，用来处理序列转换任务</p>
+<ul>
+  <li>长短期记忆网络LSTM(long short term memory)</li>
+  <li>LSTM相较于普通的RNN多了很多元素，最主要的设计是记忆单元，它可以影响下一步的隐藏状态:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/13.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220905/14.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220905/15.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220905/16.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220905/17.jpg" /></center>
+<p><br /></p>
+
+<ul>
+  <li>输入、输出、遗忘门均与$H_{t-1}$和$X_t$有关</li>
+  <li>记忆单元C类似于隐状态，时时更新</li>
+  <li>总的来说，LSTM中$H_t$与$H_{t-1}$、$X_t$、$C_t$都有关</li>
+  <li>RNN的延伸: 多层与双向RNN，其中多层很好理解，就是把单向隐藏层的神经网络变成多层，双向的作用是让序列用到上下文信息，在预测下一个词元的任务中
+双向RNN表现不佳，但是在NER中表现很好</li>
+  <li>nn.LSTM(num_inputs, num_hiddens, num_layers)</li>
+  <li>接下来的内容变成了机器翻译任务(序列转换)</li>
+  <li>机器翻译中使用单词级词元化</li>
+  <li>机器翻译数据集处理过程: 读取数据集-&gt;词元化列表-&gt;将数据集分割成source(源语言)与target(目标语言)-&gt;序列末端加上&lt;eos&gt;，同时针对长短不一的序列填充&lt;pad&gt;与截断</li>
+  <li>处理序列转换任务可以用编码器-解码器结构</li>
+  <li>编码器的作用是将长短可变序列变成固定形状的状态，解码器的作用是将固定形状的状态变成长度可变序列</li>
+  <li>编码器为解码器输入一个状态，在seq2seq中是编码器编码过程中的隐状态，这个隐状态既作为解码器的初始state，在每个时间步中也作为上下文变量和输入concatenate之后一起输入解码器</li>
+  <li>采用嵌入层将词元进行向量化，嵌入层是一个矩阵，(词表大小，特征向量维度)</li>
+  <li>编码器与解码器是两个GRU</li>
+  <li>permute()可以改变张量维度的位置</li>
+  <li>rnn()的输入形状一般为(num_steps, batch_size, embed_size)</li>
+  <li>解码器的最后同样需要一个全连接层输出</li>
+  <li>解码器的第一个输入为&lt;bos&gt;</li>
+  <li>由于序列存在很多&lt;pad&gt;，计算损失时不能计算pad那一部分，可以mask这一部分，所以损失函数需要重新改一下</li>
+  <li>在seq2seq训练时，解码器net的输入为cat(&lt;bos&gt;，真实序列少一时间步)，这种训练机制叫做强制教学</li>
+  <li>预测的时候解码器net的输入仅为&lt;bos&gt;，用每一步的预测作为下一步的输入</li>
+  <li>机器翻译的性能度量为BLEU(bilingual evaluation understudy)，可用来预测输出序列的质量，当预测序列与标签序列完全相同时，BLEU为1，公式如下:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/18.jpg" /></center>
+
+<ul>
+  <li>编码器的功能主要是为解码器提供上下文变量c和解码器的初始隐状态</li>
+</ul>
+
+<h1 id="9-注意力机制">9. 注意力机制</h1>
+<p>这章主要介绍了注意力机制，介绍了注意力机制的组成部分，比如查询、键、值、评分函数，后面又介绍了与RNN结合的Bahdanau注意力以及自注意力和多头注意力，最后介绍了transformer</p>
+<ul>
+  <li>注意力机制的主要成分是查询(query)、键(key)、值(value)，q和k交互形成注意力权重，然后与v相乘得到注意力汇聚结果</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/19.jpg" /></center>
+
+<ul>
+  <li>注意力汇聚结果计算公式:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/20.jpg" /></center>
+
+<p>其中x是查询，$x_i$是key，$y_i$是value，$\alpha$的作用是将x与$x_i$之间的关系建模，且权重总和为1，有点像softmax</p>
+
+<ul>
+  <li>unsqueeze()的作用是在指定位置添加一个维度，squeeze()的作用是在指定位置删除一个维度，torch.bmm()是批量矩阵乘法</li>
+  <li>评分函数a同样是对q和k的关系进行建模，q、k、v都可以是向量，而且长度可以不同</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/21.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220905/22.jpg" /></center>
+<p><br /></p>
+
+<ul>
+  <li>这里介绍了两种评分函数: 加性注意力和缩放点积注意力
+    <ul>
+      <li>加性注意力: 可以处理长度不同的q与k</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/23.jpg" /></center>
+
+    <ul>
+      <li>缩放点积注意力(计算效率高): 要求q与k长度相同</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/24.jpg" /></center>
+  </li>
+  <li>Bahdanau注意力模型也是编码器解码器结构，与之前的seq2seq不同，这里的上下文变量在解码器的每一步都不相同，上下文变量$c_{t’}$与解码器的上一步隐状态有关，同时在解码器和编码器的输入位置都有嵌入层</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/25.jpg" /></center>
+
+<ul>
+  <li>多头注意力: 对q、k、v使用线性变换得到h组不同的q-k-v来输入h个注意力汇聚层，得到h个输出，这h个输出再线性变换得到最终输出</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/26.jpg" /></center>
+
+<ul>
+  <li>自注意力就是q-k-v都是相同的一组元素</li>
+  <li>自注意力无法使用序列的位置信息，可以给输入concatenate一个位置编码，比如X∈$R^{nxd}$表示n个词元的d维嵌入，P∈$R^{nxd}$表示位置嵌入矩阵，那么X+P即输入，位置编码可以基于正弦函数和余弦函数的固定位置编码</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/27.jpg" /></center>
+
+<ul>
+  <li>transformer模型与Bahdanau模型不同，它完全基于注意力机制来构建模型</li>
+  <li>transformer每块都由多头注意力和基于位置的前馈神经网络组成，其中还有残差连接，即x+sublayer(x)，再层规范化。在解码器的注意力层中，q是上个解码器层的输出，k和v是编码器输出(每个源序列的位置的编码代表一个键值对)。基于位置的前馈神经网络，简称ffn，即两层MLP</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/28.jpg" /></center>
+
+<h1 id="13-自然语言处理-预训练">13. 自然语言处理: 预训练</h1>
+<p>这一章主要介绍了NLP领域的预训练模型，NLP领域的预训练模型都是encoder，即用文本特征来表示词元(一般都是单词)，首先介绍了word2vec，然后介绍了全局向量的词嵌入，之后介绍了子词嵌入模型fastText与字节对编码(BPE)，之后介绍了BERT(双向Transformer编码器)</p>
+<ul>
+  <li>在介绍RNN模型时，介绍了用独热向量来表示词元，但是这有个很严重的缺点: 不同词的独热向量的余弦相似度为0。所以接下来会介绍很多词嵌入模型，即用一个词向量来表示单词</li>
+  <li>word2vec: 将词映射到固定长度的向量，这里介绍了两种模型: 跳元模型(skip-gram)与连续词袋CBOW
+    <ul>
+      <li>跳元模型: 假设一个词可以用来在文本序列中生成其周围的词，对于每个索引为i的单词，可以用$u_i$与$v_i$分别表示其作为上下文词和中心词的向量，可以用softmax对生成概率进行建模，对于给定中心词$w_c$，生成上下文词$w_o$的概率为:</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/29.jpg" /></center>
+
+    <p>那么跳元模型的似然函数为(上下文窗口大小为m):</p>
+
+    <center><img src="../assets/img/posts/20220905/30.jpg" /></center>
+
+    <p>然后通过极大似然估计法来训练</p>
+    <ul>
+      <li>连续词袋: 与跳元模型相反，CBOW是基于上下文词生成中心词，连续词袋模型用$v_i$和$u_i$分别表示一个词的上下文词向量与中心词向量(与跳元模型相反)，同样用softmax建模(上下文词向量相加):</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/31.jpg" /></center>
+
+    <p>连续词袋模型的似然函数:</p>
+
+    <center><img src="../assets/img/posts/20220905/32.jpg" /></center>
+  </li>
+  <li>由于词表过大，使用softmax来建模的话计算成本过大，可采用两种近似训练办法来优化: 负采样与分层softmax
+    <ul>
+      <li>负采样建模: 直接用内积加上激活函数来表示概率，负采样即在似然函数中加上负例(从预定义分布中采样噪声词)</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/33.jpg" /></center>
+
+    <ul>
+      <li>层序softmax: 用二叉树来表示概率模型，同样使用了激活函数sigmoid，时间复杂度变低</li>
+    </ul>
+  </li>
+  <li>接下来用负采样跳元模型训练(自监督训练)来展示word2vec的效果，数据集用PTB，语料库取自华尔街时报。数据集处理时用到了下采样方法: 高频词有概率被丢弃:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/34.jpg" /></center>
+
+<p>上述式子中f($w_i$)是词在整个语料库中出现的比率，t是超参数。这样高频词就不会太影响模型效果，毕竟不太关注类似a和the与其他词共同出现的概率</p>
+<ul>
+  <li>在下采样与负采样完毕后，一个小批量中第i个样本包括中心词及其$n_i$个上下文词和$m_i$个噪声词，数据集还需要返回mask与label，分别用来遮掩&lt;pad&gt;与标记正例</li>
+  <li>word2vec本质上其实是训练一个权重矩阵(词表大小, 嵌入维度)，就是一个nn.Embedding()。跳元模型的前向传播就是计算内积矩阵torch.bmm(embed_v, embed_u)
+损失函数是带掩码的交叉熵损失</li>
+  <li>跳元模型在预训练完毕后，可以用来找出语义相似的单词，即计算中心词与其余所有词的余弦相似度，计算结果最高的词即为语义最相似的单词</li>
+  <li>无论是word2vec的哪个模型，都着眼于中心词与上下文词的关系</li>
+  <li>全局向量的词嵌入GloVe: word2vec只考虑了局部的上下文词，GloVe则考虑了全局语料库统计来设计模型，训练GloVe是为了降低以下损失函数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/35.jpg" /></center>
+
+<p>上述式子中，$x_{ij}$是中心词i与上下文词j在一个上下文窗口出现的次数，h($x_{ij}$)是每个损失项的权重，当x小于c时，h(x)=$\frac{x}{c}^\alpha$，当x大于c时h(x)=1，$b_i$与$c_j$是可学习的偏置</p>
+<ul>
+  <li>子词嵌入模型: 对词的内部结构进行研究(比如dog和dogs的关系)
+    <ul>
+      <li>fastText模型: 每个中心词由其子词的向量之和表示(子词就是单词的某些连续字符)</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/36.jpg" /></center>
+
+    <p>其余部分与跳元模型相同</p>
+    <ul>
+      <li>字节对编码(Byte Pair Encoding, BPE): 一种算法，用来提取子词。BPE的本质就是对训练数据集进行统计分析，找出单词的公共符号，这些公共符号将作为划分子词的依据，对于每个单词，都将返回最长的子词划分结果(这样就可以获得任意长度的子词)</li>
+    </ul>
+  </li>
+  <li>从大型语料库中训练的词向量可用于下游的自然语言处理任务，预训练的词向量可应用到词的类比性和相似性任务中，比如GloVe和fastText</li>
+  <li>torch.topk(k)的作用是返回列表中的最大值(前k个)</li>
+  <li>词相似: 利用余弦相似度</li>
+  <li>词类比: a:b::c:d，比如man:woman::son:daughter，词类比任务就是给出a、b、c，找到d，即让d的词向量尽量靠近vec(c)+vec(b)-vec(a)</li>
+  <li>word2vec于GloVe都是上下文无关的，即对于一个词元编码，只需要输入该词元即可</li>
+  <li>NLP的六种任务: 情感分析、自然语言推断、语义角色标注、共指消解，NER和QA</li>
+  <li>GPT的缺点: 自回归，单向</li>
+  <li>BERT使用双向Transformer编码器来编码文本，BERT同样是预训练模型，可以基于双向上下文来表示任意词元</li>
+  <li>针对不同的上下文任务，BERT需要对架构进行微调</li>
+  <li>BERT可输入单个文本，也可以输入文本序列对，当输入单个文本时，BERT的输入序列是&lt;cls&gt;文本&lt;sep&gt;；当输入文本对时，BERT的输入序列是&lt;cls&gt;文本1&lt;sep&gt;文本2&lt;sep&gt;</li>
+  <li>在BERT中，有三个嵌入层，分别是词元嵌入(普通的embedding)、段嵌入(两个片段序列的输入，用来区分不同的句子)和位置嵌入(可学习)，之后再把结果输入encoder中</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/37.jpg" /></center>
+
+<ul>
+  <li>BERT通过两个预训练任务来优化双向Transformer编码器，分别是掩蔽语言模型(masked language modeling 即填空)和下一句预测(next sentence predicition)
+    <ul>
+      <li>掩遮语言模型: 随机掩蔽词元并使用来自双向上下文的词元以自监督的方式预测掩蔽词元。预测阶段使用单隐藏层的MLP来进行预测，输入BERT的编码结果和用于预测词元的位置，然后根据预测词元的位置得到预测词元的编码结果，然后输入mlp中得到预测结果</li>
+      <li>下一句预测: 二分类任务，判断文本序列对是否是连续句子，预测时同样使用MLP，输入编码后的&lt;cls&gt;词元</li>
+      <li>这两个任务在制作数据集的时候都需要加上一些负例或者噪声</li>
+    </ul>
+  </li>
+  <li>BERT的预训练数据集有很多(针对不同的应用领域，使用不同的数据集进行训练)，最开始使用的是图书语料库和wiki</li>
+</ul>
+:ET

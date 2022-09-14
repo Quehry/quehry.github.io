@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-11T00:04:03+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">动手学深度学习</title><link href="http://localhost:4000/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html" rel="alternate" type="text/html" title="动手学深度学习" /><published>2022-09-05T00:00:00+08:00</published><updated>2022-09-05T00:00:00+08:00</updated><id>http://localhost:4000/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0</id><content type="html" xml:base="http://localhost:4000/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html"><![CDATA[<!-- TOC -->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-13T22:19:26+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">动手学深度学习</title><link href="http://localhost:4000/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html" rel="alternate" type="text/html" title="动手学深度学习" /><published>2022-09-05T00:00:00+08:00</published><updated>2022-09-05T00:00:00+08:00</updated><id>http://localhost:4000/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0</id><content type="html" xml:base="http://localhost:4000/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html"><![CDATA[<!-- TOC -->
 
 <ul>
   <li><a href="#1-预备知识">1. 预备知识</a></li>
@@ -8,6 +8,7 @@
   <li><a href="#7-循环神经网络">7. 循环神经网络</a></li>
   <li><a href="#8-现代循环神经网络">8. 现代循环神经网络</a></li>
   <li><a href="#9-注意力机制">9. 注意力机制</a></li>
+  <li><a href="#13-自然语言处理-预训练">13. 自然语言处理: 预训练</a></li>
 </ul>
 
 <!-- /TOC -->
@@ -290,7 +291,102 @@
   <li>transformer每块都由多头注意力和基于位置的前馈神经网络组成，其中还有残差连接，即x+sublayer(x)，再层规范化。在解码器的注意力层中，q是上个解码器层的输出，k和v是编码器输出(每个源序列的位置的编码代表一个键值对)。基于位置的前馈神经网络，简称ffn，即两层MLP</li>
 </ul>
 
-<center><img src="../assets/img/posts/20220905/28.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[d2l note]]></summary></entry><entry><title type="html">Web速成</title><link href="http://localhost:4000/Web%E9%80%9F%E6%88%90.html" rel="alternate" type="text/html" title="Web速成" /><published>2022-08-03T00:00:00+08:00</published><updated>2022-08-03T00:00:00+08:00</updated><id>http://localhost:4000/Web%E9%80%9F%E6%88%90</id><content type="html" xml:base="http://localhost:4000/Web%E9%80%9F%E6%88%90.html"><![CDATA[<h1 id="1-html学习">1. HTML学习</h1>
+<center><img src="../assets/img/posts/20220905/28.jpg" /></center>
+
+<h1 id="13-自然语言处理-预训练">13. 自然语言处理: 预训练</h1>
+<p>这一章主要介绍了NLP领域的预训练模型，NLP领域的预训练模型都是encoder，即用文本特征来表示词元(一般都是单词)，首先介绍了word2vec，然后介绍了全局向量的词嵌入，之后介绍了子词嵌入模型fastText与字节对编码(BPE)，之后介绍了BERT(双向Transformer编码器)</p>
+<ul>
+  <li>在介绍RNN模型时，介绍了用独热向量来表示词元，但是这有个很严重的缺点: 不同词的独热向量的余弦相似度为0。所以接下来会介绍很多词嵌入模型，即用一个词向量来表示单词</li>
+  <li>word2vec: 将词映射到固定长度的向量，这里介绍了两种模型: 跳元模型(skip-gram)与连续词袋CBOW
+    <ul>
+      <li>跳元模型: 假设一个词可以用来在文本序列中生成其周围的词，对于每个索引为i的单词，可以用$u_i$与$v_i$分别表示其作为上下文词和中心词的向量，可以用softmax对生成概率进行建模，对于给定中心词$w_c$，生成上下文词$w_o$的概率为:</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/29.jpg" /></center>
+
+    <p>那么跳元模型的似然函数为(上下文窗口大小为m):</p>
+
+    <center><img src="../assets/img/posts/20220905/30.jpg" /></center>
+
+    <p>然后通过极大似然估计法来训练</p>
+    <ul>
+      <li>连续词袋: 与跳元模型相反，CBOW是基于上下文词生成中心词，连续词袋模型用$v_i$和$u_i$分别表示一个词的上下文词向量与中心词向量(与跳元模型相反)，同样用softmax建模(上下文词向量相加):</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/31.jpg" /></center>
+
+    <p>连续词袋模型的似然函数:</p>
+
+    <center><img src="../assets/img/posts/20220905/32.jpg" /></center>
+  </li>
+  <li>由于词表过大，使用softmax来建模的话计算成本过大，可采用两种近似训练办法来优化: 负采样与分层softmax
+    <ul>
+      <li>负采样建模: 直接用内积加上激活函数来表示概率，负采样即在似然函数中加上负例(从预定义分布中采样噪声词)</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/33.jpg" /></center>
+
+    <ul>
+      <li>层序softmax: 用二叉树来表示概率模型，同样使用了激活函数sigmoid，时间复杂度变低</li>
+    </ul>
+  </li>
+  <li>接下来用负采样跳元模型训练(自监督训练)来展示word2vec的效果，数据集用PTB，语料库取自华尔街时报。数据集处理时用到了下采样方法: 高频词有概率被丢弃:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/34.jpg" /></center>
+
+<p>上述式子中f($w_i$)是词在整个语料库中出现的比率，t是超参数。这样高频词就不会太影响模型效果，毕竟不太关注类似a和the与其他词共同出现的概率</p>
+<ul>
+  <li>在下采样与负采样完毕后，一个小批量中第i个样本包括中心词及其$n_i$个上下文词和$m_i$个噪声词，数据集还需要返回mask与label，分别用来遮掩&lt;pad&gt;与标记正例</li>
+  <li>word2vec本质上其实是训练一个权重矩阵(词表大小, 嵌入维度)，就是一个nn.Embedding()。跳元模型的前向传播就是计算内积矩阵torch.bmm(embed_v, embed_u)
+损失函数是带掩码的交叉熵损失</li>
+  <li>跳元模型在预训练完毕后，可以用来找出语义相似的单词，即计算中心词与其余所有词的余弦相似度，计算结果最高的词即为语义最相似的单词</li>
+  <li>无论是word2vec的哪个模型，都着眼于中心词与上下文词的关系</li>
+  <li>全局向量的词嵌入GloVe: word2vec只考虑了局部的上下文词，GloVe则考虑了全局语料库统计来设计模型，训练GloVe是为了降低以下损失函数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/35.jpg" /></center>
+
+<p>上述式子中，$x_{ij}$是中心词i与上下文词j在一个上下文窗口出现的次数，h($x_{ij}$)是每个损失项的权重，当x小于c时，h(x)=$\frac{x}{c}^\alpha$，当x大于c时h(x)=1，$b_i$与$c_j$是可学习的偏置</p>
+<ul>
+  <li>子词嵌入模型: 对词的内部结构进行研究(比如dog和dogs的关系)
+    <ul>
+      <li>fastText模型: 每个中心词由其子词的向量之和表示(子词就是单词的某些连续字符)</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20220905/36.jpg" /></center>
+
+    <p>其余部分与跳元模型相同</p>
+    <ul>
+      <li>字节对编码(Byte Pair Encoding, BPE): 一种算法，用来提取子词。BPE的本质就是对训练数据集进行统计分析，找出单词的公共符号，这些公共符号将作为划分子词的依据，对于每个单词，都将返回最长的子词划分结果(这样就可以获得任意长度的子词)</li>
+    </ul>
+  </li>
+  <li>从大型语料库中训练的词向量可用于下游的自然语言处理任务，预训练的词向量可应用到词的类比性和相似性任务中，比如GloVe和fastText</li>
+  <li>torch.topk(k)的作用是返回列表中的最大值(前k个)</li>
+  <li>词相似: 利用余弦相似度</li>
+  <li>词类比: a:b::c:d，比如man:woman::son:daughter，词类比任务就是给出a、b、c，找到d，即让d的词向量尽量靠近vec(c)+vec(b)-vec(a)</li>
+  <li>word2vec于GloVe都是上下文无关的，即对于一个词元编码，只需要输入该词元即可</li>
+  <li>NLP的六种任务: 情感分析、自然语言推断、语义角色标注、共指消解，NER和QA</li>
+  <li>GPT的缺点: 自回归，单向</li>
+  <li>BERT使用双向Transformer编码器来编码文本，BERT同样是预训练模型，可以基于双向上下文来表示任意词元</li>
+  <li>针对不同的上下文任务，BERT需要对架构进行微调</li>
+  <li>BERT可输入单个文本，也可以输入文本序列对，当输入单个文本时，BERT的输入序列是&lt;cls&gt;文本&lt;sep&gt;；当输入文本对时，BERT的输入序列是&lt;cls&gt;文本1&lt;sep&gt;文本2&lt;sep&gt;</li>
+  <li>在BERT中，有三个嵌入层，分别是词元嵌入(普通的embedding)、段嵌入(两个片段序列的输入，用来区分不同的句子)和位置嵌入(可学习)，之后再把结果输入encoder中</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220905/37.jpg" /></center>
+
+<ul>
+  <li>BERT通过两个预训练任务来优化双向Transformer编码器，分别是掩蔽语言模型(masked language modeling 即填空)和下一句预测(next sentence predicition)
+    <ul>
+      <li>掩遮语言模型: 随机掩蔽词元并使用来自双向上下文的词元以自监督的方式预测掩蔽词元。预测阶段使用单隐藏层的MLP来进行预测，输入BERT的编码结果和用于预测词元的位置，然后根据预测词元的位置得到预测词元的编码结果，然后输入mlp中得到预测结果</li>
+      <li>下一句预测: 二分类任务，判断文本序列对是否是连续句子，预测时同样使用MLP，输入编码后的&lt;cls&gt;词元</li>
+      <li>这两个任务在制作数据集的时候都需要加上一些负例或者噪声</li>
+    </ul>
+  </li>
+  <li>BERT的预训练数据集有很多(针对不同的应用领域，使用不同的数据集进行训练)，最开始使用的是图书语料库和wiki</li>
+  <li>BERT本质上就是一个双向Transformer编码器</li>
+</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[d2l note]]></summary></entry><entry><title type="html">Web速成</title><link href="http://localhost:4000/Web%E9%80%9F%E6%88%90.html" rel="alternate" type="text/html" title="Web速成" /><published>2022-08-03T00:00:00+08:00</published><updated>2022-08-03T00:00:00+08:00</updated><id>http://localhost:4000/Web%E9%80%9F%E6%88%90</id><content type="html" xml:base="http://localhost:4000/Web%E9%80%9F%E6%88%90.html"><![CDATA[<h1 id="1-html学习">1. HTML学习</h1>
 
 <center><img src="../assets/img/posts/20220803/2.jpg" /></center>
 <p><br /></p>
