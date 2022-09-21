@@ -1,0 +1,12 @@
+---
+layout: postwithlatex
+read_time: true
+show_date: true
+title:  技术分享会笔记(关于text2image)
+date:   2022-9-19  
+description: note
+img: posts/20220919/1.jpg 
+tags: [note]
+author: Quehry
+---
+
