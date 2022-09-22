@@ -2,7 +2,7 @@
 layout: postwithlatex
 read_time: true
 show_date: true
-title:  整理T5模型相关内容
+title:  T5模型
 date:   2022-9-19  
 description: arrange notes
 img: posts/20220919/2.jpg 
