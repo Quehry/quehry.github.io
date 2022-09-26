@@ -14,6 +14,7 @@ author: Quehry
 <!-- TOC -->
 
 - [目录](#目录)
+- [0. 简介](#0-简介)
 - [1. 第一周 枚举](#1-第一周-枚举)
     - [1.1. 完美立方](#11-完美立方)
     - [1.2. 生理周期](#12-生理周期)
@@ -29,9 +30,33 @@ author: Quehry
     - [3.2. 上台阶问题](#32-上台阶问题)
     - [3.3. 放苹果问题](#33-放苹果问题)
     - [3.4. 算24问题](#34-算24问题)
-- [4. 第四周 分治](#4-第四周-分治)
+- [4. 第四周 二分算法](#4-第四周-二分算法)
+    - [4.1. 程序或算法的时间复杂度](#41-程序或算法的时间复杂度)
+    - [4.2. 二分查找的原理和实现](#42-二分查找的原理和实现)
+    - [4.3. 二分法求方程的根](#43-二分法求方程的根)
+- [5. 第五周 分治](#5-第五周-分治)
+    - [5.1. 归并排序](#51-归并排序)
+    - [5.2. 快速排序](#52-快速排序)
+    - [5.3. 例题: 输出前m大的数](#53-例题-输出前m大的数)
+    - [5.4. 例题: 求排序的逆序数](#54-例题-求排序的逆序数)
+- [6. 第六周 动态规划(一)](#6-第六周-动态规划一)
+    - [6.1. 数字三角形](#61-数字三角形)
+    - [6.2. 动态规划解题的一般思路](#62-动态规划解题的一般思路)
+    - [6.3. 最长上升子序列](#63-最长上升子序列)
+    - [6.4. 最长公共子序列](#64-最长公共子序列)
+    - [6.5. 最佳加法表达式](#65-最佳加法表达式)
+- [7. 第七周 动态规划(二)](#7-第七周-动态规划二)
+    - [7.1. Help Jimmy](#71-help-jimmy)
+    - [7.2. 滑雪](#72-滑雪)
+    - [7.3. 神奇的口袋](#73-神奇的口袋)
+    - [7.4. 0-1背包问题](#74-0-1背包问题)
+    - [7.5. 分蛋糕](#75-分蛋糕)
 
 <!-- /TOC -->
+
+# 0. 简介
+- 课程来源于北大郭炜老师的MOOC，在中国大学MOOC平台上有网课，课程名为[程序设计与算法(二)算法基础](https://www.icourse163.org/course/PKU-1001894005?tid=1450413466){:target="_blank"}，选择第九次开课
+
 
 # 1. 第一周 枚举
 
@@ -197,4 +222,220 @@ author: Quehry
 <center><img src='../assets/img/posts/20220413/45.jpg'></center>
 <center><img src='../assets/img/posts/20220413/46.jpg'></center>
 
-# 4. 第四周 分治
+# 4. 第四周 二分算法
+## 4.1. 程序或算法的时间复杂度
+- 时间复杂度的定义: 
+<center><img src='../assets/img/posts/20220413/47.jpg'></center>
+重点是明白程序中固定的操作是什么
+- 复杂度有平均复杂度和最坏复杂度两种，两者可能一致，也可能不一致，一般来说只要平均复杂度不太高，算法的效率就还可以
+- 常见的时间复杂度: 
+<center><img src='../assets/img/posts/20220413/48.jpg'></center>
+<center><img src='../assets/img/posts/20220413/49.jpg'></center>
+
+## 4.2. 二分查找的原理和实现
+- 首先可以看这么一个问题: 
+<center><img src='../assets/img/posts/20220413/50.jpg'></center>
+- 二分查找的实现: 时间复杂度是O(log(n))
+<center><img src='../assets/img/posts/20220413/51.jpg'></center>
+- 查找比待查找数小的最大坐标的函数实现: 
+<center><img src='../assets/img/posts/20220413/52.jpg'></center>
+- 二分查找的问题前提是序列必须是递增或者递减的，即有序的
+- 为了防止数据溢出，写中点的时候要这么写: int mid = L + (R - L) / 2 
+- 整型在转型的时候是向下取整
+
+## 4.3. 二分法求方程的根
+- 二分法求方程的根需要方程满足一定的条件，不是所有的方程都可以用二分法求根
+- 问题描述及求解思路: 
+<center><img src='../assets/img/posts/20220413/53.jpg'></center>
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/54.jpg'></center>
+- 如果一个序列不是有序的，可以用排序算法对序列先进行排序然后二分查找
+
+# 5. 第五周 分治
+## 5.1. 归并排序
+- 分治的基本概念: 
+<center><img src='../assets/img/posts/20220413/55.jpg'></center>
+- 分治的典型应用: 归并排序
+<center><img src='../assets/img/posts/20220413/56.jpg'></center>
+- 归并排序的思路就是先分治，然后归并，代码实现如下： 
+<center><img src='../assets/img/posts/20220413/57.jpg'></center>
+<center><img src='../assets/img/posts/20220413/58.jpg'></center>
+<center><img src='../assets/img/posts/20220413/59.jpg'></center>
+- 归并排序的时间复杂度:
+<center><img src='../assets/img/posts/20220413/60.jpg'></center>
+
+## 5.2. 快速排序
+- 快速排序的思想: 
+<center><img src='../assets/img/posts/20220413/61.jpg'></center>
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/62.jpg'></center>
+<center><img src='../assets/img/posts/20220413/63.jpg'></center>
+<center><img src='../assets/img/posts/20220413/64.jpg'></center>
+- 快速排序的时间复杂度是O(nlog(n))，这是在运气不坏的情况下得出的结果(平均复杂度)，运气最坏的情况下时间复杂度为O($n^2$)(最坏复杂度)
+
+## 5.3. 例题: 输出前m大的数
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/65.jpg'></center>
+- 解决思路: 
+<center><img src='../assets/img/posts/20220413/66.jpg'></center>
+用分治的思想解决问题，先把前m个元素移到数组的最右边，然后在对这m个元素进行快排
+- 具体解决方法: 
+<center><img src='../assets/img/posts/20220413/67.jpg'></center>
+<center><img src='../assets/img/posts/20220413/68.jpg'></center>
+- 时间复杂度计算: 
+<center><img src='../assets/img/posts/20220413/69.jpg'></center>
+
+## 5.4. 例题: 求排序的逆序数
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/70.jpg'></center>
+- 解决思路:
+<center><img src='../assets/img/posts/20220413/71.jpg'></center>
+<center><img src='../assets/img/posts/20220413/72.jpg'></center>
+分治一般都使用了递归
+
+# 6. 第六周 动态规划(一)
+## 6.1. 数字三角形
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/73.jpg'></center>
+- 输入格式: 
+<center><img src='../assets/img/posts/20220413/74.jpg'></center>
+- 解题思路: 
+看成递归问题
+<center><img src='../assets/img/posts/20220413/75.jpg'></center>
+- 递归程序代码实现: 
+<center><img src='../assets/img/posts/20220413/76.jpg'></center>
+- 虽然说在代码逻辑这一方面，递归算法没有问题，但是这个算法的时间复杂度太高，程序很容易超时: 
+<center><img src='../assets/img/posts/20220413/77.jpg'></center>
+- 之前的递归算法中存在过多的重复计算，如果能把每一步的计算结果保存起来，那么即可避免重复计算，算法的时间复杂度为O($n^2$)
+<center><img src='../assets/img/posts/20220413/78.jpg'></center>
+- 记忆递归型动规程序: 
+<center><img src='../assets/img/posts/20220413/79.jpg'></center>
+用一个二维数组存储每一个结点的max值，那么读取到这个结点时，就可以直接获得数值，避免了重复计算
+- 也可以用递推的思想解决问题，先把最后一行的结果计算出来，然后从下到上逐步计算，用一个双重循环解决
+<center><img src='../assets/img/posts/20220413/80.jpg'></center>
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/81.jpg'></center>
+- 还可以对空间进行优化，因为下一层的数值在计算上一层的数值后就没有用了，那么完全不需要用一个二维数组存储maxsum，完全可以用一个一维数组存放。再进一步来说，连maxSum数组都可以不要，直接用D的第n行替代maxSum
+<center><img src='../assets/img/posts/20220413/82.jpg'></center>
+- 空间优化后的代码实现: 
+<center><img src='../assets/img/posts/20220413/83.jpg'></center>
+
+## 6.2. 动态规划解题的一般思路
+- 递归到动规的一般转化方法: 
+<center><img src='../assets/img/posts/20220413/84.jpg'></center>
+- 动规解题的一般思路: 
+    - 第一步: 将原问题分解为子问题
+    <center><img src='../assets/img/posts/20220413/85.jpg'></center>
+    - 第二步: 确定状态
+    <center><img src='../assets/img/posts/20220413/86.jpg'></center>
+    - 第三步: 确定一些初始状态的值
+    <center><img src='../assets/img/posts/20220413/87.jpg'></center>
+    - 第四步: 确定状态转移方程
+    <center><img src='../assets/img/posts/20220413/88.jpg'></center>
+- 能用动规解决的问题的特点: 
+<center><img src='../assets/img/posts/20220413/89.jpg'></center>
+
+## 6.3. 最长上升子序列
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/90.jpg'></center>
+- 输入输出格式: 
+<center><img src='../assets/img/posts/20220413/91.jpg'></center>
+- 解题思路: 
+    - 找子问题: 
+    <center><img src='../assets/img/posts/20220413/92.jpg'></center>
+    <center><img src='../assets/img/posts/20220413/93.jpg'></center>
+    - 确定状态: 
+    <center><img src='../assets/img/posts/20220413/94.jpg'></center>
+    - 找出状态转移方程: 
+    <center><img src='../assets/img/posts/20220413/95.jpg'></center>
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/96.jpg'></center>
+- 动规的常用两种形式: 
+<center><img src='../assets/img/posts/20220413/97.jpg'></center>
+
+## 6.4. 最长公共子序列
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/98.jpg'></center>
+- 输入输出样例: 
+<center><img src='../assets/img/posts/20220413/99.jpg'></center>
+- 解题思路:
+<center><img src='../assets/img/posts/20220413/100.jpg'></center>
+重要的还是找到一个合适的子问题与状态
+- 状态转移方程
+<center><img src='../assets/img/posts/20220413/101.jpg'></center>
+- 证明一下这个递推公式是正确的:
+<center><img src='../assets/img/posts/20220413/102.jpg'></center>
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/103.jpg'></center>
+<center><img src='../assets/img/posts/20220413/104.jpg'></center>
+
+## 6.5. 最佳加法表达式
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/105.jpg'></center>
+- 解题思路:
+<center><img src='../assets/img/posts/20220413/106.jpg'></center>
+<center><img src='../assets/img/posts/20220413/107.jpg'></center>
+<center><img src='../assets/img/posts/20220413/108.jpg'></center>
+
+# 7. 第七周 动态规划(二)
+## 7.1. Help Jimmy
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/109.jpg'></center>
+<center><img src='../assets/img/posts/20220413/110.jpg'></center>
+- 输入输出样例: 
+<center><img src='../assets/img/posts/20220413/111.jpg'></center>
+<center><img src='../assets/img/posts/20220413/112.jpg'></center>
+- 解题思路: 
+<center><img src='../assets/img/posts/20220413/113.jpg'></center>
+板子的顺序其实没有关系，重要的关注点是当前板子的左侧或右侧正下方的板子是哪个板子，然后计算出从每个板子的左侧或者右侧下降需要的最短时间，也就是说这里的状态值得是不同的板子
+- 伪代码实现: 
+<center><img src='../assets/img/posts/20220413/114.jpg'></center>
+<center><img src='../assets/img/posts/20220413/115.jpg'></center>
+<center><img src='../assets/img/posts/20220413/116.jpg'></center>
+将下落点看成宽度为0的板子是一种很好的思路
+- 时间复杂度: 
+<center><img src='../assets/img/posts/20220413/117.jpg'></center>
+
+## 7.2. 滑雪
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/118.jpg'></center>
+- 输入输出样例: 
+<center><img src='../assets/img/posts/20220413/119.jpg'></center>
+- 解题思路:
+<center><img src='../assets/img/posts/20220413/120.jpg'></center>
+<center><img src='../assets/img/posts/20220413/121.jpg'></center>
+<center><img src='../assets/img/posts/20220413/122.jpg'></center>
+这个题目递推的顺序很奇怪，如果按照二维数组的排序顺序来递推会出现问题，这里比较好的解决思路是把点按照高度排序，因为如果高度低的点值没求出来的话，高度高的点的值一定求不出来。然后这里排完序后有两种解决思路，一种是按顺序把每个点的值根据周围四个低的点求出，另一种思路是按照顺序每次更新周围四个点的值
+
+## 7.3. 神奇的口袋
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/123.jpg'></center>
+- 输入输出样例: 
+<center><img src='../assets/img/posts/20220413/124.jpg'></center>
+- 当然可以用枚举的方法暴力求解
+- 也可以用递推的方法求解: 
+<center><img src='../assets/img/posts/20220413/125.jpg'></center>
+设计一个递推的函数，代表前k个物品凑w体积的方法个数，那么在新出现这个物品时有两个选择，即选或不选
+- 动规解法: 
+<center><img src='../assets/img/posts/20220413/126.jpg'></center>
+用二维数组来表示状态
+
+## 7.4. 0-1背包问题
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/127.jpg'></center>
+- 解题思路: 和上一小节的思路类似，状态同样用二维数组表示，然后找出状态转移方程求解即可
+<center><img src='../assets/img/posts/20220413/128.jpg'></center>
+<center><img src='../assets/img/posts/20220413/129.jpg'></center>
+<center><img src='../assets/img/posts/20220413/130.jpg'></center>
+可以用滚动数组的思想来优化空间，递推的过程是从右往左替换滚动数组的过程
+
+## 7.5. 分蛋糕
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/131.jpg'></center>
+- 输入输出样例: 
+<center><img src='../assets/img/posts/20220413/132.jpg'></center>
+- 解题思路: 
+<center><img src='../assets/img/posts/20220413/133.jpg'></center>
+由于这里存在高宽，所以状态需要用三维数组表示
+- 递推公式:
+<center><img src='../assets/img/posts/20220413/134.jpg'></center>
