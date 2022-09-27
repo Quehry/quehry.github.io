@@ -51,6 +51,14 @@ author: Quehry
     - [7.3. 神奇的口袋](#73-神奇的口袋)
     - [7.4. 0-1背包问题](#74-0-1背包问题)
     - [7.5. 分蛋糕](#75-分蛋糕)
+- [8. 第八周 深度优先搜索(一)](#8-第八周-深度优先搜索一)
+    - [8.1. 在图上寻找路径和遍历](#81-在图上寻找路径和遍历)
+    - [8.2. 图的表示方法: 邻接矩阵和邻接表](#82-图的表示方法-邻接矩阵和邻接表)
+    - [8.3. 城堡问题:](#83-城堡问题)
+    - [8.4. 踩方格](#84-踩方格)
+- [9. 第九周 深度优先搜索(二)](#9-第九周-深度优先搜索二)
+    - [9.1. 寻路问题](#91-寻路问题)
+    - [9.2. 生日蛋糕](#92-生日蛋糕)
 
 <!-- /TOC -->
 
@@ -439,3 +447,76 @@ author: Quehry
 由于这里存在高宽，所以状态需要用三维数组表示
 - 递推公式:
 <center><img src='../assets/img/posts/20220413/134.jpg'></center>
+
+# 8. 第八周 深度优先搜索(一)
+## 8.1. 在图上寻找路径和遍历
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/135.jpg'></center>
+- 利用这种策略，可能出现的情况: 
+<center><img src='../assets/img/posts/20220413/136.jpg'></center>
+- 深度优先搜索(Depth-First-Search)的定义:
+<center><img src='../assets/img/posts/20220413/137.jpg'></center>
+- 刚才那个问题的伪代码实现: 
+<center><img src='../assets/img/posts/20220413/138.jpg'></center>
+<center><img src='../assets/img/posts/20220413/139.jpg'></center>
+- 如果要记录路径，代码实现: 
+<center><img src='../assets/img/posts/20220413/140.jpg'></center>
+<center><img src='../assets/img/posts/20220413/141.jpg'></center>
+
+## 8.2. 图的表示方法: 邻接矩阵和邻接表
+- 邻接矩阵表示图: 
+<center><img src='../assets/img/posts/20220413/142.jpg'></center>
+- 邻接表表示图: 
+<center><img src='../assets/img/posts/20220413/143.jpg'></center>
+
+## 8.3. 城堡问题: 
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/144.jpg'></center>
+- 输入输出样例: 
+<center><img src='../assets/img/posts/20220413/145.jpg'></center>
+<center><img src='../assets/img/posts/20220413/146.jpg'></center>
+- 解题思路: 这种比较抽象的问题可以通过建模转换成相对简单的题目，把城堡的方块看成节点，然后如果两个方块连接，则连接这两个节点
+<center><img src='../assets/img/posts/20220413/147.jpg'></center>
+求房间个数等价于求极大连通子图个数
+<center><img src='../assets/img/posts/20220413/148.jpg'></center>
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/149.jpg'></center>
+<center><img src='../assets/img/posts/20220413/150.jpg'></center>
+
+## 8.4. 踩方格
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/151.jpg'></center>
+- 解决思路: 用递归的思路解决问题，第一步的选择有三种，那么走n步的方案数等于这三种走法的方案和
+<center><img src='../assets/img/posts/20220413/152.jpg'></center>
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/153.jpg'></center>
+<center><img src='../assets/img/posts/20220413/154.jpg'></center>
+
+# 9. 第九周 深度优先搜索(二)
+## 9.1. 寻路问题
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/155.jpg'></center>
+- 解题思路: 从城市1开始深度优先遍历整个图，找到能到达城市N的最优路线(在不超过开销情况下的最短路径)
+<center><img src='../assets/img/posts/20220413/156.jpg'></center>
+但是这种方法会超时，所以我们需要对算法进行改进(剪枝)，最容易想到的方法是最优性剪枝，但是发现这种剪枝方法还是超时了
+<center><img src='../assets/img/posts/20220413/157.jpg'></center>
+这种剪枝方法能保存中间计算结果，效果比之前的最优性剪枝要好
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/158.jpg'></center>
+<center><img src='../assets/img/posts/20220413/159.jpg'></center>
+<center><img src='../assets/img/posts/20220413/160.jpg'></center>
+<center><img src='../assets/img/posts/20220413/161.jpg'></center>
+<center><img src='../assets/img/posts/20220413/162.jpg'></center>
+
+## 9.2. 生日蛋糕
+- 下棋也是一个深度搜索的过程
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/163.jpg'></center>
+蛋糕的高和半径是递减的
+- 解题思路: 
+<center><img src='../assets/img/posts/20220413/164.jpg'></center>
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/165.jpg'></center>
+<center><img src='../assets/img/posts/20220413/166.jpg'></center>
+- 剪枝(剪枝在深度优先搜索中很重要)
+<center><img src='../assets/img/posts/20220413/167.jpg'></center>

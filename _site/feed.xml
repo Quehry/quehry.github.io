@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-26T17:53:01+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">T5模型</title><link href="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="T5模型" /><published>2022-09-19T00:00:00+08:00</published><updated>2022-09-19T00:00:00+08:00</updated><id>http://localhost:4000/T5%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html"><![CDATA[<!-- TOC -->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-27T17:22:24+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">重要时间点及事件</title><link href="http://localhost:4000/Important-Event.html" rel="alternate" type="text/html" title="重要时间点及事件" /><published>2022-09-26T00:00:00+08:00</published><updated>2022-09-26T00:00:00+08:00</updated><id>http://localhost:4000/Important-Event</id><content type="html" xml:base="http://localhost:4000/Important-Event.html"><![CDATA[<!-- 2022.9.23 报9月工资 -->]]></content><author><name>Quehry</name></author><category term="daily" /><summary type="html"><![CDATA[for query]]></summary></entry><entry><title type="html">T5模型</title><link href="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="T5模型" /><published>2022-09-19T00:00:00+08:00</published><updated>2022-09-19T00:00:00+08:00</updated><id>http://localhost:4000/T5%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html"><![CDATA[<!-- TOC -->
 
 <ul>
   <li><a href="#1-t5简介">1. T5简介</a></li>
@@ -979,6 +979,20 @@
       <li><a href="#75-分蛋糕">7.5. 分蛋糕</a></li>
     </ul>
   </li>
+  <li><a href="#8-第八周-深度优先搜索一">8. 第八周 深度优先搜索(一)</a>
+    <ul>
+      <li><a href="#81-在图上寻找路径和遍历">8.1. 在图上寻找路径和遍历</a></li>
+      <li><a href="#82-图的表示方法-邻接矩阵和邻接表">8.2. 图的表示方法: 邻接矩阵和邻接表</a></li>
+      <li><a href="#83-城堡问题">8.3. 城堡问题:</a></li>
+      <li><a href="#84-踩方格">8.4. 踩方格</a></li>
+    </ul>
+  </li>
+  <li><a href="#9-第九周-深度优先搜索二">9. 第九周 深度优先搜索(二)</a>
+    <ul>
+      <li><a href="#91-寻路问题">9.1. 寻路问题</a></li>
+      <li><a href="#92-生日蛋糕">9.2. 生日蛋糕</a></li>
+    </ul>
+  </li>
 </ul>
 
 <!-- /TOC -->
@@ -1583,7 +1597,122 @@
 <ul>
   <li>递推公式:</li>
 </ul>
-<center><img src="../assets/img/posts/20220413/134.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[郭炜老师算法网课记录]]></summary></entry><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
+<center><img src="../assets/img/posts/20220413/134.jpg" /></center>
+
+<h1 id="8-第八周-深度优先搜索一">8. 第八周 深度优先搜索(一)</h1>
+<h2 id="81-在图上寻找路径和遍历">8.1. 在图上寻找路径和遍历</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/135.jpg" /></center>
+<ul>
+  <li>利用这种策略，可能出现的情况:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/136.jpg" /></center>
+<ul>
+  <li>深度优先搜索(Depth-First-Search)的定义:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/137.jpg" /></center>
+<ul>
+  <li>刚才那个问题的伪代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/138.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/139.jpg" /></center>
+<ul>
+  <li>如果要记录路径，代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/140.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/141.jpg" /></center>
+
+<h2 id="82-图的表示方法-邻接矩阵和邻接表">8.2. 图的表示方法: 邻接矩阵和邻接表</h2>
+<ul>
+  <li>邻接矩阵表示图:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/142.jpg" /></center>
+<ul>
+  <li>邻接表表示图:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/143.jpg" /></center>
+
+<h2 id="83-城堡问题">8.3. 城堡问题:</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/144.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/145.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/146.jpg" /></center>
+<ul>
+  <li>解题思路: 这种比较抽象的问题可以通过建模转换成相对简单的题目，把城堡的方块看成节点，然后如果两个方块连接，则连接这两个节点</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/147.jpg" /></center>
+<p>求房间个数等价于求极大连通子图个数</p>
+<center><img src="../assets/img/posts/20220413/148.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/149.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/150.jpg" /></center>
+
+<h2 id="84-踩方格">8.4. 踩方格</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/151.jpg" /></center>
+<ul>
+  <li>解决思路: 用递归的思路解决问题，第一步的选择有三种，那么走n步的方案数等于这三种走法的方案和</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/152.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/153.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/154.jpg" /></center>
+
+<h1 id="9-第九周-深度优先搜索二">9. 第九周 深度优先搜索(二)</h1>
+<h2 id="91-寻路问题">9.1. 寻路问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/155.jpg" /></center>
+<ul>
+  <li>解题思路: 从城市1开始深度优先遍历整个图，找到能到达城市N的最优路线(在不超过开销情况下的最短路径)</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/156.jpg" /></center>
+<p>但是这种方法会超时，所以我们需要对算法进行改进(剪枝)，最容易想到的方法是最优性剪枝，但是发现这种剪枝方法还是超时了</p>
+<center><img src="../assets/img/posts/20220413/157.jpg" /></center>
+<p>这种剪枝方法能保存中间计算结果，效果比之前的最优性剪枝要好</p>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/158.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/159.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/160.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/161.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/162.jpg" /></center>
+
+<h2 id="92-生日蛋糕">9.2. 生日蛋糕</h2>
+<ul>
+  <li>下棋也是一个深度搜索的过程</li>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/163.jpg" /></center>
+<p>蛋糕的高和半径是递减的</p>
+<ul>
+  <li>解题思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/164.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/165.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/166.jpg" /></center>
+<ul>
+  <li>剪枝(剪枝在深度优先搜索中很重要)</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/167.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[郭炜老师算法网课记录]]></summary></entry><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
 
 <!-- TOC -->
 
@@ -4576,32 +4705,4 @@
       <p>它是建立在极大似然原理的基础上的一个统计方法，极大似然原理的直观想法是，一个随机试验如有若干个可能的结果A，B，C，…，若在一次试验中，结果A出现了，那么可以认为实验条件对A的出现有利，也即出现的概率P(A)较大。极大似然原理的直观想法我们用下面例子说明。设甲箱中有99个白球，1个黑球；乙箱中有1个白球．99个黑球。现随机取出一箱，再从抽取的一箱中随机取出一球，结果是黑球，这一黑球从乙箱抽取的概率比从甲箱抽取的概率大得多，这时我们自然更多地相信这个黑球是取自乙箱的。一般说来，事件A发生的概率与某一未知参数$\theta$有关，$\theta$取值不同，则事件A发生的概率$P(A|\theta)$也不同，当我们在一次试验中事件A发生了，则认为此时的$\theta$值应是t的一切可能取值中使$P(A|\theta)$达到最大的那一个，极大似然估计法就是要选取这样的t值作为参数t的估计值，使所选取的样本在被选的总体中出现的可能性为最大 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[《机器学习》周志华读书笔记]]></summary></entry><entry><title type="html">组会记录</title><link href="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html" rel="alternate" type="text/html" title="组会记录" /><published>2021-12-21T00:00:00+08:00</published><updated>2021-12-21T00:00:00+08:00</updated><id>http://localhost:4000/1221%E7%BB%84%E4%BC%9A</id><content type="html" xml:base="http://localhost:4000/1221%E7%BB%84%E4%BC%9A.html"><![CDATA[<h1 id="vae">VAE</h1>
-<h2 id="ae">AE</h2>
-<p>Auto-Encoder自动编码器，比如Seq2seq模型。</p>
-
-<h2 id="vaevariational-auto-encoder">VAE(Variational Auto-Encoder)</h2>
-<p>在实际情况中，我们需要在模型的准确率上与隐含向量服从标准正态分布之间做一个权衡，所谓模型的准确率就是指解码器生成的图片与原图片的相似程度。我们可以让网络自己来做这个决定，非常简单，我们只需要将这两者都做一个loss，然后在将他们求和作为总的loss，这样网络就能够自己选择如何才能够使得这个总的loss下降。另外我们要衡量两种分布的相似程度，如何看过之前一片GAN的数学推导，你就知道会有一个东西叫KL-divergence来衡量两种分布的相似程度，这里我们就是用KL-divergence来表示隐含向量与标准正态分布之间差异的loss，另外一个loss仍然使用生成图片与原图片的均方误差来表示。</p>
-
-<h2 id="kl消失">KL消失</h2>
-<p>KL消失后，VAE就变成了AE
-原因：</p>
-<ul>
-  <li>KL项本身太容易被优化</li>
-  <li>一旦崩塌，Decoder会忽视Z<sub>x</sub></li>
-  <li>Z<sub>x</sub>的表示学习依赖于Decoder</li>
-</ul>
-
-<h2 id="解决kl消失的思路">解决KL消失的思路</h2>
-<p>…</p>
-
-<h1 id="analyze-pretraining-language-model">Analyze Pretraining Language Model</h1>
-<h2 id="perspective-of-knowledge">Perspective of knowledge</h2>
-<ul>
-  <li>Syntacitic/Semantic/lexical 句法，语义，词汇</li>
-  <li>重构语法树</li>
-  <li>Attention中很多头可能没有用，学到了很多冗余的信息</li>
-  <li>Analyze Feed Forward Neural Network</li>
-  <li>浅层词汇信息，深层语义信息</li>
-  <li>Prompt</li>
-</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[组会笔记]]></summary></entry></feed>
+</div>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[《机器学习》周志华读书笔记]]></summary></entry></feed>

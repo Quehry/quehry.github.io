@@ -22,7 +22,7 @@
   "headline": "算法基础",
   "abstract": "郭炜老师算法网课记录",
     "keywords": "note",
-    "wordcount": "340",
+    "wordcount": "407",
     "image": ["http://localhost:4000/assets/imgposts/20220413/cover.jpg"],
   "datePublished": "2022-04-13 00:00:00 +0800",
   "dateModified": "2022-04-13 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="郭炜老师算法网课记录">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="340"/>
+<meta data-rh="true" name="twitter:data1" content="407"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20220413/cover.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -160,7 +160,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </span>
   
@@ -300,7 +300,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </span>
   
@@ -403,6 +403,20 @@
       <li><a href="#73-神奇的口袋">7.3. 神奇的口袋</a></li>
       <li><a href="#74-0-1背包问题">7.4. 0-1背包问题</a></li>
       <li><a href="#75-分蛋糕">7.5. 分蛋糕</a></li>
+    </ul>
+  </li>
+  <li><a href="#8-第八周-深度优先搜索一">8. 第八周 深度优先搜索(一)</a>
+    <ul>
+      <li><a href="#81-在图上寻找路径和遍历">8.1. 在图上寻找路径和遍历</a></li>
+      <li><a href="#82-图的表示方法-邻接矩阵和邻接表">8.2. 图的表示方法: 邻接矩阵和邻接表</a></li>
+      <li><a href="#83-城堡问题">8.3. 城堡问题:</a></li>
+      <li><a href="#84-踩方格">8.4. 踩方格</a></li>
+    </ul>
+  </li>
+  <li><a href="#9-第九周-深度优先搜索二">9. 第九周 深度优先搜索(二)</a>
+    <ul>
+      <li><a href="#91-寻路问题">9.1. 寻路问题</a></li>
+      <li><a href="#92-生日蛋糕">9.2. 生日蛋糕</a></li>
     </ul>
   </li>
 </ul>
@@ -1011,6 +1025,121 @@
 </ul>
 <center><img src="../assets/img/posts/20220413/134.jpg" /></center>
 
+<h1 id="8-第八周-深度优先搜索一">8. 第八周 深度优先搜索(一)</h1>
+<h2 id="81-在图上寻找路径和遍历">8.1. 在图上寻找路径和遍历</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/135.jpg" /></center>
+<ul>
+  <li>利用这种策略，可能出现的情况:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/136.jpg" /></center>
+<ul>
+  <li>深度优先搜索(Depth-First-Search)的定义:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/137.jpg" /></center>
+<ul>
+  <li>刚才那个问题的伪代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/138.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/139.jpg" /></center>
+<ul>
+  <li>如果要记录路径，代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/140.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/141.jpg" /></center>
+
+<h2 id="82-图的表示方法-邻接矩阵和邻接表">8.2. 图的表示方法: 邻接矩阵和邻接表</h2>
+<ul>
+  <li>邻接矩阵表示图:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/142.jpg" /></center>
+<ul>
+  <li>邻接表表示图:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/143.jpg" /></center>
+
+<h2 id="83-城堡问题">8.3. 城堡问题:</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/144.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/145.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/146.jpg" /></center>
+<ul>
+  <li>解题思路: 这种比较抽象的问题可以通过建模转换成相对简单的题目，把城堡的方块看成节点，然后如果两个方块连接，则连接这两个节点</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/147.jpg" /></center>
+<p>求房间个数等价于求极大连通子图个数</p>
+<center><img src="../assets/img/posts/20220413/148.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/149.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/150.jpg" /></center>
+
+<h2 id="84-踩方格">8.4. 踩方格</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/151.jpg" /></center>
+<ul>
+  <li>解决思路: 用递归的思路解决问题，第一步的选择有三种，那么走n步的方案数等于这三种走法的方案和</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/152.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/153.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/154.jpg" /></center>
+
+<h1 id="9-第九周-深度优先搜索二">9. 第九周 深度优先搜索(二)</h1>
+<h2 id="91-寻路问题">9.1. 寻路问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/155.jpg" /></center>
+<ul>
+  <li>解题思路: 从城市1开始深度优先遍历整个图，找到能到达城市N的最优路线(在不超过开销情况下的最短路径)</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/156.jpg" /></center>
+<p>但是这种方法会超时，所以我们需要对算法进行改进(剪枝)，最容易想到的方法是最优性剪枝，但是发现这种剪枝方法还是超时了</p>
+<center><img src="../assets/img/posts/20220413/157.jpg" /></center>
+<p>这种剪枝方法能保存中间计算结果，效果比之前的最优性剪枝要好</p>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/158.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/159.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/160.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/161.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/162.jpg" /></center>
+
+<h2 id="92-生日蛋糕">9.2. 生日蛋糕</h2>
+<ul>
+  <li>下棋也是一个深度搜索的过程</li>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/163.jpg" /></center>
+<p>蛋糕的高和半径是递减的</p>
+<ul>
+  <li>解题思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/164.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/165.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/166.jpg" /></center>
+<ul>
+  <li>剪枝(剪枝在深度优先搜索中很重要)</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/167.jpg" /></center>
+
         <aside class="sidebar inline" id="post-end">
     
 
@@ -1077,6 +1206,37 @@
 <div class="recent-box">
   <h2 class="page-subtitle">Recent posts</h2>
   <div class="recent-list">
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./Important-Event.html" class="recent-item-img" style="background: url('./assets/img/posts/20220926/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>重要时间点及事件</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
     
       
         <div class="recent-item">
@@ -1160,37 +1320,6 @@
     <p class="page_meta-readtime">
       
         2 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./Web%E9%80%9F%E6%88%90.html" class="recent-item-img" style="background: url('./assets/img/posts/20220803/1.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>Web速成</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        less than 1 minute read
       
     </p>
   
