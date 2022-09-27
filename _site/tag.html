@@ -1125,6 +1125,49 @@
 			
 
 				<div class="post">
+					<a class="post-list-title" href="./GAN.html">GAN</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-09-27T00:00:00+08:00">September 27, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h1 id="1-gan简介">1. GAN简介</h1>
+<ul>
+  <li><a href="https://arxiv.org/abs/1406.2661" target="_blank">论文链接</a></li>
+</ul>
+<a class="read-more" href="./GAN.html"> read more</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
 					<a class="post-list-title" href="./%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E4%BC%9A%E7%AC%94%E8%AE%B0.html">技术分享会笔记(关于text2image)</a>
 					
 
@@ -1189,7 +1232,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        2 minute read
       
     </span>
   
@@ -1197,80 +1240,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<!-- TOC --> <ul> <li><a href="#1-预备知识">1. 预备知识</a></li> <li><a href="#2-线性神经网络">2. 线性神经网络</a></li> <li><a href="#3-多层感知机">3. 多层感知机</a></li> <li><a href="#5-卷积神经网络">5. 卷积神经网络</a></li> <li><a href="#7-循环神经网络">7. 循环神经网络</a></li> <li><a href="#8-现代循环神经网络">8. 现代循环神经网络</a></li> <li><a href="#9-注意力机制">9. 注意力机制</a></li> <li><a href="#13-自然语言处理-预训练">13. 自然语言处理: 预训练</a></li> <li><a href="#14-自然语言处理-应用">14. 自然语言处理: 应用</a></li> </ul> <!-- /TOC --> <h1 id="1-预备知识">1. 预备知识</h1> <p>这一章主要介绍了深度学习的一些前置知识，这里对比较重要的点做备注</p> <ul> <li>张量(Tensor)包含了一维张量(向量)和二维张量(矩阵)</li> <li>torch中A*B是哈达玛积，表示矩阵元素按元素相乘</li> <li>torch.dot()是点积</li> <li>torch.cat(…, dim=0)表示在行上延伸，比如(3, 4)和(3, 4)变成(6, 4)</li> <li>A.sum(axis=0)表示把每一列的数据都相加，比如(5, 4)变成(4)</li> <li>范数是norm，L1范数为每个元素的绝对值相加，L2范数为元素的平方和开根号，torch中默认L2范数，一般也是L2范数用的最多</li> <li>梯度: 连接多元函数的所有偏导数:</li> </ul> <center><img src="../assets/img/posts/20220905/2.jpg" /></center> <ul> <li>梯度是一个向量</li> <li>常用的梯度计算公式:</li> </ul> <center><img src="../assets/img/posts/20220905/3.jpg" /></center> <ul> <li>torch中自动求导的步骤: <ul> <li>第一步 为x分配内存空间: x.requires_grad_(True)</li> <li>第二步 链式反向传播，希望求哪个函数的梯度，就对那个函数反向传播，比如y.backward()</li> <li>第三步 求x的梯度，x.grad，如果我们需要重新求梯度，需要清零梯度，x.grad.zero_()</li> <li>注意torch中只能对标量输出求梯度，所以常见操作是sum</li> </ul> </li> <li>标量对向量的偏导是向量，向量对向量的偏导是矩阵</li> <li>贝叶斯公式: P(A|B)P(B)=P(B|A)P(A)</li> </ul> <h1 id="2-线性神经网络">2. 线性神经网络</h1> <p>本章主要介绍了线性回归网络和softmax回归网络，接下来是一些笔记</p> <ul> <li>随机梯度下降和梯度下降的区别: 梯度下降一般而言是针对所有的样本而言，而随机梯度下降是针对单个样本而言，同样地，小批量随机梯度下降是针对一个批量的样本而言</li> <li>可以调整但是在训练过程中不更新的参数叫做超参数</li> <li>极大似然法: $\theta$是需要估计的值，在写似然函数时只需要把$\theta$看成参数，最大化似然函数即$\theta$的估计值</li> <li>每个输入与每个输出相连的层成为全连接层</li> <li>with torch.no_grad()的作用是让输出结果之后不构建计算图</li> <li>本章的训练过程: 计算y的预测值-&gt;计算损失函数-&gt;累加loss并反向传播(记得每个批量在梯度更新前需要清零梯度并反向传播loss)-&gt;更新参数</li> <li>训练过程中重要的组成部分: 数据迭代器、损失函数、优化器(updater/trainer)、网络(记得初始化参数)</li>...<a class="read-more" href="./%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html"> read more</a>
-					</div>
-				</div>
-			
-			
-
-				<div class="post">
-					<a class="post-list-title" href="./Web%E9%80%9F%E6%88%90.html">Web速成</a>
-					
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2022-08-03T00:00:00+08:00">August 3, 2022</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        less than 1 minute read
-      
-    </span>
-  
-  
-  </span>
-
-					<div class="post-excerpt">
-						<h1 id="1-html学习">1. HTML学习</h1>
-
-<center><img src="../assets/img/posts/20220803/2.jpg" /></center>
-<p><br /></p>
-
-<center><img src="../assets/img/posts/20220803/3.jpg" /></center>
-<p><br /></p>
-
-<center><img src="../assets/img/posts/20220803/4.jpg" /></center>
-
-<h1 id="2-css学习">2. CSS学习</h1>
-
-<center><img src="../assets/img/posts/20220803/5.jpg" /></center>
-<p><br /></p>
-
-<center><img src="../assets/img/posts/20220803/6.jpg" /></center>
-<p><br /></p>
-
-<center><img src="../assets/img/posts/20220803/7.jpg" /></center>
-<p><br /></p>
-
-<center><img src="../assets/img/posts/20220803/8.jpg" /></center>
-<p><br /></p>
-
-<center><img src="../assets/img/posts/20220803/9.jpg" /></center>
-<p><br /></p>
-
-<h1 id="3-js学习">3. JS学习</h1>
-<center><img src="../assets/img/posts/20220803/10.jpg" /></center>
-<p><br /></p>
-
-<center><img src="../assets/img/posts/20220803/11.jpg" /></center>
-<p><br /></p>
-
-<a class="read-more" href="./Web%E9%80%9F%E6%88%90.html"> read more</a>
+						<!-- TOC --> <ul> <li><a href="#0-简介">0. 简介</a></li> <li><a href="#1-预备知识">1. 预备知识</a></li> <li><a href="#2-线性神经网络">2. 线性神经网络</a></li> <li><a href="#3-多层感知机">3. 多层感知机</a></li> <li><a href="#5-卷积神经网络">5. 卷积神经网络</a></li> <li><a href="#6-现代卷积神经网络">6. 现代卷积神经网络</a></li> <li><a href="#7-循环神经网络">7. 循环神经网络</a></li> <li><a href="#8-现代循环神经网络">8. 现代循环神经网络</a></li> <li><a href="#9-注意力机制">9. 注意力机制</a></li> <li><a href="#13-自然语言处理-预训练">13. 自然语言处理: 预训练</a></li> <li><a href="#14-自然语言处理-应用">14. 自然语言处理: 应用</a></li> </ul> <!-- /TOC --> <h1 id="0-简介">0. 简介</h1> <ul> <li>《动手学深度学习》的笔记</li> <li>各种链接: <ul> <li><a href="https://space.bilibili.com/1567748478" target="_blank">bilibili</a></li> <li><a href="https://zh-v2.d2l.ai/index.html" target="_blank">book_zh</a></li> <li><a href="https://d2l.ai/index.html" target="_blank">book_en</a></li> </ul> </li> <li>这本书笼统的介绍了深度学习所需要的各种知识，从线性神经网络开始讲起，然后到CNN，最后到RNN，介绍了CV和NLP领域的较新的网络结构。同时这本书不止有理论内容，每一小节都有代码实践内容，可以边写代码边了解知识，同时bilibili上有李沐老师的网课配合学习，很适合初学者进行学习。</li> </ul> <h1 id="1-预备知识">1. 预备知识</h1> <p>这一章主要介绍了深度学习的一些前置知识，这里对比较重要的点做备注</p> <ul> <li>张量(Tensor)包含了一维张量(向量)和二维张量(矩阵)</li> <li>torch中A*B是哈达玛积，表示矩阵元素按元素相乘</li> <li>torch.dot()是点积</li> <li>torch.cat(…, dim=0)表示在行上延伸，比如(3, 4)和(3, 4)变成(6, 4)</li> <li>A.sum(axis=0)表示把每一列的数据都相加，比如(5, 4)变成(4)</li> <li>范数是norm，L1范数为每个元素的绝对值相加，L2范数为元素的平方和开根号，torch中默认L2范数，一般也是L2范数用的最多</li> <li>梯度: 连接多元函数的所有偏导数:</li> </ul> <center><img src="../assets/img/posts/20220905/2.jpg" /></center> <ul> <li>梯度是一个向量</li> <li>常用的梯度计算公式:</li> </ul> <center><img src="../assets/img/posts/20220905/3.jpg" /></center> <ul> <li>torch中自动求导的步骤: <ul> <li>第一步 为x分配内存空间: x.requires_grad_(True)</li> <li>第二步 链式反向传播，希望求哪个函数的梯度，就对那个函数反向传播，比如y.backward()</li>...<a class="read-more" href="./%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html"> read more</a>
 					</div>
 				</div>
 			
@@ -2004,7 +1974,7 @@
                 <li><a href="./tag.html?tag=neural+networks" class="tag">neural networks <span>(4)</span></a></li>
             
                 
-                <li><a href="./tag.html?tag=note" class="tag">note <span>(11)</span></a></li>
+                <li><a href="./tag.html?tag=note" class="tag">note <span>(12)</span></a></li>
             
                 
                 <li><a href="./tag.html?tag=optimization" class="tag">optimization <span>(1)</span></a></li>

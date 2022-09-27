@@ -1,0 +1,14 @@
+---
+layout: postwithlatex
+read_time: true
+show_date: true
+title:  GAN
+date:   2022-9-27
+description: arrange notes 
+img: posts/20220927/1.jpg 
+tags: [note]
+author: Quehry
+---
+
+# 1. GAN简介
+- [论文链接](https://arxiv.org/abs/1406.2661){:target="_blank"}
