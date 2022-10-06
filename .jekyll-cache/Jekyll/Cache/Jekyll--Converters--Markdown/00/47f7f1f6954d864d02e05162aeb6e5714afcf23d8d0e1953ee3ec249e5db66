@@ -1,0 +1,869 @@
+I"��<h1 id="目录">目录</h1>
+<!-- TOC -->
+
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#0-简介">0. 简介</a></li>
+  <li><a href="#1-第一周-枚举">1. 第一周 枚举</a>
+    <ul>
+      <li><a href="#11-完美立方">1.1. 完美立方</a></li>
+      <li><a href="#12-生理周期">1.2. 生理周期</a></li>
+      <li><a href="#13-称硬币">1.3. 称硬币</a></li>
+      <li><a href="#14-熄灯问题">1.4. 熄灯问题</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-第二周-递归一">2. 第二周 递归(一)</a>
+    <ul>
+      <li><a href="#21-求阶乘">2.1. 求阶乘</a></li>
+      <li><a href="#22-汉诺塔问题">2.2. 汉诺塔问题</a></li>
+      <li><a href="#23-n皇后问题">2.3. n皇后问题</a></li>
+      <li><a href="#24-逆波兰表达式求值">2.4. 逆波兰表达式求值</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-第三周-递归二">3. 第三周 递归(二)</a>
+    <ul>
+      <li><a href="#31-表达式求值">3.1. 表达式求值</a></li>
+      <li><a href="#32-上台阶问题">3.2. 上台阶问题</a></li>
+      <li><a href="#33-放苹果问题">3.3. 放苹果问题</a></li>
+      <li><a href="#34-算24问题">3.4. 算24问题</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-第四周-二分算法">4. 第四周 二分算法</a>
+    <ul>
+      <li><a href="#41-程序或算法的时间复杂度">4.1. 程序或算法的时间复杂度</a></li>
+      <li><a href="#42-二分查找的原理和实现">4.2. 二分查找的原理和实现</a></li>
+      <li><a href="#43-二分法求方程的根">4.3. 二分法求方程的根</a></li>
+    </ul>
+  </li>
+  <li><a href="#5-第五周-分治">5. 第五周 分治</a>
+    <ul>
+      <li><a href="#51-归并排序">5.1. 归并排序</a></li>
+      <li><a href="#52-快速排序">5.2. 快速排序</a></li>
+      <li><a href="#53-例题-输出前m大的数">5.3. 例题: 输出前m大的数</a></li>
+      <li><a href="#54-例题-求排序的逆序数">5.4. 例题: 求排序的逆序数</a></li>
+    </ul>
+  </li>
+  <li><a href="#6-第六周-动态规划一">6. 第六周 动态规划(一)</a>
+    <ul>
+      <li><a href="#61-数字三角形">6.1. 数字三角形</a></li>
+      <li><a href="#62-动态规划解题的一般思路">6.2. 动态规划解题的一般思路</a></li>
+      <li><a href="#63-最长上升子序列">6.3. 最长上升子序列</a></li>
+      <li><a href="#64-最长公共子序列">6.4. 最长公共子序列</a></li>
+      <li><a href="#65-最佳加法表达式">6.5. 最佳加法表达式</a></li>
+    </ul>
+  </li>
+  <li><a href="#7-第七周-动态规划二">7. 第七周 动态规划(二)</a>
+    <ul>
+      <li><a href="#71-help-jimmy">7.1. Help Jimmy</a></li>
+      <li><a href="#72-滑雪">7.2. 滑雪</a></li>
+      <li><a href="#73-神奇的口袋">7.3. 神奇的口袋</a></li>
+      <li><a href="#74-0-1背包问题">7.4. 0-1背包问题</a></li>
+      <li><a href="#75-分蛋糕">7.5. 分蛋糕</a></li>
+    </ul>
+  </li>
+  <li><a href="#8-第八周-深度优先搜索一">8. 第八周 深度优先搜索(一)</a>
+    <ul>
+      <li><a href="#81-在图上寻找路径和遍历">8.1. 在图上寻找路径和遍历</a></li>
+      <li><a href="#82-图的表示方法-邻接矩阵和邻接表">8.2. 图的表示方法: 邻接矩阵和邻接表</a></li>
+      <li><a href="#83-城堡问题">8.3. 城堡问题:</a></li>
+      <li><a href="#84-踩方格">8.4. 踩方格</a></li>
+    </ul>
+  </li>
+  <li><a href="#9-第九周-深度优先搜索二">9. 第九周 深度优先搜索(二)</a>
+    <ul>
+      <li><a href="#91-寻路问题">9.1. 寻路问题</a></li>
+      <li><a href="#92-生日蛋糕">9.2. 生日蛋糕</a></li>
+    </ul>
+  </li>
+  <li><a href="#10-第十周-广度优先搜索">10. 第十周 广度优先搜索</a>
+    <ul>
+      <li><a href="#101-抓住那头牛">10.1. 抓住那头牛</a></li>
+      <li><a href="#102-迷宫问题">10.2. 迷宫问题</a></li>
+      <li><a href="#103-鸣人和佐助">10.3. 鸣人和佐助</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="0-简介">0. 简介</h1>
+<ul>
+  <li>课程来源于北大郭炜老师的MOOC，在中国大学MOOC平台上有网课，课程名为<a href="https://www.icourse163.org/course/PKU-1001894005?tid=1450413466" target="_blank">程序设计与算法(二)算法基础</a>，选择第九次开课</li>
+</ul>
+
+<h1 id="1-第一周-枚举">1. 第一周 枚举</h1>
+
+<h2 id="11-完美立方">1.1. 完美立方</h2>
+<ul>
+  <li>枚举: 基于逐个尝试答案的一种问题求解策略</li>
+  <li>例如: 求小于N的最小素数</li>
+  <li>完美立方:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/1.jpg" /></center>
+
+<ul>
+  <li>解题思路:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/2.jpg" /></center>
+
+<h2 id="12-生理周期">1.2. 生理周期</h2>
+<ul>
+  <li>题干:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/3.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/4.jpg" /></center>
+
+<ul>
+  <li>解题思路:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/5.jpg" /></center>
+
+<h2 id="13-称硬币">1.3. 称硬币</h2>
+<ul>
+  <li>题干:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/6.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/7.jpg" /></center>
+
+<ul>
+  <li>解题思路</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/8.jpg" /></center>
+
+<h2 id="14-熄灯问题">1.4. 熄灯问题</h2>
+<ul>
+  <li>题干:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/9.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/10.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/11.jpg" /></center>
+
+<ul>
+  <li>解题思路:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/12.jpg" /></center>
+
+<center><img src="../assets/img/posts/20220413/13.jpg" /></center>
+
+<p>局部的思想，化繁为简</p>
+
+<ul>
+  <li>可以用0-31的十进制数来表示第一列的数据，因为其二进制数刚好对应开关的状态</li>
+</ul>
+
+<h1 id="2-第二周-递归一">2. 第二周 递归(一)</h1>
+<h2 id="21-求阶乘">2.1. 求阶乘</h2>
+<ul>
+  <li>递归的基本概念: 一个函数调用其自身就是递归</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/14.jpg" /></center>
+
+<ul>
+  <li>递归和普通函数调用一样是通过栈实现</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/15.jpg" /></center>
+
+<ul>
+  <li>递归的作用
+    <ul>
+      <li>替代多重循环</li>
+      <li>解决本来就是递归形式定义的问题</li>
+      <li>将问题分解为规模更小的问题进行求解: 比如n！变成n * (n-1)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="22-汉诺塔问题">2.2. 汉诺塔问题</h2>
+<ul>
+  <li>任务描述:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/16.jpg" /></center>
+
+<ul>
+  <li>解决思路: 把盘子从A移动到C的过程分解为三个小问题，分别是移动n-1个盘子从A到B，然后移动1个盘子从A到C，最后移动n-1个盘子从B到C，这就是一个递归问题</li>
+  <li>递归的核心思想是将大问题分解为规模更小的问题，同时还要保证是从n变成n-1</li>
+  <li>代码实现:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/17.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220413/18.jpg" /></center>
+<p><br /></p>
+
+<h2 id="23-n皇后问题">2.3. n皇后问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/19.jpg" /></center>
+
+<p>用递归代替多重循环，皇后的攻击范围是横竖斜</p>
+<ul>
+  <li>解决思路: 同样是从第1行开始逐个往后摆放，但是这里的n是未知数，所以循环的层数不确定，这个时候就可以用递归代替循环，构造一个函数，表示从第k行开始摆放棋子，然后在循环内部判断每一列的位置是否能摆放，就是一个穷举问题了</li>
+  <li>代码实现:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/20.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220413/21.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20220413/22.jpg" /></center>
+<p><br /></p>
+
+<p>这个代码设计很巧妙的地方是，它会遍历所有的情况，只要是满足条件的就会输出，所以会返回所有可能的结果</p>
+
+<h2 id="24-逆波兰表达式求值">2.4. 逆波兰表达式求值</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/23.jpg" /></center>
+
+<ul>
+  <li>输入输出例子:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/24.jpg" /></center>
+
+<ul>
+  <li>解决思路: 一个数也可以看成一个逆波兰表达式，那么就可以直接用递归求解，实现过程中需要边输入边递归</li>
+  <li>代码实现:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/25.jpg" /></center>
+
+<h1 id="3-第三周-递归二">3. 第三周 递归(二)</h1>
+<h2 id="31-表达式求值">3.1. 表达式求值</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20220413/26.jpg" /></center>
+
+<ul>
+  <li>解决思路: 
+先看看表达式递归的定义</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/27.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/28.jpg" /></center>
+<p>即然把表达式的递归过程弄清楚了，那么只需要定义表达式、项、因子的函数即可</p>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/29.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/30.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/31.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/32.jpg" /></center>
+
+<h2 id="32-上台阶问题">3.2. 上台阶问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/33.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/34.jpg" /></center>
+<ul>
+  <li>解决思路: 将n级台阶的走法看成n-1级台阶的走法+n-2级台阶的走法，分别代表在第一步走一阶还是两阶，这里需要设置边界条件来防止无限递归</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/35.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/36.jpg" /></center>
+
+<h2 id="33-放苹果问题">3.3. 放苹果问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/37.jpg" /></center>
+<ul>
+  <li>解决思路: 又是计算方法的总数，那么和上台阶问题一样，用表达式来表示递归，分类讨论。假设i个苹果，k个盘子，如果k&gt;i，那么等价于把i个苹果放到i个盘子里，因为一定有k-i个盘子空着；如果k&lt;=i，那么又将问题分为有没有空盘子，如果有空盘子，那么至少有一个空盘子，表示为把i个苹果放到k-1个盘子里，如果没有空盘子，那么等价于把i-k个苹果放到k个盘子里</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/38.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/39.jpg" /></center>
+
+<h2 id="34-算24问题">3.4. 算24问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/40.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/41.jpg" /></center>
+<ul>
+  <li>判断两个浮点数是否相等，用两个浮点数的差是否小于某个值</li>
+  <li>解决思路: 不论给了多少个数计算24，都需要首先计算出两个数的计算结果，这个计算过程可以是加减乘除任意，然后得到的结果再和剩下的n-1个数算24，这样就可以变成一个递归问题，边界条件是只剩一个数的时候是否是24</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/42.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/43.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/44.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/45.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/46.jpg" /></center>
+
+<h1 id="4-第四周-二分算法">4. 第四周 二分算法</h1>
+<h2 id="41-程序或算法的时间复杂度">4.1. 程序或算法的时间复杂度</h2>
+<ul>
+  <li>时间复杂度的定义:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/47.jpg" /></center>
+<p>重点是明白程序中固定的操作是什么</p>
+<ul>
+  <li>复杂度有平均复杂度和最坏复杂度两种，两者可能一致，也可能不一致，一般来说只要平均复杂度不太高，算法的效率就还可以</li>
+  <li>常见的时间复杂度:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/48.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/49.jpg" /></center>
+
+<h2 id="42-二分查找的原理和实现">4.2. 二分查找的原理和实现</h2>
+<ul>
+  <li>首先可以看这么一个问题:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/50.jpg" /></center>
+<ul>
+  <li>二分查找的实现: 时间复杂度是O(log(n))</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/51.jpg" /></center>
+<ul>
+  <li>查找比待查找数小的最大坐标的函数实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/52.jpg" /></center>
+<ul>
+  <li>二分查找的问题前提是序列必须是递增或者递减的，即有序的</li>
+  <li>为了防止数据溢出，写中点的时候要这么写: int mid = L + (R - L) / 2</li>
+  <li>整型在转型的时候是向下取整</li>
+</ul>
+
+<h2 id="43-二分法求方程的根">4.3. 二分法求方程的根</h2>
+<ul>
+  <li>二分法求方程的根需要方程满足一定的条件，不是所有的方程都可以用二分法求根</li>
+  <li>问题描述及求解思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/53.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/54.jpg" /></center>
+<ul>
+  <li>如果一个序列不是有序的，可以用排序算法对序列先进行排序然后二分查找</li>
+</ul>
+
+<h1 id="5-第五周-分治">5. 第五周 分治</h1>
+<h2 id="51-归并排序">5.1. 归并排序</h2>
+<ul>
+  <li>分治的基本概念:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/55.jpg" /></center>
+<ul>
+  <li>分治的典型应用: 归并排序</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/56.jpg" /></center>
+<ul>
+  <li>归并排序的思路就是先分治，然后归并，代码实现如下：</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/57.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/58.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/59.jpg" /></center>
+<ul>
+  <li>归并排序的时间复杂度:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/60.jpg" /></center>
+
+<h2 id="52-快速排序">5.2. 快速排序</h2>
+<ul>
+  <li>快速排序的思想:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/61.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/62.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/63.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/64.jpg" /></center>
+<ul>
+  <li>快速排序的时间复杂度是O(nlog(n))，这是在运气不坏的情况下得出的结果(平均复杂度)，运气最坏的情况下时间复杂度为O($n^2$)(最坏复杂度)</li>
+</ul>
+
+<h2 id="53-例题-输出前m大的数">5.3. 例题: 输出前m大的数</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/65.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/66.jpg" /></center>
+<p>用分治的思想解决问题，先把前m个元素移到数组的最右边，然后在对这m个元素进行快排</p>
+<ul>
+  <li>具体解决方法:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/67.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/68.jpg" /></center>
+<ul>
+  <li>时间复杂度计算:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/69.jpg" /></center>
+
+<h2 id="54-例题-求排序的逆序数">5.4. 例题: 求排序的逆序数</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/70.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/71.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/72.jpg" /></center>
+<p>分治一般都使用了递归</p>
+
+<h1 id="6-第六周-动态规划一">6. 第六周 动态规划(一)</h1>
+<h2 id="61-数字三角形">6.1. 数字三角形</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/73.jpg" /></center>
+<ul>
+  <li>输入格式:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/74.jpg" /></center>
+<ul>
+  <li>解题思路: 
+看成递归问题</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/75.jpg" /></center>
+<ul>
+  <li>递归程序代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/76.jpg" /></center>
+<ul>
+  <li>虽然说在代码逻辑这一方面，递归算法没有问题，但是这个算法的时间复杂度太高，程序很容易超时:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/77.jpg" /></center>
+<ul>
+  <li>之前的递归算法中存在过多的重复计算，如果能把每一步的计算结果保存起来，那么即可避免重复计算，算法的时间复杂度为O($n^2$)</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/78.jpg" /></center>
+<ul>
+  <li>记忆递归型动规程序:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/79.jpg" /></center>
+<p>用一个二维数组存储每一个结点的max值，那么读取到这个结点时，就可以直接获得数值，避免了重复计算</p>
+<ul>
+  <li>也可以用递推的思想解决问题，先把最后一行的结果计算出来，然后从下到上逐步计算，用一个双重循环解决</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/80.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/81.jpg" /></center>
+<ul>
+  <li>还可以对空间进行优化，因为下一层的数值在计算上一层的数值后就没有用了，那么完全不需要用一个二维数组存储maxsum，完全可以用一个一维数组存放。再进一步来说，连maxSum数组都可以不要，直接用D的第n行替代maxSum</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/82.jpg" /></center>
+<ul>
+  <li>空间优化后的代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/83.jpg" /></center>
+
+<h2 id="62-动态规划解题的一般思路">6.2. 动态规划解题的一般思路</h2>
+<ul>
+  <li>递归到动规的一般转化方法:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/84.jpg" /></center>
+<ul>
+  <li>动规解题的一般思路:
+    <ul>
+      <li>第一步: 将原问题分解为子问题</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/85.jpg" /></center>
+    <ul>
+      <li>第二步: 确定状态</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/86.jpg" /></center>
+    <ul>
+      <li>第三步: 确定一些初始状态的值</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/87.jpg" /></center>
+    <ul>
+      <li>第四步: 确定状态转移方程</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/88.jpg" /></center>
+  </li>
+  <li>能用动规解决的问题的特点:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/89.jpg" /></center>
+
+<h2 id="63-最长上升子序列">6.3. 最长上升子序列</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/90.jpg" /></center>
+<ul>
+  <li>输入输出格式:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/91.jpg" /></center>
+<ul>
+  <li>解题思路:
+    <ul>
+      <li>找子问题:</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/92.jpg" /></center>
+    <center><img src="../assets/img/posts/20220413/93.jpg" /></center>
+    <ul>
+      <li>确定状态:</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/94.jpg" /></center>
+    <ul>
+      <li>找出状态转移方程:</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/95.jpg" /></center>
+  </li>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/96.jpg" /></center>
+<ul>
+  <li>动规的常用两种形式:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/97.jpg" /></center>
+
+<h2 id="64-最长公共子序列">6.4. 最长公共子序列</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/98.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/99.jpg" /></center>
+<ul>
+  <li>解题思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/100.jpg" /></center>
+<p>重要的还是找到一个合适的子问题与状态</p>
+<ul>
+  <li>状态转移方程</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/101.jpg" /></center>
+<ul>
+  <li>证明一下这个递推公式是正确的:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/102.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/103.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/104.jpg" /></center>
+
+<h2 id="65-最佳加法表达式">6.5. 最佳加法表达式</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/105.jpg" /></center>
+<ul>
+  <li>解题思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/106.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/107.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/108.jpg" /></center>
+
+<h1 id="7-第七周-动态规划二">7. 第七周 动态规划(二)</h1>
+<h2 id="71-help-jimmy">7.1. Help Jimmy</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/109.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/110.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/111.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/112.jpg" /></center>
+<ul>
+  <li>解题思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/113.jpg" /></center>
+<p>板子的顺序其实没有关系，重要的关注点是当前板子的左侧或右侧正下方的板子是哪个板子，然后计算出从每个板子的左侧或者右侧下降需要的最短时间，也就是说这里的状态值得是不同的板子</p>
+<ul>
+  <li>伪代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/114.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/115.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/116.jpg" /></center>
+<p>将下落点看成宽度为0的板子是一种很好的思路</p>
+<ul>
+  <li>时间复杂度:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/117.jpg" /></center>
+
+<h2 id="72-滑雪">7.2. 滑雪</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/118.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/119.jpg" /></center>
+<ul>
+  <li>解题思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/120.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/121.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/122.jpg" /></center>
+<p>这个题目递推的顺序很奇怪，如果按照二维数组的排序顺序来递推会出现问题，这里比较好的解决思路是把点按照高度排序，因为如果高度低的点值没求出来的话，高度高的点的值一定求不出来。然后这里排完序后有两种解决思路，一种是按顺序把每个点的值根据周围四个低的点求出，另一种思路是按照顺序每次更新周围四个点的值</p>
+
+<h2 id="73-神奇的口袋">7.3. 神奇的口袋</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/123.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/124.jpg" /></center>
+<ul>
+  <li>当然可以用枚举的方法暴力求解</li>
+  <li>也可以用递推的方法求解:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/125.jpg" /></center>
+<p>设计一个递推的函数，代表前k个物品凑w体积的方法个数，那么在新出现这个物品时有两个选择，即选或不选</p>
+<ul>
+  <li>动规解法:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/126.jpg" /></center>
+<p>用二维数组来表示状态</p>
+
+<h2 id="74-0-1背包问题">7.4. 0-1背包问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/127.jpg" /></center>
+<ul>
+  <li>解题思路: 和上一小节的思路类似，状态同样用二维数组表示，然后找出状态转移方程求解即可</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/128.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/129.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/130.jpg" /></center>
+<p>可以用滚动数组的思想来优化空间，递推的过程是从右往左替换滚动数组的过程</p>
+
+<h2 id="75-分蛋糕">7.5. 分蛋糕</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/131.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/132.jpg" /></center>
+<ul>
+  <li>解题思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/133.jpg" /></center>
+<p>由于这里存在高宽，所以状态需要用三维数组表示</p>
+<ul>
+  <li>递推公式:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/134.jpg" /></center>
+
+<h1 id="8-第八周-深度优先搜索一">8. 第八周 深度优先搜索(一)</h1>
+<h2 id="81-在图上寻找路径和遍历">8.1. 在图上寻找路径和遍历</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/135.jpg" /></center>
+<ul>
+  <li>利用这种策略，可能出现的情况:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/136.jpg" /></center>
+<ul>
+  <li>深度优先搜索(Depth-First-Search)的定义:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/137.jpg" /></center>
+<ul>
+  <li>刚才那个问题的伪代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/138.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/139.jpg" /></center>
+<ul>
+  <li>如果要记录路径，代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/140.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/141.jpg" /></center>
+
+<h2 id="82-图的表示方法-邻接矩阵和邻接表">8.2. 图的表示方法: 邻接矩阵和邻接表</h2>
+<ul>
+  <li>邻接矩阵表示图:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/142.jpg" /></center>
+<ul>
+  <li>邻接表表示图:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/143.jpg" /></center>
+
+<h2 id="83-城堡问题">8.3. 城堡问题:</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/144.jpg" /></center>
+<ul>
+  <li>输入输出样例:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/145.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/146.jpg" /></center>
+<ul>
+  <li>解题思路: 这种比较抽象的问题可以通过建模转换成相对简单的题目，把城堡的方块看成节点，然后如果两个方块连接，则连接这两个节点</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/147.jpg" /></center>
+<p>求房间个数等价于求极大连通子图个数</p>
+<center><img src="../assets/img/posts/20220413/148.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/149.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/150.jpg" /></center>
+
+<h2 id="84-踩方格">8.4. 踩方格</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/151.jpg" /></center>
+<ul>
+  <li>解决思路: 用递归的思路解决问题，第一步的选择有三种，那么走n步的方案数等于这三种走法的方案和</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/152.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/153.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/154.jpg" /></center>
+
+<h1 id="9-第九周-深度优先搜索二">9. 第九周 深度优先搜索(二)</h1>
+<h2 id="91-寻路问题">9.1. 寻路问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/155.jpg" /></center>
+<ul>
+  <li>解题思路: 从城市1开始深度优先遍历整个图，找到能到达城市N的最优路线(在不超过开销情况下的最短路径)</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/156.jpg" /></center>
+<p>但是这种方法会超时，所以我们需要对算法进行改进(剪枝)，最容易想到的方法是最优性剪枝，但是发现这种剪枝方法还是超时了</p>
+<center><img src="../assets/img/posts/20220413/157.jpg" /></center>
+<p>这种剪枝方法能保存中间计算结果，效果比之前的最优性剪枝要好</p>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/158.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/159.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/160.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/161.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/162.jpg" /></center>
+
+<h2 id="92-生日蛋糕">9.2. 生日蛋糕</h2>
+<ul>
+  <li>下棋也是一个深度搜索的过程</li>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/163.jpg" /></center>
+<p>蛋糕的高和半径是递减的</p>
+<ul>
+  <li>解题思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/164.jpg" /></center>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/165.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/166.jpg" /></center>
+<ul>
+  <li>剪枝(剪枝在深度优先搜索中很重要)</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/167.jpg" /></center>
+
+<h1 id="10-第十周-广度优先搜索">10. 第十周 广度优先搜索</h1>
+<h2 id="101-抓住那头牛">10.1. 抓住那头牛</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/168.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/169.jpg" /></center>
+<p>第一种想法是用深度优先搜索解决问题，让农夫尝试所有的走法，不能走重，不能往下走了就回溯</p>
+<center><img src="../assets/img/posts/20220413/170.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/171.jpg" /></center>
+<p>第二种想法是用广度优先搜索的思路解决问题，对所有的节点进行分层，广搜的优点是确保可以找到最优解，但是因为拓展出来的节点比较多，且多数节点都需要保存，因此需要的存储空间较大，<strong>用队列保存节点</strong></p>
+<ul>
+  <li>广搜算法:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/172.jpg" /></center>
+<p>光看文字可能有些晦涩难懂，下面有open表和close表变化的实例</p>
+<center><img src="../assets/img/posts/20220413/173.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/174.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/175.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/176.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/177.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/178.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/179.jpg" /></center>
+<ul>
+  <li>代码实现</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/180.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/181.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/182.jpg" /></center>
+<p>在了解广度优先搜索的概念后，代码实现的难点在于队列queue的使用，queue的实例化可以用queue&lt;T&gt;来实现，q.front()是取当前元素，q.push()是在队列尾部添加元素，q.pop()是删除头部元素，目前还不清楚指针的作用</p>
+
+<h2 id="102-迷宫问题">10.2. 迷宫问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/183.jpg" /></center>
+<ul>
+  <li>解决思路: 广搜</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/184.jpg" /></center>
+<p>这里队列不能用STL的queue实现(因为要给出最短路径)，要自己写，可以用一维数组实现</p>
+<center><img src="../assets/img/posts/20220413/185.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/186.jpg" /></center>
+<p>其实就是记录了每个节点的父节点，在达到重点的时候可以一路返回过去得到路径</p>
+
+<h2 id="103-鸣人和佐助">10.3. 鸣人和佐助</h2>
+<p>鸣人和佐助问题是迷宫问题的一个变种</p>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/187.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/188.jpg" /></center>
+<p>由于每个位置的查克拉不同也会导致状态的不同，所以状态用三个参数表示，然后根据条件拓展节点</p>
+<ul>
+  <li>问题变种:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/189.jpg" /></center>
+:ET

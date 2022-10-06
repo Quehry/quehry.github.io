@@ -59,6 +59,11 @@ author: Quehry
 - [9. 第九周 深度优先搜索(二)](#9-第九周-深度优先搜索二)
     - [9.1. 寻路问题](#91-寻路问题)
     - [9.2. 生日蛋糕](#92-生日蛋糕)
+- [10. 第十周 广度优先搜索](#10-第十周-广度优先搜索)
+    - [10.1. 抓住那头牛](#101-抓住那头牛)
+    - [10.2. 迷宫问题](#102-迷宫问题)
+    - [10.3. 鸣人和佐助](#103-鸣人和佐助)
+    - [10.4. 八数码问题](#104-八数码问题)
 
 <!-- /TOC -->
 
@@ -520,3 +525,81 @@ author: Quehry
 <center><img src='../assets/img/posts/20220413/166.jpg'></center>
 - 剪枝(剪枝在深度优先搜索中很重要)
 <center><img src='../assets/img/posts/20220413/167.jpg'></center>
+
+# 10. 第十周 广度优先搜索
+## 10.1. 抓住那头牛
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/168.jpg'></center>
+- 解决思路: 
+<center><img src='../assets/img/posts/20220413/169.jpg'></center>
+第一种想法是用深度优先搜索解决问题，让农夫尝试所有的走法，不能走重，不能往下走了就回溯
+<center><img src='../assets/img/posts/20220413/170.jpg'></center>
+<center><img src='../assets/img/posts/20220413/171.jpg'></center>
+第二种想法是用广度优先搜索的思路解决问题，对所有的节点进行分层，广搜的优点是确保可以找到最优解，但是因为拓展出来的节点比较多，且多数节点都需要保存，因此需要的存储空间较大，**用队列保存节点**
+- 广搜算法: 
+<center><img src='../assets/img/posts/20220413/172.jpg'></center>
+光看文字可能有些晦涩难懂，下面有open表和close表变化的实例
+<center><img src='../assets/img/posts/20220413/173.jpg'></center>
+<center><img src='../assets/img/posts/20220413/174.jpg'></center>
+<center><img src='../assets/img/posts/20220413/175.jpg'></center>
+<center><img src='../assets/img/posts/20220413/176.jpg'></center>
+<center><img src='../assets/img/posts/20220413/177.jpg'></center>
+<center><img src='../assets/img/posts/20220413/178.jpg'></center>
+<center><img src='../assets/img/posts/20220413/179.jpg'></center>
+- 代码实现
+<center><img src='../assets/img/posts/20220413/180.jpg'></center>
+<center><img src='../assets/img/posts/20220413/181.jpg'></center>
+<center><img src='../assets/img/posts/20220413/182.jpg'></center>
+在了解广度优先搜索的概念后，代码实现的难点在于队列queue的使用，queue的实例化可以用queue\<T\>来实现，q.front()是取当前元素，q.push()是在队列尾部添加元素，q.pop()是删除头部元素
+
+## 10.2. 迷宫问题
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/183.jpg'></center>
+- 解决思路: 广搜
+<center><img src='../assets/img/posts/20220413/184.jpg'></center>
+这里队列不能用STL的queue实现(因为要给出最短路径)，要自己写，可以用一维数组实现
+<center><img src='../assets/img/posts/20220413/185.jpg'></center>
+<center><img src='../assets/img/posts/20220413/186.jpg'></center>
+其实就是记录了每个节点的父节点，在达到重点的时候可以一路返回过去得到路径
+
+## 10.3. 鸣人和佐助
+鸣人和佐助问题是迷宫问题的一个变种
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/187.jpg'></center>
+- 解决思路: 
+<center><img src='../assets/img/posts/20220413/188.jpg'></center>
+由于每个位置的查克拉不同也会导致状态的不同，所以状态用三个参数表示，然后根据条件拓展节点
+- 问题变种: 
+<center><img src='../assets/img/posts/20220413/189.jpg'></center>
+<center><img src='../assets/img/posts/20220413/190.jpg'></center>
+
+## 10.4. 八数码问题
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/191.jpg'></center>
+- 解决思路: 
+<center><img src='../assets/img/posts/20220413/192.jpg'></center>
+用广度优先搜索来解决问题，优先拓展浅层节点，在逐渐深入
+- 广度优先搜索的代码框架:
+<center><img src='../assets/img/posts/20220413/193.jpg'></center>
+- 这个题目的关键点在于判重，状态数目大，如何存储才能较快判断一个状态是否重复
+- 一些可能的编码方案: 
+<center><img src='../assets/img/posts/20220413/194.jpg'></center>
+<center><img src='../assets/img/posts/20220413/195.jpg'></center>
+<center><img src='../assets/img/posts/20220413/196.jpg'></center>
+<center><img src='../assets/img/posts/20220413/197.jpg'></center>
+<center><img src='../assets/img/posts/20220413/198.jpg'></center>
+- 继续优化问题的方法: 判定八数码问题是否有解
+<center><img src='../assets/img/posts/20220413/199.jpg'></center>
+移动0的位置，不改变排列的奇偶性
+- 代码实现(单向广搜，用set判重)
+<center><img src='../assets/img/posts/20220413/200.jpg'></center>
+<center><img src='../assets/img/posts/20220413/201.jpg'></center>
+<center><img src='../assets/img/posts/20220413/202.jpg'></center>
+<center><img src='../assets/img/posts/20220413/203.jpg'></center>
+<center><img src='../assets/img/posts/20220413/204.jpg'></center>
+<center><img src='../assets/img/posts/20220413/205.jpg'></center>
+<center><img src='../assets/img/posts/20220413/206.jpg'></center>
+<center><img src='../assets/img/posts/20220413/207.jpg'></center>
+- 其余优化问题的方法: 双向广搜、针对本题的预处理、A*算法
+- 广搜和深搜的比较: 
+<center><img src='../assets/img/posts/20220413/208.jpg'></center>

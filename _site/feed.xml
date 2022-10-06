@@ -1,6 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-28T00:20:39+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">GAN</title><link href="http://localhost:4000/GAN.html" rel="alternate" type="text/html" title="GAN" /><published>2022-09-27T00:00:00+08:00</published><updated>2022-09-27T00:00:00+08:00</updated><id>http://localhost:4000/GAN</id><content type="html" xml:base="http://localhost:4000/GAN.html"><![CDATA[<h1 id="1-gan简介">1. GAN简介</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-06T19:37:50+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">GAN</title><link href="http://localhost:4000/GAN.html" rel="alternate" type="text/html" title="GAN" /><published>2022-09-27T00:00:00+08:00</published><updated>2022-09-27T00:00:00+08:00</updated><id>http://localhost:4000/GAN</id><content type="html" xml:base="http://localhost:4000/GAN.html"><![CDATA[<h1 id="目录">目录</h1>
+
+<!-- TOC -->
+
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#1-博客简介">1. 博客简介</a></li>
+  <li><a href="#2-gan简介">2. GAN简介</a></li>
+  <li><a href="#3-adversarial-nets">3. Adversarial nets</a></li>
+  <li><a href="#4-理论原理">4. 理论原理</a></li>
+  <li><a href="#5-其他">5. 其他</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-博客简介">1. 博客简介</h1>
+<p>GAN的全称是generative adversarial nets，是Goodfellow于2014年提出的新的生成模型框架，这种全新的生成模型框架有很多应用和变种，这篇博客主要介绍最开始的GAN的原理和论文整理，这里阅读的论文不是最终版(区别在于related work不同)，下面列出一些链接</p>
 <ul>
   <li><a href="https://arxiv.org/abs/1406.2661" target="_blank">论文链接</a></li>
+  <li><a href="https://www.bilibili.com/video/BV1rb4y187vD/?spm_id_from=333.788&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">李沐讲解</a></li>
+</ul>
+
+<h1 id="2-gan简介">2. GAN简介</h1>
+<p>GAN是一种全新的生成模型框架，它包含两个部分，生成模型G和辨别模型D，G的作用是捕捉数据的分布，D的作用是辨别数据来源于真实数据分布还是G生成的数据分布。生成模型训练过程就是让D犯错的可能性更高。GAN框架其实就是一个minmax game，如果G和D都是MLP的话，那么整个系统可以用逆传播机制训练。GAN的作者举了一个简单的例子介绍模型训练过程，生成模型可以看成印假钞的团伙，辨别模型可以看成警察，双方都在训练中提升自己的能力，最终希望达到的效果是警察无法分辨出一张假钞是真币还是假币。论文只介绍了一种特殊情况，就是G和D都是MLP的情况，作者把这种情况称为Adversarial nets</p>
+
+<h1 id="3-adversarial-nets">3. Adversarial nets</h1>
+<p>为了让生成模型学习到分布$p_g$(分布尽量和原始数据x的分布一致)，需要定义输入噪音的先验分布$p_z(z)$，$G(z;\theta_g)$表示噪音z输入生成模型的结果，G是一个可微分的函数，这里是MLP，参数为$\theta_g$。$D(x;\theta_d)$表示输入x后的辨别模型的结果，输出是一个标量，表示x来自于真实数据分布的概率。</p>
+
+<p>也就是说，D和G的价值函数V(G, D)可表示为:</p>
+<center><img src="../assets/img/posts/20220927/2.jpg" /></center>
+<p>辨别模型D的目标是最大化价值函数的值，D(x)的取值在0-1之间，所以价值函数越大说明辨别模型D的效果越好，生成模型G的目标是最小化价值函数的值。GAN训练生成模型和辨别模型的过程为:</p>
+<center><img src="../assets/img/posts/20220927/3.jpg" /></center>
+<p>绿色的线是生成模型，蓝色虚线是辨别模型，黑色的散点线是原始数据分布</p>
+
+<h1 id="4-理论原理">4. 理论原理</h1>
+<p>算法原理由下面这一张图片展示:</p>
+<center><img src="../assets/img/posts/20220927/4.jpg" /></center>
+<p>在每个迭代周期的每个批量中，我们有m个取自先验分布的噪音z，其中z$\sim$ $p_g(z)$和m个取自真实分布的x，其中x$\sim$ $p_{data}(x)$，先训练辨别器D，沿着梯度上升的方向更新参数，然后在沿着log(1-D(G($z^{(i)}$)))的梯度下降的方向更新参数。</p>
+
+<p>接下来介绍了一些命题和证明和一些定理，证实了GAN用到的价值函数和目标函数的可行性</p>
+
+<h1 id="5-其他">5. 其他</h1>
+<ul>
+  <li>GAN在刚提出的时候还是有很多缺点的，比如模型还是比较难训练的，但是后续有很多很多的工作来优化原始的GAN模型，所以GAN更像是抛出了一个引子，让后续模型来优化它</li>
+  <li>GAN本质上就是左右手互博，目标函数设计的也很好</li>
 </ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[arrange notes]]></summary></entry><entry><title type="html">重要时间点及事件</title><link href="http://localhost:4000/Important-Event.html" rel="alternate" type="text/html" title="重要时间点及事件" /><published>2022-09-26T00:00:00+08:00</published><updated>2022-09-26T00:00:00+08:00</updated><id>http://localhost:4000/Important-Event</id><content type="html" xml:base="http://localhost:4000/Important-Event.html"><![CDATA[<!-- 2022.9.23 报9月工资 -->]]></content><author><name>Quehry</name></author><category term="daily" /><summary type="html"><![CDATA[for query]]></summary></entry><entry><title type="html">T5模型</title><link href="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="T5模型" /><published>2022-09-19T00:00:00+08:00</published><updated>2022-09-19T00:00:00+08:00</updated><id>http://localhost:4000/T5%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html"><![CDATA[<!-- TOC -->
 
 <ul>
@@ -1049,6 +1091,14 @@
       <li><a href="#92-生日蛋糕">9.2. 生日蛋糕</a></li>
     </ul>
   </li>
+  <li><a href="#10-第十周-广度优先搜索">10. 第十周 广度优先搜索</a>
+    <ul>
+      <li><a href="#101-抓住那头牛">10.1. 抓住那头牛</a></li>
+      <li><a href="#102-迷宫问题">10.2. 迷宫问题</a></li>
+      <li><a href="#103-鸣人和佐助">10.3. 鸣人和佐助</a></li>
+      <li><a href="#104-八数码问题">10.4. 八数码问题</a></li>
+    </ul>
+  </li>
 </ul>
 
 <!-- /TOC -->
@@ -1768,7 +1818,117 @@
 <ul>
   <li>剪枝(剪枝在深度优先搜索中很重要)</li>
 </ul>
-<center><img src="../assets/img/posts/20220413/167.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[郭炜老师算法网课记录]]></summary></entry><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
+<center><img src="../assets/img/posts/20220413/167.jpg" /></center>
+
+<h1 id="10-第十周-广度优先搜索">10. 第十周 广度优先搜索</h1>
+<h2 id="101-抓住那头牛">10.1. 抓住那头牛</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/168.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/169.jpg" /></center>
+<p>第一种想法是用深度优先搜索解决问题，让农夫尝试所有的走法，不能走重，不能往下走了就回溯</p>
+<center><img src="../assets/img/posts/20220413/170.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/171.jpg" /></center>
+<p>第二种想法是用广度优先搜索的思路解决问题，对所有的节点进行分层，广搜的优点是确保可以找到最优解，但是因为拓展出来的节点比较多，且多数节点都需要保存，因此需要的存储空间较大，<strong>用队列保存节点</strong></p>
+<ul>
+  <li>广搜算法:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/172.jpg" /></center>
+<p>光看文字可能有些晦涩难懂，下面有open表和close表变化的实例</p>
+<center><img src="../assets/img/posts/20220413/173.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/174.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/175.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/176.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/177.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/178.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/179.jpg" /></center>
+<ul>
+  <li>代码实现</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/180.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/181.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/182.jpg" /></center>
+<p>在了解广度优先搜索的概念后，代码实现的难点在于队列queue的使用，queue的实例化可以用queue&lt;T&gt;来实现，q.front()是取当前元素，q.push()是在队列尾部添加元素，q.pop()是删除头部元素</p>
+
+<h2 id="102-迷宫问题">10.2. 迷宫问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/183.jpg" /></center>
+<ul>
+  <li>解决思路: 广搜</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/184.jpg" /></center>
+<p>这里队列不能用STL的queue实现(因为要给出最短路径)，要自己写，可以用一维数组实现</p>
+<center><img src="../assets/img/posts/20220413/185.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/186.jpg" /></center>
+<p>其实就是记录了每个节点的父节点，在达到重点的时候可以一路返回过去得到路径</p>
+
+<h2 id="103-鸣人和佐助">10.3. 鸣人和佐助</h2>
+<p>鸣人和佐助问题是迷宫问题的一个变种</p>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/187.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/188.jpg" /></center>
+<p>由于每个位置的查克拉不同也会导致状态的不同，所以状态用三个参数表示，然后根据条件拓展节点</p>
+<ul>
+  <li>问题变种:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/189.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/190.jpg" /></center>
+
+<h2 id="104-八数码问题">10.4. 八数码问题</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/191.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/192.jpg" /></center>
+<p>用广度优先搜索来解决问题，优先拓展浅层节点，在逐渐深入</p>
+<ul>
+  <li>广度优先搜索的代码框架:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/193.jpg" /></center>
+<ul>
+  <li>这个题目的关键点在于判重，状态数目大，如何存储才能较快判断一个状态是否重复</li>
+  <li>一些可能的编码方案:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/194.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/195.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/196.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/197.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/198.jpg" /></center>
+<ul>
+  <li>继续优化问题的方法: 判定八数码问题是否有解</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/199.jpg" /></center>
+<p>移动0的位置，不改变排列的奇偶性</p>
+<ul>
+  <li>代码实现(单向广搜，用set判重)</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/200.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/201.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/202.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/203.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/204.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/205.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/206.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/207.jpg" /></center>
+<ul>
+  <li>其余优化问题的方法: 双向广搜、针对本题的预处理、A*算法</li>
+  <li>广搜和深搜的比较:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/208.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[郭炜老师算法网课记录]]></summary></entry><entry><title type="html">C语言程序设计</title><link href="http://localhost:4000/C-Language.html" rel="alternate" type="text/html" title="C语言程序设计" /><published>2022-02-25T00:00:00+08:00</published><updated>2022-02-25T00:00:00+08:00</updated><id>http://localhost:4000/C-Language</id><content type="html" xml:base="http://localhost:4000/C-Language.html"><![CDATA[<h1 id="目录">目录</h1>
 
 <!-- TOC -->
 
