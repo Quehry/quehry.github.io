@@ -22,7 +22,7 @@
   "headline": "算法基础",
   "abstract": "郭炜老师算法网课记录",
     "keywords": "note",
-    "wordcount": "460",
+    "wordcount": "512",
     "image": ["http://localhost:4000/assets/imgposts/20220413/cover.jpg"],
   "datePublished": "2022-04-13 00:00:00 +0800",
   "dateModified": "2022-04-13 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="郭炜老师算法网课记录">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="460"/>
+<meta data-rh="true" name="twitter:data1" content="512"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20220413/cover.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -427,13 +427,22 @@
       <li><a href="#104-八数码问题">10.4. 八数码问题</a></li>
     </ul>
   </li>
+  <li><a href="#11-第十一周-贪心算法">11. 第十一周 贪心算法</a>
+    <ul>
+      <li><a href="#111-圣诞老人的礼物">11.1. 圣诞老人的礼物</a></li>
+      <li><a href="#112-电影节">11.2. 电影节</a></li>
+      <li><a href="#113-分配畜栏">11.3. 分配畜栏</a></li>
+      <li><a href="#114-放置雷达">11.4. 放置雷达</a></li>
+      <li><a href="#115-钓鱼">11.5. 钓鱼</a></li>
+    </ul>
+  </li>
 </ul>
 
 <!-- /TOC -->
 
 <h1 id="0-简介">0. 简介</h1>
 <ul>
-  <li>课程来源于北大郭炜老师的MOOC，在中国大学MOOC平台上有网课，课程名为<a href="https://www.icourse163.org/course/PKU-1001894005?tid=1450413466" target="_blank">程序设计与算法(二)算法基础</a>，选择第九次开课</li>
+  <li>课程来源于北大郭炜老师的MOOC，在中国大学MOOC平台上有网课，课程名为<a href="https://www.icourse163.org/course/PKU-1001894005?tid=1450413466" target="_blank">程序设计与算法(二)算法基础</a>，第九次开课，课程有附带的习题，该博客记录了我的随堂笔记</li>
 </ul>
 
 <h1 id="1-第一周-枚举">1. 第一周 枚举</h1>
@@ -1258,6 +1267,111 @@
 </ul>
 <center><img src="../assets/img/posts/20220413/208.jpg" /></center>
 
+<h1 id="11-第十一周-贪心算法">11. 第十一周 贪心算法</h1>
+<h2 id="111-圣诞老人的礼物">11.1. 圣诞老人的礼物</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/209.jpg" /></center>
+<ul>
+  <li>样例输入输出:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/210.jpg" /></center>
+<p>第一行表示箱子总数和可携带的最大重量，其余行都表示箱子的信息，第一列是价值，第二列是重量</p>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/211.jpg" /></center>
+<p>因为要携带尽可能价值高的糖果，所以可以把所有箱子的价值重量比算出来，然后排列，按顺序装糖果。这种方法就是贪心算法的思路</p>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/212.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/213.jpg" /></center>
+<p>这里实现candy的结构体时，结构体里面重载了运算符&lt;，operator是转换运算符，这样就可以直接调用sort对candies进行排序</p>
+<ul>
+  <li>证明这种方法是正确的:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/214.jpg" /></center>
+<ul>
+  <li>贪心算法:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/215.jpg" /></center>
+<p>每一步行动总是按照某种指标选取最优的操作来进行</p>
+
+<h2 id="112-电影节">11.2. 电影节</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/216.jpg" /></center>
+<ul>
+  <li>样例输入输出:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/217.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/218.jpg" /></center>
+<ul>
+  <li>证明贪心算法的正确性:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/219.jpg" /></center>
+
+<h2 id="113-分配畜栏">11.3. 分配畜栏</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/220.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/221.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/222.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/223.jpg" /></center>
+<p>按照奶牛的开始挤奶时间来分配奶牛的畜栏，可以用队列存储最早结束的畜栏的时间</p>
+<ul>
+  <li>代码实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/224.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/225.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/226.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/227.jpg" /></center>
+<p>priority是优先队列，在优先队列中，优先级高的元素先出队列，并非按照先进先出的顺序</p>
+
+<h2 id="114-放置雷达">11.4. 放置雷达</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/228.jpg" /></center>
+<ul>
+  <li>解决思路
+    <ul>
+      <li>首先把题目问题转换一下:</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/229.jpg" /></center>
+    <ul>
+      <li>接下来我们通过观察得到一个重要的结论，那就是如果一个雷达可以覆盖多个雷达，那么这个雷达可以在所覆盖雷达的最右边的起点</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/230.jpg" /></center>
+    <ul>
+      <li>贪心算法实现步骤:</li>
+    </ul>
+    <center><img src="../assets/img/posts/20220413/231.jpg" /></center>
+    <center><img src="../assets/img/posts/20220413/232.jpg" /></center>
+  </li>
+</ul>
+
+<h2 id="115-钓鱼">11.5. 钓鱼</h2>
+<ul>
+  <li>问题描述:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/233.jpg" /></center>
+<ul>
+  <li>解决思路:</li>
+</ul>
+<center><img src="../assets/img/posts/20220413/234.jpg" /></center>
+<center><img src="../assets/img/posts/20220413/235.jpg" /></center>
+
         <aside class="sidebar inline" id="post-end">
     
 
@@ -1361,6 +1475,37 @@
           
           
 
+          <a href="./AutoEncoder-Series.html" class="recent-item-img" style="background: url('./assets/img/posts/20221008/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>AutoEncoder系列整理</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
           <a href="./Important-Event.html" class="recent-item-img" style="background: url('./assets/img/posts/20220926/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>重要时间点及事件</span>
@@ -1407,37 +1552,6 @@
     <p class="page_meta-readtime">
       
         less than 1 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./T5%E6%A8%A1%E5%9E%8B.html" class="recent-item-img" style="background: url('./assets/img/posts/20220919/2.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>T5模型</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        1 minute read
       
     </p>
   

@@ -167,6 +167,16 @@
     
       
   {
+  "tag" : "notes",
+  "posts" : [
+      
+      "./AutoEncoder-Series.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "optimization",
   "posts" : [
       

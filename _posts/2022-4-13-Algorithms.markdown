@@ -64,11 +64,17 @@ author: Quehry
     - [10.2. 迷宫问题](#102-迷宫问题)
     - [10.3. 鸣人和佐助](#103-鸣人和佐助)
     - [10.4. 八数码问题](#104-八数码问题)
+- [11. 第十一周 贪心算法](#11-第十一周-贪心算法)
+    - [11.1. 圣诞老人的礼物](#111-圣诞老人的礼物)
+    - [11.2. 电影节](#112-电影节)
+    - [11.3. 分配畜栏](#113-分配畜栏)
+    - [11.4. 放置雷达](#114-放置雷达)
+    - [11.5. 钓鱼](#115-钓鱼)
 
 <!-- /TOC -->
 
 # 0. 简介
-- 课程来源于北大郭炜老师的MOOC，在中国大学MOOC平台上有网课，课程名为[程序设计与算法(二)算法基础](https://www.icourse163.org/course/PKU-1001894005?tid=1450413466){:target="_blank"}，选择第九次开课
+- 课程来源于北大郭炜老师的MOOC，在中国大学MOOC平台上有网课，课程名为[程序设计与算法(二)算法基础](https://www.icourse163.org/course/PKU-1001894005?tid=1450413466){:target="_blank"}，第九次开课，课程有附带的习题，该博客记录了我的随堂笔记
 
 
 # 1. 第一周 枚举
@@ -603,3 +609,67 @@ author: Quehry
 - 其余优化问题的方法: 双向广搜、针对本题的预处理、A*算法
 - 广搜和深搜的比较: 
 <center><img src='../assets/img/posts/20220413/208.jpg'></center>
+
+# 11. 第十一周 贪心算法
+## 11.1. 圣诞老人的礼物
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/209.jpg'></center>
+- 样例输入输出: 
+<center><img src='../assets/img/posts/20220413/210.jpg'></center>
+第一行表示箱子总数和可携带的最大重量，其余行都表示箱子的信息，第一列是价值，第二列是重量
+- 解决思路: 
+<center><img src='../assets/img/posts/20220413/211.jpg'></center>
+因为要携带尽可能价值高的糖果，所以可以把所有箱子的价值重量比算出来，然后排列，按顺序装糖果。这种方法就是贪心算法的思路
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/212.jpg'></center>
+<center><img src='../assets/img/posts/20220413/213.jpg'></center>
+这里实现candy的结构体时，结构体里面重载了运算符\<，operator是转换运算符，这样就可以直接调用sort对candies进行排序
+- 证明这种方法是正确的: 
+<center><img src='../assets/img/posts/20220413/214.jpg'></center>
+- 贪心算法: 
+<center><img src='../assets/img/posts/20220413/215.jpg'></center>
+每一步行动总是按照某种指标选取最优的操作来进行
+
+## 11.2. 电影节
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/216.jpg'></center>
+- 样例输入输出: 
+<center><img src='../assets/img/posts/20220413/217.jpg'></center>
+- 解决思路: 
+<center><img src='../assets/img/posts/20220413/218.jpg'></center>
+- 证明贪心算法的正确性: 
+<center><img src='../assets/img/posts/20220413/219.jpg'></center>
+
+## 11.3. 分配畜栏
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/220.jpg'></center>
+- 解决思路: 
+<center><img src='../assets/img/posts/20220413/221.jpg'></center>
+<center><img src='../assets/img/posts/20220413/222.jpg'></center>
+<center><img src='../assets/img/posts/20220413/223.jpg'></center>
+按照奶牛的开始挤奶时间来分配奶牛的畜栏，可以用队列存储最早结束的畜栏的时间
+- 代码实现: 
+<center><img src='../assets/img/posts/20220413/224.jpg'></center>
+<center><img src='../assets/img/posts/20220413/225.jpg'></center>
+<center><img src='../assets/img/posts/20220413/226.jpg'></center>
+<center><img src='../assets/img/posts/20220413/227.jpg'></center>
+priority是优先队列，在优先队列中，优先级高的元素先出队列，并非按照先进先出的顺序
+
+## 11.4. 放置雷达
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/228.jpg'></center>
+- 解决思路
+    - 首先把题目问题转换一下: 
+    <center><img src='../assets/img/posts/20220413/229.jpg'></center>
+    - 接下来我们通过观察得到一个重要的结论，那就是如果一个雷达可以覆盖多个雷达，那么这个雷达可以在所覆盖雷达的最右边的起点
+    <center><img src='../assets/img/posts/20220413/230.jpg'></center>
+    - 贪心算法实现步骤:
+    <center><img src='../assets/img/posts/20220413/231.jpg'></center>
+    <center><img src='../assets/img/posts/20220413/232.jpg'></center>
+
+## 11.5. 钓鱼
+- 问题描述: 
+<center><img src='../assets/img/posts/20220413/233.jpg'></center>
+- 解决思路:
+<center><img src='../assets/img/posts/20220413/234.jpg'></center>
+<center><img src='../assets/img/posts/20220413/235.jpg'></center>

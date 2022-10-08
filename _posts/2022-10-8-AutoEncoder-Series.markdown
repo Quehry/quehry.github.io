@@ -1,0 +1,38 @@
+---
+layout: postwithlatex
+read_time: true
+show_date: true
+title:  AutoEncoder系列整理
+date:   2022-9-27
+description: Information about autoencoder series 
+img: posts/20221008/1.jpg 
+tags: [notes]
+author: Quehry
+---
+
+# 1. AE简介
+AutoEncoder，即AE，自编码器，是一类在半监督学习和非监督学习中使用的人工神经网络，其功能是通过将输入信息作为学习目标，对输入信息进行表征学习(representation learning)，编码其实就是特征表示
+
+半监督学习(semi-supervised learning)的训练数据一部分是有标签的，另一部分没有标签，而没标签的数量一般大于有标签数据的数量
+
+自编码器的原理如下图所示，encoder首先读取input，将输入转换成高效的内部表示(code)，然后再由decoder输出输入数据的类似物
+<center><img src='../assets/img/posts/20221008/1.jpg'></center>
+
+自编码器属于自监督学习的范畴，算法把输入作为监督信号来学习，encoder的作用其实就是对输入向量进行特征降维，常见的降维算法有主成分分析法PCA，但PCA本质上是一种线性变换，提取特征的能力有限
+
+自编码器利用神经网络来学习输入的特征表达，AE利用数据x本身作为监督信号来指导神经网络的训练，即希望神经网络能学到映射$f_\theta$:x->x
+<center><img src='../assets/img/posts/20221008/2.jpg'></center>
+把网络切分为两个部分，前面的子网络尝试学习映射关系$g_{\theta1}:x->z$，后面的子网络尝试学习映射关系$h_{\theta2}:z->x$，即编码器和解码器，编码器和解码器共同完成了输入数据x的编码、解码过程，把整个网络模型叫做AutoEncoder，模型根据输出与输入的距离函数作为损失函数来优化AE，随机梯度下降
+
+假设输入为x，中间层为y，最终输出为z，那么y=s(Wx+b)，s是激活函数，z=s(W'y+b')
+
+接下来我将整理AE家族的一些模型，有DAE、VAE、VQVAE、MAE，当然不可能涵盖所有的模型，尽量介绍一些使用较多的模型
+
+# 2. DAE
+通过Auto-Encoder得到的模型往往存在过拟合的风险，为了学习到较鲁棒的特征，可以在网络的输入层引入随机噪声，这种方法称为降噪自编码器(Denoising autoencoder, DAE)，为了更了解模型的原理和架构，我去阅读了DAE的[论文](https://dl.acm.org/doi/abs/10.1145/1390156.1390294){:target="_blank"}
+
+作者的想法是让网络从corrputed的输入还原出原始输入，通过这个方法来提高模型的鲁棒性。corrputed的方法: 对于每一个输入x，随机选取$v_d$个元素置零，其他的部分保持不变，那么网络的目标就变成了对这些位置进行填空(fill-in)，这和BERT中Masked LM的思想差不多
+<center><img src='../assets/img/posts/20221008/3.jpg'></center>
+论文的其他部分着重介绍为什么这种denoising的思想有用以及背后的数学原理
+
+# 3. VAE
