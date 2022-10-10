@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-08T23:10:58+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">AutoEncoder系列整理</title><link href="http://localhost:4000/AutoEncoder-Series.html" rel="alternate" type="text/html" title="AutoEncoder系列整理" /><published>2022-09-27T00:00:00+08:00</published><updated>2022-09-27T00:00:00+08:00</updated><id>http://localhost:4000/AutoEncoder-Series</id><content type="html" xml:base="http://localhost:4000/AutoEncoder-Series.html"><![CDATA[<h1 id="1-ae简介">1. AE简介</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-10T23:14:23+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">短文本评估论文阅读整理</title><link href="http://localhost:4000/short-answer-assessment.html" rel="alternate" type="text/html" title="短文本评估论文阅读整理" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>http://localhost:4000/short-answer-assessment</id><content type="html" xml:base="http://localhost:4000/short-answer-assessment.html"><![CDATA[<h1 id="1-论文简介">1. 论文简介</h1>
+<ul>
+  <li><a href="https://ieeexplore.ieee.org/abstract/document/9779091" target="_blank">short answer grading model</a></li>
+  <li><a href="https://ieeexplore.ieee.org/abstract/document/9860098" target="_blank">semantic facets</a>
+这是两篇关于short-answer assessment的论文，所谓short-answer assessment就是对简答题的答案进行评估(和参考答案对比)，第一篇提出了利用BERT解决这个问题，第二篇提出了改进了评估过程，用多个semantic facets来评估short-answer，这篇博客对这两篇论文进行简单的整理</li>
+</ul>
+
+<h1 id="2-bert-based-deep-neural-networks">2. BERT-Based Deep Neural Networks</h1>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[read and arrange paper about short answer assessment]]></summary></entry><entry><title type="html">AutoEncoder系列整理</title><link href="http://localhost:4000/AutoEncoder-Series.html" rel="alternate" type="text/html" title="AutoEncoder系列整理" /><published>2022-10-08T00:00:00+08:00</published><updated>2022-10-08T00:00:00+08:00</updated><id>http://localhost:4000/AutoEncoder-Series</id><content type="html" xml:base="http://localhost:4000/AutoEncoder-Series.html"><![CDATA[<h1 id="1-ae简介">1. AE简介</h1>
 <p>AutoEncoder，即AE，自编码器，是一类在半监督学习和非监督学习中使用的人工神经网络，其功能是通过将输入信息作为学习目标，对输入信息进行表征学习(representation learning)，编码其实就是特征表示</p>
 
 <p>半监督学习(semi-supervised learning)的训练数据一部分是有标签的，另一部分没有标签，而没标签的数量一般大于有标签数据的数量</p>
@@ -14,7 +21,7 @@
 
 <p>假设输入为x，中间层为y，最终输出为z，那么y=s(Wx+b)，s是激活函数，z=s(W’y+b’)</p>
 
-<p>接下来我将整理AE家族的一些模型，有DAE、VAE、VQVAE、MAE，当然不可能涵盖所有的模型，尽量介绍一些使用较多的模型</p>
+<p>接下来我将整理AE家族的一些模型，有DAE、VAE、VQVAE，当然不可能涵盖所有的模型，尽量介绍一些使用较多的模型</p>
 
 <h1 id="2-dae">2. DAE</h1>
 <p>通过Auto-Encoder得到的模型往往存在过拟合的风险，为了学习到较鲁棒的特征，可以在网络的输入层引入随机噪声，这种方法称为降噪自编码器(Denoising autoencoder, DAE)，为了更了解模型的原理和架构，我去阅读了DAE的<a href="https://dl.acm.org/doi/abs/10.1145/1390156.1390294" target="_blank">论文</a></p>
@@ -23,7 +30,119 @@
 <center><img src="../assets/img/posts/20221008/3.jpg" /></center>
 <p>论文的其他部分着重介绍为什么这种denoising的思想有用以及背后的数学原理</p>
 
-<h1 id="3-vae">3. VAE</h1>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[Information about autoencoder series]]></summary></entry><entry><title type="html">GAN</title><link href="http://localhost:4000/GAN.html" rel="alternate" type="text/html" title="GAN" /><published>2022-09-27T00:00:00+08:00</published><updated>2022-09-27T00:00:00+08:00</updated><id>http://localhost:4000/GAN</id><content type="html" xml:base="http://localhost:4000/GAN.html"><![CDATA[<h1 id="目录">目录</h1>
+<h1 id="3-vae">3. VAE</h1>
+<p>AutoEncoder被指责只能简单地记住数据，在生成数据的能力上很差，于是变分自编码器VAE(Variational auto-encoder)出现了。<a href="https://arxiv.org/abs/1312.6114" target="_blank">论文链接</a></p>
+
+<p>作者提出了一种autoencoding variational bayesian(AEVB)算法，在AEVB算法中，通过使用SGVB(stochastic gradient variational bayes)估计器优化识别模型，使推断和学习更加有效，该识别模型允许我们使用简单的采样来获得非常有效的近似后验分布</p>
+<h2 id="31-数学原理">3.1. 数学原理</h2>
+<p>数据集X由独立同分布采样的N个x组成，即$X={x^{(i)}}_{i=1}^N$。我们假设x的生成过程由两部分组成:</p>
+<ul>
+  <li>$z^{(i)}$采样自先验分布$p_{\theta*}(z)$</li>
+  <li>$x^{(i)}$由似然函数$p_{\theta*}(x|z)$生成</li>
+</ul>
+
+<p>作者说不会对边缘概率分布和后验概率分布做一般的近似假设，所以一些常用的方法可能不行，作者提出用辨别模型$q_\Phi(z|x)$作为真实后验概率$p_\theta(z|x)$的近似，这里的$\Phi$也就是变分参数(variational parameters)，variational有两个作用，一个是可以用q(z|x)来近似p(z|x)，另一个是优化了lower bound的梯度计算</p>
+
+<h3 id="311-variational-lower-bound">3.1.1. variational lower bound</h3>
+<p>通过最大边缘似然函数$p_\theta(x)$来获得参数$\theta$的估计值，对数似然函数log$p_\theta(x)$可写成:(x都指$x^{(i)}$)</p>
+<center><img src="../assets/img/posts/20221008/4.jpg" /></center>
+<p>推导过程为:</p>
+<center><img src="../assets/img/posts/20221008/5.jpg" /></center>
+<p>等式右边的第一项是KL散度，第二项是Evidence lower bound(ELBO)，因为KL散度非负，所以有:</p>
+<center><img src="../assets/img/posts/20221008/6.jpg" /></center>
+<p>ELBO可以进一步推导，有:</p>
+<center><img src="../assets/img/posts/20221008/7.jpg" /></center>
+<p>推导和前面类似，省略</p>
+
+<p>我们希望最大化ELBO来获得参数$\Phi$和$\theta$，可以用梯度上升法，然而对ELBO求梯度有点困难，作者提出了SGVB estimator来解决这个问题</p>
+
+<h3 id="312-sgvb-estimator-and-aevb-algorithm">3.1.2. SGVB estimator and AEVB algorithm</h3>
+<p>首先介绍一下蒙特卡洛gradient estimator:</p>
+<center><img src="../assets/img/posts/20221008/8.jpg" /></center>
+<p>简单来说，蒙特卡洛就是将期望外的梯度符号移到了期望内</p>
+
+<p>接下来我们需要应用一种再参数化(reparameterization)的trick来实现似然函数梯度的计算，具体来说就是服从q(z|x)分布的随机变量z可以写成可微的形式:</p>
+<center><img src="../assets/img/posts/20221008/9.jpg" /></center>
+<p>其中$\epsilon$就是噪声，那么再经过一系列的推导，就可以得出似然函数的梯度</p>
+
+<p>AEVB算法:</p>
+<center><img src="../assets/img/posts/20221008/10.jpg" /></center>
+
+<h2 id="32-vae模型">3.2. VAE模型</h2>
+<p>VAE是AEVB算法的一个实例，VAE在AEVB算法的基础上做了以下约束:</p>
+<ul>
+  <li>使用encoder来模拟后验分布$q_\Phi(z|x)$，并假设其满足多元混合高斯</li>
+</ul>
+<center><img src="../assets/img/posts/20221008/11.jpg" /></center>
+<p>其中$\mu^{(i)}$和$\sigma^{(i)}$是输入$x^{(i)}$经过MLP后得到的结果，模型使用两个网络分别来估计每个样本对应的隐状态$z^{(i)}$的均值和方差</p>
+<ul>
+  <li>假设先验概率$p_\theta(z)$满足多元正态分布模型，即$p_\theta(z)~N(z;0,I)$</li>
+  <li>用decoder来模拟$p_\theta(x|z)$</li>
+  <li>使用重参数的trick来获得z，因为这里假设的是正态分布，所以z可以简单理解成$z=\mu+\sigma * \epsilon$，其中$\epsilon$采样自均值为0，方差为1的正态分布
+这样我们就获得了VAE模型</li>
+</ul>
+<center><img src="../assets/img/posts/20221008/13.jpg" /></center>
+
+<h2 id="33-总结">3.3. 总结</h2>
+<center><img src="../assets/img/posts/20221008/12.jpg" /></center>
+<p>这是我自己画的一张VAE模型图，encoder和decoder可以都是MLP。encoder的目的是从输入数据x中学习到z重参数化需要的变量$\mu$和$\sigma$，之后我们就可以采样噪声来获得z的先验分布，然后经过decoder得到重构的输出x，训练的过程其实就是学习x分布的过程。训练完成后，我们就可以得到生成模型$p_\theta(x|z)p_\theta(z)$，其中$p_\theta(x|z)$就是decoder，先验分布$p_\theta(z)$为正态分布，从先验分布$p_\theta(z)$随机采样一个z送入decoder，就可以得到与训练数据类似的输出，所以VAE是一个生成模型</p>
+
+<p><a href="https://zhuanlan.zhihu.com/p/452743042" target="_blank">一篇介绍VAE很详细的博客</a></p>
+
+<h1 id="4-vqvae">4. VQVAE</h1>
+<h2 id="41-简介">4.1. 简介</h2>
+<p><a href="https://proceedings.neurips.cc/paper/2017/hash/7a98af17e63a0ac09ce2e96d03992fbc-Abstract.html" target="_blank">论文链接</a>，VQVAE是DeepMind于2017年提出的一种基于离散隐变量(Discrete Latent variables)的生成模型，相比于VAE，VQVAE有两个重要的区别: 首先VQVAE采用离散隐变量(VAE采用的是连续隐变量)，其次VQVAE需要单独训练一个基于自回归的模型(比如PixelCNN)来学习先验概率，而不是像VAE那样采用一个固定的先验分布。VQVAE是一个强大的无监督表征学习模型，它学习的离散编码有很强的表征能力，DALLE第一版就是基于VQVAE的</p>
+
+<h2 id="42-vqvae模型">4.2. VQVAE模型</h2>
+<p>VQ-VAE的全称是Vector Quantised Variational AutoEncoder，与VAE的主要区别是使用了离散的隐变量和学习出来的prior(非固定)</p>
+
+<h3 id="421-离散隐变量">4.2.1. 离散隐变量</h3>
+<p>首先定义一个embedding space，记为e$\in R^{K*D}$，K就是embedding space的大小，D就是每个embedding vector的大小，embedding space由K个长度为D的向量组成。</p>
+<center><img src="../assets/img/posts/20221008/15.jpg" /></center>
+<p>原始输入x经过encoder后变成$z_e(x)$，然后我们需要向量化$z_e(x)$，即把它变成一个向量，这里就需要embedding space发挥作用，我们从embedding space的K个向量中选择一个作为$z_e(x)$向量化的结果，作者的做法是最临近查找(nearest neighbour look-up，即选择欧式距离最小的向量$e_{k}$作为向量化结果)，将向量化的结果$z_q(x)$输入decoder:</p>
+<center><img src="../assets/img/posts/20221008/16.jpg" /></center>
+<p>模型在训练过程中需要调整的参数就是encoder的参数、decoder的参数以及embedding space的参数。在训练过程中VQ-VAE其实没有用到先验分布prior，所以后面需要单独训练一个先验模型来生成数据。这里的z对于不同的任务是不同维度的，为了简便，用一维来举例，那么z的后验分布$q(z|x)$可以看成一个多类分布:</p>
+<center><img src="../assets/img/posts/20221008/17.jpg" /></center>
+
+<h3 id="422-模型">4.2.2. 模型</h3>
+<p>模型如下图所示:</p>
+<center><img src="../assets/img/posts/20221008/14.jpg" /></center>
+<p>由于上面提到的argmin操作不可导，所以梯度就无法逆传播到encoder，论文采用了一种straight-through estimator的方法来解决这个问题，所谓straight-through estimator其实就是计算梯度时，忽略它而采用上游得到的梯度，在这里，就是用$z_q(x)$的梯度作为$z_e(x)$的梯度。损失函数的定义如下:</p>
+<center><img src="../assets/img/posts/20221008/18.jpg" /></center>
+<p>损失函数的第一项是重建误差，它用来优化encoder和decoder的参数，由于在计算梯度时采用了straight-through estimator的方法，所以重建误差不涉及embedding space的参数的更新，为了学习embedding space的参数，用L2误差来移动embedding space的特征向量$e_i$，也就是损失函数的第二项，这里的sg指的时stop gradient的操作，意味着这个L2损失只会更新embedding space的参数，不会传递到encoder。除此之外，论文还额外增加了一个commitment loss(损失函数第三项)，其主要目的是约束encoder的输出和embedding space保持一致，$\beta$的取值对算法的效果不会产生很大的影响，论文中取值0.25</p>
+
+<p>关于先验模型prior，在训练VQVAE的主体过程中保持一致，在VQVAE训练完成后，作者为prior训练一个自回归分布p(z)，对于z是图片的情况下，用PixelCNN，对于z是音频的情况下，用WaveNet。VQVAE适用于多种模态的数据。embedding space也叫做codebook。</p>
+
+<h3 id="423-生成过程">4.2.3. 生成过程</h3>
+<p>VAE的目的是训练完成后, 丢掉encoder, 在prior上直接采样, 再加上decoder就能做生成。如果我们现在独立地采样HxW个z, 然后查表(codebook)得到维度为HxWxD的$z_q(x)$, 那么生成的图片在空间上的每块区域之间几乎就是独立的。因此我们需要让各个z之间有关系, 因此用PixelCNN, 对这些z建立一个autoregressive model: $p(z_1, z_2, z_3, …)=p(z_1)p(z_2|z_1)p(z_3|z_1, z_2)…$</p>
+
+<h2 id="43-vqvae2">4.3. VQVAE2</h2>
+<p>VQVAE2是VQVAE的升级版, 可以生成非常清晰的高分辨率图片. 主要变化就是把VQ-VAE的encoder和decoder进行了分层, bottom层对local feature进行建模, top层对global feature进行建模; 为了让top层能更有效地提取global信息, 在网络中加入了self attention</p>
+
+<h2 id="44-其他">4.4. 其他</h2>
+<ul>
+  <li>知乎上两个讲解很详细的博客:
+    <ul>
+      <li><a href="https://zhuanlan.zhihu.com/p/91434658" target="_blank">知乎1</a></li>
+      <li><a href="https://zhuanlan.zhihu.com/p/463043201" target="_blank">知乎2</a></li>
+    </ul>
+  </li>
+  <li>VQVAE的特点是可学习的prior和codebook作离散化的设计，影响了很多后续的模型，包括BEiT和DALLE</li>
+</ul>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[Information about autoencoder series]]></summary></entry><entry><title type="html">概率统计</title><link href="http://localhost:4000/Probability-and-Statistics.html" rel="alternate" type="text/html" title="概率统计" /><published>2022-09-27T00:00:00+08:00</published><updated>2022-09-27T00:00:00+08:00</updated><id>http://localhost:4000/Probability-and-Statistics</id><content type="html" xml:base="http://localhost:4000/Probability-and-Statistics.html"><![CDATA[<h1 id="1-链接">1. 链接</h1>
+<ul>
+  <li><a href="https://blog.csdn.net/guleileo/article/details/80971601" target="_blank">贝叶斯、先验、后验、似然等基础知识</a></li>
+</ul>
+
+<h1 id="2-kl散度">2. KL散度</h1>
+<h2 id="21-简介">2.1. 简介</h2>
+<p>KL散度就是相对熵，是两个概率分布间差异的非对称性度量</p>
+
+<h2 id="22-定义">2.2. 定义</h2>
+<p>设$P(x)$与$Q(x)$是随机变量X上的两个概率分布，则在离散和连续变量的情形下，KL散度的定义分别为:</p>
+
+<p>$KL(P||Q)=\sum P(x)log\frac{P(x)}{Q(x)}$</p>
+
+<p>$KL(P||Q)=\int P(x)log\frac{P(x)}{Q(x)}dx$</p>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[Information about autoencoder series]]></summary></entry><entry><title type="html">GAN</title><link href="http://localhost:4000/GAN.html" rel="alternate" type="text/html" title="GAN" /><published>2022-09-27T00:00:00+08:00</published><updated>2022-09-27T00:00:00+08:00</updated><id>http://localhost:4000/GAN</id><content type="html" xml:base="http://localhost:4000/GAN.html"><![CDATA[<h1 id="目录">目录</h1>
 
 <!-- TOC -->
 
@@ -68,7 +187,8 @@
 <ul>
   <li>GAN在刚提出的时候还是有很多缺点的，比如模型还是比较难训练的，但是后续有很多很多的工作来优化原始的GAN模型，所以GAN更像是抛出了一个引子，让后续模型来优化它</li>
   <li>GAN本质上就是左右手互博，目标函数设计的也很好</li>
-</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[arrange notes]]></summary></entry><entry><title type="html">重要时间点及事件</title><link href="http://localhost:4000/Important-Event.html" rel="alternate" type="text/html" title="重要时间点及事件" /><published>2022-09-26T00:00:00+08:00</published><updated>2022-09-26T00:00:00+08:00</updated><id>http://localhost:4000/Important-Event</id><content type="html" xml:base="http://localhost:4000/Important-Event.html"><![CDATA[<!-- 2022.9.23 报9月工资 -->]]></content><author><name>Quehry</name></author><category term="daily" /><summary type="html"><![CDATA[for query]]></summary></entry><entry><title type="html">T5模型</title><link href="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="T5模型" /><published>2022-09-19T00:00:00+08:00</published><updated>2022-09-19T00:00:00+08:00</updated><id>http://localhost:4000/T5%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html"><![CDATA[<!-- TOC -->
+</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[arrange notes]]></summary></entry><entry><title type="html">重要时间点及事件</title><link href="http://localhost:4000/Important-Event.html" rel="alternate" type="text/html" title="重要时间点及事件" /><published>2022-09-26T00:00:00+08:00</published><updated>2022-09-26T00:00:00+08:00</updated><id>http://localhost:4000/Important-Event</id><content type="html" xml:base="http://localhost:4000/Important-Event.html"><![CDATA[<!-- 2022.9.23 报9月工资 -->
+<!-- 2022.10.10 选3pi的项目 -->]]></content><author><name>Quehry</name></author><category term="daily" /><summary type="html"><![CDATA[for query]]></summary></entry><entry><title type="html">T5模型</title><link href="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="T5模型" /><published>2022-09-19T00:00:00+08:00</published><updated>2022-09-19T00:00:00+08:00</updated><id>http://localhost:4000/T5%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html"><![CDATA[<!-- TOC -->
 
 <ul>
   <li><a href="#1-t5简介">1. T5简介</a></li>
@@ -246,6 +366,7 @@
   <li><a href="#7-循环神经网络">7. 循环神经网络</a></li>
   <li><a href="#8-现代循环神经网络">8. 现代循环神经网络</a></li>
   <li><a href="#9-注意力机制">9. 注意力机制</a></li>
+  <li><a href="#12-计算机视觉">12. 计算机视觉</a></li>
   <li><a href="#13-自然语言处理-预训练">13. 自然语言处理: 预训练</a></li>
   <li><a href="#14-自然语言处理-应用">14. 自然语言处理: 应用</a></li>
 </ul>
@@ -585,6 +706,137 @@
 </ul>
 
 <center><img src="../assets/img/posts/20220905/28.jpg" /></center>
+
+<h1 id="12-计算机视觉">12. 计算机视觉</h1>
+<p>这一章主要介绍了计算机视觉领域的两大任务: 目标检测于语义分割。目标检测从boundingbox讲起，然后介绍如何生成锚框和锚框的标签，然后介绍了SSD、RCNN等实现目标检测的网络，语义分割主要介绍了定义以及网络，最后介绍了风格迁移的一种实现方法</p>
+<ul>
+  <li>就目前的趋势来说，数据集越大，模型的表现效果越好</li>
+  <li>图像增广的作用是扩大数据集的规模，图像增广在对训练图像进行一系列的随机变换后，生成相似但不同的训练样本</li>
+  <li>常见的图像增广的方法有两种:
+    <ul>
+      <li>翻转和裁剪: 降低模型对目标位置的敏感性</li>
+      <li>改变颜色(这里指改变RGB): 亮度、饱和度、对比度</li>
+    </ul>
+  </li>
+  <li>torchvision.transforms.RandomVerticalFlip() 上下翻转</li>
+  <li>torchvision.transforms.RandomHorizontalFlip() 左右翻转</li>
+  <li>torchvision.transforms.RandomResizedCrop() 裁剪，但最终的图片大小都相同</li>
+  <li>torchvision.transforms.ColorJitter()</li>
+  <li>微调(fine-tune)约等于迁移学习(transfer learning)，从源数据集学到的知识迁移到目标数据集</li>
+  <li>源模型的输出层从头训练，其余层微调，技巧就是让输出层的学习率变大</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/45.jpg" /></center>
+<ul>
+  <li>torchvision.datasets里包含很多常用的数据集</li>
+  <li>torchvision.models里包含很多常用的模型和预训练模型</li>
+  <li>数据集实例化后一般还需要load到内存中变成iterator</li>
+  <li>图像分类只是基础的CV任务，接下来介绍新的CV任务: 目标检测</li>
+  <li>目标检测(object detection/recognition): 不仅想知道类别，还想知道它们在图像中具体位置</li>
+  <li>边界框(bounding box)有两种表示方法:
+    <ul>
+      <li>由矩形左上角及右下角的横纵坐标决定(corner表示法)</li>
+      <li>用中心点+高宽表示(center表示法)</li>
+    </ul>
+  </li>
+  <li>对于一张图像来说，左上角的点为原点，向右为x轴正方向，向下为y轴正方向</li>
+  <li>锚框(anchor box): 为了预测目标位置，在输入图像中采样大量的区域，然后判断这些区域中是否包含感兴趣的目标，这些区域就是锚框</li>
+  <li>这一节主要关注采样方法，也就是锚框的生成方法，以每个像素为中心，生成多个缩放比和宽高比的boundingbox，这些边界框被称为锚框</li>
+  <li>torch.meshgrid()的作用是让输入的两个向量变成网格状矩阵，一个作为x轴坐标，另一个作为y轴坐标</li>
+  <li>交互比IoU: 量化锚框与真实boundingbox的相似性，杰卡德系数的定义如下:</li>
+</ul>
+
+<center>$J(A, B)=\frac{\|A\cap B\|}{\|A\cup B\|}$</center>
+<p><br />
+对于两个bbox而言，将它们的杰卡德系数称为交互比IoU(intersection over union)</p>
+<ul>
+  <li>如何利用训练集中的标签标注锚框(标注锚框的类别和偏移量): 数据集中含有真实边界框的位置及类别，对于任意生成的锚框而言，可以利用真实边界框的信息去标注锚框，得到锚框的类别和偏移量(offset)，其中一种将真实边界框的类别分配给锚框的算法:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/46.jpg" /></center>
+<p>简单来说就是先找IoU值最大的一组真实边界框和锚框，然后删除它的行和列，直到真实边界框分配完，然后遍历没有分配的锚框的行，找到IoU最大的真实边界框，然后判断是否大于阈值，只有大于阈值时，才将真实边界框分配给该锚框</p>
+<ul>
+  <li>除了显而易见的锚框的类别，还需要标注锚框的偏移量，偏移量即该锚框与真实边界框的偏移，可以用下面这个式子来表示:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/47.jpg" /></center>
+<p>其中$\mu$和$\sigma$都是常量</p>
+<ul>
+  <li>如果一个锚框没有被分配真实边界框，则将它标记为background(即负类锚框)</li>
+  <li>在生成锚框的时候，还会返回掩码，掩码的作用是去掉不关心的负类锚框的偏移量</li>
+  <li>当有许多锚框时，会输出许多相似但有明显重叠的预测边界框，为了简化计算，用非极大值抑制(non-maxmum suppression, NMS)来合并属于同一目标的类似预测边界框。对于一个预测边界框B，目标检测模型会计算每个类别的预测概率。假设最大的预测概率为p，则该概率所对应的类别B即为预测的类别。具体来说，我们将p称为预测边界框B的置信度(confidence)。在同一张图像中，所有预测的非背景边界框都按置信度降序排序，以生成列表L。然后我们通过以下步骤操作排序列表L:
+    <ul>
+      <li>从L中选取置信度最高的预测边界框$B_1$作为基准，然后将所有与$B_1$的IoU超过预定阈值$\epsilon$的非基准预测边界框从L中移除。这时，L保留了置信度最高的预测边界框，去除了与其太过相似的其他预测边界框。简而言之，那些具有非极大值置信度的边界框被抑制了</li>
+      <li>从L中选取置信度第二高的预测边界框$B_2$作为又一个基准，然后将所有与$B_2$的IoU大于$\epsilon$的非基准预测边界框从L中移除</li>
+      <li>重复上述过程，直到L中的所有预测边界框都曾被用作基准。此时，L中任意一对预测边界框的IoU都小于阈值$\epsilon$；因此，没有一对边界框过于相似</li>
+      <li>输出列表L中的所有预测边界框</li>
+    </ul>
+  </li>
+  <li>由于逐个像素生成锚框太多了，可以有针对性地多尺度生成锚框，检测较小物体时，用小锚框，采样更多的区域，检测较大物体时，用大锚框，采样更少的区域</li>
+  <li>目标检测数据集领域里，没有小型数据集，所以李沐团队自行标注了1000张大小角度不同的banana图像，然后在一些背景图片上的随机位置放一张香蕉的图片，然后为这些图像标记边界框和类别</li>
+  <li>batch[0]图片(x): (批量大小，通道数，h，w)</li>
+  <li>batch[1]标签(y): (批量大小，m，5)</li>
+  <li>上面式子中m表示所有图片中最多可能出现的锚框数，如果一张图片的锚框数少于m个，用非法锚框填充(类别为-1)</li>
+  <li>5表示边界框的信息，分别为类别, $x_min$, $y_min$, $x_max$, $y_max$</li>
+  <li>单发多框检测SSD(single-shot detection)的模型如下图所示:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/48.jpg" /></center>
+<ul>
+  <li>模型由基础网络(比如VGG、ResNet等等)和多尺度特征块组成，基础网络的输出将高宽扩大，这样就可以生成更多的锚框(可用于检测尺寸较小的物体)，然后后续的多尺度特征块将高宽缩小，这样便可以实现多尺度的目标检测，每一层都预测每个锚框的类别与offset，接下来介绍一下类别预测层和offset预测层
+    <ul>
+      <li>类别预测层: 用卷积层的通道来输出类别预测的方法，比如一个特征图像素上有a个锚框，则输出a(q+1)个通道</li>
+      <li>offset预测层: 与类别预测层的设计思路类似，但每个锚框预测4个偏移量</li>
+    </ul>
+  </li>
+  <li>可以通过合并多个通道的预测来实现不同尺度预测的简化</li>
+  <li>网络记录每个块的前向输出Y，生成的锚框anchors以及类别预测结果cls(Y)，offset预测bbox(Y)，最后合并不同层的anchors(Y)、cls(Y)、bbox(Y)</li>
+  <li>这个网络的损失函数为: 有关锚框类别的损失(用交叉熵)，有关正类偏移量的损失(回归问题，用L1范数损失)，掩码变量可以让负类锚框与填充锚框不参与计算</li>
+  <li>训练时，真实值来源于Y的标签信息为每个锚框生成的类别和offset，然后用预测出来的锚框的类别和offset进行损失函数的计算</li>
+  <li>预测阶段，输入x，得到anchors，cls_pred，bbox_pred，然后用NMS来去掉相似的锚框，得到最终的预测结果，output的形状: (批量大小, 锚框个数, 6)，6代表类别、概率、bbox的四个坐标</li>
+  <li>接下来介绍目标检测的另一类算法: 区域卷积神经网络R-CNN系列(Region-based CNN)，模型如下图所示:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/49.jpg" /></center>
+<ul>
+  <li>RCNN的四个步骤:
+    <ol>
+      <li>对输入图像选取多个高质量的提议区域，标注其类别和真实bbox</li>
+      <li>选择一个预训练的卷积神经网络，并将其在输出层之前截断。将每个提议区域变形为网络需要的输入尺寸，并通过前向传播输出抽取的提议区域特征</li>
+      <li>将每个提议区域的特征连同其标注的类别作为一个样本。训练多个支持向量机对目标分类，其中每个支持向量机用来判断样本是否属于某一个类别</li>
+      <li>将每个提议区域的特征连同其标注的边界框作为一个样本，训练线性回归模型来预测真实边界框</li>
+    </ol>
+  </li>
+  <li>庞大的计算量使R-CNN在现实中难以广泛应用，于是出现了Fast R-CNN:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/50.jpg" /></center>
+<p>与R-CNN的区别在于，Fast R-CNN在整张图上执行CNN前向传播来抽取特征</p>
+<ul>
+  <li>还有Faster R-CNN:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/51.jpg" /></center>
+<p>与Fast R-CNN区别在于: 将选择性搜索替换成区域提议网络</p>
+<ul>
+  <li>接下来介绍语义分割任务: 语义分割(semantic segmentation)就是将图像分割成属于不同语义类别的区域(像素级)</li>
+  <li>语义分割数据集: Pascal VOC 2012
+    <ul>
+      <li>feature x: 图像</li>
+      <li>label y: 尺寸与图像相同，但是每个像素的RGB值表示它们所属的类别，类别相同的颜色也相同</li>
+    </ul>
+  </li>
+  <li>转置卷积(上采样): 与卷积核运算相反(卷积核运算是用核窗口滑动输入图像)</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/52.jpg" /></center>
+<p>转置卷积是输入图像的每个像素的核函数上滑动，而卷积核运算时用核窗口在输入图像上滑动，转置卷积相当于使图像的高宽变大</p>
+<ul>
+  <li>转置卷积可以通过nn.ConvTranspose2d()简单实现</li>
+  <li>接下来介绍解决语义分割的网络: 全卷积网络(fully convolutional network, FCN)</li>
+  <li>语义分割本质上就是对图像的每个像素进行分类，FCN实现了像素到像素的变换，FCN将中间层特征图的高宽变换回输入图像的尺寸(用转置卷积实现)，输出的类别预测与输入图像在像素级别上有一一对应的关系</li>
+  <li>FCN模型结构如下图:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/53.jpg" /></center>
+<p>FCN先用卷积神经网络(可以用ResNet)抽取图像特征，然后通过1x1卷积层将通道变换为类别个数，最后通过转置卷积将特征图的高宽变换为输入图像的尺寸</p>
+<ul>
+  <li>转置卷积是一种上采样(upsampling)方法，双线性插值也是上采样方法之一，可以用转置卷积实现双线性插值(通过改变核函数)</li>
+  <li>风格迁移(style transfer): 将一个图像中的风格应用于另一个图像上，即风格迁移，输入是一张内容图像(content)和一张风格图像(style)</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/54.jpg" /></center>
+<p>从content中用预训练模型抽取图像的内容特征(不更新参数)，从style图像中抽取风格特征，损失函数的设计很有意思</p>
 
 <h1 id="13-自然语言处理-预训练">13. 自然语言处理: 预训练</h1>
 <p>这一章主要介绍了NLP领域的预训练模型，NLP领域的预训练模型都是encoder，即用文本特征来表示词元(一般都是单词)，首先介绍了word2vec，然后介绍了全局向量的词嵌入，之后介绍了子词嵌入模型fastText与字节对编码(BPE)，之后介绍了BERT(双向Transformer编码器)</p>
@@ -973,1098 +1225,4 @@
 <h1 id="毕业设计">毕业设计</h1>
 
 <h2 id="毕设内容">毕设内容</h2>
-<p>大四最重要的一门课，我的毕设是设计了一个成绩预测模型，包含了风险学科预测和成绩区间预测，主要用了一些机器学习的算法和数据处理的知识，写论文花了一周时间，剩下的就是不停的答辩</p>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[记录大四下课程和课程笔记]]></summary></entry><entry><title type="html">毕设记录</title><link href="http://localhost:4000/Graduation-Project.html" rel="alternate" type="text/html" title="毕设记录" /><published>2022-04-20T00:00:00+08:00</published><updated>2022-04-20T00:00:00+08:00</updated><id>http://localhost:4000/Graduation-Project</id><content type="html" xml:base="http://localhost:4000/Graduation-Project.html"><![CDATA[<h1 id="1-数据预处理">1. 数据预处理</h1>
-
-<h2 id="11-使用mysql对原始数据进行处理">1.1. 使用MySQL对原始数据进行处理</h2>
-<ul>
-  <li>目标: 生成每行为一个学生，第一列为学号，第二列到最后一列都是课程名称</li>
-  <li>第一步: 创建表格
-    <ol>
-      <li>首先遇到的问题是创建列名时有MySQL关键字，所以对KCMC两端加上了反引号</li>
-      <li>使用Group_concat时有内容长度限制，需要使用以下代码来暂时增大限制:
-        <pre><code class="language-cmd">  SET GLOBAL group_concat_max_len = 4294967295;
-  SET SESSION group_concat_max_len = 4294967295;
-</code></pre>
-      </li>
-      <li>列名长度硬性要求: 不能超过64个字符，所以我采用了将英文翻译为中文的方法减少长度，有以下几门学科名称做过修改:
-        <ul>
-          <li>UPDATE grade_original SET KCMC = ‘网格生成方法及软件简介’ WHERE KCMC=’An Introduction to Mesh Generation Methods &amp; Software for Scientific Computing’</li>
-          <li>UPDATE grade_original SET KCMC = ‘经典论文鉴赏:电磁学顶级论文精选’ WHERE KCMC=’Appreciation of Classical Papers: The Selected Top Papers in Electromagnetism’</li>
-          <li>UPDATE grade_original SET KCMC = ‘动脉硬化的脆弱性评估:从体内成像到生物力学’ WHERE KCMC=’Atherosclerosis Vulnerability Assessment: From In Vivo Imaging To Biomechanics’</li>
-          <li>UPDATE grade_original SET KCMC = ‘计算机建模和仿真基础:方法、技术和应用’ WHERE KCMC=’Basics of Computer-Based Modelling and Simulation: Methodologies, Technologies and Applications’</li>
-          <li>UPDATE grade_original SET KCMC = ‘当代中国外交政策及其全球治理途径’ WHERE KCMC=’Contemporary Chinese Foreign Policy and Its Global Governance Approach’</li>
-          <li>UPDATE grade_original SET KCMC = ‘灵活的中英文语言:成功的必要条件’ WHERE KCMC=’Elastic Language in Chinese and English: Essential for Successful’</li>
-          <li>UPDATE grade_original SET KCMC = ‘自然界中的功能结构材料:从保护到传感’ WHERE KCMC=’Functional Structural Materials in Nature: From Protection to Sensing’</li>
-          <li>UPDATE grade_original SET KCMC = ‘国际商法-在中国经商的法律环境’ WHERE KCMC=’International Business Law - The Legal Environment of Doing Business in China’</li>
-          <li>UPDATE grade_original SET KCMC = ‘航空航天工程疲劳与损伤容限导论’ WHERE KCMC=’Introduction to Fatigue and Damage Tolerance in Aerospace Engineering’</li>
-          <li>UPDATE grade_original SET KCMC = ‘模型检查定时系统导论:理论与实践’ WHERE KCMC=’Introduction to Model-Checking Timed Systems: Theory and Practice’</li>
-          <li>UPDATE grade_original SET KCMC = ‘功能薄膜磁控溅射的研究现状与发展趋势’ WHERE KCMC=’Magnetron Sputtering of Functional Thin Films: Present Status and Trends’</li>
-          <li>UPDATE grade_original SET KCMC = ‘材料表征热分析原理及应用’ WHERE KCMC=’Principles and Applications of Thermal Analysis for Materials Characterization’</li>
-          <li>UPDATE grade_original SET KCMC = ‘从英语学习到口译翻译能力的发展:原则与策略’ WHERE KCMC=’Progression from English Study to Interpreting and Translation Competence: Principles and Strategies’</li>
-          <li>一共十三门课名有做修改</li>
-        </ul>
-      </li>
-      <li>MySQL对列数有硬性要求: 其中InnoDB引擎要求不超过1024，其余引擎不超过4096，但是我的列数一共有1425，所以我改用了MyISAM引擎</li>
-      <li>MySQL命令行代码:</li>
-    </ol>
-
-    <pre><code class="language-cmd">  SELECT
-  CONCAT(
-      'CREATE TABLE grade_student (', GROUP_CONCAT(DISTINCT CONCAT('\`', KCMC, '\`', ' FLOAT', CHAR(10))
-      SEPARATOR ','),
-      ')', 'ENGINE=MyISAM DEFAULT CHARSET=gbk;')
-  FROM
-      grade_original
-
-  INTO @sql;
-
-  PREPARE stmt_name FROM @sql;
-  EXECUTE stmt_name;
-</code></pre>
-  </li>
-  <li>目前完成: 列名创建出来，XH一行填满，但是成绩没有填</li>
-  <li>先放着，后面有时间再试试，先用python</li>
-</ul>
-
-<h2 id="12-利用python的pandas库对数据进行预处理">1.2 利用Python的pandas库对数据进行预处理</h2>
-<ul>
-  <li>首先实现了从原始的data_original转变成data_student_0: 里面数据格式如下: 每行代表一名学生，第一列为学号，第二列至最后一列列名是学科名称，数值是成绩</li>
-  <li>然后实现了去除大家都有的学科，把参加课程设为1，未参加课程设为0，生成data_student_1.csv文件，用来进行聚类</li>
-  <li>聚类算法: kmeans，选了4个簇，生成的结果总体上来说非常不错，但是我希望计算一下性能度量(<strong>待办</strong>)
-    <ul>
-      <li>更细化来说，首先我可以手动针对学生选课来确定学院，最好是通过大三或者大四的课程来确定，以免有人中途转系等等</li>
-    </ul>
-  </li>
-  <li>聚类后生成了data_student_2.csv，里面新增了XY列，0代表国通，1代表计院，2代表航院，3代表中法</li>
-  <li>然后需要针对学年进行进一步细分: 目前聚类后的结果分布如下</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220420/2.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="record" /><summary type="html"><![CDATA[毕设流程记录]]></summary></entry><entry><title type="html">算法基础</title><link href="http://localhost:4000/Algorithms.html" rel="alternate" type="text/html" title="算法基础" /><published>2022-04-13T00:00:00+08:00</published><updated>2022-04-13T00:00:00+08:00</updated><id>http://localhost:4000/Algorithms</id><content type="html" xml:base="http://localhost:4000/Algorithms.html"><![CDATA[<h1 id="目录">目录</h1>
-<!-- TOC -->
-
-<ul>
-  <li><a href="#目录">目录</a></li>
-  <li><a href="#0-简介">0. 简介</a></li>
-  <li><a href="#1-第一周-枚举">1. 第一周 枚举</a>
-    <ul>
-      <li><a href="#11-完美立方">1.1. 完美立方</a></li>
-      <li><a href="#12-生理周期">1.2. 生理周期</a></li>
-      <li><a href="#13-称硬币">1.3. 称硬币</a></li>
-      <li><a href="#14-熄灯问题">1.4. 熄灯问题</a></li>
-    </ul>
-  </li>
-  <li><a href="#2-第二周-递归一">2. 第二周 递归(一)</a>
-    <ul>
-      <li><a href="#21-求阶乘">2.1. 求阶乘</a></li>
-      <li><a href="#22-汉诺塔问题">2.2. 汉诺塔问题</a></li>
-      <li><a href="#23-n皇后问题">2.3. n皇后问题</a></li>
-      <li><a href="#24-逆波兰表达式求值">2.4. 逆波兰表达式求值</a></li>
-    </ul>
-  </li>
-  <li><a href="#3-第三周-递归二">3. 第三周 递归(二)</a>
-    <ul>
-      <li><a href="#31-表达式求值">3.1. 表达式求值</a></li>
-      <li><a href="#32-上台阶问题">3.2. 上台阶问题</a></li>
-      <li><a href="#33-放苹果问题">3.3. 放苹果问题</a></li>
-      <li><a href="#34-算24问题">3.4. 算24问题</a></li>
-    </ul>
-  </li>
-  <li><a href="#4-第四周-二分算法">4. 第四周 二分算法</a>
-    <ul>
-      <li><a href="#41-程序或算法的时间复杂度">4.1. 程序或算法的时间复杂度</a></li>
-      <li><a href="#42-二分查找的原理和实现">4.2. 二分查找的原理和实现</a></li>
-      <li><a href="#43-二分法求方程的根">4.3. 二分法求方程的根</a></li>
-    </ul>
-  </li>
-  <li><a href="#5-第五周-分治">5. 第五周 分治</a>
-    <ul>
-      <li><a href="#51-归并排序">5.1. 归并排序</a></li>
-      <li><a href="#52-快速排序">5.2. 快速排序</a></li>
-      <li><a href="#53-例题-输出前m大的数">5.3. 例题: 输出前m大的数</a></li>
-      <li><a href="#54-例题-求排序的逆序数">5.4. 例题: 求排序的逆序数</a></li>
-    </ul>
-  </li>
-  <li><a href="#6-第六周-动态规划一">6. 第六周 动态规划(一)</a>
-    <ul>
-      <li><a href="#61-数字三角形">6.1. 数字三角形</a></li>
-      <li><a href="#62-动态规划解题的一般思路">6.2. 动态规划解题的一般思路</a></li>
-      <li><a href="#63-最长上升子序列">6.3. 最长上升子序列</a></li>
-      <li><a href="#64-最长公共子序列">6.4. 最长公共子序列</a></li>
-      <li><a href="#65-最佳加法表达式">6.5. 最佳加法表达式</a></li>
-    </ul>
-  </li>
-  <li><a href="#7-第七周-动态规划二">7. 第七周 动态规划(二)</a>
-    <ul>
-      <li><a href="#71-help-jimmy">7.1. Help Jimmy</a></li>
-      <li><a href="#72-滑雪">7.2. 滑雪</a></li>
-      <li><a href="#73-神奇的口袋">7.3. 神奇的口袋</a></li>
-      <li><a href="#74-0-1背包问题">7.4. 0-1背包问题</a></li>
-      <li><a href="#75-分蛋糕">7.5. 分蛋糕</a></li>
-    </ul>
-  </li>
-  <li><a href="#8-第八周-深度优先搜索一">8. 第八周 深度优先搜索(一)</a>
-    <ul>
-      <li><a href="#81-在图上寻找路径和遍历">8.1. 在图上寻找路径和遍历</a></li>
-      <li><a href="#82-图的表示方法-邻接矩阵和邻接表">8.2. 图的表示方法: 邻接矩阵和邻接表</a></li>
-      <li><a href="#83-城堡问题">8.3. 城堡问题:</a></li>
-      <li><a href="#84-踩方格">8.4. 踩方格</a></li>
-    </ul>
-  </li>
-  <li><a href="#9-第九周-深度优先搜索二">9. 第九周 深度优先搜索(二)</a>
-    <ul>
-      <li><a href="#91-寻路问题">9.1. 寻路问题</a></li>
-      <li><a href="#92-生日蛋糕">9.2. 生日蛋糕</a></li>
-    </ul>
-  </li>
-  <li><a href="#10-第十周-广度优先搜索">10. 第十周 广度优先搜索</a>
-    <ul>
-      <li><a href="#101-抓住那头牛">10.1. 抓住那头牛</a></li>
-      <li><a href="#102-迷宫问题">10.2. 迷宫问题</a></li>
-      <li><a href="#103-鸣人和佐助">10.3. 鸣人和佐助</a></li>
-      <li><a href="#104-八数码问题">10.4. 八数码问题</a></li>
-    </ul>
-  </li>
-  <li><a href="#11-第十一周-贪心算法">11. 第十一周 贪心算法</a>
-    <ul>
-      <li><a href="#111-圣诞老人的礼物">11.1. 圣诞老人的礼物</a></li>
-      <li><a href="#112-电影节">11.2. 电影节</a></li>
-      <li><a href="#113-分配畜栏">11.3. 分配畜栏</a></li>
-      <li><a href="#114-放置雷达">11.4. 放置雷达</a></li>
-      <li><a href="#115-钓鱼">11.5. 钓鱼</a></li>
-    </ul>
-  </li>
-</ul>
-
-<!-- /TOC -->
-
-<h1 id="0-简介">0. 简介</h1>
-<ul>
-  <li>课程来源于北大郭炜老师的MOOC，在中国大学MOOC平台上有网课，课程名为<a href="https://www.icourse163.org/course/PKU-1001894005?tid=1450413466" target="_blank">程序设计与算法(二)算法基础</a>，第九次开课，课程有附带的习题，该博客记录了我的随堂笔记</li>
-</ul>
-
-<h1 id="1-第一周-枚举">1. 第一周 枚举</h1>
-
-<h2 id="11-完美立方">1.1. 完美立方</h2>
-<ul>
-  <li>枚举: 基于逐个尝试答案的一种问题求解策略</li>
-  <li>例如: 求小于N的最小素数</li>
-  <li>完美立方:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/1.jpg" /></center>
-
-<ul>
-  <li>解题思路:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/2.jpg" /></center>
-
-<h2 id="12-生理周期">1.2. 生理周期</h2>
-<ul>
-  <li>题干:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/3.jpg" /></center>
-
-<center><img src="../assets/img/posts/20220413/4.jpg" /></center>
-
-<ul>
-  <li>解题思路:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/5.jpg" /></center>
-
-<h2 id="13-称硬币">1.3. 称硬币</h2>
-<ul>
-  <li>题干:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/6.jpg" /></center>
-
-<center><img src="../assets/img/posts/20220413/7.jpg" /></center>
-
-<ul>
-  <li>解题思路</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/8.jpg" /></center>
-
-<h2 id="14-熄灯问题">1.4. 熄灯问题</h2>
-<ul>
-  <li>题干:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/9.jpg" /></center>
-
-<center><img src="../assets/img/posts/20220413/10.jpg" /></center>
-
-<center><img src="../assets/img/posts/20220413/11.jpg" /></center>
-
-<ul>
-  <li>解题思路:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/12.jpg" /></center>
-
-<center><img src="../assets/img/posts/20220413/13.jpg" /></center>
-
-<p>局部的思想，化繁为简</p>
-
-<ul>
-  <li>可以用0-31的十进制数来表示第一列的数据，因为其二进制数刚好对应开关的状态</li>
-</ul>
-
-<h1 id="2-第二周-递归一">2. 第二周 递归(一)</h1>
-<h2 id="21-求阶乘">2.1. 求阶乘</h2>
-<ul>
-  <li>递归的基本概念: 一个函数调用其自身就是递归</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/14.jpg" /></center>
-
-<ul>
-  <li>递归和普通函数调用一样是通过栈实现</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/15.jpg" /></center>
-
-<ul>
-  <li>递归的作用
-    <ul>
-      <li>替代多重循环</li>
-      <li>解决本来就是递归形式定义的问题</li>
-      <li>将问题分解为规模更小的问题进行求解: 比如n！变成n * (n-1)</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="22-汉诺塔问题">2.2. 汉诺塔问题</h2>
-<ul>
-  <li>任务描述:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/16.jpg" /></center>
-
-<ul>
-  <li>解决思路: 把盘子从A移动到C的过程分解为三个小问题，分别是移动n-1个盘子从A到B，然后移动1个盘子从A到C，最后移动n-1个盘子从B到C，这就是一个递归问题</li>
-  <li>递归的核心思想是将大问题分解为规模更小的问题，同时还要保证是从n变成n-1</li>
-  <li>代码实现:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/17.jpg" /></center>
-<p><br /></p>
-<center><img src="../assets/img/posts/20220413/18.jpg" /></center>
-<p><br /></p>
-
-<h2 id="23-n皇后问题">2.3. n皇后问题</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/19.jpg" /></center>
-
-<p>用递归代替多重循环，皇后的攻击范围是横竖斜</p>
-<ul>
-  <li>解决思路: 同样是从第1行开始逐个往后摆放，但是这里的n是未知数，所以循环的层数不确定，这个时候就可以用递归代替循环，构造一个函数，表示从第k行开始摆放棋子，然后在循环内部判断每一列的位置是否能摆放，就是一个穷举问题了</li>
-  <li>代码实现:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/20.jpg" /></center>
-<p><br /></p>
-<center><img src="../assets/img/posts/20220413/21.jpg" /></center>
-<p><br /></p>
-<center><img src="../assets/img/posts/20220413/22.jpg" /></center>
-<p><br /></p>
-
-<p>这个代码设计很巧妙的地方是，它会遍历所有的情况，只要是满足条件的就会输出，所以会返回所有可能的结果</p>
-
-<h2 id="24-逆波兰表达式求值">2.4. 逆波兰表达式求值</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/23.jpg" /></center>
-
-<ul>
-  <li>输入输出例子:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/24.jpg" /></center>
-
-<ul>
-  <li>解决思路: 一个数也可以看成一个逆波兰表达式，那么就可以直接用递归求解，实现过程中需要边输入边递归</li>
-  <li>代码实现:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/25.jpg" /></center>
-
-<h1 id="3-第三周-递归二">3. 第三周 递归(二)</h1>
-<h2 id="31-表达式求值">3.1. 表达式求值</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220413/26.jpg" /></center>
-
-<ul>
-  <li>解决思路: 
-先看看表达式递归的定义</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/27.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/28.jpg" /></center>
-<p>即然把表达式的递归过程弄清楚了，那么只需要定义表达式、项、因子的函数即可</p>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/29.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/30.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/31.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/32.jpg" /></center>
-
-<h2 id="32-上台阶问题">3.2. 上台阶问题</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/33.jpg" /></center>
-<ul>
-  <li>输入输出样例:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/34.jpg" /></center>
-<ul>
-  <li>解决思路: 将n级台阶的走法看成n-1级台阶的走法+n-2级台阶的走法，分别代表在第一步走一阶还是两阶，这里需要设置边界条件来防止无限递归</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/35.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/36.jpg" /></center>
-
-<h2 id="33-放苹果问题">3.3. 放苹果问题</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/37.jpg" /></center>
-<ul>
-  <li>解决思路: 又是计算方法的总数，那么和上台阶问题一样，用表达式来表示递归，分类讨论。假设i个苹果，k个盘子，如果k&gt;i，那么等价于把i个苹果放到i个盘子里，因为一定有k-i个盘子空着；如果k&lt;=i，那么又将问题分为有没有空盘子，如果有空盘子，那么至少有一个空盘子，表示为把i个苹果放到k-1个盘子里，如果没有空盘子，那么等价于把i-k个苹果放到k个盘子里</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/38.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/39.jpg" /></center>
-
-<h2 id="34-算24问题">3.4. 算24问题</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/40.jpg" /></center>
-<ul>
-  <li>输入输出样例:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/41.jpg" /></center>
-<ul>
-  <li>判断两个浮点数是否相等，用两个浮点数的差是否小于某个值</li>
-  <li>解决思路: 不论给了多少个数计算24，都需要首先计算出两个数的计算结果，这个计算过程可以是加减乘除任意，然后得到的结果再和剩下的n-1个数算24，这样就可以变成一个递归问题，边界条件是只剩一个数的时候是否是24</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/42.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/43.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/44.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/45.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/46.jpg" /></center>
-
-<h1 id="4-第四周-二分算法">4. 第四周 二分算法</h1>
-<h2 id="41-程序或算法的时间复杂度">4.1. 程序或算法的时间复杂度</h2>
-<ul>
-  <li>时间复杂度的定义:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/47.jpg" /></center>
-<p>重点是明白程序中固定的操作是什么</p>
-<ul>
-  <li>复杂度有平均复杂度和最坏复杂度两种，两者可能一致，也可能不一致，一般来说只要平均复杂度不太高，算法的效率就还可以</li>
-  <li>常见的时间复杂度:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/48.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/49.jpg" /></center>
-
-<h2 id="42-二分查找的原理和实现">4.2. 二分查找的原理和实现</h2>
-<ul>
-  <li>首先可以看这么一个问题:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/50.jpg" /></center>
-<ul>
-  <li>二分查找的实现: 时间复杂度是O(log(n))</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/51.jpg" /></center>
-<ul>
-  <li>查找比待查找数小的最大坐标的函数实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/52.jpg" /></center>
-<ul>
-  <li>二分查找的问题前提是序列必须是递增或者递减的，即有序的</li>
-  <li>为了防止数据溢出，写中点的时候要这么写: int mid = L + (R - L) / 2</li>
-  <li>整型在转型的时候是向下取整</li>
-</ul>
-
-<h2 id="43-二分法求方程的根">4.3. 二分法求方程的根</h2>
-<ul>
-  <li>二分法求方程的根需要方程满足一定的条件，不是所有的方程都可以用二分法求根</li>
-  <li>问题描述及求解思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/53.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/54.jpg" /></center>
-<ul>
-  <li>如果一个序列不是有序的，可以用排序算法对序列先进行排序然后二分查找</li>
-</ul>
-
-<h1 id="5-第五周-分治">5. 第五周 分治</h1>
-<h2 id="51-归并排序">5.1. 归并排序</h2>
-<ul>
-  <li>分治的基本概念:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/55.jpg" /></center>
-<ul>
-  <li>分治的典型应用: 归并排序</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/56.jpg" /></center>
-<ul>
-  <li>归并排序的思路就是先分治，然后归并，代码实现如下：</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/57.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/58.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/59.jpg" /></center>
-<ul>
-  <li>归并排序的时间复杂度:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/60.jpg" /></center>
-
-<h2 id="52-快速排序">5.2. 快速排序</h2>
-<ul>
-  <li>快速排序的思想:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/61.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/62.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/63.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/64.jpg" /></center>
-<ul>
-  <li>快速排序的时间复杂度是O(nlog(n))，这是在运气不坏的情况下得出的结果(平均复杂度)，运气最坏的情况下时间复杂度为O($n^2$)(最坏复杂度)</li>
-</ul>
-
-<h2 id="53-例题-输出前m大的数">5.3. 例题: 输出前m大的数</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/65.jpg" /></center>
-<ul>
-  <li>解决思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/66.jpg" /></center>
-<p>用分治的思想解决问题，先把前m个元素移到数组的最右边，然后在对这m个元素进行快排</p>
-<ul>
-  <li>具体解决方法:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/67.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/68.jpg" /></center>
-<ul>
-  <li>时间复杂度计算:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/69.jpg" /></center>
-
-<h2 id="54-例题-求排序的逆序数">5.4. 例题: 求排序的逆序数</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/70.jpg" /></center>
-<ul>
-  <li>解决思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/71.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/72.jpg" /></center>
-<p>分治一般都使用了递归</p>
-
-<h1 id="6-第六周-动态规划一">6. 第六周 动态规划(一)</h1>
-<h2 id="61-数字三角形">6.1. 数字三角形</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/73.jpg" /></center>
-<ul>
-  <li>输入格式:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/74.jpg" /></center>
-<ul>
-  <li>解题思路: 
-看成递归问题</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/75.jpg" /></center>
-<ul>
-  <li>递归程序代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/76.jpg" /></center>
-<ul>
-  <li>虽然说在代码逻辑这一方面，递归算法没有问题，但是这个算法的时间复杂度太高，程序很容易超时:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/77.jpg" /></center>
-<ul>
-  <li>之前的递归算法中存在过多的重复计算，如果能把每一步的计算结果保存起来，那么即可避免重复计算，算法的时间复杂度为O($n^2$)</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/78.jpg" /></center>
-<ul>
-  <li>记忆递归型动规程序:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/79.jpg" /></center>
-<p>用一个二维数组存储每一个结点的max值，那么读取到这个结点时，就可以直接获得数值，避免了重复计算</p>
-<ul>
-  <li>也可以用递推的思想解决问题，先把最后一行的结果计算出来，然后从下到上逐步计算，用一个双重循环解决</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/80.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/81.jpg" /></center>
-<ul>
-  <li>还可以对空间进行优化，因为下一层的数值在计算上一层的数值后就没有用了，那么完全不需要用一个二维数组存储maxsum，完全可以用一个一维数组存放。再进一步来说，连maxSum数组都可以不要，直接用D的第n行替代maxSum</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/82.jpg" /></center>
-<ul>
-  <li>空间优化后的代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/83.jpg" /></center>
-
-<h2 id="62-动态规划解题的一般思路">6.2. 动态规划解题的一般思路</h2>
-<ul>
-  <li>递归到动规的一般转化方法:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/84.jpg" /></center>
-<ul>
-  <li>动规解题的一般思路:
-    <ul>
-      <li>第一步: 将原问题分解为子问题</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/85.jpg" /></center>
-    <ul>
-      <li>第二步: 确定状态</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/86.jpg" /></center>
-    <ul>
-      <li>第三步: 确定一些初始状态的值</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/87.jpg" /></center>
-    <ul>
-      <li>第四步: 确定状态转移方程</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/88.jpg" /></center>
-  </li>
-  <li>能用动规解决的问题的特点:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/89.jpg" /></center>
-
-<h2 id="63-最长上升子序列">6.3. 最长上升子序列</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/90.jpg" /></center>
-<ul>
-  <li>输入输出格式:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/91.jpg" /></center>
-<ul>
-  <li>解题思路:
-    <ul>
-      <li>找子问题:</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/92.jpg" /></center>
-    <center><img src="../assets/img/posts/20220413/93.jpg" /></center>
-    <ul>
-      <li>确定状态:</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/94.jpg" /></center>
-    <ul>
-      <li>找出状态转移方程:</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/95.jpg" /></center>
-  </li>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/96.jpg" /></center>
-<ul>
-  <li>动规的常用两种形式:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/97.jpg" /></center>
-
-<h2 id="64-最长公共子序列">6.4. 最长公共子序列</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/98.jpg" /></center>
-<ul>
-  <li>输入输出样例:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/99.jpg" /></center>
-<ul>
-  <li>解题思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/100.jpg" /></center>
-<p>重要的还是找到一个合适的子问题与状态</p>
-<ul>
-  <li>状态转移方程</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/101.jpg" /></center>
-<ul>
-  <li>证明一下这个递推公式是正确的:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/102.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/103.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/104.jpg" /></center>
-
-<h2 id="65-最佳加法表达式">6.5. 最佳加法表达式</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/105.jpg" /></center>
-<ul>
-  <li>解题思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/106.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/107.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/108.jpg" /></center>
-
-<h1 id="7-第七周-动态规划二">7. 第七周 动态规划(二)</h1>
-<h2 id="71-help-jimmy">7.1. Help Jimmy</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/109.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/110.jpg" /></center>
-<ul>
-  <li>输入输出样例:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/111.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/112.jpg" /></center>
-<ul>
-  <li>解题思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/113.jpg" /></center>
-<p>板子的顺序其实没有关系，重要的关注点是当前板子的左侧或右侧正下方的板子是哪个板子，然后计算出从每个板子的左侧或者右侧下降需要的最短时间，也就是说这里的状态值得是不同的板子</p>
-<ul>
-  <li>伪代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/114.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/115.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/116.jpg" /></center>
-<p>将下落点看成宽度为0的板子是一种很好的思路</p>
-<ul>
-  <li>时间复杂度:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/117.jpg" /></center>
-
-<h2 id="72-滑雪">7.2. 滑雪</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/118.jpg" /></center>
-<ul>
-  <li>输入输出样例:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/119.jpg" /></center>
-<ul>
-  <li>解题思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/120.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/121.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/122.jpg" /></center>
-<p>这个题目递推的顺序很奇怪，如果按照二维数组的排序顺序来递推会出现问题，这里比较好的解决思路是把点按照高度排序，因为如果高度低的点值没求出来的话，高度高的点的值一定求不出来。然后这里排完序后有两种解决思路，一种是按顺序把每个点的值根据周围四个低的点求出，另一种思路是按照顺序每次更新周围四个点的值</p>
-
-<h2 id="73-神奇的口袋">7.3. 神奇的口袋</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/123.jpg" /></center>
-<ul>
-  <li>输入输出样例:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/124.jpg" /></center>
-<ul>
-  <li>当然可以用枚举的方法暴力求解</li>
-  <li>也可以用递推的方法求解:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/125.jpg" /></center>
-<p>设计一个递推的函数，代表前k个物品凑w体积的方法个数，那么在新出现这个物品时有两个选择，即选或不选</p>
-<ul>
-  <li>动规解法:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/126.jpg" /></center>
-<p>用二维数组来表示状态</p>
-
-<h2 id="74-0-1背包问题">7.4. 0-1背包问题</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/127.jpg" /></center>
-<ul>
-  <li>解题思路: 和上一小节的思路类似，状态同样用二维数组表示，然后找出状态转移方程求解即可</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/128.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/129.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/130.jpg" /></center>
-<p>可以用滚动数组的思想来优化空间，递推的过程是从右往左替换滚动数组的过程</p>
-
-<h2 id="75-分蛋糕">7.5. 分蛋糕</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/131.jpg" /></center>
-<ul>
-  <li>输入输出样例:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/132.jpg" /></center>
-<ul>
-  <li>解题思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/133.jpg" /></center>
-<p>由于这里存在高宽，所以状态需要用三维数组表示</p>
-<ul>
-  <li>递推公式:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/134.jpg" /></center>
-
-<h1 id="8-第八周-深度优先搜索一">8. 第八周 深度优先搜索(一)</h1>
-<h2 id="81-在图上寻找路径和遍历">8.1. 在图上寻找路径和遍历</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/135.jpg" /></center>
-<ul>
-  <li>利用这种策略，可能出现的情况:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/136.jpg" /></center>
-<ul>
-  <li>深度优先搜索(Depth-First-Search)的定义:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/137.jpg" /></center>
-<ul>
-  <li>刚才那个问题的伪代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/138.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/139.jpg" /></center>
-<ul>
-  <li>如果要记录路径，代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/140.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/141.jpg" /></center>
-
-<h2 id="82-图的表示方法-邻接矩阵和邻接表">8.2. 图的表示方法: 邻接矩阵和邻接表</h2>
-<ul>
-  <li>邻接矩阵表示图:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/142.jpg" /></center>
-<ul>
-  <li>邻接表表示图:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/143.jpg" /></center>
-
-<h2 id="83-城堡问题">8.3. 城堡问题:</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/144.jpg" /></center>
-<ul>
-  <li>输入输出样例:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/145.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/146.jpg" /></center>
-<ul>
-  <li>解题思路: 这种比较抽象的问题可以通过建模转换成相对简单的题目，把城堡的方块看成节点，然后如果两个方块连接，则连接这两个节点</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/147.jpg" /></center>
-<p>求房间个数等价于求极大连通子图个数</p>
-<center><img src="../assets/img/posts/20220413/148.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/149.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/150.jpg" /></center>
-
-<h2 id="84-踩方格">8.4. 踩方格</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/151.jpg" /></center>
-<ul>
-  <li>解决思路: 用递归的思路解决问题，第一步的选择有三种，那么走n步的方案数等于这三种走法的方案和</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/152.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/153.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/154.jpg" /></center>
-
-<h1 id="9-第九周-深度优先搜索二">9. 第九周 深度优先搜索(二)</h1>
-<h2 id="91-寻路问题">9.1. 寻路问题</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/155.jpg" /></center>
-<ul>
-  <li>解题思路: 从城市1开始深度优先遍历整个图，找到能到达城市N的最优路线(在不超过开销情况下的最短路径)</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/156.jpg" /></center>
-<p>但是这种方法会超时，所以我们需要对算法进行改进(剪枝)，最容易想到的方法是最优性剪枝，但是发现这种剪枝方法还是超时了</p>
-<center><img src="../assets/img/posts/20220413/157.jpg" /></center>
-<p>这种剪枝方法能保存中间计算结果，效果比之前的最优性剪枝要好</p>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/158.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/159.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/160.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/161.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/162.jpg" /></center>
-
-<h2 id="92-生日蛋糕">9.2. 生日蛋糕</h2>
-<ul>
-  <li>下棋也是一个深度搜索的过程</li>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/163.jpg" /></center>
-<p>蛋糕的高和半径是递减的</p>
-<ul>
-  <li>解题思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/164.jpg" /></center>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/165.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/166.jpg" /></center>
-<ul>
-  <li>剪枝(剪枝在深度优先搜索中很重要)</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/167.jpg" /></center>
-
-<h1 id="10-第十周-广度优先搜索">10. 第十周 广度优先搜索</h1>
-<h2 id="101-抓住那头牛">10.1. 抓住那头牛</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/168.jpg" /></center>
-<ul>
-  <li>解决思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/169.jpg" /></center>
-<p>第一种想法是用深度优先搜索解决问题，让农夫尝试所有的走法，不能走重，不能往下走了就回溯</p>
-<center><img src="../assets/img/posts/20220413/170.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/171.jpg" /></center>
-<p>第二种想法是用广度优先搜索的思路解决问题，对所有的节点进行分层，广搜的优点是确保可以找到最优解，但是因为拓展出来的节点比较多，且多数节点都需要保存，因此需要的存储空间较大，<strong>用队列保存节点</strong></p>
-<ul>
-  <li>广搜算法:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/172.jpg" /></center>
-<p>光看文字可能有些晦涩难懂，下面有open表和close表变化的实例</p>
-<center><img src="../assets/img/posts/20220413/173.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/174.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/175.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/176.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/177.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/178.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/179.jpg" /></center>
-<ul>
-  <li>代码实现</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/180.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/181.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/182.jpg" /></center>
-<p>在了解广度优先搜索的概念后，代码实现的难点在于队列queue的使用，queue的实例化可以用queue&lt;T&gt;来实现，q.front()是取当前元素，q.push()是在队列尾部添加元素，q.pop()是删除头部元素</p>
-
-<h2 id="102-迷宫问题">10.2. 迷宫问题</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/183.jpg" /></center>
-<ul>
-  <li>解决思路: 广搜</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/184.jpg" /></center>
-<p>这里队列不能用STL的queue实现(因为要给出最短路径)，要自己写，可以用一维数组实现</p>
-<center><img src="../assets/img/posts/20220413/185.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/186.jpg" /></center>
-<p>其实就是记录了每个节点的父节点，在达到重点的时候可以一路返回过去得到路径</p>
-
-<h2 id="103-鸣人和佐助">10.3. 鸣人和佐助</h2>
-<p>鸣人和佐助问题是迷宫问题的一个变种</p>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/187.jpg" /></center>
-<ul>
-  <li>解决思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/188.jpg" /></center>
-<p>由于每个位置的查克拉不同也会导致状态的不同，所以状态用三个参数表示，然后根据条件拓展节点</p>
-<ul>
-  <li>问题变种:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/189.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/190.jpg" /></center>
-
-<h2 id="104-八数码问题">10.4. 八数码问题</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/191.jpg" /></center>
-<ul>
-  <li>解决思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/192.jpg" /></center>
-<p>用广度优先搜索来解决问题，优先拓展浅层节点，在逐渐深入</p>
-<ul>
-  <li>广度优先搜索的代码框架:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/193.jpg" /></center>
-<ul>
-  <li>这个题目的关键点在于判重，状态数目大，如何存储才能较快判断一个状态是否重复</li>
-  <li>一些可能的编码方案:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/194.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/195.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/196.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/197.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/198.jpg" /></center>
-<ul>
-  <li>继续优化问题的方法: 判定八数码问题是否有解</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/199.jpg" /></center>
-<p>移动0的位置，不改变排列的奇偶性</p>
-<ul>
-  <li>代码实现(单向广搜，用set判重)</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/200.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/201.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/202.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/203.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/204.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/205.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/206.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/207.jpg" /></center>
-<ul>
-  <li>其余优化问题的方法: 双向广搜、针对本题的预处理、A*算法</li>
-  <li>广搜和深搜的比较:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/208.jpg" /></center>
-
-<h1 id="11-第十一周-贪心算法">11. 第十一周 贪心算法</h1>
-<h2 id="111-圣诞老人的礼物">11.1. 圣诞老人的礼物</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/209.jpg" /></center>
-<ul>
-  <li>样例输入输出:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/210.jpg" /></center>
-<p>第一行表示箱子总数和可携带的最大重量，其余行都表示箱子的信息，第一列是价值，第二列是重量</p>
-<ul>
-  <li>解决思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/211.jpg" /></center>
-<p>因为要携带尽可能价值高的糖果，所以可以把所有箱子的价值重量比算出来，然后排列，按顺序装糖果。这种方法就是贪心算法的思路</p>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/212.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/213.jpg" /></center>
-<p>这里实现candy的结构体时，结构体里面重载了运算符&lt;，operator是转换运算符，这样就可以直接调用sort对candies进行排序</p>
-<ul>
-  <li>证明这种方法是正确的:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/214.jpg" /></center>
-<ul>
-  <li>贪心算法:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/215.jpg" /></center>
-<p>每一步行动总是按照某种指标选取最优的操作来进行</p>
-
-<h2 id="112-电影节">11.2. 电影节</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/216.jpg" /></center>
-<ul>
-  <li>样例输入输出:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/217.jpg" /></center>
-<ul>
-  <li>解决思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/218.jpg" /></center>
-<ul>
-  <li>证明贪心算法的正确性:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/219.jpg" /></center>
-
-<h2 id="113-分配畜栏">11.3. 分配畜栏</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/220.jpg" /></center>
-<ul>
-  <li>解决思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/221.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/222.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/223.jpg" /></center>
-<p>按照奶牛的开始挤奶时间来分配奶牛的畜栏，可以用队列存储最早结束的畜栏的时间</p>
-<ul>
-  <li>代码实现:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/224.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/225.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/226.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/227.jpg" /></center>
-<p>priority是优先队列，在优先队列中，优先级高的元素先出队列，并非按照先进先出的顺序</p>
-
-<h2 id="114-放置雷达">11.4. 放置雷达</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/228.jpg" /></center>
-<ul>
-  <li>解决思路
-    <ul>
-      <li>首先把题目问题转换一下:</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/229.jpg" /></center>
-    <ul>
-      <li>接下来我们通过观察得到一个重要的结论，那就是如果一个雷达可以覆盖多个雷达，那么这个雷达可以在所覆盖雷达的最右边的起点</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/230.jpg" /></center>
-    <ul>
-      <li>贪心算法实现步骤:</li>
-    </ul>
-    <center><img src="../assets/img/posts/20220413/231.jpg" /></center>
-    <center><img src="../assets/img/posts/20220413/232.jpg" /></center>
-  </li>
-</ul>
-
-<h2 id="115-钓鱼">11.5. 钓鱼</h2>
-<ul>
-  <li>问题描述:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/233.jpg" /></center>
-<ul>
-  <li>解决思路:</li>
-</ul>
-<center><img src="../assets/img/posts/20220413/234.jpg" /></center>
-<center><img src="../assets/img/posts/20220413/235.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[郭炜老师算法网课记录]]></summary></entry></feed>
+<p>大四最重要的一门课，我的毕设是设计了一个成绩预测模型，包含了风险学科预测和成绩区间预测，主要用了一些机器学习的算法和数据处理的知识，写论文花了一周时间，剩下的就是不停的答辩</p>]]></content><author><name>Quehry</name></author><category term="school" /><summary type="html"><![CDATA[记录大四下课程和课程笔记]]></summary></entry></feed>

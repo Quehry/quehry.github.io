@@ -170,7 +170,11 @@
   "tag" : "notes",
   "posts" : [
       
-      "./AutoEncoder-Series.html"
+      "./short-answer-assessment.html",
+      
+      "./AutoEncoder-Series.html",
+      
+      "./Probability-and-Statistics.html"
       
     ]
   } ,

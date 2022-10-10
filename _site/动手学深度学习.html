@@ -22,7 +22,7 @@
   "headline": "动手学深度学习",
   "abstract": "d2l note",
     "keywords": "note",
-    "wordcount": "423",
+    "wordcount": "562",
     "image": ["http://localhost:4000/assets/imgposts/20220905/1.jpg"],
   "datePublished": "2022-09-05 00:00:00 +0800",
   "dateModified": "2022-09-05 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="d2l note">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="423"/>
+<meta data-rh="true" name="twitter:data1" content="562"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20220905/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -168,7 +168,7 @@
   </span>
 
         <div class="post-excerpt">
-            <!-- TOC --><ul> <li><a href="#0-简介">0. 简介</a></li> <li><a href="#1-预备知识">1. 预备知识</a></li> <li><a href="#2-线性神经网络">2. 线性神经网络</a></li> <li><a href="#3-多层感知机">3. 多层感知机</a></li> <li><a href="#5-卷积神经网络">5. 卷积神经网络</a></li> <li><a href="#6-现代卷积神经网络">6. 现代卷积神经网络</a></li> <li><a href="#7-循环神经网络">7. 循环神经网络</a></li> <li><a href="#8-现代循环神经网络">8. 现代循环神经网络</a></li> <li><a href="#9-注意力机制">9. 注意力机制</a></li> <li><a href="#13-自然语言处理-预训练">13. 自然语言处理: 预训练</a></li> <li><a href="#14-自然语言处理-应用">14. 自然语言处理: 应用</a></li></ul><!-- /TOC --><h1 id="0-简介">0. 简介</h1><ul> <li>《动手学深度学习》的笔记</li> <li>各种链接: <ul> <li><a href="https://space.bilibili.com/1567748478" target="_blank">bilibili</a></li> <li><a href="https://zh-v2.d2l.ai/index.html" target="_blank">book_zh</a></li> <li><a href="https://d2l.ai/index.html" target="_blank">book_en</a></li> </ul> </li> <li>这本书笼统的介绍了深度学习所需要的各种知识，从线性神经网络开始讲起，然后到CNN，最后到RNN，介绍了CV和NLP领域的较新的网络结构。同时这本书不止有理论内容，每一小节都有代码实践内容，可以边写代码边了解知识，同时bilibili上有李沐老师的网课配合学习，很适合初学者进行学习。</li></ul><h1 id="1-预备知识">1. 预备知识</h1><p>这一章主要介绍了深度学习的一些前置知识，这里对比较重要的点做备注</p><ul> <li>张量(Tensor)包含了一维张量(向量)和二维张量(矩阵)</li> <li>torch中A*B是哈达玛积，表示矩阵元素按元素相乘</li> <li>torch.dot()是点积</li> <li>torch.cat(…, dim=0)表示在行上延伸，比如(3, 4)和(3, 4)变成(6, 4)</li> <li>A.sum(axis=0)表示把每一列的数据都相加，比如(5, 4)变成(4)</li> <li>范数是norm，L1范数为每个元素的绝对值相加，L2范数为元素的平方和开根号，torch中默认L2范数，一般也是L2范数用的最多</li> <li>梯度: 连接多元函数的所有偏导数:</li></ul><center><img src="../assets/img/posts/20220905/2.jpg" /></center><ul> <li>梯度是一个向量</li> <li>常用的梯度计算公式:</li></ul><center><img src="../assets/img/posts/20220905/3.jpg" /></center><ul> <li>torch中自动求导的步骤: <ul> <li>第一步 为x分配内存空间: x.requires_grad_(True)</li> <li>第二步 链式反向传播，希望求哪个函数的梯度，就对那个函数反向传播，比如y.backward()</li> <li>第三步 求x的梯度，x.grad，如果我们需要重新求梯度，需要清零梯度，x.grad.zero_()</li> <li>注意torch中只能对标量输出求梯度，所以常见操作是sum</li> </ul> </li> <li>标量对向量的偏导是向量，向量对向量的偏导是矩阵</li> <li>贝叶斯公式: P(A|B)P(B)=P(B|A)P(A)</li></ul><h1 id="2-线性神经网络">2. 线性神经网络</h1><p>本章主要介绍了线性回归网络和softmax回归网络，接下来是一些笔记</p><ul> <li>随机梯度下降和梯度下降的区别: 梯度下降一般而言是针对所有的样本而言，而随机梯度下降是针对单个样本而言，同样地，小批量随机梯度下降是针对一个批量的样本而言</li> <li>可以调整但是在训练过程中不更新的参数叫做超参数</li> <li>极大似然法: $\theta$是需要估计的值，在写似然函数时只需要把$\theta$看成参数，最大化似然函数即$\theta$的估计值</li>...<a class="read-more" href="./%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html"> read more</a>
+            <!-- TOC --><ul> <li><a href="#0-简介">0. 简介</a></li> <li><a href="#1-预备知识">1. 预备知识</a></li> <li><a href="#2-线性神经网络">2. 线性神经网络</a></li> <li><a href="#3-多层感知机">3. 多层感知机</a></li> <li><a href="#5-卷积神经网络">5. 卷积神经网络</a></li> <li><a href="#6-现代卷积神经网络">6. 现代卷积神经网络</a></li> <li><a href="#7-循环神经网络">7. 循环神经网络</a></li> <li><a href="#8-现代循环神经网络">8. 现代循环神经网络</a></li> <li><a href="#9-注意力机制">9. 注意力机制</a></li> <li><a href="#12-计算机视觉">12. 计算机视觉</a></li> <li><a href="#13-自然语言处理-预训练">13. 自然语言处理: 预训练</a></li> <li><a href="#14-自然语言处理-应用">14. 自然语言处理: 应用</a></li></ul><!-- /TOC --><h1 id="0-简介">0. 简介</h1><ul> <li>《动手学深度学习》的笔记</li> <li>各种链接: <ul> <li><a href="https://space.bilibili.com/1567748478" target="_blank">bilibili</a></li> <li><a href="https://zh-v2.d2l.ai/index.html" target="_blank">book_zh</a></li> <li><a href="https://d2l.ai/index.html" target="_blank">book_en</a></li> </ul> </li> <li>这本书笼统的介绍了深度学习所需要的各种知识，从线性神经网络开始讲起，然后到CNN，最后到RNN，介绍了CV和NLP领域的较新的网络结构。同时这本书不止有理论内容，每一小节都有代码实践内容，可以边写代码边了解知识，同时bilibili上有李沐老师的网课配合学习，很适合初学者进行学习。</li></ul><h1 id="1-预备知识">1. 预备知识</h1><p>这一章主要介绍了深度学习的一些前置知识，这里对比较重要的点做备注</p><ul> <li>张量(Tensor)包含了一维张量(向量)和二维张量(矩阵)</li> <li>torch中A*B是哈达玛积，表示矩阵元素按元素相乘</li> <li>torch.dot()是点积</li> <li>torch.cat(…, dim=0)表示在行上延伸，比如(3, 4)和(3, 4)变成(6, 4)</li> <li>A.sum(axis=0)表示把每一列的数据都相加，比如(5, 4)变成(4)</li> <li>范数是norm，L1范数为每个元素的绝对值相加，L2范数为元素的平方和开根号，torch中默认L2范数，一般也是L2范数用的最多</li> <li>梯度: 连接多元函数的所有偏导数:</li></ul><center><img src="../assets/img/posts/20220905/2.jpg" /></center><ul> <li>梯度是一个向量</li> <li>常用的梯度计算公式:</li></ul><center><img src="../assets/img/posts/20220905/3.jpg" /></center><ul> <li>torch中自动求导的步骤: <ul> <li>第一步 为x分配内存空间: x.requires_grad_(True)</li> <li>第二步 链式反向传播，希望求哪个函数的梯度，就对那个函数反向传播，比如y.backward()</li> <li>第三步 求x的梯度，x.grad，如果我们需要重新求梯度，需要清零梯度，x.grad.zero_()</li> <li>注意torch中只能对标量输出求梯度，所以常见操作是sum</li> </ul> </li> <li>标量对向量的偏导是向量，向量对向量的偏导是矩阵</li> <li>贝叶斯公式: P(A|B)P(B)=P(B|A)P(A)</li></ul><h1 id="2-线性神经网络">2. 线性神经网络</h1><p>本章主要介绍了线性回归网络和softmax回归网络，接下来是一些笔记</p><ul> <li>随机梯度下降和梯度下降的区别: 梯度下降一般而言是针对所有的样本而言，而随机梯度下降是针对单个样本而言，同样地，小批量随机梯度下降是针对一个批量的样本而言</li>...<a class="read-more" href="./%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html"> read more</a>
         </div>
   </div>
 </section>
@@ -354,6 +354,7 @@
   <li><a href="#7-循环神经网络">7. 循环神经网络</a></li>
   <li><a href="#8-现代循环神经网络">8. 现代循环神经网络</a></li>
   <li><a href="#9-注意力机制">9. 注意力机制</a></li>
+  <li><a href="#12-计算机视觉">12. 计算机视觉</a></li>
   <li><a href="#13-自然语言处理-预训练">13. 自然语言处理: 预训练</a></li>
   <li><a href="#14-自然语言处理-应用">14. 自然语言处理: 应用</a></li>
 </ul>
@@ -694,6 +695,137 @@
 
 <center><img src="../assets/img/posts/20220905/28.jpg" /></center>
 
+<h1 id="12-计算机视觉">12. 计算机视觉</h1>
+<p>这一章主要介绍了计算机视觉领域的两大任务: 目标检测于语义分割。目标检测从boundingbox讲起，然后介绍如何生成锚框和锚框的标签，然后介绍了SSD、RCNN等实现目标检测的网络，语义分割主要介绍了定义以及网络，最后介绍了风格迁移的一种实现方法</p>
+<ul>
+  <li>就目前的趋势来说，数据集越大，模型的表现效果越好</li>
+  <li>图像增广的作用是扩大数据集的规模，图像增广在对训练图像进行一系列的随机变换后，生成相似但不同的训练样本</li>
+  <li>常见的图像增广的方法有两种:
+    <ul>
+      <li>翻转和裁剪: 降低模型对目标位置的敏感性</li>
+      <li>改变颜色(这里指改变RGB): 亮度、饱和度、对比度</li>
+    </ul>
+  </li>
+  <li>torchvision.transforms.RandomVerticalFlip() 上下翻转</li>
+  <li>torchvision.transforms.RandomHorizontalFlip() 左右翻转</li>
+  <li>torchvision.transforms.RandomResizedCrop() 裁剪，但最终的图片大小都相同</li>
+  <li>torchvision.transforms.ColorJitter()</li>
+  <li>微调(fine-tune)约等于迁移学习(transfer learning)，从源数据集学到的知识迁移到目标数据集</li>
+  <li>源模型的输出层从头训练，其余层微调，技巧就是让输出层的学习率变大</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/45.jpg" /></center>
+<ul>
+  <li>torchvision.datasets里包含很多常用的数据集</li>
+  <li>torchvision.models里包含很多常用的模型和预训练模型</li>
+  <li>数据集实例化后一般还需要load到内存中变成iterator</li>
+  <li>图像分类只是基础的CV任务，接下来介绍新的CV任务: 目标检测</li>
+  <li>目标检测(object detection/recognition): 不仅想知道类别，还想知道它们在图像中具体位置</li>
+  <li>边界框(bounding box)有两种表示方法:
+    <ul>
+      <li>由矩形左上角及右下角的横纵坐标决定(corner表示法)</li>
+      <li>用中心点+高宽表示(center表示法)</li>
+    </ul>
+  </li>
+  <li>对于一张图像来说，左上角的点为原点，向右为x轴正方向，向下为y轴正方向</li>
+  <li>锚框(anchor box): 为了预测目标位置，在输入图像中采样大量的区域，然后判断这些区域中是否包含感兴趣的目标，这些区域就是锚框</li>
+  <li>这一节主要关注采样方法，也就是锚框的生成方法，以每个像素为中心，生成多个缩放比和宽高比的boundingbox，这些边界框被称为锚框</li>
+  <li>torch.meshgrid()的作用是让输入的两个向量变成网格状矩阵，一个作为x轴坐标，另一个作为y轴坐标</li>
+  <li>交互比IoU: 量化锚框与真实boundingbox的相似性，杰卡德系数的定义如下:</li>
+</ul>
+
+<center>$J(A, B)=\frac{\|A\cap B\|}{\|A\cup B\|}$</center>
+<p><br />
+对于两个bbox而言，将它们的杰卡德系数称为交互比IoU(intersection over union)</p>
+<ul>
+  <li>如何利用训练集中的标签标注锚框(标注锚框的类别和偏移量): 数据集中含有真实边界框的位置及类别，对于任意生成的锚框而言，可以利用真实边界框的信息去标注锚框，得到锚框的类别和偏移量(offset)，其中一种将真实边界框的类别分配给锚框的算法:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/46.jpg" /></center>
+<p>简单来说就是先找IoU值最大的一组真实边界框和锚框，然后删除它的行和列，直到真实边界框分配完，然后遍历没有分配的锚框的行，找到IoU最大的真实边界框，然后判断是否大于阈值，只有大于阈值时，才将真实边界框分配给该锚框</p>
+<ul>
+  <li>除了显而易见的锚框的类别，还需要标注锚框的偏移量，偏移量即该锚框与真实边界框的偏移，可以用下面这个式子来表示:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/47.jpg" /></center>
+<p>其中$\mu$和$\sigma$都是常量</p>
+<ul>
+  <li>如果一个锚框没有被分配真实边界框，则将它标记为background(即负类锚框)</li>
+  <li>在生成锚框的时候，还会返回掩码，掩码的作用是去掉不关心的负类锚框的偏移量</li>
+  <li>当有许多锚框时，会输出许多相似但有明显重叠的预测边界框，为了简化计算，用非极大值抑制(non-maxmum suppression, NMS)来合并属于同一目标的类似预测边界框。对于一个预测边界框B，目标检测模型会计算每个类别的预测概率。假设最大的预测概率为p，则该概率所对应的类别B即为预测的类别。具体来说，我们将p称为预测边界框B的置信度(confidence)。在同一张图像中，所有预测的非背景边界框都按置信度降序排序，以生成列表L。然后我们通过以下步骤操作排序列表L:
+    <ul>
+      <li>从L中选取置信度最高的预测边界框$B_1$作为基准，然后将所有与$B_1$的IoU超过预定阈值$\epsilon$的非基准预测边界框从L中移除。这时，L保留了置信度最高的预测边界框，去除了与其太过相似的其他预测边界框。简而言之，那些具有非极大值置信度的边界框被抑制了</li>
+      <li>从L中选取置信度第二高的预测边界框$B_2$作为又一个基准，然后将所有与$B_2$的IoU大于$\epsilon$的非基准预测边界框从L中移除</li>
+      <li>重复上述过程，直到L中的所有预测边界框都曾被用作基准。此时，L中任意一对预测边界框的IoU都小于阈值$\epsilon$；因此，没有一对边界框过于相似</li>
+      <li>输出列表L中的所有预测边界框</li>
+    </ul>
+  </li>
+  <li>由于逐个像素生成锚框太多了，可以有针对性地多尺度生成锚框，检测较小物体时，用小锚框，采样更多的区域，检测较大物体时，用大锚框，采样更少的区域</li>
+  <li>目标检测数据集领域里，没有小型数据集，所以李沐团队自行标注了1000张大小角度不同的banana图像，然后在一些背景图片上的随机位置放一张香蕉的图片，然后为这些图像标记边界框和类别</li>
+  <li>batch[0]图片(x): (批量大小，通道数，h，w)</li>
+  <li>batch[1]标签(y): (批量大小，m，5)</li>
+  <li>上面式子中m表示所有图片中最多可能出现的锚框数，如果一张图片的锚框数少于m个，用非法锚框填充(类别为-1)</li>
+  <li>5表示边界框的信息，分别为类别, $x_min$, $y_min$, $x_max$, $y_max$</li>
+  <li>单发多框检测SSD(single-shot detection)的模型如下图所示:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/48.jpg" /></center>
+<ul>
+  <li>模型由基础网络(比如VGG、ResNet等等)和多尺度特征块组成，基础网络的输出将高宽扩大，这样就可以生成更多的锚框(可用于检测尺寸较小的物体)，然后后续的多尺度特征块将高宽缩小，这样便可以实现多尺度的目标检测，每一层都预测每个锚框的类别与offset，接下来介绍一下类别预测层和offset预测层
+    <ul>
+      <li>类别预测层: 用卷积层的通道来输出类别预测的方法，比如一个特征图像素上有a个锚框，则输出a(q+1)个通道</li>
+      <li>offset预测层: 与类别预测层的设计思路类似，但每个锚框预测4个偏移量</li>
+    </ul>
+  </li>
+  <li>可以通过合并多个通道的预测来实现不同尺度预测的简化</li>
+  <li>网络记录每个块的前向输出Y，生成的锚框anchors以及类别预测结果cls(Y)，offset预测bbox(Y)，最后合并不同层的anchors(Y)、cls(Y)、bbox(Y)</li>
+  <li>这个网络的损失函数为: 有关锚框类别的损失(用交叉熵)，有关正类偏移量的损失(回归问题，用L1范数损失)，掩码变量可以让负类锚框与填充锚框不参与计算</li>
+  <li>训练时，真实值来源于Y的标签信息为每个锚框生成的类别和offset，然后用预测出来的锚框的类别和offset进行损失函数的计算</li>
+  <li>预测阶段，输入x，得到anchors，cls_pred，bbox_pred，然后用NMS来去掉相似的锚框，得到最终的预测结果，output的形状: (批量大小, 锚框个数, 6)，6代表类别、概率、bbox的四个坐标</li>
+  <li>接下来介绍目标检测的另一类算法: 区域卷积神经网络R-CNN系列(Region-based CNN)，模型如下图所示:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/49.jpg" /></center>
+<ul>
+  <li>RCNN的四个步骤:
+    <ol>
+      <li>对输入图像选取多个高质量的提议区域，标注其类别和真实bbox</li>
+      <li>选择一个预训练的卷积神经网络，并将其在输出层之前截断。将每个提议区域变形为网络需要的输入尺寸，并通过前向传播输出抽取的提议区域特征</li>
+      <li>将每个提议区域的特征连同其标注的类别作为一个样本。训练多个支持向量机对目标分类，其中每个支持向量机用来判断样本是否属于某一个类别</li>
+      <li>将每个提议区域的特征连同其标注的边界框作为一个样本，训练线性回归模型来预测真实边界框</li>
+    </ol>
+  </li>
+  <li>庞大的计算量使R-CNN在现实中难以广泛应用，于是出现了Fast R-CNN:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/50.jpg" /></center>
+<p>与R-CNN的区别在于，Fast R-CNN在整张图上执行CNN前向传播来抽取特征</p>
+<ul>
+  <li>还有Faster R-CNN:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/51.jpg" /></center>
+<p>与Fast R-CNN区别在于: 将选择性搜索替换成区域提议网络</p>
+<ul>
+  <li>接下来介绍语义分割任务: 语义分割(semantic segmentation)就是将图像分割成属于不同语义类别的区域(像素级)</li>
+  <li>语义分割数据集: Pascal VOC 2012
+    <ul>
+      <li>feature x: 图像</li>
+      <li>label y: 尺寸与图像相同，但是每个像素的RGB值表示它们所属的类别，类别相同的颜色也相同</li>
+    </ul>
+  </li>
+  <li>转置卷积(上采样): 与卷积核运算相反(卷积核运算是用核窗口滑动输入图像)</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/52.jpg" /></center>
+<p>转置卷积是输入图像的每个像素的核函数上滑动，而卷积核运算时用核窗口在输入图像上滑动，转置卷积相当于使图像的高宽变大</p>
+<ul>
+  <li>转置卷积可以通过nn.ConvTranspose2d()简单实现</li>
+  <li>接下来介绍解决语义分割的网络: 全卷积网络(fully convolutional network, FCN)</li>
+  <li>语义分割本质上就是对图像的每个像素进行分类，FCN实现了像素到像素的变换，FCN将中间层特征图的高宽变换回输入图像的尺寸(用转置卷积实现)，输出的类别预测与输入图像在像素级别上有一一对应的关系</li>
+  <li>FCN模型结构如下图:</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/53.jpg" /></center>
+<p>FCN先用卷积神经网络(可以用ResNet)抽取图像特征，然后通过1x1卷积层将通道变换为类别个数，最后通过转置卷积将特征图的高宽变换为输入图像的尺寸</p>
+<ul>
+  <li>转置卷积是一种上采样(upsampling)方法，双线性插值也是上采样方法之一，可以用转置卷积实现双线性插值(通过改变核函数)</li>
+  <li>风格迁移(style transfer): 将一个图像中的风格应用于另一个图像上，即风格迁移，输入是一张内容图像(content)和一张风格图像(style)</li>
+</ul>
+<center><img src="../assets/img/posts/20220905/54.jpg" /></center>
+<p>从content中用预训练模型抽取图像的内容特征(不更新参数)</p>
+
 <h1 id="13-自然语言处理-预训练">13. 自然语言处理: 预训练</h1>
 <p>这一章主要介绍了NLP领域的预训练模型，NLP领域的预训练模型都是encoder，即用文本特征来表示词元(一般都是单词)，首先介绍了word2vec，然后介绍了全局向量的词嵌入，之后介绍了子词嵌入模型fastText与字节对编码(BPE)，之后介绍了BERT(双向Transformer编码器)</p>
 <ul>
@@ -916,9 +1048,9 @@
           
           
 
-          <a href="./GAN.html" class="recent-item-img" style="background: url('./assets/img/posts/20220927/1.jpg') center no-repeat; background-size: cover;">
+          <a href="./short-answer-assessment.html" class="recent-item-img" style="background: url('./assets/img/posts/20221010/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
-              <span>GAN</span>
+              <span>短文本评估论文阅读整理</span>
               
 
   <span class = "recent-item-meta">
@@ -978,9 +1110,9 @@
           
           
 
-          <a href="./Important-Event.html" class="recent-item-img" style="background: url('./assets/img/posts/20220926/1.jpg') center no-repeat; background-size: cover;">
+          <a href="./GAN.html" class="recent-item-img" style="background: url('./assets/img/posts/20220927/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
-              <span>重要时间点及事件</span>
+              <span>GAN</span>
               
 
   <span class = "recent-item-meta">
@@ -1009,9 +1141,9 @@
           
           
 
-          <a href="./%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E4%BC%9A%E7%AC%94%E8%AE%B0.html" class="recent-item-img" style="background: url('./assets/img/posts/20220919/1.jpg') center no-repeat; background-size: cover;">
+          <a href="./Probability-and-Statistics.html" class="recent-item-img" style="background: url('./assets/img/posts/20221009/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
-              <span>技术分享会笔记(关于text2image)</span>
+              <span>概率统计</span>
               
 
   <span class = "recent-item-meta">

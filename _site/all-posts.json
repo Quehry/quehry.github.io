@@ -1,9 +1,13 @@
 {
   "posts" : [
     
-    "./GAN.html",
+    "./short-answer-assessment.html",
     
     "./AutoEncoder-Series.html",
+    
+    "./GAN.html",
+    
+    "./Probability-and-Statistics.html",
     
     "./Important-Event.html",
     
