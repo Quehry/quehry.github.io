@@ -1,0 +1,18 @@
+I"�<h1 id="1-论文简介">1. 论文简介</h1>
+<ul>
+  <li><a href="https://ieeexplore.ieee.org/abstract/document/9779091" target="_blank">short answer grading model</a></li>
+  <li><a href="https://ieeexplore.ieee.org/abstract/document/9860098" target="_blank">semantic facets</a>
+这是两篇关于short-answer assessment的论文，所谓short-answer assessment就是对简答题的答案进行评估(和参考答案对比)，第一篇提出了利用BERT解决这个问题，第二篇提出了改进了评估过程，用多个semantic facets来评估short-answer，这篇博客对这两篇论文进行简单的整理</li>
+</ul>
+
+<h1 id="2-bert-based-deep-neural-networks">2. BERT-Based Deep Neural Networks</h1>
+<h2 id="21-abstract">2.1. Abstract</h2>
+<p>Automatic short-answer grading(ASAG)，即自动短文本评分任务，是智慧辅导系统的重要组成部分。ASAG目前还存在很多挑战，作者提出了两个主要原因: 1)高精度评分任务需要对answer text有很深的语义理解; 2)ASAG任务的语料一般都很小，不能为深度学习提供足够的训练数据。为了解决这些挑战，作者提出用BERT-based网络来解决ASAG任务的挑战: 1)用预训练模型BERT来encoder答案文本就可以客服语料太小的问题。2)为了生成足够强的语义理解，作者在BERT输出层后加上了一个精炼层(由LSTM和Capsule网络串联组成) 3)作者提出一种triple-hot loss来处理ASAG的回归问题。实验结果表明模型的效果在SemEval-2013和Mohler数据集上表现比SOTA要好。模型在github上<a href="https://github.com/wuhan-1222/ASAG" target="_blank">开源</a></p>
+
+<h2 id="22-introduction">2.2. Introduction</h2>
+<p>考试和评估是智慧辅导系统(intelligent tutoring systems, ITSs)的重要组成部分，可以获得学生们的实时知识认知水平，也能为学生们提供个性化的学习方案。多选题是考试的重要组成部分，但是多选题有两个明显的短板: 1)多选题只提供部分选择 2)有些学生的答案可能是蒙出来的。ASAG可以解决上述问题，学生们为简答题提供一个short text，然后ASAG来评估short text是否正确，具体来说评估结果有五类: Correct、Partically correct、Contradictory、Irrelevant、Nondomain。</p>
+
+<p>以往的研究中，Feature engineering是ASAG的主要解决方法，有很多稀疏特征应用于ASAG: token overlap features、syntax and dependency features、knowledge-based features(WordNet)… 但是这种特征工程为基础的方法存在以下问题: 首先，稀疏特征一般需要很多预处理步骤，这些步骤会产生一定的误差，可能会涉及到误差累积和误差传递的后果。此外，缺乏有效地encode文本句的手段</p>
+
+<p>随着deeplearning的发展，出现了很多deep net，比如LSTM-based model、CNN and LSTM-based model、transformer-based model出现在了ASAG任务中。这些模型都从answer text中挖掘语义信息，然后将answer text转化成word enbedding，所以这些方法都是end-to-end的。但是这些方法存在以下问题: 1)学生的答案非常free，也就是说在句子结构、语言风格、段落长度这些方面可能会有很大的区别，所以作者认为需要用更先进的technique去获得text的语义理解</p>
+:ET
