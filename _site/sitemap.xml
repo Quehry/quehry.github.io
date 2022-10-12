@@ -3,6 +3,19 @@
   
     
     <url>
+      <loc>http://localhost:4000/Diffusion-Model.html</loc>
+      
+        <lastmod>2022-10-12T00:00:00+08:00</lastmod>
+      
+      
+        <changefreq>daily</changefreq>
+      
+      
+        <priority>0.5</priority></url>
+    
+  
+    
+    <url>
       <loc>http://localhost:4000/short-answer-assessment.html</loc>
       
         <lastmod>2022-10-10T00:00:00+08:00</lastmod>
@@ -448,7 +461,7 @@
     <url>
       <loc>http://localhost:4000/404.html</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -463,7 +476,7 @@
     <url>
       <loc>http://localhost:4000/about.html</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -478,7 +491,7 @@
     <url>
       <loc>http://localhost:4000/all-posts.json</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -493,7 +506,7 @@
     <url>
       <loc>http://localhost:4000/archive.html</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -508,7 +521,7 @@
     <url>
       <loc>http://localhost:4000/</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -523,7 +536,7 @@
     <url>
       <loc>http://localhost:4000/ipfs-404.html</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -538,7 +551,7 @@
     <url>
       <loc>http://localhost:4000/posts-by-tag.json</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -553,7 +566,7 @@
     <url>
       <loc>http://localhost:4000/search.json</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -570,7 +583,7 @@
     <url>
       <loc>http://localhost:4000/tag.html</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -585,7 +598,7 @@
     <url>
       <loc>http://localhost:4000/tags.html</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -600,7 +613,7 @@
     <url>
       <loc>http://localhost:4000/feed.xml</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -615,7 +628,7 @@
     <url>
       <loc>http://localhost:4000/page2/</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -630,7 +643,7 @@
     <url>
       <loc>http://localhost:4000/page3/</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -645,7 +658,7 @@
     <url>
       <loc>http://localhost:4000/page4/</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -660,7 +673,7 @@
     <url>
       <loc>http://localhost:4000/page5/</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>
@@ -675,7 +688,7 @@
     <url>
       <loc>http://localhost:4000/page6/</loc>
       
-        <lastmod>2022-10-12T00:06:12+08:00</lastmod>
+        <lastmod>2022-10-12T15:42:30+08:00</lastmod>
       
       
         <changefreq>daily</changefreq>

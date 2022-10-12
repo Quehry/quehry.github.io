@@ -29,6 +29,12 @@ author: Quehry
             - [2.4.2.5. Loss Function](#2425-loss-function)
     - [2.5. Experiments](#25-experiments)
         - [2.5.1. Datasets](#251-datasets)
+        - [2.5.2. Experimental Settings](#252-experimental-settings)
+        - [2.5.3. Ablation Studies](#253-ablation-studies)
+        - [2.5.4. Comparison With Baseline Systems](#254-comparison-with-baseline-systems)
+    - [2.6. Discussions](#26-discussions)
+    - [2.7. Conclusion](#27-conclusion)
+- [3. Semantic Facets](#3-semantic-facets)
 
 <!-- /TOC -->
 
@@ -62,9 +68,17 @@ Automatic short-answer grading(ASAG)，即自动短文本评分任务，是智�
 3. 迁移学习，经典的预训练模型+scaling语料库
 
 接下来分别介绍了利用稀疏特征的方法与Deeplearning来来解决ASAG任务:
-1. 
-2.
-
+1. 稀疏特征，也即feature engineering的应用有: 
+    - Marvaniya等人和Saha等人使用预训练的神经网络InferSent对答案文本进行编码，这弥补了标记重叠(token overlap)方法中上下文表示的不足，其中InferSent是使用Bi-LSTM网络的预训练句子嵌入模型
+    - Tan等人提出了一种将图卷积网络(GCNs)与几种稀疏特征相结合的评分方法。他们首先为答案文本构建了一个无向异构文本图，其中包含句子级节点、单词/bigam级节点和节点之间的边。然后，他们使用两层GCN模型对图结构进行编码，得到图的表示形式。
+    - Zhang等人使用深度信念网络作为分类器，而不是传统的机器学习，对学生由六个稀疏特征组成的答案表示进行分类
+2. Deeplearning的方法有: 
+    - Kumar等人提出了ASAG的Bi-LSTM框架。他们的框架由三个级联的神经模块组成:分别应用于参考和学生答案的Siamese Bi-LSTMs，使用earth-mover distance(EMD)与LSTMs的隐状态交互的池化层，以及用于输出分数的回归层
+    - Uto和Uchida将LSTM网络与项目反应理论(item response theory)相结合进行短文本答案评分
+    - Tulu等人改进了基于LSTM的评分方法，通过引入感觉向量并将池化层替换为曼哈顿距离
+    - Riordan等人结合CNN和LSTM网络进行短文本答案评分
+    - Liu等人在一个大型K-12数据集上提出了一个具有多路注意的模型
+    
 上面提到的deeplearning方法需要大语料库支撑的数据集，但是ASAG缺少足够的大语料库，于是出现了用预训练模型来解决ASAG任务，比如ELMo、BERT、GPT、GPT-2，在这些模型中，BERT表现最好
 
 ### 2.3.2. BERT Model and Its Application in Education
@@ -155,4 +169,62 @@ Refinement层由Bi-LSTM和Capsule network(with position information)串联组成
 
 对于这个数据集，作者用三个性能度量(accuracy, weighted-F1, macro-average F1)来评估两个子任务(three-way, five-way)
 
-2. Mohler dataset: 
+2. Mohler dataset: 数据集[开源](http://web.eecs.umich.edu/?mihalcea/downloads/ ShortAnswerGrading_v2.0.zip){:target="_blank"}。数据集由Mohler团队从University of North Texas的一门计算机科学课程的两个考试和十个测试收集整理。它包含80个问题和2273个学生的答案，每个答案都由两名老师打分(0-5, integer)，由于是平均而来，所以一共由11种分类结果，Mohler数据集同样是ASAG任务的一个benchmark，作者可以将数据集变成了11个类别的分类数据集。
+
+由于数据集只有2273个答案对，太小，所以需要对数据集进行扩充，Kumar等人通过把训练集中正确的学生答案作为额外的参考答案，这样就把数据集的答案-问题对扩充到30000对。作者为了避免过拟合，采取了折中的策略，对每个问题只挑选一个学生的正确答案作为额外的参考答案，这样就把2083个答案对扩充至3300个答案对。针对Mohler数据集，作者采用了12折交叉验证的方法，用来评估的性能度量有Cohen's kappa coefficient(kappa), Pearson correlation coefficient(Pearson's r), mean absolute error(MAE), root-mean-square error(RMSE)，Mohler的标签只有11类，作者既可以把它当作了回归任务来评估(就是把分类结果用分数表示)，也可以把它当作分类任务来评估，其中kappa系数是分类任务的性能度量，其他的性能度量都是回归任务的性能度量
+
+### 2.5.2. Experimental Settings
+BERT采用base版本(12层，768个单元，12个head，110M参数)，LSTM的隐层个数设置为200并且在最后一个时间步返回所有的hidden state，Capsule的卷积核个数设置为400，卷积核大小为3，dynamic route设置为3。在融合层，attention head设置为2，每个头400维参数，dropout参数都设置为0.1，使用adam优化器，学习率设置为2e-5，一个小批量64个输入，训练周期为10
+
+### 2.5.3. Ablation Studies
+为了分析每一层的作用，从六个角度来做ablation studies:
+1. W/O refinement: 无refienment
+2. W/O multihead: 无multihead
+
+以此类推，得到如下结果: 
+<center><img src='../assets/img/posts/20221010/17.jpg'></center>
+
+### 2.5.4. Comparison With Baseline Systems
+与众多模型进行对比，主要的实验结果如下: 
+- Mohler数据集
+<center><img src='../assets/img/posts/20221010/18.jpg'></center>
+
+- SemEval-2013: 
+<center><img src='../assets/img/posts/20221010/19.jpg'></center>
+
+- PR曲线: 
+<center><img src='../assets/img/posts/20221010/20.jpg'></center>
+<br>
+<center><img src='../assets/img/posts/20221010/21.jpg'></center>
+<br>
+<center><img src='../assets/img/posts/20221010/22.jpg'></center>
+<br>
+<center><img src='../assets/img/posts/20221010/23.jpg'></center>
+
+- AUC值和PR曲线平衡点: 
+<center><img src='../assets/img/posts/20221010/24.jpg'></center>
+<br>
+<center><img src='../assets/img/posts/20221010/25.jpg'></center>
+
+## 2.6. Discussions
+从Ablation实验结果可以看出，refinement层提升了模型的在Sem-UQ和Mohler数据集上的精度，说明refinement层提高了BERT模型在相同问题领域的泛化性，同时也可以看出LSTM在refinement层也很重要，可以提取更丰富的全局context信息。Capsule的有无也说明了它可以提取局部context信息，同时发现它的效果比一般的CNN要好。Triple-loss的设计也确实提升了模型的性能
+
+接着简单分析了一下表4(Mohler数据集)与表5(SemEval-2013)的结果，其实就是对比了不同模型的性能度量，说哪个模型更好什么的
+
+然后分析PR曲线的结果，作者认为在大多数情况下，模型的PR曲线远高于其他模型的PR曲线，这与表6中模型在所有图中AUC最大的结论是一致的。除此之外，平衡点的值也更高，说明模型性能最好
+
+模型可以应用于智慧教育系统的两个场景: 
+1. ITSs领域，即智慧辅导系统，可以让评估变成自动化的
+2. MOOC线上平台，可以替代老师的手动评估，快速精准地为大量的free-text answer进行评分
+
+## 2.7. Conclusion
+作者提出了一种新的BERT-based网络结构来解决ASAG问题，进行了大量的实验，得出了一下的结论: 
+1. 基于词嵌入的网络，如CNN、LSTM、Capsule无法在小数据集上取得很好的结果
+2. 预训练网络BERT可以很好的适配ASAG任务
+3. 利用LSTM和Capsule网络可以进一步挖掘语义信息
+
+模型局限性: 
+1. 在开放领域的问答中，小数据集训练出来的模型无法取得预期的效果，比如Sem-UD
+2. 目前来说，模型无法消除或者替代学生答案中的大量的代词，作者计划在后续通过BERT模型来消除学生答案中的代词来提升模型的性能
+
+# 3. Semantic Facets

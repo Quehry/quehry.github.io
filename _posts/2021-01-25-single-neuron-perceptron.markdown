@@ -35,7 +35,8 @@ For instance a perceptron could get 3 different inputs as in the image, lets pre
 \left(x_1 * w_1\right) + \left(x_2 * w_2\right) + \left(x_3 * w_3\right)
 \end{split}
 \end{align}
-\)</p>
+\)
+</p>
 
 <p style="text-align:center">\(<br>
 \begin{align}<br>

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: postwithlatex
 read_time: true
 show_date: true
 title:  练习Markdown
@@ -189,7 +189,7 @@ Markdown 制作表格使用 \| 来分隔不同的单元格，使用 \- 来分隔
 # 8.高级技巧
 
 ## 1)插入数学公式
-当你需要在编辑器中插入数学公式时，可以使用两个美元符 \$\$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 Mathjax 对数学公式进行渲染。比如：  
+当你需要在编辑器中插入数学公式时，可以使用两个美元符\$\$包裹Tex或LaTeX格式的数学公式来实现。提交后，问答和文章页会根据需要加载Mathjax对数学公式进行渲染。比如：  
 
 \$\$  
 \mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
@@ -212,7 +212,7 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}
 $$
 
 
-$$\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t$$
+$$\sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t$$
 
 **还没有整明白，用到的时候在看**
 

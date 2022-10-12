@@ -1,0 +1,20 @@
+I"O<p>[i={\sqrt[{n}]{\left({\frac {FV}{PV}}\right)}}-1]</p>
+
+<p>\[
+i={\sqrt[{n}]{\left({\frac {FV}{PV}}\right)}}-1
+\]</p>
+
+<p>$i={\sqrt[{n}]{\left({\frac {FV}{PV}}\right)}}-1$</p>
+
+<p>\(i={\sqrt[{n}]{\left({\frac {FV}{PV}}\right)}}-1\)</p>
+
+<p>\[
+q\left(\mathbf{x}<em>t \mid \mathbf{x}</em>{t-1}\right)=\mathcal{N}\left(\mathbf{x}<em>t ; \sqrt{1-\beta_t} \mathbf{x}</em>{t-1}, \beta_t \mathbf{I}\right)
+\]</p>
+
+<p>
+\begin{equation}
+q\left(\mathbf{x}_t \mid \mathbf{x}_{t-1}\right)=\mathcal{N}\left(\mathbf{x}_t ; \sqrt{1-\beta_t} \mathbf{x}_{t-1}, \beta_t \mathbf{I}\right)
+\end{equation}
+</p>
+:ET

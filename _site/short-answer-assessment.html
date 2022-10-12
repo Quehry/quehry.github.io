@@ -22,7 +22,7 @@
   "headline": "短文本评估论文阅读整理",
   "abstract": "read and arrange paper about short answer assessment",
     "keywords": "notes",
-    "wordcount": "284",
+    "wordcount": "384",
     "image": ["http://localhost:4000/assets/imgposts/20221010/1.jpg"],
   "datePublished": "2022-10-10 00:00:00 +0800",
   "dateModified": "2022-10-10 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="read and arrange paper about short answer assessment">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="284"/>
+<meta data-rh="true" name="twitter:data1" content="384"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20221010/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -168,7 +168,7 @@
   </span>
 
         <div class="post-excerpt">
-            <!-- TOC --><ul> <li><a href="#1-论文简介">1. 论文简介</a></li> <li><a href="#2-bert-based-deep-neural-networks">2. BERT-Based Deep Neural Networks</a> <ul> <li><a href="#21-abstract">2.1. Abstract</a></li> <li><a href="#22-introduction">2.2. Introduction</a></li> <li><a href="#23-related-work">2.3. Related Work</a> <ul> <li><a href="#231-applications-of-deep-learning-in-asag-tasks">2.3.1. Applications of Deep Learning in ASAG Tasks</a></li> <li><a href="#232-bert-model-and-its-application-in-education">2.3.2. BERT Model and Its Application in Education</a></li> </ul> </li> <li><a href="#24-methodology">2.4. Methodology</a> <ul> <li><a href="#241-task-definition">2.4.1. Task Definition</a></li> <li><a href="#242-model">2.4.2. Model</a> <ul> <li><a href="#2421-bert-layer">2.4.2.1. BERT layer</a></li> <li><a href="#2422-semantic-refinement-layer">2.4.2.2. Semantic Refinement Layer</a></li> <li><a href="#2423-semantic-fusion-layer">2.4.2.3. Semantic Fusion Layer</a></li> <li><a href="#2424-prediction-layer">2.4.2.4. Prediction Layer</a></li> <li><a href="#2425-loss-function">2.4.2.5. Loss Function</a></li> </ul> </li> </ul> </li> <li><a href="#25-experiments">2.5. Experiments</a> <ul> <li><a href="#251-datasets">2.5.1. Datasets</a></li> </ul> </li> </ul> </li></ul><!-- /TOC --><h1 id="1-论文简介">1. 论文简介</h1><ul> <li><a href="https://ieeexplore.ieee.org/abstract/document/9779091" target="_blank">short...<a class="read-more" href="./short-answer-assessment.html"> read more</a>
+            <!-- TOC --><ul> <li><a href="#1-论文简介">1. 论文简介</a></li> <li><a href="#2-bert-based-deep-neural-networks">2. BERT-Based Deep Neural Networks</a> <ul> <li><a href="#21-abstract">2.1. Abstract</a></li> <li><a href="#22-introduction">2.2. Introduction</a></li> <li><a href="#23-related-work">2.3. Related Work</a> <ul> <li><a href="#231-applications-of-deep-learning-in-asag-tasks">2.3.1. Applications of Deep Learning in ASAG Tasks</a></li> <li><a href="#232-bert-model-and-its-application-in-education">2.3.2. BERT Model and Its Application in Education</a></li> </ul> </li> <li><a href="#24-methodology">2.4. Methodology</a> <ul> <li><a href="#241-task-definition">2.4.1. Task Definition</a></li> <li><a href="#242-model">2.4.2. Model</a> <ul> <li><a href="#2421-bert-layer">2.4.2.1. BERT layer</a></li> <li><a href="#2422-semantic-refinement-layer">2.4.2.2. Semantic Refinement Layer</a></li> <li><a href="#2423-semantic-fusion-layer">2.4.2.3. Semantic Fusion Layer</a></li> <li><a href="#2424-prediction-layer">2.4.2.4. Prediction Layer</a></li> <li><a href="#2425-loss-function">2.4.2.5. Loss Function</a></li> </ul> </li> </ul> </li> <li><a href="#25-experiments">2.5. Experiments</a> <ul> <li><a href="#251-datasets">2.5.1. Datasets</a></li> <li><a href="#252-experimental-settings">2.5.2. Experimental Settings</a></li> <li><a href="#253-ablation-studies">2.5.3. Ablation Studies</a></li> <li><a href="#254-comparison-with-baseline-systems">2.5.4. Comparison...<a class="read-more" href="./short-answer-assessment.html"> read more</a>
         </div>
   </div>
 </section>
@@ -373,10 +373,16 @@
       <li><a href="#25-experiments">2.5. Experiments</a>
         <ul>
           <li><a href="#251-datasets">2.5.1. Datasets</a></li>
+          <li><a href="#252-experimental-settings">2.5.2. Experimental Settings</a></li>
+          <li><a href="#253-ablation-studies">2.5.3. Ablation Studies</a></li>
+          <li><a href="#254-comparison-with-baseline-systems">2.5.4. Comparison With Baseline Systems</a></li>
         </ul>
       </li>
+      <li><a href="#26-discussions">2.6. Discussions</a></li>
+      <li><a href="#27-conclusion">2.7. Conclusion</a></li>
     </ul>
   </li>
+  <li><a href="#3-semantic-facets">3. Semantic Facets</a></li>
 </ul>
 
 <!-- /TOC -->
@@ -418,7 +424,22 @@
 
 <p>接下来分别介绍了利用稀疏特征的方法与Deeplearning来来解决ASAG任务:</p>
 <ol>
-  <li>2.</li>
+  <li>稀疏特征，也即feature engineering的应用有:
+    <ul>
+      <li>Marvaniya等人和Saha等人使用预训练的神经网络InferSent对答案文本进行编码，这弥补了标记重叠(token overlap)方法中上下文表示的不足，其中InferSent是使用Bi-LSTM网络的预训练句子嵌入模型</li>
+      <li>Tan等人提出了一种将图卷积网络(GCNs)与几种稀疏特征相结合的评分方法。他们首先为答案文本构建了一个无向异构文本图，其中包含句子级节点、单词/bigam级节点和节点之间的边。然后，他们使用两层GCN模型对图结构进行编码，得到图的表示形式。</li>
+      <li>Zhang等人使用深度信念网络作为分类器，而不是传统的机器学习，对学生由六个稀疏特征组成的答案表示进行分类</li>
+    </ul>
+  </li>
+  <li>Deeplearning的方法有:
+    <ul>
+      <li>Kumar等人提出了ASAG的Bi-LSTM框架。他们的框架由三个级联的神经模块组成:分别应用于参考和学生答案的Siamese Bi-LSTMs，使用earth-mover distance(EMD)与LSTMs的隐状态交互的池化层，以及用于输出分数的回归层</li>
+      <li>Uto和Uchida将LSTM网络与项目反应理论(item response theory)相结合进行短文本答案评分</li>
+      <li>Tulu等人改进了基于LSTM的评分方法，通过引入感觉向量并将池化层替换为曼哈顿距离</li>
+      <li>Riordan等人结合CNN和LSTM网络进行短文本答案评分</li>
+      <li>Liu等人在一个大型K-12数据集上提出了一个具有多路注意的模型</li>
+    </ul>
+  </li>
 </ol>
 
 <p>上面提到的deeplearning方法需要大语料库支撑的数据集，但是ASAG缺少足够的大语料库，于是出现了用预训练模型来解决ASAG任务，比如ELMo、BERT、GPT、GPT-2，在这些模型中，BERT表现最好</p>
@@ -531,8 +552,82 @@
 <p>对于这个数据集，作者用三个性能度量(accuracy, weighted-F1, macro-average F1)来评估两个子任务(three-way, five-way)</p>
 
 <ol>
-  <li>Mohler dataset:</li>
+  <li>Mohler dataset: 数据集<a href="http://web.eecs.umich.edu/?mihalcea/downloads/ ShortAnswerGrading_v2.0.zip" target="_blank">开源</a>。数据集由Mohler团队从University of North Texas的一门计算机科学课程的两个考试和十个测试收集整理。它包含80个问题和2273个学生的答案，每个答案都由两名老师打分(0-5, integer)，由于是平均而来，所以一共由11种分类结果，Mohler数据集同样是ASAG任务的一个benchmark，作者可以将数据集变成了11个类别的分类数据集。</li>
 </ol>
+
+<p>由于数据集只有2273个答案对，太小，所以需要对数据集进行扩充，Kumar等人通过把训练集中正确的学生答案作为额外的参考答案，这样就把数据集的答案-问题对扩充到30000对。作者为了避免过拟合，采取了折中的策略，对每个问题只挑选一个学生的正确答案作为额外的参考答案，这样就把2083个答案对扩充至3300个答案对。针对Mohler数据集，作者采用了12折交叉验证的方法，用来评估的性能度量有Cohen’s kappa coefficient(kappa), Pearson correlation coefficient(Pearson’s r), mean absolute error(MAE), root-mean-square error(RMSE)，Mohler的标签只有11类，作者既可以把它当作了回归任务来评估(就是把分类结果用分数表示)，也可以把它当作分类任务来评估，其中kappa系数是分类任务的性能度量，其他的性能度量都是回归任务的性能度量</p>
+
+<h3 id="252-experimental-settings">2.5.2. Experimental Settings</h3>
+<p>BERT采用base版本(12层，768个单元，12个head，110M参数)，LSTM的隐层个数设置为200并且在最后一个时间步返回所有的hidden state，Capsule的卷积核个数设置为400，卷积核大小为3，dynamic route设置为3。在融合层，attention head设置为2，每个头400维参数，dropout参数都设置为0.1，使用adam优化器，学习率设置为2e-5，一个小批量64个输入，训练周期为10</p>
+
+<h3 id="253-ablation-studies">2.5.3. Ablation Studies</h3>
+<p>为了分析每一层的作用，从六个角度来做ablation studies:</p>
+<ol>
+  <li>W/O refinement: 无refienment</li>
+  <li>W/O multihead: 无multihead</li>
+</ol>
+
+<p>以此类推，得到如下结果:</p>
+<center><img src="../assets/img/posts/20221010/17.jpg" /></center>
+
+<h3 id="254-comparison-with-baseline-systems">2.5.4. Comparison With Baseline Systems</h3>
+<p>与众多模型进行对比，主要的实验结果如下:</p>
+<ul>
+  <li>Mohler数据集</li>
+</ul>
+<center><img src="../assets/img/posts/20221010/18.jpg" /></center>
+
+<ul>
+  <li>SemEval-2013:</li>
+</ul>
+<center><img src="../assets/img/posts/20221010/19.jpg" /></center>
+
+<ul>
+  <li>PR曲线:</li>
+</ul>
+<center><img src="../assets/img/posts/20221010/20.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20221010/21.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20221010/22.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20221010/23.jpg" /></center>
+
+<ul>
+  <li>AUC值和PR曲线平衡点:</li>
+</ul>
+<center><img src="../assets/img/posts/20221010/24.jpg" /></center>
+<p><br /></p>
+<center><img src="../assets/img/posts/20221010/25.jpg" /></center>
+
+<h2 id="26-discussions">2.6. Discussions</h2>
+<p>从Ablation实验结果可以看出，refinement层提升了模型的在Sem-UQ和Mohler数据集上的精度，说明refinement层提高了BERT模型在相同问题领域的泛化性，同时也可以看出LSTM在refinement层也很重要，可以提取更丰富的全局context信息。Capsule的有无也说明了它可以提取局部context信息，同时发现它的效果比一般的CNN要好。Triple-loss的设计也确实提升了模型的性能</p>
+
+<p>接着简单分析了一下表4(Mohler数据集)与表5(SemEval-2013)的结果，其实就是对比了不同模型的性能度量，说哪个模型更好什么的</p>
+
+<p>然后分析PR曲线的结果，作者认为在大多数情况下，模型的PR曲线远高于其他模型的PR曲线，这与表6中模型在所有图中AUC最大的结论是一致的。除此之外，平衡点的值也更高，说明模型性能最好</p>
+
+<p>模型可以应用于智慧教育系统的两个场景:</p>
+<ol>
+  <li>ITSs领域，即智慧辅导系统，可以让评估变成自动化的</li>
+  <li>MOOC线上平台，可以替代老师的手动评估，快速精准地为大量的free-text answer进行评分</li>
+</ol>
+
+<h2 id="27-conclusion">2.7. Conclusion</h2>
+<p>作者提出了一种新的BERT-based网络结构来解决ASAG问题，进行了大量的实验，得出了一下的结论:</p>
+<ol>
+  <li>基于词嵌入的网络，如CNN、LSTM、Capsule无法在小数据集上取得很好的结果</li>
+  <li>预训练网络BERT可以很好的适配ASAG任务</li>
+  <li>利用LSTM和Capsule网络可以进一步挖掘语义信息</li>
+</ol>
+
+<p>模型局限性:</p>
+<ol>
+  <li>在开放领域的问答中，小数据集训练出来的模型无法取得预期的效果，比如Sem-UD</li>
+  <li>目前来说，模型无法消除或者替代学生答案中的大量的代词，作者计划在后续通过BERT模型来消除学生答案中的代词来提升模型的性能</li>
+</ol>
+
+<h1 id="3-semantic-facets">3. Semantic Facets</h1>
 
         <aside class="sidebar inline" id="post-end">
     
@@ -606,6 +701,37 @@
           
           
 
+          <a href="./Diffusion-Model.html" class="recent-item-img" style="background: url('./assets/img/posts/20221012/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>扩散模型</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
           <a href="./short-answer-assessment.html" class="recent-item-img" style="background: url('./assets/img/posts/20221010/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>短文本评估论文阅读整理</span>
@@ -671,37 +797,6 @@
           <a href="./GAN.html" class="recent-item-img" style="background: url('./assets/img/posts/20220927/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>GAN</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        less than 1 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./Probability-and-Statistics.html" class="recent-item-img" style="background: url('./assets/img/posts/20221009/1.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>概率统计</span>
               
 
   <span class = "recent-item-meta">
@@ -825,8 +920,8 @@
 
 </div>
 
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<!-- <head>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             tex2jax: {
@@ -835,7 +930,7 @@
             }
         });
     </script>
-</head>
+</head> -->
 
 <style>
   table {
@@ -992,5 +1087,13 @@
   gtag('js', new Date());
   gtag('config', 'G-R8SZS2YBZK');
 </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      // Make responsive
+      MathJax.Hub.Config({
+       "HTML-CSS": { linebreaks: { automatic: true } },
+       "SVG": { linebreaks: { automatic: true } },
+      });
+    </script>
   </body>
 </html>

@@ -8,6 +8,7 @@ description: 《机器学习》周志华读书笔记
 img: posts/20211222/1.jpg 
 tags: [note]
 author: Quehry
+mathjax: yes
 ---
 
 # 目录
