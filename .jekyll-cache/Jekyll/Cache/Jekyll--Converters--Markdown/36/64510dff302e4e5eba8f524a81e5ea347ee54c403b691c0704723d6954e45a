@@ -1,0 +1,56 @@
+I"�<!-- TOC -->
+
+<ul>
+  <li><a href="#1-扩散模型简介">1. 扩散模型简介</a></li>
+  <li><a href="#2-模型">2. 模型</a>
+    <ul>
+      <li><a href="#21-前向扩散">2.1. 前向扩散</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-扩散模型简介">1. 扩散模型简介</h1>
+<p>扩散模型(Diffusion Model)是深度生成模型中的SOTA，相比于GAN、VAE、Flow-based这些生成模型而言，扩散模型可以取得更好的效果。扩散模型受非平衡热力学启发，它定义了一条多时间步的马尔可夫链来逐步给图片添加噪声，如果时间步够大，最终图片会变成纯噪声，扩散模型的目的是学习反向的扩散过程，也就是输入随机噪声，能返回一张图片，相比于之前提到的各种生成模型而言，扩散模型具有相对固定的学习步骤，同时隐变量维度更高(和输入数据同样的维度)</p>
+
+<center><img src="../assets/img/posts/20221012/2.jpg" /></center>
+
+<p>扩散模型的早在2015年便提出了(<a href="https://arxiv.org/abs/1503.03585" target="_blank">论文链接</a>)，但在当时没有引起广泛的关注，直到2019年<a href="https://arxiv.org/abs/1907.05600" target="_blank">NCSN</a>和2020年<a href="https://arxiv.org/abs/2006.11239" target="_blank">DDPM</a>的出现才将扩散模型引入了新高度，2022年火爆的text2image模型GLIDE、DALLE2、Latent Diffusion、Imagen的相继提出，让扩散模型火出了圈，这篇博客将对扩散模型的前向计算、反向训练、训练、生成步骤及其数学原理做详细的整理，会列出很多数学公式，同时该博客也参考了很多相关资料，这里我一并列出</p>
+
+<ul>
+  <li><a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/" target="_blank">Lil blog, 一篇整理相当详尽的博客，也是我主要的参考对象</a></li>
+  <li><a href="https://huggingface.co/blog/annotated-diffusion" target="_blank">huggingface的一篇解释简单明了的博客</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/525106459" target="_blank">知乎上一篇中文博客</a></li>
+  <li><a href="https://arxiv.org/abs/2006.11239" target="_blank">DDPM</a></li>
+  <li><a href="https://arxiv.org/abs/2209.00796" target="_blank">一篇综述</a></li>
+</ul>
+
+<h1 id="2-模型">2. 模型</h1>
+<h2 id="21-前向扩散">2.1. 前向扩散</h2>
+<p>从原始数据分布中采样$x_0$, 假设$x_0\sim q(x)$，前向扩散过程就是在每一个时间步都加上一个高斯噪声，这样就可以从最初的$x_0$生成长度为T的噪声序列$x_1, x_2, x_3,…, x_T$，每一步都用variance schedule$\beta_t$控制，其中$\beta_t\in (0, 1)$，每一步的后验分布(预定义好的)为:</p>
+
+<p>
+\begin{equation}
+q(\mathbf{x}_t \vert \mathbf{x}_{t-1}) = \mathcal{N}(\mathbf{x}_t; \sqrt{1 - \beta_t} \mathbf{x}_{t-1}, \beta_t\mathbf{I}) \quad
+q(\mathbf{x}_{1:T} \vert \mathbf{x}_0) = \prod^T_{t=1} q(\mathbf{x}_t \vert \mathbf{x}_{t-1})
+\end{equation}
+</p>
+
+<p>这个前向传播的过程中有一个非常好的性质，就是我们可以在任意时间步采样得到$x_t$，为了实现这个技巧，我们需要用到reparameterization技巧(该技巧也在VAE中出现过)，重参数化技巧的本质就是将随机采样的z通过引入高斯噪声$\epsilon$变成确定性的z，也就是上面的$x_t$可以表示为$x_t=\sqrt{1-\beta_t}x_{t-1}+\sqrt{\beta_t}\epsilon$，这样有利于梯度的逆传播，那么我们可以推出以下公式:</p>
+
+<p>
+\begin{equation}
+\begin{aligned}
+\mathbf{x}_t 
+&amp;= \sqrt{\alpha_t}\mathbf{x}_{t-1} + \sqrt{1 - \alpha_t}\boldsymbol{\epsilon}_{t-1} \\
+&amp;= \sqrt{\alpha_t \alpha_{t-1}} \mathbf{x}_{t-2} + \sqrt{1 - \alpha_t \alpha_{t-1}} \bar{\boldsymbol{\epsilon}}_{t-2} \\
+&amp;= \dots \\
+&amp;= \sqrt{\bar{\alpha}_t}\mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t}\boldsymbol{\epsilon} \\
+q(\mathbf{x}_t \vert \mathbf{x}_0) &amp;= \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alpha}_t} \mathbf{x}_0, (1 - \bar{\alpha}_t)\mathbf{I})
+\end{aligned}
+\end{equation}
+</p>
+
+<p>其中$\epsilon_t$都是均值为0，方差为1的高斯噪声，$\alpha_t=1-\beta_t$, $\bar{\alpha_t}=\prod_{i=1}^t\alpha_i$, 注:两个均值相同高斯噪声可以合并成一个高斯噪声，方差为之前方差的平方和开根号，一般来说，</p>
+:ET
