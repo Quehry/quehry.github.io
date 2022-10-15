@@ -36,12 +36,33 @@ mathjax: yes
     - [2.6. Discussions](#26-discussions)
     - [2.7. Conclusion](#27-conclusion)
 - [3. Semantic Facets](#3-semantic-facets)
+    - [3.1. Abstract](#31-abstract)
+    - [3.2. Introduction](#32-introduction)
+    - [3.3. Related Works](#33-related-works)
+        - [3.3.1. Automated response evaluation](#331-automated-response-evaluation)
+        - [3.3.2. Semantic similarity measurement](#332-semantic-similarity-measurement)
+    - [3.4. Patterns and indicative powers of facets matching states](#34-patterns-and-indicative-powers-of-facets-matching-states)
+        - [3.4.1. Materials and methods](#341-materials-and-methods)
+            - [3.4.1.1. Dataset](#3411-dataset)
+            - [3.4.1.2. Summary of facet matching states](#3412-summary-of-facet-matching-states)
+            - [3.4.1.3. Answer quality prediction with facet matching states](#3413-answer-quality-prediction-with-facet-matching-states)
+        - [3.4.2. Results and analysis](#342-results-and-analysis)
+            - [3.4.2.1. Facet matching pattern](#3421-facet-matching-pattern)
+            - [3.4.2.2. Answer evaluation leveraging facet matching states](#3422-answer-evaluation-leveraging-facet-matching-states)
+    - [3.5. Automatic Extraction of Facets Matching Features For Better Prediciton](#35-automatic-extraction-of-facets-matching-features-for-better-prediciton)
+        - [3.5.1. Materials and methods](#351-materials-and-methods)
+            - [3.5.1.1. Dataset](#3511-dataset)
+            - [3.5.1.2. Automatic semantic facet extraction](#3512-automatic-semantic-facet-extraction)
+            - [3.5.1.3. Facet matching features](#3513-facet-matching-features)
+            - [3.5.1.4. Semantic closeness features](#3514-semantic-closeness-features)
+        - [3.5.2. Results and analysis](#352-results-and-analysis)
 
 <!-- /TOC -->
 
 # 1. 论文简介
 - [short answer grading model](https://ieeexplore.ieee.org/abstract/document/9779091){:target="_blank"}
 - [semantic facets](https://ieeexplore.ieee.org/abstract/document/9860098){:target="_blank"}
+
 这是两篇关于short-answer assessment的论文，所谓short-answer assessment就是对简答题的答案进行评估(和参考答案对比)，第一篇提出了利用BERT解决这个问题，第二篇提出了改进了评估过程，用多个semantic facets来评估short-answer，这篇博客对这两篇论文进行简单的整理
 
 # 2. BERT-Based Deep Neural Networks
@@ -295,4 +316,187 @@ BERT采用base版本(12层，768个单元，12个head，110M参数)，LSTM的隐
 2. 目前来说，模型无法消除或者替代学生答案中的大量的代词，作者计划在后续通过BERT模型来消除学生答案中的代词来提升模型的性能
 
 # 3. Semantic Facets
+论文全称为Leveraging Semantic Facets for Automatic Assessment of Short Free Text Answers，接下来将逐段阅读并整理论文
+
+## 3.1. Abstract
+短文本问答能反映出学生对于知识的掌握情况，由于自然语言的复杂性，简答题的自动评估任务仍具有挑战性。现有的自动评估模型的做法是预测答案的分数来评估学生的答案，他们一般不关心参考答案的语义面，这限制了预测的表现。该篇论文的关注点是短文本答案的不同的语义面(semantic facets)，每个语义面对应着需要掌握的知识。利用带有语义面标注的数据集，作者首先展示了语义面状态与答案质量(一个答案的好坏)的对应关系，然后展示了语义面在自动评估答案质量的重要性。作者接着将工作拓展到不包含语义面的数据集上，证明了作者的工作在自动评估短文本答案方面的有效性，这些工作包括语义面提取、预测语义面状态和使用语义面的特征工程。
+
+论文的贡献有: 
+1. 论文提出的方法提升了短文本答案评估的SOTA的表现
+2. 论文深入研究短文本答案的语义面组成，让短文本评估模型的可解释性更高
+
+## 3.2. Introduction
+评估学生的答案非常重要，在网上学习中，实现手动评估非常困难，加速了关于自动评估的研究。研究着重于学生的短文本答案，与多选题相比，答案更不被定义且不具备结构化，所以自动评估很困难。此外，为了正确回答问题，一个短文本的回答可能传达了学生对知识的更深层次的思考，并且可能包含多个从属的知识。有了语义面之后，一个更详细的评估方法出现了，可以分析学生答案的不同语义部分，而不是简单的给出答案的分数。
+
+最近的研究基本上都采取了黑盒的模式(black box)，即从一端输入学生的答案和参考答案，另一端直接输出答案的分数，这中间发生了什么我们并不知道。虽然说对于评估系统来说，分数很重要，但是参考答案涉及到的多个知识点与学生答案的匹配情况我们却一概不知。为了提升评估任务的表现，作者将关注点从黑盒转移到分解评估的过程。为了简便，作者将参考答案的知识组成称为语义面(Semantic Facets)，给定一段文本，这段本文的语义面是由文本的短语组成的集合
+
+论文的主要实验和工作有两个，分别在SciEntsBank数据集和Beetle数据集上展开
+1. 第一个工作数据集是SciEntsBank，每个问题的语义面都标注好了，学生答案与问题的语义面匹配状态(matching state)也给出了，这样我们就可以得到不同评分等级(correct, incorrect...)的答案的语义面匹配状态的分布情况。有了分布情况后，我们便可以回答以下问题: 1)是否能根据学生答案的语义面匹配状态来确定答案的评分? 2)分布情况对自动评估系统是否有帮助? 除此之外，我们还可以构建模型来通过学生的答案和语义面来预测语义面的匹配状态
+2. 为了泛化第一个工作，第二个工作使用的数据集是Bettle数据集，这个数据集既没有语义面的标注，也没有语义面的匹配状态的标注。作者首先提出了一种从参考答案提取语义面的方法: 利用词汇统计(lexical statistics)和语法信息(syntax information)。接着利用第一个工作中训练好的预测语义面的匹配状态的网络来预测这个数据集的语义面匹配状态，然后再利用工作一中发现的pattern来通过学生答案的语义面匹配状态来获取features(后续用于对答案进行评分，所以这一步就是feature engineering)，最后，利用这些feature来预测答案的评分
+
+贡献: 
+1. 部分程度上打开了自动评估模型的black box
+2. 发现了matching state与不同评分等级的对应关系，即发现了pattern，这对于自动和手动评估都有帮助
+3. 提出了一种从参考答案抽取语义面的方法
+
+## 3.3. Related Works
+该小节介绍了论文的两个相关工作: 1)自动评估系统的不同任务及对应方法 2)量化一对文本的语义相似度的方法
+
+### 3.3.1. Automated response evaluation
+根据自动评估系统目标的不同进行分类: 
+1. 为了评估学习者的语言使用能力，许多评估系统从语言和语法使用、内容组织等方面评估写作质量，这样的系统有ETS(educational testing services)、E-Rator 、Coh-metrics、AcaWriter
+2. 评估学生答案时要求学生的答案涵盖特定的知识，只有涵盖了最关键的部分，学生才能获得满分。为了这个目标，许多系统训练了一个预测模型，有运用词重叠(word overlapping)，语义和语法相似等特征的模型，也有预训练模型来做embedding的模型
+
+论文工作属于第二类
+
+### 3.3.2. Semantic similarity measurement
+量化两段文本的相似度是自然语言处理的基本步骤，短文本自动评估系统通过文段相似度的测量来量化学生答案和参考答案的相似度。测量方法有term matching(术语匹配)技术和涉及外部知识的语义计算(semantic computation)
+1. term matching技术基于真实文本和预测文本的公共单词，基于term matching的方法有BLUE和Rouge。
+2. term matching有个明显的短板就是无法处理近义词或者同义词，可以用WordNet来解决。除此之外，一个单词或者短语的意思可以被分解成量化的语义块，这样测量起来才是数字化的(非二进制)，这样的方法有LSA(Latent Semantic Analysis)、Word2vec、GloVe。但即使是Word2vec也无法解决一词多义的问题，所以诞生了单词的动态语义嵌入(即考虑了context)，这样的模型有RNN-based ELMo、Bert等等
+
+## 3.4. Patterns and indicative powers of facets matching states
+也就是intro里提到的第一个工作，着眼于发现state和response type的pattern，然后利用这个pattern来做预测(通过答案的语义面匹配状态来预测答案的评分)
+
+### 3.4.1. Materials and methods
+#### 3.4.1.1. Dataset
+数据集使用的是SciEntsBank，数据集大约有10000个学生答案和197个问题，学生答案分为五类(5-ways，见表格1)，训练集和测试集分别有4969和5835个样本，同样地，根据问题的不同分为: UA, UQ, UD。数据集中每一个问题都包含语义面的标注，正确的学生答案应该cover这些语义面，数据集中同样包含语义面匹配状态的标注，语义面的状态一共有八种，见表格2
+
+<center><img src='../assets/img/posts/20221010/26.jpg'></center>
+<br>
+<center><img src='../assets/img/posts/20221010/27.jpg'></center>
+
+为了更直观地了解样本和语义面及语义面匹配状态，这里举了一个例子: 
+
+<center><img src='../assets/img/posts/20221010/28.jpg'></center>
+<center><img src='../assets/img/posts/20221010/29.jpg'></center>
+
+这个例子的语义面及两个学生答案对应的语义面匹配状态见表格3: 
+
+<center><img src='../assets/img/posts/20221010/30.jpg'></center>
+
+通过表格3我们可以发现语义面关注相关对象的特定属性或状态，这里可以发现相对正确的答案A基本上与所有的语义面都匹配，但是相对不正确的答案B与某些语义面冲突
+
+#### 3.4.1.2. Summary of facet matching states
+每个语义面只有一个语义面匹配状态，不同问题的语义面数量不同，可以用语义面匹配状态的分布情况来总结一个问题的总体的语义面匹配状态，这样我们就可以比较不同评分等级的答案的匹配状态，比如我们可以比较答案A和B的分布，见表格4: 
+
+<center><img src='../assets/img/posts/20221010/31.jpg'></center>
+
+#### 3.4.1.3. Answer quality prediction with facet matching states
+不同答案的语义面匹配状态的分布不同，可以将八种匹配状态的分布权重视为feature，答案的类型作为label，那么就可以进行分类。作者采用Gradient Boosting Tree(GBT)来当作预测模型。这样就可以通过答案的匹配状态分布来预测答案的评分
+
+### 3.4.2. Results and analysis
+#### 3.4.2.1. Facet matching pattern
+数据集总体的语义面匹配状态分布见表格5，利用卡方检测，可以发现答案的类型与语义面匹配状态的权重(即分布)有关
+
+<center><img src='../assets/img/posts/20221010/32.jpg'></center>
+
+归一化每个匹配状态的权重，得到下图的分布，可以发现不同答案类型的匹配状态分布不同: 
+
+<center><img src='../assets/img/posts/20221010/33.jpg'></center>
+
+观察发现，Correct的答案基本上express语义面，non domain的答案基本上unaddress语义面，不同类型答案的匹配状态分布情况就是一个pattern，用来连接一个答案的匹配状态和类型
+
+#### 3.4.2.2. Answer evaluation leveraging facet matching states 
+接下来评估以下GBT模型(通过匹配状态来预测类型)的表现情况，结果见表格6，性能度量是Macro F1
+
+<center><img src='../assets/img/posts/20221010/34.jpg'></center>
+
+通过表格6可以发现，这个分类任务是具有挑战性的，基本上所有的模型都取得了相对较低的F1值，比较不同模型发现，GBT取得了最好的结果。总的来说，现实任务中不太可能会知道一个问题的语义面或者语义面匹配状态，所以作者将工作拓展到更一般的情况，也就是3.5节将介绍的内容
+
+## 3.5. Automatic Extraction of Facets Matching Features For Better Prediciton
+对于语义面和语义面匹配状态都没有的情况下，作者提出了抽取语义面和预测语义面匹配状态的方法，然后利用特征抽取的方法挖掘出语义面匹配状态分布与pattern的关系，再结合语义相似性来预测答案的类型，这种方法大大提高了预测的表现
+
+### 3.5.1. Materials and methods
+#### 3.5.1.1. Dataset
+数据集使用的是Beetle数据集，56个问题，5000个学生答案，标签有5-way和3-way，训练集和测试集分别有3941和1258个样本，测试集分为UA, UQ
+
+#### 3.5.1.2. Automatic semantic facet extraction
+Beetle数据集的参考答案不包含语义面，但是一个问题会有多个参考答案，他们之间有细微的差别，一个例子: 
+
+问题是: Why does measuring voltage help you locate a burned out bulb?
+
+参考答案: 
+- Measuring voltage indicates the place where the electrical state changes due to a damaged bulb
+- Measuring voltage indicates the place where theelectrical state changes due to a gap
+- Measuring voltage indicates whether two terminals are connected to each other
+- Measuring voltage indicates whether two terminals are separated by a gap
+
+接下来将介绍作者如何从参考答案集中抽取出语义面:
+1. 关键词提取: 从问题和参考答案中抽取出现次数超过两次的词，这些词就是关键词(pivotal word)
+2. 基于语法的expression提取: 从参考答案的语法树(dependency parsing tree)中获取与语法相关的术语来形成更完整的expression，下面这张图展示了例子中四个参考答案的语法树: 
+
+<center><img src='../assets/img/posts/20221010/35.jpg'></center>
+
+语法树建立句子中单词的语法关系，从中心词往外伸展，一个句子的中心词就是它的谓语。有两种生成语义面的方法，第一种就是连接关键词和树上与它相邻的词，比如voltage和measuring构成了一个语义面measuring voltage。第二种方法是针对一对关键词，找到它们的最小公共节点构成语义面，比如terminals和gap的最小公共节点是separated，那么它们可以构成语义面terminals separated gap。第一种方法的出发点是一个关键词可能是一个expression的一部分，第二种方法的出发点是两个关键词可以覆盖较大的语义区域，再结合它们的公共节点，便可包含多个语义面，成为一个新的语义面。
+
+通过这两种方法可能会生成意义不明的语义面，但是这也是后续算法需要考虑的部分，增强了算法的泛化性
+
+#### 3.5.1.3. Facet matching features
+有了学生答案的语义面后，接下来就需要实现语义面匹配状态的预测。为了实现预测模型，作者用带匹配状态标签的SciEntsBank数据集进行训练。模型的细节在Appendix A中具体展开。模型的结构如下图所示: 
+
+<center><img src='../assets/img/posts/20221010/36.jpg'></center>
+
+模型的左边代表学生答案的输入，模型的右边代表语义面的输入，它们的每个词元都经过Bi-LSTM(embedding选择的是Glove)，然后输出隐状态，然后用注意力机制获得$\tilde{h_i^F}$，查询是语义面的hidden state，K和V是答案的hidden state，注意力权重为: 
+
+<p>
+\begin{equation}
+a_{i,j}=\frac{e^{(h_i^F)^T\cdot h_j^R}}{\sum_{j'=1}^{N_R}e^{(h_i^F)^T\cdot h_{j'}^R}}
+\end{equation}
+</p>
+
+为了获取facet更全面的信息，作者将$\tilde{h_i^F}$、$h_i^F-\tilde{h_i^F}$、$h_i^F\odot \tilde{h_i^F}$、$h_i^F$连结了起来: 
+
+<p>
+\begin{equation}
+\mathbf{c}_i=\left[\tilde{\mathbf{h}}_i^F ; \mathbf{h}_i^F-\tilde{\mathbf{h}}_i^F ; \mathbf{h}_i^F \odot \tilde{\mathbf{h}}_i^F ; \mathbf{h}_i^F\right]
+\end{equation}
+</p>
+
+接着对C进行取平均和最大的操作，concat之后输入MLP作预测，MLP这里取了三层，神经元数量分别为64、32和8，激活函数用ReLU: 
+
+<p>
+\begin{equation}
+\begin{aligned}
+&\mathbf{c}_{\max }=\max (\mathbf{C}) \\
+&\mathbf{c}_{\min }=\operatorname{avg}(\mathbf{C}) \\
+&\mathbf{c}_{\mathrm{agg}}=\left[\mathbf{c}_{\max } ; \mathbf{c}_{\mathrm{avg}}\right] \\
+&\hat{\mathbf{y}}=\operatorname{softmax}\left(\operatorname{MLP}\left(\mathbf{c}_{\mathrm{agg}}\right)\right)
+\end{aligned}
+\end{equation}
+</p>
+
+模型定义完后，作者比较了三种GBT的效果，GBT-Gold代表GBT在标注好的匹配状态和语义面上训练，GBT-Predict表示GBT在预测的匹配状态和标注好的语义面上训练，GBT-Approx表示GBT在预测的匹配状态和语义面上训练: 
+
+<center><img src='../assets/img/posts/20221010/37.jpg'></center>
+
+从表格中可以看出，GBT-Predict效果和GBT-Gold的效果差不多，根据预测的语义面匹配状态，我们有: 
+1. Aggregated facet matching states: 一个学生答案的预测语义面有很多，预测的语义面匹配状态需要聚合在一起。作者提出了两种聚合方法: 第一种软的是平均了所有语义面的预测匹配状态的概率，第二种硬的做法是针对每个语义面，只保留概率最高的匹配状态，两种方法都可以获得匹配状态的分布
+2. Pattern matching: 将网络结构的输出aggregate之后，与五种类型的真实匹配状态分布对比后，了解该答案的预测匹配状态分布属于哪一种类型。具体的对比方法是选取KL散度最小的作为该答案的类型，KL散度能测量两个分布的差距，0代表两个分布相似度最高，假如预测的分布为$\tilde{p(x)}$，那么KL散度为: 
+
+<p>
+\begin{equation}
+D(p_k(x)\|\tilde{p(x)}=\sum_{x\in C}p_k(x)log\frac{p_k(x)}{\tilde{p(x)}})
+\end{equation}
+</p>
+
+3. Confidence of prediction: 除了pattern matching外，匹配状态的confidence level也包含了很多信息。通过aggregate获得语义面的匹配状态分布后，取每个语义面预测概率值最高的概率值作为该语义面的confidence level。那么我们可以计算出Noisy-OR score: 
+
+<p>
+\begin{equation}
+Noisy-OR=1-\prob_{i=1}^{N_F}(1-\tilde{p_i})
+\end{equation}
+</p>
+
+其中$N_F$是语义面的个数，$\tilde{p_i}$就是语义面i的confidence level。如果所有的预测概率都是1，那么Noisy-OR为1，如果所有的预测概率都是0，那么Noisy-OR为0。Noisy-OR衡量了模型中至少有一个预测是合适的可能性有多大。
+
+#### 3.5.1.4. Semantic closeness features
+除了3.5.1.3小节中提到的基于feature的分类方法，基于语义相似度的分类方法也适用。接下来会介绍一些计算参考答案和学生答案语义相似度的方法，如果有多个参考答案，取平均值即可: 
+1. Term Matching Features: 用这些指数来计算语义相似度: N-gram overlapping, Rouge, Rouge-1, Rouge-2, Rouge-l, BLUE
+2. Fixed and dynamic embedding features: Glove, LSA, BERT。对参考答案和学生答案编码后计算相似度
+3. Semanic entailment features: 使用预训练的text entailment model: Decomposable Attention Model。输入文本对后，模型预测这两段文本的关系，有entailment, contradict, neutral。
+
+### 3.5.2. Results and analysis
+
+
+
 
