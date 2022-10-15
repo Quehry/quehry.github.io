@@ -1,5 +1,5 @@
 ---
-layout: postwithlatex
+layout: post
 read_time: true
 show_date: true
 title:  动手学深度学习
@@ -8,6 +8,7 @@ description: d2l note
 img: posts/20220905/1.jpg 
 tags: [note]
 author: Quehry
+mathjax: yes
 ---
 
 <!-- TOC -->

@@ -43,6 +43,10 @@ mathjax: yes
 - [知乎上一篇中文博客](https://zhuanlan.zhihu.com/p/525106459){:target="_blank"}
 - [DDPM](https://arxiv.org/abs/2006.11239){:target="_blank"}
 - [一篇综述](https://arxiv.org/abs/2209.00796){:target="_blank"}
+- [Improved DDPM](https://arxiv.org/abs/2102.09672){:target="_blank"}
+- [Diffusion Models Beat GANs](https://arxiv.org/abs/2105.05233){:target="_blank"}
+- [GLIDE](https://arxiv.org/abs/2112.10741){:target="_blank"}
+- [Cascaded Diffusion Model](https://arxiv.org/abs/2106.15282){:target="_blank"}
 
 # 2. 模型
 ## 2.1. 前向扩散
@@ -236,11 +240,121 @@ DDPM的作者对比了扩散模型和其他生成模型的生成速度，发现D
 3. [Latent Diffusion Model](https://arxiv.org/abs/2112.10752){:target="_blank"}论文提出让扩散过程在隐空间中进行，而不是在像素空间中进行，这样可以让训练代价更小，推断过程更快，后续会整理LDM论文
 
 ## 3.3. U-Net
-很多扩散模型的噪声网络结构都是U-Net，于是这里对U-Net进行一定整理
+很多扩散模型的噪声网络结构都是基于[U-Net](https://arxiv.org/pdf/1505.04597.pdf){:target="_blank"}，U-Net的网络结构如下图: 
+
+<center><img src='../assets/img/posts/20221012/5.jpg'></center>
+
+模型可以分为两个部分，左边用于特征的抽取，右边部分用于上采样，由于网络结构酷似字母U而得名。U-Net网络结构又可以看成AutoEncoder的结构，它的bottleneck就是中间的低纬度特征表示，U-Net要保证输出的噪声和输入的噪声有相同的维度，是一个自回归模型。DDPM使用的是PixelCNN++的backbone，也就是基于Wide Resnet的U-Net，也就是说encoder和decoder之间是残差连接，输入$x_t$返回噪声(残差思想)
 
 # 4. 条件生成
+条件生成就是conditioned generation，通过输入额外的conditioning information来生成图片，比如一段提示词或者生成图片的类别
+
 ## 4.1. Classifier Guided Diffusion
+博客上讲解的关于classifier guidance的部分不太详尽，于是我去翻看了Classifier Guidance的论文[Diffusion Models Beat GANs](https://arxiv.org/abs/2105.05233){:target="_blank"}: 
+
+classifier guidance的思路来源于GAN模型的条件生成，将这种条件生成应用于扩散模型后，发现效果非常好。作者提出可以训练一个分类器$p_\phi(y\|x_t, t)$，然后把$\nabla_{x_t} \log p_\phi\left(y \mid x_t, t\right)$的加到总的梯度公式里面，来指导扩散模型**采样的过程**偏向于生成类别为y的图片
+
+没有classifier guidance之前的反向扩散分布函数为: $p_\theta(x_t\|x_{t+1})$，但是有了classifier guidance之后，反向扩散的后验分布函数变成了: 
+
+<p>
+\begin{equation}
+p_{\theta, \phi}(x_t|x_{t+1}, y) = Zp_\theta(x_t|x_{t+1})p_\phi(y|x_t)
+\end{equation}
+</p>
+
+其中Z是正则化的常数，接下来我们需要化简上面这个公式，首先我们知道$p_\theta(x_t\|x_{t+1})$本质上就是正态分布: 
+
+<p>
+\begin{equation}
+p_\theta(x_t|x_{t+1})=\mathcal{N}(\mu, \Sigma)
+\end{equation}
+</p>
+
+然后我们对$log_\phi p(y\|x_t)$在$x=\mu$处进行泰勒展开: 
+
+<p>
+\begin{equation}
+\begin{aligned}
+\log p_\phi(y \mid x_t) & \approx log p_\phi (y \mid x_t) \mid _{x_t=\mu}+(x_t-\mu)\nabla_{x_t}logp_\phi(y \mid x_t)\mid _{x_t=\mu} \\
+&=(x_t-\mu)g+C_1\\
+\end{aligned}
+\end{equation}
+</p>
+
+这里$g=\nabla_{x_t}logp_\phi(y \mid x_t)\mid _{x_t=\mu}$
+
+<p style="font-size: 18px">
+\begin{equation}
+\begin{aligned}
+\log \left(p_\theta\left(x_t \mid x_{t+1}\right) p_\phi\left(y \mid x_t\right)\right) & \approx-\frac{1}{2}\left(x_t-\mu\right)^T \Sigma^{-1}\left(x_t-\mu\right)+\left(x_t-\mu\right) g+C_2 \\
+&=-\frac{1}{2}\left(x_t-\mu-\Sigma g\right)^T \Sigma^{-1}\left(x_t-\mu-\Sigma g\right)+\frac{1}{2} g^T \Sigma g+C_2 \\
+&=-\frac{1}{2}\left(x_t-\mu-\Sigma g\right)^T \Sigma^{-1}\left(x_t-\mu-\Sigma g\right)+C_3 \\
+&=\log p(z)+C_4, z \sim \mathcal{N}(\mu+\Sigma g, \Sigma)
+\end{aligned}
+\end{equation}
+</p>
+
+那么反向扩散过程就可以看成均值为$\mu+\Sigma g$，方差为$\Sigma$的正态分布，那么我们有以下采样算法: 
+
+<center><img src='../assets/img/posts/20221012/6.jpg'></center>
+
+另一种思路是修改正态分布中的噪声函数，原本的梯度为: 
+
+<p>
+\begin{equation}
+\nabla _{x_t} log p_\theta (x_t) = - \frac{1}{\sqrt{1-\overline{\alpha_t}}} \epsilon_\theta (x_t)
+\end{equation}
+</p>
+
+修改反向扩散函数后的梯度为: 
+
+<p>
+\begin{equation}
+\begin{aligned}
+\nabla _{x_t} log (p_\theta (x_t) p_\phi (y \mid x_t))  &= \nabla _{x_t} log p_\theta (x_t) + \nabla _{x_t} log p_\phi (y \mid x_t) \\
+&= - \frac{1}{\sqrt{1-\overline{\alpha_t}}} \epsilon_\theta (x_t) + \nabla _{x_t} log p_\phi (y \mid x_t)
+\end{aligned}
+\end{equation}
+</p>
+
+那么根据梯度，我们可以定义一个新的噪声预测函数$\hat{\epsilon}$: 
+
+<p>
+\begin{equation}
+\hat{\epsilon(x_t)} := \epsilon_\theta(x_t) - \sqrt{1-\overline{\alpha_t}} \nabla _{x_t} log p_\phi(y \mid x_t)
+\end{equation}
+</p>
+
+该方法对应的算法为: 
+
+<center><img src='../assets/img/posts/20221012/7.jpg'></center>
 
 ## 4.2. Classifier-Free Guidance
+上一小节提到的classifier guidance的技巧是需要单独使用一个分类器(参与训练或者不参与训练的情况都有)来获得$x_t$的类别，根据不同的class可以使用不同的分类器，比如resnet可以进行图片类别的guidance，CLIP可以进行文本的guidance等等。如果我们没有这个单独的分类器，我们也可以利用classifier-free guidance的技巧来实现条件生成，同样地，为了更详尽地了解这个技巧，我去翻看了[GLIDE](https://arxiv.org/abs/2112.10741){:target="_blank"}论文中关于classifier-free guidance的介绍
+
+classifier-free guidance并不需要模型去单独给出一个分类器，而是将条件生成与非条件生成都用同一个函数表示，即$\epsilon(x_t\mid y)$，如果我们希望这个函数表示非条件生成，那么我们只需要将y替换成空集即可，在训练过程中，我们以相同的概率随机替换y为空集。采样时，反向扩散函数为$\epsilon_\theta(x_t \mid y)$和$\epsilon_\theta(x_t \mid \emptyset)$的线性插值: 
+
+<p>
+\begin{equation}
+\hat{\epsilon_\theta}(x_t \mid y)=\epsilon_\theta(x_t\mid \emptyset) + s \cdot (\epsilon_\theta(x_t\mid y)-\epsilon_\theta(x_t\mid \emptyset))
+\end{equation}
+</p>
+
+式子中的s是guidance scale，s越大代表生成的图片越靠近y，guidance-free的技巧出现后，大家发现它的效果非常好，于是后续的模型基本上都运用了该技巧，比如GLIDE、DALLE2、Imagen
 
 ## 4.3. Scale up Generation Resolution and Quality
+为了生成更高质量和更高分辨率的图片，可以将扩散模型与超分辨率的技术相结合，论文[Cascaded Diffusion Model](https://arxiv.org/abs/2106.15282){:target="_blank"}中提出用层级式的扩散模型来做图片的超分辨率生成，模型的结构如下图: 
+
+<center><img src='../assets/img/posts/20221012/8.jpg'></center>
+
+模型由三个子模型组成，分别是一个基础的扩散模型和两个超分辨率扩散模型，注意这里的每个子模型都需要输入类别，超分辨率子模型还需要输入上一个子模型的低分辨率结果，这些子模型都是conditional的。超分辨率扩散模型与普通的扩散模型的区别是损失函数和反向扩散函数不同，具体来说就是U-Net的结构不同，超分辨率的U-Net的输出维度比输入维度要大，而且输入为低分辨率的图片、高分辨率的图片、类别: 
+
+<center><img src='../assets/img/posts/20221012/9.jpg'></center>
+
+一个two-stage的cascaded模型的训练算法为: 
+
+<center><img src='../assets/img/posts/20221012/10.jpg'></center>
+
+一个two-stage的cascaded模型的采样算法为: 
+
+<center><img src='../assets/img/posts/20221012/11.jpg'></center>
