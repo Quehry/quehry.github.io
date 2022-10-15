@@ -1,5 +1,5 @@
 ---
-layout: postwithlatex
+layout: post
 read_time: true
 show_date: true
 title:  短文本评估论文阅读整理
@@ -8,6 +8,7 @@ description: read and arrange paper about short answer assessment
 img: posts/20221010/1.jpg 
 tags: [notes]
 author: Quehry
+mathjax: yes
 ---
 
 <!-- TOC -->
@@ -102,7 +103,13 @@ ASAG问题有两种形式:
 2. 分类问题: 将学生的答案分为五类: Correct、Partically correct、Contradictory、Irrelevant、Nondomain
 
 作者的做法是用分数来对类别进行分类，比如0-0.5属于类别1，所以问题的本质还是分类问题，那么ASAG的预测类别$y^\*$可以表示为: 
-<center><img src='../assets/img/posts/20221010/3.jpg'></center>
+
+<p>
+\begin{equation}
+y^*=\underset{y \in Y}{\operatorname{argmax}}(\operatorname{Pr}(y \mid(q, p)))
+\end{equation}
+</p>
+
 其中Y表示类别集，Pr()表示预测的概率分布，q是学生答案，p是参考答案
 
 ### 2.4.2. Model
@@ -117,11 +124,26 @@ ASAG问题有两种形式:
 
 #### 2.4.2.1. BERT layer
 首先BERT layer的参数初始化成BERTbase的参数，微调。BERT layer层的输入是学生和参考答案的token embedding，输出是BERT的隐层
-<center><img src='../assets/img/posts/20221010/5.jpg'></center>
+
+<p>
+\begin{equation}
+O_{BERT}=BERT(s)=\left\{h_1^b,h_2^b,...,h_n^b\right\}\in \mathbb{R}^{n\times d_b}
+\end{equation}
+</p>
 
 #### 2.4.2.2. Semantic Refinement Layer
 Refinement层由Bi-LSTM和Capsule network(with position information)串联组成，输出结果如下所示: 
-<center><img src='../assets/img/posts/20221010/6.jpg'></center>
+
+<p>
+\begin{equation}
+\begin{aligned}
+&\overrightarrow{O_{\mathrm{LSTNS}}}=\overrightarrow{\operatorname{LSTMS}}\left(O_{\text {BERT }}\right)=\left\{\overrightarrow{h_1^L}, \overrightarrow{h_2^L}, \ldots, \overrightarrow{h_n^L}\right\} \in \mathbb{R}^{n \times d_L} \\
+&\overleftrightarrow{O_{\mathrm{LSTMs}}}=\overleftarrow{\operatorname{LSTMs}}\left(O_{\mathrm{BERT}}\right)=\left\{\overleftrightarrow{h_1^r}, \overleftrightarrow{h_2^r}, \ldots, \overleftrightarrow{h_n^r}\right\} \in \mathbb{R}^{n \times d_L} \\
+&O_{\mathrm{Caps}}=\operatorname{Capsules}\left(O_{\text {BERT }}\right)=\left\{h_1^c, h_2^c, \ldots, h_n^c\right\} \in \mathbb{R}^{n \times d_c}
+\end{aligned}
+\end{equation}
+</p>
+
 输出结果后面都跟了一个层归一化(保证数据分布的稳定，加速收敛)
 
 这里提到了Capsule network，我对Capsule network进行一定的补充: Capsule网络主要想解决卷积神经网络（Convolutional Neural Networks）存在的一些缺陷，比如说信息丢失，视角变化等。Capsule网络结构如下图所示: 
@@ -129,11 +151,27 @@ Refinement层由Bi-LSTM和Capsule network(with position information)串联组成
 以数字图片分类为例，Capsule一共包含3层，2层卷积层和1层全连接层。与普通网络的区别是输出的每个类别都是一个向量，向量的长度表示实体存在的概率大小，向量在空间中的方向表示实体的实例化参数，Capsule网络和CNN还是比较相似的
 
 #### 2.4.2.3. Semantic Fusion Layer
-在refinement层后，需要有一个融合层来融合LSTM和Capsule的结果，先用矩阵来stackLSTM、Capsule的结果: 
-<center><img src='../assets/img/posts/20221010/8.jpg'></center>
-其中$x_i^{(e)}=[h_i^L;h_i^r;h_i^c]$，然后再把矩阵X送入多头自注意力层，每个头使用scaled dot-product attention，具体细节如下: 
-<center><img src='../assets/img/posts/20221010/9.jpg'></center>
-这里的softmat应该是写错了，应该是softmax
+在refinement层后，需要有一个融合层来融合LSTM和Capsule的结果，先用矩阵来stackLSTM、Capsule的结果:
+
+<p>
+\begin{equation}
+X^{(e)}=\{x_1^{(e)}, x_2^{(e)},...,x_n^{(e)}\}\in \mathbb{R}^{n\times d}
+\end{equation}
+</p>
+
+其中$x_i^{(e)}=[h_i^L;h_i^r;h_i^c]$，然后再把矩阵X送入多头自注意力层，注意力评分函数是scaled dot-product attention，具体细节如下: 
+
+<p>
+\begin{equation}
+\begin{aligned}
+& \text{MultiHead}(Q,K,V)=[\text{head}_1;\text{head}_2;...;\text{head}_h]\omega^R \\
+& \text{head}_i=\text{Attention}(Q_i;K_i;V_i)=\text{Attention}(Q\omega ^Q, K\omega ^K, V\omega ^V) \\
+& \text{Attention}(Q_i;K_i;V_i)=\text{softmax}(\frac{Q_iK_i^T}{\sqrt{d_K}})V_i \\
+ X^{(h)}&=\text{MultiHead}(X^{(e)}, X^{(e)}, X^{(e)}) \\
+&=\{x_1^{(h)}, x_2^{(h)},..., x_n^{(h)}\}
+\end{aligned}
+\end{equation}
+</p>
 
 为了让全局context和局部context不互相干扰，作者对多头自注意力层做以下约束: 
 1. 让LSTM的输出维度和Capsule的输出维度相同，即$d_c=2d_L$
@@ -144,18 +182,47 @@ Refinement层由Bi-LSTM和Capsule network(with position information)串联组成
 
 #### 2.4.2.4. Prediction Layer
 预测层，首先用最大池化层获得pair(q,p)的语义表示，其实就是在每个头上选择最大的值: 
-<center><img src='../assets/img/posts/20221010/11.jpg'></center>
-<center><img src='../assets/img/posts/20221010/12.jpg'></center>
+
+<p>
+\begin{equation}
+\begin{aligned}
+Z &=\text{Maxpooling}(X^{(h)})={z_1,z_2,...,z_d}\in \mathbb{R}^d \\
+z_j &=\text{Max}(x_{1j}^{(h)}, x_{2j}^{(h)},..., x_{nj}^{(h)}), j=1,2,...,d
+\end{aligned}
+\end{equation}
+</p>
+
 然后将语义表示Z输入线性层(加上一个dropout防止overfit)，然后用softmax表示输出的概率分布: 
-<center><img src='../assets/img/posts/20221010/13.jpg'></center>
+
+<p>
+\begin{equation}
+\begin{aligned}
+o &=MZ+b \\
+p(y\mid Z)&=\frac{exp(o_y)}{\sum_{i}^{d_y}exp(o_i)}
+\end{aligned}
+\end{equation}
+</p>
 
 #### 2.4.2.5. Loss Function
 为了适应两种ASAG tasks，作者提出了两种损失函数的策略: 
 -  第一种就是常规的交叉熵，分类结果用one-hot编码
-<center><img src='../assets/img/posts/20221010/14.jpg'></center>
+
+<p>
+\begin{equation}
+L(\theta)=-\sum_{i=1}^{|\Omega|}\log \left(p\left(y_i \mid Z_i, \theta\right)\right)
+\end{equation}
+</p>
 
 -  第二种就是作者提出用triple-hot编码y，就是在y对应位置的左右也置1，那么损失函数为: 
-<center><img src='../assets/img/posts/20221010/15.jpg'></center>
+
+<p>
+\begin{equation}
+\begin{aligned}
+L(\theta)=&-\sum_{i=1}^{|\Omega|}\left(\log \left(p\left(y_i^{-1} \mid Z_i, \theta\right)\right)+\log \left(p\left(y_i \mid Z_i, \theta\right)\right)\right.\\
+&\left.+\log \left(p\left(y_i^{+1} \mid Z_i, \theta\right)\right)\right)
+\end{aligned}
+\end{equation}
+</p>
 
 ## 2.5. Experiments
 ### 2.5.1. Datasets
@@ -228,3 +295,4 @@ BERT采用base版本(12层，768个单元，12个head，110M参数)，LSTM的隐
 2. 目前来说，模型无法消除或者替代学生答案中的大量的代词，作者计划在后续通过BERT模型来消除学生答案中的代词来提升模型的性能
 
 # 3. Semantic Facets
+
