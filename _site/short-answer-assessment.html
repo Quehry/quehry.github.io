@@ -22,7 +22,7 @@
   "headline": "短文本评估论文阅读整理",
   "abstract": "read and arrange paper about short answer assessment",
     "keywords": "notes",
-    "wordcount": "951",
+    "wordcount": "1007",
     "image": ["http://localhost:4000/assets/imgposts/20221010/1.jpg"],
   "datePublished": "2022-10-10 00:00:00 +0800",
   "dateModified": "2022-10-10 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="read and arrange paper about short answer assessment">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="951"/>
+<meta data-rh="true" name="twitter:data1" content="1007"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20221010/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -162,7 +162,7 @@
     
     <span class="page_meta-readtime">
       
-        4 minute read
+        5 minute read
       
     </span>
   
@@ -302,7 +302,7 @@
     
     <span class="page_meta-readtime">
       
-        4 minute read
+        5 minute read
       
     </span>
   
@@ -424,8 +424,12 @@
           <li><a href="#352-results-and-analysis">3.5.2. Results and analysis</a></li>
         </ul>
       </li>
+      <li><a href="#36-discussion">3.6. Discussion</a></li>
+      <li><a href="#37-conclusion">3.7. Conclusion</a></li>
+      <li><a href="#38-小结">3.8. 小结</a></li>
     </ul>
   </li>
+  <li><a href="#4-todo">4. TODO</a></li>
 </ul>
 
 <!-- /TOC -->
@@ -901,7 +905,7 @@ a_{i,j}=\frac{e^{(h_i^F)^T\cdot h_j^R}}{\sum_{j'=1}^{N_R}e^{(h_i^F)^T\cdot h_{j'
 \end{equation}
 </p>
 
-<p>模型定义完后，作者比较了三种GBT的效果，GBT-Gold代表GBT在标注好的匹配状态和语义面上训练，GBT-Predict表示GBT在预测的匹配状态和标注好的语义面上训练，GBT-Approx表示GBT在预测的匹配状态和语义面上训练:</p>
+<p>模型定义完后，作者比较了三种GBT的效果，GBT-Gold代表GBT在标注好的匹配状态和语义面上训练，GBT-Predict表示GBT在预测的匹配状态和标注好的语义面上训练，GBT-Approx表示GBT在预测的匹配状态和语义面上训练，性能度量同样是Macro F1，数据集用的也是SciEntsBank:</p>
 
 <center><img src="../assets/img/posts/20221010/37.jpg" /></center>
 
@@ -923,21 +927,54 @@ D(p_k(x)\|\tilde{p(x)}=\sum_{x\in C}p_k(x)log\frac{p_k(x)}{\tilde{p(x)}})
 
 <p>
 \begin{equation}
-Noisy-OR=1-\prob_{i=1}^{N_F}(1-\tilde{p_i})
+Noisy-OR=1-\prod_{i=1}^{N_F}(1-\tilde{p_i})
 \end{equation}
 </p>
 
-<p>其中$N_F$是语义面的个数，$\tilde{p_i}$就是语义面i的confidence level。如果所有的预测概率都是1，那么Noisy-OR为1，如果所有的预测概率都是0，那么Noisy-OR为0。Noisy-OR衡量了模型中至少有一个预测是合适的可能性有多大。</p>
+<p>其中$N_F$是语义面的个数，$\tilde{p_i}$就是语义面i的confidence level。如果所有的预测概率都是1，那么Noisy-OR为1，如果所有的预测概率都是0，那么Noisy-OR为0。Noisy-OR衡量了模型中至少有一个预测是合适的可能性有多大。Noisy-OR同样可以对某一个语义面匹配状态进行计算，这样得到的特征更好配合后续的使用</p>
 
 <h4 id="3514-semantic-closeness-features">3.5.1.4. Semantic closeness features</h4>
 <p>除了3.5.1.3小节中提到的基于feature的分类方法，基于语义相似度的分类方法也适用。接下来会介绍一些计算参考答案和学生答案语义相似度的方法，如果有多个参考答案，取平均值即可:</p>
 <ol>
   <li>Term Matching Features: 用这些指数来计算语义相似度: N-gram overlapping, Rouge, Rouge-1, Rouge-2, Rouge-l, BLUE</li>
   <li>Fixed and dynamic embedding features: Glove, LSA, BERT。对参考答案和学生答案编码后计算相似度</li>
-  <li>Semanic entailment features: 使用预训练的text entailment model: Decomposable Attention Model。输入文本对后，模型预测这两段文本的关系，有entailment, contradict, neutral。</li>
+  <li>Semanic entailment features: 使用预训练的text entailment model: Decomposable Attention Model。输入文本对后，模型预测这两段文本的关系，有entailment, contradict, neutral</li>
 </ol>
 
 <h3 id="352-results-and-analysis">3.5.2. Results and analysis</h3>
+<p>为了评估3.5.1.3.和3.5.1.4.这两节提出的features，可以用GBT来测试。GBT可以看成随机森林，GBT在不同的特征上进行训练，表格7给出了不同特征上训练的结果:</p>
+
+<center><img src="../assets/img/posts/20221010/38.jpg" /></center>
+
+<p>GBT(Full)表示上面提到的所有feature都运用了，包括aggregated matching state、KL散度、Noisy-OR、语义相似度和语义推断(semantic entailment)。可以发现将所有的信息都运用后，GBT(Full)模型是表现最好的模型。然后作者希望了解facet feature是否真的有效，GBT(Facets)就是运用了Facets所有特征的模型，横向对比GBT(Sem.Sim)和GBT(Sem.Entail)，发现facet的表现最好，不止如此，将这些特征全部结合得到的效果会更好。最后对比以下facet三个特征: Nosiy-OR、KL散度、aggregated matching states。发现Noisy-OR的效果最好。</p>
+
+<p>为了更深入地了解facet的三个特征，作者画出了三种特征的importance scores，如下图所示:</p>
+
+<center><img src="../assets/img/posts/20221010/39.jpg" /></center>
+
+<p>importance score表明了数的预测结果相对于特征值的变化有多大，值越高说明该特征对于GBT来说越重要，作者将这些值归一化。观察发现，facet的三个特征中，Noisy-OR最重要，其次是KL散度，最后是匹配状态，这和表格7得出的结果一致。同时也发现语义相似度作为特征来说表现其实已经很好了，比但看facet的任意一个特征都强，但是却不如facet的三个特征加起来使用，变相证明了作者工作的有效性。还有就是虽然Semantic entailment作为特征来说表现不佳，但是也能将模型的整体性能提升一点</p>
+
+<h2 id="36-discussion">3.6. Discussion</h2>
+<p>总的来说，作者用两个数据集进行了两个实验，第一个实验首先得到了五种类型的答案的分布情况，然后用GBT实现了通过语义面匹配状态的分布来预测答案的类型。第二个实验首先给出了生产语义面的方法，然后提出了预测语义面匹配状态的网络，有了语义面匹配状态后，就可以得到facet的三个特征: state分布、KL散度和Noisy-OR。实验发现Noisy的效果很好，并且利用confidence进行预测是一种新思路，可能会对后续研究有所帮助。</p>
+
+<p>然后作者分析实验结果发现，模型目前能明显区分出correct和non domain、irrelevant，但是与partially correct、contradictory相比却并不能很好的区分开。作者认为可能是partially和correct在语义上可能并不冲突导致。</p>
+
+<p>接着，作者着眼于强调论文研究的重要性。论文里提出的facet不仅能提高模型的性能，更重要的是它们可以为更详细的反馈提供相关信息，这是教育系统为学习者提供反馈不可缺少的部分。具体来说，facet的出现让评分的可解释性更强。这样我们就可以分析学生答案是哪个知识点没有答对，或者是哪个知识点没有出现在答案中。这样，教育系统就能为学习者提供有效的反馈，可以提供点对点的反馈，比如这个facet为什么没有expressed等等。facet的实用价值高，它除了作为feature外，还可以使答案分析的可解释性更强。</p>
+
+<h2 id="37-conclusion">3.7. Conclusion</h2>
+<p>之前的许多研究往往关注评估学生回答的模型的表现，我们将待评估问题的知识点分解为从属的语义单元，称为语义面。每一个语义面都代表知识的某个方面，而它们共同构成参考答案的语义。然后作者实现了两个实验来说明研究的有效性，具体内容在discussion中已经说明。</p>
+
+<p>future work: larger corpora, 优化语义面提取的算法, 预测state的算法使用更新的网络(比如bert及其衍生网络), facet的实用价值(比如提高解释性和用作feedback)</p>
+
+<h2 id="38-小结">3.8. 小结</h2>
+<p>facet这篇论文的着重点就是提出了语义面，这篇论文的出发点其实很好想到，就是评估模型的性能可能无法有很大的提升了，那么我将答案分成好几个小部分进行评估是否能提升模型的性能？于是便有了这篇论文，facet可以理解成参考答案的知识点，它是否在学生答案中表达出就是它的states。论文做了两个工作，第一个是直接基于有facet标注和state标注的数据集上进行实验，因为不同问题的facet数量不一样，所以用state的分布来表达可能会更好，首先通过统计得到了不同类型答案的state分布，这为后续KL散度这一特征有帮助。然后使用GBT作为预测模型，通过state的分布来预测答案的类型，得到了较好的效果。第二个实验基于正常的数据集，就是不包含facet和state的标签，这也是比较一般的情况，毕竟标注facet和state非常贵。首先每个问题没有了facet，那么首先就得设计算法来得到问题的facet，作者提出了一种基于Dependency parsing tree得到facet的方法，并在附录B对这个算法进行了评价。得到facet后还是没有state，所以得设计一个网络来得到facet的状态，模型的输入是facet和学生的response，利用LSTM来获得隐状态，并用注意力机制找到facet的近似表示，然后连结了facet的隐状态的各类信息，最后加个MLP得到state。到目前为止，已经有了facet和state，那么就可以得到facet的特征来作预测，相当于特征工程。facet的特征使用到的有: state分布, 与第一个工作中真实分布对比的KL散度, 运用到confidence的Noisy-OR。除此之外，作者还对比了其余的特征，比如语义相似度和semantic entailment(这是已有的工作)。最后将这些特征fusion之后的效果比较好。</p>
+
+<h1 id="4-todo">4. TODO</h1>
+<ul>
+  <li>看GBT, GPT</li>
+  <li>深入了解一下ASAG用特征工程解决的思路</li>
+  <li>想想改进方向</li>
+</ul>
 
 
         <aside class="sidebar inline" id="post-end">
@@ -1012,6 +1049,37 @@ Noisy-OR=1-\prob_{i=1}^{N_F}(1-\tilde{p_i})
           
           
 
+          <a href="./Latent-Diffusion-Model.html" class="recent-item-img" style="background: url('./assets/img/posts/20221016/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Latent Diffusion Model</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
           <a href="./Diffusion-Model.html" class="recent-item-img" style="background: url('./assets/img/posts/20221012/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>扩散模型</span>
@@ -1057,7 +1125,7 @@ Noisy-OR=1-\prob_{i=1}^{N_F}(1-\tilde{p_i})
     
     <p class="page_meta-readtime">
       
-        4 minute read
+        5 minute read
       
     </p>
   
@@ -1077,37 +1145,6 @@ Noisy-OR=1-\prob_{i=1}^{N_F}(1-\tilde{p_i})
           <a href="./AutoEncoder-Series.html" class="recent-item-img" style="background: url('./assets/img/posts/20221008/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>AutoEncoder系列整理</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        less than 1 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./GAN.html" class="recent-item-img" style="background: url('./assets/img/posts/20220927/1.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>GAN</span>
               
 
   <span class = "recent-item-meta">

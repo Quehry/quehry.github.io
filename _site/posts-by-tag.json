@@ -170,6 +170,8 @@
   "tag" : "notes",
   "posts" : [
       
+      "./Latent-Diffusion-Model.html",
+      
       "./Diffusion-Model.html",
       
       "./short-answer-assessment.html",
