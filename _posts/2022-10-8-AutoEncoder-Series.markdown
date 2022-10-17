@@ -1,5 +1,5 @@
 ---
-layout: postwithlatex
+layout: post
 read_time: true
 show_date: true
 title:  AutoEncoder系列整理
@@ -8,7 +8,30 @@ description: Information about autoencoder series
 img: posts/20221008/1.jpg 
 tags: [notes]
 author: Quehry
+mathjax: yes
+toc: yes
 ---
+
+<!-- TOC -->
+
+- [1. AE简介](#1-ae简介)
+- [2. DAE](#2-dae)
+- [3. VAE](#3-vae)
+    - [3.1. 数学原理](#31-数学原理)
+        - [3.1.1. variational lower bound](#311-variational-lower-bound)
+        - [3.1.2. SGVB estimator and AEVB algorithm](#312-sgvb-estimator-and-aevb-algorithm)
+    - [3.2. VAE模型](#32-vae模型)
+    - [3.3. 总结](#33-总结)
+- [4. VQVAE](#4-vqvae)
+    - [4.1. 简介](#41-简介)
+    - [4.2. VQVAE模型](#42-vqvae模型)
+        - [4.2.1. 离散隐变量](#421-离散隐变量)
+        - [4.2.2. 模型](#422-模型)
+        - [4.2.3. 生成过程](#423-生成过程)
+    - [4.3. VQVAE2](#43-vqvae2)
+    - [4.4. 其他](#44-其他)
+
+<!-- /TOC -->
 
 # 1. AE简介
 AutoEncoder，即AE，自编码器，是一类在半监督学习和非监督学习中使用的人工神经网络，其功能是通过将输入信息作为学习目标，对输入信息进行表征学习(representation learning)，编码其实就是特征表示
@@ -47,10 +70,26 @@ AutoEncoder被指责只能简单地记住数据，在生成数据的能力上很
 作者说不会对边缘概率分布和后验概率分布做一般的近似假设，所以一些常用的方法可能不行，作者提出用辨别模型$q_\Phi(z\|x)$作为真实后验概率$p_\theta(z\|x)$的近似，这里的$\Phi$也就是变分参数(variational parameters)，variational有两个作用，一个是可以用q(z\|x)来近似p(z\|x)，另一个是优化了lower bound的梯度计算
 
 ### 3.1.1. variational lower bound
-通过最大边缘似然函数$p_\theta(x)$来获得参数$\theta$的估计值，对数似然函数log$p_\theta(x)$可写成:(x都指$x^{(i)}$)
-<center><img src='../assets/img/posts/20221008/4.jpg'></center>
+通过最大边缘似然函数$p_\theta(x)$来获得参数$\theta$的估计值，对数似然函数log$p_\theta(x)$可写成(x都指$x^{(i)}$):
+
+<p>
+\begin{equation}
+logp_\theta(x^{(i)})=D_{KL}(q_\phi(z\mid x^{(i)})\|p_\theta(z\mid x^{(i)}))+\mathcal{L}(\theta, \phi;x^{(i)})
+\end{equation}
+</p>
+
 推导过程为: 
-<center><img src='../assets/img/posts/20221008/5.jpg'></center>
+
+<p style="font-size: 18px">
+\begin{equation}
+\begin{aligned}
+logp_\theta(x)&=E_{z\sim q_\phi(z\mid x)}[logp_\theta(x)] \\
+&=E_{z\sim q_\phi(z\mid x)}[logq_\phi(z\mid x)-logp_\theta(z\mid x)]+E_{z\sim q_\phi(z\mid x)}[-logq_\phi(z\mid x)-logp_\theta(x, z)] \\
+&=D_{KL}(q_\phi(z\mid x)\|p_\theta(z\mid x))+\mathcal{L}(\theta,\phi;x)
+\end{aligned}
+\end{equation}
+</p>
+
 等式右边的第一项是KL散度，第二项是Evidence lower bound(ELBO)，因为KL散度非负，所以有: 
 <center><img src='../assets/img/posts/20221008/6.jpg'></center>
 ELBO可以进一步推导，有: 

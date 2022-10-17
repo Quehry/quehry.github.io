@@ -9,6 +9,7 @@ img: posts/20221010/1.jpg
 tags: [notes]
 author: Quehry
 mathjax: yes
+toc: yes
 ---
 
 <!-- TOC -->
@@ -67,11 +68,11 @@ mathjax: yes
 - [short answer grading model](https://ieeexplore.ieee.org/abstract/document/9779091){:target="_blank"}
 - [semantic facets](https://ieeexplore.ieee.org/abstract/document/9860098){:target="_blank"}
 
-这是两篇关于short-answer assessment的论文，所谓short-answer assessment就是对简答题的答案进行评估(和参考答案对比)，第一篇提出了利用BERT解决这个问题，第二篇提出了改进了评估过程，用多个semantic facets来评估short-answer，这篇博客对这两篇论文进行简单的整理
+这是两篇关于short-answer assessment的论文，所谓short-answer assessment就是对简答题的答案进行评估(和参考答案对比)，第一篇提出了利用BERT解决这个问题，第二篇提出了改进了评估过程，用多个semantic facets来评估short-answer，这篇博客记录一下对这两篇论文的精读
 
 # 2. BERT-Based Deep Neural Networks
 ## 2.1. Abstract
-Automatic short-answer grading(ASAG)，即自动短文本评分任务，是智慧辅导系统的重要组成部分。ASAG目前还存在很多挑战，作者提出了两个主要原因: 1)高精度评分任务需要对answer text有很深的语义理解; 2)ASAG任务的语料一般都很小，不能为深度学习提供足够的训练数据。为了解决这些挑战，作者提出用BERT-based网络来解决ASAG任务的挑战: 1)用预训练模型BERT来encoder答案文本就可以客服语料太小的问题。2)为了生成足够强的语义理解，作者在BERT输出层后加上了一个精炼层(由LSTM和Capsule网络串联组成) 3)作者提出一种triple-hot loss来处理ASAG的回归问题。实验结果表明模型的效果在SemEval-2013和Mohler数据集上表现比SOTA要好。模型在github上[开源](https://github.com/wuhan-1222/ASAG){:target="_blank"}
+Automatic short-answer grading(ASAG)，即自动短文本评分任务，是智慧辅导系统的重要组成部分。ASAG目前还存在很多挑战，作者提出了两个主要原因: 1)高精度评分任务需要对answer text有很深的语义理解; 2)ASAG任务的语料一般都很小，不能为深度学习提供足够的训练数据。为了解决这些挑战，作者提出用BERT-based网络来解决ASAG任务的挑战: 1)用预训练模型BERT来encoder答案文本就可以克服语料太小的问题。2)为了生成足够强的语义理解，作者在BERT输出层后加上了一个精炼层(由LSTM和Capsule网络串联组成) 3)作者提出一种triple-hot loss来处理ASAG的回归问题。实验结果表明模型的效果在SemEval-2013和Mohler数据集上表现比SOTA要好。模型在github上[开源](https://github.com/wuhan-1222/ASAG){:target="_blank"}
 
 ## 2.2. Introduction
 考试和评估是智慧辅导系统(intelligent tutoring systems, ITSs)的重要组成部分，可以获得学生们的实时知识认知水平，也能为学生们提供个性化的学习方案。多选题是考试的重要组成部分，但是多选题有两个明显的短板: 1)多选题只提供部分选择 2)有些学生的答案可能是蒙出来的。ASAG可以解决上述问题，学生们为简答题提供一个short text，然后ASAG来评估short text是否正确，具体来说评估结果有五类: Correct、Partically correct、Contradictory、Irrelevant、Nondomain。
@@ -258,8 +259,7 @@ L(\theta)=&-\sum_{i=1}^{|\Omega|}\left(\log \left(p\left(y_i^{-1} \mid Z_i, \the
     - Unseen Answers(UA): 和训练集有相同的题目和参考答案，但是学生的回答不同
     - Unseen Questions(UQ): 和训练集的问题不同，但是属于同一个领域
     - Unseen Domains(UD): 和训练集的问题不同，且不属于同一个领域
-
-对于这个数据集，作者用三个性能度量(accuracy, weighted-F1, macro-average F1)来评估两个子任务(three-way, five-way)
+    - 对于这个数据集，作者用三个性能度量(accuracy, weighted-F1, macro-average F1)来评估两个子任务(three-way, five-way)
 
 2. Mohler dataset: 数据集[开源](http://web.eecs.umich.edu/?mihalcea/downloads/ ShortAnswerGrading_v2.0.zip){:target="_blank"}。数据集由Mohler团队从University of North Texas的一门计算机科学课程的两个考试和十个测试收集整理。它包含80个问题和2273个学生的答案，每个答案都由两名老师打分(0-5, integer)，由于是平均而来，所以一共由11种分类结果，Mohler数据集同样是ASAG任务的一个benchmark，作者可以将数据集变成了11个类别的分类数据集。
 
@@ -474,8 +474,8 @@ a_{i,j}=\frac{e^{(h_i^F)^T\cdot h_j^R}}{\sum_{j'=1}^{N_R}e^{(h_i^F)^T\cdot h_{j'
 <center><img src='../assets/img/posts/20221010/37.jpg'></center>
 
 从表格中可以看出，GBT-Predict效果和GBT-Gold的效果差不多，根据预测的语义面匹配状态，我们有: 
-1. Aggregated facet matching states: 一个学生答案的预测语义面有很多，预测的语义面匹配状态需要聚合在一起。作者提出了两种聚合方法: 第一种软的是平均了所有语义面的预测匹配状态的概率，第二种硬的做法是针对每个语义面，只保留概率最高的匹配状态，两种方法都可以获得匹配状态的分布
-2. Pattern matching: 将网络结构的输出aggregate之后，与五种类型的真实匹配状态分布对比后，了解该答案的预测匹配状态分布属于哪一种类型。具体的对比方法是选取KL散度最小的作为该答案的类型，KL散度能测量两个分布的差距，0代表两个分布相似度最高，假如预测的分布为$\tilde{p(x)}$，那么KL散度为: 
+- Aggregated facet matching states: 一个学生答案的预测语义面有很多，预测的语义面匹配状态需要聚合在一起。作者提出了两种聚合方法: 第一种软的是平均了所有语义面的预测匹配状态的概率，第二种硬的做法是针对每个语义面，只保留概率最高的匹配状态，两种方法都可以获得匹配状态的分布
+- Pattern matching: 将网络结构的输出aggregate之后，与五种类型的真实匹配状态分布对比后，了解该答案的预测匹配状态分布属于哪一种类型。具体的对比方法是选取KL散度最小的作为该答案的类型，KL散度能测量两个分布的差距，0代表两个分布相似度最高，假如预测的分布为$\tilde{p(x)}$，那么KL散度为: 
 
 <p>
 \begin{equation}
@@ -483,7 +483,7 @@ D(p_k(x)\|\tilde{p(x)}=\sum_{x\in C}p_k(x)log\frac{p_k(x)}{\tilde{p(x)}})
 \end{equation}
 </p>
 
-3. Confidence of prediction: 除了pattern matching外，匹配状态的confidence level也包含了很多信息。通过aggregate获得语义面的匹配状态分布后，取每个语义面预测概率值最高的概率值作为该语义面的confidence level。那么我们可以计算出Noisy-OR score: 
+- Confidence of prediction: 除了pattern matching外，匹配状态的confidence level也包含了很多信息。通过aggregate获得语义面的匹配状态分布后，取每个语义面预测概率值最高的概率值作为该语义面的confidence level。那么我们可以计算出Noisy-OR score: 
 
 <p>
 \begin{equation}
@@ -525,10 +525,10 @@ importance score表明了数的预测结果相对于特征值的变化有多大�
 future work: larger corpora, 优化语义面提取的算法, 预测state的算法使用更新的网络(比如bert及其衍生网络), facet的实用价值(比如提高解释性和用作feedback)
 
 ## 3.8. 小结
-facet这篇论文的着重点就是提出了语义面，这篇论文的出发点其实很好想到，就是评估模型的性能可能无法有很大的提升了，那么我将答案分成好几个小部分进行评估是否能提升模型的性能？于是便有了这篇论文，facet可以理解成参考答案的知识点，它是否在学生答案中表达出就是它的states。论文做了两个工作，第一个是直接基于有facet标注和state标注的数据集上进行实验，因为不同问题的facet数量不一样，所以用state的分布来表达可能会更好，首先通过统计得到了不同类型答案的state分布，这为后续KL散度这一特征有帮助。然后使用GBT作为预测模型，通过state的分布来预测答案的类型，得到了较好的效果。第二个实验基于正常的数据集，就是不包含facet和state的标签，这也是比较一般的情况，毕竟标注facet和state非常贵。首先每个问题没有了facet，那么首先就得设计算法来得到问题的facet，作者提出了一种基于Dependency parsing tree得到facet的方法，并在附录B对这个算法进行了评价。得到facet后还是没有state，所以得设计一个网络来得到facet的状态，模型的输入是facet和学生的response，利用LSTM来获得隐状态，并用注意力机制找到facet的近似表示，然后连结了facet的隐状态的各类信息，最后加个MLP得到state。到目前为止，已经有了facet和state，那么就可以得到facet的特征来作预测，相当于特征工程。facet的特征使用到的有: state分布, 与第一个工作中真实分布对比的KL散度, 运用到confidence的Noisy-OR。除此之外，作者还对比了其余的特征，比如语义相似度和semantic entailment(这是已有的工作)。最后将这些特征fusion之后的效果比较好。
+facet这篇论文的着重点就是提出了语义面，这篇论文的出发点其实很好想到，就是评估模型的性能可能无法有很大的提升了，那么我将答案分成好几个小部分进行评估是否能提升模型的性能？于是便有了这篇论文，facet可以理解成参考答案的知识点，它是否在学生答案中表达出就是它的states。论文做了两个工作，第一个是直接基于有facet标注和state标注的数据集上进行实验，因为不同问题的facet数量不一样，所以用state的分布来表达可能会更好，首先通过统计得到了不同类型答案的state分布，这为后续KL散度这一特征有帮助。然后使用GBT作为预测模型，通过state的分布来预测答案的类型，得到了较好的效果。第二个实验基于正常的数据集，就是不包含facet和state的标签，这也是比较一般的情况，毕竟标注facet和state非常贵。首先每个问题没有了facet，那么首先就得设计算法来得到问题的facet，作者提出了一种基于Dependency parsing tree得到facet的方法，并在附录B对这个算法进行了评价。得到facet后还是没有state，所以得设计一个网络来得到facet的状态，模型的输入是facet和学生的response，利用LSTM来获得隐状态，并用注意力机制找到facet的近似表示，然后连结了facet的隐状态的各类信息，最后加个MLP得到state。到目前为止，已经有了facet和state，那么就可以得到facet的特征来作预测，相当于特征工程。facet的特征使用到的有: state分布, 与第一个工作中真实分布对比的KL散度, 运用到confidence的Noisy-OR。除此之外，作者还对比了其余的特征，比如语义相似度和semantic entailment(这是已有的工作)。最后将这些特征fusion之后的效果比较好
 
 # 4. TODO
-- 看GBT, GPT
+- 看GBT, GPT, ELMo
 - 深入了解一下ASAG用特征工程解决的思路
 - 想想改进方向
-
+- 代码

@@ -22,7 +22,7 @@
   "headline": "AutoEncoder系列整理",
   "abstract": "Information about autoencoder series",
     "keywords": "notes",
-    "wordcount": "159",
+    "wordcount": "224",
     "image": ["http://localhost:4000/assets/imgposts/20221008/1.jpg"],
   "datePublished": "2022-10-08 00:00:00 +0800",
   "dateModified": "2022-10-08 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="Information about autoencoder series">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="159"/>
+<meta data-rh="true" name="twitter:data1" content="224"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20221008/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -127,6 +127,8 @@
 <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
 	
+	<link rel="stylesheet" href="./assets/css/highlighter/syntax-base16.monokai.dark.css">
+	
 <head>
   <body>
     
@@ -160,7 +162,7 @@
     
     <span class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </span>
   
@@ -168,7 +170,7 @@
   </span>
 
         <div class="post-excerpt">
-            <h1 id="1-ae简介">1. AE简介</h1><p>AutoEncoder，即AE，自编码器，是一类在半监督学习和非监督学习中使用的人工神经网络，其功能是通过将输入信息作为学习目标，对输入信息进行表征学习(representation learning)，编码其实就是特征表示</p><p>半监督学习(semi-supervised learning)的训练数据一部分是有标签的，另一部分没有标签，而没标签的数量一般大于有标签数据的数量</p><p>自编码器的原理如下图所示，encoder首先读取input，将输入转换成高效的内部表示(code)，然后再由decoder输出输入数据的类似物</p><center><img src="../assets/img/posts/20221008/1.jpg" /></center><p>自编码器属于自监督学习的范畴，算法把输入作为监督信号来学习，encoder的作用其实就是对输入向量进行特征降维，常见的降维算法有主成分分析法PCA，但PCA本质上是一种线性变换，提取特征的能力有限</p><p>自编码器利用神经网络来学习输入的特征表达，AE利用数据x本身作为监督信号来指导神经网络的训练，即希望神经网络能学到映射$f_\theta$:x-&gt;x</p><center><img src="../assets/img/posts/20221008/2.jpg" /></center><p>把网络切分为两个部分，前面的子网络尝试学习映射关系$g_{\theta1}:x-&gt;z$，后面的子网络尝试学习映射关系$h_{\theta2}:z-&gt;x$，即编码器和解码器，编码器和解码器共同完成了输入数据x的编码、解码过程，把整个网络模型叫做AutoEncoder，模型根据输出与输入的距离函数作为损失函数来优化AE，随机梯度下降</p><p>假设输入为x，中间层为y，最终输出为z，那么y=s(Wx+b)，s是激活函数，z=s(W’y+b’)</p><p>接下来我将整理AE家族的一些模型，有DAE、VAE、VQVAE，当然不可能涵盖所有的模型，尽量介绍一些使用较多的模型</p><h1 id="2-dae">2. DAE</h1><p>通过Auto-Encoder得到的模型往往存在过拟合的风险，为了学习到较鲁棒的特征，可以在网络的输入层引入随机噪声，这种方法称为降噪自编码器(Denoising autoencoder, DAE)，为了更了解模型的原理和架构，我去阅读了DAE的<a href="https://dl.acm.org/doi/abs/10.1145/1390156.1390294" target="_blank">论文</a></p><p>作者的想法是让网络从corrputed的输入还原出原始输入，通过这个方法来提高模型的鲁棒性。corrputed的方法: 对于每一个输入x，随机选取$v_d$个元素置零，其他的部分保持不变，那么网络的目标就变成了对这些位置进行填空(fill-in)，这和BERT中Masked LM的思想差不多</p><center><img src="../assets/img/posts/20221008/3.jpg" /></center><p>论文的其他部分着重介绍为什么这种denoising的思想有用以及背后的数学原理</p><h1 id="3-vae">3. VAE</h1><p>AutoEncoder被指责只能简单地记住数据，在生成数据的能力上很差，于是变分自编码器VAE(Variational auto-encoder)出现了。<a href="https://arxiv.org/abs/1312.6114" target="_blank">论文链接</a></p><p>作者提出了一种autoencoding variational bayesian(AEVB)算法，在AEVB算法中，通过使用SGVB(stochastic gradient variational bayes)估计器优化识别模型，使推断和学习更加有效，该识别模型允许我们使用简单的采样来获得非常有效的近似后验分布</p><h2 id="31-数学原理">3.1. 数学原理</h2><p>数据集X由独立同分布采样的N个x组成，即$X={x^{(i)}}_{i=1}^N$。我们假设x的生成过程由两部分组成:</p><ul> <li>$z^{(i)}$采样自先验分布$p_{\theta*}(z)$</li> <li>$x^{(i)}$由似然函数$p_{\theta*}(x|z)$生成</li></ul><p>作者说不会对边缘概率分布和后验概率分布做一般的近似假设，所以一些常用的方法可能不行，作者提出用辨别模型$q_\Phi(z|x)$作为真实后验概率$p_\theta(z|x)$的近似，这里的$\Phi$也就是变分参数(variational parameters)，variational有两个作用，一个是可以用q(z|x)来近似p(z|x)，另一个是优化了lower bound的梯度计算</p><h3 id="311-variational-lower-bound">3.1.1. variational lower bound</h3><p>通过最大边缘似然函数$p_\theta(x)$来获得参数$\theta$的估计值，对数似然函数log$p_\theta(x)$可写成:(x都指$x^{(i)}$)</p><center><img src="../assets/img/posts/20221008/4.jpg" /></center><p>推导过程为:</p><center><img src="../assets/img/posts/20221008/5.jpg" /></center><p>等式右边的第一项是KL散度，第二项是Evidence lower bound(ELBO)，因为KL散度非负，所以有:</p><center><img src="../assets/img/posts/20221008/6.jpg" /></center><p>ELBO可以进一步推导，有:</p><center><img src="../assets/img/posts/20221008/7.jpg" /></center><p>推导和前面类似，省略</p><p>我们希望最大化ELBO来获得参数$\Phi$和$\theta$，可以用梯度上升法，然而对ELBO求梯度有点困难，作者提出了SGVB estimator来解决这个问题</p><h3 id="312-sgvb-estimator-and-aevb-algorithm">3.1.2. SGVB estimator and AEVB algorithm</h3><p>首先介绍一下蒙特卡洛gradient estimator:</p><center><img src="../assets/img/posts/20221008/8.jpg" /></center><p>简单来说，蒙特卡洛就是将期望外的梯度符号移到了期望内</p><p>接下来我们需要应用一种再参数化(reparameterization)的trick来实现似然函数梯度的计算，具体来说就是服从q(z|x)分布的随机变量z可以写成可微的形式:</p><center><img src="../assets/img/posts/20221008/9.jpg" /></center><p>其中$\epsilon$就是噪声，那么再经过一系列的推导，就可以得出似然函数的梯度</p><p>AEVB算法:</p><center><img src="../assets/img/posts/20221008/10.jpg" /></center><h2 id="32-vae模型">3.2. VAE模型</h2><p>VAE是AEVB算法的一个实例，VAE在AEVB算法的基础上做了以下约束:</p><ul> <li>使用encoder来模拟后验分布$q_\Phi(z|x)$，并假设其满足多元混合高斯</li></ul><center><img src="../assets/img/posts/20221008/11.jpg" /></center><p>其中$\mu^{(i)}$和$\sigma^{(i)}$是输入$x^{(i)}$经过MLP后得到的结果，模型使用两个网络分别来估计每个样本对应的隐状态$z^{(i)}$的均值和方差</p><ul> <li>假设先验概率$p_\theta(z)$满足多元正态分布模型，即$p_\theta(z)~N(z;0,I)$</li> <li>用decoder来模拟$p_\theta(x|z)$</li> <li>使用重参数的trick来获得z，因为这里假设的是正态分布，所以z可以简单理解成$z=\mu+\sigma * \epsilon$，其中$\epsilon$采样自均值为0，方差为1的正态分布这样我们就获得了VAE模型</li></ul><center><img src="../assets/img/posts/20221008/13.jpg" /></center><h2 id="33-总结">3.3. 总结</h2><center><img src="../assets/img/posts/20221008/12.jpg" /></center><p>这是我自己画的一张VAE模型图，encoder和decoder可以都是MLP。encoder的目的是从输入数据x中学习到z重参数化需要的变量$\mu$和$\sigma$，之后我们就可以采样噪声来获得z的先验分布，然后经过decoder得到重构的输出x，训练的过程其实就是学习x分布的过程。训练完成后，我们就可以得到生成模型$p_\theta(x|z)p_\theta(z)$，其中$p_\theta(x|z)$就是decoder，先验分布$p_\theta(z)$为正态分布，从先验分布$p_\theta(z)$随机采样一个z送入decoder，就可以得到与训练数据类似的输出，所以VAE是一个生成模型</p><p><a href="https://zhuanlan.zhihu.com/p/452743042" target="_blank">一篇介绍VAE很详细的博客</a></p><h1 id="4-vqvae">4. VQVAE</h1><h2 id="41-简介">4.1. 简介</h2><p><a href="https://proceedings.neurips.cc/paper/2017/hash/7a98af17e63a0ac09ce2e96d03992fbc-Abstract.html" target="_blank">论文链接</a>，VQVAE是DeepMind于2017年提出的一种基于离散隐变量(Discrete Latent variables)的生成模型，相比于VAE，VQVAE有两个重要的区别: 首先VQVAE采用离散隐变量(VAE采用的是连续隐变量)，其次VQVAE需要单独训练一个基于自回归的模型(比如PixelCNN)来学习先验概率，而不是像VAE那样采用一个固定的先验分布。VQVAE是一个强大的无监督表征学习模型，它学习的离散编码有很强的表征能力，DALLE第一版就是基于VQVAE的</p><h2 id="42-vqvae模型">4.2. VQVAE模型</h2><p>VQ-VAE的全称是Vector Quantised Variational AutoEncoder，与VAE的主要区别是使用了离散的隐变量和学习出来的prior(非固定)</p><h3 id="421-离散隐变量">4.2.1. 离散隐变量</h3><p>首先定义一个embedding space，记为e$\in R^{K*D}$，K就是embedding space的大小，D就是每个embedding...<a class="read-more" href="./AutoEncoder-Series.html"> read more</a>
+            <!-- TOC --><ul> <li><a href="#1-ae简介">1. AE简介</a></li> <li><a href="#2-dae">2. DAE</a></li> <li><a href="#3-vae">3. VAE</a> <ul> <li><a href="#31-数学原理">3.1. 数学原理</a> <ul> <li><a href="#311-variational-lower-bound">3.1.1. variational lower bound</a></li> <li><a href="#312-sgvb-estimator-and-aevb-algorithm">3.1.2. SGVB estimator and AEVB algorithm</a></li> </ul> </li> <li><a href="#32-vae模型">3.2. VAE模型</a></li> <li><a href="#33-总结">3.3. 总结</a></li> </ul> </li> <li><a href="#4-vqvae">4. VQVAE</a> <ul> <li><a href="#41-简介">4.1. 简介</a></li> <li><a href="#42-vqvae模型">4.2. VQVAE模型</a> <ul> <li><a href="#421-离散隐变量">4.2.1. 离散隐变量</a></li> <li><a href="#422-模型">4.2.2. 模型</a></li> <li><a href="#423-生成过程">4.2.3. 生成过程</a></li> </ul> </li> <li><a href="#43-vqvae2">4.3. VQVAE2</a></li> <li><a href="#44-其他">4.4. 其他</a></li> </ul> </li></ul><!-- /TOC --><h1 id="1-ae简介">1. AE简介</h1><p>AutoEncoder，即AE，自编码器，是一类在半监督学习和非监督学习中使用的人工神经网络，其功能是通过将输入信息作为学习目标，对输入信息进行表征学习(representation learning)，编码其实就是特征表示</p><p>半监督学习(semi-supervised learning)的训练数据一部分是有标签的，另一部分没有标签，而没标签的数量一般大于有标签数据的数量</p><p>自编码器的原理如下图所示，encoder首先读取input，将输入转换成高效的内部表示(code)，然后再由decoder输出输入数据的类似物</p><center><img src="../assets/img/posts/20221008/1.jpg" /></center><p>自编码器属于自监督学习的范畴，算法把输入作为监督信号来学习，encoder的作用其实就是对输入向量进行特征降维，常见的降维算法有主成分分析法PCA，但PCA本质上是一种线性变换，提取特征的能力有限</p><p>自编码器利用神经网络来学习输入的特征表达，AE利用数据x本身作为监督信号来指导神经网络的训练，即希望神经网络能学到映射$f_\theta$:x-&gt;x</p><center><img src="../assets/img/posts/20221008/2.jpg" /></center><p>把网络切分为两个部分，前面的子网络尝试学习映射关系$g_{\theta1}:x-&gt;z$，后面的子网络尝试学习映射关系$h_{\theta2}:z-&gt;x$，即编码器和解码器，编码器和解码器共同完成了输入数据x的编码、解码过程，把整个网络模型叫做AutoEncoder，模型根据输出与输入的距离函数作为损失函数来优化AE，随机梯度下降</p><p>假设输入为x，中间层为y，最终输出为z，那么y=s(Wx+b)，s是激活函数，z=s(W’y+b’)</p><p>接下来我将整理AE家族的一些模型，有DAE、VAE、VQVAE，当然不可能涵盖所有的模型，尽量介绍一些使用较多的模型</p><h1 id="2-dae">2. DAE</h1><p>通过Auto-Encoder得到的模型往往存在过拟合的风险，为了学习到较鲁棒的特征，可以在网络的输入层引入随机噪声，这种方法称为降噪自编码器(Denoising autoencoder, DAE)，为了更了解模型的原理和架构，我去阅读了DAE的<a href="https://dl.acm.org/doi/abs/10.1145/1390156.1390294" target="_blank">论文</a></p><p>作者的想法是让网络从corrputed的输入还原出原始输入，通过这个方法来提高模型的鲁棒性。corrputed的方法: 对于每一个输入x，随机选取$v_d$个元素置零，其他的部分保持不变，那么网络的目标就变成了对这些位置进行填空(fill-in)，这和BERT中Masked LM的思想差不多</p><center><img src="../assets/img/posts/20221008/3.jpg" /></center><p>论文的其他部分着重介绍为什么这种denoising的思想有用以及背后的数学原理</p><h1 id="3-vae">3. VAE</h1><p>AutoEncoder被指责只能简单地记住数据，在生成数据的能力上很差，于是变分自编码器VAE(Variational auto-encoder)出现了。<a href="https://arxiv.org/abs/1312.6114" target="_blank">论文链接</a></p><p>作者提出了一种autoencoding variational bayesian(AEVB)算法，在AEVB算法中，通过使用SGVB(stochastic gradient variational bayes)估计器优化识别模型，使推断和学习更加有效，该识别模型允许我们使用简单的采样来获得非常有效的近似后验分布</p><h2 id="31-数学原理">3.1....<a class="read-more" href="./AutoEncoder-Series.html"> read more</a>
         </div>
   </div>
 </section>
@@ -300,7 +302,7 @@
     
     <span class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </span>
   
@@ -340,9 +342,52 @@
 </div>
 </aside>
 
+        <aside class="toc">
+  <nav class="toc-nav">
+    <li class="toc-title">
+      <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
+    </li>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#1-ae简介">1. AE简介</a></li><li class="toc-item-1"><a href="#2-dae">2. DAE</a></li><li class="toc-item-1"><a href="#3-vae">3. VAE</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#31-数学原理">3.1. 数学原理</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#311-variational-lower-bound">3.1.1. variational lower bound</a></li><li class="toc-item-3"><a href="#312-sgvb-estimator-and-aevb-algorithm">3.1.2. SGVB estimator and AEVB algorithm</a></li></ul></li><li class="toc-item-2"><a href="#32-vae模型">3.2. VAE模型</a></li><li class="toc-item-2"><a href="#33-总结">3.3. 总结</a></li></ul></li><li class="toc-item-1"><a href="#4-vqvae">4. VQVAE</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#41-简介">4.1. 简介</a></li><li class="toc-item-2"><a href="#42-vqvae模型">4.2. VQVAE模型</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#421-离散隐变量">4.2.1. 离散隐变量</a></li><li class="toc-item-3"><a href="#422-模型">4.2.2. 模型</a></li><li class="toc-item-3"><a href="#423-生成过程">4.2.3. 生成过程</a></li></ul></li><li class="toc-item-2"><a href="#43-vqvae2">4.3. VQVAE2</a></li><li class="toc-item-2"><a href="#44-其他">4.4. 其他</a></li></ul></li></ul>
+  </nav>
+</aside>
+
         
-        
-        <h1 id="1-ae简介">1. AE简介</h1>
+        <!-- TOC -->
+
+<ul>
+  <li><a href="#1-ae简介">1. AE简介</a></li>
+  <li><a href="#2-dae">2. DAE</a></li>
+  <li><a href="#3-vae">3. VAE</a>
+    <ul>
+      <li><a href="#31-数学原理">3.1. 数学原理</a>
+        <ul>
+          <li><a href="#311-variational-lower-bound">3.1.1. variational lower bound</a></li>
+          <li><a href="#312-sgvb-estimator-and-aevb-algorithm">3.1.2. SGVB estimator and AEVB algorithm</a></li>
+        </ul>
+      </li>
+      <li><a href="#32-vae模型">3.2. VAE模型</a></li>
+      <li><a href="#33-总结">3.3. 总结</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-vqvae">4. VQVAE</a>
+    <ul>
+      <li><a href="#41-简介">4.1. 简介</a></li>
+      <li><a href="#42-vqvae模型">4.2. VQVAE模型</a>
+        <ul>
+          <li><a href="#421-离散隐变量">4.2.1. 离散隐变量</a></li>
+          <li><a href="#422-模型">4.2.2. 模型</a></li>
+          <li><a href="#423-生成过程">4.2.3. 生成过程</a></li>
+        </ul>
+      </li>
+      <li><a href="#43-vqvae2">4.3. VQVAE2</a></li>
+      <li><a href="#44-其他">4.4. 其他</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-ae简介">1. AE简介</h1>
 <p>AutoEncoder，即AE，自编码器，是一类在半监督学习和非监督学习中使用的人工神经网络，其功能是通过将输入信息作为学习目标，对输入信息进行表征学习(representation learning)，编码其实就是特征表示</p>
 
 <p>半监督学习(semi-supervised learning)的训练数据一部分是有标签的，另一部分没有标签，而没标签的数量一般大于有标签数据的数量</p>
@@ -381,10 +426,26 @@
 <p>作者说不会对边缘概率分布和后验概率分布做一般的近似假设，所以一些常用的方法可能不行，作者提出用辨别模型$q_\Phi(z|x)$作为真实后验概率$p_\theta(z|x)$的近似，这里的$\Phi$也就是变分参数(variational parameters)，variational有两个作用，一个是可以用q(z|x)来近似p(z|x)，另一个是优化了lower bound的梯度计算</p>
 
 <h3 id="311-variational-lower-bound">3.1.1. variational lower bound</h3>
-<p>通过最大边缘似然函数$p_\theta(x)$来获得参数$\theta$的估计值，对数似然函数log$p_\theta(x)$可写成:(x都指$x^{(i)}$)</p>
-<center><img src="../assets/img/posts/20221008/4.jpg" /></center>
+<p>通过最大边缘似然函数$p_\theta(x)$来获得参数$\theta$的估计值，对数似然函数log$p_\theta(x)$可写成(x都指$x^{(i)}$):</p>
+
+<p>
+\begin{equation}
+logp_\theta(x^{(i)})=D_{KL}(q_\phi(z\mid x^{(i)})\|p_\theta(z\mid x^{(i)}))+\mathcal{L}(\theta, \phi;x^{(i)})
+\end{equation}
+</p>
+
 <p>推导过程为:</p>
-<center><img src="../assets/img/posts/20221008/5.jpg" /></center>
+
+<p style="font-size: 18px">
+\begin{equation}
+\begin{aligned}
+logp_\theta(x)&amp;=E_{z\sim q_\phi(z\mid x)}[logp_\theta(x)] \\
+&amp;=E_{z\sim q_\phi(z\mid x)}[logq_\phi(z\mid x)-logp_\theta(z\mid x)]+E_{z\sim q_\phi(z\mid x)}[-logq_\phi(z\mid x)-logp_\theta(x, z)] \\
+&amp;=D_{KL}(q_\phi(z\mid x)\|p_\theta(z\mid x))+\mathcal{L}(\theta,\phi;x)
+\end{aligned}
+\end{equation}
+</p>
+
 <p>等式右边的第一项是KL散度，第二项是Evidence lower bound(ELBO)，因为KL散度非负，所以有:</p>
 <center><img src="../assets/img/posts/20221008/6.jpg" /></center>
 <p>ELBO可以进一步推导，有:</p>
@@ -647,7 +708,7 @@
     
     <p class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </p>
   
@@ -759,23 +820,7 @@
 
 </div>
 
-<!-- <head>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head> -->
 
-<style>
-  table {
-  margin: auto;
-  }
-</style>
     <div class="top" title="Top">
       <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z" class=""></path></svg>
     </div>
@@ -897,9 +942,114 @@
 <script src="./assets/js/jquery-3.6.0.min.js"></script>
 
 
+  <script>
+    function toggle_comments(){
+        document.getElementById('comment-curtain').classList.toggle('hide')
+        document.getElementById('disqus_thread').classList.toggle('show')
+    }
+
+    function copyToClipboard() {
+      navigator.clipboard.writeText('http://localhost:4000/AutoEncoder-Series.html').then(function() {
+      alerts = document.getElementsByClassName('alert')
+      for (i=0; i < alerts.length; i++){
+        alerts[i].innerHTML='\u00ABlink copied\u00BB';
+        setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
+      };
+      }, function() {
+        prompt("Unable to copy, please use this link:", "http://localhost:4000/AutoEncoder-Series.html");
+      });
+    }
+
+    $(function () {
+      if (document.getElementById('comment-curtain') == null){
+        document.getElementById('disqus_thread').classList.toggle('show')
+      }
+
+      var tweetTags = document.getElementsByTagName("tweet");
+
+      if (tweetTags != null){
+        for (i=0; i<tweetTags.length; i++){
+          tweetA = document.createElement("a")
+          tweetA.href = 'https://twitter.com/share?text='
+                       + encodeURIComponent(tweetTags[i].textContent)
+                       + '&via=QuehryS&url='
+                       + window.location.href;
+          tweetA.target = "_blank";
+          tweetA.className = 'twitter';
+          tweetSpanText = document.createElement('span');
+          tweetSpanText.className = 'tweetText';
+          tweetSpanText.appendChild(document.createTextNode(tweetTags[i].textContent));
+          tweetSpanIcon = document.createElement('span');
+          tweetSpanIcon.className = 'tweetIcon';
+          tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
+          tweetI = document.createElement("i");
+          tweetI.className = 'fa fa-twitter';
+          tweetSpanIcon.appendChild(tweetI);
+          tweetA.appendChild(tweetSpanText);
+          tweetA.appendChild(tweetSpanIcon);
+          tweetTags[i].textContent = "";
+          tweetTags[i].appendChild(tweetA);
+        }
+      }
+
+    });
+
+  </script>
+  <!-- Mailchimp linking -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
 
 
 
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+  <script>
+    var spy = new Gumshoe("#toc-content a", {
+      navClass:"active",
+      contentClass:"underline",
+      nested:0,
+      nestedClass:"active",
+      offset:20,
+      reflow:1,
+      events:1
+    });
+
+    var coll = document.getElementsByClassName("toc-item-1");
+    var i;
+    var chevron_up = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z\"></path></svg>"
+    var chevron_down = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z\"></path></svg>"
+    for (i = 0; i < coll.length; i++) {
+      if (coll[i].childElementCount > 1) {
+        sign = document.createElement('div');
+        sign.className = "toc-sign";
+        sign.innerHTML = chevron_down;
+        coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
+        coll[i].addEventListener("click", function() {
+          var content = this.lastElementChild;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            this.firstElementChild.nextSibling.innerHTML = chevron_down;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            this.firstElementChild.nextSibling.innerHTML = chevron_up;
+          }
+        });
+      }
+    }
+  </script>
+
+
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "CommonHTML": { linebreaks: { automatic: true } }
+    });
+  </script>
+  <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
 <script src="./assets/js/main.js"></script>

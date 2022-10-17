@@ -1,5 +1,5 @@
 ---
-layout: postwithlatex
+layout: post
 read_time: true
 show_date: true
 title:  GAN
@@ -8,6 +8,8 @@ description: arrange notes
 img: posts/20220927/1.jpg 
 tags: [note]
 author: Quehry
+mathjax: yes
+toc: yes
 ---
 
 # 目录

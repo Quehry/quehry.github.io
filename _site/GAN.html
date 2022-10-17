@@ -127,6 +127,8 @@
 <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
 	
+	<link rel="stylesheet" href="./assets/css/highlighter/syntax-base16.monokai.dark.css">
+	
 <head>
   <body>
     
@@ -340,7 +342,15 @@
 </div>
 </aside>
 
-        
+        <aside class="toc">
+  <nav class="toc-nav">
+    <li class="toc-title">
+      <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
+    </li>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#目录">目录</a></li><li class="toc-item-1"><a href="#1-博客简介">1. 博客简介</a></li><li class="toc-item-1"><a href="#2-gan简介">2. GAN简介</a></li><li class="toc-item-1"><a href="#3-adversarial-nets">3. Adversarial nets</a></li><li class="toc-item-1"><a href="#4-理论原理">4. 理论原理</a></li><li class="toc-item-1"><a href="#5-其他">5. 其他</a></li></ul>
+  </nav>
+</aside>
+
         
         <h1 id="目录">目录</h1>
 
@@ -568,7 +578,7 @@
     
     <p class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </p>
   
@@ -680,23 +690,7 @@
 
 </div>
 
-<!-- <head>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head> -->
 
-<style>
-  table {
-  margin: auto;
-  }
-</style>
     <div class="top" title="Top">
       <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z" class=""></path></svg>
     </div>
@@ -818,9 +812,114 @@
 <script src="./assets/js/jquery-3.6.0.min.js"></script>
 
 
+  <script>
+    function toggle_comments(){
+        document.getElementById('comment-curtain').classList.toggle('hide')
+        document.getElementById('disqus_thread').classList.toggle('show')
+    }
+
+    function copyToClipboard() {
+      navigator.clipboard.writeText('http://localhost:4000/GAN.html').then(function() {
+      alerts = document.getElementsByClassName('alert')
+      for (i=0; i < alerts.length; i++){
+        alerts[i].innerHTML='\u00ABlink copied\u00BB';
+        setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
+      };
+      }, function() {
+        prompt("Unable to copy, please use this link:", "http://localhost:4000/GAN.html");
+      });
+    }
+
+    $(function () {
+      if (document.getElementById('comment-curtain') == null){
+        document.getElementById('disqus_thread').classList.toggle('show')
+      }
+
+      var tweetTags = document.getElementsByTagName("tweet");
+
+      if (tweetTags != null){
+        for (i=0; i<tweetTags.length; i++){
+          tweetA = document.createElement("a")
+          tweetA.href = 'https://twitter.com/share?text='
+                       + encodeURIComponent(tweetTags[i].textContent)
+                       + '&via=QuehryS&url='
+                       + window.location.href;
+          tweetA.target = "_blank";
+          tweetA.className = 'twitter';
+          tweetSpanText = document.createElement('span');
+          tweetSpanText.className = 'tweetText';
+          tweetSpanText.appendChild(document.createTextNode(tweetTags[i].textContent));
+          tweetSpanIcon = document.createElement('span');
+          tweetSpanIcon.className = 'tweetIcon';
+          tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
+          tweetI = document.createElement("i");
+          tweetI.className = 'fa fa-twitter';
+          tweetSpanIcon.appendChild(tweetI);
+          tweetA.appendChild(tweetSpanText);
+          tweetA.appendChild(tweetSpanIcon);
+          tweetTags[i].textContent = "";
+          tweetTags[i].appendChild(tweetA);
+        }
+      }
+
+    });
+
+  </script>
+  <!-- Mailchimp linking -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
 
 
 
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+  <script>
+    var spy = new Gumshoe("#toc-content a", {
+      navClass:"active",
+      contentClass:"underline",
+      nested:0,
+      nestedClass:"active",
+      offset:20,
+      reflow:1,
+      events:1
+    });
+
+    var coll = document.getElementsByClassName("toc-item-1");
+    var i;
+    var chevron_up = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z\"></path></svg>"
+    var chevron_down = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z\"></path></svg>"
+    for (i = 0; i < coll.length; i++) {
+      if (coll[i].childElementCount > 1) {
+        sign = document.createElement('div');
+        sign.className = "toc-sign";
+        sign.innerHTML = chevron_down;
+        coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
+        coll[i].addEventListener("click", function() {
+          var content = this.lastElementChild;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            this.firstElementChild.nextSibling.innerHTML = chevron_down;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            this.firstElementChild.nextSibling.innerHTML = chevron_up;
+          }
+        });
+      }
+    }
+  </script>
+
+
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "CommonHTML": { linebreaks: { automatic: true } }
+    });
+  </script>
+  <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
 <script src="./assets/js/main.js"></script>

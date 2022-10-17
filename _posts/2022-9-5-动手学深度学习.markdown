@@ -9,6 +9,7 @@ img: posts/20220905/1.jpg
 tags: [note]
 author: Quehry
 mathjax: yes
+toc: yes
 ---
 
 <!-- TOC -->

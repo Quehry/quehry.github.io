@@ -22,7 +22,7 @@
   "headline": "Latent Diffusion Model",
   "abstract": "",
     "keywords": "notes",
-    "wordcount": "2",
+    "wordcount": "25",
     "image": ["http://localhost:4000/assets/imgposts/20221016/1.jpg"],
   "datePublished": "2022-10-16 00:00:00 +0800",
   "dateModified": "2022-10-16 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="2"/>
+<meta data-rh="true" name="twitter:data1" content="25"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20221016/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -170,7 +170,7 @@
   </span>
 
         <div class="post-excerpt">
-            <h1 id="ldm简介">LDM简介</h1><ul>  <li><a href="https://arxiv.org/abs/2112.10752" target="_blank">LDM</a></li></ul><a class="read-more" href="./Latent-Diffusion-Model.html"> read more</a>
+            <!-- TOC --><ul>  <li><a href="#1-ldm简介">1. LDM简介</a></li>  <li><a href="#2-模型">2. 模型</a></li></ul><!-- /TOC --><h1 id="1-ldm简介">1. LDM简介</h1><p>Latent Diffusion Model(LDM)是Diffusion Model的改进版本。扩散模型相比于之前的生成模型而言，已经能取得非常好的效果，但是扩散模型有个特点，贵。不仅训练贵，而且推理也很贵。为了节省空间和资源，LDM将反向扩散过程在隐空间中进行，而不是之前的逐像素进行反向扩散(因为隐空间的维度比原始图片要小，能让训练和推断变得不那么贵)。LDM与扩散模型最大的区别就是隐空间，模型在github上开源，stable diffusion也是基于latent diffusion进行实现</p><ul>  <li><a href="https://arxiv.org/abs/2112.10752" target="_blank">LDM</a></li>  <li><a href="https://github.com/CompVis/latent-diffusion" target="_blank">github</a></li></ul><h1 id="2-模型">2. 模型</h1><p>LDM的模型如下图所示:</p><center><img src="../assets/img/posts/20221016/2.jpg" /></center><ul>  <li>前向扩散: 输入x首先经过压缩后得到隐空间表达z，正常的前向扩散得到$z_T$</li>  <li>反向扩散: 隐空间的随机噪声$z_T$经过T步去噪U-Net后得到z，然后z经过解压得到原始大小的图片$\tilde{x}$</li></ul><p>我们关心的是模型反向扩散的过程，关于图片压缩和解压的模型，作者尝试了VAE和VQVAE，返现VAE的表现稍微好一点，所以选择了VAE作为antoencoder。与一般的扩散模型一样，LDM也可以做条件生成，LDM采取的策略是classifier-free guidance，具体实现方法是将预处理好的y与U-Net的每一个中间表达都应用注意力机制，其中查询是U-Net的中间层表达，key和value是预处理好的y。预处理的encoder与y相关，如果y是文本，那么encoder可以是clip的text encoder，也可以是transformer-based encoder</p><center><img src="../assets/img/posts/20221016/3.jpg" /></center><a class="read-more" href="./Latent-Diffusion-Model.html"> read more</a>
         </div>
   </div>
 </section>
@@ -342,12 +342,45 @@
 </div>
 </aside>
 
+        <aside class="toc">
+  <nav class="toc-nav">
+    <li class="toc-title">
+      <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
+    </li>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#1-ldm简介">1. LDM简介</a></li><li class="toc-item-1"><a href="#2-模型">2. 模型</a></li></ul>
+  </nav>
+</aside>
+
         
-        
-        <h1 id="ldm简介">LDM简介</h1>
+        <!-- TOC -->
+
+<ul>
+  <li><a href="#1-ldm简介">1. LDM简介</a></li>
+  <li><a href="#2-模型">2. 模型</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-ldm简介">1. LDM简介</h1>
+<p>Latent Diffusion Model(LDM)是Diffusion Model的改进版本。扩散模型相比于之前的生成模型而言，已经能取得非常好的效果，但是扩散模型有个特点，贵。不仅训练贵，而且推理也很贵。为了节省空间和资源，LDM将反向扩散过程在隐空间中进行，而不是之前的逐像素进行反向扩散(因为隐空间的维度比原始图片要小，能让训练和推断变得不那么贵)。LDM与扩散模型最大的区别就是隐空间，模型在github上开源，stable diffusion也是基于latent diffusion进行实现</p>
 <ul>
   <li><a href="https://arxiv.org/abs/2112.10752" target="_blank">LDM</a></li>
+  <li><a href="https://github.com/CompVis/latent-diffusion" target="_blank">github</a></li>
 </ul>
+
+<h1 id="2-模型">2. 模型</h1>
+<p>LDM的模型如下图所示:</p>
+
+<center><img src="../assets/img/posts/20221016/2.jpg" /></center>
+
+<ul>
+  <li>前向扩散: 输入x首先经过压缩后得到隐空间表达z，正常的前向扩散得到$z_T$</li>
+  <li>反向扩散: 隐空间的随机噪声$z_T$经过T步去噪U-Net后得到z，然后z经过解压得到原始大小的图片$\tilde{x}$</li>
+</ul>
+
+<p>我们关心的是模型反向扩散的过程，关于图片压缩和解压的模型，作者尝试了VAE和VQVAE，返现VAE的表现稍微好一点，所以选择了VAE作为antoencoder。与一般的扩散模型一样，LDM也可以做条件生成，LDM采取的策略是classifier-free guidance，具体实现方法是将预处理好的y与U-Net的每一个中间表达都应用注意力机制，其中查询是U-Net的中间层表达，key和value是预处理好的y。预处理的encoder与y相关，如果y是文本，那么encoder可以是clip的text encoder，也可以是transformer-based encoder</p>
+
+<center><img src="../assets/img/posts/20221016/3.jpg" /></center>
 
         <aside class="sidebar inline" id="post-end">
     
@@ -528,7 +561,7 @@
     
     <p class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </p>
   
@@ -819,6 +852,42 @@
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
 
 
+
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+  <script>
+    var spy = new Gumshoe("#toc-content a", {
+      navClass:"active",
+      contentClass:"underline",
+      nested:0,
+      nestedClass:"active",
+      offset:20,
+      reflow:1,
+      events:1
+    });
+
+    var coll = document.getElementsByClassName("toc-item-1");
+    var i;
+    var chevron_up = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z\"></path></svg>"
+    var chevron_down = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z\"></path></svg>"
+    for (i = 0; i < coll.length; i++) {
+      if (coll[i].childElementCount > 1) {
+        sign = document.createElement('div');
+        sign.className = "toc-sign";
+        sign.innerHTML = chevron_down;
+        coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
+        coll[i].addEventListener("click", function() {
+          var content = this.lastElementChild;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            this.firstElementChild.nextSibling.innerHTML = chevron_down;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            this.firstElementChild.nextSibling.innerHTML = chevron_up;
+          }
+        });
+      }
+    }
+  </script>
 
 
 

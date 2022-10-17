@@ -1,5 +1,5 @@
 ---
-layout: postwithlatex
+layout: post
 read_time: true
 show_date: true
 title:  T5模型
@@ -8,6 +8,8 @@ description: arrange notes
 img: posts/20220919/2.jpg 
 tags: [paper]
 author: Quehry
+mathjax: yes
+toc: yes
 ---
 
 <!-- TOC -->

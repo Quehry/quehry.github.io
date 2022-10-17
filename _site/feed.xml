@@ -1,7 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-16T17:38:53+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">Latent Diffusion Model</title><link href="http://localhost:4000/Latent-Diffusion-Model.html" rel="alternate" type="text/html" title="Latent Diffusion Model" /><published>2022-10-16T00:00:00+08:00</published><updated>2022-10-16T00:00:00+08:00</updated><id>http://localhost:4000/Latent-Diffusion-Model</id><content type="html" xml:base="http://localhost:4000/Latent-Diffusion-Model.html"><![CDATA[<h1 id="ldm简介">LDM简介</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-18T00:12:47+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">Latent Diffusion Model</title><link href="http://localhost:4000/Latent-Diffusion-Model.html" rel="alternate" type="text/html" title="Latent Diffusion Model" /><published>2022-10-16T00:00:00+08:00</published><updated>2022-10-16T00:00:00+08:00</updated><id>http://localhost:4000/Latent-Diffusion-Model</id><content type="html" xml:base="http://localhost:4000/Latent-Diffusion-Model.html"><![CDATA[<!-- TOC -->
+
+<ul>
+  <li><a href="#1-ldm简介">1. LDM简介</a></li>
+  <li><a href="#2-模型">2. 模型</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-ldm简介">1. LDM简介</h1>
+<p>Latent Diffusion Model(LDM)是Diffusion Model的改进版本。扩散模型相比于之前的生成模型而言，已经能取得非常好的效果，但是扩散模型有个特点，贵。不仅训练贵，而且推理也很贵。为了节省空间和资源，LDM将反向扩散过程在隐空间中进行，而不是之前的逐像素进行反向扩散(因为隐空间的维度比原始图片要小，能让训练和推断变得不那么贵)。LDM与扩散模型最大的区别就是隐空间，模型在github上开源，stable diffusion也是基于latent diffusion进行实现</p>
 <ul>
   <li><a href="https://arxiv.org/abs/2112.10752" target="_blank">LDM</a></li>
-</ul>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[LDM简介 LDM]]></summary></entry><entry><title type="html">扩散模型</title><link href="http://localhost:4000/Diffusion-Model.html" rel="alternate" type="text/html" title="扩散模型" /><published>2022-10-12T00:00:00+08:00</published><updated>2022-10-12T00:00:00+08:00</updated><id>http://localhost:4000/Diffusion-Model</id><content type="html" xml:base="http://localhost:4000/Diffusion-Model.html"><![CDATA[<!-- TOC -->
+  <li><a href="https://github.com/CompVis/latent-diffusion" target="_blank">github</a></li>
+</ul>
+
+<h1 id="2-模型">2. 模型</h1>
+<p>LDM的模型如下图所示:</p>
+
+<center><img src="../assets/img/posts/20221016/2.jpg" /></center>
+
+<ul>
+  <li>前向扩散: 输入x首先经过压缩后得到隐空间表达z，正常的前向扩散得到$z_T$</li>
+  <li>反向扩散: 隐空间的随机噪声$z_T$经过T步去噪U-Net后得到z，然后z经过解压得到原始大小的图片$\tilde{x}$</li>
+</ul>
+
+<p>我们关心的是模型反向扩散的过程，关于图片压缩和解压的模型，作者尝试了VAE和VQVAE，返现VAE的表现稍微好一点，所以选择了VAE作为antoencoder。与一般的扩散模型一样，LDM也可以做条件生成，LDM采取的策略是classifier-free guidance，具体实现方法是将预处理好的y与U-Net的每一个中间表达都应用注意力机制，其中查询是U-Net的中间层表达，key和value是预处理好的y。预处理的encoder与y相关，如果y是文本，那么encoder可以是clip的text encoder，也可以是transformer-based encoder</p>
+
+<center><img src="../assets/img/posts/20221016/3.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">扩散模型</title><link href="http://localhost:4000/Diffusion-Model.html" rel="alternate" type="text/html" title="扩散模型" /><published>2022-10-12T00:00:00+08:00</published><updated>2022-10-12T00:00:00+08:00</updated><id>http://localhost:4000/Diffusion-Model</id><content type="html" xml:base="http://localhost:4000/Diffusion-Model.html"><![CDATA[<!-- TOC -->
 
 <ul>
   <li><a href="#1-扩散模型简介">1. 扩散模型简介</a></li>
@@ -462,11 +487,11 @@ p_\theta(x_t|x_{t+1})=\mathcal{N}(\mu, \Sigma)
   <li><a href="https://ieeexplore.ieee.org/abstract/document/9860098" target="_blank">semantic facets</a></li>
 </ul>
 
-<p>这是两篇关于short-answer assessment的论文，所谓short-answer assessment就是对简答题的答案进行评估(和参考答案对比)，第一篇提出了利用BERT解决这个问题，第二篇提出了改进了评估过程，用多个semantic facets来评估short-answer，这篇博客对这两篇论文进行简单的整理</p>
+<p>这是两篇关于short-answer assessment的论文，所谓short-answer assessment就是对简答题的答案进行评估(和参考答案对比)，第一篇提出了利用BERT解决这个问题，第二篇提出了改进了评估过程，用多个semantic facets来评估short-answer，这篇博客记录一下对这两篇论文的精读</p>
 
 <h1 id="2-bert-based-deep-neural-networks">2. BERT-Based Deep Neural Networks</h1>
 <h2 id="21-abstract">2.1. Abstract</h2>
-<p>Automatic short-answer grading(ASAG)，即自动短文本评分任务，是智慧辅导系统的重要组成部分。ASAG目前还存在很多挑战，作者提出了两个主要原因: 1)高精度评分任务需要对answer text有很深的语义理解; 2)ASAG任务的语料一般都很小，不能为深度学习提供足够的训练数据。为了解决这些挑战，作者提出用BERT-based网络来解决ASAG任务的挑战: 1)用预训练模型BERT来encoder答案文本就可以客服语料太小的问题。2)为了生成足够强的语义理解，作者在BERT输出层后加上了一个精炼层(由LSTM和Capsule网络串联组成) 3)作者提出一种triple-hot loss来处理ASAG的回归问题。实验结果表明模型的效果在SemEval-2013和Mohler数据集上表现比SOTA要好。模型在github上<a href="https://github.com/wuhan-1222/ASAG" target="_blank">开源</a></p>
+<p>Automatic short-answer grading(ASAG)，即自动短文本评分任务，是智慧辅导系统的重要组成部分。ASAG目前还存在很多挑战，作者提出了两个主要原因: 1)高精度评分任务需要对answer text有很深的语义理解; 2)ASAG任务的语料一般都很小，不能为深度学习提供足够的训练数据。为了解决这些挑战，作者提出用BERT-based网络来解决ASAG任务的挑战: 1)用预训练模型BERT来encoder答案文本就可以克服语料太小的问题。2)为了生成足够强的语义理解，作者在BERT输出层后加上了一个精炼层(由LSTM和Capsule网络串联组成) 3)作者提出一种triple-hot loss来处理ASAG的回归问题。实验结果表明模型的效果在SemEval-2013和Mohler数据集上表现比SOTA要好。模型在github上<a href="https://github.com/wuhan-1222/ASAG" target="_blank">开源</a></p>
 
 <h2 id="22-introduction">2.2. Introduction</h2>
 <p>考试和评估是智慧辅导系统(intelligent tutoring systems, ITSs)的重要组成部分，可以获得学生们的实时知识认知水平，也能为学生们提供个性化的学习方案。多选题是考试的重要组成部分，但是多选题有两个明显的短板: 1)多选题只提供部分选择 2)有些学生的答案可能是蒙出来的。ASAG可以解决上述问题，学生们为简答题提供一个short text，然后ASAG来评估short text是否正确，具体来说评估结果有五类: Correct、Partically correct、Contradictory、Irrelevant、Nondomain。</p>
@@ -681,13 +706,9 @@ L(\theta)=&amp;-\sum_{i=1}^{|\Omega|}\left(\log \left(p\left(y_i^{-1} \mid Z_i, 
       <li>Unseen Answers(UA): 和训练集有相同的题目和参考答案，但是学生的回答不同</li>
       <li>Unseen Questions(UQ): 和训练集的问题不同，但是属于同一个领域</li>
       <li>Unseen Domains(UD): 和训练集的问题不同，且不属于同一个领域</li>
+      <li>对于这个数据集，作者用三个性能度量(accuracy, weighted-F1, macro-average F1)来评估两个子任务(three-way, five-way)</li>
     </ul>
   </li>
-</ol>
-
-<p>对于这个数据集，作者用三个性能度量(accuracy, weighted-F1, macro-average F1)来评估两个子任务(three-way, five-way)</p>
-
-<ol>
   <li>Mohler dataset: 数据集<a href="http://web.eecs.umich.edu/?mihalcea/downloads/ ShortAnswerGrading_v2.0.zip" target="_blank">开源</a>。数据集由Mohler团队从University of North Texas的一门计算机科学课程的两个考试和十个测试收集整理。它包含80个问题和2273个学生的答案，每个答案都由两名老师打分(0-5, integer)，由于是平均而来，所以一共由11种分类结果，Mohler数据集同样是ASAG任务的一个benchmark，作者可以将数据集变成了11个类别的分类数据集。</li>
 </ol>
 
@@ -932,10 +953,10 @@ a_{i,j}=\frac{e^{(h_i^F)^T\cdot h_j^R}}{\sum_{j'=1}^{N_R}e^{(h_i^F)^T\cdot h_{j'
 <center><img src="../assets/img/posts/20221010/37.jpg" /></center>
 
 <p>从表格中可以看出，GBT-Predict效果和GBT-Gold的效果差不多，根据预测的语义面匹配状态，我们有:</p>
-<ol>
+<ul>
   <li>Aggregated facet matching states: 一个学生答案的预测语义面有很多，预测的语义面匹配状态需要聚合在一起。作者提出了两种聚合方法: 第一种软的是平均了所有语义面的预测匹配状态的概率，第二种硬的做法是针对每个语义面，只保留概率最高的匹配状态，两种方法都可以获得匹配状态的分布</li>
   <li>Pattern matching: 将网络结构的输出aggregate之后，与五种类型的真实匹配状态分布对比后，了解该答案的预测匹配状态分布属于哪一种类型。具体的对比方法是选取KL散度最小的作为该答案的类型，KL散度能测量两个分布的差距，0代表两个分布相似度最高，假如预测的分布为$\tilde{p(x)}$，那么KL散度为:</li>
-</ol>
+</ul>
 
 <p>
 \begin{equation}
@@ -943,9 +964,9 @@ D(p_k(x)\|\tilde{p(x)}=\sum_{x\in C}p_k(x)log\frac{p_k(x)}{\tilde{p(x)}})
 \end{equation}
 </p>
 
-<ol>
+<ul>
   <li>Confidence of prediction: 除了pattern matching外，匹配状态的confidence level也包含了很多信息。通过aggregate获得语义面的匹配状态分布后，取每个语义面预测概率值最高的概率值作为该语义面的confidence level。那么我们可以计算出Noisy-OR score:</li>
-</ol>
+</ul>
 
 <p>
 \begin{equation}
@@ -989,14 +1010,50 @@ Noisy-OR=1-\prod_{i=1}^{N_F}(1-\tilde{p_i})
 <p>future work: larger corpora, 优化语义面提取的算法, 预测state的算法使用更新的网络(比如bert及其衍生网络), facet的实用价值(比如提高解释性和用作feedback)</p>
 
 <h2 id="38-小结">3.8. 小结</h2>
-<p>facet这篇论文的着重点就是提出了语义面，这篇论文的出发点其实很好想到，就是评估模型的性能可能无法有很大的提升了，那么我将答案分成好几个小部分进行评估是否能提升模型的性能？于是便有了这篇论文，facet可以理解成参考答案的知识点，它是否在学生答案中表达出就是它的states。论文做了两个工作，第一个是直接基于有facet标注和state标注的数据集上进行实验，因为不同问题的facet数量不一样，所以用state的分布来表达可能会更好，首先通过统计得到了不同类型答案的state分布，这为后续KL散度这一特征有帮助。然后使用GBT作为预测模型，通过state的分布来预测答案的类型，得到了较好的效果。第二个实验基于正常的数据集，就是不包含facet和state的标签，这也是比较一般的情况，毕竟标注facet和state非常贵。首先每个问题没有了facet，那么首先就得设计算法来得到问题的facet，作者提出了一种基于Dependency parsing tree得到facet的方法，并在附录B对这个算法进行了评价。得到facet后还是没有state，所以得设计一个网络来得到facet的状态，模型的输入是facet和学生的response，利用LSTM来获得隐状态，并用注意力机制找到facet的近似表示，然后连结了facet的隐状态的各类信息，最后加个MLP得到state。到目前为止，已经有了facet和state，那么就可以得到facet的特征来作预测，相当于特征工程。facet的特征使用到的有: state分布, 与第一个工作中真实分布对比的KL散度, 运用到confidence的Noisy-OR。除此之外，作者还对比了其余的特征，比如语义相似度和semantic entailment(这是已有的工作)。最后将这些特征fusion之后的效果比较好。</p>
+<p>facet这篇论文的着重点就是提出了语义面，这篇论文的出发点其实很好想到，就是评估模型的性能可能无法有很大的提升了，那么我将答案分成好几个小部分进行评估是否能提升模型的性能？于是便有了这篇论文，facet可以理解成参考答案的知识点，它是否在学生答案中表达出就是它的states。论文做了两个工作，第一个是直接基于有facet标注和state标注的数据集上进行实验，因为不同问题的facet数量不一样，所以用state的分布来表达可能会更好，首先通过统计得到了不同类型答案的state分布，这为后续KL散度这一特征有帮助。然后使用GBT作为预测模型，通过state的分布来预测答案的类型，得到了较好的效果。第二个实验基于正常的数据集，就是不包含facet和state的标签，这也是比较一般的情况，毕竟标注facet和state非常贵。首先每个问题没有了facet，那么首先就得设计算法来得到问题的facet，作者提出了一种基于Dependency parsing tree得到facet的方法，并在附录B对这个算法进行了评价。得到facet后还是没有state，所以得设计一个网络来得到facet的状态，模型的输入是facet和学生的response，利用LSTM来获得隐状态，并用注意力机制找到facet的近似表示，然后连结了facet的隐状态的各类信息，最后加个MLP得到state。到目前为止，已经有了facet和state，那么就可以得到facet的特征来作预测，相当于特征工程。facet的特征使用到的有: state分布, 与第一个工作中真实分布对比的KL散度, 运用到confidence的Noisy-OR。除此之外，作者还对比了其余的特征，比如语义相似度和semantic entailment(这是已有的工作)。最后将这些特征fusion之后的效果比较好</p>
 
 <h1 id="4-todo">4. TODO</h1>
 <ul>
-  <li>看GBT, GPT</li>
+  <li>看GBT, GPT, ELMo</li>
   <li>深入了解一下ASAG用特征工程解决的思路</li>
   <li>想想改进方向</li>
-</ul>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[read and arrange paper about short answer assessment]]></summary></entry><entry><title type="html">AutoEncoder系列整理</title><link href="http://localhost:4000/AutoEncoder-Series.html" rel="alternate" type="text/html" title="AutoEncoder系列整理" /><published>2022-10-08T00:00:00+08:00</published><updated>2022-10-08T00:00:00+08:00</updated><id>http://localhost:4000/AutoEncoder-Series</id><content type="html" xml:base="http://localhost:4000/AutoEncoder-Series.html"><![CDATA[<h1 id="1-ae简介">1. AE简介</h1>
+  <li>代码</li>
+</ul>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[read and arrange paper about short answer assessment]]></summary></entry><entry><title type="html">AutoEncoder系列整理</title><link href="http://localhost:4000/AutoEncoder-Series.html" rel="alternate" type="text/html" title="AutoEncoder系列整理" /><published>2022-10-08T00:00:00+08:00</published><updated>2022-10-08T00:00:00+08:00</updated><id>http://localhost:4000/AutoEncoder-Series</id><content type="html" xml:base="http://localhost:4000/AutoEncoder-Series.html"><![CDATA[<!-- TOC -->
+
+<ul>
+  <li><a href="#1-ae简介">1. AE简介</a></li>
+  <li><a href="#2-dae">2. DAE</a></li>
+  <li><a href="#3-vae">3. VAE</a>
+    <ul>
+      <li><a href="#31-数学原理">3.1. 数学原理</a>
+        <ul>
+          <li><a href="#311-variational-lower-bound">3.1.1. variational lower bound</a></li>
+          <li><a href="#312-sgvb-estimator-and-aevb-algorithm">3.1.2. SGVB estimator and AEVB algorithm</a></li>
+        </ul>
+      </li>
+      <li><a href="#32-vae模型">3.2. VAE模型</a></li>
+      <li><a href="#33-总结">3.3. 总结</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-vqvae">4. VQVAE</a>
+    <ul>
+      <li><a href="#41-简介">4.1. 简介</a></li>
+      <li><a href="#42-vqvae模型">4.2. VQVAE模型</a>
+        <ul>
+          <li><a href="#421-离散隐变量">4.2.1. 离散隐变量</a></li>
+          <li><a href="#422-模型">4.2.2. 模型</a></li>
+          <li><a href="#423-生成过程">4.2.3. 生成过程</a></li>
+        </ul>
+      </li>
+      <li><a href="#43-vqvae2">4.3. VQVAE2</a></li>
+      <li><a href="#44-其他">4.4. 其他</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-ae简介">1. AE简介</h1>
 <p>AutoEncoder，即AE，自编码器，是一类在半监督学习和非监督学习中使用的人工神经网络，其功能是通过将输入信息作为学习目标，对输入信息进行表征学习(representation learning)，编码其实就是特征表示</p>
 
 <p>半监督学习(semi-supervised learning)的训练数据一部分是有标签的，另一部分没有标签，而没标签的数量一般大于有标签数据的数量</p>
@@ -1035,10 +1092,26 @@ Noisy-OR=1-\prod_{i=1}^{N_F}(1-\tilde{p_i})
 <p>作者说不会对边缘概率分布和后验概率分布做一般的近似假设，所以一些常用的方法可能不行，作者提出用辨别模型$q_\Phi(z|x)$作为真实后验概率$p_\theta(z|x)$的近似，这里的$\Phi$也就是变分参数(variational parameters)，variational有两个作用，一个是可以用q(z|x)来近似p(z|x)，另一个是优化了lower bound的梯度计算</p>
 
 <h3 id="311-variational-lower-bound">3.1.1. variational lower bound</h3>
-<p>通过最大边缘似然函数$p_\theta(x)$来获得参数$\theta$的估计值，对数似然函数log$p_\theta(x)$可写成:(x都指$x^{(i)}$)</p>
-<center><img src="../assets/img/posts/20221008/4.jpg" /></center>
+<p>通过最大边缘似然函数$p_\theta(x)$来获得参数$\theta$的估计值，对数似然函数log$p_\theta(x)$可写成(x都指$x^{(i)}$):</p>
+
+<p>
+\begin{equation}
+logp_\theta(x^{(i)})=D_{KL}(q_\phi(z\mid x^{(i)})\|p_\theta(z\mid x^{(i)}))+\mathcal{L}(\theta, \phi;x^{(i)})
+\end{equation}
+</p>
+
 <p>推导过程为:</p>
-<center><img src="../assets/img/posts/20221008/5.jpg" /></center>
+
+<p style="font-size: 18px">
+\begin{equation}
+\begin{aligned}
+logp_\theta(x)&amp;=E_{z\sim q_\phi(z\mid x)}[logp_\theta(x)] \\
+&amp;=E_{z\sim q_\phi(z\mid x)}[logq_\phi(z\mid x)-logp_\theta(z\mid x)]+E_{z\sim q_\phi(z\mid x)}[-logq_\phi(z\mid x)-logp_\theta(x, z)] \\
+&amp;=D_{KL}(q_\phi(z\mid x)\|p_\theta(z\mid x))+\mathcal{L}(\theta,\phi;x)
+\end{aligned}
+\end{equation}
+</p>
+
 <p>等式右边的第一项是KL散度，第二项是Evidence lower bound(ELBO)，因为KL散度非负，所以有:</p>
 <center><img src="../assets/img/posts/20221008/6.jpg" /></center>
 <p>ELBO可以进一步推导，有:</p>
@@ -1179,7 +1252,8 @@ Noisy-OR=1-\prod_{i=1}^{N_F}(1-\tilde{p_i})
   <li>GAN在刚提出的时候还是有很多缺点的，比如模型还是比较难训练的，但是后续有很多很多的工作来优化原始的GAN模型，所以GAN更像是抛出了一个引子，让后续模型来优化它</li>
   <li>GAN本质上就是左右手互博，目标函数设计的也很好</li>
 </ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[arrange notes]]></summary></entry><entry><title type="html">重要时间点及事件</title><link href="http://localhost:4000/Important-Event.html" rel="alternate" type="text/html" title="重要时间点及事件" /><published>2022-09-26T00:00:00+08:00</published><updated>2022-09-26T00:00:00+08:00</updated><id>http://localhost:4000/Important-Event</id><content type="html" xml:base="http://localhost:4000/Important-Event.html"><![CDATA[<!-- 2022.9.23 报9月工资 -->
-<!-- 2022.10.10 选3pi的项目 -->]]></content><author><name>Quehry</name></author><category term="daily" /><summary type="html"><![CDATA[for query]]></summary></entry><entry><title type="html">技术分享会笔记(关于text2image)</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E4%BC%9A%E7%AC%94%E8%AE%B0.html" rel="alternate" type="text/html" title="技术分享会笔记(关于text2image)" /><published>2022-09-19T00:00:00+08:00</published><updated>2022-09-19T00:00:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E4%BC%9A%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E4%BC%9A%E7%AC%94%E8%AE%B0.html"><![CDATA[]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[note]]></summary></entry><entry><title type="html">T5模型</title><link href="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="T5模型" /><published>2022-09-19T00:00:00+08:00</published><updated>2022-09-19T00:00:00+08:00</updated><id>http://localhost:4000/T5%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html"><![CDATA[<!-- TOC -->
+<!-- 2022.10.10 选3pi的项目 -->
+<!-- 2022.10.16 二十大 -->]]></content><author><name>Quehry</name></author><category term="daily" /><summary type="html"><![CDATA[for query]]></summary></entry><entry><title type="html">T5模型</title><link href="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="T5模型" /><published>2022-09-19T00:00:00+08:00</published><updated>2022-09-19T00:00:00+08:00</updated><id>http://localhost:4000/T5%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html"><![CDATA[<!-- TOC -->
 
 <ul>
   <li><a href="#1-t5简介">1. T5简介</a></li>
@@ -1977,4 +2051,36 @@ Noisy-OR=1-\prod_{i=1}^{N_F}(1-\tilde{p_i})
   <li>加载bert模型时，可以将预训练好的参数直接放到定义好的网络架构中</li>
   <li>之前很多预训练模型在处理下游任务时，都需要为下游任务设定特定的框架，但是BERT却并不需要设置特定的框架，有时只需要添加一个额外的全连接层即可</li>
   <li>微调只更新部分参数</li>
-</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[d2l note]]></summary></entry></feed>
+</ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[d2l note]]></summary></entry><entry><title type="html">Web速成</title><link href="http://localhost:4000/Web%E9%80%9F%E6%88%90.html" rel="alternate" type="text/html" title="Web速成" /><published>2022-08-03T00:00:00+08:00</published><updated>2022-08-03T00:00:00+08:00</updated><id>http://localhost:4000/Web%E9%80%9F%E6%88%90</id><content type="html" xml:base="http://localhost:4000/Web%E9%80%9F%E6%88%90.html"><![CDATA[<h1 id="1-html学习">1. HTML学习</h1>
+
+<center><img src="../assets/img/posts/20220803/2.jpg" /></center>
+<p><br /></p>
+
+<center><img src="../assets/img/posts/20220803/3.jpg" /></center>
+<p><br /></p>
+
+<center><img src="../assets/img/posts/20220803/4.jpg" /></center>
+
+<h1 id="2-css学习">2. CSS学习</h1>
+
+<center><img src="../assets/img/posts/20220803/5.jpg" /></center>
+<p><br /></p>
+
+<center><img src="../assets/img/posts/20220803/6.jpg" /></center>
+<p><br /></p>
+
+<center><img src="../assets/img/posts/20220803/7.jpg" /></center>
+<p><br /></p>
+
+<center><img src="../assets/img/posts/20220803/8.jpg" /></center>
+<p><br /></p>
+
+<center><img src="../assets/img/posts/20220803/9.jpg" /></center>
+<p><br /></p>
+
+<h1 id="3-js学习">3. JS学习</h1>
+<center><img src="../assets/img/posts/20220803/10.jpg" /></center>
+<p><br /></p>
+
+<center><img src="../assets/img/posts/20220803/11.jpg" /></center>
+<p><br /></p>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[速成HTML、CSS、JS]]></summary></entry></feed>
