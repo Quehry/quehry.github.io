@@ -3,6 +3,16 @@
 [   
       
   {
+  "tag" : "algorithm",
+  "posts" : [
+      
+      "./Algorithm-Practice.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "artificial intelligence",
   "posts" : [
       
@@ -167,6 +177,8 @@
   {
   "tag" : "notes",
   "posts" : [
+      
+      "./Linux-Command.html",
       
       "./Latent-Diffusion-Model.html",
       

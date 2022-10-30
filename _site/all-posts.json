@@ -1,6 +1,10 @@
 {
   "posts" : [
     
+    "./Linux-Command.html",
+    
+    "./Algorithm-Practice.html",
+    
     "./Latent-Diffusion-Model.html",
     
     "./Diffusion-Model.html",

@@ -1,0 +1,31 @@
+I"�<h1 id="0-简介">0. 简介</h1>
+<p>该博客主要记录了linux常用命令，便于后续使用时查找命令，其余的一些博客:</p>
+<ul>
+  <li><a href="https://docs.rockylinux.org/books/admin_guide/03-commands" target="_blank">linux command documentation</a></li>
+  <li><a href="https://blog.csdn.net/weixin_49851451/article/details/125821580?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-125821580.nonecase&amp;spm=1018.2226.3001.4187" target="_blank">中文博客</a></li>
+  <li><a href="https://blog.csdn.net/xulong_08/article/details/81463054" target="_blank">linux相关</a></li>
+</ul>
+
+<h1 id="1-zip和unzip">1. zip和unzip</h1>
+<ul>
+  <li>压缩:
+    <pre><code class="language-linux">zip [parameters] target.zip source
+</code></pre>
+    <p>常用参数有:</p>
+    <ol>
+      <li>-r 将指定的目录下所有的文件和子目录一并压缩</li>
+      <li>-x 压缩时排除某一文件夹或文件，注意要加引号，因为是字符串，比如<code class="language-plaintext highlighter-rouge">-x "/root/autodl-tmp/txt2img_algorithms/datasets/*"</code></li>
+    </ol>
+  </li>
+  <li>解压
+    <pre><code class="language-linux">unzip [parameters] source.zip
+</code></pre>
+    <p>常用参数有:</p>
+    <ol>
+      <li>-l 查看zip文件中包含什么</li>
+      <li>-t 检查压缩文件是否有问题</li>
+      <li>-d</li>
+    </ol>
+  </li>
+</ul>
+:ET

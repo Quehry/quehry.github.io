@@ -22,7 +22,7 @@
   "headline": "C语言程序设计",
   "abstract": "网课记录",
     "keywords": "note",
-    "wordcount": "935",
+    "wordcount": "941",
     "image": ["http://localhost:4000/assets/imgposts/20220225/1.jpg"],
   "datePublished": "2022-02-25 00:00:00 +0800",
   "dateModified": "2022-02-25 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="网课记录">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="935"/>
+<meta data-rh="true" name="twitter:data1" content="941"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20220225/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -127,6 +127,8 @@
 <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
 	
+	<link rel="stylesheet" href="./assets/css/highlighter/syntax-base16.monokai.dark.css">
+	
 <head>
   <body>
     
@@ -168,7 +170,7 @@
   </span>
 
         <div class="post-excerpt">
-            <h1 id="目录">目录</h1><!-- TOC --><ul> <li><a href="#目录">目录</a></li> <li><a href="#1-第一章-c语言快速入门">1. 第一章 C语言快速入门</a> <ul> <li><a href="#11-信息在计算机中的表示">1.1. 信息在计算机中的表示</a> <ul> <li><a href="#111-用0和1表示各种信息">1.1.1. 用0和1表示各种信息</a></li> <li><a href="#112-十进制到二进制的互相转换">1.1.2. 十进制到二进制的互相转换</a></li> <li><a href="#113-k进制小数">1.1.3. K进制小数</a></li> <li><a href="#114-十六进制数到二进制数的相互转换">1.1.4. 十六进制数到二进制数的相互转换</a></li> </ul> </li> <li><a href="#12-c语言快速入门">1.2. C语言快速入门</a></li> <li><a href="#13-变量和数据类型初探">1.3. 变量和数据类型初探</a> <ul> <li><a href="#131-什么是变量">1.3.1. 什么是变量</a></li> <li><a href="#132-变量的命名规则">1.3.2. 变量的命名规则</a></li> <li><a href="#133-c的基本数据类型">1.3.3. C++的基本数据类型</a></li> </ul> </li> <li><a href="#14-变量和数据类型进阶">1.4. 变量和数据类型进阶</a> <ul> <li><a href="#141-数据类型的自动转换">1.4.1. 数据类型的自动转换</a></li> </ul> </li> <li><a href="#15-常量">1.5. 常量</a> <ul> <li><a href="#151-整型常量">1.5.1. 整型常量</a></li> <li><a href="#152-字符型常量">1.5.2. 字符型常量</a></li> <li><a href="#153-符号常量">1.5.3. 符号常量</a></li> </ul> </li> </ul> </li> <li><a href="#2-第二章-输入输出和基本运算">2. 第二章 输入输出和基本运算</a> <ul> <li><a href="#21-输入输出进阶">2.1. 输入输出进阶</a> <ul> <li><a href="#211-输入输出控制符">2.1.1. 输入输出控制符</a></li> <li><a href="#212-用scanf读入不同类型的变量">2.1.2. 用scanf读入不同类型的变量</a></li> <li><a href="#213-控制printf输出整数的宽度">2.1.3. 控制printf输出整数的宽度</a></li> <li><a href="#214-用c的cout进行输出">2.1.4. 用C++的cout进行输出</a></li> <li><a href="#215-用c的cin进行输入">2.1.5. 用C++的cin进行输入</a></li> </ul> </li> <li><a...<a class="read-more" href="./C-Language.html"> read more</a>
+            <h1 id="目录">目录</h1><!-- TOC --><ul> <li><a href="#目录">目录</a></li> <li><a href="#0-简介">0. 简介</a></li> <li><a href="#1-第一章-c语言快速入门">1. 第一章 C语言快速入门</a> <ul> <li><a href="#11-信息在计算机中的表示">1.1. 信息在计算机中的表示</a> <ul> <li><a href="#111-用0和1表示各种信息">1.1.1. 用0和1表示各种信息</a></li> <li><a href="#112-十进制到二进制的互相转换">1.1.2. 十进制到二进制的互相转换</a></li> <li><a href="#113-k进制小数">1.1.3. K进制小数</a></li> <li><a href="#114-十六进制数到二进制数的相互转换">1.1.4. 十六进制数到二进制数的相互转换</a></li> </ul> </li> <li><a href="#12-c语言快速入门">1.2. C语言快速入门</a></li> <li><a href="#13-变量和数据类型初探">1.3. 变量和数据类型初探</a> <ul> <li><a href="#131-什么是变量">1.3.1. 什么是变量</a></li> <li><a href="#132-变量的命名规则">1.3.2. 变量的命名规则</a></li> <li><a href="#133-c的基本数据类型">1.3.3. C++的基本数据类型</a></li> </ul> </li> <li><a href="#14-变量和数据类型进阶">1.4. 变量和数据类型进阶</a> <ul> <li><a href="#141-数据类型的自动转换">1.4.1. 数据类型的自动转换</a></li> </ul> </li> <li><a href="#15-常量">1.5. 常量</a> <ul> <li><a href="#151-整型常量">1.5.1. 整型常量</a></li> <li><a href="#152-字符型常量">1.5.2. 字符型常量</a></li> <li><a href="#153-符号常量">1.5.3. 符号常量</a></li> </ul> </li> </ul> </li> <li><a href="#2-第二章-输入输出和基本运算">2. 第二章 输入输出和基本运算</a> <ul> <li><a href="#21-输入输出进阶">2.1. 输入输出进阶</a> <ul> <li><a href="#211-输入输出控制符">2.1.1. 输入输出控制符</a></li> <li><a href="#212-用scanf读入不同类型的变量">2.1.2. 用scanf读入不同类型的变量</a></li> <li><a href="#213-控制printf输出整数的宽度">2.1.3. 控制printf输出整数的宽度</a></li> <li><a href="#214-用c的cout进行输出">2.1.4. 用C++的cout进行输出</a></li> <li><a href="#215-用c的cin进行输入">2.1.5. 用C++的cin进行输入</a></li>...<a class="read-more" href="./C-Language.html"> read more</a>
         </div>
   </div>
 </section>
@@ -340,7 +342,15 @@
 </div>
 </aside>
 
-        
+        <aside class="toc">
+  <nav class="toc-nav">
+    <li class="toc-title">
+      <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
+    </li>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#目录">目录</a></li><li class="toc-item-1"><a href="#0-简介">0. 简介</a></li><li class="toc-item-1"><a href="#1-第一章-c语言快速入门">1. 第一章 C语言快速入门</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#11-信息在计算机中的表示">1.1. 信息在计算机中的表示</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#111-用0和1表示各种信息">1.1.1. 用0和1表示各种信息</a></li><li class="toc-item-3"><a href="#112-十进制到二进制的互相转换">1.1.2. 十进制到二进制的互相转换</a></li><li class="toc-item-3"><a href="#113-k进制小数">1.1.3. K进制小数</a></li><li class="toc-item-3"><a href="#114-十六进制数到二进制数的相互转换">1.1.4. 十六进制数到二进制数的相互转换</a></li></ul></li><li class="toc-item-2"><a href="#12-c语言快速入门">1.2. C语言快速入门</a></li><li class="toc-item-2"><a href="#13-变量和数据类型初探">1.3. 变量和数据类型初探</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#131-什么是变量">1.3.1. 什么是变量</a></li><li class="toc-item-3"><a href="#132-变量的命名规则">1.3.2. 变量的命名规则</a></li><li class="toc-item-3"><a href="#133-c的基本数据类型">1.3.3. C++的基本数据类型</a></li></ul></li><li class="toc-item-2"><a href="#14-变量和数据类型进阶">1.4. 变量和数据类型进阶</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#141-数据类型的自动转换">1.4.1. 数据类型的自动转换</a></li></ul></li><li class="toc-item-2"><a href="#15-常量">1.5. 常量</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#151-整型常量">1.5.1. 整型常量</a></li><li class="toc-item-3"><a href="#152-字符型常量">1.5.2. 字符型常量</a></li><li class="toc-item-3"><a href="#153-符号常量">1.5.3. 符号常量</a></li></ul></li></ul></li><li class="toc-item-1"><a href="#2-第二章-输入输出和基本运算">2. 第二章 输入输出和基本运算</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#21-输入输出进阶">2.1. 输入输出进阶</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#211-输入输出控制符">2.1.1. 输入输出控制符</a></li><li class="toc-item-3"><a href="#212-用scanf读入不同类型的变量">2.1.2. 用scanf读入不同类型的变量</a></li><li class="toc-item-3"><a href="#213-控制printf输出整数的宽度">2.1.3. 控制printf输出整数的宽度</a></li><li class="toc-item-3"><a href="#214-用c的cout进行输出">2.1.4. 用C++的cout进行输出</a></li><li class="toc-item-3"><a href="#215-用c的cin进行输入">2.1.5. 用C++的cin进行输入</a></li></ul></li><li class="toc-item-2"><a href="#22-算术运算符和算术表达式">2.2. 算术运算符和算术表达式</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#221-赋值运算符">2.2.1. 赋值运算符</a></li><li class="toc-item-3"><a href="#222-算术运算符">2.2.2. 算术运算符</a></li><li class="toc-item-3"><a href="#223-模运算">2.2.3. 模运算</a></li><li class="toc-item-3"><a href="#224-自增运算符-">2.2.4. 自增运算符 ++</a></li></ul></li><li class="toc-item-2"><a href="#23-关系运算符和逻辑表达式">2.3. 关系运算符和逻辑表达式</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#231-关系运算符">2.3.1. 关系运算符</a></li><li class="toc-item-3"><a href="#232-逻辑运算符和逻辑表达式">2.3.2. 逻辑运算符和逻辑表达式</a></li></ul></li><li class="toc-item-2"><a href="#24-其他运算符及运算符优先级">2.4. 其他运算符及运算符优先级</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#241-强制类型转换运算符">2.4.1. 强制类型转换运算符</a></li><li class="toc-item-3"><a href="#242-部分运算符的优先级">2.4.2. 部分运算符的优先级</a></li></ul></li></ul></li><li class="toc-item-1"><a href="#3-分支语句和循环语句">3. 分支语句和循环语句</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#31-if语句">3.1. if语句</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#311-条件分支结构">3.1.1. 条件分支结构</a></li><li class="toc-item-3"><a href="#312-if语句">3.1.2. if语句</a></li></ul></li><li class="toc-item-2"><a href="#32-switch语句">3.2. switch语句</a></li><li class="toc-item-2"><a href="#33-for循环">3.3. for循环</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#331-for循环语句">3.3.1. for循环语句</a></li></ul></li><li class="toc-item-2"><a href="#34-while循环和do-while循环">3.4. while循环和do while循环</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#341-while循环">3.4.1. while循环</a></li><li class="toc-item-3"><a href="#342-do-while循环">3.4.2. do while循环</a></li></ul></li></ul></li><li class="toc-item-1"><a href="#4-第四章-循环综合应用">4. 第四章 循环综合应用</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#41-break语句和continue语句">4.1. break语句和continue语句</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#411-break语句">4.1.1. break语句</a></li><li class="toc-item-3"><a href="#412-continue语句">4.1.2. continue语句</a></li></ul></li><li class="toc-item-2"><a href="#42-oj输入数据的处理">4.2. OJ输入数据的处理</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#421-scanf表达式的值">4.2.1. scanf表达式的值</a></li><li class="toc-item-3"><a href="#422-用freopen重定向输入">4.2.2. 用freopen重定向输入</a></li></ul></li></ul></li><li class="toc-item-1"><a href="#5-第五章-数组">5. 第五章 数组</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#51-数组">5.1. 数组</a></li><li class="toc-item-2"><a href="#52-筛法求素数">5.2. 筛法求素数</a></li><li class="toc-item-2"><a href="#53-数组初始化">5.3. 数组初始化</a></li><li class="toc-item-2"><a href="#54-数组越界">5.4. 数组越界</a></li><li class="toc-item-2"><a href="#55-二维数组">5.5. 二维数组</a></li></ul></li><li class="toc-item-1"><a href="#6-第六章-函数和位运算">6. 第六章 函数和位运算</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#61-函数">6.1. 函数</a></li><li class="toc-item-2"><a href="#62-递归初步">6.2. 递归初步</a></li><li class="toc-item-2"><a href="#63-库函数和头文件">6.3. 库函数和头文件</a></li><li class="toc-item-2"><a href="#64-位运算">6.4. 位运算</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#641-按位与">6.4.1. 按位与&amp;</a></li><li class="toc-item-3"><a href="#642-按位或">6.4.2. 按位或|</a></li><li class="toc-item-3"><a href="#643-按位异或">6.4.3. 按位异或^</a></li><li class="toc-item-3"><a href="#644-按位非">6.4.4. 按位非~</a></li><li class="toc-item-3"><a href="#645-左移运算符">6.4.5. 左移运算符«</a></li><li class="toc-item-3"><a href="#646-右移运算符">6.4.6. 右移运算符»</a></li></ul></li></ul></li><li class="toc-item-1"><a href="#7-第七章-字符串">7. 第七章 字符串</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#71-字符串的形式和存储">7.1. 字符串的形式和存储</a></li><li class="toc-item-2"><a href="#72-输入字符串">7.2. 输入字符串</a></li><li class="toc-item-2"><a href="#73-字符串库函数">7.3. 字符串库函数</a></li></ul></li><li class="toc-item-1"><a href="#8-第八章-指针一">8. 第八章 指针(一)</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#81-指针的基本概念和用法">8.1. 指针的基本概念和用法</a></li><li class="toc-item-2"><a href="#82-指针的意义和相互赋值">8.2. 指针的意义和相互赋值</a></li><li class="toc-item-2"><a href="#83-指针的运算">8.3. 指针的运算</a></li><li class="toc-item-2"><a href="#84-指针作为函数参数">8.4. 指针作为函数参数</a></li><li class="toc-item-2"><a href="#85-指针和数组">8.5. 指针和数组</a></li></ul></li><li class="toc-item-1"><a href="#9-第九章-指针二">9. 第九章 指针(二)</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#91-指针和二维数组指向指针的指针">9.1. 指针和二维数组、指向指针的指针</a></li><li class="toc-item-2"><a href="#92-指针和字符串">9.2. 指针和字符串</a></li><li class="toc-item-2"><a href="#93-字符串库函数">9.3. 字符串库函数</a></li><li class="toc-item-2"><a href="#94-void指针和内存操作函数">9.4. void指针和内存操作函数</a></li><li class="toc-item-2"><a href="#95-函数指针">9.5. 函数指针</a></li></ul></li><li class="toc-item-1"><a href="#10-第十章-程序结构和简单算法">10. 第十章 程序结构和简单算法</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#101-结构">10.1. 结构</a></li><li class="toc-item-2"><a href="#102-全局变量局部变量静态变量">10.2. 全局变量、局部变量、静态变量</a></li><li class="toc-item-2"><a href="#103-变量的作用域和生存周期">10.3. 变量的作用域和生存周期</a></li><li class="toc-item-2"><a href="#104-选择排序和插入排序">10.4. 选择排序和插入排序</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#1041-选择排序">10.4.1. 选择排序</a></li><li class="toc-item-3"><a href="#1042-插入排序">10.4.2. 插入排序</a></li></ul></li><li class="toc-item-2"><a href="#105-冒泡排序">10.5. 冒泡排序</a></li><li class="toc-item-2"><a href="#106-程序或算法的时间复杂度">10.6. 程序或算法的时间复杂度</a></li></ul></li><li class="toc-item-1"><a href="#11-第十一章-文件读写">11. 第十一章 文件读写</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#111-文件读写概述">11.1. 文件读写概述</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#1111-打开文件的函数">11.1.1. 打开文件的函数</a></li></ul></li><li class="toc-item-2"><a href="#112-文本文件读写">11.2. 文本文件读写</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#1121-文本文件读写">11.2.1. 文本文件读写</a></li><li class="toc-item-3"><a href="#1121-文本文件读写另一种函数">11.2.1. 文本文件读写(另一种函数)</a></li></ul></li><li class="toc-item-2"><a href="#113-二进制文件读写概述">11.3. 二进制文件读写概述</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#1131-文件的读写指针">11.3.1. 文件的读写指针</a></li><li class="toc-item-3"><a href="#1132-二进制文件读写">11.3.2. 二进制文件读写</a></li></ul></li><li class="toc-item-2"><a href="#114-创建和读取二进制文件">11.4. 创建和读取二进制文件</a></li><li class="toc-item-2"><a href="#115-修改二进制文件">11.5. 修改二进制文件</a></li><li class="toc-item-2"><a href="#116-文件拷贝程序">11.6. 文件拷贝程序</a></li></ul></li><li class="toc-item-1"><a href="#12-c的stl">12. C++的STL</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#121-stl排序算法sort">12.1. STL排序算法sort</a></li><li class="toc-item-2"><a href="#122-stl二分查找算法">12.2. STL二分查找算法</a><ul class="toc-submenu-2"><li class="toc-item-3"><a href="#1221-用binary_search进行二分查找">12.2.1. 用binary_search进行二分查找</a></li><li class="toc-item-3"><a href="#1222-用lower_bound二分查找下界">12.2.2. 用lower_bound二分查找下界</a></li><li class="toc-item-3"><a href="#1223-用upper_bound二分查找上界">12.2.3. 用upper_bound二分查找上界</a></li></ul></li><li class="toc-item-2"><a href="#123-multiset">12.3. multiset</a></li><li class="toc-item-2"><a href="#124-set">12.4. set</a></li><li class="toc-item-2"><a href="#125-multimap">12.5. multimap</a></li><li class="toc-item-2"><a href="#126-map">12.6. map</a></li></ul></li></ul>
+  </nav>
+</aside>
+
         
         <h1 id="目录">目录</h1>
 
@@ -348,6 +358,7 @@
 
 <ul>
   <li><a href="#目录">目录</a></li>
+  <li><a href="#0-简介">0. 简介</a></li>
   <li><a href="#1-第一章-c语言快速入门">1. 第一章 C语言快速入门</a>
     <ul>
       <li><a href="#11-信息在计算机中的表示">1.1. 信息在计算机中的表示</a>
@@ -560,6 +571,9 @@
 </ul>
 
 <!-- /TOC -->
+
+<h1 id="0-简介">0. 简介</h1>
+<p>这篇博客记录了北大郭炜老师的网课: <a href="https://www.icourse163.org/course/PKU-1001553023?tid=1466879449" target="_blank">程序设计与算法(一)C语言程序设计</a>的随堂笔记。该课程有对应的讲义与习题，讲义在MOOC网站上有，习题在openjudge网站上有。具体课程而言，我选择了第十六次开课。</p>
 
 <h1 id="1-第一章-c语言快速入门">1. 第一章 C语言快速入门</h1>
 
@@ -1672,6 +1686,68 @@
           
           
 
+          <a href="./Linux-Command.html" class="recent-item-img" style="background: url('./assets/img/posts/20221024/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>linux command</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./Algorithm-Practice.html" class="recent-item-img" style="background: url('./assets/img/posts/20221021/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>算法练习心得</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
           <a href="./Latent-Diffusion-Model.html" class="recent-item-img" style="background: url('./assets/img/posts/20221016/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>Latent Diffusion Model</span>
@@ -1718,68 +1794,6 @@
     <p class="page_meta-readtime">
       
         4 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./short-answer-assessment.html" class="recent-item-img" style="background: url('./assets/img/posts/20221010/1.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>短文本评估论文阅读整理</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        5 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./AutoEncoder-Series.html" class="recent-item-img" style="background: url('./assets/img/posts/20221008/1.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>AutoEncoder系列整理</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        1 minute read
       
     </p>
   
@@ -1891,23 +1905,7 @@
 
 </div>
 
-<!-- <head>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head> -->
 
-<style>
-  table {
-  margin: auto;
-  }
-</style>
     <div class="top" title="Top">
       <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z" class=""></path></svg>
     </div>
@@ -2029,9 +2027,114 @@
 <script src="./assets/js/jquery-3.6.0.min.js"></script>
 
 
+  <script>
+    function toggle_comments(){
+        document.getElementById('comment-curtain').classList.toggle('hide')
+        document.getElementById('disqus_thread').classList.toggle('show')
+    }
+
+    function copyToClipboard() {
+      navigator.clipboard.writeText('http://localhost:4000/C-Language.html').then(function() {
+      alerts = document.getElementsByClassName('alert')
+      for (i=0; i < alerts.length; i++){
+        alerts[i].innerHTML='\u00ABlink copied\u00BB';
+        setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
+      };
+      }, function() {
+        prompt("Unable to copy, please use this link:", "http://localhost:4000/C-Language.html");
+      });
+    }
+
+    $(function () {
+      if (document.getElementById('comment-curtain') == null){
+        document.getElementById('disqus_thread').classList.toggle('show')
+      }
+
+      var tweetTags = document.getElementsByTagName("tweet");
+
+      if (tweetTags != null){
+        for (i=0; i<tweetTags.length; i++){
+          tweetA = document.createElement("a")
+          tweetA.href = 'https://twitter.com/share?text='
+                       + encodeURIComponent(tweetTags[i].textContent)
+                       + '&via=QuehryS&url='
+                       + window.location.href;
+          tweetA.target = "_blank";
+          tweetA.className = 'twitter';
+          tweetSpanText = document.createElement('span');
+          tweetSpanText.className = 'tweetText';
+          tweetSpanText.appendChild(document.createTextNode(tweetTags[i].textContent));
+          tweetSpanIcon = document.createElement('span');
+          tweetSpanIcon.className = 'tweetIcon';
+          tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
+          tweetI = document.createElement("i");
+          tweetI.className = 'fa fa-twitter';
+          tweetSpanIcon.appendChild(tweetI);
+          tweetA.appendChild(tweetSpanText);
+          tweetA.appendChild(tweetSpanIcon);
+          tweetTags[i].textContent = "";
+          tweetTags[i].appendChild(tweetA);
+        }
+      }
+
+    });
+
+  </script>
+  <!-- Mailchimp linking -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
 
 
 
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+  <script>
+    var spy = new Gumshoe("#toc-content a", {
+      navClass:"active",
+      contentClass:"underline",
+      nested:0,
+      nestedClass:"active",
+      offset:20,
+      reflow:1,
+      events:1
+    });
+
+    var coll = document.getElementsByClassName("toc-item-1");
+    var i;
+    var chevron_up = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z\"></path></svg>"
+    var chevron_down = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z\"></path></svg>"
+    for (i = 0; i < coll.length; i++) {
+      if (coll[i].childElementCount > 1) {
+        sign = document.createElement('div');
+        sign.className = "toc-sign";
+        sign.innerHTML = chevron_down;
+        coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
+        coll[i].addEventListener("click", function() {
+          var content = this.lastElementChild;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            this.firstElementChild.nextSibling.innerHTML = chevron_down;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            this.firstElementChild.nextSibling.innerHTML = chevron_up;
+          }
+        });
+      }
+    }
+  </script>
+
+
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "CommonHTML": { linebreaks: { automatic: true } }
+    });
+  </script>
+  <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
 <script src="./assets/js/main.js"></script>

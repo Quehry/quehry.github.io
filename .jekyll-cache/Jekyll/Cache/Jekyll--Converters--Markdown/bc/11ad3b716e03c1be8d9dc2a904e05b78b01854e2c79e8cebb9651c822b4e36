@@ -1,0 +1,23 @@
+I"<h1 id="0-简介">0. 简介</h1>
+<p>该博客主要记录了linux常用命令，便于后续使用时查找命令，其余的一些博客:</p>
+<ul>
+  <li><a href="https://docs.rockylinux.org/books/admin_guide/03-commands" target="_blank">linux command documentation</a></li>
+  <li><a href="https://blog.csdn.net/weixin_49851451/article/details/125821580?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-125821580.nonecase&amp;spm=1018.2226.3001.4187" target="_blank">中文博客</a></li>
+  <li><a href="https://blog.csdn.net/xulong_08/article/details/81463054" target="_blank">linux相关</a></li>
+</ul>
+
+<h1 id="1-zip和unzip">1. zip和unzip</h1>
+<ul>
+  <li>压缩:
+    <pre><code class="language-linux">zip [parameters] target.zip source
+</code></pre>
+    <p>常用参数有: 
+<br />
+-r 将指定的目录下所有的文件和子目录一并压缩</p>
+  </li>
+  <li>解压
+```linux</li>
+</ul>
+
+<p>```</p>
+:ET

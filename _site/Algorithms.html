@@ -127,6 +127,8 @@
 <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
 	
+	<link rel="stylesheet" href="./assets/css/highlighter/syntax-base16.monokai.dark.css">
+	
 <head>
   <body>
     
@@ -340,7 +342,15 @@
 </div>
 </aside>
 
-        
+        <aside class="toc">
+  <nav class="toc-nav">
+    <li class="toc-title">
+      <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-align-left fa-w-14 fa-2x"><g class="fa-group"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96z" class="fa-secondary"></path><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class="fa-primary"></path></g></svg>
+    </li>
+    <ul class="toc-content" id="toc-content"><li class="toc-item-1"><a href="#目录">目录</a></li><li class="toc-item-1"><a href="#0-简介">0. 简介</a></li><li class="toc-item-1"><a href="#1-第一周-枚举">1. 第一周 枚举</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#11-完美立方">1.1. 完美立方</a></li><li class="toc-item-2"><a href="#12-生理周期">1.2. 生理周期</a></li><li class="toc-item-2"><a href="#13-称硬币">1.3. 称硬币</a></li><li class="toc-item-2"><a href="#14-熄灯问题">1.4. 熄灯问题</a></li></ul></li><li class="toc-item-1"><a href="#2-第二周-递归一">2. 第二周 递归(一)</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#21-求阶乘">2.1. 求阶乘</a></li><li class="toc-item-2"><a href="#22-汉诺塔问题">2.2. 汉诺塔问题</a></li><li class="toc-item-2"><a href="#23-n皇后问题">2.3. n皇后问题</a></li><li class="toc-item-2"><a href="#24-逆波兰表达式求值">2.4. 逆波兰表达式求值</a></li></ul></li><li class="toc-item-1"><a href="#3-第三周-递归二">3. 第三周 递归(二)</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#31-表达式求值">3.1. 表达式求值</a></li><li class="toc-item-2"><a href="#32-上台阶问题">3.2. 上台阶问题</a></li><li class="toc-item-2"><a href="#33-放苹果问题">3.3. 放苹果问题</a></li><li class="toc-item-2"><a href="#34-算24问题">3.4. 算24问题</a></li></ul></li><li class="toc-item-1"><a href="#4-第四周-二分算法">4. 第四周 二分算法</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#41-程序或算法的时间复杂度">4.1. 程序或算法的时间复杂度</a></li><li class="toc-item-2"><a href="#42-二分查找的原理和实现">4.2. 二分查找的原理和实现</a></li><li class="toc-item-2"><a href="#43-二分法求方程的根">4.3. 二分法求方程的根</a></li></ul></li><li class="toc-item-1"><a href="#5-第五周-分治">5. 第五周 分治</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#51-归并排序">5.1. 归并排序</a></li><li class="toc-item-2"><a href="#52-快速排序">5.2. 快速排序</a></li><li class="toc-item-2"><a href="#53-例题-输出前m大的数">5.3. 例题: 输出前m大的数</a></li><li class="toc-item-2"><a href="#54-例题-求排序的逆序数">5.4. 例题: 求排序的逆序数</a></li></ul></li><li class="toc-item-1"><a href="#6-第六周-动态规划一">6. 第六周 动态规划(一)</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#61-数字三角形">6.1. 数字三角形</a></li><li class="toc-item-2"><a href="#62-动态规划解题的一般思路">6.2. 动态规划解题的一般思路</a></li><li class="toc-item-2"><a href="#63-最长上升子序列">6.3. 最长上升子序列</a></li><li class="toc-item-2"><a href="#64-最长公共子序列">6.4. 最长公共子序列</a></li><li class="toc-item-2"><a href="#65-最佳加法表达式">6.5. 最佳加法表达式</a></li></ul></li><li class="toc-item-1"><a href="#7-第七周-动态规划二">7. 第七周 动态规划(二)</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#71-help-jimmy">7.1. Help Jimmy</a></li><li class="toc-item-2"><a href="#72-滑雪">7.2. 滑雪</a></li><li class="toc-item-2"><a href="#73-神奇的口袋">7.3. 神奇的口袋</a></li><li class="toc-item-2"><a href="#74-0-1背包问题">7.4. 0-1背包问题</a></li><li class="toc-item-2"><a href="#75-分蛋糕">7.5. 分蛋糕</a></li></ul></li><li class="toc-item-1"><a href="#8-第八周-深度优先搜索一">8. 第八周 深度优先搜索(一)</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#81-在图上寻找路径和遍历">8.1. 在图上寻找路径和遍历</a></li><li class="toc-item-2"><a href="#82-图的表示方法-邻接矩阵和邻接表">8.2. 图的表示方法: 邻接矩阵和邻接表</a></li><li class="toc-item-2"><a href="#83-城堡问题">8.3. 城堡问题:</a></li><li class="toc-item-2"><a href="#84-踩方格">8.4. 踩方格</a></li></ul></li><li class="toc-item-1"><a href="#9-第九周-深度优先搜索二">9. 第九周 深度优先搜索(二)</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#91-寻路问题">9.1. 寻路问题</a></li><li class="toc-item-2"><a href="#92-生日蛋糕">9.2. 生日蛋糕</a></li></ul></li><li class="toc-item-1"><a href="#10-第十周-广度优先搜索">10. 第十周 广度优先搜索</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#101-抓住那头牛">10.1. 抓住那头牛</a></li><li class="toc-item-2"><a href="#102-迷宫问题">10.2. 迷宫问题</a></li><li class="toc-item-2"><a href="#103-鸣人和佐助">10.3. 鸣人和佐助</a></li><li class="toc-item-2"><a href="#104-八数码问题">10.4. 八数码问题</a></li></ul></li><li class="toc-item-1"><a href="#11-第十一周-贪心算法">11. 第十一周 贪心算法</a><ul class="toc-submenu-1"><li class="toc-item-2"><a href="#111-圣诞老人的礼物">11.1. 圣诞老人的礼物</a></li><li class="toc-item-2"><a href="#112-电影节">11.2. 电影节</a></li><li class="toc-item-2"><a href="#113-分配畜栏">11.3. 分配畜栏</a></li><li class="toc-item-2"><a href="#114-放置雷达">11.4. 放置雷达</a></li><li class="toc-item-2"><a href="#115-钓鱼">11.5. 钓鱼</a></li></ul></li></ul>
+  </nav>
+</aside>
+
         
         <h1 id="目录">目录</h1>
 <!-- TOC -->
@@ -1444,6 +1454,68 @@
           
           
 
+          <a href="./Linux-Command.html" class="recent-item-img" style="background: url('./assets/img/posts/20221024/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>linux command</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./Algorithm-Practice.html" class="recent-item-img" style="background: url('./assets/img/posts/20221021/1.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>算法练习心得</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
           <a href="./Latent-Diffusion-Model.html" class="recent-item-img" style="background: url('./assets/img/posts/20221016/1.jpg') center no-repeat; background-size: cover;">
             <div class="recent-item-title">
               <span>Latent Diffusion Model</span>
@@ -1490,68 +1562,6 @@
     <p class="page_meta-readtime">
       
         4 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./short-answer-assessment.html" class="recent-item-img" style="background: url('./assets/img/posts/20221010/1.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>短文本评估论文阅读整理</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        5 minute read
-      
-    </p>
-  
-  
-  </span>
-
-            </div>
-          </a>
-        </div>
-      
-    
-      
-        <div class="recent-item">
-          
-          
-
-          <a href="./AutoEncoder-Series.html" class="recent-item-img" style="background: url('./assets/img/posts/20221008/1.jpg') center no-repeat; background-size: cover;">
-            <div class="recent-item-title">
-              <span>AutoEncoder系列整理</span>
-              
-
-  <span class = "recent-item-meta">
-  
-  
-  
-  
-    
-    
-    <p class="page_meta-readtime">
-      
-        1 minute read
       
     </p>
   
@@ -1663,23 +1673,7 @@
 
 </div>
 
-<!-- <head>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head> -->
 
-<style>
-  table {
-  margin: auto;
-  }
-</style>
     <div class="top" title="Top">
       <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z" class=""></path></svg>
     </div>
@@ -1801,9 +1795,114 @@
 <script src="./assets/js/jquery-3.6.0.min.js"></script>
 
 
+  <script>
+    function toggle_comments(){
+        document.getElementById('comment-curtain').classList.toggle('hide')
+        document.getElementById('disqus_thread').classList.toggle('show')
+    }
+
+    function copyToClipboard() {
+      navigator.clipboard.writeText('http://localhost:4000/Algorithms.html').then(function() {
+      alerts = document.getElementsByClassName('alert')
+      for (i=0; i < alerts.length; i++){
+        alerts[i].innerHTML='\u00ABlink copied\u00BB';
+        setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
+      };
+      }, function() {
+        prompt("Unable to copy, please use this link:", "http://localhost:4000/Algorithms.html");
+      });
+    }
+
+    $(function () {
+      if (document.getElementById('comment-curtain') == null){
+        document.getElementById('disqus_thread').classList.toggle('show')
+      }
+
+      var tweetTags = document.getElementsByTagName("tweet");
+
+      if (tweetTags != null){
+        for (i=0; i<tweetTags.length; i++){
+          tweetA = document.createElement("a")
+          tweetA.href = 'https://twitter.com/share?text='
+                       + encodeURIComponent(tweetTags[i].textContent)
+                       + '&via=QuehryS&url='
+                       + window.location.href;
+          tweetA.target = "_blank";
+          tweetA.className = 'twitter';
+          tweetSpanText = document.createElement('span');
+          tweetSpanText.className = 'tweetText';
+          tweetSpanText.appendChild(document.createTextNode(tweetTags[i].textContent));
+          tweetSpanIcon = document.createElement('span');
+          tweetSpanIcon.className = 'tweetIcon';
+          tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
+          tweetI = document.createElement("i");
+          tweetI.className = 'fa fa-twitter';
+          tweetSpanIcon.appendChild(tweetI);
+          tweetA.appendChild(tweetSpanText);
+          tweetA.appendChild(tweetSpanIcon);
+          tweetTags[i].textContent = "";
+          tweetTags[i].appendChild(tweetA);
+        }
+      }
+
+    });
+
+  </script>
+  <!-- Mailchimp linking -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
 
 
 
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+  <script>
+    var spy = new Gumshoe("#toc-content a", {
+      navClass:"active",
+      contentClass:"underline",
+      nested:0,
+      nestedClass:"active",
+      offset:20,
+      reflow:1,
+      events:1
+    });
+
+    var coll = document.getElementsByClassName("toc-item-1");
+    var i;
+    var chevron_up = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z\"></path></svg>"
+    var chevron_down = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z\"></path></svg>"
+    for (i = 0; i < coll.length; i++) {
+      if (coll[i].childElementCount > 1) {
+        sign = document.createElement('div');
+        sign.className = "toc-sign";
+        sign.innerHTML = chevron_down;
+        coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
+        coll[i].addEventListener("click", function() {
+          var content = this.lastElementChild;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            this.firstElementChild.nextSibling.innerHTML = chevron_down;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            this.firstElementChild.nextSibling.innerHTML = chevron_up;
+          }
+        });
+      }
+    }
+  </script>
+
+
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "CommonHTML": { linebreaks: { automatic: true } }
+    });
+  </script>
+  <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
 <script src="./assets/js/main.js"></script>

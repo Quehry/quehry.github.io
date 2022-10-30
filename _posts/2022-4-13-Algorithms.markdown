@@ -1,5 +1,5 @@
 ---
-layout: postwithlatex
+layout: post
 read_time: true
 show_date: true
 title:  算法基础
@@ -8,6 +8,8 @@ description: 郭炜老师算法网课记录
 img: posts/20220413/cover.jpg 
 tags: [note]
 author: Quehry
+mathjax: yes
+toc: yes
 ---
 
 # 目录

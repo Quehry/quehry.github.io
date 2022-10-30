@@ -1,5 +1,5 @@
 ---
-layout: postwithlatex
+layout: post
 read_time: true
 show_date: true
 title:  C语言程序设计
@@ -8,6 +8,8 @@ description: 网课记录
 img: posts/20220225/1.jpg 
 tags: [note]
 author: Quehry
+mathjax: yes
+toc: yes
 ---
 
 # 目录
@@ -15,6 +17,7 @@ author: Quehry
 <!-- TOC -->
 
 - [目录](#目录)
+- [0. 简介](#0-简介)
 - [1. 第一章 C语言快速入门](#1-第一章-c语言快速入门)
     - [1.1. 信息在计算机中的表示](#11-信息在计算机中的表示)
         - [1.1.1. 用0和1表示各种信息](#111-用0和1表示各种信息)
@@ -133,6 +136,9 @@ author: Quehry
     - [12.6. map](#126-map)
 
 <!-- /TOC -->
+
+# 0. 简介
+这篇博客记录了北大郭炜老师的网课: [程序设计与算法(一)C语言程序设计](https://www.icourse163.org/course/PKU-1001553023?tid=1466879449){:target="_blank"}的随堂笔记。该课程有对应的讲义与习题，讲义在MOOC网站上有，习题在openjudge网站上有。具体课程而言，我选择了第十六次开课。
 
 # 1. 第一章 C语言快速入门
 
