@@ -1,0 +1,13 @@
+---
+layout: post
+read_time: true
+show_date: true
+title:  ROX learning
+date:   2022-10-30
+description: 学习ROS
+img: posts/20221030/1.jpg 
+tags: [notes]
+author: Quehry
+mathjax: yes
+toc: yes
+---
