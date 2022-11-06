@@ -239,6 +239,45 @@
 		<div class="post">
 			
 
+			<a class="post-list-title" href="./ROS.html">ROX learning</a>
+			
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-10-30T00:00:00+08:00">October 30, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+			<div class="post-excerpt">
+				<h1 id="1-简介">1. 简介</h1><p>这篇博客主要记录学习ROS的笔记，内容来源于:</p><ul> <li><a href="https://www.bilibili.com/video/BV1zt411G7Vn/?spm_id_from=333.337.search-card.all.click&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">bili古月居</a></li> <li><a href="https://www.udemy.com/course/ros-navigation/learn/lecture/11785182#overview" target="_blank">udemy</a></li> <li><a href="https://github.com/guyuehome/ros_21_tutorials" target="_blank">古月居课件及源码</a></li></ul><h1 id="2-古月居">2. 古月居</h1><h2 id="21-ros安装">2.1. ROS安装</h2><p>根据<a href="http://wiki.ros.org/noetic/Installation/Ubuntu" target="_blank">ROS-wiki</a>的说明一步步进行安装</p><h2 id="22-ros是什么">2.2. ROS是什么</h2><ul> <li>ROS发展史:</li></ul><center><img src="../assets/img/posts/20221030/2.jpg" /></center><ul> <li>ROS能提高机器人研发中软件的复用率</li></ul><center><img src="../assets/img/posts/20221030/3.png" /></center><h2 id="23-ros的核心概念">2.3. ROS的核心概念</h2><ul> <li>节点(Node)是ROS中的执行单元: <ul> <li>执行具体任务的进程、独立运行的可执行文件</li> <li>不同节点可使用不同的编程语言，分布式运行在不同的主机</li> <li>节点在系统的名称必须唯一</li> </ul> </li> <li>节点管理器(ROS Master)是ROS的控制中心: <ul> <li>为节点提供命名和注册服务</li> <li>跟踪和记录话题/服务通信，辅助节点相互查找、建立连接</li> <li>为节点提供参数</li> </ul> </li></ul><center><img src="../assets/img/posts/20221030/4.png" /></center><ul> <li>话题通信机制(异步): <ul> <li>话题(Topic) <ul> <li>节点间用来传输数据的重要总线</li> <li>使用发布/订阅模型，数据由发布者传输到订阅者，同一个话题的订阅者或发布者可以不唯一</li> </ul> </li> <li>消息(Message) <ul> <li>具有一定类型的数据结构</li> <li>使用编程语言无关的.msg文件定义，编译过程中生成对应的代码文件</li> </ul> </li> </ul> </li></ul><center><img src="../assets/img/posts/20221030/5.png" /></center><ul> <li>服务通信机制(同步): <ul> <li>服务(Service) <ul> <li>使用客户端/服务器模型，客户端发送请求数据，服务器完成处理后返回应答数据</li> <li>使用编程语言无关的.srv文件定义请求和应答数据结构</li> </ul> </li> </ul> </li></ul><center><img src="../assets/img/posts/20221030/6.png" /></center><ul> <li>话题和服务通信的区别:</li></ul><center><img src="../assets/img/posts/20221030/7.png" /></center><ul> <li>参数-全局共享字典: <ul> <li>可通过网络访问共享、多变量字典</li> <li>节点使用此服务器来存储和检索运行时的参数</li> <li>不适合存储动态配置的数据</li> </ul> </li></ul><center><img src="../assets/img/posts/20221030/8.png" /></center><ul> <li>文件系统</li></ul><center><img src="../assets/img/posts/20221030/9.png" /></center><h2 id="24-ros命令行工具">2.4. ROS命令行工具</h2><ul> <li> <p>常用命令: rostopic/rosservice/rosnode/rosparam/rosmsg/rossrv</p> </li> <li> <p>rqt_graph可以查看系统的节点和通信机制</p> </li></ul><div class="language-shell...<a class="read-more" href="./ROS.html"> read more</a>
+			</div>
+		</div>
+	
+		<div class="post">
+			
+
 			<a class="post-list-title" href="./Linux-Command.html">linux command</a>
 			
 
@@ -310,46 +349,7 @@
   </span>
 
 			<div class="post-excerpt">
-				<h1 id="简介">简介</h1><p>这篇博客记录了做算法题过程的一些心得，目前的想法是先把<a href="http://cxsjsxmooc.openjudge.cn/" target="_blank">网课的习题</a>做完提交完，然后学习C语言面向对象的知识，然后去刷题平台上去刷题</p><h1 id="practice">Practice</h1><ul>  <li>iostream头文件包含了cin与cout</li>  <li><code class="language-plaintext highlighter-rouge">int &amp;a=b</code>中&amp;的用法是C++中的引用用法，变量的引用就是变量的别名，这样就可以实现在函数中向实参传递值</li>  <li><code class="language-plaintext highlighter-rouge">~</code>的用法之一是按位取反运算，即数的每一位都取反，<code class="language-plaintext highlighter-rouge">^</code>的用法之一是按位异或运算</li>  <li>stdio.h是C语言的标准库，包含了C语言常用的输入输出函数，比如文件的读写函数fopen/fclose，格式化输入输出函数scanf/printf，为了适配C++，变成了cstdio</li>  <li>strlen()是string.h的一个函数，可以返回字符串的长度，原理是读到结束字符<strong>\0</strong>后停止</li>  <li>字符串变量可以通过cin读取键盘输入的字符串，对于由0/1组成的字符串而言，可以考虑用整型存储，然后通过按位运算对整型的每一个bit进行操作</li>  <li><code class="language-plaintext highlighter-rouge">memcpy()</code>是cstring中的一个函数，使用时需要引用cstring头文件，memcpy(char * a, char * b, int c)表示将字符串b拷贝到字符串a，c表示字符串的大小</li>  <li>可以将递归嵌套在循环中完成穷举</li>  <li>全排列的实现有固定的套路: 对排列的每一位进行循环，如果有用过的元素，就标记一下，在下次选取的时候不考虑该元素，这样按着顺序选元素就可以实现全排列，具体见<a href="http://cxsjsxmooc.openjudge.cn/2022t2fall/003/" target="_blank">问题3</a>，全排列也是一个穷举的过程</li>  <li>定义字符串或者一维数组时，最好还是把元素个数给大一点</li>  <li>在循环中可以通过bool值来控制某一个元素取还是不取，比如004中的加号可以由布尔值控制</li>  <li><code class="language-plaintext highlighter-rouge">cin.peek()</code>可以读取当前输入的字符且不取走，<code class="language-plaintext highlighter-rouge">cin.get()</code>可以读取当前输入的字符并且取走</li>  <li><code class="language-plaintext highlighter-rouge">n = scanf("%c", &amp;c)</code>，如果当前输入停止，则n=EOF</li></ul><a class="read-more" href="./Algorithm-Practice.html"> read more</a>
-			</div>
-		</div>
-	
-		<div class="post">
-			
-
-			<a class="post-list-title" href="./Latent-Diffusion-Model.html">Latent Diffusion Model</a>
-			
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2022-10-16T00:00:00+08:00">October 16, 2022</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        less than 1 minute read
-      
-    </span>
-  
-  
-  </span>
-
-			<div class="post-excerpt">
-				<!-- TOC --><ul>  <li><a href="#1-ldm简介">1. LDM简介</a></li>  <li><a href="#2-模型">2. 模型</a></li></ul><!-- /TOC --><h1 id="1-ldm简介">1. LDM简介</h1><p>Latent Diffusion Model(LDM)是Diffusion Model的改进版本。扩散模型相比于之前的生成模型而言，已经能取得非常好的效果，但是扩散模型有个特点，贵。不仅训练贵，而且推理也很贵。为了节省空间和资源，LDM将反向扩散过程在隐空间中进行，而不是之前的逐像素进行反向扩散(因为隐空间的维度比原始图片要小，能让训练和推断变得不那么贵)。LDM与扩散模型最大的区别就是隐空间，模型在github上开源，stable diffusion也是基于latent diffusion进行实现</p><ul>  <li><a href="https://arxiv.org/abs/2112.10752" target="_blank">LDM</a></li>  <li><a href="https://github.com/CompVis/latent-diffusion" target="_blank">github</a></li></ul><h1 id="2-模型">2. 模型</h1><p>LDM的模型如下图所示:</p><center><img src="../assets/img/posts/20221016/2.jpg" /></center><ul>  <li>前向扩散: 输入x首先经过压缩后得到隐空间表达z，正常的前向扩散得到$z_T$</li>  <li>反向扩散: 隐空间的随机噪声$z_T$经过T步去噪U-Net后得到z，然后z经过解压得到原始大小的图片$\tilde{x}$</li></ul><p>我们关心的是模型反向扩散的过程，关于图片压缩和解压的模型，作者尝试了VAE和VQVAE，返现VAE的表现稍微好一点，所以选择了VAE作为antoencoder。与一般的扩散模型一样，LDM也可以做条件生成，LDM采取的策略是classifier-free guidance，具体实现方法是将预处理好的y与U-Net的每一个中间表达都应用注意力机制，其中查询是U-Net的中间层表达，key和value是预处理好的y。预处理的encoder与y相关，如果y是文本，那么encoder可以是clip的text encoder，也可以是transformer-based encoder</p><center><img src="../assets/img/posts/20221016/3.jpg" /></center><a class="read-more" href="./Latent-Diffusion-Model.html"> read more</a>
+				<h1 id="简介">简介</h1><p>这篇博客记录了做算法题过程的一些心得，目前的想法是先把<a href="http://cxsjsxmooc.openjudge.cn/" target="_blank">网课的习题</a>做完提交完，然后学习C语言面向对象的知识，然后去刷题平台上去刷题</p><h1 id="practice">Practice</h1><ul>  <li>iostream头文件包含了cin与cout</li>  <li><code class="language-plaintext highlighter-rouge">int &amp;a=b</code>中&amp;的用法是C++中的引用用法，变量的引用就是变量的别名，这样就可以实现在函数中向实参传递值</li>  <li><code class="language-plaintext highlighter-rouge">~</code>的用法之一是按位取反运算，即数的每一位都取反，<code class="language-plaintext highlighter-rouge">^</code>的用法之一是按位异或运算</li>  <li>stdio.h是C语言的标准库，包含了C语言常用的输入输出函数，比如文件的读写函数fopen/fclose，格式化输入输出函数scanf/printf，为了适配C++，变成了cstdio</li>  <li>strlen()是string.h的一个函数，可以返回字符串的长度，原理是读到结束字符<strong>\0</strong>后停止</li>  <li>字符串变量可以通过cin读取键盘输入的字符串，对于由0/1组成的字符串而言，可以考虑用整型存储，然后通过按位运算对整型的每一个bit进行操作</li>  <li><code class="language-plaintext highlighter-rouge">memcpy()</code>是cstring中的一个函数，使用时需要引用cstring头文件，memcpy(char * a, char * b, int c)表示将字符串b拷贝到字符串a，c表示字符串的大小</li>  <li>可以将递归嵌套在循环中完成穷举</li>  <li>全排列的实现有固定的套路: 对排列的每一位进行循环，如果有用过的元素，就标记一下，在下次选取的时候不考虑该元素，这样按着顺序选元素就可以实现全排列，具体见<a href="http://cxsjsxmooc.openjudge.cn/2022t2fall/003/" target="_blank">问题3</a>，全排列也是一个穷举的过程</li>  <li>定义字符串或者一维数组时，最好还是把元素个数给大一点</li>  <li>在循环中可以通过bool值来控制某一个元素取还是不取，比如004中的加号可以由布尔值控制</li>  <li><code class="language-plaintext highlighter-rouge">cin.peek()</code>可以读取当前输入的字符且不取走，<code class="language-plaintext highlighter-rouge">cin.get()</code>可以读取当前输入的字符并且取走</li>  <li><code class="language-plaintext highlighter-rouge">n = scanf("%c", &amp;c)</code>，如果当前输入停止，则n=EOF</li>  <li><code class="language-plaintext highlighter-rouge">while(cin &gt;&gt; a)</code>可以实现对某种类型的变量a的持续输入</li>  <li>用二分法解决问题时，端点尽量最优化设计，并且除了取中点外，还可以通过左端点逐步加1/右端点逐步减1来寻找最优点</li>  <li>关于PI的数值，可以通过acos(-1.0)取值</li>  <li><code class="language-plaintext highlighter-rouge">#include&lt;iomanip&gt;</code>引用的是iomanip库，主要用于控制输入输出流的精度，比如<code class="language-plaintext highlighter-rouge">setprecision(int n)</code>用于控制输出流浮点数的精度，整数n代表有效数字个数(四舍五入)，使用<code class="language-plaintext highlighter-rouge">cout&lt;&lt;fixed&lt;&lt;setprecision(n)</code>可以保留浮点数的n位有效小数</li>  <li>分治，或者说归并的思想，就是对每一步分而治之，确定每一小步的操作后，递归到归并的最小单元进行操作，常见的分治算法为归并排序与快速排序</li>  <li>利用<code class="language-plaintext highlighter-rouge">#include&lt;fstream&gt;</code>可以进行file的读写，步骤为: 实例化<code class="language-plaintext highlighter-rouge">ifstream infile</code>-&gt;打开文件<code class="language-plaintext highlighter-rouge">infile.open("in.txt")</code>-&gt;读文件<code class="language-plaintext highlighter-rouge">infile.getline(...)</code>-&gt;关闭文件<code class="language-plaintext highlighter-rouge">infile.close()</code></li></ul><a class="read-more" href="./Algorithm-Practice.html"> read more</a>
 			</div>
 		</div>
 	

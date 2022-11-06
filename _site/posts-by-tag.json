@@ -178,6 +178,8 @@
   "tag" : "notes",
   "posts" : [
       
+      "./ROS.html",
+      
       "./Linux-Command.html",
       
       "./Latent-Diffusion-Model.html",

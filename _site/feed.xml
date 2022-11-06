@@ -1,4 +1,274 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-28T15:55:03+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">linux command</title><link href="http://localhost:4000/Linux-Command.html" rel="alternate" type="text/html" title="linux command" /><published>2022-10-24T00:00:00+08:00</published><updated>2022-10-24T00:00:00+08:00</updated><id>http://localhost:4000/Linux-Command</id><content type="html" xml:base="http://localhost:4000/Linux-Command.html"><![CDATA[<h1 id="0-简介">0. 简介</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-06T18:15:31+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">ROX learning</title><link href="http://localhost:4000/ROS.html" rel="alternate" type="text/html" title="ROX learning" /><published>2022-10-30T00:00:00+08:00</published><updated>2022-10-30T00:00:00+08:00</updated><id>http://localhost:4000/ROS</id><content type="html" xml:base="http://localhost:4000/ROS.html"><![CDATA[<h1 id="1-简介">1. 简介</h1>
+<p>这篇博客主要记录学习ROS的笔记，内容来源于:</p>
+<ul>
+  <li><a href="https://www.bilibili.com/video/BV1zt411G7Vn/?spm_id_from=333.337.search-card.all.click&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">bili古月居</a></li>
+  <li><a href="https://www.udemy.com/course/ros-navigation/learn/lecture/11785182#overview" target="_blank">udemy</a></li>
+  <li><a href="https://github.com/guyuehome/ros_21_tutorials" target="_blank">古月居课件及源码</a></li>
+</ul>
+
+<h1 id="2-古月居">2. 古月居</h1>
+
+<h2 id="21-ros安装">2.1. ROS安装</h2>
+<p>根据<a href="http://wiki.ros.org/noetic/Installation/Ubuntu" target="_blank">ROS-wiki</a>的说明一步步进行安装</p>
+
+<h2 id="22-ros是什么">2.2. ROS是什么</h2>
+<ul>
+  <li>ROS发展史:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/2.jpg" /></center>
+
+<ul>
+  <li>ROS能提高机器人研发中软件的复用率</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/3.png" /></center>
+
+<h2 id="23-ros的核心概念">2.3. ROS的核心概念</h2>
+<ul>
+  <li>节点(Node)是ROS中的执行单元:
+    <ul>
+      <li>执行具体任务的进程、独立运行的可执行文件</li>
+      <li>不同节点可使用不同的编程语言，分布式运行在不同的主机</li>
+      <li>节点在系统的名称必须唯一</li>
+    </ul>
+  </li>
+  <li>节点管理器(ROS Master)是ROS的控制中心:
+    <ul>
+      <li>为节点提供命名和注册服务</li>
+      <li>跟踪和记录话题/服务通信，辅助节点相互查找、建立连接</li>
+      <li>为节点提供参数</li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/4.png" /></center>
+
+<ul>
+  <li>话题通信机制(异步):
+    <ul>
+      <li>话题(Topic)
+        <ul>
+          <li>节点间用来传输数据的重要总线</li>
+          <li>使用发布/订阅模型，数据由发布者传输到订阅者，同一个话题的订阅者或发布者可以不唯一</li>
+        </ul>
+      </li>
+      <li>消息(Message)
+        <ul>
+          <li>具有一定类型的数据结构</li>
+          <li>使用编程语言无关的.msg文件定义，编译过程中生成对应的代码文件</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/5.png" /></center>
+
+<ul>
+  <li>服务通信机制(同步):
+    <ul>
+      <li>服务(Service)
+        <ul>
+          <li>使用客户端/服务器模型，客户端发送请求数据，服务器完成处理后返回应答数据</li>
+          <li>使用编程语言无关的.srv文件定义请求和应答数据结构</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/6.png" /></center>
+
+<ul>
+  <li>话题和服务通信的区别:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/7.png" /></center>
+
+<ul>
+  <li>参数-全局共享字典:
+    <ul>
+      <li>可通过网络访问共享、多变量字典</li>
+      <li>节点使用此服务器来存储和检索运行时的参数</li>
+      <li>不适合存储动态配置的数据</li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/8.png" /></center>
+
+<ul>
+  <li>文件系统</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/9.png" /></center>
+
+<h2 id="24-ros命令行工具">2.4. ROS命令行工具</h2>
+<ul>
+  <li>
+    <p>常用命令: rostopic/rosservice/rosnode/rosparam/rosmsg/rossrv</p>
+  </li>
+  <li>
+    <p>rqt_graph可以查看系统的节点和通信机制</p>
+  </li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rqt_graph
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">rosnode list</code>可以查看节点的列表</li>
+  <li><code class="language-plaintext highlighter-rouge">rosnode info /turtlesim</code>可以查看turtlesim这个节点的信息</li>
+  <li><code class="language-plaintext highlighter-rouge">rostopic list</code>可以查看话题的列表</li>
+  <li><code class="language-plaintext highlighter-rouge">rostopic pub /turtlesim/cmd_vel ...</code>可以使用cmd_vel话题发送消息</li>
+  <li><code class="language-plaintext highlighter-rouge">rosmsg show geometry_msgs/Twist</code>可以查看某个消息的信息</li>
+  <li><code class="language-plaintext highlighter-rouge">rosservice list</code>可以查看ROS中服务的列表</li>
+  <li><code class="language-plaintext highlighter-rouge">rosservice call ...</code>可以调用某个服务</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/10.png" /></center>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">rosbag record ...</code>可以记录某一个话题</li>
+  <li><code class="language-plaintext highlighter-rouge">rosbag play ...</code>可以通过保存的bag文件来复现该话题</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/11.png" /></center>
+
+<h2 id="25-创建工作空间与功能包">2.5. 创建工作空间与功能包</h2>
+<ul>
+  <li>工作空间是一个存放工程开发相关文件的文件夹</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/12.png" /></center>
+
+<ul>
+  <li>创建工作空间的步骤</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/13.png" /></center>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">catkin_make install</code>创建install空间</li>
+  <li>创建功能包</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/14.png" /></center>
+
+<h2 id="26-publisher的编程实现">2.6. Publisher的编程实现</h2>
+<ul>
+  <li>话题模型</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/15.png" /></center>
+
+<ul>
+  <li>首先创建功能包</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkiin_ws/src
+catkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim
+</code></pre></div></div>
+
+<ul>
+  <li>使用c++创建publisher</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/16.png" /></center>
+
+<ul>
+  <li>创建publisher时需要声明消息类型，话题的名称，创建publisher完毕后，即可创建消息来让publisher发布</li>
+  <li>配置publisher代码编译的规则(在cmakelists中)</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/17.png" /></center>
+
+<ul>
+  <li>设置需要编译的代码和生成的可执行文件/设置链接库</li>
+  <li>编译并运行发布者</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/18.png" /></center>
+
+<ul>
+  <li>python实现publisher</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/19.png" /></center>
+
+<h2 id="27-subscriber的实现">2.7. Subscriber的实现</h2>
+<ul>
+  <li>python实现subsriber</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/20.png" /></center>
+
+<h2 id="28-话题消息的定义与使用">2.8. 话题消息的定义与使用</h2>
+<ul>
+  <li>自定义话题消息
+    <ul>
+      <li>定义msg文件</li>
+      <li>在package.xml中添加功能包的依赖</li>
+      <li>在CMakeLists中添加编译选项</li>
+      <li>编译生成语言相关文件</li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/21.png" /></center>
+
+<ul>
+  <li>python实现topic</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/22.png" /></center>
+
+<ul>
+  <li>定义publisher和subscriber(需要声明topic和消息)</li>
+</ul>
+
+<h2 id="29-client实现">2.9. client实现</h2>
+<ul>
+  <li>服务模型(C/S模型):</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/23.png" /></center>
+
+<ul>
+  <li>python实现client</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/24.png" /></center>
+
+<h2 id="210-server实现">2.10. server实现</h2>
+<ul>
+  <li>python实现server:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/25.png" /></center>
+
+<h2 id="211-服务数据的定义与使用">2.11. 服务数据的定义与使用</h2>
+<ul>
+  <li>自定义服务数据</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/26.png" /></center>
+
+<ul>
+  <li>服务模型</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/27.png" /></center>
+
+<ul>
+  <li>首先生成server节点，然后创建service，client在发现service后创建并发送数据，server在接受数据后进入callback返回request</li>
+</ul>
+
+<h2 id="212-参数的使用与编程方法">2.12. 参数的使用与编程方法</h2>
+<ul>
+  <li>参数模型</li>
+</ul>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[学习ROS]]></summary></entry><entry><title type="html">linux command</title><link href="http://localhost:4000/Linux-Command.html" rel="alternate" type="text/html" title="linux command" /><published>2022-10-24T00:00:00+08:00</published><updated>2022-10-24T00:00:00+08:00</updated><id>http://localhost:4000/Linux-Command</id><content type="html" xml:base="http://localhost:4000/Linux-Command.html"><![CDATA[<h1 id="0-简介">0. 简介</h1>
 <p>该博客主要记录了linux常用命令，便于后续使用时查找命令，其余的一些博客:</p>
 <ul>
   <li><a href="https://docs.rockylinux.org/books/admin_guide/03-commands" target="_blank">linux command documentation</a></li>
@@ -45,6 +315,12 @@
   <li>在循环中可以通过bool值来控制某一个元素取还是不取，比如004中的加号可以由布尔值控制</li>
   <li><code class="language-plaintext highlighter-rouge">cin.peek()</code>可以读取当前输入的字符且不取走，<code class="language-plaintext highlighter-rouge">cin.get()</code>可以读取当前输入的字符并且取走</li>
   <li><code class="language-plaintext highlighter-rouge">n = scanf("%c", &amp;c)</code>，如果当前输入停止，则n=EOF</li>
+  <li><code class="language-plaintext highlighter-rouge">while(cin &gt;&gt; a)</code>可以实现对某种类型的变量a的持续输入</li>
+  <li>用二分法解决问题时，端点尽量最优化设计，并且除了取中点外，还可以通过左端点逐步加1/右端点逐步减1来寻找最优点</li>
+  <li>关于PI的数值，可以通过acos(-1.0)取值</li>
+  <li><code class="language-plaintext highlighter-rouge">#include&lt;iomanip&gt;</code>引用的是iomanip库，主要用于控制输入输出流的精度，比如<code class="language-plaintext highlighter-rouge">setprecision(int n)</code>用于控制输出流浮点数的精度，整数n代表有效数字个数(四舍五入)，使用<code class="language-plaintext highlighter-rouge">cout&lt;&lt;fixed&lt;&lt;setprecision(n)</code>可以保留浮点数的n位有效小数</li>
+  <li>分治，或者说归并的思想，就是对每一步分而治之，确定每一小步的操作后，递归到归并的最小单元进行操作，常见的分治算法为归并排序与快速排序</li>
+  <li>利用<code class="language-plaintext highlighter-rouge">#include&lt;fstream&gt;</code>可以进行file的读写，步骤为: 实例化<code class="language-plaintext highlighter-rouge">ifstream infile</code>-&gt;打开文件<code class="language-plaintext highlighter-rouge">infile.open("in.txt")</code>-&gt;读文件<code class="language-plaintext highlighter-rouge">infile.getline(...)</code>-&gt;关闭文件<code class="language-plaintext highlighter-rouge">infile.close()</code></li>
 </ul>]]></content><author><name>Quehry</name></author><category term="algorithm" /><summary type="html"><![CDATA[记录刷算法题过程中的心得]]></summary></entry><entry><title type="html">Latent Diffusion Model</title><link href="http://localhost:4000/Latent-Diffusion-Model.html" rel="alternate" type="text/html" title="Latent Diffusion Model" /><published>2022-10-16T00:00:00+08:00</published><updated>2022-10-16T00:00:00+08:00</updated><id>http://localhost:4000/Latent-Diffusion-Model</id><content type="html" xml:base="http://localhost:4000/Latent-Diffusion-Model.html"><![CDATA[<!-- TOC -->
 
 <ul>
@@ -1304,170 +1580,4 @@ logp_\theta(x)&amp;=E_{z\sim q_\phi(z\mid x)}[logp_\theta(x)] \\
   <li>GAN本质上就是左右手互博，目标函数设计的也很好</li>
 </ul>]]></content><author><name>Quehry</name></author><category term="note" /><summary type="html"><![CDATA[arrange notes]]></summary></entry><entry><title type="html">重要时间点及事件</title><link href="http://localhost:4000/Important-Event.html" rel="alternate" type="text/html" title="重要时间点及事件" /><published>2022-09-26T00:00:00+08:00</published><updated>2022-09-26T00:00:00+08:00</updated><id>http://localhost:4000/Important-Event</id><content type="html" xml:base="http://localhost:4000/Important-Event.html"><![CDATA[<!-- 2022.9.23 报9月工资 -->
 <!-- 2022.10.10 选3pi的项目 -->
-<!-- 2022.10.16 二十大 -->]]></content><author><name>Quehry</name></author><category term="daily" /><summary type="html"><![CDATA[for query]]></summary></entry><entry><title type="html">T5模型</title><link href="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="T5模型" /><published>2022-09-19T00:00:00+08:00</published><updated>2022-09-19T00:00:00+08:00</updated><id>http://localhost:4000/T5%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/T5%E6%A8%A1%E5%9E%8B.html"><![CDATA[<!-- TOC -->
-
-<ul>
-  <li><a href="#1-t5简介">1. T5简介</a></li>
-  <li><a href="#2-读论文">2. 读论文</a>
-    <ul>
-      <li><a href="#21-introduction">2.1. Introduction</a></li>
-      <li><a href="#22-setup">2.2. Setup</a>
-        <ul>
-          <li><a href="#221-model">2.2.1. Model</a></li>
-          <li><a href="#222-the-colossai-clean-crawled-corpusc4">2.2.2. THE Colossai Clean Crawled Corpus(C4)</a></li>
-          <li><a href="#223-downstream-tasks">2.2.3. Downstream Tasks</a></li>
-          <li><a href="#224-input-and-output-format">2.2.4. Input and Output Format</a></li>
-        </ul>
-      </li>
-      <li><a href="#23-experiments">2.3. Experiments</a>
-        <ul>
-          <li><a href="#231-baseline">2.3.1. Baseline</a>
-            <ul>
-              <li><a href="#2311-model">2.3.1.1. Model</a></li>
-              <li><a href="#2312-training">2.3.1.2. Training</a></li>
-              <li><a href="#2313-vocabulary">2.3.1.3. Vocabulary</a></li>
-              <li><a href="#2314-unsupervised-objective">2.3.1.4. Unsupervised Objective</a></li>
-              <li><a href="#2315-baseline-performance">2.3.1.5. Baseline Performance</a></li>
-            </ul>
-          </li>
-          <li><a href="#232-architectures">2.3.2. Architectures</a>
-            <ul>
-              <li><a href="#2321-model-structures">2.3.2.1. Model Structures</a></li>
-              <li><a href="#2322-comparing-different-model-structures">2.3.2.2. Comparing Different Model Structures</a></li>
-              <li><a href="#2323-objectives">2.3.2.3. Objectives</a></li>
-              <li><a href="#2324-results">2.3.2.4. Results</a></li>
-            </ul>
-          </li>
-          <li><a href="#233-unsupervised-objectives">2.3.3. Unsupervised Objectives</a></li>
-          <li><a href="#234-pre-training-data-set">2.3.4. Pre-training Data Set</a></li>
-          <li><a href="#235-training-strategy">2.3.5. Training Strategy</a></li>
-          <li><a href="#236-scaling">2.3.6. Scaling</a></li>
-          <li><a href="#237-putting-it-all-together">2.3.7. Putting It All Together</a></li>
-        </ul>
-      </li>
-      <li><a href="#24-reflection">2.4. Reflection</a></li>
-    </ul>
-  </li>
-  <li><a href="#3-个人总结">3. 个人总结</a></li>
-</ul>
-
-<!-- /TOC -->
-
-<h1 id="1-t5简介">1. T5简介</h1>
-<p>T5的全称是text-to-text transfer transformer，是google于2019年推出的NLP领域的大型预训练模型，T5模型将NLP领域的任务均看成text to text类型，在众多任务的表现十分优异，模型本身的结构就是transformer的encoder-decoder结构，但是预训练目标以及其他细节有所区别</p>
-
-<p>相关链接:</p>
-<ul>
-  <li><a href="https://arxiv.org/abs/1910.10683" target="_blank">论文</a></li>
-  <li><a href="https://github.com/google-research/text-to-text-transfer-transformer" target="_blank">github</a></li>
-  <li><a href="https://ai.googleblog.com/2020/02/exploring-transfer-learning-with-t5.html" target="_blank">google博客</a></li>
-  <li><a href="https://huggingface.co/docs/transformers/model_doc/t5" target="_blank">huggingface文档</a></li>
-</ul>
-
-<h1 id="2-读论文">2. 读论文</h1>
-<p>摘要: 将所有的以文本为基础的语言任务变成text to text格式的任务，论文比较了不同的预训练目标、架构、无标签数据集、迁移方式在NLU任务上的表现。论文还新建了数据集C4，T5模型在很多benchmark上能做到SOTA，包括总结、QA、文本分类等。此外，T5模型和C4数据集均开源</p>
-
-<h2 id="21-introduction">2.1. Introduction</h2>
-<p>把所有的文本处理问题看成”text-to-text”问题，也即输入一段文本，输出一段文本。</p>
-
-<center><img src="../assets/img/posts/20220919/2.jpg" /></center>
-
-<h2 id="22-setup">2.2. Setup</h2>
-<h3 id="221-model">2.2.1. Model</h3>
-<p>Transformer架构一开始用于机器翻译任务，自注意力可以看成将一段序列的每个词元替换成其他词元的加权平均。T5模型的架构和Transformer的encoder-decoder结构基本一致，区别在于T5模型去除了层归一偏差，将层归一化放在残差路径外，使用了一种不同的位置嵌入方案。</p>
-
-<h3 id="222-the-colossai-clean-crawled-corpusc4">2.2.2. THE Colossai Clean Crawled Corpus(C4)</h3>
-<p>这一部分主要介绍了C4数据集的相关内容。Common Crawl是一个公开的<a href="https://commoncrawl.org/" target="_blank">数据集网站</a>，它可以提供从网页爬取的文本，但是这些文本数据存在很多问题，论文提出了以下的几种方法来让数据集更clean:</p>
-<ul>
-  <li>只保留以终点符号(即句点，感叹号，问号或引号)结尾的行</li>
-  <li>丢弃少于五个句子的page，只保留超过3个单词的句子</li>
-  <li>删除任何包含有在<a href="https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words" target="_blank">List-of-Dirty</a>网站中出现的单词的网页</li>
-  <li>删除包含Javascript的行</li>
-  <li>删除出现“lorem ipsum”短语的page</li>
-  <li>删除所有包含大括号的页面</li>
-  <li>对数据集进行重复数据删除，当连续的三句话重复出现时只保留一个</li>
-  <li>使用langdetect工具过滤掉非英文的页面</li>
-</ul>
-
-<h3 id="223-downstream-tasks">2.2.3. Downstream Tasks</h3>
-<p>T5模型为了测量总体的语言学习能力，在很多benchmark上测试性能，比如机器翻译、QA、摘要总结、文本分类。在GLUE和SuperGLUE上测试文本分类能力，在CNN/Daily Mail上测试摘要总结能力，在SQuAD上测试QA能力…</p>
-
-<h3 id="224-input-and-output-format">2.2.4. Input and Output Format</h3>
-<p>正如在introduction中提及的一样，论文将所有的task看成text-to-text格式。这种框架为预训练和微调提供了一致的训练目标。模型用极大似然目标训练(教师强制)。为了区分不同任务，给input前加上task-specific前缀。比如为英翻德加上前缀“translate English to German: ”，论文附录里有各种任务的前缀与相关处理方法。</p>
-
-<h2 id="23-experiments">2.3. Experiments</h2>
-<p>论文搭建模型的出发点是比较不同的预训练目标、模型架构、无标签数据集等方面，从中选择表现最好的部分组成T5模型。每次只改变baseline的一部分，其余部分保持不变。BERT不太好做生成任务，比如机器翻译和摘要总结</p>
-
-<h3 id="231-baseline">2.3.1. Baseline</h3>
-<p>也即基准</p>
-<h4 id="2311-model">2.3.1.1. Model</h4>
-<p>模型选用Transformer的Encoder-Decoder架构，相比于只使用Encoder来说，该架构在分类和生成任务上取得更好的效果</p>
-
-<h4 id="2312-training">2.3.1.2. Training</h4>
-<p>所有的任务都是text-to-text类型，这让作者能用极大似然法和交叉熵损失来训练模型，优化器选择AdaFactor。在测试阶段，选用概率最高的词元作为输出。在预训练阶段，采用逆平方根学习率策略，即学习率会随着迭代周期下降。预训练阶段，模型迭代524288步。在微调阶段，模型迭代262144步，同时使用固定的学习率。</p>
-
-<h4 id="2313-vocabulary">2.3.1.3. Vocabulary</h4>
-<p>由于模型任务包含了翻译任务，所以词表不仅包含了英语词汇，还包括德语、法语和罗马尼亚语词汇。词表是预定义的，所以模型输出不会出现超出词表的词汇</p>
-
-<h4 id="2314-unsupervised-objective">2.3.1.4. Unsupervised Objective</h4>
-<p>模型预训练过程需要无标签的数据。过往的预训练模型训练过程都采用masked language modeling(denosing objectives)作为预训练目标，大家发现这种处理方式能取得很好的结果。对于去噪目标，模型需要预测被遮掩的词元。借鉴于BERT的经验，模型随机采样并选择丢弃了15%的词元(作为masked)，并且连续的掩蔽词元只被一个sentinel词元替代。下面展示了一个掩蔽的例子</p>
-
-<center><img src="../assets/img/posts/20220919/3.jpg" /></center>
-
-<h4 id="2315-baseline-performance">2.3.1.5. Baseline Performance</h4>
-<p>展示了baseline模型在不同benchmark上的表现，不同的benchmark使用不同的指标</p>
-
-<center><img src="../assets/img/posts/20220919/4.jpg" /></center>
-
-<h3 id="232-architectures">2.3.2. Architectures</h3>
-<p>比较不同框架在benchmark上的表现</p>
-
-<h4 id="2321-model-structures">2.3.2.1. Model Structures</h4>
-<p>作者选择了三种不同的架构进行对比，第一种架构是传统的Transformer的encoder-decoder架构，第二种是language modeling(encoder)架构，BERT用的就是这个架构，下一步的输出依赖于前一步的预测，第三种是Prefix Language Model，为text-to-text任务提供任务的前缀，比如翻译任务就是加上前缀translate English to German:</p>
-
-<center><img src="../assets/img/posts/20220919/5.jpg" /></center>
-
-<h4 id="2322-comparing-different-model-structures">2.3.2.2. Comparing Different Model Structures</h4>
-<p>比较了不同模型的层数，参数和FLOPS</p>
-
-<h4 id="2323-objectives">2.3.2.3. Objectives</h4>
-<p>除了架构的区别外，还比较了不同预训练目标带来的区别，比如使用Denosing Objectives时，LM架构需要把输入和输出连接起来进行连续的预测，使用LM目标时，LM架构需要从头预测到尾</p>
-
-<h4 id="2324-results">2.3.2.4. Results</h4>
-<p>直接看表格，可以发现第一种encoder-decoder架构的表现最好</p>
-
-<center><img src="../assets/img/posts/20220919/6.jpg" /></center>
-
-<h3 id="233-unsupervised-objectives">2.3.3. Unsupervised Objectives</h3>
-<p>本章从以下几个角度比较Unsupervised Objectives，实验得出结论，选取BERT-style，Corruption Strategies选择Replace spans，Corruption rate选择15%，Corrupted span length选择对每个词元都决定是否corrupted(独立)，也即i.i.d.，这样得出的效果最好</p>
-
-<center><img src="../assets/img/posts/20220919/7.jpg" /></center>
-
-<h3 id="234-pre-training-data-set">2.3.4. Pre-training Data Set</h3>
-<p>最终选择了全size的C4数据集作为预训练数据集</p>
-
-<h3 id="235-training-strategy">2.3.5. Training Strategy</h3>
-<p>比较了微调的不同方案、比较了多任务同时训练和单任务训练的效果，最终发现baseline的效果最好，即预训练加下游任务微调</p>
-
-<h3 id="236-scaling">2.3.6. Scaling</h3>
-<p>尝试了扩大模型规模的几种方式，最后发现baseline选择的预训练规模是最合适的，使用较大的模型可能会使下游的微调和推断变得更加昂贵</p>
-
-<h3 id="237-putting-it-all-together">2.3.7. Putting It All Together</h3>
-<p>这一部分介绍了模型最终的一些调整内容</p>
-<ul>
-  <li>预训练目标: 掩蔽片段平均长度为3，同时掩蔽比率为15%</li>
-  <li>更长的训练过程: C4数据集够大，让训练过程可以不用重复数据，因此增加批量大小、增加训练步数会更好</li>
-  <li>模型大小: 有好几个版本的T5模型，Base、Small、Large、3B and 11B</li>
-  <li>多任务预训练: 使用多任务预训练会为下游任务带来好处
-展示一下最终的效果</li>
-</ul>
-
-<center><img src="../assets/img/posts/20220919/8.jpg" /></center>
-
-<h2 id="24-reflection">2.4. Reflection</h2>
-<p>这一部分总结了模型的创新部分，同时提出了模型的缺点以及展望</p>
-
-<h1 id="3-个人总结">3. 个人总结</h1>
-<p>T5模型是google继bert之后推出的一个大型预训练模型，先说说T5模型的特点，T5模型的架构是transformer的encoder-decoder架构，预训练数据集选用google自制的C4数据集，数据集也相当大，作者希望做出一个大统一的预训练模型，所以采用text-to-text任务类型也是它的一大特点，具体来说就是把所有的NLP任务变成输入一段文本，模型输出一段文本的形式，模型的预训练目标也很有特色，采用了类似bert的掩蔽预训练目标。论文做了很多很多很贵的实验，对比了很多方面，最后得到了这个模型，论文里的实验都说明的很详细，同时它也刷了很多榜，比如GLUE等，效果是比之前的预训练模型都好，是google财大气粗的表现。</p>
-
-<p>模型在github上开源，在tensorflow上可以直接实现</p>]]></content><author><name>Quehry</name></author><category term="paper" /><summary type="html"><![CDATA[arrange notes]]></summary></entry></feed>
+<!-- 2022.10.16 二十大 -->]]></content><author><name>Quehry</name></author><category term="daily" /><summary type="html"><![CDATA[for query]]></summary></entry></feed>

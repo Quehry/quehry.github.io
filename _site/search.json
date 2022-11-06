@@ -1,6 +1,16 @@
 [
   
     {
+      "title"       : "ROX learning",
+      "category"    : "",
+      "tags"        : "notes",
+      "url"         : "./ROS.html",
+      "date"        : "2022-10-30 00:00:00 +0800",
+      "description" : "学习ROS",
+      "content"     : "1. 简介这篇博客主要记录学习ROS的笔记，内容来源于: bili古月居 udemy 古月居课件及源码2. 古月居2.1. ROS安装根据ROS-wiki的说明一步步进行安装2.2. ROS是什么 ROS发展史: ROS能提高机器人研发中软件的复用率2.3. ROS的核心概念 节点(Node)是ROS中的执行单元: 执行具体任务的进程、独立运行的可执行文件 不同节点可使用不同的编程语言，分布式运行在不同的主机 节点在系统的名称必须唯一 节点管理器(ROS Master)是ROS的控制中心: 为节点提供命名和注册服务 跟踪和记录话题/服务通信，辅助节点相互查找、建立连接 为节点提供参数 话题通信机制(异步): 话题(Topic) 节点间用来传输数据的重要总线 使用发布/订阅模型，数据由发布者传输到订阅者，同一个话题的订阅者或发布者可以不唯一 消息(Message) 具有一定类型的数据结构 使用编程语言无关的.msg文件定义，编译过程中生成对应的代码文件 服务通信机制(同步): 服务(Service) 使用客户端/服务器模型，客户端发送请求数据，服务器完成处理后返回应答数据 使用编程语言无关的.srv文件定义请求和应答数据结构 话题和服务通信的区别: 参数-全局共享字典: 可通过网络访问共享、多变量字典 节点使用此服务器来存储和检索运行时的参数 不适合存储动态配置的数据 文件系统2.4. ROS命令行工具 常用命令: rostopic/rosservice/rosnode/rosparam/rosmsg/rossrv rqt_graph可以查看系统的节点和通信机制 rqt_graph rosnode list可以查看节点的列表 rosnode info /turtlesim可以查看turtlesim这个节点的信息 rostopic list可以查看话题的列表 rostopic pub /turtlesim/cmd_vel ...可以使用cmd_vel话题发送消息 rosmsg show geometry_msgs/Twist可以查看某个消息的信息 rosservice list可以查看ROS中服务的列表 rosservice call ...可以调用某个服务 rosbag record ...可以记录某一个话题 rosbag play ...可以通过保存的bag文件来复现该话题2.5. 创建工作空间与功能包 工作空间是一个存放工程开发相关文件的文件夹 创建工作空间的步骤 catkin_make install创建install空间 创建功能包2.6. Publisher的编程实现 话题模型 首先创建功能包cd ~/catkiin_ws/srccatkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim 使用c++创建publisher 创建publisher时需要声明消息类型，话题的名称，创建publisher完毕后，即可创建消息来让publisher发布 配置publisher代码编译的规则(在cmakelists中) 设置需要编译的代码和生成的可执行文件/设置链接库 编译并运行发布者 python实现publisher2.7. Subscriber的实现 python实现subsriber2.8. 话题消息的定义与使用 自定义话题消息 定义msg文件 在package.xml中添加功能包的依赖 在CMakeLists中添加编译选项 编译生成语言相关文件 python实现topic 定义publisher和subscriber(需要声明topic和消息)2.9. client实现 服务模型(C/S模型): python实现client2.10. server实现 python实现server:2.11. 服务数据的定义与使用 自定义服务数据 服务模型 首先生成server节点，然后创建service，client在发现service后创建并发送数据，server在接受数据后进入callback返回request2.12. 参数的使用与编程方法 参数模型"
+    } ,
+  
+    {
       "title"       : "linux command",
       "category"    : "",
       "tags"        : "notes",
@@ -17,7 +27,7 @@
       "url"         : "./Algorithm-Practice.html",
       "date"        : "2022-10-21 00:00:00 +0800",
       "description" : "记录刷算法题过程中的心得",
-      "content"     : "简介这篇博客记录了做算法题过程的一些心得，目前的想法是先把网课的习题做完提交完，然后学习C语言面向对象的知识，然后去刷题平台上去刷题Practice iostream头文件包含了cin与cout int &amp;a=b中&amp;的用法是C++中的引用用法，变量的引用就是变量的别名，这样就可以实现在函数中向实参传递值 ~的用法之一是按位取反运算，即数的每一位都取反，^的用法之一是按位异或运算 stdio.h是C语言的标准库，包含了C语言常用的输入输出函数，比如文件的读写函数fopen/fclose，格式化输入输出函数scanf/printf，为了适配C++，变成了cstdio strlen()是string.h的一个函数，可以返回字符串的长度，原理是读到结束字符\\0后停止 字符串变量可以通过cin读取键盘输入的字符串，对于由0/1组成的字符串而言，可以考虑用整型存储，然后通过按位运算对整型的每一个bit进行操作 memcpy()是cstring中的一个函数，使用时需要引用cstring头文件，memcpy(char * a, char * b, int c)表示将字符串b拷贝到字符串a，c表示字符串的大小 可以将递归嵌套在循环中完成穷举 全排列的实现有固定的套路: 对排列的每一位进行循环，如果有用过的元素，就标记一下，在下次选取的时候不考虑该元素，这样按着顺序选元素就可以实现全排列，具体见问题3，全排列也是一个穷举的过程 定义字符串或者一维数组时，最好还是把元素个数给大一点 在循环中可以通过bool值来控制某一个元素取还是不取，比如004中的加号可以由布尔值控制 cin.peek()可以读取当前输入的字符且不取走，cin.get()可以读取当前输入的字符并且取走 n = scanf(\"%c\", &amp;c)，如果当前输入停止，则n=EOF"
+      "content"     : "简介这篇博客记录了做算法题过程的一些心得，目前的想法是先把网课的习题做完提交完，然后学习C语言面向对象的知识，然后去刷题平台上去刷题Practice iostream头文件包含了cin与cout int &amp;a=b中&amp;的用法是C++中的引用用法，变量的引用就是变量的别名，这样就可以实现在函数中向实参传递值 ~的用法之一是按位取反运算，即数的每一位都取反，^的用法之一是按位异或运算 stdio.h是C语言的标准库，包含了C语言常用的输入输出函数，比如文件的读写函数fopen/fclose，格式化输入输出函数scanf/printf，为了适配C++，变成了cstdio strlen()是string.h的一个函数，可以返回字符串的长度，原理是读到结束字符\\0后停止 字符串变量可以通过cin读取键盘输入的字符串，对于由0/1组成的字符串而言，可以考虑用整型存储，然后通过按位运算对整型的每一个bit进行操作 memcpy()是cstring中的一个函数，使用时需要引用cstring头文件，memcpy(char * a, char * b, int c)表示将字符串b拷贝到字符串a，c表示字符串的大小 可以将递归嵌套在循环中完成穷举 全排列的实现有固定的套路: 对排列的每一位进行循环，如果有用过的元素，就标记一下，在下次选取的时候不考虑该元素，这样按着顺序选元素就可以实现全排列，具体见问题3，全排列也是一个穷举的过程 定义字符串或者一维数组时，最好还是把元素个数给大一点 在循环中可以通过bool值来控制某一个元素取还是不取，比如004中的加号可以由布尔值控制 cin.peek()可以读取当前输入的字符且不取走，cin.get()可以读取当前输入的字符并且取走 n = scanf(\"%c\", &amp;c)，如果当前输入停止，则n=EOF while(cin &gt;&gt; a)可以实现对某种类型的变量a的持续输入 用二分法解决问题时，端点尽量最优化设计，并且除了取中点外，还可以通过左端点逐步加1/右端点逐步减1来寻找最优点 关于PI的数值，可以通过acos(-1.0)取值 #include&lt;iomanip&gt;引用的是iomanip库，主要用于控制输入输出流的精度，比如setprecision(int n)用于控制输出流浮点数的精度，整数n代表有效数字个数(四舍五入)，使用cout&lt;&lt;fixed&lt;&lt;setprecision(n)可以保留浮点数的n位有效小数 分治，或者说归并的思想，就是对每一步分而治之，确定每一小步的操作后，递归到归并的最小单元进行操作，常见的分治算法为归并排序与快速排序 利用#include&lt;fstream&gt;可以进行file的读写，步骤为: 实例化ifstream infile-&gt;打开文件infile.open(\"in.txt\")-&gt;读文件infile.getline(...)-&gt;关闭文件infile.close()"
     } ,
   
     {

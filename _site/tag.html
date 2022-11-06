@@ -289,7 +289,14 @@
   <li>在循环中可以通过bool值来控制某一个元素取还是不取，比如004中的加号可以由布尔值控制</li>
   <li><code class="language-plaintext highlighter-rouge">cin.peek()</code>可以读取当前输入的字符且不取走，<code class="language-plaintext highlighter-rouge">cin.get()</code>可以读取当前输入的字符并且取走</li>
   <li><code class="language-plaintext highlighter-rouge">n = scanf("%c", &amp;c)</code>，如果当前输入停止，则n=EOF</li>
+  <li><code class="language-plaintext highlighter-rouge">while(cin &gt;&gt; a)</code>可以实现对某种类型的变量a的持续输入</li>
+  <li>用二分法解决问题时，端点尽量最优化设计，并且除了取中点外，还可以通过左端点逐步加1/右端点逐步减1来寻找最优点</li>
+  <li>关于PI的数值，可以通过acos(-1.0)取值</li>
+  <li><code class="language-plaintext highlighter-rouge">#include&lt;iomanip&gt;</code>引用的是iomanip库，主要用于控制输入输出流的精度，比如<code class="language-plaintext highlighter-rouge">setprecision(int n)</code>用于控制输出流浮点数的精度，整数n代表有效数字个数(四舍五入)，使用<code class="language-plaintext highlighter-rouge">cout&lt;&lt;fixed&lt;&lt;setprecision(n)</code>可以保留浮点数的n位有效小数</li>
+  <li>分治，或者说归并的思想，就是对每一步分而治之，确定每一小步的操作后，递归到归并的最小单元进行操作，常见的分治算法为归并排序与快速排序</li>
+  <li>利用<code class="language-plaintext highlighter-rouge">#include&lt;fstream&gt;</code>可以进行file的读写，步骤为: 实例化<code class="language-plaintext highlighter-rouge">ifstream infile</code>-&gt;打开文件<code class="language-plaintext highlighter-rouge">infile.open("in.txt")</code>-&gt;读文件<code class="language-plaintext highlighter-rouge">infile.getline(...)</code>-&gt;关闭文件<code class="language-plaintext highlighter-rouge">infile.close()</code></li>
 </ul>
+
 <a class="read-more" href="./Algorithm-Practice.html"> read more</a>
 					</div>
 				</div>
@@ -1402,6 +1409,45 @@
 			
 
 				<div class="post">
+					<a class="post-list-title" href="./ROS.html">ROX learning</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-10-30T00:00:00+08:00">October 30, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h1 id="1-简介">1. 简介</h1> <p>这篇博客主要记录学习ROS的笔记，内容来源于:</p> <ul> <li><a href="https://www.bilibili.com/video/BV1zt411G7Vn/?spm_id_from=333.337.search-card.all.click&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">bili古月居</a></li> <li><a href="https://www.udemy.com/course/ros-navigation/learn/lecture/11785182#overview" target="_blank">udemy</a></li> <li><a href="https://github.com/guyuehome/ros_21_tutorials" target="_blank">古月居课件及源码</a></li> </ul> <h1 id="2-古月居">2. 古月居</h1> <h2 id="21-ros安装">2.1. ROS安装</h2> <p>根据<a href="http://wiki.ros.org/noetic/Installation/Ubuntu" target="_blank">ROS-wiki</a>的说明一步步进行安装</p> <h2 id="22-ros是什么">2.2. ROS是什么</h2> <ul> <li>ROS发展史:</li> </ul> <center><img src="../assets/img/posts/20221030/2.jpg" /></center> <ul> <li>ROS能提高机器人研发中软件的复用率</li> </ul> <center><img src="../assets/img/posts/20221030/3.png" /></center> <h2 id="23-ros的核心概念">2.3. ROS的核心概念</h2> <ul> <li>节点(Node)是ROS中的执行单元: <ul> <li>执行具体任务的进程、独立运行的可执行文件</li> <li>不同节点可使用不同的编程语言，分布式运行在不同的主机</li> <li>节点在系统的名称必须唯一</li> </ul> </li> <li>节点管理器(ROS Master)是ROS的控制中心: <ul> <li>为节点提供命名和注册服务</li> <li>跟踪和记录话题/服务通信，辅助节点相互查找、建立连接</li> <li>为节点提供参数</li> </ul> </li> </ul> <center><img src="../assets/img/posts/20221030/4.png" /></center> <ul> <li>话题通信机制(异步): <ul> <li>话题(Topic) <ul> <li>节点间用来传输数据的重要总线</li> <li>使用发布/订阅模型，数据由发布者传输到订阅者，同一个话题的订阅者或发布者可以不唯一</li> </ul> </li> <li>消息(Message) <ul> <li>具有一定类型的数据结构</li> <li>使用编程语言无关的.msg文件定义，编译过程中生成对应的代码文件</li> </ul> </li> </ul> </li> </ul> <center><img src="../assets/img/posts/20221030/5.png" /></center> <ul> <li>服务通信机制(同步): <ul> <li>服务(Service) <ul> <li>使用客户端/服务器模型，客户端发送请求数据，服务器完成处理后返回应答数据</li> <li>使用编程语言无关的.srv文件定义请求和应答数据结构</li> </ul> </li> </ul> </li> </ul> <center><img src="../assets/img/posts/20221030/6.png" /></center> <ul> <li>话题和服务通信的区别:</li>...<a class="read-more" href="./ROS.html"> read more</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
 					<a class="post-list-title" href="./Linux-Command.html">linux command</a>
 					
 
@@ -1533,45 +1579,6 @@
 
 <center><img src="../assets/img/posts/20221016/3.jpg" /></center>
 <a class="read-more" href="./Latent-Diffusion-Model.html"> read more</a>
-					</div>
-				</div>
-			
-			
-
-				<div class="post">
-					<a class="post-list-title" href="./Diffusion-Model.html">扩散模型</a>
-					
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2022-10-12T00:00:00+08:00">October 12, 2022</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        4 minute read
-      
-    </span>
-  
-  
-  </span>
-
-					<div class="post-excerpt">
-						<!-- TOC --> <ul> <li><a href="#1-扩散模型简介">1. 扩散模型简介</a></li> <li><a href="#2-模型">2. 模型</a> <ul> <li><a href="#21-前向扩散">2.1. 前向扩散</a></li> <li><a href="#22-反向扩散过程">2.2. 反向扩散过程</a></li> <li><a href="#23-损失函数">2.3. 损失函数</a></li> <li><a href="#24-ddpm中给出的训练与采样生成过程">2.4. DDPM中给出的训练与采样(生成)过程</a></li> <li><a href="#25-小结">2.5. 小结</a></li> </ul> </li> <li><a href="#3-一些技巧和主要网络结构">3. 一些技巧和主要网络结构</a> <ul> <li><a href="#31-\beta_t和\sigma_\theta的取值">3.1. $\beta_t$和$\Sigma_\theta$的取值</a></li> <li><a href="#32-加速扩散模型采样的技巧">3.2. 加速扩散模型采样的技巧</a></li> <li><a href="#33-u-net">3.3. U-Net</a></li> </ul> </li> <li><a href="#4-条件生成">4. 条件生成</a> <ul> <li><a href="#41-classifier-guided-diffusion">4.1. Classifier Guided Diffusion</a></li> <li><a href="#42-classifier-free-guidance">4.2. Classifier-Free Guidance</a></li> <li><a href="#43-scale-up-generation-resolution-and-quality">4.3. Scale up Generation Resolution and Quality</a></li> </ul> </li> </ul> <!-- /TOC --> <h1 id="1-扩散模型简介">1. 扩散模型简介</h1> <p>扩散模型(Diffusion Model)是深度生成模型中的SOTA，相比于GAN、VAE、Flow-based这些生成模型而言，扩散模型可以取得更好的效果。扩散模型受非平衡热力学启发，它定义了一条多时间步的马尔可夫链来逐步给图片添加噪声，如果时间步够大，最终图片会变成纯噪声，扩散模型的目的是学习反向的扩散过程，也就是输入随机噪声，能返回一张图片，相比于之前提到的各种生成模型而言，扩散模型具有相对固定的学习步骤，同时隐变量维度更高(和输入数据同样的维度)</p> <center><img src="../assets/img/posts/20221012/2.jpg" /></center> <p>扩散模型的早在2015年便提出了(<a href="https://arxiv.org/abs/1503.03585" target="_blank">论文链接</a>)，但在当时没有引起广泛的关注，直到2019年<a href="https://arxiv.org/abs/1907.05600" target="_blank">NCSN</a>和2020年<a href="https://arxiv.org/abs/2006.11239" target="_blank">DDPM</a>的出现才将扩散模型引入了新高度，2022年火爆的text2image模型GLIDE、DALLE2、Latent Diffusion、Imagen的相继提出，让扩散模型火出了圈，这篇博客将对扩散模型的前向计算、反向训练、训练、生成步骤及其数学原理做详细的整理，会列出很多数学公式，同时该博客也参考了很多相关资料，这里我一并列出</p> <ul> <li><a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/" target="_blank">Lil blog, 一篇整理相当详尽的博客，也是我主要的参考对象</a></li> <li><a href="https://huggingface.co/blog/annotated-diffusion" target="_blank">huggingface的一篇解释简单明了的博客</a></li> <li><a href="https://zhuanlan.zhihu.com/p/525106459" target="_blank">知乎上一篇中文博客</a></li> <li><a href="https://arxiv.org/abs/2006.11239"...<a class="read-more" href="./Diffusion-Model.html"> read more</a>
 					</div>
 				</div>
 			
@@ -2311,7 +2318,7 @@
                 <li><a href="./tag.html?tag=note" class="tag">note <span>(11)</span></a></li>
             
                 
-                <li><a href="./tag.html?tag=notes" class="tag">notes <span>(6)</span></a></li>
+                <li><a href="./tag.html?tag=notes" class="tag">notes <span>(7)</span></a></li>
             
                 
                 <li><a href="./tag.html?tag=optimization" class="tag">optimization <span>(1)</span></a></li>
