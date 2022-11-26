@@ -191,3 +191,20 @@ catkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim
 
 ## 2.12. 参数的使用与编程方法
 - 参数模型
+
+# 3. Udemy课程
+## 3.1. Course Overview
+### 3.1.1. Installation of turtlebot3
+- 这小节主要介绍如何安装turtlebot3: 
+- 按照udemy的讲义上一步步安装，首先安装ros-noetic-navigation和ros-noetic-slam-gmapping，然后拷贝github上的代码到本地编译turtlebot3，同样的做法安装turtlebot3-simulation
+
+### 3.1.2. Turtlebot3 SImulation Environments
+- `roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch` 打开一个空白的空间，里面只有一辆小车
+- `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch` 启动后，可以键入wasd来操作小车
+- `roslaunch turtlebot3_gazebo tuetlebot3_world.launch` 里面有几根柱子和小车
+- `roslaunch turtlebot3_gazebo turtlebot3_house.launch` 房间
+- `roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch` ros中很重要的可视化软件Rviz，关于turtlebot3有适配版本，可以可视化小车的激光雷达和摄像头
+- `roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping` slam，可视化在Rviz上，slam的算法有很多，这里采用gmapping的方法
+
+## 3.2. ROS Navigation Demo
+
