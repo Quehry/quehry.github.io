@@ -3,6 +3,52 @@
 [   
       
   {
+  "tag" : "Bert",
+  "posts" : [
+      
+      "./Bert.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "NLP",
+  "posts" : [
+      
+      "./Bert.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Paper Reading",
+  "posts" : [
+      
+      "./Bert.html",
+      
+      "./Transformer.html",
+      
+      "./ViT.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "Transformer",
+  "posts" : [
+      
+      "./Transformer.html",
+      
+      "./ViT.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "algorithm",
   "posts" : [
       
@@ -49,6 +95,16 @@
   "posts" : [
       
       "./AI-and-intellectual-property.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "course",
+  "posts" : [
+      
+      "./Object-Oriented-Programming.html"
       
     ]
   } ,
@@ -178,6 +234,10 @@
   "tag" : "notes",
   "posts" : [
       
+      "./Object-Oriented-Programming.html",
+      
+      "./ROS.html",
+      
       "./Linux-Command.html",
       
       "./Latent-Diffusion-Model.html",
@@ -199,6 +259,16 @@
   "posts" : [
       
       "./neural-network-optimization-methods.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "overview",
+  "posts" : [
+      
+      "./Vision-Language-Model.html"
       
     ]
   } ,

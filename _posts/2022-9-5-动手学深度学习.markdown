@@ -277,7 +277,7 @@ toc: yes
 
 <center><img src='../assets/img/posts/20220905/25.jpg'></center>
 
-- 多头注意力: 对q、k、v使用线性变换得到h组不同的q-k-v来输入h个注意力汇聚层，得到h个输出，这h个输出再线性变换得到最终输出
+- 多头注意力: 对q、k、v使用线性变换并拆分得到h组不同的q-k-v来输入h个注意力汇聚层，得到h个输出，这h个输出concatenate后线性变换得到最终输出
 
 <center><img src='../assets/img/posts/20220905/26.jpg'></center>
 

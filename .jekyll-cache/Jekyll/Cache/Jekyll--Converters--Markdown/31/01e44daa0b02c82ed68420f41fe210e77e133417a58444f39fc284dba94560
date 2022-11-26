@@ -1,0 +1,587 @@
+I"d`<h1 id="1-简介">1. 简介</h1>
+<p>网课程序设计与算法(三):C++面向对象程序设计的随堂笔记，授课平台是中国大学MOOC，授课老师是北大的郭炜老师，开课次数是第十五次开课。程序设计与算法是一个系列的课程，C++面向对象程序设计是该系列的最后一门课程。课程文件有每节课的讲义及习题(openjudge上)，相关链接:</p>
+<ul>
+  <li><a href="https://www.icourse163.org/learn/PKU-1002029030?tid=1469134446#/learn/content" target="_blank">课程链接，开课阶段过了可能会失效</a></li>
+  <li><a href="http://cxsjsxmooc.openjudge.cn/2022t3fall/" target="_blank">openjudge习题</a></li>
+</ul>
+
+<h1 id="2-随堂笔记">2. 随堂笔记</h1>
+<h2 id="21-第一章-从c到c">2.1. 第一章 从C到C++</h2>
+<h3 id="211-引用">2.1.1. 引用</h3>
+<ul>
+  <li>引用的概念: <code class="language-plaintext highlighter-rouge">int &amp; a = b</code></li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/2.jpg" /></center>
+
+<ul>
+  <li>引用的一些注意事项</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/3.jpg" /></center>
+
+<ul>
+  <li>C语言中，形参的值改变不会影响实参的值</li>
+  <li>C语言中交换两个数的值的函数swap的写法:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/4.png" /></center>
+
+<ul>
+  <li>C++中有了引入的概念后，swap函数便可以这么写:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/5.jpg" /></center>
+
+<ul>
+  <li>除此之外，引用还可以作为函数的返回值，目前还不知道具体作用，后续会了解</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/6.jpg" /></center>
+
+<ul>
+  <li>常引用:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/7.jpg" /></center>
+
+<ul>
+  <li>不能通过常引用来修改其引用内容:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/8.jpg" /></center>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">const T &amp;</code> 和 <code class="language-plaintext highlighter-rouge">T &amp;</code>的相互转换:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/9.jpg" /></center>
+
+<h3 id="212-const关键字">2.1.2. const关键字</h3>
+<ul>
+  <li>const的第一个作用就是定义常量</li>
+  <li>const的第二个作用是定义常量指针:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/10.jpg" /></center>
+<center><img src="../assets/img/posts/20221120/11.jpg" /></center>
+
+<ul>
+  <li>常量指针常作为函数的参数，可避免函数内部不小心改变参数指针所指地方的内容</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/12.jpg" /></center>
+
+<h3 id="213-动态内存分配">2.1.3. 动态内存分配</h3>
+<ul>
+  <li>用new运算符实现动态内存分配<code class="language-plaintext highlighter-rouge">P = new T</code>:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/13.jpg" /></center>
+
+<ul>
+  <li>用new运算符分配一个数组:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/14.jpg" /></center>
+
+<ul>
+  <li>用new动态分配的内存空间，一定要用delete运算符进行释放，<code class="language-plaintext highlighter-rouge">delete 指针</code>:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/15.jpg" /></center>
+
+<ul>
+  <li>如果定义了一个数组的动态空间，delete的时候一定要加上中括号:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/16.jpg" /></center>
+
+<h3 id="214-内联函数">2.1.4. 内联函数</h3>
+<ul>
+  <li>内联函数的主要作用是加速简单的函数的调用，所以一般是用于相对简单的函数，在前面加上<code class="language-plaintext highlighter-rouge">inline</code>关键字:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/17.jpg" /></center>
+
+<center><img src="../assets/img/posts/20221120/18.jpg" /></center>
+
+<ul>
+  <li>函数重载: 名字相同但参数个数或参数类型不同</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/19.png" /></center>
+
+<ul>
+  <li>C++中，定义函数的时候可以让<strong>最右边</strong>的连续若干个参数有缺省值，那么调用函数的时候，相应位置不写参数，参数就是缺省值:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/20.jpg" /></center>
+
+<ul>
+  <li>函数的缺省参数的作用:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/21.jpg" /></center>
+
+<h2 id="22-第二章-类和对象基础">2.2. 第二章 类和对象基础</h2>
+<h3 id="221-类和对象的基本概念">2.2.1. 类和对象的基本概念</h3>
+<ul>
+  <li>在面向对象编程之前，设计一个程序的方法是结构化程序设计(structured programming)，具体来说就是数据结构+算法</li>
+  <li>结构化程序设计有很多不足，结构化的程序，在规模庞大时，会变得难以理解，难以扩充，难以查错，难以重用</li>
+  <li>软件业的目标时更快、更正确、更经济地建立软件</li>
+  <li>面向对象程序设计可以很好的解决上述问题</li>
+  <li>面向对象的程序=类+类+..+类</li>
+  <li>面向对象的程序设计具有抽象、封装、继承、多态四个基本特点</li>
+  <li>类有成员变量和成员函数，成员变量和成员函数统称为类的成员，类看上去就像带函数的结构</li>
+  <li>一个类的例子:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/22.jpg" /></center>
+
+<ul>
+  <li>类在实例化之后就是一个对象，通过类，可以定义变量，类定义出来的变量，也称为类的实例，就是我们所说的对象</li>
+  <li>对象所占用的内存空间大小等于所有成员变量的大小之和</li>
+  <li>和结构体类似，既可以通过<code class="language-plaintext highlighter-rouge">对象名.成员名</code>的方法来访问类的成员变量和成员函数，也可以通过<code class="language-plaintext highlighter-rouge">指针-&gt;成员名</code>来访问指针指向的类的成员变量:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/23.jpg" /></center>
+
+<ul>
+  <li>C++中，也可以通过引用的方法来访问类的成员，因为引用之后，两者就等价了</li>
+  <li>类的成员函数和类的定义可以分开写，可以在类的内部声明类的成员函数，然后在类的外部通过<code class="language-plaintext highlighter-rouge">类名::类的成员函数</code>来定义:</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">CRectangle</span><span class="o">::</span><span class="n">Area</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>在类的定义中，用下列访问关键字来说明类成员可被访问的范围(private,public,protected):</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/24.jpg" /></center>
+
+<ul>
+  <li>如果类的某个成员前面没有上述关键字，则缺省地被认为是私有成员:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/25.jpg" /></center>
+
+<ul>
+  <li>类成员的可访问范围:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/26.jpg" /></center>
+
+<ul>
+  <li>设置私有成员的机制，叫做<strong>隐藏</strong>，隐藏的目的是强制对成员变量的访问一定要通过成员函数进行，那么以后成员变量的类型等属性修改后，只需要更改成员函数即可</li>
+  <li><code class="language-plaintext highlighter-rouge">strcpy(char * a, char* b)</code>可以将字符串b的值赋给字符串a</li>
+  <li>析构函数(destructor)与构造函数相反，当对象结束其生命周期，如对象所在的函数已调用完毕时，系统自动执行析构函数。比如在建立对象时使用<code class="language-plaintext highlighter-rouge">new</code>开辟了一片内存空间，<code class="language-plaintext highlighter-rouge">delete</code>会自动调用析构函数后释放内存</li>
+  <li>成员函数的重载及参数缺省: 成员函数可以重载，也可以带缺省的参数</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/27.jpg" /></center>
+
+<ul>
+  <li>使用重载的时候一定要注意避免函数重载时的二义性</li>
+</ul>
+
+<h3 id="222-构造函数">2.2.2. 构造函数</h3>
+<ul>
+  <li>构造函数是成员函数的一种，名字与类名相同，不能有返回值，可以有参数，作用是对对象实例化时进行初始化，如果定义类的时候没写构造函数，则编译器默认生成一个无参数的构造函数，默认的构造函数不做任何操作</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/28.jpg" /></center>
+
+<ul>
+  <li>构造函数的作用是执行必要的初始化工作，有个构造函数，就不必再写初始化函数，也不用担心忘记调用初始化函数</li>
+  <li>对象实例化的方法:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Complex c1</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Complex c1(3,4)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Complex * pc = new Complex</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Complex * pc = new Complex(3,4)</code></li>
+    </ul>
+  </li>
+  <li>构造函数也可以重载</li>
+  <li>利用类来构造数组时，如果声明数组的时候没有传参，那么默认无参数，如果传递了参数，那么就认为是有参数的构造函数</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/29.png" /></center>
+<center><img src="../assets/img/posts/20221120/30.jpg" /></center>
+
+<ul>
+  <li>构造函数最好是public的</li>
+  <li>new完之后一定记得delete</li>
+  <li>用指针来实例化对象的时候一定要开辟内存空间，不然不知道这个指针指向哪里</li>
+</ul>
+
+<h3 id="223-复制构造函数">2.2.3. 复制构造函数</h3>
+<ul>
+  <li>复制构造函数的概念:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/31.jpg" /></center>
+
+<ul>
+  <li>复制构造函数的一个例子:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/32.jpg" /></center>
+
+<ul>
+  <li>如果定义自己的复制构造函数，则默认的复制构造函数不会存在</li>
+  <li>复制构造函数起作用的三种情况:
+    <ul>
+      <li>用一个对象去初始化同类的另一个对象时</li>
+      <li>如果某函数有一个参数是类A的对象(不是类A的引用)，那么该函数被调用时，类A的复制构造函数将被调用</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20221120/33.jpg" /></center>
+
+    <ul>
+      <li>如果函数的返回值是类A的对象时，则函数返回时，A的复制构造函数将被调用</li>
+    </ul>
+
+    <center><img src="../assets/img/posts/20221120/34.png" /></center>
+  </li>
+  <li>对象间赋值并不导致复制构造函数被调用，会直接把a的成员变量的值赋给b</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/35.png" /></center>
+
+<ul>
+  <li>如果某个函数的参数包含类A的对象时，调用函数时会调用类A的复制构造函数，调用开销比较大，这时可以将函数的参数变成常量引用<code class="language-plaintext highlighter-rouge">const Complex &amp;</code>，这样形参的改变不会影响实参</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/36.png" /></center>
+
+<h3 id="224-类型转换构造函数">2.2.4. 类型转换构造函数</h3>
+<ul>
+  <li>类型转换构造函数的概念:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/37.png" /></center>
+
+<ul>
+  <li>例子:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/38.jpg" /></center>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">float a = int b</code>其实就是定义对象a的时候调用了float类的类型转换构造函数(显式)</li>
+  <li>关键字<code class="language-plaintext highlighter-rouge">explicit</code>用于只有一个参数的构造函数，表明构造函数是显式的:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/39.jpg" /></center>
+
+<ul>
+  <li>析构函数的概念:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/40.jpg" /></center>
+
+<ul>
+  <li>例子:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/41.jpg" /></center>
+
+<ul>
+  <li>类的数组在生命周期结束时，会调用每个元素的析构函数</li>
+  <li>析构函数在对象作为函数的返回值返回后被调用(下面这个例子中析构函数被调用了三次):</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/42.jpg" /></center>
+
+<h3 id="225-构造函数和析构函数调用时机">2.2.5. 构造函数和析构函数调用时机</h3>
+<ul>
+  <li>构造函数和析构函数什么时候会被调用? 看一个例子:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/43.jpg" /></center>
+
+<ul>
+  <li>静态局部变量在函数消亡时不会消失</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/44.jpg" /></center>
+
+<ul>
+  <li>复制构造函数在不同编译器里不同的表现:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/45.jpg" /></center>
+<center><img src="../assets/img/posts/20221120/46.jpg" /></center>
+<center><img src="../assets/img/posts/20221120/47.png" /></center>
+
+<h2 id="23-类和对象提高">2.3. 类和对象提高</h2>
+<h3 id="231-this指针">2.3.1. this指针</h3>
+<ul>
+  <li>new返回的是指针</li>
+  <li>this指针的作用就是指向成员函数所作用的对象</li>
+  <li>非静态成员函数中可以直接使用this来代表指向该函数作用的对象的指针:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/48.jpg" /></center>
+
+<ul>
+  <li>静态成员函数中不能使用this指针，因为静态成员函数并不具体作用于某个对象，因此，静态成员函数的真实的参数的个数，就是程序中写出的参数个数</li>
+</ul>
+
+<h3 id="232-静态成员变量">2.3.2. 静态成员变量</h3>
+<ul>
+  <li>静态成员: 在声明前加了<code class="language-plaintext highlighter-rouge">static</code>关键字的成员，包含了静态成员变量和静态成员函数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/49.jpg" /></center>
+
+<ul>
+  <li>普通的成员变量每个对象各有一份，而静态成员变量一共就一份，为所有对象所共享，<code class="language-plaintext highlighter-rouge">sizeof</code>运算符不会计算静态成员变量</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/50.jpg" /></center>
+
+<ul>
+  <li>访问静态成员的方法(静态成员并不需要通过对象就可以访问):</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/51.jpg" /></center>
+
+<ul>
+  <li>静态成员变量本质上就是针对于某个类的<strong>全局变量</strong>，哪怕一个对象都不存在，类的静态成员变量也存在，静态成员函数本质上就是<strong>全局函数</strong></li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/52.jpg" /></center>
+
+<ul>
+  <li>例子:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/53.jpg" /></center>
+
+<center><img src="../assets/img/posts/20221120/54.jpg" /></center>
+
+<center><img src="../assets/img/posts/20221120/55.jpg" /></center>
+
+<ul>
+  <li>静态成员变量必须在定义类的文件中对静态变量进行一次说明或初始化:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/56.jpg" /></center>
+
+<ul>
+  <li>注意: 在静态成员函数中，不能访问非静态成员变量，也不能调用非静态成员函数</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/57.jpg" /></center>
+
+<ul>
+  <li>上述的写法其实有缺陷，因为在定义对象的时候可能会调用复制构造函数，这些临时对象在生成时不会增加totalnumber，但是在消亡时会减少totalnumber，会出错:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/58.jpg" /></center>
+
+<ul>
+  <li>解决方法就是定义一个复制构造函数:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/59.jpg" /></center>
+
+<h3 id="233-成员对象和封闭类">2.3.3. 成员对象和封闭类</h3>
+<ul>
+  <li>有成员对象的类叫封闭类</li>
+  <li>定义构造函数时可以利用初始化列表来初始化成员变量: <code class="language-plaintext highlighter-rouge">CTyre(int w, int r):radius(r),width(w){};</code></li>
+  <li>封闭类的例子:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/60.png" /></center>
+
+<ul>
+  <li>如果CCar类不定义构造函数，则编译器不明白CCar类的成员对象如何初始化</li>
+  <li>任何生成封闭类对象的语句，都要让编译器明白，对象中的成员对象是如何初始化的</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/61.png" /></center>
+
+<ul>
+  <li>封闭类构造函数和析构函数的执行顺序:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/62.jpg" /></center>
+
+<ul>
+  <li>如果封闭类的对象是用默认的复制构造函数初始化的，那么封闭类的成员对象也会用复制构造函数初始化:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/63.jpg" /></center>
+
+<h3 id="234-常量对象和常量成员函数">2.3.4. 常量对象和常量成员函数</h3>
+<ul>
+  <li>如果不希望某个对象的值发生改变，则定义该对象的时候可以在前面加上<code class="language-plaintext highlighter-rouge">const</code>关键字</li>
+  <li>在类的成员函数声明<strong>后</strong>加上<code class="language-plaintext highlighter-rouge">const</code>关键字，则该成员函数为常量成员函数，常量成员函数在执行期间不应该修改其所作用的对象</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Sample</span><span class="p">{</span>
+    <span class="nl">public:</span>
+        <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+        <span class="kt">void</span> <span class="n">GetValue</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+        <span class="kt">void</span> <span class="n">func</span><span class="p">(){};</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">Sample</span><span class="o">::</span><span class="n">GetValue</span><span class="p">()</span> <span class="k">const</span><span class="p">{</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// wrong</span>
+    <span class="n">func</span><span class="p">();</span> <span class="c1">//wrong</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>常量成员函数和不加<code class="language-plaintext highlighter-rouge">const</code>的成员函数算重载关系</li>
+  <li>对象作为函数的参数时，生成该参数需要调用复制构造函数，效率比较低，用指针作为参数，代码又不好看，那么解决方法就是用对象的引用作为参数</li>
+</ul>
+
+<h3 id="235-友元">2.3.5. 友元</h3>
+<ul>
+  <li>友元(friends)分为友元函数和友元类两种</li>
+  <li>友元函数: 加上<code class="language-plaintext highlighter-rouge">friend</code>关键字就成为了友元函数，一个类的友元函数可以访问该类的私有成员</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/64.jpg" /></center>
+<center><img src="../assets/img/posts/20221120/65.jpg" /></center>
+
+<ul>
+  <li>可以将一个类的成员函数说明为另一个类的友元</li>
+  <li>友元类: 如果A是B的友元类，那么A的成员函数可以访问B的私有成员</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221120/66.jpg" /></center>
+
+<ul>
+  <li>友元类之间的关系不能传递，不能继承</li>
+</ul>
+
+<h2 id="24-运算符重载">2.4. 运算符重载</h2>
+<h3 id="241-运算符重载的基本概念">2.4.1. 运算符重载的基本概念</h3>
+<ul>
+  <li>基本运算符只能支持c++基本的数据类型的运算</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/67.jpg" /></center>
+
+<ul>
+  <li>运算符重载的意义:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/68.jpg" /></center>
+
+<ul>
+  <li>运算符重载的形式:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/69.jpg" /></center>
+
+<ul>
+  <li>具体形式:</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">返回值类型</span> <span class="k">operator</span> <span class="err">运算符</span><span class="p">(</span><span class="err">形参表</span><span class="p">){</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>运算符重载实例:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/70.png" /></center>
+
+<ul>
+  <li>运算符重载作为不同函数时参数的个数不一样，作为成员函数时，不用包含自身</li>
+</ul>
+
+<h3 id="242-赋值运算符的重载">2.4.2. 赋值运算符的重载</h3>
+<ul>
+  <li>赋值运算符=的重载，相当于一种方便的初始化手段，只能作为成员函数重载</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/71.jpg" /></center>
+
+<ul>
+  <li>一个例子:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/72.png" /></center>
+
+<ul>
+  <li>深拷贝和浅拷贝</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/73.png" /></center>
+<center><img src="../assets/img/posts/20221120/74.jpg" /></center>
+
+<ul>
+  <li>解决方法:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/75.jpg" /></center>
+
+<ul>
+  <li>但是还会存在问题:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/76.jpg" /></center>
+
+<ul>
+  <li>为什么赋值运算符的返回值类型是<code class="language-plaintext highlighter-rouge">String &amp;</code>？</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/77.jpg" /></center>
+
+<ul>
+  <li>复制构造函数:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/78.jpg" /></center>
+
+<h3 id="243-运算符重载为友元">2.4.3. 运算符重载为友元</h3>
+<ul>
+  <li>有时候会出现比较特殊的情况，需要将运算符重载函数写在类外，同时还需要访问类的私有成员，这时候就可以让友元函数发挥作用</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/79.jpg" /></center>
+<center><img src="../assets/img/posts/20221120/80.jpg" /></center>
+<center><img src="../assets/img/posts/20221120/81.jpg" /></center>
+
+<h3 id="244-可变长数组的实现">2.4.4. 可变长数组的实现</h3>
+<ul>
+  <li>希望这个可变长数组实现的功能:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/82.png" /></center>
+
+<ul>
+  <li>因为我们希望实现动态分配内存来存储数组元素，那么需要一个指针成员变量</li>
+  <li>取下标的操作<code class="language-plaintext highlighter-rouge">[]</code>也可以重载:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/83.jpg" /></center>
+
+<ul>
+  <li>构造函数的实现:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/84.png" /></center>
+<ul>
+  <li>析构函数和赋值运算符重载:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/85.png" /></center>
+<center><img src="../assets/img/posts/20221120/86.jpg" /></center>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">push_back()</code>比较麻烦的实现: 每次重新分配内存空间</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/87.jpg" /></center>
+
+<h3 id="245-流插入运算符的重载">2.4.5. 流插入运算符的重载</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cout</code>是ostream类的对象</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/88.jpg" /></center>
+
+<ul>
+  <li>为了实现<code class="language-plaintext highlighter-rouge">cout&lt;&lt;5&lt;&lt;'this'</code>这样连续输出的功能，重载<code class="language-plaintext highlighter-rouge">&lt;&lt;</code>时返回值为<code class="language-plaintext highlighter-rouge">ostream &amp;</code>:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/89.png" /></center>
+
+<ul>
+  <li>一个例子:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/90.jpg" /></center>
+<center><img src="../assets/img/posts/20221120/91.jpg" /></center>
+
+:ET
