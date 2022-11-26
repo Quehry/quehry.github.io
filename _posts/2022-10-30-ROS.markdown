@@ -11,3 +11,183 @@ author: Quehry
 mathjax: yes
 toc: yes
 ---
+
+# 1. 简介
+这篇博客主要记录学习ROS的笔记，内容来源于:
+- [bili古月居](https://www.bilibili.com/video/BV1zt411G7Vn/?spm_id_from=333.337.search-card.all.click&vd_source=64c99329fc39a0e3f42825a4c837e2a5){:target="_blank"}
+- [udemy](https://www.udemy.com/course/ros-navigation/learn/lecture/11785182#overview){:target="_blank"}
+- [古月居课件及源码](https://github.com/guyuehome/ros_21_tutorials){:target="_blank"}
+
+# 2. 古月居
+
+## 2.1. ROS安装
+根据[ROS-wiki](http://wiki.ros.org/noetic/Installation/Ubuntu){:target="_blank"}的说明一步步进行安装
+
+## 2.2. ROS是什么
+- ROS发展史:
+
+<center><img src='../assets/img/posts/20221030/2.jpg'></center>
+
+- ROS能提高机器人研发中软件的复用率
+
+<center><img src='../assets/img/posts/20221030/3.png'></center>
+
+## 2.3. ROS的核心概念
+- 节点(Node)是ROS中的执行单元: 
+    - 执行具体任务的进程、独立运行的可执行文件
+    - 不同节点可使用不同的编程语言，分布式运行在不同的主机
+    - 节点在系统的名称必须唯一
+- 节点管理器(ROS Master)是ROS的控制中心: 
+    - 为节点提供命名和注册服务
+    - 跟踪和记录话题/服务通信，辅助节点相互查找、建立连接
+    - 为节点提供参数
+
+<center><img src='../assets/img/posts/20221030/4.png'></center>
+
+- 话题通信机制(异步): 
+    - 话题(Topic)
+        - 节点间用来传输数据的重要总线
+        - 使用发布/订阅模型，数据由发布者传输到订阅者，同一个话题的订阅者或发布者可以不唯一
+    - 消息(Message)
+        - 具有一定类型的数据结构
+        - 使用编程语言无关的.msg文件定义，编译过程中生成对应的代码文件
+
+<center><img src='../assets/img/posts/20221030/5.png'></center>
+
+- 服务通信机制(同步):
+    - 服务(Service)
+        - 使用客户端/服务器模型，客户端发送请求数据，服务器完成处理后返回应答数据
+        - 使用编程语言无关的.srv文件定义请求和应答数据结构
+
+<center><img src='../assets/img/posts/20221030/6.png'></center>
+
+- 话题和服务通信的区别: 
+
+<center><img src='../assets/img/posts/20221030/7.png'></center>
+
+- 参数-全局共享字典:
+    - 可通过网络访问共享、多变量字典
+    - 节点使用此服务器来存储和检索运行时的参数
+    - 不适合存储动态配置的数据
+
+<center><img src='../assets/img/posts/20221030/8.png'></center>
+
+- 文件系统
+
+<center><img src='../assets/img/posts/20221030/9.png'></center>
+
+## 2.4. ROS命令行工具
+- 常用命令: rostopic/rosservice/rosnode/rosparam/rosmsg/rossrv
+
+- rqt_graph可以查看系统的节点和通信机制
+
+```shell
+rqt_graph
+```
+
+- `rosnode list`可以查看节点的列表
+- `rosnode info /turtlesim`可以查看turtlesim这个节点的信息
+- `rostopic list`可以查看话题的列表
+- `rostopic pub /turtlesim/cmd_vel ...`可以使用cmd_vel话题发送消息
+- `rosmsg show geometry_msgs/Twist`可以查看某个消息的信息
+- `rosservice list`可以查看ROS中服务的列表
+- `rosservice call ...`可以调用某个服务
+
+<center><img src='../assets/img/posts/20221030/10.png'></center>
+
+- `rosbag record ...`可以记录某一个话题
+- `rosbag play ...`可以通过保存的bag文件来复现该话题
+
+<center><img src='../assets/img/posts/20221030/11.png'></center>
+
+## 2.5. 创建工作空间与功能包
+- 工作空间是一个存放工程开发相关文件的文件夹
+
+<center><img src='../assets/img/posts/20221030/12.png'></center>
+
+- 创建工作空间的步骤
+
+<center><img src='../assets/img/posts/20221030/13.png'></center>
+
+- `catkin_make install`创建install空间
+- 创建功能包
+
+<center><img src='../assets/img/posts/20221030/14.png'></center>
+
+## 2.6. Publisher的编程实现
+- 话题模型
+
+<center><img src='../assets/img/posts/20221030/15.png'></center>
+
+- 首先创建功能包
+
+```shell
+cd ~/catkiin_ws/src
+catkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim
+```
+
+- 使用c++创建publisher
+
+<center><img src='../assets/img/posts/20221030/16.png'></center>
+
+- 创建publisher时需要声明消息类型，话题的名称，创建publisher完毕后，即可创建消息来让publisher发布
+- 配置publisher代码编译的规则(在cmakelists中)
+
+<center><img src='../assets/img/posts/20221030/17.png'></center>
+
+- 设置需要编译的代码和生成的可执行文件/设置链接库
+- 编译并运行发布者
+
+<center><img src='../assets/img/posts/20221030/18.png'></center>
+
+- python实现publisher
+
+<center><img src='../assets/img/posts/20221030/19.png'></center>
+
+## 2.7. Subscriber的实现
+- python实现subsriber
+
+<center><img src='../assets/img/posts/20221030/20.png'></center>
+
+## 2.8. 话题消息的定义与使用
+- 自定义话题消息
+    - 定义msg文件
+    - 在package.xml中添加功能包的依赖
+    - 在CMakeLists中添加编译选项
+    - 编译生成语言相关文件
+
+<center><img src='../assets/img/posts/20221030/21.png'></center>
+
+- python实现topic
+
+<center><img src='../assets/img/posts/20221030/22.png'></center>
+
+- 定义publisher和subscriber(需要声明topic和消息)
+
+## 2.9. client实现
+- 服务模型(C/S模型): 
+
+<center><img src='../assets/img/posts/20221030/23.png'></center>
+
+- python实现client
+
+<center><img src='../assets/img/posts/20221030/24.png'></center>
+
+## 2.10. server实现
+- python实现server: 
+
+<center><img src='../assets/img/posts/20221030/25.png'></center>
+
+## 2.11. 服务数据的定义与使用
+- 自定义服务数据
+
+<center><img src='../assets/img/posts/20221030/26.png'></center>
+
+- 服务模型
+
+<center><img src='../assets/img/posts/20221030/27.png'></center>
+
+- 首先生成server节点，然后创建service，client在发现service后创建并发送数据，server在接受数据后进入callback返回request
+
+## 2.12. 参数的使用与编程方法
+- 参数模型

@@ -1,0 +1,26 @@
+I"<h1 id="1-简介">1. 简介</h1>
+<p>这篇博客主要记录学习ROS的笔记，内容来源于:</p>
+<ul>
+  <li><a href="https://www.bilibili.com/video/BV1zt411G7Vn/?spm_id_from=333.337.search-card.all.click&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">bili古月居</a></li>
+  <li><a href="https://www.udemy.com/course/ros-navigation/learn/lecture/11785182#overview" target="_blank">udemy</a></li>
+  <li><a href="https://github.com/guyuehome/ros_21_tutorials" target="_blank">古月居课件及源码</a></li>
+</ul>
+
+<h1 id="2-古月居">2. 古月居</h1>
+
+<h2 id="21-ros安装">2.1. ROS安装</h2>
+<p>根据<a href="http://wiki.ros.org/noetic/Installation/Ubuntu" target="_blank">ROS-wiki</a>的说明一步步进行安装</p>
+
+<h2 id="22-ros是什么">2.2. ROS是什么</h2>
+<ul>
+  <li>ROS发展史:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/2.jpg" /></center>
+
+<ul>
+  <li>ROS能提高机器人研发中软件的复用率</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/3.png" /></center>
+:ET
