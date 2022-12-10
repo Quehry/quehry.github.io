@@ -209,5 +209,27 @@ catkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim
 ## 3.2. ROS Navigation Demo
 这章展示了ROS Navigation的一个demo，首先打开house，然后`roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file=...`来打开Navigation，在Rviz中展示，标定好终点后，它会自动规划路径到达终点
 
-## 3.3. 2D frames, Transformations and Localization
+## 3.3. 2D Frames, Transformations and Localization
+
+## 3.4. 3D Frames, Transformations and Localization
+
+## 3.5. Orientation in 3D Space
+
+## 3.6. The TF Package: Frame, Transformation and Localization in ROS Explained
+- TF是一个让用户随时间跟踪多个参考系的功能包，它使用一种树型数据结构，根据时间缓冲并维护多个参考系之间的坐标变换关系，可以帮助用户在任意时间，将点，向量等数据的坐标，在两个参考系中完成坐标变换: 
+<center><img src='../assets/img/posts/20221030/28.png'></center>
+
+- 机器人的模型用一个XML文件定义，使用URDF(unified robot description format)这个语言去描述机器人的Frame和Transformation。其中Frame连接在关节上，在URDF中用link表示，不同关节的相对位置用Transformation表示，可以在ROS wiki上了解更详细的信息
+- TF package nodes(TF功能包提供了一些有用的ROS nodes):
+<center><img src='../assets/img/posts/20221030/29.png'></center>
+
+- 可以通过订阅odom话题来获得odom的child frame:base_footprint的position和orientation，odom表示robot相对于dormitory的参考系
+- `rosrun tf2_tools view_frames`来获得当前场景下的frames和transformation的总体情况，会在当前目录生成一个pdf文件
+- robot相对于map的参考系叫做amcl_pose
+- `rosrun tf tf_echo frame1 frame2`可以获得两个frame之间translation和rotation
+- `rosrun tf static_transform_publisher 1 2 3 0.1 0.2 0.3 frame_a frame_b 10`可以在两个frame之间创造一个transformation
+- 可以定义节点来广播frame_a到frame_b的transformation，也可以定义节点来收听frame_a到frame_b的transformation
+- 总的来说，TF功能包能获得当前场景下的frame和transformation信息，同时也可以自定义frame之间的transformation
+
+## 3.7. Map-based navigation
 
