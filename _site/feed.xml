@@ -1,4 +1,273 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-26T15:37:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">C++面向对象程序设计</title><link href="http://localhost:4000/Object-Oriented-Programming.html" rel="alternate" type="text/html" title="C++面向对象程序设计" /><published>2022-11-20T00:00:00+08:00</published><updated>2022-11-20T00:00:00+08:00</updated><id>http://localhost:4000/Object-Oriented-Programming</id><content type="html" xml:base="http://localhost:4000/Object-Oriented-Programming.html"><![CDATA[<h1 id="1-简介">1. 简介</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-09T00:44:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">研一上课程总结</title><link href="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="研一上课程总结" /><published>2022-12-05T00:00:00+08:00</published><updated>2022-12-05T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"><![CDATA[<h1 id="课程目录">课程目录</h1>
+<!-- TOC -->
+
+<ul>
+  <li><a href="#课程目录">课程目录</a></li>
+  <li><a href="#1-material-材料">1. Material 材料</a></li>
+  <li><a href="#2-deeplearning-深度学习">2. Deeplearning 深度学习</a></li>
+  <li><a href="#3-intellectual-property-law-知识产权法">3. Intellectual property law 知识产权法</a></li>
+  <li><a href="#4-culture-and-society-文化与社会">4. Culture and society 文化与社会</a></li>
+  <li><a href="#5-新时代中国特色社会主义理论与实践">5. 新时代中国特色社会主义理论与实践</a></li>
+  <li><a href="#6-organisation-theory-组织理论">6. Organisation theory 组织理论</a></li>
+  <li><a href="#7-solid-state-physics-固体物理">7. Solid State Physics 固体物理</a></li>
+  <li><a href="#8-simulation-optimization-仿真与优化">8. Simulation optimization 仿真与优化</a></li>
+  <li><a href="#9-automatic-control-自动控制">9. Automatic control 自动控制</a></li>
+  <li><a href="#10-introduction-to-complex-systems-复杂系统">10. Introduction to complex systems 复杂系统</a></li>
+  <li><a href="#11-structural-mechanics-3-结构力学3">11. Structural Mechanics 3 结构力学3</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="1-material-材料">1. Material 材料</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: 唐宏哲</li>
+      <li>授课形式: 线下上课，课程有录屏</li>
+      <li>授课材料: 没有讲义，老师上课直接在黑板上写</li>
+      <li>考核信息: 大作业+考试，大作业是自由主题，但是要和上课的内容相关，考试在线下举行，时长一小时，大概四个大题</li>
+    </ul>
+  </li>
+  <li>课程简介: 一共五节课，但一共只有四节课在讲正课的知识，第一节课讲了金属材料和高炉炼铁，炼钢和制铝，然后讲了高分子化合物。第二节课介绍了金属晶体，回想起了高中化学。第三节课讲了腐蚀与防护，我们大作业也是基于这个主题展开。第四节课讲了相平衡与相图，之前在热力学也学过类似的内容</li>
+</ul>
+
+<h1 id="2-deeplearning-深度学习">2. Deeplearning 深度学习</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: 于雷</li>
+      <li>授课形式: 线下上课，课程有录屏，有上机课(做TP)</li>
+      <li>授课材料: 有讲义，TP</li>
+      <li>考核信息: 平时分+考试，不知道TP算不算平时分，考试在线下举行</li>
+    </ul>
+  </li>
+  <li>课程简介: 课程全称应该是深度学习与高性能计算，第一个讲义介绍了深度学习的基本信息与发展历史。第二个讲义介绍了经典的线性模型。第三个讲义介绍了优化方法，介绍了不同的优化器。第四个讲义介绍了numpy的基本使用和matplotlib可视化方法。第五个讲义介绍了前馈神经网络，也就是多层感知机。第六个讲义介绍了卷积神经网络，这节课让我记得了池化层滑动步长和边长一样长。第七个讲义介绍了数据并行计算的方法，首先简单介绍了python中不同进程间信息传递和通信的机制，然后介绍了数据并行化计算和模型并行化计算的方法。TP1需要实现线性模型，TP2需要实现MLP，TP3需要实现卡农算法和联邦计算，其实就是利用python的multiprocessing库和队列来实现权重的更新的收发</li>
+</ul>
+
+<h1 id="3-intellectual-property-law-知识产权法">3. Intellectual property law 知识产权法</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: 徐绪辉</li>
+      <li>授课形式: 线下上课，课程有录屏</li>
+      <li>授课材料: 有讲义</li>
+      <li>考核信息: 未知</li>
+    </ul>
+  </li>
+  <li>课程简介: 简单介绍了知识产权法的相关知识，知识产权法由著作权法、商标法和专利法三部法律构成，老师上课也是按照这个流程讲的，首先讲了法律意识和法律，然后第二讲介绍了著作权法，第三讲介绍了商标法，最后一讲介绍了专利法</li>
+</ul>
+
+<h1 id="4-culture-and-society-文化与社会">4. Culture and society 文化与社会</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: Anne</li>
+      <li>授课形式: 前半阶段线下上课，后半阶段由于疫情原因暂停线下上课，改为线上学习</li>
+      <li>授课材料: 线下授课的时候发了纸质材料，线上授课后有讲义</li>
+      <li>考核信息: 平时分+DM+小测，没有考试</li>
+    </ul>
+  </li>
+  <li>课程简介: 熟悉的法语课程，主要介绍了法国的文化和社会情况。DM1需要回答与小说的人物共情是否是小说创作的出发点，DM2需要介绍中国人使用网络的数据，DM3需要介绍一种艺术形式，我选择了photorealism，照相写实主义</li>
+</ul>
+
+<h1 id="5-新时代中国特色社会主义理论与实践">5. 新时代中国特色社会主义理论与实践</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: 刘娜娜,王江伟,田英</li>
+      <li>授课形式: 线下授课，分专题不同老师来讲课</li>
+      <li>授课材料: 部分讲义</li>
+      <li>考核信息: 平时分+大作业</li>
+    </ul>
+  </li>
+  <li>课程简介: 中特课，介绍新时代中国特色社会主义理论与实践，刘娜娜老师介绍的专题是法治与法制。大作业共需要回答四个大题</li>
+</ul>
+
+<h1 id="6-organisation-theory-组织理论">6. Organisation theory 组织理论</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: Attias Daniele</li>
+      <li>授课形式: 线上授课，一共四节课</li>
+      <li>授课材料: 讲义</li>
+      <li>考核信息: 平时分+大作业</li>
+    </ul>
+  </li>
+  <li>课程简介: 一共三个讲义，第一个讲义介绍了如何分析公司的策略，第二个讲义介绍了有哪些策略，第三个讲义介绍了创新公司如何创造价值。一共有两个大作业，第一个大作业是分析Electorstat公司的情况，做一个ppt介绍分析的结果和建议。第二个大作业是分析FREE这个公司的情况并回答三个问题</li>
+</ul>
+
+<h1 id="7-solid-state-physics-固体物理">7. Solid State Physics 固体物理</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: 安炜，付小尧</li>
+      <li>授课形式: 线下授课，疫情后线上授课</li>
+      <li>授课材料: 讲义，TD</li>
+      <li>考核信息: 线上考试+大作业</li>
+    </ul>
+  </li>
+  <li>课程简介:</li>
+</ul>
+
+<h1 id="8-simulation-optimization-仿真与优化">8. Simulation optimization 仿真与优化</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: Pascal Laurent</li>
+      <li>授课形式: 线上授课</li>
+      <li>授课材料: 讲义+TD</li>
+      <li>考核信息: 线上考试+大作业+平时分</li>
+    </ul>
+  </li>
+  <li>课程简介: 相当硬核的一门课</li>
+</ul>
+
+<h1 id="9-automatic-control-自动控制">9. Automatic control 自动控制</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: Rahmani Ahmed, 马纪明, 韩亮</li>
+      <li>授课形式: 线上授课+线下TP课</li>
+      <li>授课材料: 讲义</li>
+      <li>考核信息:</li>
+    </ul>
+  </li>
+  <li>课程简介:</li>
+</ul>
+
+<h1 id="10-introduction-to-complex-systems-复杂系统">10. Introduction to complex systems 复杂系统</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: M.Batteux Michel</li>
+      <li>授课形式: 线上授课</li>
+      <li>授课材料: 讲义+PC(可以看作平时的TP)</li>
+      <li>考核信息: 平时分+PC+大作业</li>
+    </ul>
+  </li>
+  <li>课程简介: 一共八节课，每节课都有对应的PC作业。第一节课介绍了什么是复杂系统，怎样描述一个系统，PC1需要利用上课的知识描述一个系统。第二节课介绍了车间调度问题以及如何模拟一系列的离散事件，介绍了如何用Python进行模拟实验，PC2的内容是运行它给的程序，更加直观的了解如何用python进行模拟实验。第三节课简单介绍了架构系统的相关知识，比如一个架构的各种组件，架构系统的步骤等等，PC3需要利用课上的知识分析一个架构系统。第四节课介绍了如何对复杂系统的组成部分进行分类，了解各组件的相互作用，也即如何正确地组织一个复杂系统，PC4给了一个案例进行分析。第五节课介绍了如何满足复杂系统的约束。第六节课介绍了用关键路径法对复杂系统进行建模，和之前项目管理的内容类似。第七节课介绍了蒙特卡洛估计法，PC7是对英超球队的数据进行估计与分析。</li>
+</ul>
+
+<h1 id="11-structural-mechanics-3-结构力学3">11. Structural Mechanics 3 结构力学3</h1>]]></content><author><name>Quehry</name></author><category term="courses" /><summary type="html"><![CDATA[整理研一上课程信息]]></summary></entry><entry><title type="html">BLIP</title><link href="http://localhost:4000/BLIP.html" rel="alternate" type="text/html" title="BLIP" /><published>2022-12-01T00:00:00+08:00</published><updated>2022-12-01T00:00:00+08:00</updated><id>http://localhost:4000/BLIP</id><content type="html" xml:base="http://localhost:4000/BLIP.html"><![CDATA[<h1 id="basic-info">Basic Info</h1>
+<ul>
+  <li>论文全称: BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation</li>
+  <li>相关链接:
+    <ul>
+      <li><a href="https://github.com/salesforce/BLIP" target="_blank">Github</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+<p>Vision Language Pre-training近些年有不错的进展，但是以往的VLP的预训练任务要么是vision-language understanding，要么是vision-language generation。BLIP在设计预训练任务时，综合考虑了这两方面的预训练任务。BLIP另一大亮点就是对数据的处理，vision-language领域的数据集，人工标注且效果好的数据不多，所以作者提出了一种CapFilt的Bootstrapping方法来过滤掉不好的标注，扩充image-text pair数据。论文主要有两大贡献:</p>
+<ol>
+  <li>Multimodal mixture of Encoder-Decoder(MED)，一种新的预训练框架，综合考虑了understanding任务和generation任务</li>
+  <li>Captioning and Filtering(CapFilt)，一种数据集自举的方法，微调预训练的MED，并分为两个子模块，captioner用来将web获取的图片标注，filter用来将noisy的image text pair去除</li>
+</ol>
+
+<h1 id="model-architecture">Model Architecture</h1>
+<p>模型的主题架构如下:</p>
+<center><img src="../assets/img/posts/20221201/1.jpg" /></center>
+
+<p>作者设计了三种不同的子架构:</p>
+<ol>
+  <li>unimodal encoder: 上图左侧的两个架构，针对单一的text或者image的encoder，对于text而言就是BERT的encoder，对于image而言就是ViT的encoder，同样用&lt;cls&gt;特殊编码来表示sentence的全局信息</li>
+  <li>image-grounded text encoder: 上图中间的架构，针对text而言，不同之处是加上了image encoder后的cross attention，所以是image-grounded。text的开头加上特殊字符&lt;encode&gt;，代表image-text pair的多模态表示</li>
+  <li>image-grounded text decoder: 上图最右侧的架构，除了和image encoder的cross-attention外，还用causal self-attention替换了bidirectional self-attention，causal attention具体是什么，可以去看<strong>causal attention for vision-language tasks</strong>这篇论文。特殊字符&lt;decode&gt;用来表示序列的开始，除了self-attention层外，和image-grounded text encoder共享参数</li>
+</ol>
+
+<p>MED这种架构的主要作用就是服务于预训练任务:</p>
+<ol>
+  <li>image-text contrastive loss(ITC): 应该和CLIP的任务类似，对齐特征空间中的image编码表示和text编码表示，属于vision-language understanding任务</li>
+  <li>image-text matching loss(ITM): 判断vision和language是否匹配，二分类任务，属于vision-language understanding任务</li>
+  <li>language modeling loss(LM): vision-language生成任务，自回归，给定序列的开头和图片的编码，输出完整的caption</li>
+</ol>
+
+<h1 id="capfilt">CapFilt</h1>
+<p>正如前文所介绍，CapFilt的主要目的是筛除noisy的pair，因为从web上爬取的image-text pair质量太低。CaoFilt利用预训练的MED架构，抽取出两个子模块Captioner和Filter，Captioner就是MED的image-grounded text decoder部分，用来对web的图片进行标注，然后我们就获得了新的pair。Filter就是MED的image-grounded text encoder部分，原本那部分的预训练任务是ITM，用来当作过滤器很合适，这样就可以筛除noisy的pair，从而达到扩充数据集且数据集质量高的效果，下图清晰的介绍了这个过程:</p>
+<center><img src="../assets/img/posts/20221201/2.jpg" /></center>
+
+<h1 id="experiments-and-datasets">Experiments and datasets</h1>
+<p>CapFilt的效果:</p>
+<center><img src="../assets/img/posts/20221201/3.jpg" /></center>
+
+<p>数据集:</p>
+<ol>
+  <li>两个人工标注数据集: COCO和VG(Visual Genome)</li>
+  <li>三个从web爬取的数据集: CC(Conceptual Captions), SBU, LAION</li>
+</ol>
+
+<p>生成caption的方法:</p>
+<ol>
+  <li>nucleus sampling: 选取每个词元时，只要累计的概率超过了一个阈值，那么就作为一种选取方式</li>
+  <li>beam search: 文本生成的常用手段，具体来说就是定义一个束宽k，选取每个词元时，都保留概率最高的k个选择，最后选出概率高的输出</li>
+</ol>
+
+<p>作者比较了这两种生成caption的方法，认为nucleus sampling会取得更好的结果，但是可能会生成奇怪的caption，如果是为了生成safe的caption，可以用beam search</p>
+<center><img src="../assets/img/posts/20221201/4.png" /></center>
+
+<h1 id="downstream-tasks">Downstream tasks</h1>
+<ol>
+  <li>image-text retrieval: 包含了image-to-text retrieval(TR)和text-to-image retrieval(IR)任务，即图片检索文本和文本检索图片任务，BLIP达到了SOTA，度量指标是Recall@k，在信息检索领域，代表查询图像对应标签在检索标签列表的前topk中出现的次数于真值标签列表个数的比例</li>
+</ol>
+<center><img src="../assets/img/posts/20221201/5.jpg" /></center>
+
+<ol>
+  <li>image captioning: 图片标注，用MED的LM部分实现，指标有CIDEr, SPICE, BLEU@4</li>
+</ol>
+<center><img src="../assets/img/posts/20221201/6.jpg" /></center>
+
+<ol>
+  <li>Visual Question Answering(VQA): 给定问题和图片，生成answer，这里作者把它看成生成任务，图片经过image encoder，问题经过question encoder，然后特殊字符&lt;decode&gt;输入answer encoder生成answer:</li>
+</ol>
+<center><img src="../assets/img/posts/20221201/7.jpg" /></center>
+
+<ol>
+  <li>Natural Language Visual Reasoning(NLVR): 判断一段话是否是在形容一对图片，为了适应这个任务，同样需要对训练框架进行调整:</li>
+</ol>
+<center><img src="../assets/img/posts/20221201/8.jpg" /></center>
+
+<p>3和4的实验结果:</p>
+<center><img src="../assets/img/posts/20221201/9.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="paper reading" /><category term="notes" /><category term="multi-modality" /><category term="vision-language" /><summary type="html"><![CDATA[论文阅读]]></summary></entry><entry><title type="html">DreamBooth</title><link href="http://localhost:4000/DreamBooth.html" rel="alternate" type="text/html" title="DreamBooth" /><published>2022-11-28T00:00:00+08:00</published><updated>2022-11-28T00:00:00+08:00</updated><id>http://localhost:4000/DreamBooth</id><content type="html" xml:base="http://localhost:4000/DreamBooth.html"><![CDATA[<h1 id="dreambooth简介">DreamBooth简介</h1>
+<p>DreamBooth是Google团队继Imagen后研发的针对Subject进行定制化训练的finetune方法，只需要同一个物体(动物、人、物体)的3-5张图片和prompt，就可以微调出一个专属的模型，这个模型可以生成输入物体的各种姿势，也可以将这个物体融入到景观中。DreamBooth本质上微调了Unet和TextEncoder，效果图如下:</p>
+
+<center><img src="../assets/img/posts/20221128/1.jpg" /></center>
+
+<p>相关链接:</p>
+<ul>
+  <li><a href="https://dreambooth.github.io/" target="_blank">DreamBooth</a></li>
+</ul>
+
+<h1 id="application">Application</h1>
+<ol>
+  <li>Recontextualization:</li>
+</ol>
+<center><img src="../assets/img/posts/20221128/2.jpg" /></center>
+
+<ol>
+  <li>Art Renditions</li>
+</ol>
+<center><img src="../assets/img/posts/20221128/3.jpg" /></center>
+
+<ol>
+  <li>Expression Manipulation</li>
+</ol>
+<center><img src="../assets/img/posts/20221128/4.jpg" /></center>
+
+<ol>
+  <li>Novel View Synthesis</li>
+</ol>
+<center><img src="../assets/img/posts/20221128/5.jpg" /></center>
+
+<ol>
+  <li>Accessorization</li>
+</ol>
+<center><img src="../assets/img/posts/20221128/6.jpg" /></center>
+
+<ol>
+  <li>Property Modification</li>
+</ol>
+<center><img src="../assets/img/posts/20221128/7.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="paper reading" /><category term="notes" /><category term="image generation" /><category term="finetune" /><summary type="html"><![CDATA[论文阅读]]></summary></entry><entry><title type="html">C++面向对象程序设计</title><link href="http://localhost:4000/Object-Oriented-Programming.html" rel="alternate" type="text/html" title="C++面向对象程序设计" /><published>2022-11-20T00:00:00+08:00</published><updated>2022-11-20T00:00:00+08:00</updated><id>http://localhost:4000/Object-Oriented-Programming</id><content type="html" xml:base="http://localhost:4000/Object-Oriented-Programming.html"><![CDATA[<h1 id="1-简介">1. 简介</h1>
 <p>网课程序设计与算法(三):C++面向对象程序设计的随堂笔记，授课平台是中国大学MOOC，授课老师是北大的郭炜老师，开课次数是第十五次开课。程序设计与算法是一个系列的课程，C++面向对象程序设计是该系列的最后一门课程。课程文件有每节课的讲义及习题(openjudge上)，相关链接:</p>
 <ul>
   <li><a href="https://www.icourse163.org/learn/PKU-1002029030?tid=1469134446#/learn/content" target="_blank">课程链接，开课阶段过了可能会失效</a></li>
@@ -589,7 +858,35 @@
 </ul>
 <center><img src="../assets/img/posts/20221120/92.jpg" /></center>
 <center><img src="../assets/img/posts/20221120/93.jpg" /></center>
-<center><img src="../assets/img/posts/20221120/94.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="course" /><category term="notes" /><summary type="html"><![CDATA[郭炜网课，C++的面向对象的程序设计]]></summary></entry><entry><title type="html">Bert</title><link href="http://localhost:4000/Bert.html" rel="alternate" type="text/html" title="Bert" /><published>2022-11-17T00:00:00+08:00</published><updated>2022-11-17T00:00:00+08:00</updated><id>http://localhost:4000/Bert</id><content type="html" xml:base="http://localhost:4000/Bert.html"><![CDATA[<h1 id="1-bert简介">1. Bert简介</h1>
+<center><img src="../assets/img/posts/20221120/94.jpg" /></center>
+
+<h3 id="246-类型转换符的重载">2.4.6. 类型转换符的重载</h3>
+<ul>
+  <li>类型运算符也可以重载，比如说</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/95.png" /></center>
+
+<ul>
+  <li>类型转换运算符重载时不需要写返回值类型</li>
+</ul>
+
+<h3 id="247-自增自减运算符的重载">2.4.7. 自增、自减运算符的重载</h3>
+<ul>
+  <li>为了区分自增运算符的前置和后置，C++规定前置运算符用成员函数重载，后置运算符用普通函数重载，多一个没用的参数</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/96.png" /></center>
+
+<ul>
+  <li>一个例子:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/97.jpg" /></center>
+<center><img src="../assets/img/posts/20221120/98.jpg" /></center>
+
+<ul>
+  <li>后置++/–会返回一个临时的对象</li>
+  <li>运算符重载的注意事项:</li>
+</ul>
+<center><img src="../assets/img/posts/20221120/99.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="course" /><category term="notes" /><summary type="html"><![CDATA[郭炜网课，C++的面向对象的程序设计]]></summary></entry><entry><title type="html">Bert</title><link href="http://localhost:4000/Bert.html" rel="alternate" type="text/html" title="Bert" /><published>2022-11-17T00:00:00+08:00</published><updated>2022-11-17T00:00:00+08:00</updated><id>http://localhost:4000/Bert</id><content type="html" xml:base="http://localhost:4000/Bert.html"><![CDATA[<h1 id="1-bert简介">1. Bert简介</h1>
 <p>BERT是GOOGLE团队于2018年提出的模型，在NLP领域里有着举足轻重的地位，BERT开创了NLP领域的预训练时代。BERT其实就是Transformer的编码器。BERT的双向性体现在MLM任务上，该任务可以让模型在得到全局的信息之后再去做预测</p>
 <ul>
   <li><a href="https://arxiv.org/abs/1810.04805" target="_blank">论文地址</a></li>
@@ -689,7 +986,38 @@ lrate=d_{model}^{-0.5}\cdot min(step\_num^{-0.5}, step\_num\cdot warmup\_steps^{
 <p>技巧方面使用了很多的dropout和label smoothing，label smoothing就是让softmax去逼近设置的$\epsilon_{ls}$。</p>
 
 <p>实验结果</p>
-<center><img src="../assets/img/posts/20221115/4.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="Transformer" /><category term="Paper Reading" /><summary type="html"><![CDATA[notes for Transformer]]></summary></entry><entry><title type="html">Vision Language Model</title><link href="http://localhost:4000/Vision-Language-Model.html" rel="alternate" type="text/html" title="Vision Language Model" /><published>2022-11-14T00:00:00+08:00</published><updated>2022-11-14T00:00:00+08:00</updated><id>http://localhost:4000/Vision-Language-Model</id><content type="html" xml:base="http://localhost:4000/Vision-Language-Model.html"><![CDATA[<h1 id="相关链接">相关链接</h1>
+<center><img src="../assets/img/posts/20221115/4.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="Transformer" /><category term="Paper Reading" /><summary type="html"><![CDATA[notes for Transformer]]></summary></entry><entry><title type="html">Vision Transformer</title><link href="http://localhost:4000/ViT.html" rel="alternate" type="text/html" title="Vision Transformer" /><published>2022-11-14T00:00:00+08:00</published><updated>2022-11-14T00:00:00+08:00</updated><id>http://localhost:4000/ViT</id><content type="html" xml:base="http://localhost:4000/ViT.html"><![CDATA[<h1 id="1-vit简介">1. ViT简介</h1>
+<p>ViT的全称是Vision Transformer，模型最大的特点就是把NLP领域的Transformer迁移到CV领域，模型在图像识别等多个CV任务上表现超越了卷积神经网络，相关链接:</p>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/2010.11929" target="_blank">论文地址</a></li>
+  <li><a href="https://www.bilibili.com/video/BV15P4y137jb/?spm_id_from=333.788&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">论文精读视频</a></li>
+  <li><a href="https://github.com/google-research/vision_transformer" target="_blank">开源代码</a></li>
+</ul>
+
+<h1 id="2-introduction">2. Introduction</h1>
+<p>限制Transformer在CV领域发挥的一个要素就是序列长度的问题，如果把图像的每个像素点看成token，那么对于一张中分辨率的图片224*224而言，序列长度为50k，Bert模型处理的序列长度只有512，所以将Transformer应用到CV领域的一个难点就是序列长度过长。ViT于是提出了将图片分割成16*16的patch的做法，这样就可以大大减少序列的长度，不改变Transformer架构的情况下直接应用，取得了很好的结果，说明了transformer确实能在CV领域能取得很好的效果。</p>
+
+<h1 id="3-模型">3. 模型</h1>
+<p>模型预览图:</p>
+
+<center><img src="../assets/img/posts/20221114/1.jpg" /></center>
+
+<p>为了缩短序列的长度，作者将图片分为了很多个patch，patch的大小可以是16*16，每个patch的表示为每个像素点的灰度值排列，那么一张图片patch的形状为num_patchs*768，其中768=16*16*3。得到patch的表示后，输入线性投影层(就是一个线性层，形状可以是768*768)。为了和transformer保持一致，ViT也采用了位置编码和特殊编码&lt;cls&gt;的使用，位置编码采用的是1D位置编码，位置编码和特殊编码都可学习，patch的线性投影表示和位置编码是直接加在一起，这样便得到了图像的token，其余步骤和Bert类似，ViT的训练是有监督训练，用特殊编码&lt;cls&gt;来做预测</p>
+
+<h1 id="4实验和数据集">4.实验和数据集</h1>
+<p>数据集使用了ImageNet-1k、ImageNet-21k和Google自家的JFT数据集</p>
+
+<p>和BERT一样，ViT也根据模型使用的参数和patch的大小不同，分为了以下几种:</p>
+<center><img src="../assets/img/posts/20221114/2.jpg" /></center>
+<p>比如ViT-L/16代表Large ViT with patch size 16*16</p>
+
+<p>实验结果</p>
+<center><img src="../assets/img/posts/20221114/3.jpg" /></center>
+<p>实验的metrics是预训练模型微调后的accuracy</p>
+
+<center><img src="../assets/img/posts/20221114/4.jpg" /></center>
+<p>这张图表明ViT在数据集大的情况下会表现更好</p>]]></content><author><name>Quehry</name></author><category term="Transformer" /><category term="Paper Reading" /><summary type="html"><![CDATA[notes for ViT]]></summary></entry><entry><title type="html">Vision Language Model</title><link href="http://localhost:4000/Vision-Language-Model.html" rel="alternate" type="text/html" title="Vision Language Model" /><published>2022-11-14T00:00:00+08:00</published><updated>2022-11-14T00:00:00+08:00</updated><id>http://localhost:4000/Vision-Language-Model</id><content type="html" xml:base="http://localhost:4000/Vision-Language-Model.html"><![CDATA[<h1 id="相关链接">相关链接</h1>
 <ul>
   <li><a href="https://lilianweng.github.io/posts/2022-06-09-vlm/#no-training" target="_blank">lils blog</a></li>
   <li><a href="https://theaisummer.com/vision-language-models/#vision-language-tasks" target="_blank">AI Summer</a></li>
@@ -742,38 +1070,300 @@ lrate=d_{model}^{-0.5}\cdot min(step\_num^{-0.5}, step\_num\cdot warmup\_steps^{
   <li><a href="https://paperswithcode.com/methods/category/vision-and-language-pre-trained-models" target="_blank">paperswithcode</a></li>
 </ul>
 
-<h1 id="vlm-最新的论文">VLM 最新的论文</h1>]]></content><author><name>Quehry</name></author><category term="overview" /><summary type="html"><![CDATA[an overview in domain VLM]]></summary></entry><entry><title type="html">Vision Transformer</title><link href="http://localhost:4000/ViT.html" rel="alternate" type="text/html" title="Vision Transformer" /><published>2022-11-14T00:00:00+08:00</published><updated>2022-11-14T00:00:00+08:00</updated><id>http://localhost:4000/ViT</id><content type="html" xml:base="http://localhost:4000/ViT.html"><![CDATA[<h1 id="1-vit简介">1. ViT简介</h1>
-<p>ViT的全称是Vision Transformer，模型最大的特点就是把NLP领域的Transformer迁移到CV领域，模型在图像识别等多个CV任务上表现超越了卷积神经网络，相关链接:</p>
-
+<h1 id="vlm-最新的论文">VLM 最新的论文</h1>]]></content><author><name>Quehry</name></author><category term="overview" /><summary type="html"><![CDATA[an overview in domain VLM]]></summary></entry><entry><title type="html">ROX learning</title><link href="http://localhost:4000/ROS.html" rel="alternate" type="text/html" title="ROX learning" /><published>2022-10-30T00:00:00+08:00</published><updated>2022-10-30T00:00:00+08:00</updated><id>http://localhost:4000/ROS</id><content type="html" xml:base="http://localhost:4000/ROS.html"><![CDATA[<h1 id="1-简介">1. 简介</h1>
+<p>这篇博客主要记录学习ROS的笔记，内容来源于:</p>
 <ul>
-  <li><a href="https://arxiv.org/abs/2010.11929" target="_blank">论文地址</a></li>
-  <li><a href="https://www.bilibili.com/video/BV15P4y137jb/?spm_id_from=333.788&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">论文精读视频</a></li>
-  <li><a href="https://github.com/google-research/vision_transformer" target="_blank">开源代码</a></li>
+  <li><a href="https://www.bilibili.com/video/BV1zt411G7Vn/?spm_id_from=333.337.search-card.all.click&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">bili古月居</a></li>
+  <li><a href="https://www.udemy.com/course/ros-navigation/learn/lecture/11785182#overview" target="_blank">udemy</a></li>
+  <li><a href="https://github.com/guyuehome/ros_21_tutorials" target="_blank">古月居课件及源码</a></li>
 </ul>
 
-<h1 id="2-introduction">2. Introduction</h1>
-<p>限制Transformer在CV领域发挥的一个要素就是序列长度的问题，如果把图像的每个像素点看成token，那么对于一张中分辨率的图片224*224而言，序列长度为50k，Bert模型处理的序列长度只有512，所以将Transformer应用到CV领域的一个难点就是序列长度过长。ViT于是提出了将图片分割成16*16的patch的做法，这样就可以大大减少序列的长度，不改变Transformer架构的情况下直接应用，取得了很好的结果，说明了transformer确实能在CV领域能取得很好的效果。</p>
+<h1 id="2-古月居">2. 古月居</h1>
 
-<h1 id="3-模型">3. 模型</h1>
-<p>模型预览图:</p>
+<h2 id="21-ros安装">2.1. ROS安装</h2>
+<p>根据<a href="http://wiki.ros.org/noetic/Installation/Ubuntu" target="_blank">ROS-wiki</a>的说明一步步进行安装</p>
 
-<center><img src="../assets/img/posts/20221114/1.jpg" /></center>
+<h2 id="22-ros是什么">2.2. ROS是什么</h2>
+<ul>
+  <li>ROS发展史:</li>
+</ul>
 
-<p>为了缩短序列的长度，作者将图片分为了很多个patch，patch的大小可以是16*16，每个patch的表示为每个像素点的灰度值排列，那么一张图片patch的形状为num_patchs*768，其中768=16*16*3。得到patch的表示后，输入线性投影层(就是一个线性层，形状可以是768*768)。为了和transformer保持一致，ViT也采用了位置编码和特殊编码&lt;cls&gt;的使用，位置编码采用的是1D位置编码，位置编码和特殊编码都可学习，patch的线性投影表示和位置编码是直接加在一起，这样便得到了图像的token，其余步骤和Bert类似，ViT的训练是有监督训练，用特殊编码&lt;cls&gt;来做预测</p>
+<center><img src="../assets/img/posts/20221030/2.jpg" /></center>
 
-<h1 id="4实验和数据集">4.实验和数据集</h1>
-<p>数据集使用了ImageNet-1k、ImageNet-21k和Google自家的JFT数据集</p>
+<ul>
+  <li>ROS能提高机器人研发中软件的复用率</li>
+</ul>
 
-<p>和BERT一样，ViT也根据模型使用的参数和patch的大小不同，分为了以下几种:</p>
-<center><img src="../assets/img/posts/20221114/2.jpg" /></center>
-<p>比如ViT-L/16代表Large ViT with patch size 16*16</p>
+<center><img src="../assets/img/posts/20221030/3.png" /></center>
 
-<p>实验结果</p>
-<center><img src="../assets/img/posts/20221114/3.jpg" /></center>
-<p>实验的metrics是预训练模型微调后的accuracy</p>
+<h2 id="23-ros的核心概念">2.3. ROS的核心概念</h2>
+<ul>
+  <li>节点(Node)是ROS中的执行单元:
+    <ul>
+      <li>执行具体任务的进程、独立运行的可执行文件</li>
+      <li>不同节点可使用不同的编程语言，分布式运行在不同的主机</li>
+      <li>节点在系统的名称必须唯一</li>
+    </ul>
+  </li>
+  <li>节点管理器(ROS Master)是ROS的控制中心:
+    <ul>
+      <li>为节点提供命名和注册服务</li>
+      <li>跟踪和记录话题/服务通信，辅助节点相互查找、建立连接</li>
+      <li>为节点提供参数</li>
+    </ul>
+  </li>
+</ul>
 
-<center><img src="../assets/img/posts/20221114/4.jpg" /></center>
-<p>这张图表明ViT在数据集大的情况下会表现更好</p>]]></content><author><name>Quehry</name></author><category term="Transformer" /><category term="Paper Reading" /><summary type="html"><![CDATA[notes for ViT]]></summary></entry><entry><title type="html">ROX learning</title><link href="http://localhost:4000/ROS.html" rel="alternate" type="text/html" title="ROX learning" /><published>2022-10-30T00:00:00+08:00</published><updated>2022-10-30T00:00:00+08:00</updated><id>http://localhost:4000/ROS</id><content type="html" xml:base="http://localhost:4000/ROS.html"><![CDATA[]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[学习ROS]]></summary></entry><entry><title type="html">linux command</title><link href="http://localhost:4000/Linux-Command.html" rel="alternate" type="text/html" title="linux command" /><published>2022-10-24T00:00:00+08:00</published><updated>2022-10-24T00:00:00+08:00</updated><id>http://localhost:4000/Linux-Command</id><content type="html" xml:base="http://localhost:4000/Linux-Command.html"><![CDATA[<h1 id="0-简介">0. 简介</h1>
+<center><img src="../assets/img/posts/20221030/4.png" /></center>
+
+<ul>
+  <li>话题通信机制(异步):
+    <ul>
+      <li>话题(Topic)
+        <ul>
+          <li>节点间用来传输数据的重要总线</li>
+          <li>使用发布/订阅模型，数据由发布者传输到订阅者，同一个话题的订阅者或发布者可以不唯一</li>
+        </ul>
+      </li>
+      <li>消息(Message)
+        <ul>
+          <li>具有一定类型的数据结构</li>
+          <li>使用编程语言无关的.msg文件定义，编译过程中生成对应的代码文件</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/5.png" /></center>
+
+<ul>
+  <li>服务通信机制(同步):
+    <ul>
+      <li>服务(Service)
+        <ul>
+          <li>使用客户端/服务器模型，客户端发送请求数据，服务器完成处理后返回应答数据</li>
+          <li>使用编程语言无关的.srv文件定义请求和应答数据结构</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/6.png" /></center>
+
+<ul>
+  <li>话题和服务通信的区别:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/7.png" /></center>
+
+<ul>
+  <li>参数-全局共享字典:
+    <ul>
+      <li>可通过网络访问共享、多变量字典</li>
+      <li>节点使用此服务器来存储和检索运行时的参数</li>
+      <li>不适合存储动态配置的数据</li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/8.png" /></center>
+
+<ul>
+  <li>文件系统</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/9.png" /></center>
+
+<h2 id="24-ros命令行工具">2.4. ROS命令行工具</h2>
+<ul>
+  <li>
+    <p>常用命令: rostopic/rosservice/rosnode/rosparam/rosmsg/rossrv</p>
+  </li>
+  <li>
+    <p>rqt_graph可以查看系统的节点和通信机制</p>
+  </li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rqt_graph
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">rosnode list</code>可以查看节点的列表</li>
+  <li><code class="language-plaintext highlighter-rouge">rosnode info /turtlesim</code>可以查看turtlesim这个节点的信息</li>
+  <li><code class="language-plaintext highlighter-rouge">rostopic list</code>可以查看话题的列表</li>
+  <li><code class="language-plaintext highlighter-rouge">rostopic pub /turtlesim/cmd_vel ...</code>可以使用cmd_vel话题发送消息</li>
+  <li><code class="language-plaintext highlighter-rouge">rosmsg show geometry_msgs/Twist</code>可以查看某个消息的信息</li>
+  <li><code class="language-plaintext highlighter-rouge">rosservice list</code>可以查看ROS中服务的列表</li>
+  <li><code class="language-plaintext highlighter-rouge">rosservice call ...</code>可以调用某个服务</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/10.png" /></center>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">rosbag record ...</code>可以记录某一个话题</li>
+  <li><code class="language-plaintext highlighter-rouge">rosbag play ...</code>可以通过保存的bag文件来复现该话题</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/11.png" /></center>
+
+<h2 id="25-创建工作空间与功能包">2.5. 创建工作空间与功能包</h2>
+<ul>
+  <li>工作空间是一个存放工程开发相关文件的文件夹</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/12.png" /></center>
+
+<ul>
+  <li>创建工作空间的步骤</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/13.png" /></center>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">catkin_make install</code>创建install空间</li>
+  <li>创建功能包</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/14.png" /></center>
+
+<h2 id="26-publisher的编程实现">2.6. Publisher的编程实现</h2>
+<ul>
+  <li>话题模型</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/15.png" /></center>
+
+<ul>
+  <li>首先创建功能包</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkiin_ws/src
+catkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim
+</code></pre></div></div>
+
+<ul>
+  <li>使用c++创建publisher</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/16.png" /></center>
+
+<ul>
+  <li>创建publisher时需要声明消息类型，话题的名称，创建publisher完毕后，即可创建消息来让publisher发布</li>
+  <li>配置publisher代码编译的规则(在cmakelists中)</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/17.png" /></center>
+
+<ul>
+  <li>设置需要编译的代码和生成的可执行文件/设置链接库</li>
+  <li>编译并运行发布者</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/18.png" /></center>
+
+<ul>
+  <li>python实现publisher</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/19.png" /></center>
+
+<h2 id="27-subscriber的实现">2.7. Subscriber的实现</h2>
+<ul>
+  <li>python实现subsriber</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/20.png" /></center>
+
+<h2 id="28-话题消息的定义与使用">2.8. 话题消息的定义与使用</h2>
+<ul>
+  <li>自定义话题消息
+    <ul>
+      <li>定义msg文件</li>
+      <li>在package.xml中添加功能包的依赖</li>
+      <li>在CMakeLists中添加编译选项</li>
+      <li>编译生成语言相关文件</li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/21.png" /></center>
+
+<ul>
+  <li>python实现topic</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/22.png" /></center>
+
+<ul>
+  <li>定义publisher和subscriber(需要声明topic和消息)</li>
+</ul>
+
+<h2 id="29-client实现">2.9. client实现</h2>
+<ul>
+  <li>服务模型(C/S模型):</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/23.png" /></center>
+
+<ul>
+  <li>python实现client</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/24.png" /></center>
+
+<h2 id="210-server实现">2.10. server实现</h2>
+<ul>
+  <li>python实现server:</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/25.png" /></center>
+
+<h2 id="211-服务数据的定义与使用">2.11. 服务数据的定义与使用</h2>
+<ul>
+  <li>自定义服务数据</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/26.png" /></center>
+
+<ul>
+  <li>服务模型</li>
+</ul>
+
+<center><img src="../assets/img/posts/20221030/27.png" /></center>
+
+<ul>
+  <li>首先生成server节点，然后创建service，client在发现service后创建并发送数据，server在接受数据后进入callback返回request</li>
+</ul>
+
+<h2 id="212-参数的使用与编程方法">2.12. 参数的使用与编程方法</h2>
+<ul>
+  <li>参数模型</li>
+</ul>
+
+<h1 id="3-udemy课程">3. Udemy课程</h1>
+<h2 id="31-course-overview">3.1. Course Overview</h2>
+<h3 id="311-installation-of-turtlebot3">3.1.1. Installation of turtlebot3</h3>
+<ul>
+  <li>这小节主要介绍如何安装turtlebot3:</li>
+  <li>按照udemy的讲义上一步步安装，首先安装ros-noetic-navigation和ros-noetic-slam-gmapping，然后拷贝github上的代码到本地编译turtlebot3，同样的做法安装turtlebot3-simulation</li>
+</ul>
+
+<h3 id="312-turtlebot3-simulation-environments">3.1.2. Turtlebot3 SImulation Environments</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch</code> 打开一个空白的空间，里面只有一辆小车</li>
+  <li><code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch</code> 启动后，可以键入wasd来操作小车</li>
+  <li><code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_gazebo tuetlebot3_world.launch</code> 里面有几根柱子和小车</li>
+  <li><code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_gazebo turtlebot3_house.launch</code> 房间</li>
+  <li><code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch</code> ros中很重要的可视化软件Rviz，关于turtlebot3有适配版本，可以可视化小车的激光雷达和摄像头</li>
+  <li><code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping</code> slam，可视化在Rviz上，slam的算法有很多，这里采用gmapping的方法</li>
+</ul>
+
+<h2 id="32-ros-navigation-demo">3.2. ROS Navigation Demo</h2>
+<p>这章展示了ROS Navigation的一个demo，首先打开house，然后<code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file=...</code>来打开Navigation，在Rviz中展示，标定好终点后，它会自动规划路径到达终点</p>
+
+<h2 id="33-2d-frames-transformations-and-localization">3.3. 2D frames, Transformations and Localization</h2>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[学习ROS]]></summary></entry><entry><title type="html">linux command</title><link href="http://localhost:4000/Linux-Command.html" rel="alternate" type="text/html" title="linux command" /><published>2022-10-24T00:00:00+08:00</published><updated>2022-10-24T00:00:00+08:00</updated><id>http://localhost:4000/Linux-Command</id><content type="html" xml:base="http://localhost:4000/Linux-Command.html"><![CDATA[<h1 id="0-简介">0. 简介</h1>
 <p>该博客主要记录了linux常用命令，便于后续使用时查找命令，其余的一些博客:</p>
 <ul>
   <li><a href="https://docs.rockylinux.org/books/admin_guide/03-commands" target="_blank">linux command documentation</a></li>
@@ -802,515 +1392,4 @@ lrate=d_{model}^{-0.5}\cdot min(step\_num^{-0.5}, step\_num\cdot warmup\_steps^{
       <li>-d 压缩到指定目录</li>
     </ol>
   </li>
-</ul>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[记录Linux常见命令]]></summary></entry><entry><title type="html">算法练习心得</title><link href="http://localhost:4000/Algorithm-Practice.html" rel="alternate" type="text/html" title="算法练习心得" /><published>2022-10-21T00:00:00+08:00</published><updated>2022-10-21T00:00:00+08:00</updated><id>http://localhost:4000/Algorithm-Practice</id><content type="html" xml:base="http://localhost:4000/Algorithm-Practice.html"><![CDATA[<h1 id="简介">简介</h1>
-<p>这篇博客记录了做算法题过程的一些心得，目前的想法是先把<a href="http://cxsjsxmooc.openjudge.cn/" target="_blank">网课的习题</a>做完提交完，然后学习C语言面向对象的知识，然后去刷题平台上去刷题</p>
-
-<h1 id="openjudge">Openjudge</h1>
-<ul>
-  <li><a href="http://cxsjsxmooc.openjudge.cn/2022t2fall/" target="_blank">题目链接</a></li>
-  <li>iostream头文件包含了cin与cout</li>
-  <li><code class="language-plaintext highlighter-rouge">int &amp;a=b</code>中&amp;的用法是C++中的引用用法，变量的引用就是变量的别名，这样就可以实现在函数中向实参传递值</li>
-  <li><code class="language-plaintext highlighter-rouge">~</code>的用法之一是按位取反运算，即数的每一位都取反，<code class="language-plaintext highlighter-rouge">^</code>的用法之一是按位异或运算</li>
-  <li>stdio.h是C语言的标准库，包含了C语言常用的输入输出函数，比如文件的读写函数fopen/fclose，格式化输入输出函数scanf/printf，为了适配C++，变成了cstdio</li>
-  <li>strlen()是string.h的一个函数，可以返回字符串的长度，原理是读到结束字符<strong>\0</strong>后停止</li>
-  <li>字符串变量可以通过cin读取键盘输入的字符串，对于由0/1组成的字符串而言，可以考虑用整型存储，然后通过按位运算对整型的每一个bit进行操作</li>
-  <li><code class="language-plaintext highlighter-rouge">memcpy()</code>是cstring中的一个函数，使用时需要引用cstring头文件，memcpy(char * a, char * b, int c)表示将字符串b拷贝到字符串a，c表示字符串的大小</li>
-  <li>可以将递归嵌套在循环中完成穷举</li>
-  <li>全排列的实现有固定的套路: 对排列的每一位进行循环，如果有用过的元素，就标记一下，在下次选取的时候不考虑该元素，这样按着顺序选元素就可以实现全排列，具体见<a href="http://cxsjsxmooc.openjudge.cn/2022t2fall/003/" target="_blank">问题3</a>，全排列也是一个穷举的过程</li>
-  <li>定义字符串或者一维数组时，最好还是把元素个数给大一点</li>
-  <li>在循环中可以通过bool值来控制某一个元素取还是不取，比如004中的加号可以由布尔值控制</li>
-  <li><code class="language-plaintext highlighter-rouge">cin.peek()</code>可以读取当前输入的字符且不取走，<code class="language-plaintext highlighter-rouge">cin.get()</code>可以读取当前输入的字符并且取走</li>
-  <li><code class="language-plaintext highlighter-rouge">n = scanf("%c", &amp;c)</code>，如果当前输入停止，则n=EOF</li>
-  <li><code class="language-plaintext highlighter-rouge">while(cin &gt;&gt; a)</code>可以实现对某种类型的变量a的持续输入</li>
-  <li>用二分法解决问题时，端点尽量最优化设计，并且除了取中点外，还可以通过左端点逐步加1/右端点逐步减1来寻找最优点</li>
-  <li>关于PI的数值，可以通过acos(-1.0)取值</li>
-  <li><code class="language-plaintext highlighter-rouge">#include&lt;iomanip&gt;</code>引用的是iomanip库，主要用于控制输入输出流的精度，比如<code class="language-plaintext highlighter-rouge">setprecision(int n)</code>用于控制输出流浮点数的精度，整数n代表有效数字个数(四舍五入)，使用<code class="language-plaintext highlighter-rouge">cout&lt;&lt;fixed&lt;&lt;setprecision(n)</code>可以保留浮点数的n位有效小数</li>
-  <li>分治，或者说归并的思想，就是对每一步分而治之，确定每一小步的操作后，递归到归并的最小单元进行操作，常见的分治算法为归并排序与快速排序</li>
-  <li>利用<code class="language-plaintext highlighter-rouge">#include&lt;fstream&gt;</code>可以进行file的读写，步骤为: 实例化<code class="language-plaintext highlighter-rouge">ifstream infile</code>-&gt;打开文件<code class="language-plaintext highlighter-rouge">infile.open("in.txt")</code>-&gt;读文件<code class="language-plaintext highlighter-rouge">infile.getline(...)</code>-&gt;关闭文件<code class="language-plaintext highlighter-rouge">infile.close()</code></li>
-  <li><code class="language-plaintext highlighter-rouge">#include &lt;algorithm&gt;</code>中的方法<code class="language-plaintext highlighter-rouge">max_element</code>可以返回数组的最大值所在的地址，<code class="language-plaintext highlighter-rouge">*max_element</code>可以返回数组的最大值</li>
-  <li><code class="language-plaintext highlighter-rouge">scanf("%s", a)</code>可以直接把字符串读入a</li>
-  <li><code class="language-plaintext highlighter-rouge">char *</code>比<code class="language-plaintext highlighter-rouge">int *</code>占用内存少</li>
-  <li>为了节省内存，可以试试将数组降维</li>
-  <li>结构体的构造函数和普通函数的定义类似，只不过函数名变成了结构体的名称</li>
-  <li>直接对字符<code class="language-plaintext highlighter-rouge">'0'</code>进行转型不会得到0</li>
-  <li><code class="language-plaintext highlighter-rouge">memset(array, int, size)</code>一般用来对数组进行初始化，初始化的值为int</li>
-  <li>结构体中重载运算符: <code class="language-plaintext highlighter-rouge">type operator+(...){}</code>其中operator和运算符一起出现可以视为函数名，type为返回值类型</li>
-  <li>更改结构体元素前三思</li>
-  <li><code class="language-plaintext highlighter-rouge">ostream &amp; operator &lt;&lt;(ostream &amp; o, ...){}</code>可以让自己定义的结构体能用cout输出</li>
-  <li>int的取值范围为-2147483648 ~ 2147483647，long就是int，long long的取值范围为-9223372036854775807 ~ 9223372036854775807</li>
-  <li>动规的方向很重要，有时候从0开始递归简单，有时候从最后递归简单</li>
-  <li><code class="language-plaintext highlighter-rouge">memset()</code>是<code class="language-plaintext highlighter-rouge">#include &lt;cstring&gt;</code>的方法</li>
-  <li>深搜可以和动规结合</li>
-  <li>针对路径问题，在发现某一条路走不通后需要恢复该节点的访问状态，以便其他路径能访问该节点</li>
-  <li>队列的使用方法: <code class="language-plaintext highlighter-rouge">queue&lt;T&gt; q</code>来初始化队列q，<code class="language-plaintext highlighter-rouge">q.front()</code>来得到队列的头且不删除，<code class="language-plaintext highlighter-rouge">q.pop()</code>删除队列的头，<code class="language-plaintext highlighter-rouge">q.push(T)</code>向队列q的队尾添加元素</li>
-  <li>考虑一个节点的访问状态时一定要考虑仔细</li>
-  <li>结构体的构造函数:</li>
-</ul>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="nc">node</span><span class="p">{</span>
-    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
-    <span class="n">string</span> <span class="n">str</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">x</span><span class="p">;</span>
-    <span class="c1">// 自定义构造函数</span>
-    <span class="kt">void</span> <span class="n">init</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">string</span> <span class="n">b</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c</span><span class="p">){</span>
-        <span class="k">this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
-        <span class="k">this</span><span class="o">-&gt;</span><span class="n">str</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
-        <span class="k">this</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="c1">// 无参数构造函数, 这里顺序随意, 初始化时须以定义顺序初始化, 建议这里也以定义顺序书写</span>
-    <span class="n">node</span><span class="p">()</span><span class="o">:</span> <span class="n">data</span><span class="p">(),</span> <span class="n">str</span><span class="p">(),</span> <span class="n">x</span><span class="p">(){}</span>
-    <span class="c1">// 有参数构造函数</span>
-    <span class="c1">// 在建立结构体数组时, 如果只写带参数的构造函数将会出现数组无法初始化的错误, 须先写无参数构造函数</span>
-    <span class="n">node</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">string</span> <span class="n">b</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="o">:</span><span class="n">data</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">str</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">x</span><span class="p">(</span><span class="n">c</span><span class="p">){}</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<ul>
-  <li>考虑深搜问题的状态时，最好考虑一下如此设置的话是否方便剪枝</li>
-  <li>在深搜的过程中可以根据终点和当前节点的位置关系来改变深搜的顺序</li>
-  <li>考虑剪枝时，可以考虑多种剪枝方法一起放到dfs中尝试</li>
-  <li>广搜其实就是给节点分层了，从第一层开始按层搜索，这样只要找到可行的解就是最优解，具体来说就是利用队列实现，每加入一个新节点就往队尾加入它的子节点，这样便可以实现逐层搜索</li>
-  <li>如果需要输出广搜过程的节点，那么需要用自定义的数组来实现，用头和尾指数来实现数组的添加和指数的移动，每个节点包含上一个节点的指数</li>
-  <li>用int或者bool数组来读取cin时，如果没有空格，可能会读取到不想要的结果</li>
-  <li>如果有需要用数字代表字符串的情况，可以考虑用switch来实现，比如下面的情况:</li>
-</ul>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">mov</span><span class="p">)</span> 
-<span class="p">{</span>
-	<span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">//FILL</span>
-		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"FILL("</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">src</span> <span class="o">&lt;&lt;</span> <span class="s">")"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-		<span class="k">break</span><span class="p">;</span>
-	<span class="k">case</span> <span class="mi">2</span><span class="p">:</span> <span class="c1">//DROP	</span>
-		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"DROP("</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">src</span> <span class="o">&lt;&lt;</span> <span class="s">")"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-		<span class="k">break</span><span class="p">;</span>
-	<span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
-		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"POUR("</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">src</span> <span class="o">&lt;&lt;</span> <span class="s">","</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dest</span> <span class="o">&lt;&lt;</span> <span class="s">")"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-		<span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>优先队列的用法:
-    <ul>
-      <li>引用: <code class="language-plaintext highlighter-rouge">#include &lt;queue&gt;</code></li>
-      <li>实例化: <code class="language-plaintext highlighter-rouge">priority_queue&lt;T&gt; q</code>, 默认为降序排列，数据类型就是T，如果是自定义结构的话，需要重载小于运算符</li>
-      <li>方法: 和队列类似，.pop()是删除头部元素，.push()是加入元素</li>
-    </ul>
-  </li>
-  <li>贪心算法就是每一步都考虑最优的情况</li>
-  <li>有时候基本上一摸一样的想法和代码，但是我的代码在openjudge跑不通，不知道为什么</li>
-</ul>
-
-<h1 id="leecode热题hot100及oop习题">leecode热题HOT100及OOP习题</h1>
-<ul>
-  <li><a href="https://leetcode.cn/problem-list/2cktkvj/" target="_blank">网页链接</a></li>
-  <li>动规的时候如果要使用滑动窗口来减少内存使用量，一定要注意是顺序遍历还是逆序遍历比较合理，一般来说逆序遍历会比较合理</li>
-  <li>如果不规定数组的大小的时候，可以这么初始化数组<code class="language-plaintext highlighter-rouge">int[]={1,2,3}</code></li>
-  <li>一个问题如果从正面不好进行搜索的话，可以尝试从反方向进行搜索，比如戳气球的问题，从正面开始搜索不好弄，因为每次戳气球都会改变气球的相对位置，但如果从反方向开始搜索，看成填充气球，那么会简单很多</li>
-  <li>动规的循环方向很重要</li>
-  <li><code class="language-plaintext highlighter-rouge">cin.getline(字符数组名,字符个数,结束字符)</code>可以读取长度为字符个数的输入到字符数组，如果结束字符缺省，则默认为<code class="language-plaintext highlighter-rouge">\0</code></li>
-  <li><code class="language-plaintext highlighter-rouge">strtok(char s[],const char * delim)</code>可以将字符串s进行分解，delim为分隔符字符，如果传入的是一个字符串，那么字符串的每一个字符均为分隔符，返回一个分解完毕的字符串，如果要再次调用，需要将s设置为<code class="language-plaintext highlighter-rouge">NULL</code></li>
-  <li><code class="language-plaintext highlighter-rouge">char * strchr(const char * s, char c)</code>这个函数表示在字符串s中查找字符c，返回字符c第一次出现在字符串s的位置，返回值指向这个位置，如果找不到，就返回NULL</li>
-  <li><code class="language-plaintext highlighter-rouge">sscanf</code>通常用来解析并转换字符串</li>
-  <li>类的构造函数一定要加分号</li>
-  <li>可以通过<code class="language-plaintext highlighter-rouge">char c : str</code>的方式遍历一个字符串，常用于for循环中</li>
-  <li><code class="language-plaintext highlighter-rouge">unordered_set</code>是c++ 11 为STL标准库新添加的容器，称作无序容器或哈希容器，<code class="language-plaintext highlighter-rouge">unordered_set</code>不会对存储的数据进行排序，容器内存储的元素互不相同，添加元素的方法是<code class="language-plaintext highlighter-rouge">insert()</code></li>
-  <li>vector中<code class="language-plaintext highlighter-rouge">push_back()</code>与<code class="language-plaintext highlighter-rouge">emplace_back()</code>的关系: 两者都是在向量的尾部添加元素，但是<code class="language-plaintext highlighter-rouge">emplace_back()</code>会调用构造函数原地构造，不会触发复制构造函数和移动构造，更快</li>
-  <li><code class="language-plaintext highlighter-rouge">auto</code>是C++语言存储类型，初始化可为任何表达式</li>
-  <li><code class="language-plaintext highlighter-rouge">.size()</code>可以返回vector的大小</li>
-  <li><code class="language-plaintext highlighter-rouge">.size()</code>也可以返回<code class="language-plaintext highlighter-rouge">string</code>的大小，<code class="language-plaintext highlighter-rouge">str[i]</code>可以访问字符串的第i个字符</li>
-  <li><code class="language-plaintext highlighter-rouge">str.substr(a,b)</code>可以返回字符串的子字符串，从a到b，左闭右开</li>
-</ul>]]></content><author><name>Quehry</name></author><category term="algorithm" /><summary type="html"><![CDATA[记录刷算法题过程中的心得]]></summary></entry><entry><title type="html">Latent Diffusion Model</title><link href="http://localhost:4000/Latent-Diffusion-Model.html" rel="alternate" type="text/html" title="Latent Diffusion Model" /><published>2022-10-16T00:00:00+08:00</published><updated>2022-10-16T00:00:00+08:00</updated><id>http://localhost:4000/Latent-Diffusion-Model</id><content type="html" xml:base="http://localhost:4000/Latent-Diffusion-Model.html"><![CDATA[<!-- TOC -->
-
-<ul>
-  <li><a href="#1-ldm简介">1. LDM简介</a></li>
-  <li><a href="#2-模型">2. 模型</a></li>
-</ul>
-
-<!-- /TOC -->
-
-<h1 id="1-ldm简介">1. LDM简介</h1>
-<p>Latent Diffusion Model(LDM)是Diffusion Model的改进版本。扩散模型相比于之前的生成模型而言，已经能取得非常好的效果，但是扩散模型有个特点，贵。不仅训练贵，而且推理也很贵。为了节省空间和资源，LDM将反向扩散过程在隐空间中进行，而不是之前的逐像素进行反向扩散(因为隐空间的维度比原始图片要小，能让训练和推断变得不那么贵)。LDM与扩散模型最大的区别就是隐空间，模型在github上开源，stable diffusion也是基于latent diffusion进行实现</p>
-<ul>
-  <li><a href="https://arxiv.org/abs/2112.10752" target="_blank">LDM</a></li>
-  <li><a href="https://github.com/CompVis/latent-diffusion" target="_blank">github</a></li>
-</ul>
-
-<h1 id="2-模型">2. 模型</h1>
-<p>LDM的模型如下图所示:</p>
-
-<center><img src="../assets/img/posts/20221016/2.jpg" /></center>
-
-<ul>
-  <li>前向扩散: 输入x首先经过压缩后得到隐空间表达z，正常的前向扩散得到$z_T$</li>
-  <li>反向扩散: 隐空间的随机噪声$z_T$经过T步去噪U-Net后得到z，然后z经过解压得到原始大小的图片$\tilde{x}$</li>
-</ul>
-
-<p>我们关心的是模型反向扩散的过程，关于图片压缩和解压的模型，作者尝试了VAE和VQVAE，返现VAE的表现稍微好一点，所以选择了VAE作为antoencoder。与一般的扩散模型一样，LDM也可以做条件生成，LDM采取的策略是classifier-free guidance，具体实现方法是将预处理好的y与U-Net的每一个中间表达都应用注意力机制，其中查询是U-Net的中间层表达，key和value是预处理好的y。预处理的encoder与y相关，如果y是文本，那么encoder可以是clip的text encoder，也可以是transformer-based encoder</p>
-
-<center><img src="../assets/img/posts/20221016/3.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">扩散模型</title><link href="http://localhost:4000/Diffusion-Model.html" rel="alternate" type="text/html" title="扩散模型" /><published>2022-10-12T00:00:00+08:00</published><updated>2022-10-12T00:00:00+08:00</updated><id>http://localhost:4000/Diffusion-Model</id><content type="html" xml:base="http://localhost:4000/Diffusion-Model.html"><![CDATA[<!-- TOC -->
-
-<ul>
-  <li><a href="#1-扩散模型简介">1. 扩散模型简介</a></li>
-  <li><a href="#2-模型">2. 模型</a>
-    <ul>
-      <li><a href="#21-前向扩散">2.1. 前向扩散</a></li>
-      <li><a href="#22-反向扩散过程">2.2. 反向扩散过程</a></li>
-      <li><a href="#23-损失函数">2.3. 损失函数</a></li>
-      <li><a href="#24-ddpm中给出的训练与采样生成过程">2.4. DDPM中给出的训练与采样(生成)过程</a></li>
-      <li><a href="#25-小结">2.5. 小结</a></li>
-    </ul>
-  </li>
-  <li><a href="#3-一些技巧和主要网络结构">3. 一些技巧和主要网络结构</a>
-    <ul>
-      <li><a href="#31-\beta_t和\sigma_\theta的取值">3.1. $\beta_t$和$\Sigma_\theta$的取值</a></li>
-      <li><a href="#32-加速扩散模型采样的技巧">3.2. 加速扩散模型采样的技巧</a></li>
-      <li><a href="#33-u-net">3.3. U-Net</a></li>
-    </ul>
-  </li>
-  <li><a href="#4-条件生成">4. 条件生成</a>
-    <ul>
-      <li><a href="#41-classifier-guided-diffusion">4.1. Classifier Guided Diffusion</a></li>
-      <li><a href="#42-classifier-free-guidance">4.2. Classifier-Free Guidance</a></li>
-      <li><a href="#43-scale-up-generation-resolution-and-quality">4.3. Scale up Generation Resolution and Quality</a></li>
-    </ul>
-  </li>
-</ul>
-
-<!-- /TOC -->
-
-<h1 id="1-扩散模型简介">1. 扩散模型简介</h1>
-<p>扩散模型(Diffusion Model)是深度生成模型中的SOTA，相比于GAN、VAE、Flow-based这些生成模型而言，扩散模型可以取得更好的效果。扩散模型受非平衡热力学启发，它定义了一条多时间步的马尔可夫链来逐步给图片添加噪声，如果时间步够大，最终图片会变成纯噪声，扩散模型的目的是学习反向的扩散过程，也就是输入随机噪声，能返回一张图片，相比于之前提到的各种生成模型而言，扩散模型具有相对固定的学习步骤，同时隐变量维度更高(和输入数据同样的维度)</p>
-
-<center><img src="../assets/img/posts/20221012/2.jpg" /></center>
-
-<p>扩散模型的早在2015年便提出了(<a href="https://arxiv.org/abs/1503.03585" target="_blank">论文链接</a>)，但在当时没有引起广泛的关注，直到2019年<a href="https://arxiv.org/abs/1907.05600" target="_blank">NCSN</a>和2020年<a href="https://arxiv.org/abs/2006.11239" target="_blank">DDPM</a>的出现才将扩散模型引入了新高度，2022年火爆的text2image模型GLIDE、DALLE2、Latent Diffusion、Imagen的相继提出，让扩散模型火出了圈，这篇博客将对扩散模型的前向计算、反向训练、训练、生成步骤及其数学原理做详细的整理，会列出很多数学公式，同时该博客也参考了很多相关资料，这里我一并列出</p>
-
-<ul>
-  <li><a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/" target="_blank">Lil blog, 一篇整理相当详尽的博客，也是我主要的参考对象</a></li>
-  <li><a href="https://huggingface.co/blog/annotated-diffusion" target="_blank">huggingface的一篇解释简单明了的博客</a></li>
-  <li><a href="https://zhuanlan.zhihu.com/p/525106459" target="_blank">知乎上一篇中文博客</a></li>
-  <li><a href="https://arxiv.org/abs/2006.11239" target="_blank">DDPM</a></li>
-  <li><a href="https://arxiv.org/abs/2209.00796" target="_blank">一篇综述</a></li>
-  <li><a href="https://arxiv.org/abs/2102.09672" target="_blank">Improved DDPM</a></li>
-  <li><a href="https://arxiv.org/abs/2105.05233" target="_blank">Diffusion Models Beat GANs</a></li>
-  <li><a href="https://arxiv.org/abs/2112.10741" target="_blank">GLIDE</a></li>
-  <li><a href="https://arxiv.org/abs/2106.15282" target="_blank">Cascaded Diffusion Model</a></li>
-</ul>
-
-<h1 id="2-模型">2. 模型</h1>
-<h2 id="21-前向扩散">2.1. 前向扩散</h2>
-<p>从原始数据分布中采样$x_0$, 假设$x_0\sim q(x)$，前向扩散过程就是在每一个时间步都加上一个高斯噪声，这样就可以从最初的$x_0$生成长度为T的噪声序列$x_1, x_2, x_3,…, x_T$，每一步都用variance schedule$\beta_t$控制，其中$\beta_t\in (0, 1)$，每一步的后验分布(预定义好的)为:</p>
-
-<p>
-\begin{equation}
-q(\mathbf{x}_t \vert \mathbf{x}_{t-1}) = \mathcal{N}(\mathbf{x}_t; \sqrt{1 - \beta_t} \mathbf{x}_{t-1}, \beta_t\mathbf{I}) \quad
-q(\mathbf{x}_{1:T} \vert \mathbf{x}_0) = \prod^T_{t=1} q(\mathbf{x}_t \vert \mathbf{x}_{t-1})
-\end{equation}
-</p>
-
-<p>这个前向传播的过程中有一个非常好的性质，就是我们可以在任意时间步采样得到$x_t$，为了实现这个技巧，我们需要用到reparameterization技巧(该技巧也在VAE中出现过)，重参数化技巧的本质就是将随机采样的z通过引入高斯噪声$\epsilon$变成确定性的z，也就是上面的$x_t$可以表示为$x_t=\sqrt{1-\beta_t}x_{t-1}+\sqrt{\beta_t}\epsilon$，这样有利于梯度的逆传播，那么我们可以推出以下公式:</p>
-
-<p>
-\begin{equation}
-\begin{aligned}
-\mathbf{x}_t 
-&amp;= \sqrt{\alpha_t}\mathbf{x}_{t-1} + \sqrt{1 - \alpha_t}\boldsymbol{\epsilon}_{t-1} \\
-&amp;= \sqrt{\alpha_t \alpha_{t-1}} \mathbf{x}_{t-2} + \sqrt{1 - \alpha_t \alpha_{t-1}} \bar{\boldsymbol{\epsilon}}_{t-2} \\
-&amp;= \dots \\
-&amp;= \sqrt{\bar{\alpha}_t}\mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t}\boldsymbol{\epsilon} \\
-q(\mathbf{x}_t \vert \mathbf{x}_0) &amp;= \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alpha}_t} \mathbf{x}_0, (1 - \bar{\alpha}_t)\mathbf{I})
-\end{aligned}
-\end{equation}
-</p>
-
-<p>其中$\epsilon_t$都是均值为0，方差为1的高斯噪声，$\alpha_t=1-\beta_t$, $\bar{\alpha_t}=\prod_{i=1}^t\alpha_i$, 注:两个均值相同高斯噪声可以合并成一个高斯噪声，方差为之前方差的平方和开根号，一般来说，$\beta_1&lt;\beta_2&lt;…&lt;\beta_T$</p>
-
-<h2 id="22-反向扩散过程">2.2. 反向扩散过程</h2>
-
-<center><img src="../assets/img/posts/20221012/3.jpg" /></center>
-
-<p>如果我们可以将前向传播的过程反向，那么我们就可以获得后验分布$q(x_{t-1}|x_{t})$，那么我们就可以利用马尔科夫链的性质，输入高斯噪声，然后获得生成的照片，但是，我们无法高效地得到$q(x_{t-1}|x_{t})$，于是我们希望学习出分布$p_\theta$来模拟后验分布$q(x_{t-1}|x_{t})$，由于前向扩散的过程中我们假设后验分布是高斯分布，所以这里我们也假设$p_\theta$是高斯分布，于是我们有:</p>
-
-<p>
-\begin{equation}
-p_\theta(\mathbf{x}_{0:T}) = p(\mathbf{x}_T) \prod^T_{t=1} p_\theta(\mathbf{x}_{t-1} \vert \mathbf{x}_t) \quad
-p_\theta(\mathbf{x}_{t-1} \vert \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \boldsymbol{\mu}_\theta(\mathbf{x}_t, t), \boldsymbol{\Sigma}_\theta(\mathbf{x}_t, t))
-\end{equation}
-</p>
-
-<p>其中分布$p_\theta$中的均值$\mu$和方差$\Sigma$与时间步t和输入$x_t$有关</p>
-
-<p>虽然我们不知道$q(x_{t-1}|x_t)$的分布情况，但是我们可以知道$q(\mathbf{x}_{t-1} \vert \mathbf{x}_t, \mathbf{x}_0)$的分布情况，推导过程如下:</p>
-
-<p style="font-size: 14px">
-\begin{equation}
-\begin{aligned}
-q\left(\mathbf{x}_{t-1} \mid \mathbf{x}_t, \mathbf{x}_0\right) &amp;=q\left(\mathbf{x}_t \mid \mathbf{x}_{t-1}, \mathbf{x}_0\right) \frac{q\left(\mathbf{x}_{t-1} \mid \mathbf{x}_0\right)}{q\left(\mathbf{x}_t \mid \mathbf{x}_0\right)} \\
-&amp; \propto \exp \left(-\frac{1}{2}\left(\frac{\left(\mathbf{x}_t-\sqrt{\alpha_t} \mathbf{x}_{t-1}\right)^2}{\beta_t}+\frac{\left(\mathbf{x}_{t-1}-\sqrt{\bar{\alpha}_{t-1}} \mathbf{x}_0\right)^2}{1-\bar{\alpha}_{t-1}}-\frac{\left(\mathbf{x}_t-\sqrt{\bar{\alpha}_t} \mathbf{x}_0\right)^2}{1-\bar{\alpha}_t}\right)\right) \\
-&amp;=\exp \left(-\frac{1}{2}\left(\frac{\mathbf{x}_t^2-2 \sqrt{\alpha_t} \mathbf{x}_t \mathbf{x}_{t-1}+\alpha_t \mathbf{x}_{t-1}^2}{\beta_t}+\frac{\mathbf{x}_{t-1}^2-2 \sqrt{\bar{\alpha}_{t-1}} \mathbf{x}_0 \mathbf{x}_{t-1}+\bar{\alpha}_{t-1} \mathbf{x}_0^2}{1-\bar{\alpha}_{t-1}}-\frac{\left(\mathbf{x}_t-\sqrt{\bar{\alpha}_t} \mathbf{x}_0\right)^2}{1-\bar{\alpha}_t}\right)\right) \\
-&amp;=\exp \left(-\frac{1}{2}\left(\left(\frac{\alpha_t}{\beta_t}+\frac{1}{1-\bar{\alpha}_{t-1}}\right) \mathbf{x}_{t-1}^2-\left(\frac{2 \sqrt{\alpha_t}}{\beta_t} \mathbf{x}_t+\frac{2 \sqrt{\bar{\alpha}_{t-1}}}{1-\bar{\alpha}_{t-1}} \mathbf{x}_0\right) \mathbf{x}_{t-1}+C\left(\mathbf{x}_t, \mathbf{x}_0\right)\right)\right)
-\end{aligned}
-\end{equation}
-</p>
-
-<p>其中函数$C(x_t, x_0)$与$x_{t-1}$无关，根据上述式子我们可以得出$q(x_{t-1}|x_t,x_0)$满足正态分布，均值和标准差分别为$\tilde{\mu_t}$和$\tilde{\beta_t}$，表达式分别为:</p>
-
-<p>
-\begin{equation}
-\begin{aligned}
-\tilde{\beta}_t 
-&amp;= 1/(\frac{\alpha_t}{\beta_t} + \frac{1}{1 - \bar{\alpha}_{t-1}}) 
-= 1/(\frac{\alpha_t - \bar{\alpha}_t + \beta_t}{\beta_t(1 - \bar{\alpha}_{t-1})})
-= \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \cdot \beta_t \\
-\tilde{\boldsymbol{\mu}}_t (\mathbf{x}_t, \mathbf{x}_0)
-&amp;= (\frac{\sqrt{\alpha_t}}{\beta_t} \mathbf{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1} }}{1 - \bar{\alpha}_{t-1}} \mathbf{x}_0)/(\frac{\alpha_t}{\beta_t} + \frac{1}{1 - \bar{\alpha}_{t-1}}) \\
-&amp;= (\frac{\sqrt{\alpha_t}}{\beta_t} \mathbf{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1} }}{1 - \bar{\alpha}_{t-1}} \mathbf{x}_0) \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \cdot \beta_t \\
-&amp;= \frac{\sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t} \mathbf{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1 - \bar{\alpha}_t} \mathbf{x}_0\\
-\end{aligned}
-\end{equation}
-</p>
-
-<p>于是最终可以得到$q(x_{t-1}|x_t,x_0)$:</p>
-
-<p>
-\begin{equation}
-q(\mathbf{x}_{t-1} \vert \mathbf{x}_t, \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_{t-1}; \tilde{\boldsymbol{\mu}}(\mathbf{x}_t, \mathbf{x}_0), \tilde{\beta}_t \mathbf{I})
-\end{equation}
-</p>
-
-<p>在根据马尔可夫链我们有: $\mathbf{x}_0 = \frac{1}{\sqrt{\bar{\alpha}_t}}(\mathbf{x}_t - \sqrt{1 - \bar{\alpha}_t}\boldsymbol{\epsilon}_t)$，注意这里的$\epsilon_t$并不是任意的一个噪声，而是让$x_0$变成$x_t$的噪声，那么$\tilde{\mu_t}$可以表示为:</p>
-
-<p>
-\begin{equation}
-\begin{aligned}
-\tilde{\boldsymbol{\mu}}_t
-&amp;= \frac{\sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t} \mathbf{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1 - \bar{\alpha}_t} \frac{1}{\sqrt{\bar{\alpha}_t}}(\mathbf{x}_t - \sqrt{1 - \bar{\alpha}_t}\boldsymbol{\epsilon}_t) \\
-&amp;= \frac{1}{\sqrt{\alpha_t}} \Big( \mathbf{x}_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar{\alpha}_t}} \boldsymbol{\epsilon}_t \Big)
-\end{aligned}
-\end{equation}
-</p>
-
-<h2 id="23-损失函数">2.3. 损失函数</h2>
-<p>和VAE类似，也可以用Variational Lower Bound来最大边缘似然函数$p_\theta(x_0)$:</p>
-
-<p>
-\begin{equation}
-\begin{aligned}
-- \log p_\theta(\mathbf{x}_0) 
-&amp;\leq - \log p_\theta(\mathbf{x}_0) + D_\text{KL}(q(\mathbf{x}_{1:T}\vert\mathbf{x}_0) \| p_\theta(\mathbf{x}_{1:T}\vert\mathbf{x}_0) ) \\
-&amp;= -\log p_\theta(\mathbf{x}_0) + \mathbb{E}_{\mathbf{x}_{1:T}\sim q(\mathbf{x}_{1:T} \vert \mathbf{x}_0)} \Big[ \log\frac{q(\mathbf{x}_{1:T}\vert\mathbf{x}_0)}{p_\theta(\mathbf{x}_{0:T}) / p_\theta(\mathbf{x}_0)} \Big] \\
-&amp;= -\log p_\theta(\mathbf{x}_0) + \mathbb{E}_q \Big[ \log\frac{q(\mathbf{x}_{1:T}\vert\mathbf{x}_0)}{p_\theta(\mathbf{x}_{0:T})} + \log p_\theta(\mathbf{x}_0) \Big] \\
-&amp;= \mathbb{E}_q \Big[ \log \frac{q(\mathbf{x}_{1:T}\vert\mathbf{x}_0)}{p_\theta(\mathbf{x}_{0:T})} \Big] \\
-\text{Let }L_\text{VLB} 
-&amp;= \mathbb{E}_{q(\mathbf{x}_{0:T})} \Big[ \log \frac{q(\mathbf{x}_{1:T}\vert\mathbf{x}_0)}{p_\theta(\mathbf{x}_{0:T})} \Big] \geq - \mathbb{E}_{q(\mathbf{x}_0)} \log p_\theta(\mathbf{x}_0)
-\end{aligned}
-\end{equation}
-</p>
-
-<p>由于这里取了-log，所以目标变成了最小化VLB损失函数，经过一系列漫长的推导，我们可以得到(中间步骤其后就是用马尔科夫链和贝叶斯定理把条件概率拆开):</p>
-
-<p>
-\begin{equation}
-\begin{aligned}
-L_\text{VLB} &amp;= L_T + L_{T-1} + \dots + L_0 \\
-\text{where } L_T &amp;= D_\text{KL}(q(\mathbf{x}_T \vert \mathbf{x}_0) \parallel p_\theta(\mathbf{x}_T)) \\
-L_t &amp;= D_\text{KL}(q(\mathbf{x}_t \vert \mathbf{x}_{t+1}, \mathbf{x}_0) \parallel p_\theta(\mathbf{x}_t \vert\mathbf{x}_{t+1})) \text{ for }1 \leq t \leq T-1 \\
-L_0 &amp;= - \log p_\theta(\mathbf{x}_0 \vert \mathbf{x}_1)
-\end{aligned}
-\end{equation}
-</p>
-
-<p>参数化损失函数中的$L_t$: 反向扩散的目标是用神经网络来拟合后验分布$p_\theta(x_{t-1} \vert x_t) = N(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\theta(x_t, t))$，根据损失函数$L_t$可知，反向扩散训练的目标是: 给定t和$x_t$, $\mu_\theta$的结果和$\tilde{\mu_t}$更接近，因为任意$x_t$在给定$x_0$的情况下都可以求出，我们可以参数化高斯噪声，把反向扩散的目标变成让$\epsilon_t$和$\epsilon_\theta$更接近</p>
-
-<p>
-\begin{equation}
-\begin{aligned}
-\boldsymbol{\mu}_\theta(\mathbf{x}_t, t) &amp;= \frac{1}{\sqrt{\alpha_t}} \Big( \mathbf{x}_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar{\alpha}_t}} \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) \Big) \\
-\end{aligned}
-\end{equation}
-</p>
-
-<p>损失函数$L_t$为:</p>
-
-<p style="font-size: 20px">
-\begin{equation}
-\begin{aligned}
-L_t 
-&amp;= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \Big[\frac{1}{2 \| \boldsymbol{\Sigma}_\theta(\mathbf{x}_t, t) \|^2_2} \| \tilde{\boldsymbol{\mu}}_t(\mathbf{x}_t, \mathbf{x}_0) - \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) \|^2 \Big] \\
-&amp;= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \Big[\frac{1}{2  \|\boldsymbol{\Sigma}_\theta \|^2_2} \| \frac{1}{\sqrt{\alpha_t}} \Big( \mathbf{x}_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar{\alpha}_t}} \boldsymbol{\epsilon}_t \Big) - \frac{1}{\sqrt{\alpha_t}} \Big( \mathbf{x}_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar{\alpha}_t}} \boldsymbol{\boldsymbol{\epsilon}}_\theta(\mathbf{x}_t, t) \Big) \|^2 \Big] \\
-&amp;= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \Big[\frac{ (1 - \alpha_t)^2 }{2 \alpha_t (1 - \bar{\alpha}_t) \| \boldsymbol{\Sigma}_\theta \|^2_2} \|\boldsymbol{\epsilon}_t - \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t)\|^2 \Big] \\
-&amp;= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \Big[\frac{ (1 - \alpha_t)^2 }{2 \alpha_t (1 - \bar{\alpha}_t) \| \boldsymbol{\Sigma}_\theta \|^2_2} \|\boldsymbol{\epsilon}_t - \boldsymbol{\epsilon}_\theta(\sqrt{\bar{\alpha}_t}\mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t}\boldsymbol{\epsilon}_t, t)\|^2 \Big] 
-\end{aligned}
-\end{equation}
-</p>
-
-<h2 id="24-ddpm中给出的训练与采样生成过程">2.4. DDPM中给出的训练与采样(生成)过程</h2>
-<center><img src="../assets/img/posts/20221012/4.jpg" /></center>
-
-<p>训练过程:</p>
-<ol>
-  <li>采样一个$x_0$</li>
-  <li>任选一个时间t</li>
-  <li>随机采样一个高斯噪声$\epsilon$</li>
-  <li>计算损失函数的梯度，更新参数$\theta$</li>
-</ol>
-
-<p>采样过程:</p>
-<ol>
-  <li>采样一个高斯噪声$x_T$</li>
-  <li>从时间T开始，每一步采样一个高斯噪声z，利用重参数化，得到上一步的$x_{t-1}$，重复T次，最终得到生成的$x_0$</li>
-</ol>
-
-<p>注意这里还没有给出$\epsilon_\theta(x_t, t)$的网络结构，DDPM使用U-Net作为其网络结构(后面会具体展开)</p>
-
-<h2 id="25-小结">2.5. 小结</h2>
-<p>简单来说，扩散模型的前向扩散过程都是定义好的马尔可夫链，每一步都需要使用重参数化技巧来添加噪声，这里每一步的后验分布的参数都是预定义好的。反向扩散过程就是用噪声生成原始图片的过程，和VAE类似，用分布$p_\theta(x_{t-1}|x_t)$来拟合真实的后验分布$q(x_{t-1}|x_t)$，所以生成过程最重要的就是训练出合适的分布来拟合，通过VLB和重参数化的技巧，最终可以把训练过程看成给一个高斯噪声，拟合成前向扩散的噪声。这里的网络结构一般使用的是U-Net</p>
-
-<h1 id="3-一些技巧和主要网络结构">3. 一些技巧和主要网络结构</h1>
-<h2 id="31-beta_t和sigma_theta的取值">3.1. $\beta_t$和$\Sigma_\theta$的取值</h2>
-<p>关于$\beta_t$的取值，DDPM的做法是$\beta_1=10^{-4}$到$\beta_T=0.02$线性取值，这样的扩散模型取得的效果不算最好，<a href="https://arxiv.org/abs/2102.09672" target="_blank">Improved DDPM</a>提出了一种新的取值方法:</p>
-
-<p>
-\begin{equation}
-\beta_t = \text{clip}(1-\frac{\bar{\alpha}_t}{\bar{\alpha}_{t-1}}, 0.999) \quad\bar{\alpha}_t = \frac{f(t)}{f(0)}\quad\text{where }f(t)=\cos\Big(\frac{t/T+s}{1+s}\cdot\frac{\pi}{2}\Big)
-\end{equation}
-</p>
-
-<p>关于$\Sigma_\theta$的取值方法，DDPM采用固定的$\Sigma_\theta$(不学习)，可以取$\beta_t$或者$\tilde{\beta_t}=\frac{1 - \bar{\alpha_{t-1}}}{1 - \bar{\alpha_t}} \cdot \beta_t$，Improved DDPM采用可学习的$\Sigma_\theta$参数，利用线性插值的方法:</p>
-
-<p>
-\begin{equation}
-\boldsymbol{\Sigma}_\theta(\mathbf{x}_t, t) = \exp(\mathbf{v} \log \beta_t + (1-\mathbf{v}) \log \tilde{\beta}_t)
-\end{equation}
-</p>
-
-<p>由于损失函数中没有关于$\Sigma_\theta$的梯度，所以需要对损失函数进行一点更改</p>
-
-<h2 id="32-加速扩散模型采样的技巧">3.2. 加速扩散模型采样的技巧</h2>
-<p>DDPM的作者对比了扩散模型和其他生成模型的生成速度，发现DDPM的生成速度远小于其他生成模型，有一些加速模型采样的技巧:</p>
-<ol>
-  <li>缩短采样步骤，比如每隔T/S步才采样一次</li>
-  <li><a href="https://arxiv.org/abs/2010.02502" target="_blank">DDIM</a>论文里提出的技巧，在采样过程中只需要采样一个子集的步骤便可做生成</li>
-  <li><a href="https://arxiv.org/abs/2112.10752" target="_blank">Latent Diffusion Model</a>论文提出让扩散过程在隐空间中进行，而不是在像素空间中进行，这样可以让训练代价更小，推断过程更快，后续会整理LDM论文</li>
-</ol>
-
-<h2 id="33-u-net">3.3. U-Net</h2>
-<p>很多扩散模型的噪声网络结构都是基于<a href="https://arxiv.org/pdf/1505.04597.pdf" target="_blank">U-Net</a>，U-Net的网络结构如下图:</p>
-
-<center><img src="../assets/img/posts/20221012/5.jpg" /></center>
-
-<p>模型可以分为两个部分，左边用于特征的抽取，右边部分用于上采样，由于网络结构酷似字母U而得名。U-Net网络结构又可以看成AutoEncoder的结构，它的bottleneck就是中间的低纬度特征表示，U-Net要保证输出的噪声和输入的噪声有相同的维度，是一个自回归模型。DDPM使用的是PixelCNN++的backbone，也就是基于Wide Resnet的U-Net，也就是说encoder和decoder之间是残差连接，输入$x_t$返回噪声(残差思想)</p>
-
-<h1 id="4-条件生成">4. 条件生成</h1>
-<p>条件生成就是conditioned generation，通过输入额外的conditioning information来生成图片，比如一段提示词或者生成图片的类别</p>
-
-<h2 id="41-classifier-guided-diffusion">4.1. Classifier Guided Diffusion</h2>
-<p>博客上讲解的关于classifier guidance的部分不太详尽，于是我去翻看了Classifier Guidance的论文<a href="https://arxiv.org/abs/2105.05233" target="_blank">Diffusion Models Beat GANs</a>:</p>
-
-<p>classifier guidance的思路来源于GAN模型的条件生成，将这种条件生成应用于扩散模型后，发现效果非常好。作者提出可以训练一个分类器$p_\phi(y|x_t, t)$，然后把$\nabla_{x_t} \log p_\phi\left(y \mid x_t, t\right)$的加到总的梯度公式里面，来指导扩散模型<strong>采样的过程</strong>偏向于生成类别为y的图片</p>
-
-<p>没有classifier guidance之前的反向扩散分布函数为: $p_\theta(x_t|x_{t+1})$，但是有了classifier guidance之后，反向扩散的后验分布函数变成了:</p>
-
-<p>
-\begin{equation}
-p_{\theta, \phi}(x_t|x_{t+1}, y) = Zp_\theta(x_t|x_{t+1})p_\phi(y|x_t)
-\end{equation}
-</p>
-
-<p>其中Z是正则化的常数，接下来我们需要化简上面这个公式，首先我们知道$p_\theta(x_t|x_{t+1})$本质上就是正态分布:</p>
-
-<p>
-\begin{equation}
-p_\theta(x_t|x_{t+1})=\mathcal{N}(\mu, \Sigma)
-\end{equation}
-</p>
-
-<p>然后我们对$log_\phi p(y|x_t)$在$x=\mu$处进行泰勒展开:</p>
-
-<p>
-\begin{equation}
-\begin{aligned}
-\log p_\phi(y \mid x_t) &amp; \approx log p_\phi (y \mid x_t) \mid _{x_t=\mu}+(x_t-\mu)\nabla_{x_t}logp_\phi(y \mid x_t)\mid _{x_t=\mu} \\
-&amp;=(x_t-\mu)g+C_1\\
-\end{aligned}
-\end{equation}
-</p>
-
-<p>这里$g=\nabla_{x_t}logp_\phi(y \mid x_t)\mid _{x_t=\mu}$</p>
-
-<p style="font-size: 18px">
-\begin{equation}
-\begin{aligned}
-\log \left(p_\theta\left(x_t \mid x_{t+1}\right) p_\phi\left(y \mid x_t\right)\right) &amp; \approx-\frac{1}{2}\left(x_t-\mu\right)^T \Sigma^{-1}\left(x_t-\mu\right)+\left(x_t-\mu\right) g+C_2 \\
-&amp;=-\frac{1}{2}\left(x_t-\mu-\Sigma g\right)^T \Sigma^{-1}\left(x_t-\mu-\Sigma g\right)+\frac{1}{2} g^T \Sigma g+C_2 \\
-&amp;=-\frac{1}{2}\left(x_t-\mu-\Sigma g\right)^T \Sigma^{-1}\left(x_t-\mu-\Sigma g\right)+C_3 \\
-&amp;=\log p(z)+C_4, z \sim \mathcal{N}(\mu+\Sigma g, \Sigma)
-\end{aligned}
-\end{equation}
-</p>
-
-<p>那么反向扩散过程就可以看成均值为$\mu+\Sigma g$，方差为$\Sigma$的正态分布，那么我们有以下采样算法:</p>
-
-<center><img src="../assets/img/posts/20221012/6.jpg" /></center>
-
-<p>另一种思路是修改正态分布中的噪声函数，原本的梯度为:</p>
-
-<p>
-\begin{equation}
-\nabla _{x_t} log p_\theta (x_t) = - \frac{1}{\sqrt{1-\overline{\alpha_t}}} \epsilon_\theta (x_t)
-\end{equation}
-</p>
-
-<p>修改反向扩散函数后的梯度为:</p>
-
-<p>
-\begin{equation}
-\begin{aligned}
-\nabla _{x_t} log (p_\theta (x_t) p_\phi (y \mid x_t))  &amp;= \nabla _{x_t} log p_\theta (x_t) + \nabla _{x_t} log p_\phi (y \mid x_t) \\
-&amp;= - \frac{1}{\sqrt{1-\overline{\alpha_t}}} \epsilon_\theta (x_t) + \nabla _{x_t} log p_\phi (y \mid x_t)
-\end{aligned}
-\end{equation}
-</p>
-
-<p>那么根据梯度，我们可以定义一个新的噪声预测函数$\hat{\epsilon}$:</p>
-
-<p>
-\begin{equation}
-\hat{\epsilon(x_t)} := \epsilon_\theta(x_t) - \sqrt{1-\overline{\alpha_t}} \nabla _{x_t} log p_\phi(y \mid x_t)
-\end{equation}
-</p>
-
-<p>该方法对应的算法为:</p>
-
-<center><img src="../assets/img/posts/20221012/7.jpg" /></center>
-
-<h2 id="42-classifier-free-guidance">4.2. Classifier-Free Guidance</h2>
-<p>上一小节提到的classifier guidance的技巧是需要单独使用一个分类器(参与训练或者不参与训练的情况都有)来获得$x_t$的类别，根据不同的class可以使用不同的分类器，比如resnet可以进行图片类别的guidance，CLIP可以进行文本的guidance等等。如果我们没有这个单独的分类器，我们也可以利用classifier-free guidance的技巧来实现条件生成，同样地，为了更详尽地了解这个技巧，我去翻看了<a href="https://arxiv.org/abs/2112.10741" target="_blank">GLIDE</a>论文中关于classifier-free guidance的介绍</p>
-
-<p>classifier-free guidance并不需要模型去单独给出一个分类器，而是将条件生成与非条件生成都用同一个函数表示，即$\epsilon(x_t\mid y)$，如果我们希望这个函数表示非条件生成，那么我们只需要将y替换成空集即可，在训练过程中，我们以相同的概率随机替换y为空集。采样时，反向扩散函数为$\epsilon_\theta(x_t \mid y)$和$\epsilon_\theta(x_t \mid \emptyset)$的线性插值:</p>
-
-<p>
-\begin{equation}
-\hat{\epsilon_\theta}(x_t \mid y)=\epsilon_\theta(x_t\mid \emptyset) + s \cdot (\epsilon_\theta(x_t\mid y)-\epsilon_\theta(x_t\mid \emptyset))
-\end{equation}
-</p>
-
-<p>式子中的s是guidance scale，s越大代表生成的图片越靠近y，guidance-free的技巧出现后，大家发现它的效果非常好，于是后续的模型基本上都运用了该技巧，比如GLIDE、DALLE2、Imagen</p>
-
-<h2 id="43-scale-up-generation-resolution-and-quality">4.3. Scale up Generation Resolution and Quality</h2>
-<p>为了生成更高质量和更高分辨率的图片，可以将扩散模型与超分辨率的技术相结合，论文<a href="https://arxiv.org/abs/2106.15282" target="_blank">Cascaded Diffusion Model</a>中提出用层级式的扩散模型来做图片的超分辨率生成，模型的结构如下图:</p>
-
-<center><img src="../assets/img/posts/20221012/8.jpg" /></center>
-
-<p>模型由三个子模型组成，分别是一个基础的扩散模型和两个超分辨率扩散模型，注意这里的每个子模型都需要输入类别，超分辨率子模型还需要输入上一个子模型的低分辨率结果，这些子模型都是conditional的。超分辨率扩散模型与普通的扩散模型的区别是损失函数和反向扩散函数不同，具体来说就是U-Net的结构不同，超分辨率的U-Net的输出维度比输入维度要大，而且输入为低分辨率的图片、高分辨率的图片、类别:</p>
-
-<center><img src="../assets/img/posts/20221012/9.jpg" /></center>
-
-<p>一个two-stage的cascaded模型的训练算法为:</p>
-
-<center><img src="../assets/img/posts/20221012/10.jpg" /></center>
-
-<p>一个two-stage的cascaded模型的采样算法为:</p>
-
-<center><img src="../assets/img/posts/20221012/11.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[collect and arrange information and principle of diffusion model]]></summary></entry></feed>
+</ul>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[记录Linux常见命令]]></summary></entry></feed>

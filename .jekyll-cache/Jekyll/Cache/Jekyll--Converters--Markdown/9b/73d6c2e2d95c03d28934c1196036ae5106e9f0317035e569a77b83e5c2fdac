@@ -1,0 +1,3 @@
+I"�<h1 id="dreambooth简介">DreamBooth简介</h1>
+<p>DreamBooth是Google团队继Imagen后研发的针对Subject进行定制化训练的finetune方法，只需要同一个物体(动物、人、物体)的3-5张图片和prompt，就可以微调出一个专属的模型，这个模型可以生成输入物体的各种姿势，也可以将这个物体融入到景观中。DreamBooth本质上微调了Unet和TextEncoder，效果图如下:</p>
+:ET

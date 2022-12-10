@@ -427,3 +427,21 @@ void Sample::GetValue() const{
 <center><img src='../assets/img/posts/20221120/92.jpg'></center>
 <center><img src='../assets/img/posts/20221120/93.jpg'></center>
 <center><img src='../assets/img/posts/20221120/94.jpg'></center>
+
+### 2.4.6. 类型转换符的重载
+- 类型运算符也可以重载，比如说
+<center><img src='../assets/img/posts/20221120/95.png'></center>
+
+- 类型转换运算符重载时不需要写返回值类型
+
+### 2.4.7. 自增、自减运算符的重载
+- 为了区分自增运算符的前置和后置，C++规定前置运算符用成员函数重载，后置运算符用普通函数重载，多一个没用的参数
+<center><img src='../assets/img/posts/20221120/96.png'></center>
+
+- 一个例子:
+<center><img src='../assets/img/posts/20221120/97.jpg'></center>
+<center><img src='../assets/img/posts/20221120/98.jpg'></center>
+
+- 后置++/--会返回一个临时的对象
+- 运算符重载的注意事项:
+<center><img src='../assets/img/posts/20221120/99.jpg'></center>

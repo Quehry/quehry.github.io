@@ -111,6 +111,16 @@
     
       
   {
+  "tag" : "courses",
+  "posts" : [
+      
+      "./%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "creativity",
   "posts" : [
       
@@ -145,10 +155,30 @@
     
       
   {
+  "tag" : "finetune",
+  "posts" : [
+      
+      "./DreamBooth.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "general blogging",
   "posts" : [
       
       "./starting-the-adventure.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "image generation",
+  "posts" : [
+      
+      "./DreamBooth.html"
       
     ]
   } ,
@@ -179,6 +209,16 @@
       "./ML-Library-from-scratch.html",
       
       "./single-neuron-perceptron.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "multi-modality",
+  "posts" : [
+      
+      "./BLIP.html"
       
     ]
   } ,
@@ -234,6 +274,10 @@
   "tag" : "notes",
   "posts" : [
       
+      "./BLIP.html",
+      
+      "./DreamBooth.html",
+      
       "./Object-Oriented-Programming.html",
       
       "./ROS.html",
@@ -283,6 +327,18 @@
       "./RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html",
       
       "./%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "paper reading",
+  "posts" : [
+      
+      "./BLIP.html",
+      
+      "./DreamBooth.html"
       
     ]
   } ,
@@ -341,6 +397,16 @@
   "posts" : [
       
       "./starting-the-adventure.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "vision-language",
+  "posts" : [
+      
+      "./BLIP.html"
       
     ]
   } ,

@@ -60,7 +60,22 @@ toc: yes
     - [3.6. Discussion](#36-discussion)
     - [3.7. Conclusion](#37-conclusion)
     - [3.8. 小结](#38-小结)
-- [4. TODO](#4-todo)
+- [4. Semantic Similarity for ASAG](#4-semantic-similarity-for-asag)
+    - [4.1. Knowledge-based Measures](#41-knowledge-based-measures)
+    - [4.2. Corpus-Based Measures](#42-corpus-based-measures)
+    - [4.3. Experiment](#43-experiment)
+- [5. Pre-Training Bert on Domain for ASAG](#5-pre-training-bert-on-domain-for-asag)
+    - [5.1. Usage of Textbooks](#51-usage-of-textbooks)
+    - [5.2. Usage of Question-Answer Pairs](#52-usage-of-question-answer-pairs)
+    - [5.3. 微调ASAG](#53-微调asag)
+    - [5.4. Experiments](#54-experiments)
+- [6. Imporving Short Answer Grading Using Transformer-Based Pre-training](#6-imporving-short-answer-grading-using-transformer-based-pre-training)
+    - [6.1. 数据集](#61-数据集)
+    - [6.2. 实验](#62-实验)
+- [7. Investigating Transformers for Automatic Short Answer Grading](#7-investigating-transformers-for-automatic-short-answer-grading)
+    - [7.1. 实验](#71-实验)
+    - [7.2. 结果分析](#72-结果分析)
+- [8. TODO](#8-todo)
 
 <!-- /TOC -->
 
@@ -527,7 +542,77 @@ future work: larger corpora, 优化语义面提取的算法, 预测state的算�
 ## 3.8. 小结
 facet这篇论文的着重点就是提出了语义面，这篇论文的出发点其实很好想到，就是评估模型的性能可能无法有很大的提升了，那么我将答案分成好几个小部分进行评估是否能提升模型的性能？于是便有了这篇论文，facet可以理解成参考答案的知识点，它是否在学生答案中表达出就是它的states。论文做了两个工作，第一个是直接基于有facet标注和state标注的数据集上进行实验，因为不同问题的facet数量不一样，所以用state的分布来表达可能会更好，首先通过统计得到了不同类型答案的state分布，这为后续KL散度这一特征有帮助。然后使用GBT作为预测模型，通过state的分布来预测答案的类型，得到了较好的效果。第二个实验基于正常的数据集，就是不包含facet和state的标签，这也是比较一般的情况，毕竟标注facet和state非常贵。首先每个问题没有了facet，那么首先就得设计算法来得到问题的facet，作者提出了一种基于Dependency parsing tree得到facet的方法，并在附录B对这个算法进行了评价。得到facet后还是没有state，所以得设计一个网络来得到facet的状态，模型的输入是facet和学生的response，利用LSTM来获得隐状态，并用注意力机制找到facet的近似表示，然后连结了facet的隐状态的各类信息，最后加个MLP得到state。到目前为止，已经有了facet和state，那么就可以得到facet的特征来作预测，相当于特征工程。facet的特征使用到的有: state分布, 与第一个工作中真实分布对比的KL散度, 运用到confidence的Noisy-OR。除此之外，作者还对比了其余的特征，比如语义相似度和semantic entailment(这是已有的工作)。最后将这些特征fusion之后的效果比较好
 
-# 4. TODO
+# 4. Semantic Similarity for ASAG
+论文题目为Text-to-Text Semantic Similarity for Automatic Short Answer Grading，文章的出发点是利用语义相似度来进行ASAG任务，作者将语义相似度分为了Knowledge-Based Measures和Corpus-Based Measures，其中前者就只考虑词和词的相似性，后者考虑了词表来测量词的相似性关系
+
+## 4.1. Knowledge-based Measures
+Reference A的每个单词和Student A同词性的每个单词进行语义相似度的测量，找出语义相似度最高的值作为该单词该词性的语义相似度。作者比对了八种不同的语义性测量方法:
+- shortest path:
+<p>
+\begin{equation}
+Sim_{path}=\frac{1}{length}
+\end{equation}
+</p>
+
+其中length表示两个词的最短路径(通过node-counting的方法)
+
+- Leacock & Chodorow
+- Lesk
+- Wu & Palmer
+- Resnik
+- Lin
+- Jiang & Conrath
+- Hirst & St.Onge
+
+## 4.2. Corpus-Based Measures
+上面比较词的相似度的方法不考虑整个序列的语法和词表信息，Corpus-Based方法考虑了词表和序列信息，具体来说，作者使用了LSA(latent semantic analysis)和ESA(Explicit semantic analysis)来测量语义相似度
+
+## 4.3. Experiment
+实验用相关性作为衡量各种语义相似度测量的指标，knowledge-based measures与Wordnet里提供的词的相似性指标进行相关性的测量，LSA与wordnet里提供的Infomap指标进行相关性的测量，ESA则是使用ESA算法进行测量，实验结果如下:
+
+<center><img src='../assets/img/posts/20221010/40.png'></center>
+
+# 5. Pre-Training Bert on Domain for ASAG
+论文全称为Pre-Training BERT on Domain Resources for Short Answer Grading，同样使用BERT作为主干网络，本篇文章的主要亮点就是利用当前领域的textbooks和QA对BERT进行微调，扩充了预训练的数据集，相当于是一种针对领域的微调方法
+
+## 5.1. Usage of Textbooks
+使用特定领域的textbook来扩充预训练数据集，将textbooks分为多个段落进行微调
+
+## 5.2. Usage of Question-Answer Pairs
+使用正确的Student A和Reference A作为一个pair进行微调，因为BERT本身的任务就有下一句预测，所以相对合理
+
+## 5.3. 微调ASAG
+Student A和Reference A作为一个句子对输入BERT，提取\<cls\>输入一个全连接层进行预测
+
+## 5.4. Experiments
+<center><img src='../assets/img/posts/20221010/41.jpg'></center>
+<center><img src='../assets/img/posts/20221010/42.jpg'></center>
+
+# 6. Imporving Short Answer Grading Using Transformer-Based Pre-training
+论文全称Imporving Short Answer Grading Using Transformer-Based Pre-training，算是第一篇将Bert应用于ASAG任务上的论文，简单的输入Student A和Reference A作为序列对，然后利用\<cls\>进行分类
+
+## 6.1. 数据集
+数据集使用了SemEval2013和两个心理学领域的数据集
+<center><img src='../assets/img/posts/20221010/44.jpg'></center>
+
+## 6.2. 实验
+<center><img src='../assets/img/posts/20221010/45.jpg'></center>
+
+# 7. Investigating Transformers for Automatic Short Answer Grading
+论文全称Investigating Transformers for Automatic Short Answer Grading，比对了不同的BERT-like架构在ASAG任务上的表现，主要探讨了多语言Transformer的表现、不同Pre-training tasks的表现、knowledge disillation的表现。用wmt2019表现最好的模型做翻译
+
+## 7.1. 实验
+总的实验结果:
+<center><img src='../assets/img/posts/20221010/43.jpg'></center>
+
+## 7.2. 结果分析
+- 大模型能提升ASAG任务的效果吗: 可以
+- 多语言Transformer的表现如何: 表现一般，XLM模型的表现不好，XLMRoBerta表现和普通的RoBerta差不多
+- 预训练的时候采用多种语言可以提升模型的泛化能力，在别的语言上也能取得不错的效果
+- 有更好的预训练任务吗: 实验结果表明，预训练任务MNLI(自然语言蕴含任务)能极大提升ASAG任务的效果
+- knowledge distillation表现如何: 虽然说distil的bert性能会下降，但是在节省40%参数的情况下只降低了2%的效果，可以接受
+
+# 8. TODO
 - 看GBT, GPT, ELMo
 - 深入了解一下ASAG用特征工程解决的思路
 - 想想改进方向
