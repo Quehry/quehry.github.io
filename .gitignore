@@ -12,4 +12,5 @@
 /.idea/
 .liquidrc
 Gemfile.lock
+Gemfile
 .jekyll-cache
