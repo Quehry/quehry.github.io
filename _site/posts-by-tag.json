@@ -16,7 +16,9 @@
   "tag" : "NLP",
   "posts" : [
       
-      "./Bert.html"
+      "./Bert.html",
+      
+      "./Automatic-Short-Answer-Grading.html"
       
     ]
   } ,
@@ -288,7 +290,7 @@
       
       "./Diffusion-Model.html",
       
-      "./short-answer-assessment.html",
+      "./Automatic-Short-Answer-Grading.html",
       
       "./AutoEncoder-Series.html",
       
@@ -321,6 +323,8 @@
   {
   "tag" : "paper",
   "posts" : [
+      
+      "./Automatic-Short-Answer-Grading.html",
       
       "./T5%E6%A8%A1%E5%9E%8B.html",
       

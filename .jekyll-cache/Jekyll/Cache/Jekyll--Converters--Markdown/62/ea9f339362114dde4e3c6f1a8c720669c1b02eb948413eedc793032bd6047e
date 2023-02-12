@@ -1,8 +1,0 @@
-I"o<h1 id="1-transformer简介">1. Transformer简介</h1>
-<p>2017年Google团队提出的完全基于attention机制的神经网络结构，是一种全新的网络架构，影响力十分大，后续的BERT, ViT等多个熟知的预训练模型，相关链接:</p>
-<ul>
-  <li><a href="https://arxiv.org/abs/1706.03762" target="_blank">论文地址</a></li>
-  <li><a href="https://www.bilibili.com/video/BV1pu411o7BE/?spm_id_from=333.999.0.0&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">论文精读</a></li>
-  <li><a href="https://github.com/tensorflow/tensor2tensor" target="_blank">代码</a></li>
-</ul>
-:ET

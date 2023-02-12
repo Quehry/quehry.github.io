@@ -11,3 +11,5 @@
 /.vscode/
 /.idea/
 .liquidrc
+Gemfile.lock
+.jekyll-cache

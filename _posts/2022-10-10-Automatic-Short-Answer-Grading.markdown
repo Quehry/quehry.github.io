@@ -2,11 +2,11 @@
 layout: post
 read_time: true
 show_date: true
-title:  短文本评估论文阅读整理
-date:   2022-10-10
-description: read and arrange paper about short answer assessment
+title:  短文本自动评估论文阅读整理
+date: 2022-10-10
+description: read and arrange paper about automatic short answer grading(ASAG)
 img: posts/20221010/1.jpg 
-tags: [notes]
+tags: [notes, paper, NLP]
 author: Quehry
 mathjax: yes
 toc: yes
@@ -15,7 +15,7 @@ toc: yes
 <!-- TOC -->
 
 - [1. 论文简介](#1-论文简介)
-- [2. BERT-Based Deep Neural Networks](#2-bert-based-deep-neural-networks)
+- [2. Automatic Short-Answer Grading via BERT-Based Deep Neural Networks](#2-automatic-short-answer-grading-via-bert-based-deep-neural-networks)
     - [2.1. Abstract](#21-abstract)
     - [2.2. Introduction](#22-introduction)
     - [2.3. Related Work](#23-related-work)
@@ -36,7 +36,7 @@ toc: yes
         - [2.5.4. Comparison With Baseline Systems](#254-comparison-with-baseline-systems)
     - [2.6. Discussions](#26-discussions)
     - [2.7. Conclusion](#27-conclusion)
-- [3. Semantic Facets](#3-semantic-facets)
+- [3. Leveraging Semantic Facets for Automatic Assessment of Short Free Text Answers](#3-leveraging-semantic-facets-for-automatic-assessment-of-short-free-text-answers)
     - [3.1. Abstract](#31-abstract)
     - [3.2. Introduction](#32-introduction)
     - [3.3. Related Works](#33-related-works)
@@ -60,7 +60,7 @@ toc: yes
     - [3.6. Discussion](#36-discussion)
     - [3.7. Conclusion](#37-conclusion)
     - [3.8. 小结](#38-小结)
-- [4. Semantic Similarity for ASAG](#4-semantic-similarity-for-asag)
+- [4. Text-to-Text Semantic Similarity for Automatic Short Answer Grading](#4-text-to-text-semantic-similarity-for-automatic-short-answer-grading)
     - [4.1. Knowledge-based Measures](#41-knowledge-based-measures)
     - [4.2. Corpus-Based Measures](#42-corpus-based-measures)
     - [4.3. Experiment](#43-experiment)
@@ -80,12 +80,16 @@ toc: yes
 <!-- /TOC -->
 
 # 1. 论文简介
-- [short answer grading model](https://ieeexplore.ieee.org/abstract/document/9779091){:target="_blank"}
-- [semantic facets](https://ieeexplore.ieee.org/abstract/document/9860098){:target="_blank"}
+博客主要整理Automatic Short Answer Grading(后续简称ASAG)任务的相关论文，所谓ASAG任务，就是对某个问题的短文本回答进行自动评估，相关论文链接：
+- [Automatic Short-Answer Grading via BERT-Based Deep Neural Networks](https://ieeexplore.ieee.org/abstract/document/9779091){:target="_blank"}
+- [Leveraging Semantic Facets for Automatic Assessment of Short Free Text Answers](https://ieeexplore.ieee.org/abstract/document/9860098){:target="_blank"}
+- [Text-to-Text Semantic Similarity for Automatic Short Answer Grading](https://aclanthology.org/E09-1065/){:target="_blank"}
+- [Pre-Training BERT on Domain Resources for Short Answer Grading](https://aclanthology.org/D19-1628/){:target="_blank"}
+- [Improving Short Answer Grading Using Transformer-Based Pre-training](https://link.springer.com/chapter/10.1007/978-3-030-23204-7_39){:target="_blank"}
+- [Investigating Transformers for Automatic Short Answer Grading](https://link.springer.com/chapter/10.1007/978-3-030-52240-7_8){:target="_blank"}
+- []
 
-这是两篇关于short-answer assessment的论文，所谓short-answer assessment就是对简答题的答案进行评估(和参考答案对比)，第一篇提出了利用BERT解决这个问题，第二篇提出了改进了评估过程，用多个semantic facets来评估short-answer，这篇博客记录一下对这两篇论文的精读
-
-# 2. BERT-Based Deep Neural Networks
+# 2. Automatic Short-Answer Grading via BERT-Based Deep Neural Networks
 ## 2.1. Abstract
 Automatic short-answer grading(ASAG)，即自动短文本评分任务，是智慧辅导系统的重要组成部分。ASAG目前还存在很多挑战，作者提出了两个主要原因: 1)高精度评分任务需要对answer text有很深的语义理解; 2)ASAG任务的语料一般都很小，不能为深度学习提供足够的训练数据。为了解决这些挑战，作者提出用BERT-based网络来解决ASAG任务的挑战: 1)用预训练模型BERT来encoder答案文本就可以克服语料太小的问题。2)为了生成足够强的语义理解，作者在BERT输出层后加上了一个精炼层(由LSTM和Capsule网络串联组成) 3)作者提出一种triple-hot loss来处理ASAG的回归问题。实验结果表明模型的效果在SemEval-2013和Mohler数据集上表现比SOTA要好。模型在github上[开源](https://github.com/wuhan-1222/ASAG){:target="_blank"}
 
@@ -154,7 +158,7 @@ y^*=\underset{y \in Y}{\operatorname{argmax}}(\operatorname{Pr}(y \mid(q, p)))
 其中Y表示类别集，Pr()表示预测的概率分布，q是学生答案，p是参考答案
 
 ### 2.4.2. Model
-作者解释为什么即要用BERT，也要用refinement: 
+作者解释为什么既要用BERT，也要用refinement: 
 1. BERT获得word embedding结果，利用了所有词元之间的关系，但是没有考虑顺序和距离，所以需要用Bi-LSTM来生成更精细的全局context，同时弥补BERT时序信息的缺失，然后利用Capsule或者CNN来生成BERT每个隐层的局部信息
 2. BERT可以获得动态的词嵌入(对比GloVe获得静态的词嵌入)，这样可以获得更丰富的general-purpose knowledge，所以BERT即使在小语料库上也能有不错的效果
 3. 一些研究表明，在BERT上应用经典的神经网络可以在小数据集上获得更好的效果，比如Liao等人结合RoBERTa和CNN来提升情感分析的效果，Yang等人在BERT上应用多头注意力层来添加距离权重在aspect polarity classification上获得更好的效果
@@ -334,8 +338,9 @@ BERT采用base版本(12层，768个单元，12个head，110M参数)，LSTM的隐
 1. 在开放领域的问答中，小数据集训练出来的模型无法取得预期的效果，比如Sem-UD
 2. 目前来说，模型无法消除或者替代学生答案中的大量的代词，作者计划在后续通过BERT模型来消除学生答案中的代词来提升模型的性能
 
-# 3. Semantic Facets
+# 3. Leveraging Semantic Facets for Automatic Assessment of Short Free Text Answers
 论文全称为Leveraging Semantic Facets for Automatic Assessment of Short Free Text Answers，接下来将逐段阅读并整理论文
+<center><img src='../assets/img/posts/20221010/46.jpg'></center>
 
 ## 3.1. Abstract
 短文本问答能反映出学生对于知识的掌握情况，由于自然语言的复杂性，简答题的自动评估任务仍具有挑战性。现有的自动评估模型的做法是预测答案的分数来评估学生的答案，他们一般不关心参考答案的语义面，这限制了预测的表现。该篇论文的关注点是短文本答案的不同的语义面(semantic facets)，每个语义面对应着需要掌握的知识。利用带有语义面标注的数据集，作者首先展示了语义面状态与答案质量(一个答案的好坏)的对应关系，然后展示了语义面在自动评估答案质量的重要性。作者接着将工作拓展到不包含语义面的数据集上，证明了作者的工作在自动评估短文本答案方面的有效性，这些工作包括语义面提取、预测语义面状态和使用语义面的特征工程。
@@ -542,7 +547,7 @@ future work: larger corpora, 优化语义面提取的算法, 预测state的算�
 ## 3.8. 小结
 facet这篇论文的着重点就是提出了语义面，这篇论文的出发点其实很好想到，就是评估模型的性能可能无法有很大的提升了，那么我将答案分成好几个小部分进行评估是否能提升模型的性能？于是便有了这篇论文，facet可以理解成参考答案的知识点，它是否在学生答案中表达出就是它的states。论文做了两个工作，第一个是直接基于有facet标注和state标注的数据集上进行实验，因为不同问题的facet数量不一样，所以用state的分布来表达可能会更好，首先通过统计得到了不同类型答案的state分布，这为后续KL散度这一特征有帮助。然后使用GBT作为预测模型，通过state的分布来预测答案的类型，得到了较好的效果。第二个实验基于正常的数据集，就是不包含facet和state的标签，这也是比较一般的情况，毕竟标注facet和state非常贵。首先每个问题没有了facet，那么首先就得设计算法来得到问题的facet，作者提出了一种基于Dependency parsing tree得到facet的方法，并在附录B对这个算法进行了评价。得到facet后还是没有state，所以得设计一个网络来得到facet的状态，模型的输入是facet和学生的response，利用LSTM来获得隐状态，并用注意力机制找到facet的近似表示，然后连结了facet的隐状态的各类信息，最后加个MLP得到state。到目前为止，已经有了facet和state，那么就可以得到facet的特征来作预测，相当于特征工程。facet的特征使用到的有: state分布, 与第一个工作中真实分布对比的KL散度, 运用到confidence的Noisy-OR。除此之外，作者还对比了其余的特征，比如语义相似度和semantic entailment(这是已有的工作)。最后将这些特征fusion之后的效果比较好
 
-# 4. Semantic Similarity for ASAG
+# 4. Text-to-Text Semantic Similarity for Automatic Short Answer Grading
 论文题目为Text-to-Text Semantic Similarity for Automatic Short Answer Grading，文章的出发点是利用语义相似度来进行ASAG任务，作者将语义相似度分为了Knowledge-Based Measures和Corpus-Based Measures，其中前者就只考虑词和词的相似性，后者考虑了词表来测量词的相似性关系
 
 ## 4.1. Knowledge-based Measures

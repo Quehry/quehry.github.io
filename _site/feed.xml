@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-10T15:27:42+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">研一上课程总结</title><link href="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="研一上课程总结" /><published>2022-12-05T00:00:00+08:00</published><updated>2022-12-05T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"><![CDATA[<h1 id="课程目录">课程目录</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-12T16:10:35+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">研一上课程总结</title><link href="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="研一上课程总结" /><published>2022-12-05T00:00:00+08:00</published><updated>2022-12-05T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"><![CDATA[<h1 id="课程目录">课程目录</h1>
 <!-- TOC -->
 
 <ul>
@@ -14,6 +14,7 @@
   <li><a href="#9-automatic-control-自动控制">9. Automatic control 自动控制</a></li>
   <li><a href="#10-introduction-to-complex-systems-复杂系统">10. Introduction to complex systems 复杂系统</a></li>
   <li><a href="#11-structural-mechanics-3-结构力学3">11. Structural Mechanics 3 结构力学3</a></li>
+  <li><a href="#12-英文科技论文写作与学术报告">12. 英文科技论文写作与学术报告</a></li>
 </ul>
 
 <!-- /TOC -->
@@ -51,7 +52,7 @@
       <li>授课老师: 徐绪辉</li>
       <li>授课形式: 线下上课，课程有录屏</li>
       <li>授课材料: 有讲义</li>
-      <li>考核信息: 未知</li>
+      <li>考核信息: 线上考试</li>
     </ul>
   </li>
   <li>课程简介: 简单介绍了知识产权法的相关知识，知识产权法由著作权法、商标法和专利法三部法律构成，老师上课也是按照这个流程讲的，首先讲了法律意识和法律，然后第二讲介绍了著作权法，第三讲介绍了商标法，最后一讲介绍了专利法</li>
@@ -67,7 +68,7 @@
       <li>考核信息: 平时分+DM+小测，没有考试</li>
     </ul>
   </li>
-  <li>课程简介: 熟悉的法语课程，主要介绍了法国的文化和社会情况。DM1需要回答与小说的人物共情是否是小说创作的出发点，DM2需要介绍中国人使用网络的数据，DM3需要介绍一种艺术形式，我选择了photorealism，照相写实主义</li>
+  <li>课程简介: 熟悉的法语课程，主要介绍了法国的文化和社会情况。DM1需要回答与小说的人物共情是否是小说创作的出发点，DM2需要介绍中国人使用网络的数据，DM3需要介绍一种艺术形式，我选择了photorealism，照相写实主义，然后最后好像还得写一篇小文章</li>
 </ul>
 
 <h1 id="5-新时代中国特色社会主义理论与实践">5. 新时代中国特色社会主义理论与实践</h1>
@@ -106,7 +107,7 @@
       <li>考核信息: 线上考试+大作业</li>
     </ul>
   </li>
-  <li>课程简介:</li>
+  <li>课程简介: 固体物理一共有七讲，第一讲介绍了自由费米气和理想金属，主要介绍了德鲁德模型和索莫菲尔德模型。第二讲介绍了晶体结构的相关知识，布拉伐点阵，晶系和倒空间的构建，这一部分和材料所学知识有关。第三讲介绍了晶体结构的散射与衍射，即电子散射与晶格衍射。首先讲了一个电子如何散射，然后介绍了一群电子如何散射，从这推出了晶格如何衍射以及布拉格衍射条件，最后介绍了晶格衍射的应用，比如X射线衍射法解析晶体结构。第四讲和第五讲介绍了声子的相关知识。声子就是晶格振动的简正模能量量子。晶格原子在振动，计算了不同温度下的热容。第六讲和第七讲介绍了电子的能带论，能带理论是讨论晶体中电子运动状态的一种重要近似理论。固体物理需要分析各种固体的性质，所以和化学材料相关。大作业是找一篇sci论文进行内容梳理和课上知识关联，我选择了一篇新材料的第一性原理计算的论文进行分析。</li>
 </ul>
 
 <h1 id="8-simulation-optimization-仿真与优化">8. Simulation optimization 仿真与优化</h1>
@@ -119,7 +120,7 @@
       <li>考核信息: 线上考试+大作业+平时分</li>
     </ul>
   </li>
-  <li>课程简介: 相当硬核的一门课</li>
+  <li>课程简介: 相当硬核的一门课，算上准备课程，一共有9节课，第一节课介绍了微分计算，第二节课介绍了凸函数的相关性质，第三节课介绍了优化方法与下降方法，第四节课介绍了其余的优化方法，包括牛顿法和随机梯度下降，前四节课都属于优化部分。后四节课属于仿真与偏微分方程部分，第五节课介绍了基础知识，第六节课介绍了偏微分方程，第七节课介绍了有限元方法，第八节课对前面的知识进行了回顾同时介绍了项目内容。一共有两个大作业，第一个大作业需要对一个简单的分类任务进行优化，除此之外，我们还讨论了不同优化器的区别，adam optimizer和普通的sgd优化器的区别与优缺点。第二个大作业需要利用ANSYS软件对某个港口的海浪的振幅进行计算与可视化，这个项目我们组做的相对潦草。</li>
 </ul>
 
 <h1 id="9-automatic-control-自动控制">9. Automatic control 自动控制</h1>
@@ -145,10 +146,24 @@
       <li>考核信息: 平时分+PC+大作业</li>
     </ul>
   </li>
-  <li>课程简介: 一共八节课，每节课都有对应的PC作业。第一节课介绍了什么是复杂系统，怎样描述一个系统，PC1需要利用上课的知识描述一个系统。第二节课介绍了车间调度问题以及如何模拟一系列的离散事件，介绍了如何用Python进行模拟实验，PC2的内容是运行它给的程序，更加直观的了解如何用python进行模拟实验。第三节课简单介绍了架构系统的相关知识，比如一个架构的各种组件，架构系统的步骤等等，PC3需要利用课上的知识分析一个架构系统。第四节课介绍了如何对复杂系统的组成部分进行分类，了解各组件的相互作用，也即如何正确地组织一个复杂系统，PC4给了一个案例进行分析。第五节课介绍了如何满足复杂系统的约束。第六节课介绍了用关键路径法对复杂系统进行建模，和之前项目管理的内容类似。第七节课介绍了蒙特卡洛估计法，PC7是对英超球队的数据进行估计与分析。</li>
+  <li>课程简介: 一共八节课，每节课都有对应的PC作业。第一节课介绍了什么是复杂系统，怎样描述一个系统，PC1需要利用上课的知识描述一个系统。第二节课介绍了车间调度问题以及如何模拟一系列的离散事件，介绍了如何用Python进行模拟实验，PC2的内容是运行它给的程序，更加直观的了解如何用python进行模拟实验。第三节课简单介绍了架构系统的相关知识，比如一个架构的各种组件，架构系统的步骤等等，PC3需要利用课上的知识分析一个架构系统。第四节课介绍了如何对复杂系统的组成部分进行分类，了解各组件的相互作用，也即如何正确地组织一个复杂系统，PC4给了一个案例进行分析。第五节课介绍了如何满足复杂系统的约束。第六节课介绍了用关键路径法对复杂系统进行建模，和之前项目管理的内容类似。第七节课介绍了蒙特卡洛估计法，PC7是对英超球队的数据进行估计与分析。第八节课介绍了复杂系统的设计者可能切必须面对的三类困难。最后一个大作业相当于是对之前内容的总结与回顾，涉及到了之前讲的所有内容。</li>
 </ul>
 
-<h1 id="11-structural-mechanics-3-结构力学3">11. Structural Mechanics 3 结构力学3</h1>]]></content><author><name>Quehry</name></author><category term="courses" /><summary type="html"><![CDATA[整理研一上课程信息]]></summary></entry><entry><title type="html">BLIP</title><link href="http://localhost:4000/BLIP.html" rel="alternate" type="text/html" title="BLIP" /><published>2022-12-01T00:00:00+08:00</published><updated>2022-12-01T00:00:00+08:00</updated><id>http://localhost:4000/BLIP</id><content type="html" xml:base="http://localhost:4000/BLIP.html"><![CDATA[<h1 id="basic-info">Basic Info</h1>
+<h1 id="11-structural-mechanics-3-结构力学3">11. Structural Mechanics 3 结构力学3</h1>
+<ul>
+  <li>课程信息:
+    <ul>
+      <li>授课老师: Olivier Barelle, 黄行蓉</li>
+      <li>授课形式: 线上授课</li>
+      <li>授课材料: 讲义+TD</li>
+      <li>考核信息: 大作业</li>
+    </ul>
+  </li>
+  <li>课程简介: 一共四节课，第一节课回顾了有限元，模态和响应的计算方法。第二节课介绍转子动力学，第三讲介绍预应力，最后一节课介绍转子实验台。大作业的题目形式和之前类似，有公共的题目，也有分开的题目。</li>
+</ul>
+
+<h1 id="12-英文科技论文写作与学术报告">12. 英文科技论文写作与学术报告</h1>
+<p>北航研究生院网课，需要刷课然后有个小考试。</p>]]></content><author><name>Quehry</name></author><category term="courses" /><summary type="html"><![CDATA[整理研一上课程信息]]></summary></entry><entry><title type="html">BLIP</title><link href="http://localhost:4000/BLIP.html" rel="alternate" type="text/html" title="BLIP" /><published>2022-12-01T00:00:00+08:00</published><updated>2022-12-01T00:00:00+08:00</updated><id>http://localhost:4000/BLIP</id><content type="html" xml:base="http://localhost:4000/BLIP.html"><![CDATA[<h1 id="basic-info">Basic Info</h1>
 <ul>
   <li>论文全称: BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation</li>
   <li>相关链接:
@@ -916,11 +931,12 @@
 <p>做了很多很多实验，刷了很多榜，GLUE，SQuAD，SWAG，针对不同的问题，需要给模型加上输出层做微调，其中很多任务都使用特殊字符&lt;cls&gt;来做预测</p>
 
 <p>Bert-Base有110M参数，Bert-Large有340M个参数</p>]]></content><author><name>Quehry</name></author><category term="Bert" /><category term="Paper Reading" /><category term="NLP" /><summary type="html"><![CDATA[notes for Bert]]></summary></entry><entry><title type="html">Transformer</title><link href="http://localhost:4000/Transformer.html" rel="alternate" type="text/html" title="Transformer" /><published>2022-11-15T00:00:00+08:00</published><updated>2022-11-15T00:00:00+08:00</updated><id>http://localhost:4000/Transformer</id><content type="html" xml:base="http://localhost:4000/Transformer.html"><![CDATA[<h1 id="1-transformer简介">1. Transformer简介</h1>
-<p>2017年Google团队提出的完全基于attention机制的神经网络结构，是一种全新的网络架构，影响力十分大，后续的BERT, ViT等多个熟知的预训练模型，相关链接:</p>
+<p>2017年Google团队提出的完全基于attention机制的神经网络结构，是一种全新的网络架构，影响力十分大，后续的BERT, ViT等多个熟知的预训练模型都是由Transformer变体而来，相关链接:</p>
 <ul>
   <li><a href="https://arxiv.org/abs/1706.03762" target="_blank">论文地址</a></li>
   <li><a href="https://www.bilibili.com/video/BV1pu411o7BE/?spm_id_from=333.999.0.0&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">论文精读</a></li>
   <li><a href="https://github.com/tensorflow/tensor2tensor" target="_blank">代码</a></li>
+  <li><a href="https://theaisummer.com/attention/" target="_blank">一篇介绍注意力机制的博客</a></li>
 </ul>
 
 <h1 id="2-introduction">2. Introduction</h1>
@@ -934,7 +950,7 @@
 <p>Transformer时序维度始终是512，BatchNorm和LayerNorm的区别: BN是针对一个batch的特征来做平均和方差，LN是针对batch中一个样本的所有特征做均值和方差。一般的Transformer能接受的序列长度最好不超过512，超过这个长度可能会导致硬件算不动</p>
 
 <h2 id="31-注意力">3.1. 注意力</h2>
-<p>注意力有三要素，query、key、value。对于每个query，计算与所有其他key的compatibility作为value的权重。Transformer使用的计算compatibility的方式是Scaled Dot-Product Attention，也是应用最多的计算方式:</p>
+<p>注意力有三要素，query、key、value。对于每个query，计算与其他所有key的compatibility作为value的权重。Transformer使用的计算compatibility的方式是Scaled Dot-Product Attention，也是应用最多的计算方式:</p>
 
 <p>
 \begin{equation}
@@ -943,6 +959,8 @@
 </p>
 
 <p>结合图片理解:</p>
+<center><img src="../assets/img/posts/20221115/10.png" /></center>
+
 <center><img src="../assets/img/posts/20221115/2.jpg" /></center>
 
 <p>讲道理来说，对于时间步t的查询$q_t$而言，它不应该能看到时间步t后的序列，但是在计算attention的时候却可以看到所有的序列，所以需要有mask来保证序列在预测过程中看不见时间步t之后的序列</p>
@@ -957,10 +975,10 @@
 <p>位置前馈神经网络，其实就是一个基于每个时间步的MLP，由于Transformer里每个时间步都做了attention，所以它包含了序列的信息，所以可以直接针对每个时间步做MLP</p>
 
 <h2 id="34-embedding-and-softmax">3.4. Embedding and softmax</h2>
-<p>encoder的embedding层和decoder的embedding以及decoder中softmax前的线性层是共享权重的，其中embedding层的权重需要乘以&amp;\sqrt{d_{model}}&amp;(为了保证数值相似)。embedding层最大的作用就是将vocab_size映射到模型的维度</p>
+<p>encoder的embedding层和decoder的embedding以及decoder中softmax前的线性层是共享权重的，其中embedding层的权重需要乘以$\sqrt{d_{model}}$(为了保证数值相似)。embedding层最大的作用就是将vocab_size映射到模型的维度</p>
 
 <h2 id="35-positional-encoding">3.5. Positional Encoding</h2>
-<p>位置编码，因为注意力机制其实是没有考虑序列的位置信息的，它计算的是query和key的距离，所以在输入模型前需要加上位置编码来保证序列的每一步都包含其位置信息</p>
+<p>位置编码，因为注意力机制其实是没有考虑序列的位置信息的，它计算的是query和key的距离，所以在输入模型前需要加上位置编码来保证序列的每一步都包含其位置信息，pos表示第几个单词，2i表示对于偶数列，2i+1表示奇数列</p>
 
 <p>
 \begin{equation}
@@ -986,7 +1004,36 @@ lrate=d_{model}^{-0.5}\cdot min(step\_num^{-0.5}, step\_num\cdot warmup\_steps^{
 <p>技巧方面使用了很多的dropout和label smoothing，label smoothing就是让softmax去逼近设置的$\epsilon_{ls}$。</p>
 
 <p>实验结果</p>
-<center><img src="../assets/img/posts/20221115/4.jpg" /></center>]]></content><author><name>Quehry</name></author><category term="Transformer" /><category term="Paper Reading" /><summary type="html"><![CDATA[notes for Transformer]]></summary></entry><entry><title type="html">Vision Transformer</title><link href="http://localhost:4000/ViT.html" rel="alternate" type="text/html" title="Vision Transformer" /><published>2022-11-14T00:00:00+08:00</published><updated>2022-11-14T00:00:00+08:00</updated><id>http://localhost:4000/ViT</id><content type="html" xml:base="http://localhost:4000/ViT.html"><![CDATA[<h1 id="1-vit简介">1. ViT简介</h1>
+<center><img src="../assets/img/posts/20221115/4.jpg" /></center>
+
+<h1 id="5-为什么注意力机制有用">5. 为什么注意力机制有用？</h1>
+<h2 id="51-回顾一下seq2seq">5.1. 回顾一下seq2seq</h2>
+<p>seq2seq是典型的encoder-decoder架构，解决机器翻译问题，下面两张图清晰地介绍了seq2seq的基本架构及原理:</p>
+<center><img src="../assets/img/posts/20221115/5.png" /></center>
+
+<center><img src="../assets/img/posts/20221115/6.png" /></center>
+<p>其中的RNN块可以替换成LSTM块或者GRU块，可以取得更好的结果</p>
+
+<h2 id="52-seq2seq的缺陷">5.2. seq2seq的缺陷</h2>
+<p>中间表达z不能编码输入序列所有时间步的信息，也就是常说的bottleneck problem(瓶颈问题)，RNN会忘记稍远的时间步的信息，所以当序列长度稍长时，seq2seq进行翻译任务时表现会有所下滑，除此之外，RNN还有一个广为人知的缺陷，梯度消失问题，前面时间步的信息会在后续变得越来越不重要。</p>
+<center><img src="../assets/img/posts/20221115/7.png" /></center>
+
+<p>为了解决这个问题，attention出现了，保证了我们能看到序列的每一个时间步的信息，然后pay attention to最重要的部分</p>
+
+<h2 id="53-attention">5.3. attention</h2>
+<p>attention本质上就是加权的value，特殊之处在于这个权重是一个可学习的函数。下面这个图展示了attention的对应关系，可以发现l’homme在man的权重最高。</p>
+<center><img src="../assets/img/posts/20221115/8.png" /></center>
+
+<p>不同的注意力alignment score function:</p>
+<center><img src="../assets/img/posts/20221115/9.png" /></center>
+
+<p>attention让我们能注意到整个句段的代价是更复杂的计算，局部注意力(local attention)就是舍去了部分单词的权重</p>
+
+<h2 id="54-self-attention">5.4. self-attention</h2>
+<p>Transformer中绕不开的部分，自己对自己进行注意力计算</p>
+
+<h2 id="55-attention的优点">5.5. attention的优点</h2>
+<p>除了attention能看到序列的所有单词这一优势外，attention还有两个优点，解决了梯度消失问题，极大的可解释性</p>]]></content><author><name>Quehry</name></author><category term="Transformer" /><category term="Paper Reading" /><summary type="html"><![CDATA[notes for Transformer]]></summary></entry><entry><title type="html">Vision Transformer</title><link href="http://localhost:4000/ViT.html" rel="alternate" type="text/html" title="Vision Transformer" /><published>2022-11-14T00:00:00+08:00</published><updated>2022-11-14T00:00:00+08:00</updated><id>http://localhost:4000/ViT</id><content type="html" xml:base="http://localhost:4000/ViT.html"><![CDATA[<h1 id="1-vit简介">1. ViT简介</h1>
 <p>ViT的全称是Vision Transformer，模型最大的特点就是把NLP领域的Transformer迁移到CV领域，模型在图像识别等多个CV任务上表现超越了卷积神经网络，相关链接:</p>
 
 <ul>

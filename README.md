@@ -1,3 +1,7 @@
+# tips
+- assets/css/main.css 可在main.css里调节页面排版，比如字体的大小等
+
+
 demo site now [mirrored](https://weathered-bread-8229.on.fleek.co/) in [IPFS](https://github.com/ipfs/ipfs#quick-summary)!
 
 # Jekyll theme: Adam Blog 2.0

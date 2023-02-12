@@ -386,6 +386,45 @@
 					</div>
 				</div>
 			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./Automatic-Short-Answer-Grading.html">短文本自动评估论文阅读整理</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-10-10T00:00:00+08:00">October 10, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        6 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<!-- TOC --> <ul> <li><a href="#1-论文简介">1. 论文简介</a></li> <li><a href="#2-automatic-short-answer-grading-via-bert-based-deep-neural-networks">2. Automatic Short-Answer Grading via BERT-Based Deep Neural Networks</a> <ul> <li><a href="#21-abstract">2.1. Abstract</a></li> <li><a href="#22-introduction">2.2. Introduction</a></li> <li><a href="#23-related-work">2.3. Related Work</a> <ul> <li><a href="#231-applications-of-deep-learning-in-asag-tasks">2.3.1. Applications of Deep Learning in ASAG Tasks</a></li> <li><a href="#232-bert-model-and-its-application-in-education">2.3.2. BERT Model and Its Application in Education</a></li> </ul> </li> <li><a href="#24-methodology">2.4. Methodology</a> <ul> <li><a href="#241-task-definition">2.4.1. Task Definition</a></li> <li><a href="#242-model">2.4.2. Model</a> <ul> <li><a href="#2421-bert-layer">2.4.2.1. BERT layer</a></li> <li><a href="#2422-semantic-refinement-layer">2.4.2.2. Semantic Refinement Layer</a></li> <li><a href="#2423-semantic-fusion-layer">2.4.2.3. Semantic Fusion Layer</a></li> <li><a href="#2424-prediction-layer">2.4.2.4. Prediction Layer</a></li> <li><a href="#2425-loss-function">2.4.2.5. Loss Function</a></li> </ul> </li> </ul> </li> <li><a href="#25-experiments">2.5. Experiments</a> <ul> <li><a href="#251-datasets">2.5.1. Datasets</a></li> <li><a href="#252-experimental-settings">2.5.2. Experimental Settings</a></li> <li><a href="#253-ablation-studies">2.5.3....<a class="read-more" href="./Automatic-Short-Answer-Grading.html"> read more</a>
+					</div>
+				</div>
+			
 			</div>
 		</div>
 	</div>
@@ -501,7 +540,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h1 id="1-transformer简介">1. Transformer简介</h1> <p>2017年Google团队提出的完全基于attention机制的神经网络结构，是一种全新的网络架构，影响力十分大，后续的BERT, ViT等多个熟知的预训练模型，相关链接:</p> <ul> <li><a href="https://arxiv.org/abs/1706.03762" target="_blank">论文地址</a></li> <li><a href="https://www.bilibili.com/video/BV1pu411o7BE/?spm_id_from=333.999.0.0&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">论文精读</a></li> <li><a href="https://github.com/tensorflow/tensor2tensor" target="_blank">代码</a></li> </ul> <h1 id="2-introduction">2. Introduction</h1> <p>最开始Transformer是为了解决<strong>机器翻译</strong>的任务，Transformer没出来前，解决机器翻译主要的手段是RNN和Encoder-Decoder架构，比如说Seq2Seq。RNN的缺点是依赖时间顺序，第一个方面是并行度比较低，第二个方面是如果时序比较长，那么前期的时序信息在后期可能会丢掉。Transformer的特点有: 自注意力、多头注意力。</p> <h1 id="3-模型架构">3. 模型架构</h1> <p>模型预览图:</p> <center><img src="../assets/img/posts/20221115/1.jpg" /></center> <p>Transformer时序维度始终是512，BatchNorm和LayerNorm的区别: BN是针对一个batch的特征来做平均和方差，LN是针对batch中一个样本的所有特征做均值和方差。一般的Transformer能接受的序列长度最好不超过512，超过这个长度可能会导致硬件算不动</p> <h2 id="31-注意力">3.1. 注意力</h2> <p>注意力有三要素，query、key、value。对于每个query，计算与所有其他key的compatibility作为value的权重。Transformer使用的计算compatibility的方式是Scaled Dot-Product Attention，也是应用最多的计算方式:</p> <p> \begin{equation} \text{Attention}(Q,K,V)=softmax(\frac{QK^T}{d_k})V \end{equation} </p> <p>结合图片理解:</p> <center><img src="../assets/img/posts/20221115/2.jpg" /></center> <p>讲道理来说，对于时间步t的查询$q_t$而言，它不应该能看到时间步t后的序列，但是在计算attention的时候却可以看到所有的序列，所以需要有mask来保证序列在预测过程中看不见时间步t之后的序列</p> <h2 id="32-多头注意力">3.2. 多头注意力</h2> <p>多头注意力的出发点是让高维的序列能有h次学习机会，这样有机会能学习到更多的信息，假设有h个头，那么维度就需要投影到512/h，然后再做注意力，然后将h个头concatenate，这样就可以实现多头注意力</p> <center><img src="../assets/img/posts/20221115/3.jpg" /></center> <p>在decoder里，query是当前的输入，k和v都是encoder的输出</p> <h2 id="33-position-wise-feed-forward-networks">3.3. Position-wise Feed-Forward Networks</h2> <p>位置前馈神经网络，其实就是一个基于每个时间步的MLP，由于Transformer里每个时间步都做了attention，所以它包含了序列的信息，所以可以直接针对每个时间步做MLP</p> <h2 id="34-embedding-and-softmax">3.4. Embedding and softmax</h2> <p>encoder的embedding层和decoder的embedding以及decoder中softmax前的线性层是共享权重的，其中embedding层的权重需要乘以&amp;\sqrt{d_{model}}&amp;(为了保证数值相似)。embedding层最大的作用就是将vocab_size映射到模型的维度</p> <h2 id="35-positional-encoding">3.5. Positional Encoding</h2> <p>位置编码，因为注意力机制其实是没有考虑序列的位置信息的，它计算的是query和key的距离，所以在输入模型前需要加上位置编码来保证序列的每一步都包含其位置信息</p> <p> \begin{equation} \begin{aligned} \text{PE}_{(pos,2i)} &amp; = sin(pos/10000^{2i/d_{model}}) \\ \text{PE}_{(pos,2i+1)} &amp; = cos(pos/10000^{2i/d_{model}}) \end{aligned} \end{equation} </p> <p>Transformer的位置编码的做法是利用sin和cos对不同的时间步进行编码，也就是说Transformer的做法是不训练位置编码，作者的解释是相较于训练的位置编码，两者结果相似。</p> <h1 id="4-数据集和实验">4. 数据集和实验</h1> <p>Transformer解决的是机器翻译任务，数据集为WMT 2014 English-German dataset，分词的时候采取BPE，并且英语和德语共用一个词库，这样保证了encoder和decoer的embedding层一致</p> <p>学习率的设置:</p> <p> \begin{equation} lrate=d_{model}^{-0.5}\cdot min(step\_num^{-0.5}, step\_num\cdot...<a class="read-more" href="./Transformer.html"> read more</a>
+						<h1 id="1-transformer简介">1. Transformer简介</h1> <p>2017年Google团队提出的完全基于attention机制的神经网络结构，是一种全新的网络架构，影响力十分大，后续的BERT, ViT等多个熟知的预训练模型都是由Transformer变体而来，相关链接:</p> <ul> <li><a href="https://arxiv.org/abs/1706.03762" target="_blank">论文地址</a></li> <li><a href="https://www.bilibili.com/video/BV1pu411o7BE/?spm_id_from=333.999.0.0&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">论文精读</a></li> <li><a href="https://github.com/tensorflow/tensor2tensor" target="_blank">代码</a></li> <li><a href="https://theaisummer.com/attention/" target="_blank">一篇介绍注意力机制的博客</a></li> </ul> <h1 id="2-introduction">2. Introduction</h1> <p>最开始Transformer是为了解决<strong>机器翻译</strong>的任务，Transformer没出来前，解决机器翻译主要的手段是RNN和Encoder-Decoder架构，比如说Seq2Seq。RNN的缺点是依赖时间顺序，第一个方面是并行度比较低，第二个方面是如果时序比较长，那么前期的时序信息在后期可能会丢掉。Transformer的特点有: 自注意力、多头注意力。</p> <h1 id="3-模型架构">3. 模型架构</h1> <p>模型预览图:</p> <center><img src="../assets/img/posts/20221115/1.jpg" /></center> <p>Transformer时序维度始终是512，BatchNorm和LayerNorm的区别: BN是针对一个batch的特征来做平均和方差，LN是针对batch中一个样本的所有特征做均值和方差。一般的Transformer能接受的序列长度最好不超过512，超过这个长度可能会导致硬件算不动</p> <h2 id="31-注意力">3.1. 注意力</h2> <p>注意力有三要素，query、key、value。对于每个query，计算与其他所有key的compatibility作为value的权重。Transformer使用的计算compatibility的方式是Scaled Dot-Product Attention，也是应用最多的计算方式:</p> <p> \begin{equation} \text{Attention}(Q,K,V)=softmax(\frac{QK^T}{d_k})V \end{equation} </p> <p>结合图片理解:</p> <center><img src="../assets/img/posts/20221115/10.png" /></center> <center><img src="../assets/img/posts/20221115/2.jpg" /></center> <p>讲道理来说，对于时间步t的查询$q_t$而言，它不应该能看到时间步t后的序列，但是在计算attention的时候却可以看到所有的序列，所以需要有mask来保证序列在预测过程中看不见时间步t之后的序列</p> <h2 id="32-多头注意力">3.2. 多头注意力</h2> <p>多头注意力的出发点是让高维的序列能有h次学习机会，这样有机会能学习到更多的信息，假设有h个头，那么维度就需要投影到512/h，然后再做注意力，然后将h个头concatenate，这样就可以实现多头注意力</p> <center><img src="../assets/img/posts/20221115/3.jpg" /></center> <p>在decoder里，query是当前的输入，k和v都是encoder的输出</p> <h2 id="33-position-wise-feed-forward-networks">3.3. Position-wise Feed-Forward Networks</h2> <p>位置前馈神经网络，其实就是一个基于每个时间步的MLP，由于Transformer里每个时间步都做了attention，所以它包含了序列的信息，所以可以直接针对每个时间步做MLP</p> <h2 id="34-embedding-and-softmax">3.4. Embedding and softmax</h2> <p>encoder的embedding层和decoder的embedding以及decoder中softmax前的线性层是共享权重的，其中embedding层的权重需要乘以$\sqrt{d_{model}}$(为了保证数值相似)。embedding层最大的作用就是将vocab_size映射到模型的维度</p> <h2 id="35-positional-encoding">3.5. Positional Encoding</h2> <p>位置编码，因为注意力机制其实是没有考虑序列的位置信息的，它计算的是query和key的距离，所以在输入模型前需要加上位置编码来保证序列的每一步都包含其位置信息，pos表示第几个单词，2i表示对于偶数列，2i+1表示奇数列</p> <p> \begin{equation} \begin{aligned} \text{PE}_{(pos,2i)} &amp; = sin(pos/10000^{2i/d_{model}}) \\ \text{PE}_{(pos,2i+1)} &amp; = cos(pos/10000^{2i/d_{model}}) \end{aligned} \end{equation} </p> <p>Transformer的位置编码的做法是利用sin和cos对不同的时间步进行编码，也就是说Transformer的做法是不训练位置编码，作者的解释是相较于训练的位置编码，两者结果相似。</p> <h1 id="4-数据集和实验">4. 数据集和实验</h1> <p>Transformer解决的是机器翻译任务，数据集为WMT 2014 English-German dataset，分词的时候采取BPE，并且英语和德语共用一个词库，这样保证了encoder和decoer的embedding层一致</p>...<a class="read-more" href="./Transformer.html"> read more</a>
 					</div>
 				</div>
 			
@@ -621,7 +660,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h1 id="1-transformer简介">1. Transformer简介</h1> <p>2017年Google团队提出的完全基于attention机制的神经网络结构，是一种全新的网络架构，影响力十分大，后续的BERT, ViT等多个熟知的预训练模型，相关链接:</p> <ul> <li><a href="https://arxiv.org/abs/1706.03762" target="_blank">论文地址</a></li> <li><a href="https://www.bilibili.com/video/BV1pu411o7BE/?spm_id_from=333.999.0.0&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">论文精读</a></li> <li><a href="https://github.com/tensorflow/tensor2tensor" target="_blank">代码</a></li> </ul> <h1 id="2-introduction">2. Introduction</h1> <p>最开始Transformer是为了解决<strong>机器翻译</strong>的任务，Transformer没出来前，解决机器翻译主要的手段是RNN和Encoder-Decoder架构，比如说Seq2Seq。RNN的缺点是依赖时间顺序，第一个方面是并行度比较低，第二个方面是如果时序比较长，那么前期的时序信息在后期可能会丢掉。Transformer的特点有: 自注意力、多头注意力。</p> <h1 id="3-模型架构">3. 模型架构</h1> <p>模型预览图:</p> <center><img src="../assets/img/posts/20221115/1.jpg" /></center> <p>Transformer时序维度始终是512，BatchNorm和LayerNorm的区别: BN是针对一个batch的特征来做平均和方差，LN是针对batch中一个样本的所有特征做均值和方差。一般的Transformer能接受的序列长度最好不超过512，超过这个长度可能会导致硬件算不动</p> <h2 id="31-注意力">3.1. 注意力</h2> <p>注意力有三要素，query、key、value。对于每个query，计算与所有其他key的compatibility作为value的权重。Transformer使用的计算compatibility的方式是Scaled Dot-Product Attention，也是应用最多的计算方式:</p> <p> \begin{equation} \text{Attention}(Q,K,V)=softmax(\frac{QK^T}{d_k})V \end{equation} </p> <p>结合图片理解:</p> <center><img src="../assets/img/posts/20221115/2.jpg" /></center> <p>讲道理来说，对于时间步t的查询$q_t$而言，它不应该能看到时间步t后的序列，但是在计算attention的时候却可以看到所有的序列，所以需要有mask来保证序列在预测过程中看不见时间步t之后的序列</p> <h2 id="32-多头注意力">3.2. 多头注意力</h2> <p>多头注意力的出发点是让高维的序列能有h次学习机会，这样有机会能学习到更多的信息，假设有h个头，那么维度就需要投影到512/h，然后再做注意力，然后将h个头concatenate，这样就可以实现多头注意力</p> <center><img src="../assets/img/posts/20221115/3.jpg" /></center> <p>在decoder里，query是当前的输入，k和v都是encoder的输出</p> <h2 id="33-position-wise-feed-forward-networks">3.3. Position-wise Feed-Forward Networks</h2> <p>位置前馈神经网络，其实就是一个基于每个时间步的MLP，由于Transformer里每个时间步都做了attention，所以它包含了序列的信息，所以可以直接针对每个时间步做MLP</p> <h2 id="34-embedding-and-softmax">3.4. Embedding and softmax</h2> <p>encoder的embedding层和decoder的embedding以及decoder中softmax前的线性层是共享权重的，其中embedding层的权重需要乘以&amp;\sqrt{d_{model}}&amp;(为了保证数值相似)。embedding层最大的作用就是将vocab_size映射到模型的维度</p> <h2 id="35-positional-encoding">3.5. Positional Encoding</h2> <p>位置编码，因为注意力机制其实是没有考虑序列的位置信息的，它计算的是query和key的距离，所以在输入模型前需要加上位置编码来保证序列的每一步都包含其位置信息</p> <p> \begin{equation} \begin{aligned} \text{PE}_{(pos,2i)} &amp; = sin(pos/10000^{2i/d_{model}}) \\ \text{PE}_{(pos,2i+1)} &amp; = cos(pos/10000^{2i/d_{model}}) \end{aligned} \end{equation} </p> <p>Transformer的位置编码的做法是利用sin和cos对不同的时间步进行编码，也就是说Transformer的做法是不训练位置编码，作者的解释是相较于训练的位置编码，两者结果相似。</p> <h1 id="4-数据集和实验">4. 数据集和实验</h1> <p>Transformer解决的是机器翻译任务，数据集为WMT 2014 English-German dataset，分词的时候采取BPE，并且英语和德语共用一个词库，这样保证了encoder和decoer的embedding层一致</p> <p>学习率的设置:</p> <p> \begin{equation} lrate=d_{model}^{-0.5}\cdot min(step\_num^{-0.5}, step\_num\cdot...<a class="read-more" href="./Transformer.html"> read more</a>
+						<h1 id="1-transformer简介">1. Transformer简介</h1> <p>2017年Google团队提出的完全基于attention机制的神经网络结构，是一种全新的网络架构，影响力十分大，后续的BERT, ViT等多个熟知的预训练模型都是由Transformer变体而来，相关链接:</p> <ul> <li><a href="https://arxiv.org/abs/1706.03762" target="_blank">论文地址</a></li> <li><a href="https://www.bilibili.com/video/BV1pu411o7BE/?spm_id_from=333.999.0.0&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">论文精读</a></li> <li><a href="https://github.com/tensorflow/tensor2tensor" target="_blank">代码</a></li> <li><a href="https://theaisummer.com/attention/" target="_blank">一篇介绍注意力机制的博客</a></li> </ul> <h1 id="2-introduction">2. Introduction</h1> <p>最开始Transformer是为了解决<strong>机器翻译</strong>的任务，Transformer没出来前，解决机器翻译主要的手段是RNN和Encoder-Decoder架构，比如说Seq2Seq。RNN的缺点是依赖时间顺序，第一个方面是并行度比较低，第二个方面是如果时序比较长，那么前期的时序信息在后期可能会丢掉。Transformer的特点有: 自注意力、多头注意力。</p> <h1 id="3-模型架构">3. 模型架构</h1> <p>模型预览图:</p> <center><img src="../assets/img/posts/20221115/1.jpg" /></center> <p>Transformer时序维度始终是512，BatchNorm和LayerNorm的区别: BN是针对一个batch的特征来做平均和方差，LN是针对batch中一个样本的所有特征做均值和方差。一般的Transformer能接受的序列长度最好不超过512，超过这个长度可能会导致硬件算不动</p> <h2 id="31-注意力">3.1. 注意力</h2> <p>注意力有三要素，query、key、value。对于每个query，计算与其他所有key的compatibility作为value的权重。Transformer使用的计算compatibility的方式是Scaled Dot-Product Attention，也是应用最多的计算方式:</p> <p> \begin{equation} \text{Attention}(Q,K,V)=softmax(\frac{QK^T}{d_k})V \end{equation} </p> <p>结合图片理解:</p> <center><img src="../assets/img/posts/20221115/10.png" /></center> <center><img src="../assets/img/posts/20221115/2.jpg" /></center> <p>讲道理来说，对于时间步t的查询$q_t$而言，它不应该能看到时间步t后的序列，但是在计算attention的时候却可以看到所有的序列，所以需要有mask来保证序列在预测过程中看不见时间步t之后的序列</p> <h2 id="32-多头注意力">3.2. 多头注意力</h2> <p>多头注意力的出发点是让高维的序列能有h次学习机会，这样有机会能学习到更多的信息，假设有h个头，那么维度就需要投影到512/h，然后再做注意力，然后将h个头concatenate，这样就可以实现多头注意力</p> <center><img src="../assets/img/posts/20221115/3.jpg" /></center> <p>在decoder里，query是当前的输入，k和v都是encoder的输出</p> <h2 id="33-position-wise-feed-forward-networks">3.3. Position-wise Feed-Forward Networks</h2> <p>位置前馈神经网络，其实就是一个基于每个时间步的MLP，由于Transformer里每个时间步都做了attention，所以它包含了序列的信息，所以可以直接针对每个时间步做MLP</p> <h2 id="34-embedding-and-softmax">3.4. Embedding and softmax</h2> <p>encoder的embedding层和decoder的embedding以及decoder中softmax前的线性层是共享权重的，其中embedding层的权重需要乘以$\sqrt{d_{model}}$(为了保证数值相似)。embedding层最大的作用就是将vocab_size映射到模型的维度</p> <h2 id="35-positional-encoding">3.5. Positional Encoding</h2> <p>位置编码，因为注意力机制其实是没有考虑序列的位置信息的，它计算的是query和key的距离，所以在输入模型前需要加上位置编码来保证序列的每一步都包含其位置信息，pos表示第几个单词，2i表示对于偶数列，2i+1表示奇数列</p> <p> \begin{equation} \begin{aligned} \text{PE}_{(pos,2i)} &amp; = sin(pos/10000^{2i/d_{model}}) \\ \text{PE}_{(pos,2i+1)} &amp; = cos(pos/10000^{2i/d_{model}}) \end{aligned} \end{equation} </p> <p>Transformer的位置编码的做法是利用sin和cos对不同的时间步进行编码，也就是说Transformer的做法是不训练位置编码，作者的解释是相较于训练的位置编码，两者结果相似。</p> <h1 id="4-数据集和实验">4. 数据集和实验</h1> <p>Transformer解决的是机器翻译任务，数据集为WMT 2014 English-German dataset，分词的时候采取BPE，并且英语和德语共用一个词库，这样保证了encoder和decoer的embedding层一致</p>...<a class="read-more" href="./Transformer.html"> read more</a>
 					</div>
 				</div>
 			
@@ -1142,7 +1181,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h1 id="课程目录">课程目录</h1> <!-- TOC --> <ul> <li><a href="#课程目录">课程目录</a></li> <li><a href="#1-material-材料">1. Material 材料</a></li> <li><a href="#2-deeplearning-深度学习">2. Deeplearning 深度学习</a></li> <li><a href="#3-intellectual-property-law-知识产权法">3. Intellectual property law 知识产权法</a></li> <li><a href="#4-culture-and-society-文化与社会">4. Culture and society 文化与社会</a></li> <li><a href="#5-新时代中国特色社会主义理论与实践">5. 新时代中国特色社会主义理论与实践</a></li> <li><a href="#6-organisation-theory-组织理论">6. Organisation theory 组织理论</a></li> <li><a href="#7-solid-state-physics-固体物理">7. Solid State Physics 固体物理</a></li> <li><a href="#8-simulation-optimization-仿真与优化">8. Simulation optimization 仿真与优化</a></li> <li><a href="#9-automatic-control-自动控制">9. Automatic control 自动控制</a></li> <li><a href="#10-introduction-to-complex-systems-复杂系统">10. Introduction to complex systems 复杂系统</a></li> <li><a href="#11-structural-mechanics-3-结构力学3">11. Structural Mechanics 3 结构力学3</a></li> </ul> <!-- /TOC --> <h1 id="1-material-材料">1. Material 材料</h1> <ul> <li>课程信息: <ul> <li>授课老师: 唐宏哲</li> <li>授课形式: 线下上课，课程有录屏</li> <li>授课材料: 没有讲义，老师上课直接在黑板上写</li> <li>考核信息: 大作业+考试，大作业是自由主题，但是要和上课的内容相关，考试在线下举行，时长一小时，大概四个大题</li> </ul> </li> <li>课程简介: 一共五节课，但一共只有四节课在讲正课的知识，第一节课讲了金属材料和高炉炼铁，炼钢和制铝，然后讲了高分子化合物。第二节课介绍了金属晶体，回想起了高中化学。第三节课讲了腐蚀与防护，我们大作业也是基于这个主题展开。第四节课讲了相平衡与相图，之前在热力学也学过类似的内容</li> </ul> <h1 id="2-deeplearning-深度学习">2. Deeplearning 深度学习</h1> <ul> <li>课程信息: <ul> <li>授课老师: 于雷</li> <li>授课形式: 线下上课，课程有录屏，有上机课(做TP)</li>...<a class="read-more" href="./%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"> read more</a>
+						<h1 id="课程目录">课程目录</h1> <!-- TOC --> <ul> <li><a href="#课程目录">课程目录</a></li> <li><a href="#1-material-材料">1. Material 材料</a></li> <li><a href="#2-deeplearning-深度学习">2. Deeplearning 深度学习</a></li> <li><a href="#3-intellectual-property-law-知识产权法">3. Intellectual property law 知识产权法</a></li> <li><a href="#4-culture-and-society-文化与社会">4. Culture and society 文化与社会</a></li> <li><a href="#5-新时代中国特色社会主义理论与实践">5. 新时代中国特色社会主义理论与实践</a></li> <li><a href="#6-organisation-theory-组织理论">6. Organisation theory 组织理论</a></li> <li><a href="#7-solid-state-physics-固体物理">7. Solid State Physics 固体物理</a></li> <li><a href="#8-simulation-optimization-仿真与优化">8. Simulation optimization 仿真与优化</a></li> <li><a href="#9-automatic-control-自动控制">9. Automatic control 自动控制</a></li> <li><a href="#10-introduction-to-complex-systems-复杂系统">10. Introduction to complex systems 复杂系统</a></li> <li><a href="#11-structural-mechanics-3-结构力学3">11. Structural Mechanics 3 结构力学3</a></li> <li><a href="#12-英文科技论文写作与学术报告">12. 英文科技论文写作与学术报告</a></li> </ul> <!-- /TOC --> <h1 id="1-material-材料">1. Material 材料</h1> <ul> <li>课程信息: <ul> <li>授课老师: 唐宏哲</li> <li>授课形式: 线下上课，课程有录屏</li> <li>授课材料: 没有讲义，老师上课直接在黑板上写</li> <li>考核信息: 大作业+考试，大作业是自由主题，但是要和上课的内容相关，考试在线下举行，时长一小时，大概四个大题</li> </ul> </li> <li>课程简介: 一共五节课，但一共只有四节课在讲正课的知识，第一节课讲了金属材料和高炉炼铁，炼钢和制铝，然后讲了高分子化合物。第二节课介绍了金属晶体，回想起了高中化学。第三节课讲了腐蚀与防护，我们大作业也是基于这个主题展开。第四节课讲了相平衡与相图，之前在热力学也学过类似的内容</li> </ul> <h1 id="2-deeplearning-深度学习">2. Deeplearning 深度学习</h1> <ul> <li>课程信息: <ul> <li>授课老师:...<a class="read-more" href="./%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"> read more</a>
 					</div>
 				</div>
 			
@@ -1246,6 +1285,8 @@
 <!-- 2022.11.30 江泽民同志逝世 -->
 <!-- 2022.12.5 预备党员发展大会，成为了预备党员 -->
 <!-- 2022 12.7 与校领导谈话(殷传涛) -->
+<!-- 2022.12.14 第一次得新冠 -->
+<!-- 2023.1.1 表白 -->
 <a class="read-more" href="./Important-Event.html"> read more</a>
 					</div>
 				</div>
@@ -2501,6 +2542,45 @@
 			
 
 				<div class="post">
+					<a class="post-list-title" href="./Automatic-Short-Answer-Grading.html">短文本自动评估论文阅读整理</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-10-10T00:00:00+08:00">October 10, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        6 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<!-- TOC --> <ul> <li><a href="#1-论文简介">1. 论文简介</a></li> <li><a href="#2-automatic-short-answer-grading-via-bert-based-deep-neural-networks">2. Automatic Short-Answer Grading via BERT-Based Deep Neural Networks</a> <ul> <li><a href="#21-abstract">2.1. Abstract</a></li> <li><a href="#22-introduction">2.2. Introduction</a></li> <li><a href="#23-related-work">2.3. Related Work</a> <ul> <li><a href="#231-applications-of-deep-learning-in-asag-tasks">2.3.1. Applications of Deep Learning in ASAG Tasks</a></li> <li><a href="#232-bert-model-and-its-application-in-education">2.3.2. BERT Model and Its Application in Education</a></li> </ul> </li> <li><a href="#24-methodology">2.4. Methodology</a> <ul> <li><a href="#241-task-definition">2.4.1. Task Definition</a></li> <li><a href="#242-model">2.4.2. Model</a> <ul> <li><a href="#2421-bert-layer">2.4.2.1. BERT layer</a></li> <li><a href="#2422-semantic-refinement-layer">2.4.2.2. Semantic Refinement Layer</a></li> <li><a href="#2423-semantic-fusion-layer">2.4.2.3. Semantic Fusion Layer</a></li> <li><a href="#2424-prediction-layer">2.4.2.4. Prediction Layer</a></li> <li><a href="#2425-loss-function">2.4.2.5. Loss Function</a></li> </ul> </li> </ul> </li> <li><a href="#25-experiments">2.5. Experiments</a> <ul> <li><a href="#251-datasets">2.5.1. Datasets</a></li> <li><a href="#252-experimental-settings">2.5.2. Experimental Settings</a></li> <li><a href="#253-ablation-studies">2.5.3....<a class="read-more" href="./Automatic-Short-Answer-Grading.html"> read more</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
 					<a class="post-list-title" href="./T5%E6%A8%A1%E5%9E%8B.html">T5模型</a>
 					
 
@@ -2573,45 +2653,6 @@
 
 					<div class="post-excerpt">
 						<h1 id="目录"><strong>目录</strong></h1> <ul> <li><a href="#目录"><strong>目录</strong></a></li> <li><a href="#文献整理">文献整理</a> <ul> <li><a href="#要求">要求</a></li> <li><a href="#搜集到相关文献标题和地址">搜集到相关文献标题和地址</a></li> </ul> </li> <li><a href="#第一篇">第一篇</a> <ul> <li><a href="#title">Title</a></li> <li><a href="#author">Author</a></li> <li><a href="#abstract">Abstract</a></li> <li><a href="#introduction">Introduction</a></li> <li><a href="#bert-distractor-generation">BERT distractor generation</a> <ul> <li><a href="#1bert-based-distractor-generationbdg">1)BERT-based distractor generation(BDG)</a></li> <li><a href="#2multi-task-with-parallel-mlm">2)Multi-task with Parallel MLM</a></li> <li><a href="#3answer-negative-regularization">3)Answer Negative Regularization</a></li> </ul> </li> <li><a href="#multiple-distractor-generation">Multiple Distractor Generation</a> <ul> <li><a href="#1selecting-distractors-by-entropy-maximization">1)Selecting Distractors by Entropy Maximization</a></li> <li><a href="#2bdg-em">2)BDG-EM</a></li> </ul> </li> <li><a href="#performance-evaluation">Performance Evaluation</a> <ul> <li><a href="#1datasets">1)datasets</a></li> <li><a href="#2implementation-details">2)implementation details</a></li> <li><a href="#3compared-methods">3)compared methods</a></li> <li><a href="#4token-score-comparison">4)token score comparison</a></li> <li><a href="#5mcq-model-accuracy-comparison">5)MCQ Model Accuracy Comparison</a></li> <li><a href="#6parameter-study-on-γ">6）Parameter Study on γ</a></li> </ul> </li> <li><a href="#conclusion">Conclusion</a></li> <li><a href="#我的看法">我的看法</a></li> </ul> </li> <li><a href="#第二篇">第二篇</a> <ul> <li><a href="#title-1">Title</a></li> <li><a...<a class="read-more" href="./RACE%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE.html"> read more</a>
-					</div>
-				</div>
-			
-			
-
-				<div class="post">
-					<a class="post-list-title" href="./%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html">MCQ文献阅读</a>
-					
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2021-11-25T00:00:00+08:00">November 25, 2021</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        1 minute read
-      
-    </span>
-  
-  
-  </span>
-
-					<div class="post-excerpt">
-						<h2 id="整理集合">整理集合</h2> <p>多选题自动生成：</p> <ol> <li>定义<br /> 输入一篇文章，从这篇文章生成一系列多选题</li> <li>模型结构<br /> 待补充</li> <li>工作流程<br /> 六大步： <ul> <li>输入文章预处理</li> <li>选择句子</li> <li>从句子中选择关键字</li> <li>生成疑问句</li> <li>生成误导选项</li> <li>后期处理</li> </ul> </li> <li>主流的研究关注点与现存的问题 <ul> <li>目前大多数处理文本都不考虑公式、图片和图标等等信息，文本预处理只提取文本信息，今后MCQG的研究需要关注处理嵌入在文本中的信息的能力。</li> <li>现有的MCQ生成方法侧重于从单个句子生成问题，然而，文本可能通过多个句子来生成句子，所以今后的研究应该侧重于从多个句子中生成问题。</li> <li>关键字的选择取决于下游任务或者应用领域，早期的关键字选择依赖于基本的统计和句法信息。最新的研究趋势是使用<strong>机器学习</strong>或者<strong>语义信息</strong>作为选择的标准。</li> <li>误导选项的选择同样与应用领域有关，目前的MCQ生成系统中使用的都是简单的误导选项生成，但在实际情况中，误导选项可以是非常多种类的，可以是不同的命名体，数字大小，多个单词的误导选项等等。作者认为文本的深层语义分析或使用基于神经嵌入的方法可能是复杂误导答案生成的一个可能的方向。</li> </ul> </li> </ol> <h2 id="一篇关于mcqg的综述">一篇关于MCQG的综述</h2> <h3 id="title">Title</h3> <p>Automatic Multiple Choice Question Generation From Text: A Survey</p> <h3 id="author">Author</h3> <p>Dhawaleswar Rao CH and Sujan Kumar Saha</p> <p><img src="./assets/img/posts/20211125/Dhawaleswar.jpg" /></p> <p><img src="./assets/img/posts/20211125/Sujan.jpg" /></p> <h3 id="abstract">Abstract</h3> <p>MCQ<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>工作20年前已经开始研究，综述将概括目前常见的多选题自动生成的<strong>工作流</strong>和<strong>评估系统</strong>。</p> <h3 id="1introduction">1.introduction</h3> <p>介绍了MCQ的重要性，是评估知识学习的工具之一，优点是耗时短但是人工出题需要很多时间，所以通过一段文章自动生成问题是人们关注的重点。</p> <h3 id="2multiple-choice-question">2.multiple choice question</h3> <p>介绍了MCQ和MCQ的基本结构，由题干，正确答案和误导答案组成，同时具体介绍了MCQ的优缺点。</p> <table> <thead> <tr> <th style="text-align: center">优点</th> <th style="text-align: center">缺点</th> </tr> </thead> <tbody> <tr> <td style="text-align: center">快速评估，耗时短</td> <td style="text-align: center">涵盖的知识面很小</td> </tr> <tr> <td style="text-align: center">可以实现机器阅卷</td> <td...<a class="read-more" href="./%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB.html"> read more</a>
 					</div>
 				</div>
 			
@@ -3319,7 +3360,7 @@
                 <li><a href="./tag.html?tag=Bert" class="tag">Bert <span>(1)</span></a></li>
             
                 
-                <li><a href="./tag.html?tag=NLP" class="tag">NLP <span>(1)</span></a></li>
+                <li><a href="./tag.html?tag=NLP" class="tag">NLP <span>(2)</span></a></li>
             
                 
                 <li><a href="./tag.html?tag=Paper+Reading" class="tag">Paper Reading <span>(3)</span></a></li>
@@ -3388,7 +3429,7 @@
                 <li><a href="./tag.html?tag=overview" class="tag">overview <span>(1)</span></a></li>
             
                 
-                <li><a href="./tag.html?tag=paper" class="tag">paper <span>(3)</span></a></li>
+                <li><a href="./tag.html?tag=paper" class="tag">paper <span>(4)</span></a></li>
             
                 
                 <li><a href="./tag.html?tag=paper+reading" class="tag">paper reading <span>(2)</span></a></li>
@@ -3452,7 +3493,7 @@
             </a>
         </div>
         <div class="copyright">
-          <p>2022 &copy; Quehry</p>
+          <p>2023 &copy; Quehry</p>
         </div>
         <div class="footer-nav">
             <div>
@@ -3498,7 +3539,7 @@
     var sw = document.getElementById('theme-switch');
     var html = document.getElementsByTagName('html')[0];
     var logo = document.getElementById('logo');
-    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var nightModeOption = ('manual' || 'auto').toLowerCase();
     var storage = nightModeOption === 'manual'
         ? localStorage
         : sessionStorage;
