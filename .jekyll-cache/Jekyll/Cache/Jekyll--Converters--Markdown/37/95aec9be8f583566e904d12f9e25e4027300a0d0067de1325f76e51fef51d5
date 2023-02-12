@@ -1,8 +1,0 @@
-I"�<h1 id="1-bert简介">1. Bert简介</h1>
-<p>BERT是GOOGLE团队于2018年提出的模型，在NLP领域里有着举足轻重的地位，BERT开创了NLP领域的预训练时代。BERT其实就是Transformer的编码器。BERT的双向性体现在MLM任务上，该任务可以让模型在得到全局的信息之后再去做预测</p>
-<ul>
-  <li><a href="https://arxiv.org/abs/1810.04805" target="_blank">论文地址</a></li>
-  <li><a href="https://www.bilibili.com/video/BV1PL411M7eQ/?spm_id_from=333.999.0.0&amp;vd_source=64c99329fc39a0e3f42825a4c837e2a5" target="_blank">论文精度</a></li>
-  <li><a href="https://github.com/google-research/bert" target="_blank">开源代码</a></li>
-</ul>
-:ET
