@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-12T16:31:22+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">研一上课程总结</title><link href="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="研一上课程总结" /><published>2022-12-05T00:00:00+08:00</published><updated>2022-12-05T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"><![CDATA[<h1 id="课程目录">课程目录</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T17:30:28+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quehry</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Quehry</name></author><entry><title type="html">研一上课程总结</title><link href="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="研一上课程总结" /><published>2022-12-05T00:00:00+08:00</published><updated>2022-12-05T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/%E7%A0%94%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93.html"><![CDATA[<h1 id="课程目录">课程目录</h1>
 <!-- TOC -->
 
 <ul>
@@ -1408,7 +1408,10 @@ catkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim
 </ul>
 
 <h2 id="32-ros-navigation-demo">3.2. ROS Navigation Demo</h2>
-<p>这章展示了ROS Navigation的一个demo，首先打开house，然后<code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file=...</code>来打开Navigation，在Rviz中展示，标定好终点后，它会自动规划路径到达终点</p>
+<ul>
+  <li>这章展示了ROS Navigation的一个demo，首先打开house，然后<code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file=...</code>来打开Navigation，在Rviz中展示，标定好终点后，它会自动规划路径到达终点</li>
+  <li>frame就是不同的参考系</li>
+</ul>
 
 <h2 id="33-2d-frames-transformations-and-localization">3.3. 2D Frames, Transformations and Localization</h2>
 
@@ -1429,7 +1432,7 @@ catkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim
 <center><img src="../assets/img/posts/20221030/29.png" /></center>
 
 <ul>
-  <li>可以通过订阅odom话题来获得odom的child frame:base_footprint的position和orientation，odom表示robot相对于dormitory的参考系</li>
+  <li>可以通过订阅odom话题来获得odom的child frame:base_footprint的position和orientation，odom: topic represents a pose based on a odometry information</li>
   <li><code class="language-plaintext highlighter-rouge">rosrun tf2_tools view_frames</code>来获得当前场景下的frames和transformation的总体情况，会在当前目录生成一个pdf文件</li>
   <li>robot相对于map的参考系叫做amcl_pose</li>
   <li><code class="language-plaintext highlighter-rouge">rosrun tf tf_echo frame1 frame2</code>可以获得两个frame之间translation和rotation</li>
@@ -1438,7 +1441,151 @@ catkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim
   <li>总的来说，TF功能包能获得当前场景下的frame和transformation信息，同时也可以自定义frame之间的transformation</li>
 </ul>
 
-<h2 id="37-map-based-navigation">3.7. Map-based navigation</h2>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[学习ROS]]></summary></entry><entry><title type="html">linux command</title><link href="http://localhost:4000/Linux-Command.html" rel="alternate" type="text/html" title="linux command" /><published>2022-10-24T00:00:00+08:00</published><updated>2022-10-24T00:00:00+08:00</updated><id>http://localhost:4000/Linux-Command</id><content type="html" xml:base="http://localhost:4000/Linux-Command.html"><![CDATA[<h1 id="0-简介">0. 简介</h1>
+<h2 id="37-map-based-navigation">3.7. Map-based navigation</h2>
+<ul>
+  <li>robot navigation表示机器人自动避障的能力，有两种主要的导航方法，第一种方法是map-based navigation，预加载好地图的相关信息，另一种方法是reactive navigation，不会预加载地图的相关信息，只会利用传感器感知周围环境</li>
+  <li>navigation可以分为三步，localization，mapping，path planning:</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/30.png" /></center>
+
+<ul>
+  <li>mapping的主要方法是SLAM(simultaneous localization and mapping):</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/31.png" /></center>
+
+<ul>
+  <li>navigation的主要功能包:</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/32.png" /></center>
+
+<ul>
+  <li>turtlebot3 slam demo:</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/33.png" /></center>
+
+<ul>
+  <li>地图的表示方法: occupancy grid map，一张地图由网格状的cell组成，一个cell可以是empty或者occupied:</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/34.png" /></center>
+<center><img src="../assets/img/posts/20221030/36.png" /></center>
+
+<ul>
+  <li>gmapping是slam的一种方法，还有其他方法，比如cartographer，hector_slam:</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/35.png" /></center>
+
+<ul>
+  <li>通过激光雷达的数据判断哪些地方有障碍物</li>
+  <li>SLAM生成的地图的质量由odometry和laser scanner决定，odometry就是里程计，衡量机器人从初始姿态到终点位姿的一个标准，如果要实现机器人的定位与导航，就需要知道机器人行进了多少距离，往哪个方向行进的</li>
+  <li>通过SLAM生成的地图可以保存下来，通过指令<code class="language-plaintext highlighter-rouge">rosrun map_server map_saver -f ~/tb3_house_map</code>来保存地图到指定路径</li>
+  <li>保存的地图由两个文件组成，<code class="language-plaintext highlighter-rouge">.pgm</code>和<code class="language-plaintext highlighter-rouge">.yaml</code>，其中<code class="language-plaintext highlighter-rouge">.pgm</code>就是一张地图的图片，灰色的区域表示未知的区域，黑色的区域表示障碍物，白色的区域表示自由区域，<code class="language-plaintext highlighter-rouge">.yaml</code>存储了地图的metadata，比如原点，地图图片的路径，阈值等</li>
+  <li>如何通过SLAM生成的地图对小车进行导航(Navigation):
+    <ul>
+      <li>首先告诉小车自己在哪里，通过Rviz的2D pose estimation实现</li>
+      <li>然后确定小车需要到达的终点</li>
+      <li>motion planner algorithm告诉小车如何到达终点</li>
+    </ul>
+  </li>
+</ul>
+<center><img src="../assets/img/posts/20221030/37.png" /></center>
+
+<ul>
+  <li>Map-based navigation命令行: <code class="language-plaintext highlighter-rouge">roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=...</code></li>
+</ul>
+<center><img src="../assets/img/posts/20221030/38.png" /></center>
+
+<ul>
+  <li>通过程序实现map-based navigation，无需通过Rviz实现</li>
+  <li>为什么出现小车后退重新尝试的行为(recovery behavior):</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/39.png" /></center>
+
+<ul>
+  <li>如何让机器人支持ROS的Navigation模块</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/40.png" /></center>
+
+<ul>
+  <li>Robot setup：
+    <ul>
+      <li>安装ROS</li>
+      <li>必须有tf transform</li>
+      <li>URDF</li>
+      <li>sensor information</li>
+      <li>odometry information</li>
+      <li>base controller</li>
+      <li>mapping</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="38-navigation-stack-tuning">3.8. Navigation Stack Tuning</h2>
+<ul>
+  <li>控制Navigation的最大速度/加速度和最小速度/加速度，可以通过更改local planner的yaml文件，对于turtlebot3而言，这个文件在<code class="language-plaintext highlighter-rouge">turtlebot3_navigation/param</code>里</li>
+  <li>如何获得小车的最大速度:</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/41.png" /></center>
+
+<ul>
+  <li>如何获得小车的最大加速度:</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/42.png" /></center>
+
+<ul>
+  <li>Global Path Planner Tuning, 微调全局路径规划参数，全局路径规划需要考虑地图信息来找到一条没有障碍的路径</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/43.png" /></center>
+
+<ul>
+  <li>ROS中有三个global planner：</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/44.png" /></center>
+
+<ul>
+  <li>Carrot Planner的示意图:</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/45.png" /></center>
+
+<ul>
+  <li>NAVFN 和 global_planner</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/46.png" /></center>
+
+<ul>
+  <li>global_planner中可以调节的参数的例子:</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/47.png" /></center>
+
+<ul>
+  <li>local path planner的相关知识，局部路径规划会在执行全局路径规划给出的路径的同时，通过传感器获得的局部信息来躲避动态的障碍。</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/48.png" /></center>
+
+<ul>
+  <li>DWA algorithm(Dynamic Window Approach 属于local path planning的一种):
+    <ul>
+      <li>离散地采样几种方向和速度</li>
+      <li>对于每一种采样，都预测一下如何按照这种方式前进会发生什么</li>
+      <li>对于每一种结果，使用一种评价标准进行打分</li>
+      <li>选取最高评分的前进方法</li>
+    </ul>
+  </li>
+</ul>
+<center><img src="../assets/img/posts/20221030/49.png" /></center>
+
+<ul>
+  <li>微调DWA算法的参数，微调simulation time这一参数</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/50.png" /></center>
+
+<ul>
+  <li>不同DWA参数的影响</li>
+</ul>
+<center><img src="../assets/img/posts/20221030/51.png" /></center>
+
+<ul>
+  <li>动手实现微调DWA的simulation time参数对navigation的影响(视频在notion上有)</li>
+</ul>]]></content><author><name>Quehry</name></author><category term="notes" /><summary type="html"><![CDATA[学习ROS]]></summary></entry><entry><title type="html">linux command</title><link href="http://localhost:4000/Linux-Command.html" rel="alternate" type="text/html" title="linux command" /><published>2022-10-24T00:00:00+08:00</published><updated>2022-10-24T00:00:00+08:00</updated><id>http://localhost:4000/Linux-Command</id><content type="html" xml:base="http://localhost:4000/Linux-Command.html"><![CDATA[<h1 id="0-简介">0. 简介</h1>
 <p>该博客主要记录了linux常用命令，便于后续使用时查找命令，其余的一些博客:</p>
 <ul>
   <li><a href="https://docs.rockylinux.org/books/admin_guide/03-commands" target="_blank">linux command documentation</a></li>
