@@ -76,7 +76,13 @@ toc: yes
 - [7. Investigating Transformers for Automatic Short Answer Grading](#7-investigating-transformers-for-automatic-short-answer-grading)
     - [7.1. 实验](#71-实验)
     - [7.2. 结果分析](#72-结果分析)
-- [8. TODO](#8-todo)
+- [8. Superlative model using word cloud for short answers evaluation in eLearning](#8-superlative-model-using-word-cloud-for-short-answers-evaluation-in-elearning)
+    - [8.1. Superlative Model](#81-superlative-model)
+    - [8.2. 词云 word cloud](#82-词云-word-cloud)
+    - [8.3. WordNet](#83-wordnet)
+- [9.Sentence Level or Token Level Features for Automatic Short Answer Grading?: Use Both](#9sentence-level-or-token-level-features-for-automatic-short-answer-grading-use-both)
+    - [9.1.](#91)
+- [100. TODO](#100-todo)
 
 <!-- /TOC -->
 
@@ -88,7 +94,8 @@ toc: yes
 - [Pre-Training BERT on Domain Resources for Short Answer Grading](https://aclanthology.org/D19-1628/){:target="_blank"}
 - [Improving Short Answer Grading Using Transformer-Based Pre-training](https://link.springer.com/chapter/10.1007/978-3-030-23204-7_39){:target="_blank"}
 - [Investigating Transformers for Automatic Short Answer Grading](https://link.springer.com/chapter/10.1007/978-3-030-52240-7_8){:target="_blank"}
-- []
+- [Superlative model using word cloud for short answers evaluation in eLearning](https://link.springer.com/article/10.1007/s10639-016-9547-0){:target="_blank"}
+- [Sentence Level or Token Level Features for Automatic Short Answer Grading?: Use Both](https://link.springer.com/chapter/10.1007/978-3-319-93843-1_37){:target="_blank"}
 
 # 2. Automatic Short-Answer Grading via BERT-Based Deep Neural Networks
 ## 2.1. Abstract
@@ -630,7 +637,38 @@ Student A和Reference A作为一个句子对输入BERT，提取\<cls\>输入一�
 - 有更好的预训练任务吗: 实验结果表明，预训练任务MNLI(自然语言蕴含任务)能极大提升ASAG任务的效果
 - knowledge distillation表现如何: 虽然说distil的bert性能会下降，但是在节省40%参数的情况下只降低了2%的效果，可以接受
 
-# 8. TODO
+# 8. Superlative model using word cloud for short answers evaluation in eLearning
+论文的主旨是通过RA和SA生成词云(word cloud)的方法来辅助老师对短文本回答进行评估，生成词云的模型作者命名成superlative model
+
+## 8.1. Superlative Model
+生成词云的大致步骤:
+<center><img src='../assets/img/posts/20221010/49.jpg'></center>
+
+前面的几步可以看出数据预处理的步骤，这里我对其进行简单介绍:
+1. 把RA和SA拆成语料，也就是单个的单词
+2. 去掉无用的词，比如冠词、连词、问题包含的单词也可以去掉
+3. 通过wordnet(相当于一本词典)，合并同义词
+4. 替换复数
+5. 生成单词-文本矩阵，行代表单词，纵代表文本，用哈希算法进行存储
+6. 生成词云
+
+这里生成词云可以细说一下，主要生成了两种词云，作者对其命名为cohesion word cloud和relative word cloud。前者cohesion word cloud代表RA和SA的共同词组成的词云，后者是非共同词组成的词云，一个例子:
+<center><img src='../assets/img/posts/20221010/50.jpg'></center>
+
+<center><img src='../assets/img/posts/20221010/51.jpg'></center>
+
+## 8.2. 词云 word cloud
+词云（Word Cloud)又称文字云，是文本数据的视觉表示，由词汇组成类似云的彩色图形，用于展示大量文本数据。每个词的重要性以字体大小或颜色显示。
+
+## 8.3. WordNet
+WordNet是一个由普林斯顿大学认识科学实验室在心理学教授乔治·A·米勒的指导下建立和维护的英语字典。由于它包含了语义信息，所以有别于通常意义上的字典。WordNet根据词条的意义将它们分组，每一个具有相同意义的字条组称为一个synset(同义词集合)。WordNet为每一个synset提供了简短，概要的定义，并记录不同synset之间的语义关系。
+
+wordnet可以获得两个单词之间的语义相似度
+
+# 9.Sentence Level or Token Level Features for Automatic Short Answer Grading?: Use Both
+## 9.1. 
+
+# 100. TODO
 - 看GBT, GPT, ELMo
 - 深入了解一下ASAG用特征工程解决的思路
 - 想想改进方向

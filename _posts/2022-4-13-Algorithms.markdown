@@ -79,7 +79,7 @@ toc: yes
 - 课程来源于北大郭炜老师的MOOC，在中国大学MOOC平台上有网课，课程名为[程序设计与算法(二)算法基础](https://www.icourse163.org/course/PKU-1001894005?tid=1450413466){:target="_blank"}，第九次开课，课程有附带的习题，该博客记录了我的随堂笔记，课件在MOOC网站有
 - 2022/11/19: openjudge上测验题目都做完了，平台上还有一个考试没有做，可以等到2023/1/14那天把考试题目做一下
 
-<center><img src="../assets/img/posts/20221021/236.png"</center>
+<center><img src="../assets/img/posts/20220413/236.png"></center>
 
 - 课件的代码和测试的代码都在c++learning里有留存
 
