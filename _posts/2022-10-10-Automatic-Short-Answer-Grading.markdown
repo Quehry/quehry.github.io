@@ -64,6 +64,7 @@ toc: yes
     - [4.1. Knowledge-based Measures](#41-knowledge-based-measures)
     - [4.2. Corpus-Based Measures](#42-corpus-based-measures)
     - [4.3. Experiment](#43-experiment)
+    - [4.4. LSA(Latent semantic analysis)](#44-lsalatent-semantic-analysis)
 - [5. Pre-Training Bert on Domain for ASAG](#5-pre-training-bert-on-domain-for-asag)
     - [5.1. Usage of Textbooks](#51-usage-of-textbooks)
     - [5.2. Usage of Question-Answer Pairs](#52-usage-of-question-answer-pairs)
@@ -576,6 +577,18 @@ Sim_{path}=\frac{1}{length}
 实验用相关性作为衡量各种语义相似度测量的指标，knowledge-based measures与Wordnet里提供的词的相似性指标进行相关性的测量，LSA与wordnet里提供的Infomap指标进行相关性的测量，ESA则是使用ESA算法进行测量，实验结果如下:
 
 <center><img src='../assets/img/posts/20221010/40.png'></center>
+
+## 4.4. LSA(Latent semantic analysis)
+LSA是分析语义相似度的传统方法，这里对该方法进行简要的介绍。LSA的中文说法是潜在语义分析，是一种无监督学习方法，主要用于文本的话题分析。
+
+首先介绍一下单词向量空间与话题向量空间，单词向量空间就是用一个向量表示一段文本的语义，向量的每一维对应一个单词，其数值为该单词在文本中出现的频数或权值，向量空间的度量，如内积或标准化内积表示文本之间的语义相似度，单词向量空间的优点是模型简单，计算效率高。，局限性在于内积相似度未必能够准确地表达两个文本的语义相似度。
+
+话题向量空间模型就是给定一段文本，用话题空间的一个向量表示该文本，向量的每一个分量对应一个话题，其数值为该话题在该文本中出现的权值。所谓话题，就是指文本所讨论的内容或主题，一段文本一般含有若干个话题，话题由若干个语义相关的单词表示。用两个向量的内积或标准化内积表示两段文本的语义相似度。
+
+潜在语义分析利用矩阵奇异值分解(SVD)，对单词-文本矩阵进行奇异值分解，左矩阵作为话题向量空间，对角矩阵与右矩阵的乘积作为文本在话题向量空间的表示。这样就可以通过单词向量空间得到话题向量空间的向量表示，然后计算不同文本向量的内积就可以得到语义相似度。
+<center><img src='../assets/img/posts/20221010/47.png'></center>
+
+<center><img src='../assets/img/posts/20221010/48.png'></center>
 
 # 5. Pre-Training Bert on Domain for ASAG
 论文全称为Pre-Training BERT on Domain Resources for Short Answer Grading，同样使用BERT作为主干网络，本篇文章的主要亮点就是利用当前领域的textbooks和QA对BERT进行微调，扩充了预训练的数据集，相当于是一种针对领域的微调方法
