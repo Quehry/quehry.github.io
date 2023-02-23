@@ -81,7 +81,65 @@ toc: yes
     - [8.2. 词云 word cloud](#82-词云-word-cloud)
     - [8.3. WordNet](#83-wordnet)
 - [9.Sentence Level or Token Level Features for Automatic Short Answer Grading?: Use Both](#9sentence-level-or-token-level-features-for-automatic-short-answer-grading-use-both)
-    - [9.1.](#91)
+    - [9.1. Proposed Features](#91-proposed-features)
+        - [9.1.1. Sentence Level Features](#911-sentence-level-features)
+        - [9.1.2. Token Level Features](#912-token-level-features)
+    - [9.2. Token level的消融实验结果](#92-token-level的消融实验结果)
+- [10. An Experimental Study of Text Preprocessing Techniques for ASAG in Indonesian](#10-an-experimental-study-of-text-preprocessing-techniques-for-asag-in-indonesian)
+    - [10.1. Introduction](#101-introduction)
+    - [10.2. 预处理方法](#102-预处理方法)
+    - [10.3. Research Method](#103-research-method)
+    - [10.4. 实验结果](#104-实验结果)
+- [11. Feature engineering and ensemble-based approach for improving automatic short-answer grading performance](#11-feature-engineering-and-ensemble-based-approach-for-improving-automatic-short-answer-grading-performance)
+    - [11.1. Introduction](#111-introduction)
+    - [11.2. Problem Definition](#112-problem-definition)
+        - [11.2.1. ASAG as regression task](#1121-asag-as-regression-task)
+        - [11.2.2. ASAG as classification task](#1122-asag-as-classification-task)
+    - [11.3. Feature extraction](#113-feature-extraction)
+        - [11.3.1. Semantic Similarity Features](#1131-semantic-similarity-features)
+        - [11.3.2. Lexical Overlap Features](#1132-lexical-overlap-features)
+        - [11.3.3. Information Retrieval Measures](#1133-information-retrieval-measures)
+        - [11.3.4. Topical Similarity Features](#1134-topical-similarity-features)
+        - [11.3.5. Relevance Feedback-based Features](#1135-relevance-feedback-based-features)
+        - [11.3.6. Alignment-based Features](#1136-alignment-based-features)
+    - [11.4. Answer Grading Models](#114-answer-grading-models)
+        - [11.4.1. Individual models](#1141-individual-models)
+        - [11.4.2. Ensemble learning](#1142-ensemble-learning)
+    - [11.5. Evaluation](#115-evaluation)
+        - [11.5.1. Test Bed](#1151-test-bed)
+        - [11.5.2. 实验设计](#1152-实验设计)
+        - [11.5.3. 实验结果](#1153-实验结果)
+    - [11.6. 总结](#116-总结)
+- [12. Machine Learning Approach for Automatic Short Answer Grading: A Systematic Review](#12-machine-learning-approach-for-automatic-short-answer-grading-a-systematic-review)
+    - [12.1. Nature of Datasets](#121-nature-of-datasets)
+    - [12.2. Natural Language Processing Techniques](#122-natural-language-processing-techniques)
+    - [12.3. Machine Learning Algorithms](#123-machine-learning-algorithms)
+    - [12.4. Features](#124-features)
+    - [12.5. Systems' Evaluation](#125-systems-evaluation)
+- [13. Automatic Short Answer Grading via Multiway Attention Networks](#13-automatic-short-answer-grading-via-multiway-attention-networks)
+    - [13.1. Introduction](#131-introduction)
+    - [13.2. Approach](#132-approach)
+    - [13.3. 实验结果](#133-实验结果)
+- [14. Automated Short-Answer Grading Using Deep Neural Networks and Item Response Theory](#14-automated-short-answer-grading-using-deep-neural-networks-and-item-response-theory)
+    - [14.1. Introduction](#141-introduction)
+    - [14.2. Proposed Method](#142-proposed-method)
+    - [14.3. 实验](#143-实验)
+- [15. Comparative Evaluation of Pretrained Transfer Learning Models on Automatic Short Answer Grading](#15-comparative-evaluation-of-pretrained-transfer-learning-models-on-automatic-short-answer-grading)
+    - [15.1. Introduction](#151-introduction)
+    - [15.2. Experiment](#152-experiment)
+- [16. Going deeper: Automatic short-answer grading by combining student and question models](#16-going-deeper-automatic-short-answer-grading-by-combining-student-and-question-models)
+    - [16.1. Introduction](#161-introduction)
+    - [16.2. State features](#162-state-features)
+        - [16.2.1. Answer model](#1621-answer-model)
+        - [16.2.2. Question model](#1622-question-model)
+        - [16.2.3. Student model](#1623-student-model)
+        - [16.2.4. Composite feature space](#1624-composite-feature-space)
+    - [16.3. Six Classifiers](#163-six-classifiers)
+    - [16.4. Data](#164-data)
+    - [16.5. 实验](#165-实验)
+        - [16.5.1. 实验设置](#1651-实验设置)
+        - [16.5.2. 实验结果](#1652-实验结果)
+    - [16.6. 总结](#166-总结)
 - [100. TODO](#100-todo)
 
 <!-- /TOC -->
@@ -96,6 +154,13 @@ toc: yes
 - [Investigating Transformers for Automatic Short Answer Grading](https://link.springer.com/chapter/10.1007/978-3-030-52240-7_8){:target="_blank"}
 - [Superlative model using word cloud for short answers evaluation in eLearning](https://link.springer.com/article/10.1007/s10639-016-9547-0){:target="_blank"}
 - [Sentence Level or Token Level Features for Automatic Short Answer Grading?: Use Both](https://link.springer.com/chapter/10.1007/978-3-319-93843-1_37){:target="_blank"}
+- [An Experimental Study of Text Preprocessing Techniques for Automatic Short Answer Grading in Indonesian](https://ieeexplore.ieee.org/abstract/document/8720957){:target="_blank"}
+- [Feature engineering and ensemble-based approach for improving automatic short-answer grading performance](https://ieeexplore.ieee.org/abstract/document/8636967/){:target="_blank"}
+- [Machine Learning Approach for Automatic Short Answer Grading: A Systematic Review](https://link.springer.com/chapter/10.1007/978-3-030-03928-8_31){:target="_blank"}
+- [Automatic Short Answer Grading via Multiway Attention Networks](https://link.springer.com/chapter/10.1007/978-3-030-23207-8_32){:target="_blank"}
+- [Automated Short-Answer Grading Using Deep Neural Networks and Item Response Theory](https://link.springer.com/chapter/10.1007/978-3-030-52240-7_61){:target="_blank"}
+- [Comparative Evaluation of Pretrained Transfer Learning Models on Automatic Short Answer Grading](https://arxiv.org/abs/2009.01303){:target="_blank"}
+- [Going deeper: Automatic short-answer grading by combining student and question models](https://link.springer.com/article/10.1007/s11257-019-09251-6){:target="_blank"}
 
 # 2. Automatic Short-Answer Grading via BERT-Based Deep Neural Networks
 ## 2.1. Abstract
@@ -666,7 +731,342 @@ WordNet是一个由普林斯顿大学认识科学实验室在心理学教授乔�
 wordnet可以获得两个单词之间的语义相似度
 
 # 9.Sentence Level or Token Level Features for Automatic Short Answer Grading?: Use Both
-## 9.1. 
+## 9.1. Proposed Features
+论文结合了hand-crafted feature(token level feature)和sentence-level feature(deep-learning)进行ASAG任务，模型的总览图如下:
+<center><img src='../assets/img/posts/20221010/52.jpg'></center>
+
+### 9.1.1. Sentence Level Features
+对于问题，参考答案，学生回答(q,r,a)对而言，首先获得了这三个序列的sentence embedding，使用了InferSent模型，Infersent模型是一个有监督的语句嵌入模型，和sentence2vec有点像。获得qra的语句嵌入后，模型计算了以下的feature:
+
+<p>
+\begin{equation}
+S_{feat}(q,r,a) = (r * a, |r - a|, r * q, |r - q|, a * q, |a - q|)
+\end{equation}
+</p>
+
+### 9.1.2. Token Level Features
+首先需要对数据进行预处理，和上一篇论文类似，首先需要去掉RA和SA中的stop words，就是一些没有意义的词，然后需要做question demoting，即去掉问题中出现的单词，接着就可以获得两个bag of words，一个是RA的，一个是SA的。然后就可以根据这两个词袋获得以下features:
+
+- Word Overlap，词重叠。取RA中的每一个单词，和SA中的每一个单词计算分数，如果分数超过某一个阈值，那么就认为是overlapping的，分数的计算公式如下:
+
+<p>
+\begin{equation}
+Score(\omega_i,SA) = \mathop{max}_{\omega_j\in SA}Cos(\omega_i, \omega_j), where \quad \omega_i \in RA
+\end{equation}
+</p>
+
+或者根据wordnet中两个单词属于同一个synset来判断它是否是overlapping，随后计算出Precision/Recall/Precision\*Recall来作为features
+
+- Histogram of Partial Similarity(HoPS)，HoPS的目标是捕获SA和RA之间的similarity pattern。对于RA中的每个单词$\omega_i$，计算与SA的相似度分数，然后可以得到index I的值:
+
+<p>
+\begin{equation}
+I(\omega_i)=min(\frac{Score(\omega_i, SA)+1}{h},N-1) where \quad h=\frac{2}{N}
+\end{equation}
+</p>
+
+- HoPs with POS tags and Question Types: 这个feature是HoPS的拓展，将RA根据词性分为动词，名称，形容词，副词和其他，然后计算HoPS时，将每个bin分为在RA中和该单词拥有相同词性的单词的个数。Question type就是问题的种类，作者分为了8类，分别是How, What, Why, Who, Which, When, Where, Whom，然后根据问题的类别生成8个二进制的feature
+<center><img src='../assets/img/posts/20221010/53.jpg'></center>
+
+## 9.2. Token level的消融实验结果
+<center><img src='../assets/img/posts/20221010/54.jpg'></center>
+
+# 10. An Experimental Study of Text Preprocessing Techniques for ASAG in Indonesian
+## 10.1. Introduction
+论文介绍了一些针对于ASAG任务的预处理方法，它使用了印度尼西亚语的问题和答案
+
+## 10.2. 预处理方法
+Burrows et al.总结了文本预处理的五方面技巧，分别是lexical, morphological, semantic, syntactic and surface，所对应的技巧如下图所示:
+<center><img src='../assets/img/posts/20221010/55.png'></center>
+
+然后作者根据以往的研究，总结了应用于ASAG任务的五个预处理技巧:
+- Case Folding: 将所有字母小写
+- Tokenization: 将序列分成词元，在这个过程中可能会丢弃一些字符，比如标点符号
+- Punctuation Removal: 在词元化后，会移除所有的标点符号
+- Stop Word Removal: 一些common word在序列中可能并没有什么意义，这些词被称作stop word，需要去除
+- Stemming: 去掉单词的词缀
+
+## 10.3. Research Method
+在预处理完毕后，计算RA和SA的余弦相似度，作为分数
+<center><img src='../assets/img/posts/20221010/56.jpg'></center>
+
+作者一共进行了两组实验，一组实验是使用了Tokenization和Punctuation的技巧，另一组实验多使用了Case Folding, Stemming, Stopword Removal的技巧，计算学生答案的平均分数和老师答案平均分数的correlation(相关性)和MAE，然后用t-test来判断两组实验是否有区别
+
+## 10.4. 实验结果
+<center><img src='../assets/img/posts/20221010/57.png'></center>
+发现没有很大区别
+
+# 11. Feature engineering and ensemble-based approach for improving automatic short-answer grading performance
+## 11.1. Introduction
+文章整合了ASAG领域的一些feature engineering的技巧，有传统的text similarity和一些新颖的features，比如relevance feedback based features, topic-modelling features, information retrieval motivated feature和Inverse document frequency based overlap feature。对比不同feature的效果，融合不同技巧进行ASAG任务(ensemble)，有点像一篇综述
+
+## 11.2. Problem Definition
+### 11.2.1. ASAG as regression task
+输入SA,RA，返回一个分数。回归任务的目标是学习一个回归模型$Y=f(\vec{X}, \vec{\omega})$，其中$\vec{X}$是一个n维的相似向量(similarity vector)，通过n个RA和SA的相似度度量计算得出，模型的目标就是拟合出这些相似性度量的回归系数$\omega$，回归任务的性能度量是均方根误差(RMSE)和皮尔森相关系数$\rho$
+
+### 11.2.2. ASAG as classification task
+分类任务的本质其实和回归任务类似，分类模型的目标是计算出当前变量对于每个类别的分数，然后选出分数最高的类别作为分类类别，k是类别:
+
+<p>
+\begin{equation}
+\begin{aligned}
+& score(X_i,k)=\beta_k \cdot X_i  \\
+& k^*= \mathop{argmax}_i score(X_i, k)
+\end{aligned}
+\end{equation}
+</p>
+
+分类任务的性能度量是权平均F1值和Macro-average F1值
+
+## 11.3. Feature extraction
+作者将text similarity feature分为了以下6个类别并对其进行了简单介绍:
+<center><img src='../assets/img/posts/20221010/58.jpg'></center>
+
+### 11.3.1. Semantic Similarity Features
+- Knowledge-based measures: 使用WordNet查询单词的语义相似度
+- Corpus-based features: LSA
+- Word-embedding feature: 连续词袋模型(CBOW)和跳元模型(skip-gram)
+
+### 11.3.2. Lexical Overlap Features
+RA和SA之间的回答会有很多词重叠的部分，可以利用起来作为features:
+<center><img src='../assets/img/posts/20221010/59.jpg'></center>
+
+- Word-overlap features: 有Jaccard Similarity Coefiicient, Simple word overlap等
+- Summary evaluation measures: ROUGE-N，ROUGE一开始是广泛用于摘要生成的效果评估，具体做法是比较参考摘要和生成摘要共有的gram除以参考摘要的总gram数
+
+### 11.3.3. Information Retrieval Measures
+TF-IDF可以用于估计RA和SA之间的相关性和相似度，公式为:
+
+<center><img src='../assets/img/posts/20221010/60.jpg'></center>
+
+### 11.3.4. Topical Similarity Features
+- Latent Dirichlet Allocation(LDA): 假设每段文本都在讨论多个话题的融合，每个话题由文本中出现的单词组成，LDA能处理多义词。每段文本都是由多个话题组成，那么就可以计算出RA和SA之间的话题相似度
+- Biterm Topic Model(BTM): 相较于LDA而言，BTM处理短文本的能力更强
+ 
+### 11.3.5. Relevance Feedback-based Features
+通过学生的回答来更新原始的参考答案，这样可以增强参考答案的词汇量，生成这样的features分为两步，第一步是计算相似度，第二步是更新参考答案。不同features计算相似度的方法都是类似的
+- similarity computation step: 通过LSA的方法计算出每个学生回答相对于参考答案的余弦相似度，作为similarity
+- Top Scorer Dependent Feedback Feature(RF-I): 通过相似度最高的几个学生答案的单词对参考答案进行更新，这样可以重新计算出学生答案和参考答案的余弦相似度，也就是一种根据学生答案对参考答案进行更新的一种反馈机制
+- Least Scorer Dependent Feedback Feature(RF-II): 和RF-I类似，但是更新变成了至少P个学生答案
+- All Scores Dependent Feedback Feature (RF-III): 全部的学生答案对参考答案进行更新
+
+### 11.3.6. Alignment-based Features
+配对学生答案和参考答案的语义相近的单词获得的feature，这里作者没有详细介绍，说可以在word-to-word alignment using word-aligner中找到详细的解释
+
+## 11.4. Answer Grading Models
+使用了多个模型进行实验，既用到了单个的模型，也用到了集成学习的方法
+
+### 11.4.1. Individual models
+- Regression: 线性回归，支持向量回归，核方法脊回归(Kernel ridge regression)，各种树等等
+- Classification: 随机森林
+
+### 11.4.2. Ensemble learning
+对于回归任务而言，分为两步:
+- ensemble generation: 生成单个的回归模型
+- ensemble integration: 对单个的基模型进行集成
+
+作者对不同的回归子模型使用了名为Stacked Regression的方法，就是对不同的模型进行滑动平均的方式对其进行集成，在基模型不止一种的情况下会有比较好的结果
+
+## 11.5. Evaluation
+### 11.5.1. Test Bed
+针对回归任务，使用了University of North Texas数据集(UNT)，针对分类任务，使用了SRA(Subsets of Student Response Analysis)数据集，这个数据集包含两个子集，一个是ScientsBank，一个是Beetle
+
+### 11.5.2. 实验设计
+一共设置了五组实验:
+- Performance analysis of feature groups: 分析对比了不同feature的效果
+- Feature significance tests: 分析feature是否重要
+- Optimal feature set selection: 找出最好的feature set
+- Ensemble-based regression- University of North Texas dataset: 判断集成学习在回归任务上的表现，先用数据集训练出单个的回归模型SVR,KRR,LR,LASSO,ELAS-TIC,TREE,BAG,BOOST，然后训练一个regressor(MLP)对这些模型预测的分数进行聚合
+- 消融实验
+
+<center><img src='../assets/img/posts/20221010/61.png'></center>
+
+<center><img src='../assets/img/posts/20221010/62.jpg'></center>
+
+### 11.5.3. 实验结果
+<center><img src='../assets/img/posts/20221010/63.jpg'></center>
+
+<center><img src='../assets/img/posts/20221010/64.jpg'></center>
+
+<center><img src='../assets/img/posts/20221010/65.jpg'></center>
+
+## 11.6. 总结
+作者提出的stacked-regression模型相较于其他的模型而言表现更好，alignment-based feature, lexical overlapping features, semantic similarity feature都在其中起到了重要的作用，新加上的一些特征也能有效地提升模型的性能
+
+# 12. Machine Learning Approach for Automatic Short Answer Grading: A Systematic Review
+一篇整合了44篇使用了机器学习方法来解决ASAG的综述，综述的目标是让每一篇论文都回答以下四个问题:
+- what is the nature of datasets?
+- 使用了什么机器学习或者自然语言处理的方法？
+- 选中的feature是什么？
+- 实现了什么样的结果？
+
+## 12.1. Nature of Datasets
+往往是一个问题对应多个回答，问题多的数据集对应的回答会相对少一点，但一般来说只有一个参考答案。用的较多的数据集是Automated Student Assessment Prize(ASAP)和SemEval 2013中的两个数据集SciEntsBank和Beetle，最后还有回归任务使用较多的Texas数据集
+
+## 12.2. Natural Language Processing Techniques
+就是在特征提取的时候使用的一些预处理技巧，比如punctuation, numbers and other symbols removal, acronym expansion(首字母缩略词扩写), sentence segmentation, case normalization(大小写统一)和tokenization
+
+除此之外，还有一些在使用回答的lexical时用到的技巧，有stopword removal, spelling correction and stemming and lemmatization(还原词干，就是去除后缀)
+
+使用syntactic用到的技巧:part of speech tagging(词性)
+ 
+使用semantic用到的技巧: Wordnet
+
+## 12.3. Machine Learning Algorithms
+使用到的机器学习方法有Artificial Neural Networks, Deep Belief Networks, K-Means
+
+最常见的还是将ASAG任务视为分类或回归任务，使用到的机器学习方法有: 支持向量机，决策树，逻辑回归，Ridge Regreesion，朴素贝叶斯，K则最邻近和线性回归。有些文章使用了集成学习的方法: Stacked Generalization, 随机森林，Gradient Boosting Machine，Bagging和Adaptive Boosting
+
+## 12.4. Features
+作者将使用到的feature分为了三类: lexical, syntactic and Semantic
+- Lexical: N-gram(n=1时就是常见的词袋Bag of Words)，用词出现的频率作为权重构建矩阵。ROUGE, BLUE, Word2vec, lexical similarity。还有一些广泛用到的feature有count of words, response's length, verb counts等等
+- Syntactic: phrase ngrams(combination of the main verb and their noun phrase), denpendency ngrams(syntactical relations between words), similarity between RA and SA POS tags
+- Semantic: knowledge-based features(WordNet), corpus-based similarity(LSA,ESA...)
+
+## 12.5. Systems' Evaluation
+不同数据集，不同模型的evaluation:
+<center><img src='../assets/img/posts/20221010/66.jpg'></center>
+
+# 13. Automatic Short Answer Grading via Multiway Attention Networks
+## 13.1. Introduction
+ASAG任务的两大困难点: 1. 短文本回答需要有较深的语义理解 2. 问题往往是开放式的，同时涵盖了多个领域
+
+为了解决以上问题，作者提出了用深度神经网络来解决，作者提出了:
+1. 一种end-to-end的方式来解决ASAG任务，不需要人为地提取特征
+2. 一种新的框架，可以拟合RA和SA的语义关系
+3. 可以在多领域使用
+
+## 13.2. Approach
+总体的模型架构如下:
+<center><img src='../assets/img/posts/20221010/67.png'></center>
+
+- Multiway attention: 终点讲一下中间那个cross-attention，每个$h^q_i$都会和其余的每个$h^p_j$计算注意力权重，一共有四组输出，分别代表不同的注意力机制，\{a,s,m,d\}分别对应addictive, subtractive, multiplicative, dot-product
+- Inside Aggregation: 聚合之前的三组结果，使用了Transformer对其进行聚合
+- Prediction Layer: 通过self-attention pooling layer把aggregated sequence representation变成一个定长的向量，注意力池化和注意力机制好像没太大区别，作者这里使用的变化公式为:
+
+<p>
+\begin{equation}
+x=softmax(w^z_1tanh(W^z_2Z^T))Z
+\end{equation}
+</p>
+
+其中$w^z_1$和$W^z_2$是可学习的矩阵，变换后输入MLP得到预测结果，这里作者将其视为二分类任务
+
+## 13.3. 实验结果
+<center><img src='../assets/img/posts/20221010/68.png'></center>
+
+# 14. Automated Short-Answer Grading Using Deep Neural Networks and Item Response Theory
+## 14.1. Introduction
+作者提出了一种结合DNN(Deep Neural Networks)和IRT(Item Response Theory)的模型，简单来说就是在提问时加上一些判断正负的客观问题来辅助评分，这种方法可以适用于任何一个DNN-ASAG模型，作者这里采用最标准的LSTM-ASAG模型来演示
+
+## 14.2. Proposed Method
+<center><img src='../assets/img/posts/20221010/69.png'></center>
+
+模型整体架构如上图所示，首先介绍一下DNN部分，word sequence首先经过look up table layer，这个layer的作用是把单词转换成词元，也就是word embedding representation，接着LSTM layer将其转换成hidden vector，接着经过一个temporal mean layer，将vector输出成一个定长的vector M。
+
+接着介绍一下IRT model，作者使用了一个名为two-parameter logistic IRT model来获得学生的ability $\theta$，学生回答正确的概率公式如下:
+
+<p>
+\begin{equation}
+(1+exp[-\alpha_i(\theta - \beta_i)])^{-1}
+\end{equation}
+</p>
+
+其中$\alpha_i$和$\beta_i$分别代表问题的区别系数和难度系数, $\theta$就是学生的ability
+
+concatenate两者的输出后，经过一个MLP进行降维，然后输入线性层输出最终结果
+
+## 14.3. 实验
+实验结果如下所示:
+<center><img src='../assets/img/posts/20221010/70.jpg'></center>
+
+# 15. Comparative Evaluation of Pretrained Transfer Learning Models on Automatic Short Answer Grading
+## 15.1. Introduction
+作者对比了四种不同的预训练迁移学习模型ELMo，GPT，GPT-2，BERT在ASAG任务上的表现，主要方法就是利用这几种模型的词嵌入做cosine相似，作者对比了RMSE分数，发现ELMo的效果最好
+<center><img src='../assets/img/posts/20221010/71.png'></center>
+
+## 15.2. Experiment
+实验结果如下:
+<center><img src='../assets/img/posts/20221010/72.jpg'></center>
+
+除了四种预训练模型外，作者还对比了与其他word embedding的模型的区别，并尝试解释其原因
+
+# 16. Going deeper: Automatic short-answer grading by combining student and question models
+## 16.1. Introduction
+作者总结了在ASAG任务领域的一些answers-based模型，认为没有考虑到question的作用，于是结合了question model和answers model，并研究了deep belief networks(DBN)在ASAG领域的表现，发现应用question models于传统的answer-based模型能提升其表现，同时发现DBN的效果不错，强于传统的机器学习方法
+
+## 16.2. State features
+### 16.2.1. Answer model
+每个问题都有对应的参考答案(referred correct answers)，在最开始，answer space只有参考答案，但随着训练过程，不断有学生答案被鉴定为正确并加入到answer space里，通过词袋的方式对answer space进行建模，作者称其为word-answer matrix，横坐标表示单词，纵坐标代表不同的答案，每一行每一列的数值等于这个单词在回答中出现的次数，这个矩阵会动态更新
+
+answer model主要包含了以下6个特征:
+1. length difference: 学生答案和参考答案的句子长度差
+2. cosine similarity: 通过学生答案和参考答案的tf-idf向量计算余弦相似度，TF-IDF是一种用于资讯检索与资讯探勘的常用加权技术，TF-IDF是一种统计方法，用以评估一个单词对于一个文件集或一个语料库中的其中一份文件的重要程度，单词的重要性会随着它在文件中出现的次数成正比增加，但同时会伴随着它在语料库中出现的频率而成反比下降
+3. max-matched idf: 衡量了一个学生答案在answer space中词重叠的信息，idf衡量了一个单词能提供的信息
+4. LSA: LSA用来评估一个学生回答的质量，具体方法就是拿他与其他正确答案进行比较
+5. Domain-specific text similarity: 在sentence level衡量学生答案和参考答案的相似度，具体做法就是让专家手动的列一个领域词汇表dl，然后就计算学生答案s和参考答案c的相似度:
+
+<p>
+\begin{equation}
+sim_d(s,c)=\sum_{\omega_1 \in sv}\sum_{\omega_2 \in cv} 1_{dl}(\omega_1) \cdot 1_{dl}(\omega_2)
+\end{equation}
+</p>
+
+其中1代表指标函数，当$\omega_1$在list中时为1，其次sv和cv分别代表matrix中的学生答案向量和参考答案向量
+
+6. general text similarity: 测量了学生答案和参考答案的整体文本相似度，记为$sim_g(s,c)$，计算它之前，首先需要计算word-level的相似度$sim_w(C_1,C_2)$，公式如下:
+
+<p>
+\begin{equation}
+sim_{\omega}(C_1,C_2)=\frac{2*depth(LCS)}{depth(C_1)+depth(C_2)}
+\end{equation}
+</p>
+
+上式中$C_1$和$C_2$代表两个concept，depth(·)表示concept沿概念树的边数，所以这里需要借助一个knowledge-based dictionary，这里作者使用了WordNet，LCS全称为Least common subsumer，即最小公共包含，即$C_1$和$C_2$在概念树上的最小公共祖先节点
+
+然后就可以计算$sim_g(s,c)$了，具体公式如下，其中$dl_c$表示领域词列表的补集:
+
+<p>
+\begin{equation}
+sim_g(s,c)=\sum_{\omega_1 \in sv}\sum_{\omega_2 \in cv} 1_{dl^c}(\omega_1) \cdot 1_{dl^c}(\omega_2) \cdot sim_{\omega}(\omega_1, \omega_2)
+\end{equation}
+</p>
+
+集合5和6，可以计算出一个归一化的sim(s,c)，就是对5.和6.的公式加权得到，权重分别为0.6和0.4，最后，给定了一个学生答案，学生答案将和answer space中所有的参考答案都计算相似度，然后最后求平均
+
+### 16.2.2. Question model
+不同于大多数的ASAG系统是question-specific的，作者提出了一种domain general的ASAG系统，不是针对每个问题都建立一个分类器，而是对所有的问题都建立一个分类器。为了实现这样的目标，需要有一个question model把问题分成一个general feature space，这样才能保证ASAG模型能学习到一些feature。具体而言，作者设计的question model包含两个主要的特征:
+
+- Knowledge Components(KCs): 构建一个Q-matrix来表示单个的问题和KCs间的关系，Q-matrix是一个qxk的二维矩阵，q代表问题，k代表KCs。比如说$Q_{jk}$=1代表问题j是KC中k的一个应用。这里作者让专家来设计这个矩阵，一旦有学生回答了一个问题j，就从Q-matrix把第j行拿出来，然后添加到特征向量中
+- Question Diffuiculty: 本来KCs的feature只有八个，这个问题难度将作为第九个feature加入Q-matrix中，根据专家的评判以及学生回答这个问题的情况来决定
+
+### 16.2.3. Student model
+Student model可以定义为收集相关信息的过程，以推断学生当前的认知状态并对其进行表示，以便辅导系统可以访问和使用以提供适应性。Bayesian Knowledge Tracing(BKT)是在ITS领域中应用最广的student model。BKT利用学生与辅导系统的交互的序列信息来更新它对于该学生潜在知识掌握能力的评估。
+<center><img src='../assets/img/posts/20221010/73.jpg'></center>
+
+总的来说，Student model有16个feature，对于KCs的每一列而言，它用BKT来估计学生在每一个KC上的掌握水平
+
+### 16.2.4. Composite feature space
+结合了以下student model和question model的一些特征
+
+## 16.3. Six Classifiers
+使用了六个分类器来通过前面提到的特征预测学生在某个问题上的回答情况，分别是: 朴素贝叶斯，逻辑回归，决策树，支持向量机，ANN和DBN
+
+## 16.4. Data
+为了能有效地利用这些特征，数据集的准备也是别有用心，数据集采自Cordillera，一门教导学生大学物理的课程，它属于能量领域的，KC的特征有动能，重力势能等等。158名学生参与了数据收集的过程: 首先参加背景的调研，然后学习课本和先修材料，然后参加预测试，接着在Cordillera做题，最后参加考试
+
+## 16.5. 实验
+### 16.5.1. 实验设置
+总共设置了三个阶段的实验，如下图所示:
+<center><img src='../assets/img/posts/20221010/74.png'></center>
+
+### 16.5.2. 实验结果
+<center><img src='../assets/img/posts/20221010/75.jpg'></center>
+
+<center><img src='../assets/img/posts/20221010/76.png'></center>
+
+## 16.6. 总结
+实验结果表明，Question model和student model的加入能增强answer model的效果，其次就是DBN相较于传统的机器学习方法表现更好
 
 # 100. TODO
 - 看GBT, GPT, ELMo

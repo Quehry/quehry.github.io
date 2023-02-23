@@ -22,7 +22,7 @@
   "headline": "算法练习心得",
   "abstract": "记录刷算法题过程中的心得",
     "keywords": "algorithm",
-    "wordcount": "231",
+    "wordcount": "261",
     "image": ["http://localhost:4000/assets/imgposts/20221021/1.jpg"],
   "datePublished": "2022-10-21 00:00:00 +0800",
   "dateModified": "2022-10-21 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="记录刷算法题过程中的心得">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="231"/>
+<meta data-rh="true" name="twitter:data1" content="261"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20221021/1.jpg">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -470,6 +470,29 @@
   <li><code class="language-plaintext highlighter-rouge">.size()</code>可以返回vector的大小</li>
   <li><code class="language-plaintext highlighter-rouge">.size()</code>也可以返回<code class="language-plaintext highlighter-rouge">string</code>的大小，<code class="language-plaintext highlighter-rouge">str[i]</code>可以访问字符串的第i个字符</li>
   <li><code class="language-plaintext highlighter-rouge">str.substr(a,b)</code>可以返回字符串的子字符串，从a到b，左闭右开</li>
+  <li>构造结构体的时候最好初始化一下，就是在定义的时候就算没有输入参数也可以初始化，这样可以避免很多bug</li>
+  <li>sort()进行排序的时候默认是升序，如果需要降序，需要在sort里加入greater&lt;&gt;()</li>
+  <li>在for循环中，如果没有定义循环指数如何变化，一定要注意其边界条件是否正确</li>
+  <li>在接雨水这个题目中，把能接水的坑细分成一个个柱子进行接水</li>
+  <li>C++中哈希表的定义<code class="language-plaintext highlighter-rouge">unordered_set&lt;T&gt; name</code></li>
+  <li>C++中空指针可以用NULL，也可以用nullptr</li>
+  <li>C++中哈希表的使用: <code class="language-plaintext highlighter-rouge">.count()</code>用于判断是否有某个元素，<code class="language-plaintext highlighter-rouge">.insert()</code>表示在哈希表中插入某个元素</li>
+  <li>环形链表双指针法，一个指针走快(2步)，一个指针走慢(1步)，这样可以实现快速找到入环点，这样可以节省空间</li>
+  <li>合并链表这个事儿，一般是设定一个虚拟的指针，然后从这个指针开始，指向需要合并的链表的头</li>
+  <li>优先队列就是有排序的队列，会按照设定的大小关系对队列中的元素进行排序</li>
+  <li>分治一般能把时间复杂度从n降到logn</li>
+  <li>结构体中定义了构造函数后，使用向量或者其他数据结构时需要用大括号把参数括起来插入数据结构</li>
+  <li>给二叉树新增节点时，不能通过定义一个节点，然后取它的地址的方法来新建，得用指针new一块内存空间，然后给它赋初始值，然后让二叉树的左节点或者右节点指向它</li>
+  <li>一般来说，log()时间复杂度对应的方法有可能是二分查找</li>
+  <li>队列是先进先出，栈是先进后出</li>
+  <li>栈可以用Deque实现，Deque是双端数组，既可以对数组的前端进行删除或者插入的操作，也可以对数据的后端进行删除或插入的操作</li>
+  <li>动态规划中存储中间计算结果的数组可以用二维向量实现:<code class="language-plaintext highlighter-rouge">vector&lt;vector&lt;int&gt;&gt;=f(m,vector&lt;int&gt;(n))</code>, f表示向量名称</li>
+  <li>C++中也有类似于python中lambda函数实现的方法:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>auto matches = [&amp;](int i, int j){
+  ...
+}
+</code></pre></div>    </div>
+  </li>
 </ul>
 
         <aside class="sidebar inline" id="post-end">

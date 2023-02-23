@@ -81,7 +81,7 @@ toc: yes
 
 <center><img src="../assets/img/posts/20220413/236.png"></center>
 
-- 课件的代码和测试的代码都在c++learning里有留存
+- 课件的代码和测试的代码都在c++learning文件夹里有留存
 
 # 1. 第一周 枚举
 
@@ -412,7 +412,7 @@ toc: yes
 <center><img src='../assets/img/posts/20220413/112.jpg'></center>
 - 解题思路: 
 <center><img src='../assets/img/posts/20220413/113.jpg'></center>
-板子的顺序其实没有关系，重要的关注点是当前板子的左侧或右侧正下方的板子是哪个板子，然后计算出从每个板子的左侧或者右侧下降需要的最短时间，也就是说这里的状态值得是不同的板子
+板子的顺序其实没有关系，重要的关注点是当前板子的左侧或右侧正下方的板子是哪个板子，然后计算出从每个板子的左侧或者右侧下降需要的最短时间，也就是说这里的状态指的是不同的板子
 - 伪代码实现: 
 <center><img src='../assets/img/posts/20220413/114.jpg'></center>
 <center><img src='../assets/img/posts/20220413/115.jpg'></center>
