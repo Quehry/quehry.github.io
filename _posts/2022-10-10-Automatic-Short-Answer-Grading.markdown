@@ -140,6 +140,64 @@ toc: yes
         - [16.5.1. 实验设置](#1651-实验设置)
         - [16.5.2. 实验结果](#1652-实验结果)
     - [16.6. 总结](#166-总结)
+- [17. Automatic Short Answer Grading With SemSpace Sense Vectors and MaLSTM](#17-automatic-short-answer-grading-with-semspace-sense-vectors-and-malstm)
+    - [17.1. Introduction](#171-introduction)
+    - [17.2. Method](#172-method)
+        - [17.2.1. Determining Sense Vectors with Semspace Method](#1721-determining-sense-vectors-with-semspace-method)
+        - [17.2.2. Grading with MaLSTM](#1722-grading-with-malstm)
+        - [17.2.3. Datasets](#1723-datasets)
+    - [17.3. 实验](#173-实验)
+- [18. A Semantic Feature-Wise Transformation Relation Network for Automatic Short Answer Grading](#18-a-semantic-feature-wise-transformation-relation-network-for-automatic-short-answer-grading)
+    - [18.1. Introduction](#181-introduction)
+    - [18.2. SFRN](#182-sfrn)
+        - [18.2.1. Relation Network](#1821-relation-network)
+        - [18.2.2. QRA relation vectors](#1822-qra-relation-vectors)
+        - [18.2.3. Relation Fusion](#1823-relation-fusion)
+        - [18.2.4. SFRN Encoder](#1824-sfrn-encoder)
+    - [18.3. Data Augmentation](#183-data-augmentation)
+    - [18.4. 实验](#184-实验)
+- [19. An automatic short-answer grading model for semi-open-ended questions](#19-an-automatic-short-answer-grading-model-for-semi-open-ended-questions)
+    - [19.1. Introduction](#191-introduction)
+    - [19.2. Proposed model](#192-proposed-model)
+        - [19.2.1. CBOW](#1921-cbow)
+        - [19.2.2. Integration of domain-general information with domain-specific information](#1922-integration-of-domain-general-information-with-domain-specific-information)
+        - [19.2.3. LSTM and classifier](#1923-lstm-and-classifier)
+- [20. Multi-Relational Graph Transformer for Automatic Short Answer Grading](#20-multi-relational-graph-transformer-for-automatic-short-answer-grading)
+    - [20.1. Introduction](#201-introduction)
+    - [20.2. Methodology](#202-methodology)
+        - [20.2.1. AMR parsing](#2021-amr-parsing)
+        - [20.2.2. Subgraph Preparation Layer](#2022-subgraph-preparation-layer)
+        - [20.2.3. Preparing Node and Subgraph Representation](#2023-preparing-node-and-subgraph-representation)
+        - [20.2.4. Graph Matching Layer](#2024-graph-matching-layer)
+        - [20.2.5. Prediction layer](#2025-prediction-layer)
+    - [20.3. Experiment setup](#203-experiment-setup)
+        - [20.3.1. Dataset](#2031-dataset)
+        - [20.3.2. Data Processing](#2032-data-processing)
+    - [20.4. 实验](#204-实验)
+- [21. Automatic Short Answer Grading (ASAG) using Attention-Based Deep Learning MODEL](#21-automatic-short-answer-grading-asag-using-attention-based-deep-learning-model)
+    - [21.1. Introduction](#211-introduction)
+    - [21.2. Method](#212-method)
+        - [21.2.1. Dataset preparation](#2121-dataset-preparation)
+        - [21.2.2. Data preprocessing](#2122-data-preprocessing)
+        - [21.2.3. BERT grading](#2123-bert-grading)
+        - [21.2.4. Evaluation metrics](#2124-evaluation-metrics)
+- [22. Automated Short Answer Grading Using Deep Learning: A Survey](#22-automated-short-answer-grading-using-deep-learning-a-survey)
+    - [22.1. Introduction](#221-introduction)
+    - [22.2. Corpora](#222-corpora)
+    - [22.3. Evaluation Metrics](#223-evaluation-metrics)
+    - [22.4. Deeplearning Approaches](#224-deeplearning-approaches)
+    - [22.5. Conclusion](#225-conclusion)
+- [23. Survey on Automated Short Answer Grading with Deep Learning: from Word Embeddings to Transformers](#23-survey-on-automated-short-answer-grading-with-deep-learning-from-word-embeddings-to-transformers)
+    - [23.1. Introduction](#231-introduction)
+    - [23.2. Historical perspective](#232-historical-perspective)
+    - [23.3. Benchmark data sets for short answer grading](#233-benchmark-data-sets-for-short-answer-grading)
+    - [23.4. Hand-engineered Features and Machine Learning](#234-hand-engineered-features-and-machine-learning)
+        - [23.4.1. Lexical features](#2341-lexical-features)
+        - [23.4.2. Syntactic features](#2342-syntactic-features)
+        - [23.4.3. Semantic features](#2343-semantic-features)
+        - [23.5. Deep Learning Methods](#235-deep-learning-methods)
+        - [23.6. Discussion](#236-discussion)
+        - [23.7. Challenges](#237-challenges)
 - [100. TODO](#100-todo)
 
 <!-- /TOC -->
@@ -161,6 +219,13 @@ toc: yes
 - [Automated Short-Answer Grading Using Deep Neural Networks and Item Response Theory](https://link.springer.com/chapter/10.1007/978-3-030-52240-7_61){:target="_blank"}
 - [Comparative Evaluation of Pretrained Transfer Learning Models on Automatic Short Answer Grading](https://arxiv.org/abs/2009.01303){:target="_blank"}
 - [Going deeper: Automatic short-answer grading by combining student and question models](https://link.springer.com/article/10.1007/s11257-019-09251-6){:target="_blank"}
+- [Automatic Short Answer Grading With SemSpace Sense Vectors and MaLSTM](https://ieeexplore.ieee.org/abstract/document/9335022){:target="_blank"}
+- [A Semantic Feature-Wise Transformation Relation Network for Automatic Short Answer Grading](https://aclanthology.org/2021.emnlp-main.487/){:target="_blank"}
+- [An automatic short-answer grading model for semi-open-ended questions](https://www.tandfonline.com/doi/abs/10.1080/10494820.2019.1648300){:target="_blank"}
+- [Multi-Relational Graph Transformer for Automatic Short Answer Grading](https://aclanthology.org/2022.naacl-main.146/){:target="_blank"}
+- [Automatic Short Answer Grading (ASAG) using Attention-Based Deep Learning MODEL](https://ieeexplore.ieee.org/abstract/document/10007187){:target="_blank"}
+- [Automated Short Answer Grading Using Deep Learning: A Survey](https://link.springer.com/chapter/10.1007/978-3-030-84060-0_5){:target="_blank"}
+- [Survey on Automated Short Answer Grading with Deep Learning: from Word Embeddings to Transformers](https://arxiv.org/abs/2204.03503){:target="_blank"}
 
 # 2. Automatic Short-Answer Grading via BERT-Based Deep Neural Networks
 ## 2.1. Abstract
@@ -940,7 +1005,7 @@ ASAG任务的两大困难点: 1. 短文本回答需要有较深的语义理解 2
 总体的模型架构如下:
 <center><img src='../assets/img/posts/20221010/67.png'></center>
 
-- Multiway attention: 终点讲一下中间那个cross-attention，每个$h^q_i$都会和其余的每个$h^p_j$计算注意力权重，一共有四组输出，分别代表不同的注意力机制，\{a,s,m,d\}分别对应addictive, subtractive, multiplicative, dot-product
+- Multiway attention: 重点讲一下中间那个cross-attention，每个$h^q_i$都会和其余的每个$h^p_j$计算注意力权重，一共有四组输出，分别代表不同的注意力机制，\{a,s,m,d\}分别对应addictive, subtractive, multiplicative, dot-product
 - Inside Aggregation: 聚合之前的三组结果，使用了Transformer对其进行聚合
 - Prediction Layer: 通过self-attention pooling layer把aggregated sequence representation变成一个定长的向量，注意力池化和注意力机制好像没太大区别，作者这里使用的变化公式为:
 
@@ -1067,6 +1132,356 @@ Student model可以定义为收集相关信息的过程，以推断学生当前�
 
 ## 16.6. 总结
 实验结果表明，Question model和student model的加入能增强answer model的效果，其次就是DBN相较于传统的机器学习方法表现更好
+
+# 17. Automatic Short Answer Grading With SemSpace Sense Vectors and MaLSTM
+## 17.1. Introduction
+作者提出了利用Semspace的sense vector输入MaLSTM从而实现ASAG任务，Semspace是一个基于WordNet中synset的一种sense embedding的方法，后续会具体介绍。文章的两大关键组成部分是SemSpace和Manhattan LSTM(MaLSTM)
+
+## 17.2. Method
+模型实现分为以下三步:
+1. 基于WordNet的同义词集训练SemSpace算法
+2. 根据Word Sense Disambiguation，将数据集分为词元
+3. 训练MaLSTM
+
+### 17.2.1. Determining Sense Vectors with Semspace Method
+Sense Embedding就是根据词的意思来生成词表示，与Word2Vec，Glove，FastText等有区别，后者无法处理多义词。SemSpace是sense embedding的一种方法，作者这里对它进行了一定的改动，在运行Semspace算法时，节点间的关系用欧式距离表示，然后根据WordNet中同义词集的关系(或者说相似度)，调整向量，两个向量之间的相似度通过以下公式计算:
+
+<p>
+\begin{equation}
+Sim(V_1, V_2)=e^{-\|V_1-V_2\|}
+\end{equation}
+</p>
+
+其中$V_1$和$V_2$分别表示sense vector的欧式距离，如果两个向量的相似度超过了它们之间的relation weight，那么就把两个向量拉近，反之则拉远。这就是SemSpace算法训练过程中向量位置的变化
+
+预处理步骤:
+<center><img src='../assets/img/posts/20221010/77.jpg'></center>
+
+Sentence a和Sentence B分别代表学生答案和参考答案，那些包含多个WordNet同义词集的单词会通过WSD处理:
+
+<p>
+\begin{equation}
+C_{WSD}=\mathop{argmin}_{G_j}\sum _i^N \|C_j-P_i\|
+\end{equation}
+</p>
+
+N是context cluster的同义词集数量，$C_j$表示歧义词的候选同义词集，$P_i$是context cluster的sense vector表示，context cluster就是整个数据集出现最多的单词的集合
+
+### 17.2.2. Grading with MaLSTM
+MaLSTM被广泛用于句段相似的应用中。模型的主体架构如下图所示:
+<center><img src='../assets/img/posts/20221010/78.jpg'></center>
+
+学生答案和参考答案分别输入不同的LSTM模型中，得到sentence representation(在LSTM的最后一个隐层)，然后计算两个向量之间的Manhattan distance，归一化后将范围控制在0，1之间，得到的结果作为相似度。曼哈顿距离标明两个点在标准坐标系上的绝对轴距总和。
+<center><img src='../assets/img/posts/20221010/79.jpg'></center>
+
+### 17.2.3. Datasets
+使用了两个数据集，一个是Mohler数据集，另一个数据集是CU-NLP
+
+## 17.3. 实验
+实验结果:
+<center><img src='../assets/img/posts/20221010/80.jpg'></center>
+
+<center><img src='../assets/img/posts/20221010/81.png'></center>
+
+# 18. A Semantic Feature-Wise Transformation Relation Network for Automatic Short Answer Grading
+## 18.1. Introduction
+作者提出了一种新的网络模型来解决ASAG任务，名称为Semantic Feature-wise transformation Relation Network(SFRN)。SFRN是一个端到端的模型，有三个组成部分，encoder首先编码QRA对，生成QRA的向量表示。当一个问题存在多个参考答案时，relation network将单个的QRA向量转化成single relation vector，接着一个学习过的feature-wise transformation function融合了所有relation vector。最终，分类器决定每个学生答案对应的分数或者类别。
+
+为了解决数据不足和类别不平衡的问题，作者采用了一个简单的数据增强(data augmentation)的方法，back-translation。ASAG的数据集相对来说小。back-translation能从数据集中已经存在的数据生成新的数据。
+
+## 18.2. SFRN
+### 18.2.1. Relation Network
+Relation network，关系网络，最初是用在CV领域，用来学习不同类别的物体的区别，这里作者用来寻找不同text vector之间的关系，Relation Network可以用下面这个公式简单表达:
+
+<p>
+\begin{equation}
+RN(O)=f_{\phi}(\sum_{i,j}g_\theta(o_i,o_j))
+\end{equation}
+</p>
+
+公式里O是输入物体的集合，f和g是可以训练的带参函数，g用来学习物体对的关系，返回一个抽象的表示，输入f，f是分类器
+
+### 18.2.2. QRA relation vectors
+假设向量化的QRA对为$(q,r_j,a)$，对于一个问题而言，共有n个参考答案。生成relation vector的过程图如下所示:
+<center><img src='../assets/img/posts/20221010/82.jpg'></center>
+
+q,r,a首先concate在一起输入$g_\theta$,g是一个MLP，参数为$\theta$，假设共有n个qra对，那么会生成n个relation vector $l_j$
+
+### 18.2.3. Relation Fusion
+接着就需要把这n个关系向量融合在一起，原本的Relation Network会把它们加起来，然后输入到分类器f中，但是一般情况下关系都是二元的，对于ASAG任务而言，qra是三元的，所以作者对其进行了一定的修改。作者使用了Semantic Feature-wise Transformation(SFT)来融合n个关系向量，具体的公式如下:
+
+<p>
+\begin{equation}
+SFT(C,L,n)=\sum_{j=1}^n(\alpha(c_j)\odot l_j+\beta(c_j))
+\end{equation}
+</p>
+
+公式中C代表qra set，L表示关系向量set，n表示参考答案的个数，$c_j$是qra pair concatenate的结果，$\alpha$和$\beta$是MLP。
+
+SFT得到的结果输入到分类器中得到最终的分类结果，所以整体上来说SFRN能写成:
+
+<p>
+\begin{equation}
+SFRN([Q,R,A])=f_\phi(SFT(g_\theta))
+\end{equation}
+</p>
+
+### 18.2.4. SFRN Encoder
+剩下还有一部分没有介绍，就是encoder部分。作者实验了不同encoder的效果，baseline model使用了LSTM作为encoder，除此之外，还使用了BERT作为encoder，取BERT最后一个输出层的输出
+
+## 18.3. Data Augmentation
+鉴于SemEval ASAG数据集只包含有限的数据和严重的数据倾斜问题，所以作者采用了Back-translation的方法来做Data Augmentation。Back-translation就是将数据从原始语言翻译为一个或多个其他语言，然后再把翻译结果从其他语言翻译成原始语言。作者这里使用的语言是汉语和法语。作者使用了EasyNMT网络和谷歌翻译的API来完成这个操作
+<center><img src='../assets/img/posts/20221010/83.jpg'></center>
+
+实验Data Augmentation发现，数据平衡对实验结果影响不大，除非重平衡的类和原始类的数据量差别很大。并且并不是数据扩大的倍数越大越好，如果一个类别和数据量最大的类别的差异有五倍，那么作者会double这个类别
+
+T-test的实验结果
+<center><img src='../assets/img/posts/20221010/84.png'></center>
+
+T-test一般用来检验不同参数设置的实验结果是否有显著的差别
+
+## 18.4. 实验
+和多个其他baseline进行了对比实验，并且分别在Bettle数据集，SciEntsBank数据集和数据增强过的两个数据集上做了对比试验，其中应用了Bert作为encoder的模型表现最好
+
+# 19. An automatic short-answer grading model for semi-open-ended questions
+## 19.1. Introduction
+传统的ASAG通过对比RA和SA的相似度来评估SA的分数，这种方法对于closed-ended question有不错的效果，因为这些问题只有限定数量的RA。但是对于半开放的问题，比如阅读理解题，参考答案相对来说更多更广泛，作者提出了一种基于LSTM的方法实现半开放问题的短文本答案的评估
+
+## 19.2. Proposed model
+结合domain-general information和domain-specific information来解决ASAG任务，前者的信息提取自Wikipedia，后者的信息来源于已标注的学生答案。同时利用LSTM来提取句段信息。模型的大体架构如下图所示:
+<center><img src='../assets/img/posts/20221010/85.jpg'></center>
+
+### 19.2.1. CBOW
+Continuous bag-of-words连续词袋模型，简称CBOW，是一种将word embedding的手段，让语义相近的单词在嵌入空间的距离更近，在之前，LSA和LDA也是常见的word embedding的手段。CBOW模型如下图所示:
+<center><img src='../assets/img/posts/20221010/86.png'></center>
+
+输入中心词上下距离c的单词向量，平均下来作为中心词的投影向量，CBOW在学习的过程就是让这个投影向量和它本身向量更相近，和相反意义的单词向量更远，也就是最小化以下损失函数:
+
+<p>
+\begin{equation}
+loss_{CBOW}=log\prod_{k=1}^{|D|}\{\sigma(v_k^T \theta^k)\prod_{j=1}^{|Neg_k|}[1-\sigma(v_k^T\theta^j)]\}
+\end{equation}
+</p>
+
+### 19.2.2. Integration of domain-general information with domain-specific information
+第一步，用Wikipedia语料库训练CBOW模型，最开始单词向量是随机初始化的，接着CBOW用正确的学生答案的语料进行训练，这时单词的向量来源于第一步训练的结果
+
+### 19.2.3. LSTM and classifier
+这里貌似将输入向量经过LSTM之后，加上一个Softmax就直接预测了，但是我觉得这里肯定没有写完整，应该还是经过了一个线性层，输出维度为预测分数的类别数，然后用softmax来得到最终的预测结果 
+
+# 20. Multi-Relational Graph Transformer for Automatic Short Answer Grading 
+## 20.1. Introduction
+大多数的ASAG方法使用序列文本来比较RA和SA，忽略了文本的结构性语境。于是作者提出了一种Multi-Relational Graph Transformer，MitiGaTe，在考虑结构化语境的情况下表示词元(词元的嵌入表示)。Abstract Meaning Representation(AMR) graph在解析文本回答后得出，然后被分离成多个subgraphs，每个对应AMR的一种特殊的关系。Graph Transformer用来表示每个词元的嵌入表示(在考虑关系的情况下)，也就是需要利用AMR的subgraph，最终会得到一个subgraph representation。最终，比较RA和SA的subgraph representation，得到最终的分数。
+
+本篇文章的主要贡献:
+1. 提出了一种Graph Transformer-based技巧来获取文本的结构信息
+2. 证明了词元的语义表示能提升模型效果
+3. MitiGate能为学生提供可解释的分数反馈
+4. 提升了Benchmarks的效果
+
+## 20.2. Methodology
+将ASAG任务作以下定义: $A^M= \lbrace w_1^M,w_2^M,.. \rbrace$和$A^S=\lbrace w_1^S,w_2^S,.. \rbrace$分别表示model answer和student answer，text-matching model $f(A^M,A^S)$的作用是计算SA和RA的语义相似度。作者提出了一种graph-based matching model，用来根据输入语句创造graph，首先需要解析每个句段成AMR图，接着从AMR图中准备好subgraphs，接着就可以从每个subgraph创造relation-specific token representation$h_{w,r}$，然后聚合成最终的subgraph representation $g^\phi_{r,M}$和$g^\phi_{r,S}$，比较两者得到最终分数。AMR大体结构图如下所示:
+<center><img src='../assets/img/posts/20221010/87.png'></center>
+
+### 20.2.1. AMR parsing
+文本的含义用根指向的图来表示，节点表示概念，边表示概念的关系，比如主语和宾语的关系。AMR捕获有意义的内容，获得抽象的表示。AMR的效果和之前的dependency parser差不多。作者直接使用了AMR model的API来创建每个Answer的AMR graph。
+
+### 20.2.2. Subgraph Preparation Layer
+根绝边的类别数量来生成subgraph，所有subgraph和原始的graph有相同数量的节点，但是只有这个类别的边被保留。AMR大概有100种不同的relation来捕获语义，如果全部用上会低效率的，作者只保留了ARG1和ARG0，其他全部被划分为other。那么原始的graph会被分成以下部分:
+
+<p>
+\begin{equation}
+G_{sub}=\lbrace default, A_0, A_1, other \rbrace
+\end{equation}
+</p>
+
+### 20.2.3. Preparing Node and Subgraph Representation
+模型整体架构图如下所示:
+<center><img src='../assets/img/posts/20221010/88.png'></center>
+
+这一步的主要作用是表示之前得到的subgraph。分为两步: 第一步是用Graph Transformer来生成node，接着聚合所有node。
+
+- 生成node representation的网络是Graph Transformer，其实就是针对节点序列的Transformer，从subgraph输入节点序列$x=(x_1,...,x_n)$，每个节点看成token输入Transformer，与一般的Transformer的区别有两点，一个是只计算该节点相邻节点(包括自身)的注意力权重，第二点是注意力函数有区别，会乘以关系的向量表示$e_{ij}^l$，作者拿最后一层的节点表示$h_{w,r}$来表示特定节点特定关系的表示
+- 接着对这些node进行相加，得到的结果$g^\phi_{r}$就是这个关系的subgraph representation
+
+<p>
+\begin{equation}
+g^\phi_{r,M}=\frac{\sum_{w\in A_M}h_{w,r}}{\|A_M\|}, \forall r\in G_{sub}
+\end{equation}
+</p>
+
+### 20.2.4. Graph Matching Layer
+在获得subgraph representation后，我们就相当于得到了文本的句法信息和语义信息，接着就可以比较RA和SA的距离了:
+
+<p>
+\begin{equation}
+\begin{aligned}
+& D_{r,k}=cosine(w_k^{cos}\odot g^\phi_{r,M},w_k^{cos} \odot g^\phi_{r,S}) \\
+& D = [D,D_{r,k}]
+\end{aligned}
+\end{equation}
+</p>
+
+k表示不同方面，$w_k^{cos}$是一个参数向量，负责给不同的方面赋予不同的权重，得到的k个$D_{r,k}$向量concatenate成D
+
+### 20.2.5. Prediction layer
+用全连接层作为分数预测层
+
+## 20.3. Experiment setup
+### 20.3.1. Dataset
+使用了Mohler数据集，视为回归任务
+
+### 20.3.2. Data Processing
+在AMR环节，利用GloVe对单词进行embedding
+
+## 20.4. 实验
+实验结果:
+<center><img src='../assets/img/posts/20221010/89.jpg'></center>
+
+feedback可以看下图这个例子:
+<center><img src='../assets/img/posts/20221010/90.png'></center>
+其中灰色的节点表示学生答案种遗漏的部分，粉色节点表示学生答案中多余的部分
+
+# 21. Automatic Short Answer Grading (ASAG) using Attention-Based Deep Learning MODEL
+## 21.1. Introduction
+用BERT来解决ASAG任务
+
+## 21.2. Method
+作者将任务步骤分为了三步: 数据准备，数据预处理，评分
+
+### 21.2.1. Dataset preparation
+使用sQuad2.0数据集，数据集包含了10w+的数据
+
+### 21.2.2. Data preprocessing
+用BERT-uncased tokenizer来词元化文本
+
+### 21.2.3. BERT grading
+用BERT来encode学生答案和参考答案的\<cls\>词元，然后输入到分类器中进行分类
+
+### 21.2.4. Evaluation metrics
+kappa系数和混淆矩阵的性能度量，比如召回，精准率等等
+
+# 22. Automated Short Answer Grading Using Deep Learning: A Survey
+## 22.1. Introduction
+一篇综述，ASAG任务的处理方法可以分为两大类，一类是基于handcrafted features，另一类是基于深度学习的方法。这篇综述整理了ASAG领域的深度学习方法。ASAG解决方法的发展历程:
+<center><img src='../assets/img/posts/20221010/91.jpg'></center>
+
+这篇综述主要回答了以下四个问题:
+- ASAG领域的数据集
+- 评价指标
+- 有哪些深度学习的方法用到了
+- 结果如何
+
+## 22.2. Corpora
+综述整理了共六个ASAG领域的数据集，其中像ASAP，SemEval-2013和Beetle，ScientsBank都是竞赛的数据集:
+- ASAP: 来源于Kaggle，共有10686个回答，每个回答都来源于短文，每篇短文大概150词到550词
+- Beetle and ScientsBank: Bettle和SciEntsBank都来源于SRA(student response analysis)，都是SemEval-2013的数据集
+- Texas
+- Cairo
+- Powergrading
+- Statistics
+
+## 22.3. Evaluation Metrics
+根据ASAG任务是分类任务还是回归任务而不同:
+<center><img src='../assets/img/posts/20221010/92.png'></center>
+
+kappa系数是一种衡量分类精度的指标，kappa系数的计算基于混淆矩阵，计算公式如下:
+
+<p>
+\begin{equation}
+k=\frac{p_0-p_e}{1-p_e}
+\end{equation}
+</p>
+
+其中$p_0$是分类正确的样本数除以总样本数，$p_e$的计算公式为:
+
+<p>
+\begin{equation}
+p_e=\frac{a_1*b_1+a_2*b_2+..+a_c*b_c}{n*n}
+\end{equation}
+</p>
+
+其中每一类真实样本个数分别为$a_1,a_2,...$，而预测出来的每一个类样本的个数分别为$b_1,b_2,...$，总样本数为n，kappa的计算结果为-1到1，但通常kappa落在0-1之间，越高代表分类精度越高
+
+QWK就是quadratic weighted kappa，二次加权kappa，在多级分类的深度学习评价中经常使用，就是加权的kappa
+
+## 22.4. Deeplearning Approaches
+主要用到的深度学习的方法分为了三大类，一类是基于LSTM及其变种，一种是基于Attention机制，最后一类就是Transformer-based，后续将逐个介绍，首先看一张近年来应用于ASAG的深度学习重要的文章:
+<center><img src='../assets/img/posts/20221010/93.jpg'></center>
+
+基于深度学习的方法及其性能:
+<center><img src='../assets/img/posts/20221010/94.jpg'></center>
+
+- LSTM: Siamese Bi-LSTM, Bi-LSTM
+- Attention
+- Transformer
+
+下表展示了作者收集的文章的模型及其效果和缺陷:
+<center><img src='../assets/img/posts/20221010/95.png'></center>
+
+## 22.5. Conclusion
+总的来说，用深度学习的方法往往相较于传统的特征工程的方法要省时且效果更好。这些方法中，涉及到注意力机制的模型往往表现更好。更多的Transformer方法被提出，比如BERT，XLNet，T5等等，更多的tokenization的方法提出，比如BPE,Word-Piece Encoding和Sentence-Piece Encoding
+
+# 23. Survey on Automated Short Answer Grading with Deep Learning: from Word Embeddings to Transformers
+## 23.1. Introduction
+一篇关于Deeplearning在ASAG领域的综述，作者首先介绍了hand-engineering features到表征学习的转化，然后介绍了深度学习方法，主要分为了三大类: word embedding，sequential models，attention-based methods
+
+作者根据文本的表征方法将方法分为两类:
+- hand-engineered features with classifiers，我称其为特征工程的方法，具体来说根据特征的不同分为: lexical, syntactic, semantic
+- deep learning methods，端到端，具体来说分为了word embedding, sequential models, attention-based methods
+<center><img src='../assets/img/posts/20221010/97.jpg'></center>
+
+
+## 23.2. Historical perspective
+按照大概的时间发展来说，研究者们首先使用concept mapping(概念映射)的方法来比较学生答案和参考答案，随着information retrieval的发展，从学生答案提取出feature与参考答案进行直接的比较。这个阶段的方法并没有考虑语义信息，纯粹的考虑句段的分析，基于语法树。接着，利用大型词典WordNet，语义信息开始被考虑。
+
+## 23.3. Benchmark data sets for short answer grading
+聚焦于这四个广泛使用的数据集: SciEntsBank, Beetle, Texas, ASAP-SAS，关于这四个数据集的总览信息如下表所示:
+<center><img src='../assets/img/posts/20221010/96.png'></center>
+
+- SciEntsBank and Beetle: 都来源于SemEval 2013 challenge，总有三类的标签，分别是2分类(correct, incorrect)，3分类(correct contradictory, incorrect)和5分类(non-domain, correct, partially correct incomplete. contradictory, irrelevant answer)。除此之外，数据集还有三个子集，分别代表评估系统可能遇到的情况，分别是unseen answers, unseen questions, unseen domains
+- University of North Texas data set
+- ASAP-SAS: 全称叫做Automated Student Assessment Prize Short Answer Scoring，来源于Kaggle competition in 2013
+
+## 23.4. Hand-engineered Features and Machine Learning
+特征工程的使用到的所有方法列于下表: 
+<center><img src='../assets/img/posts/20221010/98.png'></center>
+不同的方法在benchmark数据集取得的效果如下表所示:
+<center><img src='../assets/img/posts/20221010/99.png'></center>
+
+### 23.4.1. Lexical features
+词汇特征，从单词的角度出发，早期用到的词汇特征有word-overlap，通过余弦计算方法得到的词重叠特征取得的效果最好。随着overlap技术的发展，也有像sentence overlap这样的方法出现。
+
+### 23.4.2. Syntactic features
+语法特征，常用的有语法树(parse tree)和词性标签(POS tags)
+
+### 23.4.3. Semantic features
+LSA,ESA和WordNet
+
+### 23.5. Deep Learning Methods
+这里作者将深度学习应用于ASAG的方法分为了三大类，分别是word embedding，sequential models和attention-based models。这和NLP和文本表征方法的进步相关，word embedding就是将单词和句段映射到隐空间中，能够捕获句段的语义信息，常见的有word2vec，glove等。sequential models，常见的有RNN和LSTM，能获得一段文本的序列信息，语义信息，重点是能获得长序列文本中各单词之间的关系。attention-based models同样能获得文本的序列信息和语义信息，通过注意力机制获得单词之间的关系。
+
+下表展示了各模型用到的方法:
+<center><img src='../assets/img/posts/20221010/100.png'></center>
+
+<center><img src='../assets/img/posts/20221010/101.jpg'></center>
+
+各模型的在benchmark数据集的表现:
+<center><img src='../assets/img/posts/20221010/102.png'></center>
+
+<center><img src='../assets/img/posts/20221010/103.png'></center>
+
+### 23.6. Discussion
+ASAG的methods发展的大趋势是从hand-engineered text features到deeplearning。一些适用于多种NLP任务的大模型并不能在这个下游任务上表现良好，这可能与ASAG任务本身的稀疏性和domain difference有关，稀疏性在自然语言处理领域有多种含义，比如data sparsity指的就是数据中存在多个零数据，远多于数据集中的非零数据，这里指的是ASAG的数据集非常sparse
+
+attention-based model在NLP领域取得了很好的结果，但是在ASAG任务上，单一个finetuned transformer model并不能取得最好的效果，作者猜测它不能解开短文本中丰富的语义信息
+
+### 23.7. Challenges
+- semantic understanding: 现存的模型并不能有效地拟合短文本的语义信息，这与短文本本身的性质有关，短文本的信息用一种精简的方式蕴含在一段很短的文本中
+- linguistic variations: 一个问题的回答词汇可能不止一种，回答问题的句子结构可能也不止一种，这给ASAG带来了很大的挑战，模型需要考虑不同的近义词汇或者不同的语法结构
+- Details of questions and reference answers: 一般来说，参考答案相对来说简短，可能不包含足够的细节，除此之外，需要针对不同类型的问题和开放式问题进行评估
+- Generalization across domains and answers: 字面意思
+
 
 # 100. TODO
 - 看GBT, GPT, ELMo
