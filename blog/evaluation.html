@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Set consistent experimental conditions and choose failure cases that explain model behavior.">
+  <title>How Do You Design a Convincing Model Evaluation? · Your Name</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">✳</span> Your Name</a>
+      <nav aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#publications">Publications</a>
+        <a href="index.html" aria-current="true">Blog <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap article-main">
+    <a class="text-link" href="index.html"><span aria-hidden="true">←</span> Back to blog</a>
+    <article>
+      <div class="post-meta"><span>Model Evaluation</span><time datetime="2026-10-18">Oct 18, 2026</time></div>
+      <h1>How Do You Design a Convincing Model Evaluation?</h1>
+    <p>Before running an evaluation, turn your hypothesis into a question you can answer with evidence. In a question-answering task that requires combining several sources, for example, at which step does the model lose track of the evidence it needs? The answer you seek determines how to group examples and which intermediate outputs to record.</p>
+    <h2>Keep Experimental Conditions Consistent</h2>
+    <p>Record prompt versions, sampling parameters, input length limits, and scoring rules. Give each method the same inputs and compute budget. Include a few borderline examples to show how the scoring rules apply.</p>
+    <h2>Inspect Failure Cases</h2>
+    <p>Break down results by task type and difficulty, then sample errors from each group. Look for missing evidence, gaps in reasoning, and formatting problems. Include a representative example of each failure mode so readers can judge which tasks the results apply to.</p>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="wrap"><span>© Your Name</span><a href="mailto:you@example.com">Contact ↗</a></div></footer>
+</body>
+</html>
