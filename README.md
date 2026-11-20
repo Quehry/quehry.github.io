@@ -5,8 +5,8 @@ An English-language static site with a researcher profile, publications, and a b
 ## Customize
 
 - Edit `index.html` to update the profile, research interests, and publications. The paper entries are examples.
-- Replace `Your Name` and `you@example.com` across the four HTML pages.
-- To add a post, copy an article in `blog/`, update its title, date, description, and body, then add a link in `blog/index.html`. Update the featured posts in `index.html` as needed.
+- Replace `Your Name` and `you@example.com` in the homepage and blog page.
+- Add each new article as an HTML file in `blog/`, then replace the empty-state message in `blog/index.html` with a link to the article.
 
 ## Publish with GitHub Pages
 

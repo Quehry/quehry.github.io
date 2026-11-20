@@ -57,7 +57,6 @@ nav span { margin-left: 2px; }
 .tags li, .post-meta span { border-radius: 4px; padding: 2px 7px; color: #235540; background: #e9f1e6; font-size: 11px; }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; padding-bottom: 15px; }
 .section-head h2 { margin-top: 3px; font-size: 33px; line-height: 1.3; letter-spacing: -.045em; }
-.sample { color: var(--muted); font-size: 12px; padding-bottom: 3px; }
 #publications { scroll-margin-top: 24px; }
 .paper { display: grid; grid-template-columns: 58px 1fr; gap: 14px; padding: 18px 0; border-top: 1px solid var(--line); }
 .paper:last-child { border-bottom: 1px solid var(--line); }
@@ -66,9 +65,7 @@ nav span { margin-left: 2px; }
 .paper h3 { font-size: 18px; line-height: 1.4; letter-spacing: -.025em; }
 .paper p { margin-top: 4px; color: var(--muted); font-size: 13px; }
 .paper .venue { color: var(--green); }
-.paper details { margin-top: 6px; }
-.paper summary { width: fit-content; cursor: pointer; color: var(--green); font-size: 12px; }
-.paper details p { max-width: 540px; }
+.paper h3 a:hover { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
 .notes { padding-block: 35px 58px; border-top: 1px solid var(--line); }
 .text-link { font-size: 14px; white-space: nowrap; }
 .post-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
@@ -101,7 +98,8 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 @media (max-width: 640px) {
   .wrap { width: calc(100% - 36px); }
   .header-inner { min-height: 60px; }
-  nav { gap: 15px; font-size: 13px; }
+  nav { gap: 12px; font-size: 13px; }
+  #publications .section-head { align-items: start; flex-wrap: wrap; }
   nav a { padding-block: 17px; }
   .hero { grid-template-columns: 1fr; gap: 29px; padding-block: 37px 32px; }
   .field { min-height: 260px; }
